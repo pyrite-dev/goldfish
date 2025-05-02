@@ -19,9 +19,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Install packages
-      run: sudo apt-get install doxygen tcl graphviz
-    - name: Create directory
-      run: mkdir -p build
+      run: sudo apt-get install doxygen graphviz
     - name: Build engine document
       run: doxygen && mv doc/html build
     - name: Deploy
