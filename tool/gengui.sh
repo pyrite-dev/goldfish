@@ -2,8 +2,6 @@
 
 n=0
 
-cd engine
-
 COMPONENTS=""
 for i in `ls -d src/gui/*.c`; do
 	COMPONENTS="$COMPONENTS `echo $i | rev | cut -d"_" -f1 | rev | cut -d"." -f1`"

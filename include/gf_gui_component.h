@@ -2,7 +2,7 @@
  * @file gf_gui_component.h
  * @~english
  * @brief GUI component stuff
- * @warning This file is auto-generated using ./tool/gengui.sh at `Thu May  1 19:03:17 JST 2025`
+ * @warning This file is auto-generated using ./tool/gengui.sh at `Sat May  3 02:27:16 JST 2025`
  */
 
 #ifndef __GF_GUI_COMPONENT_H__
