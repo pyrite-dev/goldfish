@@ -5,7 +5,7 @@ BEGIN
         BEGIN
                 BLOCK "040904E4"
                 BEGIN
-                        VALUE "CompanyName", "GoldFish contributors\0"
+                        VALUE "CompanyName", "Pyrite Development Team\0"
                         VALUE "FileDescription", FILE_DESCRIPTION
                         VALUE "LegalCopyright", "3-clause BSD\0"
                         VALUE "FileVersion", "0.0.0.0\0"
