@@ -1,13 +1,13 @@
-[submodule "engine/external/lua"]
-	path = engine/external/lua
+[submodule "external/lua"]
+	path = external/lua
 	url = https://github.com/lua/lua
 	branch = v5.4
-[submodule "engine/external/stb"]
-	path = engine/external/stb
+[submodule "external/stb"]
+	path = external/stb
 	url = https://github.com/nothings/stb
-[submodule "engine/external/zlib"]
-	path = engine/external/zlib
+[submodule "external/zlib"]
+	path = external/zlib
 	url = https://github.com/madler/zlib
-[submodule "engine/external/ode"]
-	path = engine/external/ode
+[submodule "external/ode"]
+	path = external/ode
 	url = https://github.com/thomasmarsh/ODE

@@ -1,21 +1,12 @@
-# NishBox
-
-multiplayer sandbox game
-
-## Download
-
-Nightly builds are available from [Jenkins](https://j.nishi.boats/job/NishBox/job/master/).
-
-## Community
-
- - Discord: (being prepared)
- - IRC: #nishbox at irc.nishi.boats
+# GoldFish Engine
 
 ## Stack
+ - OpenGL 1.1 (probably) on GDI/X11/[RGFW](https://github.com/ColleagueRiley/RGFW)
+ - [My OSMesa patch](https://github.com/nishiowo/osmesa) for software rendering
+ - [Open Dynamics Engine](https://ode.org)
+ - [zlib](https://zlib.net)
+ - [Lua](https://lua.org)
+ - [stb](https://github.com/nothings/stb)
+ - [miniaudio](https://github.com/mackron/miniaudio)
+ - [jar](https://github.com/kd7tck/jar)
  - [Premake5](https://premake.github.io)
-
-## License
-
-Both NishBox and GoldFish are under 3-clause BSD license.
-
-Check [/engine/COPYING](/engine/COPYING) and [/engine/LICENSE](/engine/LICENSE) for engine license-related stuffs.

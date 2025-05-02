@@ -20,14 +20,10 @@ jobs:
       uses: actions/checkout@v4
     - name: Install packages
       run: sudo apt-get install doxygen tcl graphviz
-    - name: Get docgen
-      run: wget https://github.com/nishistack/docgen/raw/refs/heads/master/docgen -O docgen && chmod +x docgen
     - name: Create directory
       run: mkdir -p build
-    - name: Build main page
-      run: ./docgen
     - name: Build engine document
-      run: cd engine && doxygen && mv doc/html ../build/engine
+      run: doxygen && mv doc/html build
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4
       with:
