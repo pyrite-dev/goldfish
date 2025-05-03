@@ -43,6 +43,10 @@ int gf_lua_call_font_load(lua_State* s) {
 
 	font  = gf_lua_create_font(lua);
 	*font = gf_font_create_file(lua->engine->client->draw, path);
+	if(*font == NULL) {
+		lua_pop(s, 1);
+		return 0;
+	}
 	arrput(lua->font_array, *font);
 
 	return 1;
