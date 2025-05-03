@@ -1,4 +1,3 @@
-
 require("gmake")
 if not(premake.modules.gmake.patched_resource) then
 	premake.modules.gmake.patched_resource = true
