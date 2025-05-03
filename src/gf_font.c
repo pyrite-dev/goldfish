@@ -30,17 +30,17 @@ gf_font_glyph_t* gf_font_get(gf_font_t* font, int code) {
 	return NULL;
 }
 
-gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, double* width) {
+gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, double* width, double* height) {
 	int		i;
 	double		scale;
 	int		ascent;
 	int		descent;
 	int		linegap;
-	int		iheight;
 	gf_font_cache_t cache;
 	unsigned char*	buffer;
-	int		x    = 0;
-	int		last = 0;
+	int		iheight = size;
+	int		x	= 0;
+	int		last	= 0;
 
 	/* TODO: Implement this */
 	if(font->use_glyph) {
@@ -48,32 +48,48 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	}
 	for(i = 0; i < arrlen(font->cache); i++) {
 		if(strcmp(font->cache[i].text, text) == 0 && font->cache[i].size == size) {
-			*width = font->cache[i].width;
+			*width	= font->cache[i].width;
+			*height = font->cache[i].height;
 			return font->cache[i].texture;
 		}
 	}
 
-	scale	    = stbtt_ScaleForPixelHeight(&font->ttf, size);
-	cache.width = 0;
-
 	stbtt_GetFontVMetrics(&font->ttf, &ascent, &descent, &linegap);
 
-	ascent	= gf_math_round(ascent * scale);
-	descent = gf_math_round(descent * scale);
-	linegap = gf_math_round(linegap * scale);
-	iheight = size;
+	scale	     = (double)size / (ascent - descent);
+	cache.width  = 0;
+	cache.height = 0;
+	cache.size   = size;
+
+	ascent	= gf_math_floor(ascent * scale);
+	descent = gf_math_floor(descent * scale);
+	linegap = gf_math_floor(linegap * scale);
 
 	for(i = 0; text[i] != 0; i++) {
-		int ax;
-		int lsb;
-		int kern;
+		int    ax;
+		int    lsb;
+		int    kern;
+		int    x1;
+		int    y1;
+		int    x2;
+		int    y2;
+		double h;
+
+		stbtt_GetCodepointBitmapBox(&font->ttf, text[i], scale, scale, &x1, &y1, &x2, &y2);
+		h = (y2 - y1) - descent;
+
 		stbtt_GetCodepointHMetrics(&font->ttf, text[i], &ax, &lsb);
 		kern = stbtt_GetCodepointKernAdvance(&font->ttf, text[i], text[i + 1]);
-		cache.width += gf_math_round(ax * scale);
-		cache.width += gf_math_round(kern * scale);
+		cache.width += gf_math_floor(ax * scale);
+		cache.width += gf_math_floor(kern * scale);
 		last = lsb;
+
+		if(h > cache.height) {
+			cache.height = h;
+		}
 	}
-	cache.width += gf_math_round(last * scale);
+
+	cache.width += gf_math_floor(last * scale);
 
 	buffer = malloc(cache.width * iheight * 4);
 	memset(buffer, 0, cache.width * iheight * 4);
@@ -97,10 +113,11 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 
 		gbuf = malloc((x2 - x1) * (y2 - y1));
 		stbtt_MakeCodepointBitmap(&font->ttf, gbuf, x2 - x1, y2 - y1, x2 - x1, scale, scale, text[i]);
+
 		for(gy = 0; gy < (y2 - y1); gy++) {
 			for(gx = 0; gx < (x2 - x1); gx++) {
 				int c	= gbuf[gy * (x2 - x1) + gx];
-				int ind = (x + gx) + gf_math_round(lsb * scale) + ((gy + y) * cache.width);
+				int ind = (x + gx) + gf_math_floor(lsb * scale) + ((gy + y) * cache.width);
 				ind *= 4;
 				buffer[ind + 0] = 255;
 				buffer[ind + 1] = 255;
@@ -111,19 +128,19 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 		free(gbuf);
 
 		kern = stbtt_GetCodepointKernAdvance(&font->ttf, text[i], text[i + 1]);
-		x += gf_math_round(ax * scale);
-		x += gf_math_round(kern * scale);
+		x += gf_math_floor(ax * scale);
+		x += gf_math_floor(kern * scale);
 	}
 
 	cache.text = malloc(strlen(text) + 1);
 	strcpy(cache.text, text);
-	cache.size    = size;
 	cache.texture = gf_texture_create(font->draw, cache.width, iheight, buffer);
 	arrput(font->cache, cache);
 
 	free(buffer);
 
-	*width = cache.width;
+	*width	= cache.width;
+	*height = cache.height;
 
 	return cache.texture;
 }

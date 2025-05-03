@@ -39,9 +39,10 @@ GF_EXPORT gf_font_glyph_t* gf_font_get(gf_font_t* font, int code);
  * @param text Text
  * @param size Size
  * @param width Width
+ * @param height Height
  * @return Texture
  */
-GF_EXPORT gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, double* width);
+GF_EXPORT gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, double* width, double* height);
 
 /**
  * @~english

@@ -19,6 +19,10 @@ double gf_math_round(double x) {
 	return (int)x;
 }
 
+double gf_math_floor(double x) { return (int)x; }
+
+double gf_math_ceil(double x) { return 1 + (int)x; }
+
 void gf_math_normalize(gf_math_vector_t v) {
 	double x = v[0];
 	double y = v[1];

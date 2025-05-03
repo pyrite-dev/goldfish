@@ -56,6 +56,22 @@ GF_EXPORT double gf_math_round(double x);
 
 /**
  * @~english
+ * @brief Calculate floor(x)
+ * @param x Input
+ * @return floor(x)
+ */
+GF_EXPORT double gf_math_floor(double x);
+
+/**
+ * @~english
+ * @brief Calculate ceil(x)
+ * @param x Input
+ * @return ceil(x)
+ */
+GF_EXPORT double gf_math_ceil(double x);
+
+/**
+ * @~english
  * @brief Calculate normal of triangle v0,v1,v2
  * @param r Result
  * @param v0 Input

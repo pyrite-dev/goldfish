@@ -68,13 +68,13 @@ void gf_gui_button_render(gf_gui_t* gui, gf_gui_component_t* c) {
 		}
 		if((prop = gf_prop_get_integer(&c->prop, "align")) == GF_PROP_NO_SUCH || prop == 0) {
 			x = cx + cw / 2 - gf_graphic_text_width(gui->draw, font, fsz, c->text) / 2;
-			y = cy + ch / 2 - (double)fsz / 2;
+			y = cy + ch / 2 - gf_graphic_text_height(gui->draw, font, fsz, c->text) / 2;
 		} else if(prop == -1) {
 			x = cx;
-			y = cy + ch / 2 - (double)fsz / 2;
+			y = cy + ch / 2 - gf_graphic_text_height(gui->draw, font, fsz, c->text) / 2;
 		} else if(prop == 1) {
 			x = cx - gf_graphic_text_width(gui->draw, font, fsz, c->text);
-			y = cy + ch / 2 - (double)fsz / 2;
+			y = cy + ch / 2 - gf_graphic_text_height(gui->draw, font, fsz, c->text) / 2;
 		}
 
 		ogx = x;

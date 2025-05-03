@@ -33,7 +33,8 @@ void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, d
 	if(font != NULL) {
 		if(!font->use_glyph) {
 			double	      width;
-			gf_texture_t* texture = gf_font_render(font, text, size, &width);
+			double	      height;
+			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
 			gf_graphic_draw_texture_2d(draw, x, y, width, size, texture, color);
 			return;
 		}
@@ -60,7 +61,8 @@ double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, 
 	if(font != NULL) {
 		if(!font->use_glyph) {
 			double	      width;
-			gf_texture_t* texture = gf_font_render(font, text, size, &width);
+			double	      height;
+			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
 			return width;
 		}
 		zoom = size / font->bbox.height;
@@ -71,6 +73,31 @@ double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, 
 		}
 	}
 	return mx;
+}
+
+double gf_graphic_text_height(gf_draw_t* draw, gf_font_t* userfont, double size, const char* text) {
+	int		 i;
+	double		 my = 0;
+	gf_font_glyph_t* glyph;
+	double		 zoom = 0;
+	gf_font_t*	 font = userfont;
+	if(font != NULL) {
+		if(!font->use_glyph) {
+			double	      width;
+			double	      height;
+			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
+			return height;
+		}
+		zoom = size / font->bbox.height;
+		for(i = 0; text[i] != 0; i++) {
+			if((glyph = gf_font_get(font, text[i])) != NULL) {
+				if((zoom * glyph->bbox.height) > my) {
+					my = zoom * glyph->bbox.height;
+				}
+			}
+		}
+	}
+	return my;
 }
 
 void gf_graphic_draw_texture_2d(gf_draw_t* draw, double x, double y, double w, double h, gf_texture_t* texture, gf_graphic_color_t color) {

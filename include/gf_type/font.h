@@ -110,6 +110,9 @@ GF_DECLARE_TYPE(font_glyph, {
  * @var gf_font_cache_t::width
  * @brief Width
  *
+ * @var gf_font_cache_t::height
+ * @brief Height
+ *
  * @var gf_font_cache_t::texture
  * @brief Texture
  */
@@ -117,6 +120,7 @@ GF_DECLARE_TYPE(font_cache, {
 	char* text;
 	double size;
 	double width;
+	double height;
 	gf_texture_t* texture;
 });
 

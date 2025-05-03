@@ -130,6 +130,13 @@ GF_EXPORT double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, dou
 
 /**
  * @~english
+ * @brief Calculate text height
+ * @return Text height
+ */
+GF_EXPORT double gf_graphic_text_height(gf_draw_t* draw, gf_font_t* userfont, double size, const char* text);
+
+/**
+ * @~english
  * @brief Draw text
  */
 GF_EXPORT void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, double size, const char* text, gf_graphic_color_t color);
