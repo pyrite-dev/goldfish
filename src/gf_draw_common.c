@@ -146,7 +146,7 @@ int gf_draw_step(gf_draw_t* draw) {
 
 #ifdef _WIN32
 		gf_draw_time(&t);
-		msec = (1.0 / sfps) - (gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw)) * 1000;
+		msec = (1000.0 / sfps) - (gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw)) * 1000;
 		if(msec > 0) Sleep(msec);
 #else
 		do {
