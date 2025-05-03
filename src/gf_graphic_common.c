@@ -20,6 +20,9 @@
 
 void gf_graphic_fill_rect(gf_draw_t* draw, double x, double y, double w, double h, gf_graphic_color_t color) { gf_graphic_fill_polygon(draw, color, GF_GRAPHIC_2D, 4, x, y, x, y + h, x + w, y + h, x + w, y); }
 
+/**
+ * TODO: Make gf_font do the most job
+ */
 void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, double size, const char* text, gf_graphic_color_t color) {
 	int		 i;
 	double		 mx = 0;
@@ -29,6 +32,12 @@ void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, d
 	if(font == NULL) font = draw->font;
 	if(font != NULL) {
 		zoom = size / font->bbox.height;
+		if(!font->use_glyph) {
+			double	      width;
+			gf_texture_t* texture = gf_font_render(font, text, size, &width);
+			gf_graphic_draw_texture_2d(draw, x, y, width, size, texture, color);
+			return;
+		}
 		for(i = 0; text[i] != 0; i++) {
 			if((glyph = gf_font_get(font, text[i])) != NULL) {
 				double fax = glyph->bbox.width;

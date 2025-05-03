@@ -16,8 +16,10 @@ typedef struct gf_font_glyph_t gf_font_glyph_t;
 typedef struct gf_font_t       gf_font_t;
 
 /* External library */
+#include <stb_truetype.h>
 
 /* Engine */
+#include <gf_type/draw.h>
 #include <gf_type/texture.h>
 
 /* Standard */
@@ -95,9 +97,36 @@ GF_DECLARE_TYPE(font_glyph, {
 });
 
 /**
+ * @struct gf_font_cache_t
+ * @~english
+ * @brief Font cache
+ *
+ * @var gf_font_cache_t::text
+ * @brief Text
+ *
+ * @var gf_font_cache_t::size
+ * @brief Size
+ *
+ * @var gf_font_cache_t::width
+ * @brief Width
+ *
+ * @var gf_font_cache_t::texture
+ * @brief Texture
+ */
+GF_DECLARE_TYPE(font_cache, {
+	char* text;
+	double size;
+	double width;
+	gf_texture_t* texture;
+});
+
+/**
  * @struct gf_font_t
  * @~english
  * @brief Font
+ *
+ * @var gf_font_t::draw
+ * @brief Drawing interface
  *
  * @var gf_font_t::glyph
  * @brief Glyph data
@@ -107,15 +136,30 @@ GF_DECLARE_TYPE(font_glyph, {
  *
  * @var gf_font_t::bbox
  * @brief Bounding box
+ *
+ * @var gf_font_t::ttf
+ * @brief TTF information
+ *
+ * @var gf_font_t::use_glyph
+ * @brief `1` if you should use texture inside gf_font_t::glyph, `0` otherwise
+ * 
+ * @var gf_font_t::cache
+ * @brief Cache
  */
 GF_DECLARE_TYPE(font, {
+	gf_draw_t* draw;
 	gf_font_glyph_t** glyph;
 	int		  count;
 	gf_font_bbox_t	  bbox;
+	unsigned char* buffer;
+	stbtt_fontinfo ttf;
+	int use_glyph;
+	gf_font_cache_t* cache;
 });
 #else
 typedef void gf_font_glyph_t;
 typedef void gf_font_bbox_t;
+typedef void gf_font_cache_t;
 typedef void gf_font_t;
 #endif
 

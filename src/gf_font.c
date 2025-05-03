@@ -4,6 +4,7 @@
 #include <gf_pre.h>
 
 /* External library */
+#include <stb_ds.h>
 
 /* Interface */
 #include <gf_font.h>
@@ -26,6 +27,60 @@ gf_font_glyph_t* gf_font_get(gf_font_t* font, int code) {
 		}
 	}
 	return NULL;
+}
+
+gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, double* width) {
+	int		i;
+	double		scale;
+	int		ascent;
+	int		descent;
+	int		linegap;
+	int		iheight;
+	gf_font_cache_t cache;
+	unsigned char*	buffer;
+
+	/* TODO: Implement this */
+	if(font->use_glyph) {
+		return NULL;
+	}
+	for(i = 0; i < arrlen(font->cache); i++) {
+		if(strcmp(font->cache[i].text, text) == 0 && font->cache[i].size == size) {
+			*width = font->cache[i].width;
+			return font->cache[i].texture;
+		}
+	}
+
+	scale	    = stbtt_ScaleForPixelHeight(&font->ttf, size);
+	cache.width = 0;
+
+	stbtt_GetFontVMetrics(&font->ttf, &ascent, &descent, &linegap);
+
+	ascent	= ascent * scale;
+	descent = descent * scale;
+
+	for(i = 0; i < strlen(text); i++) {
+		int ax;
+		int lsb;
+		stbtt_GetCodepointHMetrics(&font->ttf, text[i], &ax, &lsb);
+		cache.width += ax * scale;
+	}
+
+	iheight = ascent - descent + linegap;
+
+	buffer = malloc(cache.width * iheight * 4);
+	memcpy(buffer, 0, cache.width * iheight * 4);
+
+	cache.text = malloc(strlen(text) + 1);
+	strcpy(cache.text, text);
+	cache.size    = size;
+	cache.texture = gf_texture_create(font->draw, cache.width, iheight, buffer);
+	arrput(font->cache, cache);
+
+	free(buffer);
+
+	*width = cache.width;
+
+	return cache.texture;
 }
 
 /**
@@ -135,10 +190,19 @@ gf_font_t* gf_font_create(gf_draw_t* draw, const char* path, const void* data, s
 	store.line_index  = -1;
 	store.glyph_index = 0;
 	memset(font, 0, sizeof(*font));
+	font->count	= 0;
+	font->use_glyph = 1;
+	font->draw	= draw;
 
 	buf	  = malloc(size + 1);
 	buf[size] = 0;
 	memcpy(buf, data, size);
+
+	if(stbtt_InitFont(&font->ttf, buf, 0)) {
+		font->use_glyph = 0;
+		font->buffer	= buf;
+		return font;
+	}
 
 	for(i = 0;; i++) {
 		if(buf[i] == 0 || buf[i] == '\n') {
@@ -183,9 +247,21 @@ gf_font_t* gf_font_create_file(gf_draw_t* draw, const char* path) {
 
 void gf_font_destroy(gf_font_t* font) {
 	int i;
-	for(i = 0; i < font->count; i++) {
-		gf_texture_destroy(font->glyph[i]->texture);
+	if(font->glyph != NULL) {
+		for(i = 0; i < font->count; i++) {
+			gf_texture_destroy(font->glyph[i]->texture);
+		}
+		free(font->glyph);
 	}
-	free(font->glyph);
+	if(font->cache != NULL) {
+		for(i = 0; i < arrlen(font->cache); i++) {
+			free(font->cache[i].text);
+			gf_texture_destroy(font->cache[i].texture);
+		}
+		free(font->cache);
+	}
+	if(font->buffer != NULL) {
+		free(font->buffer);
+	}
 	free(font);
 }
