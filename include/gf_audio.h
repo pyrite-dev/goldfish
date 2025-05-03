@@ -91,6 +91,14 @@ GF_EXPORT void gf_audio_stop(gf_audio_t* audio, gf_audio_id_t id);
 
 /**
  * @~english
+ * @brief Set volume
+ * @param audio Audio interface
+ * @param volume Volume
+ */
+GF_EXPORT void gf_audio_set_volume(gf_audio_t* audio, double volume);
+
+/**
+ * @~english
  * @brief Check if audio is over
  * @param audio Audio interface
  * @param id Audio ID

@@ -26,6 +26,7 @@ void gf_audio_callback(ma_device* dev, void* output, const void* input, ma_uint3
 	gf_audio_t* audio = dev->pUserData;
 	ma_int16*   out	  = (ma_int16*)output;
 	float*	    tmp	  = malloc(sizeof(*tmp) * frame * 2);
+	double	    vol;
 
 	for(i = 0; i < frame; i++) {
 		tmp[2 * i + 0] = 0;
@@ -80,8 +81,8 @@ void gf_audio_callback(ma_device* dev, void* output, const void* input, ma_uint3
 	ma_mutex_unlock(audio->mutex);
 
 	for(i = 0; i < frame; i++) {
-		out[2 * i + 0] = tmp[2 * i + 0] * 32768;
-		out[2 * i + 1] = tmp[2 * i + 1] * 32768;
+		out[2 * i + 0] = tmp[2 * i + 0] * audio->volume * 32768;
+		out[2 * i + 1] = tmp[2 * i + 1] * audio->volume * 32768;
 	}
 	free(tmp);
 }
@@ -190,6 +191,8 @@ gf_audio_t* gf_audio_create(gf_engine_t* engine) {
 
 	memset(audio, 0, sizeof(*audio));
 	audio->engine = engine;
+
+	audio->volume = 1;
 
 	audio->device_config		       = ma_device_config_init(ma_device_type_playback);
 	audio->device_config.playback.format   = ma_format_s16;
@@ -306,6 +309,8 @@ void gf_audio_stop(gf_audio_t* audio, gf_audio_id_t id) {
 
 	gf_audio_decoder_destroy(&audio->decoder[ind]);
 }
+
+void gf_audio_set_volume(gf_audio_t* audio, double volume) { audio->volume = volume; }
 
 int gf_audio_is_over(gf_audio_t* audio, gf_audio_id_t id) {
 	int ind = hmgeti(audio->decoder, id);

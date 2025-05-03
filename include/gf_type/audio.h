@@ -93,6 +93,9 @@ GF_DECLARE_TYPE(audio_decoder, {
  *
  * @var gf_audio_t::mutex
  * @brief Mutex
+ *
+ * @var gf_audio_t::volume
+ * @brief Global volume
  */
 GF_DECLARE_TYPE(audio, {
 	gf_engine_t*	    engine;
@@ -100,6 +103,7 @@ GF_DECLARE_TYPE(audio, {
 	ma_device*	    device;
 	gf_audio_decoder_t* decoder;
 	ma_mutex*	    mutex;
+	double volume;
 });
 #else
 typedef void gf_audio_decoder_t;
