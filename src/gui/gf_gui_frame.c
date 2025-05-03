@@ -46,7 +46,7 @@ void gf_gui_frame_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_graphic_clip_pop(gui->draw);
 
 	sx = cw / 2 - gf_graphic_text_width(gui->draw, font, 24, c->text) / 2;
-	sy = ch / 2 - 24.0 / 2;
+	sy = ch / 2 - gf_graphic_text_height(gui->draw, font, 24, c->text) / 2;
 
 	gf_graphic_clip_push(gui->draw, cx, cy, cw, ch);
 	gf_graphic_text(gui->draw, font, cx + sx, cy + sy, 24, c->text, gui->font);
