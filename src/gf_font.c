@@ -39,7 +39,8 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	int		iheight;
 	gf_font_cache_t cache;
 	unsigned char*	buffer;
-	int		x = 0;
+	int		x    = 0;
+	int		last = 0;
 
 	/* TODO: Implement this */
 	if(font->use_glyph) {
@@ -60,7 +61,7 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	ascent	= gf_math_round(ascent * scale);
 	descent = gf_math_round(descent * scale);
 	linegap = gf_math_round(linegap * scale);
-	iheight = ascent - descent + linegap;
+	iheight = size;
 
 	for(i = 0; text[i] != 0; i++) {
 		int ax;
@@ -70,7 +71,9 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 		kern = stbtt_GetCodepointKernAdvance(&font->ttf, text[i], text[i + 1]);
 		cache.width += gf_math_round(ax * scale);
 		cache.width += gf_math_round(kern * scale);
+		last = lsb;
 	}
+	cache.width += gf_math_round(last * scale);
 
 	buffer = malloc(cache.width * iheight * 4);
 	memset(buffer, 0, cache.width * iheight * 4);
@@ -228,7 +231,7 @@ gf_font_t* gf_font_create(gf_draw_t* draw, const char* path, const void* data, s
 	char*		buf;
 	int		i    = 0;
 	int		incr = 0;
-	unsigned char ttf_magic[5];
+	unsigned char	ttf_magic[5];
 	gf_font_store_t store;
 	store.line_index  = -1;
 	store.glyph_index = 0;
