@@ -61,7 +61,6 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	descent = gf_math_round(descent * scale);
 	linegap = gf_math_round(linegap * scale);
 	iheight = ascent - descent + linegap;
-	printf("%d %d %d\n", ascent, descent, linegap);
 
 	for(i = 0; text[i] != 0; i++) {
 		int ax;
