@@ -41,7 +41,7 @@ extern "C" {
  * @~english
  * @brief Default GUI font size
  */
-#define GF_GUI_FONT_SIZE 30
+#define GF_GUI_FONT_SIZE 24
 
 /**
  * @~english

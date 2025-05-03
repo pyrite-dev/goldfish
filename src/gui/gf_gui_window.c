@@ -34,7 +34,7 @@ gf_gui_id_t gf_gui_create_window(gf_gui_t* gui, double x, double y, double w, do
 
 	hmputs(gui->area, c);
 
-	close_button = gf_gui_create_button(gui, 5, 5, GF_GUI_SMALL_FONT_SIZE, GF_GUI_SMALL_FONT_SIZE);
+	close_button = gf_gui_create_button(gui, 5, 5, 24, 24);
 	gf_gui_set_parent(gui, close_button, c.key);
 	gf_prop_set_integer(gf_gui_get_prop(gui, close_button), "x-base", 1);
 	gf_prop_set_integer(gf_gui_get_prop(gui, close_button), "close-parent", 1);
