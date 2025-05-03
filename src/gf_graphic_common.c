@@ -31,13 +31,13 @@ void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, d
 	gf_font_t*	 font = userfont;
 	if(font == NULL) font = draw->font;
 	if(font != NULL) {
-		zoom = size / font->bbox.height;
 		if(!font->use_glyph) {
 			double	      width;
 			gf_texture_t* texture = gf_font_render(font, text, size, &width);
 			gf_graphic_draw_texture_2d(draw, x, y, width, size, texture, color);
 			return;
 		}
+		zoom = size / font->bbox.height;
 		for(i = 0; text[i] != 0; i++) {
 			if((glyph = gf_font_get(font, text[i])) != NULL) {
 				double fax = glyph->bbox.width;
@@ -58,6 +58,11 @@ double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, 
 	double		 zoom = 0;
 	gf_font_t*	 font = userfont;
 	if(font != NULL) {
+		if(!font->use_glyph) {
+			double	      width;
+			gf_texture_t* texture = gf_font_render(font, text, size, &width);
+			return width;
+		}
 		zoom = size / font->bbox.height;
 		for(i = 0; text[i] != 0; i++) {
 			if((glyph = gf_font_get(font, text[i])) != NULL) {
