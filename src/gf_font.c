@@ -300,7 +300,7 @@ void gf_font_destroy(gf_font_t* font) {
 			free(font->cache[i].text);
 			gf_texture_destroy(font->cache[i].texture);
 		}
-		free(font->cache);
+		arrfree(font->cache);
 	}
 	if(font->buffer != NULL) {
 		free(font->buffer);
