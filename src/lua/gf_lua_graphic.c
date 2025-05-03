@@ -78,6 +78,20 @@ int gf_lua_call_graphic_text_width(lua_State* s) {
 	return 1;
 }
 
+int gf_lua_call_graphic_text_height(lua_State* s) {
+	gf_font_t** font = luaL_checkudata(s, 1, "GoldFishFont");
+	double	    sz	 = luaL_checknumber(s, 2);
+	const char* text = luaL_checkstring(s, 3);
+	gf_lua_t*   lua;
+
+	lua_getglobal(s, "_GF_LUA");
+	lua = lua_touserdata(s, -1);
+
+	lua_pushnumber(s, gf_graphic_text_height(lua->engine->client->draw, *font, sz, text));
+
+	return 1;
+}
+
 int gf_lua_call_graphic_rect(lua_State* s) {
 	gf_lua_t*	   lua;
 	gf_graphic_color_t col;
@@ -196,6 +210,10 @@ void gf_lua_create_goldfish_graphic(gf_lua_t* lua) {
 
 	lua_pushstring(lua->lua, "text_width");
 	lua_pushcfunction(lua->lua, gf_lua_call_graphic_text_width);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "text_height");
+	lua_pushcfunction(lua->lua, gf_lua_call_graphic_text_height);
 	lua_settable(lua->lua, -3);
 
 	lua_pushstring(lua->lua, "points");
