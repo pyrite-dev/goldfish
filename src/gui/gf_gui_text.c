@@ -17,6 +17,7 @@
 
 gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, double h) {
 	gf_gui_component_t c;
+	gf_gui_id_t	   scroll;
 
 	gf_gui_create_component(gui, &c, x, y, w, h);
 
@@ -24,11 +25,32 @@ gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, doub
 
 	hmputs(gui->area, c);
 
+	scroll = gf_gui_create_scrollbar(gui, 25, 0, 25, h);
+	gf_prop_set_integer(gf_gui_get_prop(gui, scroll), "x-base", 1);
+	gf_gui_set_parent(gui, scroll, c.key);
+	gf_gui_set_prop_id(gui, c.key, "scrollbar", scroll);
+
 	return c.key;
 }
 
 void gf_gui_text_render(gf_gui_t* gui, gf_gui_component_t* c) {
+	double	   cx;
+	double	   cy;
+	double	   cw;
+	double	   ch;
+	gf_font_t* font;
 	if(c->type != GF_GUI_TEXT) return;
+
+	font = gf_prop_get_ptr_keep(&c->prop, "font");
+	if(font == NULL) font = gui->draw->font;
+	if(font == NULL) return;
+
+	gf_gui_calc_xywh(gui, c, &cx, &cy, &cw, &ch);
+	gf_graphic_clip_pop(gui->draw);
+
+	gf_gui_draw_box(gui, GF_GUI_INVERT, cx, cy, cw, ch);
+
+	gf_gui_set_wh(gui, gf_gui_get_prop_id(gui, c->key, "scrollbar"), 25, c->height);
 }
 
 void gf_gui_text_drag(gf_gui_t* gui, gf_gui_component_t* c) {

@@ -232,6 +232,26 @@ GF_EXPORT gf_gui_id_t gf_gui_get_prop_id(gf_gui_t* gui, gf_gui_id_t id, const ch
  */
 GF_EXPORT gf_prop_t** gf_gui_get_prop(gf_gui_t* gui, gf_gui_id_t id);
 
+/**
+ * @~english
+ * @brief Set width and height
+ * @param gui GUI
+ * @param id Component ID
+ * @param w Width
+ * @param h Height
+ */
+GF_EXPORT void gf_gui_set_wh(gf_gui_t* gui, gf_gui_id_t id, double w, double h);
+
+/**
+ * @~english
+ * @brief Get width and height
+ * @param gui GUI
+ * @param id Component ID
+ * @param w Width
+ * @param h Height
+ */
+GF_EXPORT void gf_gui_get_wh(gf_gui_t* gui, gf_gui_id_t id, double* w, double* h);
+
 #ifdef __cplusplus
 }
 #endif

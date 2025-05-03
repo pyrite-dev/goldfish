@@ -516,3 +516,17 @@ gf_graphic_color_t gf_gui_get_hover_font_color(gf_gui_t* gui, gf_gui_id_t id) {
 	if(ind == -1) return gui->font;
 	return gui->area[ind].hover_font;
 }
+
+void gf_gui_set_wh(gf_gui_t* gui, gf_gui_id_t id, double w, double h) {
+	int ind = hmgeti(gui->area, id);
+	if(ind == -1) return;
+	gui->area[ind].width  = w;
+	gui->area[ind].height = h;
+}
+
+void gf_gui_get_wh(gf_gui_t* gui, gf_gui_id_t id, double* w, double* h) {
+	int ind = hmgeti(gui->area, id);
+	if(ind == -1) return;
+	*w = gui->area[ind].width;
+	*h = gui->area[ind].height;
+}
