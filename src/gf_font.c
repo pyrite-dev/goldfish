@@ -68,7 +68,7 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	iheight = ascent - descent + linegap;
 
 	buffer = malloc(cache.width * iheight * 4);
-	memcpy(buffer, 0, cache.width * iheight * 4);
+	memset(buffer, 0, cache.width * iheight * 4);
 
 	cache.text = malloc(strlen(text) + 1);
 	strcpy(cache.text, text);
