@@ -228,6 +228,7 @@ gf_font_t* gf_font_create(gf_draw_t* draw, const char* path, const void* data, s
 	char*		buf;
 	int		i    = 0;
 	int		incr = 0;
+	unsigned char ttf_magic[5];
 	gf_font_store_t store;
 	store.line_index  = -1;
 	store.glyph_index = 0;
@@ -236,11 +237,14 @@ gf_font_t* gf_font_create(gf_draw_t* draw, const char* path, const void* data, s
 	font->use_glyph = 1;
 	font->draw	= draw;
 
+	memset(ttf_magic, 0, 5);
+	ttf_magic[1] = 1;
+
 	buf	  = malloc(size + 1);
 	buf[size] = 0;
 	memcpy(buf, data, size);
 
-	if(stbtt_InitFont(&font->ttf, buf, 0)) {
+	if(size > 5 && memcmp(data, ttf_magic, 5) == 0 && stbtt_InitFont(&font->ttf, buf, 0)) {
 		font->use_glyph = 0;
 		font->buffer	= buf;
 		return font;
