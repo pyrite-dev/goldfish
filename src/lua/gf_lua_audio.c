@@ -51,12 +51,29 @@ int gf_lua_call_audio_create(lua_State* s) {
 	return 1;
 }
 
+int gf_lua_call_audio_set_volume(lua_State* s) {
+	double	       vol = luaL_checknumber(s, 1);
+	gf_lua_t*      lua;
+	gf_audio_id_t* id;
+
+	lua_getglobal(s, "_GF_LUA");
+	lua = lua_touserdata(s, -1);
+
+	gf_audio_set_volume(lua->engine->client->audio, vol);
+
+	return 0;
+}
+
 void gf_lua_create_goldfish_audio(gf_lua_t* lua) {
 	lua_pushstring(lua->lua, "audio");
 	lua_newtable(lua->lua);
 
 	lua_pushstring(lua->lua, "create");
 	lua_pushcfunction(lua->lua, gf_lua_call_audio_create);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "set_volume");
+	lua_pushcfunction(lua->lua, gf_lua_call_audio_set_volume);
 	lua_settable(lua->lua, -3);
 
 	lua_settable(lua->lua, -3);
