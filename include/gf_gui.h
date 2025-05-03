@@ -252,6 +252,26 @@ GF_EXPORT void gf_gui_set_wh(gf_gui_t* gui, gf_gui_id_t id, double w, double h);
  */
 GF_EXPORT void gf_gui_get_wh(gf_gui_t* gui, gf_gui_id_t id, double* w, double* h);
 
+/**
+ * @~english
+ * @brief Set X coord and Y coord
+ * @param gui GUI
+ * @param id Component ID
+ * @param x X coord
+ * @param y Y coord
+ */
+GF_EXPORT void gf_gui_set_xy(gf_gui_t* gui, gf_gui_id_t id, double x, double y);
+
+/**
+ * @~english
+ * @brief Get X coord and Y coord
+ * @param gui GUI
+ * @param id Component ID
+ * @param x X coord
+ * @param y Y coord
+ */
+GF_EXPORT void gf_gui_get_xy(gf_gui_t* gui, gf_gui_id_t id, double* x, double* y);
+
 #ifdef __cplusplus
 }
 #endif

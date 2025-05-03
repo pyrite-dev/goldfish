@@ -210,11 +210,7 @@ void gf_gui_calc_xywh_noset(gf_gui_t* gui, gf_gui_component_t* c, double* x, dou
 	if(hp && ph < (*h)) {
 		ch = ph;
 	}
-	if(c->type == GF_GUI_FRAME) {
-		gf_graphic_clip_push(gui->draw, 0, 0, gui->draw->width, gui->draw->height);
-	} else {
-		gf_graphic_clip_push(gui->draw, cx, cy, cw, ch);
-	}
+	gf_graphic_clip_push(gui->draw, cx, cy, cw, ch);
 }
 
 void gf_gui_calc_xywh(gf_gui_t* gui, gf_gui_component_t* c, double* x, double* y, double* w, double* h) {
@@ -340,7 +336,9 @@ void gf_gui_render(gf_gui_t* gui) {
 			if(!cancel) {
 				gf_gui_all_drag(gui, c);
 			}
-			gf_gui_move_topmost(gui, c->key);
+			if(c->parent != -1 || c->type == GF_GUI_WINDOW) {
+				gf_gui_move_topmost(gui, c->key);
+			}
 		}
 	}
 
@@ -405,7 +403,16 @@ void gf_gui_sort_component(gf_gui_t* gui) {
 
 	for(i = 0; i < hmlen(gui->area); i++) {
 		gf_gui_component_t* c = &gui->area[i];
-		if(c->parent == -1) {
+		if(c->parent == -1 && c->type != GF_GUI_WINDOW) {
+			gf_prop_set_integer(&c->prop, "active", 0);
+			hmputs(new, *c);
+			gf_gui_add_recursive(gui, &new, c->key);
+		}
+	}
+
+	for(i = 0; i < hmlen(gui->area); i++) {
+		gf_gui_component_t* c = &gui->area[i];
+		if(c->parent == -1 && c->type == GF_GUI_WINDOW) {
 			gf_prop_set_integer(&c->prop, "active", 0);
 			hmputs(new, *c);
 			gf_gui_add_recursive(gui, &new, c->key);
@@ -414,6 +421,7 @@ void gf_gui_sort_component(gf_gui_t* gui) {
 
 	hmfree(gui->area);
 	gui->area = new;
+	new	  = NULL;
 
 	for(i = hmlen(gui->area) - 1; i >= 0; i--) {
 		gf_gui_component_t* c = &gui->area[i];
@@ -529,4 +537,18 @@ void gf_gui_get_wh(gf_gui_t* gui, gf_gui_id_t id, double* w, double* h) {
 	if(ind == -1) return;
 	*w = gui->area[ind].width;
 	*h = gui->area[ind].height;
+}
+
+void gf_gui_set_xy(gf_gui_t* gui, gf_gui_id_t id, double x, double y) {
+	int ind = hmgeti(gui->area, id);
+	if(ind == -1) return;
+	gui->area[ind].x = x;
+	gui->area[ind].y = y;
+}
+
+void gf_gui_get_xy(gf_gui_t* gui, gf_gui_id_t id, double* x, double* y) {
+	int ind = hmgeti(gui->area, id);
+	if(ind == -1) return;
+	*x = gui->area[ind].x;
+	*y = gui->area[ind].y;
 }

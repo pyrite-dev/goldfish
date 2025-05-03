@@ -15,6 +15,8 @@
 
 /* Standard */
 
+extern const double gf_gui_border_width;
+
 gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, double h) {
 	gf_gui_component_t c;
 	gf_gui_id_t	   scroll;
@@ -25,7 +27,7 @@ gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, doub
 
 	hmputs(gui->area, c);
 
-	scroll = gf_gui_create_scrollbar(gui, 25, 0, 25, h);
+	scroll = gf_gui_create_scrollbar(gui, gf_gui_border_width, gf_gui_border_width, 20 - gf_gui_border_width, h - gf_gui_border_width * 2);
 	gf_prop_set_integer(gf_gui_get_prop(gui, scroll), "x-base", 1);
 	gf_gui_set_parent(gui, scroll, c.key);
 	gf_gui_set_prop_id(gui, c.key, "scrollbar", scroll);
@@ -50,7 +52,7 @@ void gf_gui_text_render(gf_gui_t* gui, gf_gui_component_t* c) {
 
 	gf_gui_draw_box(gui, GF_GUI_INVERT, cx, cy, cw, ch);
 
-	gf_gui_set_wh(gui, gf_gui_get_prop_id(gui, c->key, "scrollbar"), 25, c->height);
+	gf_gui_set_wh(gui, gf_gui_get_prop_id(gui, c->key, "scrollbar"), 20 - gf_gui_border_width, c->height - gf_gui_border_width * 2);
 }
 
 void gf_gui_text_drag(gf_gui_t* gui, gf_gui_component_t* c) {
