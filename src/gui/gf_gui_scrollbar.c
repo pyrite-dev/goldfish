@@ -26,6 +26,9 @@ void gf_gui_scrollbar_up(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, i
 	if(val < lim) {
 		val = lim;
 	}
+	if(step < lim) {
+		val = 0;
+	}
 	gf_prop_set_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "value", val);
 }
 
@@ -36,6 +39,9 @@ void gf_gui_scrollbar_down(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id,
 	val += step;
 	if(val > (lim - step)) {
 		val = lim - step;
+	}
+	if(step > lim) {
+		val = 0;
 	}
 	gf_prop_set_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "value", val);
 }
@@ -66,7 +72,7 @@ gf_gui_id_t gf_gui_create_scrollbar(gf_gui_t* gui, double x, double y, double w,
 	gf_gui_set_parent(gui, gr, c.key);
 
 	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "min-value", 0);
-	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "step", 20);
+	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "step", 10);
 	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "value", 0);
 	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "max-value", 100);
 
@@ -110,6 +116,10 @@ void gf_gui_scrollbar_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	max  = gf_prop_get_floating(gf_gui_get_prop(gui, c->key), "max-value");
 	step = gf_prop_get_floating(gf_gui_get_prop(gui, c->key), "step");
 	val  = gf_prop_get_floating(gf_gui_get_prop(gui, c->key), "value");
+
+	if(step > (max - min)) {
+		step = max - min;
+	}
 
 	gr = gf_gui_get_prop_id(gui, c->key, "grab");
 
