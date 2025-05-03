@@ -48,6 +48,14 @@ GF_EXPORT double gf_math_log2(double x);
 
 /**
  * @~english
+ * @brief Calculate round(x)
+ * @param x Input
+ * @return round(x)
+ */
+GF_EXPORT double gf_math_round(double x);
+
+/**
+ * @~english
  * @brief Calculate normal of triangle v0,v1,v2
  * @param r Result
  * @param v0 Input

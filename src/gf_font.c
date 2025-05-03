@@ -13,6 +13,7 @@
 #include <gf_log.h>
 #include <gf_texture.h>
 #include <gf_file.h>
+#include <gf_math.h>
 
 /* Standard */
 #include <string.h>
@@ -38,7 +39,7 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	int		iheight;
 	gf_font_cache_t cache;
 	unsigned char*	buffer;
-	int x = 0;
+	int		x = 0;
 
 	/* TODO: Implement this */
 	if(font->use_glyph) {
@@ -56,43 +57,49 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 
 	stbtt_GetFontVMetrics(&font->ttf, &ascent, &descent, &linegap);
 
-	ascent	= ascent * scale;
-	descent = descent * scale;
+	ascent	= gf_math_round(ascent * scale);
+	descent = gf_math_round(descent * scale);
+	linegap = gf_math_round(linegap * scale);
 	iheight = ascent - descent + linegap;
+	printf("%d %d %d\n", ascent, descent, linegap);
 
 	for(i = 0; text[i] != 0; i++) {
 		int ax;
 		int lsb;
+		int kern;
 		stbtt_GetCodepointHMetrics(&font->ttf, text[i], &ax, &lsb);
-		cache.width += ax * scale;
+		kern = stbtt_GetCodepointKernAdvance(&font->ttf, text[i], text[i + 1]);
+		cache.width += gf_math_round(ax * scale);
+		cache.width += gf_math_round(kern * scale);
 	}
 
 	buffer = malloc(cache.width * iheight * 4);
 	memset(buffer, 0, cache.width * iheight * 4);
 
-	for(i = 0; text[i] != 0; i++){
-		int ax;
-		int lsb;
-		int x1;
-		int y1;
-		int x2;
-		int y2;
-		int y;
-		int kern;
-		int gx;
-		int gy;
+	for(i = 0; text[i] != 0; i++) {
+		int	       ax;
+		int	       lsb;
+		int	       x1;
+		int	       y1;
+		int	       x2;
+		int	       y2;
+		int	       y;
+		int	       kern;
+		int	       gx;
+		int	       gy;
 		unsigned char* gbuf;
 
 		stbtt_GetCodepointHMetrics(&font->ttf, text[i], &ax, &lsb);
 		stbtt_GetCodepointBitmapBox(&font->ttf, text[i], scale, scale, &x1, &y1, &x2, &y2);
 		y = ascent + y1;
 
-		gbuf = malloc(((x2 - x1) * scale) * ((y2 - y1) * scale));
-		stbtt_MakeCodepointBitmap(&font->ttf, gbuf, x2 - x1, y2 - y1, ax * scale, scale, scale, text[i]);
-		for(gy = 0; gy < (y2 - y1) * scale; gy++){
-			for(gx = 0; gx < (x2 - x1) * scale; gx++){
-				int c = gbuf[gy * (int)((x2 - x1) * scale) + gx];
-				int ind = x * 4 + (lsb * scale * 4) + (y * ((x2 - x1) * scale) * 4);
+		gbuf = malloc((x2 - x1) * (y2 - y1));
+		stbtt_MakeCodepointBitmap(&font->ttf, gbuf, x2 - x1, y2 - y1, x2 - x1, scale, scale, text[i]);
+		for(gy = 0; gy < (y2 - y1); gy++) {
+			for(gx = 0; gx < (x2 - x1); gx++) {
+				int c	= gbuf[gy * (x2 - x1) + gx];
+				int ind = (x + gx) + gf_math_round(lsb * scale) + ((gy + y) * cache.width);
+				ind *= 4;
 				buffer[ind + 0] = 255;
 				buffer[ind + 1] = 255;
 				buffer[ind + 2] = 255;
@@ -101,9 +108,9 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 		}
 		free(gbuf);
 
-		stbtt_GetCodepointKernAdvance(&font->ttf, text[i], text[i + 1]);
-		x += ax * scale;
-		x += kern * scale;
+		kern = stbtt_GetCodepointKernAdvance(&font->ttf, text[i], text[i + 1]);
+		x += gf_math_round(ax * scale);
+		x += gf_math_round(kern * scale);
 	}
 
 	cache.text = malloc(strlen(text) + 1);

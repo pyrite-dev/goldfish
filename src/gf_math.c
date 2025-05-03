@@ -12,6 +12,13 @@
 
 double gf_math_log2(double x) { return log(x) / log(2); }
 
+double gf_math_round(double x) {
+	if((x - (int)x) >= 0.5) {
+		return 1 + (int)x;
+	}
+	return (int)x;
+}
+
 void gf_math_normalize(gf_math_vector_t v) {
 	double x = v[0];
 	double y = v[1];
