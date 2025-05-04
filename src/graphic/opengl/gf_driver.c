@@ -140,8 +140,11 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	}
 	draw_driver->npot = draw_driver->npot || gf_draw_driver_has_extension(draw, "GL_ARB_texture_non_power_of_two");
 	draw_driver->npot = draw_driver->npot || gf_draw_driver_has_extension(draw, "GL_ARB_texture_rectangle");
+	draw_driver->npot = draw_driver->npot || gf_draw_driver_has_extension(draw, "GL_NV_texture_rectangle");
 	if(draw_driver->npot) {
 		gf_log_function(engine, "NPOT extension available", "");
+	} else {
+		gf_log_function(engine, "NPOT extension not available", "");
 	}
 
 	return draw_driver;
