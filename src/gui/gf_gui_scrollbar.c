@@ -93,7 +93,6 @@ void gf_gui_scrollbar_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	double		   cy;
 	double		   cw;
 	double		   ch;
-	int		   prop;
 	double		   min;
 	double		   max;
 	double		   step;

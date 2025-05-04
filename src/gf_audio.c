@@ -26,7 +26,6 @@ void gf_audio_callback(ma_device* dev, void* output, const void* input, ma_uint3
 	gf_audio_t* audio = dev->pUserData;
 	ma_int16*   out	  = (ma_int16*)output;
 	float*	    tmp	  = malloc(sizeof(*tmp) * frame * 2);
-	double	    vol;
 
 	for(i = 0; i < frame; i++) {
 		tmp[2 * i + 0] = 0;

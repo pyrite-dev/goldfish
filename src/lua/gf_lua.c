@@ -224,7 +224,6 @@ void gf_lua_create_goldfish(gf_lua_t* lua) {
 }
 
 gf_lua_t* gf_lua_create(gf_engine_t* engine) {
-	char	  prg[1024];
 	gf_lua_t* lua = malloc(sizeof(*lua));
 	memset(lua, 0, sizeof(*lua));
 	lua->engine = engine;

@@ -52,9 +52,8 @@ int gf_lua_call_audio_create(lua_State* s) {
 }
 
 int gf_lua_call_audio_set_volume(lua_State* s) {
-	double	       vol = luaL_checknumber(s, 1);
-	gf_lua_t*      lua;
-	gf_audio_id_t* id;
+	double	  vol = luaL_checknumber(s, 1);
+	gf_lua_t* lua;
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
