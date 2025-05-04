@@ -60,9 +60,11 @@ void gf_gui_button_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	}
 
 	if(c->text != NULL) {
-		double fsz = GF_GUI_SMALL_FONT_SIZE;
-		double ogx;
-		double ogy;
+		double		   fsz = GF_GUI_SMALL_FONT_SIZE;
+		double		   ogx;
+		double		   ogy;
+		double		   sp = 0;
+		gf_graphic_color_t col;
 		if((propf = gf_prop_get_floating(&c->prop, "font-size")) != GF_PROP_NO_SUCH) {
 			fsz = propf;
 		}
@@ -85,21 +87,30 @@ void gf_gui_button_render(gf_gui_t* gui, gf_gui_component_t* c) {
 		if(gui->pressed == c->key) {
 			x += gf_gui_border_width / 2;
 			y += gf_gui_border_width / 2;
+			sp = gf_gui_border_width / 2;
+		}
+
+		if(gui->hover == c->key) {
+			col = c->hover_font;
+		} else {
+			col = c->font;
 		}
 
 		gf_graphic_clip_push(gui->draw, cx, cy, cw, ch);
-		if((prop = gf_prop_get_integer(&c->prop, "no-border")) != GF_PROP_NO_SUCH && prop) {
-			gf_graphic_color_t dim;
-			dim.r = 0;
-			dim.g = 0;
-			dim.b = 0;
-			dim.a = 128;
-			gf_graphic_text(gui->draw, font, ogx, ogy, fsz, c->text, dim);
-		}
-		if(gui->hover == c->key) {
-			gf_graphic_text(gui->draw, font, x, y, fsz, c->text, c->hover_font);
+		if(strcmp(c->text, "#TriangleUp") == 0) {
+			gf_graphic_fill_polygon(gui->draw, col, GF_GRAPHIC_2D, 3, cx + cw / 2 + sp, cy + ch / 4 + sp, cx + cw / 4 + sp, cy + ch / 4 * 3 + sp, cx + cw / 4 * 3 + sp, cy + ch / 4 * 3 + sp);
+		} else if(strcmp(c->text, "#TriangleDown") == 0) {
+			gf_graphic_fill_polygon(gui->draw, col, GF_GRAPHIC_2D, 3, cx + cw / 2 + sp, cy + ch / 4 * 3 + sp, cx + cw / 4 * 3 + sp, cy + ch / 4 + sp, cx + cw / 4 + sp, cy + ch / 4 + sp);
 		} else {
-			gf_graphic_text(gui->draw, font, x, y, fsz, c->text, c->font);
+			if((prop = gf_prop_get_integer(&c->prop, "no-border")) != GF_PROP_NO_SUCH && prop) {
+				gf_graphic_color_t dim;
+				dim.r = 0;
+				dim.g = 0;
+				dim.b = 0;
+				dim.a = 128;
+				gf_graphic_text(gui->draw, font, ogx, ogy, fsz, c->text, dim);
+			}
+			gf_graphic_text(gui->draw, font, x, y, fsz, c->text, col);
 		}
 		gf_graphic_clip_pop(gui->draw);
 	}

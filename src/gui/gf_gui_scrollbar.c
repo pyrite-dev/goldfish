@@ -63,8 +63,8 @@ gf_gui_id_t gf_gui_create_scrollbar(gf_gui_t* gui, double x, double y, double w,
 	dn = gf_gui_create_button(gui, 0, 0, w, w);
 	gr = gf_gui_create_button(gui, 0, w, w, w * 4);
 
-	gf_gui_set_text(gui, up, "U");
-	gf_gui_set_text(gui, dn, "D");
+	gf_gui_set_text(gui, up, "#TriangleUp");
+	gf_gui_set_text(gui, dn, "#TriangleDown");
 
 	gf_prop_set_integer(gf_gui_get_prop(gui, dn), "y-base", 1);
 
