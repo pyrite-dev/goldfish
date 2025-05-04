@@ -32,7 +32,14 @@ gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int w
 	int			  w = gf_math_nearest_2pow(width);
 	int			  h = gf_math_nearest_2pow(height);
 	double			  x, y, sx, sy;
-	unsigned char*		  d = malloc(w * h * 4);
+	unsigned char*		  d;
+
+	if(draw->driver->npot) {
+		w = width;
+		h = height;
+	}
+
+	d = malloc(w * h * 4);
 
 	*iwidth	 = w;
 	*iheight = h;
@@ -40,27 +47,31 @@ gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int w
 	sx = (double)width / w;
 	sy = (double)height / h;
 
-	memset(d, 0, w * h * 4);
-	for(y = 0; y < h; y++) {
-		for(x = 0; x < w; x++) {
-			int ox	  = x * sx;
-			int oy	  = y * sy;
-			int pos	  = (y * w + x) * 4;
-			int ogpos = (oy * width + ox) * 4;
-			memcpy(d + pos + 0, data + ogpos + 0, 4);
+	if(w == width && h == height) {
+		memcpy(d, data, w * h * 4);
+	} else {
+		memset(d, 0, w * h * 4);
+		for(y = 0; y < h; y++) {
+			for(x = 0; x < w; x++) {
+				int ox	  = x * sx;
+				int oy	  = y * sy;
+				int pos	  = (y * w + x) * 4;
+				int ogpos = (oy * width + ox) * 4;
+				memcpy(d + pos + 0, data + ogpos + 0, 4);
+			}
 		}
 	}
 
 	glGenTextures(1, &r->id);
 	glBindTexture(GL_TEXTURE_2D, r->id);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, d);
-#if 1
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-#else
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-#endif
+	if(draw->driver->npot) {
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	} else {
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	}
 #if 0
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
@@ -77,6 +88,8 @@ void gf_draw_driver_destroy_texture(gf_draw_driver_texture_t* t) {
 
 gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	gf_draw_driver_t* draw_driver = malloc(sizeof(*draw_driver));
+	int		  i;
+	const char*	  str;
 	memset(draw_driver, 0, sizeof(*draw_driver));
 	draw_driver->engine = engine;
 
@@ -106,6 +119,30 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	glClearColor(0, 0, 0, 1);
 
 	glPointSize(5);
+
+	draw_driver->npot = 0;
+
+	str = glGetString(GL_VERSION);
+	if(str != NULL) {
+		for(i = 0;; i++) {
+			if(str[i] == '.' || str[i] == 0) {
+				char* num = malloc(i + 1);
+				memcpy(num, str, i);
+				num[i] = 0;
+				if(atoi(num) >= 2) {
+					draw_driver->npot = 1;
+				}
+				gf_log_function(engine, "OpenGL %s.x available", num);
+				free(num);
+				break;
+			}
+		}
+	}
+	draw_driver->npot = draw_driver->npot || gf_draw_driver_has_extension(draw, "GL_ARB_texture_non_power_of_two");
+	draw_driver->npot = draw_driver->npot || gf_draw_driver_has_extension(draw, "GL_ARB_texture_rectangle");
+	if(draw_driver->npot) {
+		gf_log_function(engine, "NPOT extension available", "");
+	}
 
 	return draw_driver;
 }

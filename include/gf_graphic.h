@@ -143,6 +143,13 @@ GF_EXPORT void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, d
 
 /**
  * @~english
+ * @brief Draw text with wrapping
+ * @return Height
+ */
+GF_EXPORT double gf_graphic_text_wrap(gf_draw_t* draw, gf_font_t* userfont, double x, double y, double w, double size, const char* text, gf_graphic_color_t color);
+
+/**
+ * @~english
  * @brief Draw filled rectangle
  */
 GF_EXPORT void gf_graphic_fill_rect(gf_draw_t* draw, double x, double y, double w, double h, gf_graphic_color_t color);

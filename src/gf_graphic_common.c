@@ -32,8 +32,8 @@ void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, d
 	if(font == NULL) font = draw->font;
 	if(font != NULL) {
 		if(!font->use_glyph) {
-			double	      width;
-			double	      height;
+			double	      width   = -1;
+			double	      height  = -1;
 			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
 			gf_graphic_draw_texture_2d(draw, x, y, width, size, texture, color);
 			return;
@@ -52,6 +52,46 @@ void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, d
 	}
 }
 
+double gf_graphic_text_wrap(gf_draw_t* draw, gf_font_t* userfont, double x, double y, double w, double size, const char* text, gf_graphic_color_t color) {
+	int		 i;
+	double		 mx = 0;
+	gf_font_glyph_t* glyph;
+	double		 zoom = 0;
+	gf_font_t*	 font = userfont;
+	if(font == NULL) font = draw->font;
+	if(font != NULL) {
+		double my  = 0;
+		double big = 0;
+		if(!font->use_glyph) {
+			double	      width   = w;
+			double	      height  = -1;
+			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
+			gf_graphic_draw_texture_2d(draw, x, y, width, height, texture, color);
+			return height;
+		}
+		zoom = size / font->bbox.height;
+		for(i = 0; text[i] != 0; i++) {
+			if((glyph = gf_font_get(font, text[i])) != NULL) {
+				double fax = glyph->bbox.width;
+				double fay = glyph->bbox.height;
+				double fx  = glyph->bbox.x;
+				double fy  = (font->bbox.height + font->bbox.y) - (glyph->bbox.height + glyph->bbox.y);
+				if(mx + (zoom * glyph->dwidth[0]) >= w) {
+					mx = 0;
+					my += size;
+				}
+				if((my + size) > big) {
+					big = my + size;
+				}
+				gf_graphic_draw_texture_2d(draw, x + mx + fx * zoom, y + my + fy * zoom, zoom * fax, zoom * fay, glyph->texture, color);
+				mx += zoom * glyph->dwidth[0];
+			}
+		}
+		return big + size;
+	}
+	return 0;
+}
+
 double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, const char* text) {
 	int		 i;
 	double		 mx = 0;
@@ -60,8 +100,8 @@ double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, 
 	gf_font_t*	 font = userfont;
 	if(font != NULL) {
 		if(!font->use_glyph) {
-			double	      width;
-			double	      height;
+			double	      width   = -1;
+			double	      height  = -1;
 			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
 			return width;
 		}
@@ -83,8 +123,8 @@ double gf_graphic_text_height(gf_draw_t* draw, gf_font_t* userfont, double size,
 	gf_font_t*	 font = userfont;
 	if(font != NULL) {
 		if(!font->use_glyph) {
-			double	      width;
-			double	      height;
+			double	      width   = -1;
+			double	      height  = -1;
 			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
 			return height;
 		}

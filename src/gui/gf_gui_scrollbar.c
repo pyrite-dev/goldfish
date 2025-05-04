@@ -22,26 +22,27 @@ void gf_gui_scrollbar_up(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, i
 	double step = gf_prop_get_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "step");
 	double lim  = gf_prop_get_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "min-value");
 	double val  = gf_prop_get_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "value");
-	val -= step;
+	val -= step / 2;
 	if(val < lim) {
 		val = lim;
 	}
 	if(step < lim) {
-		val = 0;
+		val = lim;
 	}
 	gf_prop_set_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "value", val);
 }
 
 void gf_gui_scrollbar_down(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type) {
 	double step = gf_prop_get_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "step");
+	double min  = gf_prop_get_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "min-value");
 	double lim  = gf_prop_get_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "max-value");
 	double val  = gf_prop_get_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "value");
-	val += step;
+	val += step / 2;
 	if(val > (lim - step)) {
 		val = lim - step;
 	}
 	if(step > lim) {
-		val = 0;
+		val = min;
 	}
 	gf_prop_set_floating(gf_gui_get_prop(draw->gui, gf_gui_get_parent(draw->gui, id)), "value", val);
 }
