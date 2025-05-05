@@ -124,7 +124,7 @@ BOOL InitWindow(int nCmdShow) {
 	RECT deskrc, rc;
 	HWND hDeskWnd = GetDesktopWindow();
 	GetWindowRect(hDeskWnd, &deskrc);
-	hWnd = CreateWindow("nishbox", "GoldFish Engine Info", (WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME) ^ WS_MAXIMIZEBOX, 0, 0, 600, 250, NULL, 0, hInst, NULL);
+	hWnd = CreateWindow("nishbox", "GoldFish Engine Info", (WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME) ^ WS_MAXIMIZEBOX, 0, 0, 600, 125, NULL, 0, hInst, NULL);
 
 	if(!hWnd) {
 		return FALSE;
