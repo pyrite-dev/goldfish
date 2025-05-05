@@ -1,5 +1,6 @@
 #define GF_EXPOSE_DRAW_PLATFORM
 #define GF_EXPOSE_DRAW
+#define GF_EXPOSE_CORE
 #define GF_EXPOSE_INPUT
 
 #include <gf_pre.h>
@@ -125,6 +126,34 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	attr.colormap	 = XCreateColormap(platform->display, root, platform->visual.visual, AllocNone);
 	platform->window = XCreateWindow(platform->display, root, draw->width, draw->height, draw->width, draw->height, 0, platform->visual.depth, InputOutput, platform->visual.visual, CWColormap | CWEventMask, &attr);
 #endif
+
+	if(engine->icon != NULL) {
+		unsigned long* icon	 = malloc((2 + engine->icon_width * engine->icon_height) * sizeof(*icon));
+		Atom	       icon_atom = XInternAtom(platform->display, "_NET_WM_ICON", False);
+
+		icon[0] = engine->icon_width;
+		icon[1] = engine->icon_height;
+
+		for(i = 0; i < engine->icon_width * engine->icon_height; i++) {
+			icon[2 + i] = 0;
+
+			icon[2 + i] = icon[2 + i] << 8;
+			icon[2 + i] |= engine->icon[i * 4 + 3];
+
+			icon[2 + i] = icon[2 + i] << 8;
+			icon[2 + i] |= engine->icon[i * 4 + 0];
+
+			icon[2 + i] = icon[2 + i] << 8;
+			icon[2 + i] |= engine->icon[i * 4 + 1];
+
+			icon[2 + i] = icon[2 + i] << 8;
+			icon[2 + i] |= engine->icon[i * 4 + 2];
+		}
+
+		XChangeProperty(platform->display, platform->window, icon_atom, 6, 32, PropModeReplace, (unsigned char*)icon, 2 + engine->icon_width * engine->icon_height);
+
+		free(icon);
+	}
 
 	hints.x	     = draw->x;
 	hints.y	     = draw->y;

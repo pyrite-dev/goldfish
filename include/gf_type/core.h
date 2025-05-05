@@ -49,6 +49,15 @@ typedef struct gf_engine_t gf_engine_t;
  *
  * @var gf_engine_t::error
  * @brief Set on error
+ *
+ * @var gf_engine_t::icon
+ * @brief Icon data
+ *
+ * @var gf_engine_t::icon_width
+ * @brief Icon width
+ *
+ * @var gf_engine_t::icon_height
+ * @brief Icon height
  */
 GF_DECLARE_TYPE(engine, {
 	gf_server_t*   server;
@@ -57,6 +66,9 @@ GF_DECLARE_TYPE(engine, {
 	gf_resource_t* base;
 	gf_lua_t*      lua;
 	int	       error;
+	unsigned char* icon;
+	int icon_width;
+	int icon_height;
 });
 #else
 typedef void gf_engine_t;

@@ -1,5 +1,6 @@
 #define GF_EXPOSE_DRAW_PLATFORM
 #define GF_EXPOSE_DRAW
+#define GF_EXPOSE_CORE
 #define GF_EXPOSE_INPUT
 
 #include <gf_pre.h>
@@ -201,11 +202,11 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	wc.cbClsExtra	 = 0;
 	wc.cbWndExtra	 = 0;
 	wc.hInstance	 = platform->instance;
-	wc.hIcon	 = LoadIcon(platform->instance, "GAME");
 	wc.hCursor	 = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = NULL;
 	wc.lpszMenuName	 = NULL;
 	wc.lpszClassName = "goldfish";
+	wc.hIcon	 = LoadIcon(platform->instance, "GAME");
 	wc.hIconSm	 = LoadIcon(platform->instance, "GAME");
 	if(!RegisterClassEx(&wc)) {
 		gf_log_function(engine, "Failed to register class", "");
@@ -218,6 +219,56 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		gf_log_function(engine, "Failed to create window", "");
 		gf_draw_platform_destroy(platform);
 		return NULL;
+	}
+
+	if(engine->icon != NULL) {
+		BITMAPV5HEADER bi;
+		HBITMAP	       color;
+		HBITMAP	       mask;
+		unsigned char* target = NULL;
+		ICONINFO       ii;
+		HICON	       handle;
+		int	       i;
+		HDC	       dc = GetDC(NULL);
+
+		memset(&bi, 0, sizeof(bi));
+		bi.bV5Size	  = sizeof(bi);
+		bi.bV5Width	  = engine->icon_width;
+		bi.bV5Height	  = -((LONG)engine->icon_height);
+		bi.bV5Planes	  = 1;
+		bi.bV5BitCount	  = 32;
+		bi.bV5Compression = BI_RGB;
+		bi.bV5RedMask	  = 0xff << 16;
+		bi.bV5GreenMask	  = 0xff << 8;
+		bi.bV5BlueMask	  = 0xff << 0;
+		bi.bV5AlphaMask	  = 0xff << 24;
+
+		color = CreateDIBSection(dc, (BITMAPINFO*)&bi, DIB_RGB_COLORS, (void**)&target, NULL, (DWORD)0);
+		ReleaseDC(NULL, dc);
+
+		mask = CreateBitmap(engine->icon_width, engine->icon_height, 1, 1, NULL);
+
+		for(i = 0; i < engine->icon_width * engine->icon_height; i++) {
+			target[i * 4 + 0] = engine->icon[i * 4 + 2];
+			target[i * 4 + 1] = engine->icon[i * 4 + 1];
+			target[i * 4 + 2] = engine->icon[i * 4 + 0];
+			target[i * 4 + 3] = engine->icon[i * 4 + 3];
+		}
+
+		memset(&ii, 0, sizeof(ii));
+		ii.fIcon    = TRUE;
+		ii.xHotspot = 0;
+		ii.yHotspot = 0;
+		ii.hbmMask  = mask;
+		ii.hbmColor = color;
+
+		handle = CreateIconIndirect(&ii);
+
+		DeleteObject(color);
+		DeleteObject(mask);
+
+		SetClassLongPtr(platform->window, GCLP_HICON, (LPARAM)handle);
+		DestroyIcon(handle);
 	}
 
 	SetWindowLongPtr(platform->window, GWLP_USERDATA, (LONG_PTR)draw);

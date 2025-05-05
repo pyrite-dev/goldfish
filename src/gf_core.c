@@ -5,6 +5,7 @@
 #include <gf_pre.h>
 
 /* External library */
+#include <stb_image.h>
 #ifdef _WIN32
 #include <winsock.h>
 #endif
@@ -66,6 +67,21 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	engine->log   = stderr;
 	engine->error = 0;
 	engine->lua   = NULL;
+
+	engine->base = gf_resource_create(engine, packpath == NULL ? packpath : "base.pak");
+	if(engine->base == NULL) {
+		gf_engine_destroy(engine);
+		engine = NULL;
+		return engine;
+	} else {
+		unsigned char* png;
+		size_t	       pngsize;
+		int	       ch;
+		if(gf_resource_get(engine->base, "icon.png", (void**)&png, &pngsize) == 0) {
+			engine->icon = stbi_load_from_memory(png, pngsize, &engine->icon_width, &engine->icon_height, &ch, 4);
+		}
+	}
+
 	if(nogui) {
 		gf_log_function(engine, "No GUI mode", "");
 		engine->client = NULL;
@@ -81,12 +97,6 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	}
 	engine->server = gf_server_create(engine);
 
-	engine->base = gf_resource_create(engine, packpath);
-	if(engine->base == NULL) {
-		gf_engine_destroy(engine);
-		engine = NULL;
-		return engine;
-	}
 	engine->lua = gf_lua_create(engine);
 	if((st = gf_lua_run(engine->lua, "base:/scripts/init.lua")) != 0) {
 		gf_assert(engine, st == 0);
@@ -126,6 +136,9 @@ void gf_engine_destroy(gf_engine_t* engine) {
 	if(engine->server != NULL) gf_server_destroy(engine->server);
 	if(engine->client != NULL) gf_client_destroy(engine->client);
 	if(engine->base != NULL) gf_resource_destroy(engine->base);
+	if(engine->icon != NULL) {
+		free(engine->icon);
+	}
 	free(engine);
 	gf_log_function(NULL, "Destroyed engine", "");
 }
