@@ -53,9 +53,9 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "gf__graphic_8c.html#a996326c3cd9494d40efe7f4c34f9d62e",
-"gf__lua__graphic_8c.html#a13d820c4f195f0f38ce7d791a9a4ddeb",
-"globals_func.html",
-"structgf__version__t.html#ac38d0e162b52e8d20fc27ecbf4148375"
+"gf__lua__font_8c_source.html",
+"globals_c.html",
+"structgf__version__t.html#a4ae35b795688ecbcb98562b52ce03509"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
