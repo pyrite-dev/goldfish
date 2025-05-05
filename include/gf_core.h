@@ -36,12 +36,22 @@ GF_EXPORT void gf_engine_end(void);
 
 /**
  * @~english
- * @brief Create engine instance
+ * @brief Create engine instance, with default resource pack path (base.pak)
  * @param title Title to be shown on the window
  * @param nogui `0` to enable client-part, otherwise disable client-part
  * @return Engine instance
  */
 GF_EXPORT gf_engine_t* gf_engine_create(const char* title, int nogui);
+
+/**
+ * @~english
+ * @brief Create engine instance
+ * @param title Title to be shown on the window
+ * @param nogui `0` to enable client-part, otherwise disable client-part
+ * @param packpath Path to the base resource pack
+ * @return Engine instance
+ */
+GF_EXPORT gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packpath);
 
 /**
  * @~english
