@@ -220,6 +220,10 @@ void gf_lua_create_goldfish(gf_lua_t* lua) {
 	lua_pushstring(lua->lua, ver.full);
 	lua_settable(lua->lua, -3);
 
+	lua_pushstring(lua->lua, "server_only");
+	lua_pushboolean(lua->lua, lua->engine->client == NULL ? 1 : 0);
+	lua_settable(lua->lua, -3);
+
 	lua_setglobal(lua->lua, "goldfish");
 }
 
