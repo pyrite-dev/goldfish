@@ -304,7 +304,7 @@ function gf_link_stuffs(cond)
 	})
 		links({
 			"user32",
-			"ws2_32"
+			"wsock32"
 		})
 	filter({
 		"system:not windows",
