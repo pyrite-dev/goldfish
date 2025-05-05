@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title="Check if renderer has extension." alt="" coords="453,35,620,75"/>
 <area shape="rect" id="Node000002" href="$gf__driver_8c.html#a9ba4f91da9872bfc447a124cc4cf7d2a" title="Check if renderer has extension." alt="" coords="238,5,387,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="439,45,387,38,388,32,440,39"/>
-<area shape="rect" id="Node000007" href="$x11_2gf__draw_8c.html#ae0d81adf1fa83413f5052dab1fc4793f" title="Create platform&#45;dependent part of drawing driver." alt="" coords="220,70,405,95"/>
-<area shape="poly" id="edge3_Node000001_Node000007" title=" " alt="" coords="440,69,406,74,405,68,439,64"/>
+<area shape="rect" id="Node000008" href="$x11_2gf__draw_8c.html#ae0d81adf1fa83413f5052dab1fc4793f" title="Create platform&#45;dependent part of drawing driver." alt="" coords="220,70,405,95"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="440,69,406,74,405,68,439,64"/>
 <area shape="rect" id="Node000003" href="$gf__driver_8c.html#aebc8d113d5682c2f1090e6f04d0857e4" title="Initialize drawing driver." alt="" coords="5,13,172,38"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,28,172,28,172,23,224,23"/>
 </map>

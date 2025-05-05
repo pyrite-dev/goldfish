@@ -1,7 +1,7 @@
 <map id="gf_physics_create" name="gf_physics_create">
-<area shape="rect" id="Node000001" title="Create physics interface." alt="" coords="367,5,505,31"/>
-<area shape="rect" id="Node000002" href="$gf__server_8c.html#a861aac514f048d33ce16e3209e125df5" title="Create server interface." alt="" coords="188,5,319,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="353,21,319,21,319,15,353,15"/>
-<area shape="rect" id="Node000003" href="$gf__core_8c.html#a741291298ef02f3dceb1fdeaee2e27b4" title="Create engine instance." alt="" coords="5,5,140,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,21,141,21,141,15,174,15"/>
+<area shape="rect" id="Node000001" title="Create physics interface." alt="" coords="389,5,528,31"/>
+<area shape="rect" id="Node000002" href="$gf__server_8c.html#a861aac514f048d33ce16e3209e125df5" title="Create server interface." alt="" coords="211,5,341,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="376,21,342,21,342,15,376,15"/>
+<area shape="rect" id="Node000003" href="$gf__core_8c.html#aa40fbe8c435c2f84a4d2364e66439eda" title="Create engine instance." alt="" coords="5,5,163,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,21,163,21,163,15,197,15"/>
 </map>

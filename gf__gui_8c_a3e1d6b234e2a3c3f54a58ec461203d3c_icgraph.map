@@ -16,22 +16,22 @@
 <area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="679,302,629,309,629,303,678,297"/>
 <area shape="rect" id="Node000009" href="$gf__lua__gui_8c.html#ad4aa2bdaa2b19cb28bb28ffe1bf1d25f" title=" " alt="" coords="251,378,418,403"/>
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="718,312,645,341,527,368,419,385,418,380,526,363,643,336,716,307"/>
-<area shape="rect" id="Node000014" href="$gf__lua__gui_8c.html#ab960ca567773e92a408774598a3047ba" title=" " alt="" coords="481,403,632,429"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="734,316,694,351,645,386,602,406,600,401,643,382,691,347,730,312"/>
-<area shape="rect" id="Node000015" href="$gf__lua__metatable__gui_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="475,453,638,493"/>
-<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="744,317,705,378,678,412,646,442,624,455,621,451,642,438,674,409,701,375,739,314"/>
-<area shape="rect" id="Node000018" href="$gf__lua__metatable__gui_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="477,517,637,557"/>
-<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="750,318,737,359,715,410,685,462,646,507,628,519,625,515,642,503,681,459,710,407,732,357,745,316"/>
-<area shape="rect" id="Node000019" href="$gf__lua__metatable__gui_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="477,581,637,621"/>
-<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="753,318,744,370,724,438,693,509,671,542,646,571,630,583,627,579,642,567,667,538,688,506,719,436,738,369,748,317"/>
+<area shape="rect" id="Node000015" href="$gf__lua__gui_8c.html#ab960ca567773e92a408774598a3047ba" title=" " alt="" coords="481,403,632,429"/>
+<area shape="poly" id="edge13_Node000001_Node000015" title=" " alt="" coords="734,316,694,351,645,386,602,406,600,401,643,382,691,347,730,312"/>
+<area shape="rect" id="Node000016" href="$gf__lua__metatable__gui_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="475,453,638,493"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="744,317,705,378,678,412,646,442,624,455,621,451,642,438,674,409,701,375,739,314"/>
+<area shape="rect" id="Node000019" href="$gf__lua__metatable__gui_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="477,517,637,557"/>
+<area shape="poly" id="edge17_Node000001_Node000019" title=" " alt="" coords="750,318,737,359,715,410,685,462,646,507,628,519,625,515,642,503,681,459,710,407,732,357,745,316"/>
+<area shape="rect" id="Node000020" href="$gf__lua__metatable__gui_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="477,581,637,621"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="753,318,744,370,724,438,693,509,671,542,646,571,630,583,627,579,642,567,667,538,688,506,719,436,738,369,748,317"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,104,161,82,162,77,263,99"/>
 <area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="485,153,392,133,393,127,486,148"/>
 <area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="485,250,468,242,429,216,394,185,344,132,348,128,398,181,432,211,471,238,487,245"/>
 <area shape="rect" id="Node000010" href="$gf__lua__gui_8c.html#ad3a5a7c019f0de98e7c36ce3a2eea444" title="Create GoldFish GUI Lua interface." alt="" coords="5,378,200,403"/>
 <area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="238,393,200,393,200,388,238,388"/>
-<area shape="poly" id="edge14_Node000014_Node000009" title=" " alt="" coords="467,408,418,403,418,397,468,403"/>
-<area shape="rect" id="Node000016" href="$gf__lua__metatable__gui_8c.html#ad82c204a1cd0be5f09632ba3ad0e66a8" title="Initialize GUI metatables." alt="" coords="255,525,414,550"/>
-<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="474,500,380,527,379,522,473,495"/>
-<area shape="poly" id="edge18_Node000018_Node000016" title=" " alt="" coords="463,540,414,540,414,535,463,535"/>
-<area shape="poly" id="edge20_Node000019_Node000016" title=" " alt="" coords="473,580,379,553,380,547,474,575"/>
+<area shape="poly" id="edge14_Node000015_Node000009" title=" " alt="" coords="467,408,418,403,418,397,468,403"/>
+<area shape="rect" id="Node000017" href="$gf__lua__metatable__gui_8c.html#ad82c204a1cd0be5f09632ba3ad0e66a8" title="Initialize GUI metatables." alt="" coords="255,525,414,550"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="474,500,380,527,379,522,473,495"/>
+<area shape="poly" id="edge18_Node000019_Node000017" title=" " alt="" coords="463,540,414,540,414,535,463,535"/>
+<area shape="poly" id="edge20_Node000020_Node000017" title=" " alt="" coords="473,580,379,553,380,547,474,575"/>
 </map>

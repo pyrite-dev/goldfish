@@ -1,5 +1,7 @@
 <map id="gf_server_create" name="gf_server_create">
-<area shape="rect" id="Node000001" title="Create server interface." alt="" coords="188,5,319,31"/>
-<area shape="rect" id="Node000002" href="$gf__core_8c.html#a741291298ef02f3dceb1fdeaee2e27b4" title="Create engine instance." alt="" coords="5,5,140,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,21,141,21,141,15,174,15"/>
+<area shape="rect" id="Node000001" title="Create server interface." alt="" coords="393,5,524,31"/>
+<area shape="rect" id="Node000002" href="$gf__core_8c.html#aa40fbe8c435c2f84a4d2364e66439eda" title="Create engine instance." alt="" coords="188,5,345,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,21,345,21,345,15,380,15"/>
+<area shape="rect" id="Node000003" href="$gf__core_8c.html#a741291298ef02f3dceb1fdeaee2e27b4" title="Create engine instance, with default resource pack path (base.pak)" alt="" coords="5,5,140,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,21,140,21,140,15,174,15"/>
 </map>

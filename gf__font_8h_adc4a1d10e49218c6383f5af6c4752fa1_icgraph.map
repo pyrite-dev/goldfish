@@ -2,12 +2,12 @@
 <area shape="rect" id="Node000001" title="Get glyph." alt="" coords="452,145,548,170"/>
 <area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="257,169,380,194"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="439,168,380,176,380,171,438,163"/>
-<area shape="rect" id="Node000011" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="233,119,404,145"/>
-<area shape="poly" id="edge6_Node000001_Node000011" title=" " alt="" coords="438,151,404,147,405,141,439,146"/>
-<area shape="rect" id="Node000013" href="$gf__graphic__common_8c.html#a1ce50172aa1749c26af704601fc131ef" title="Calculate text width." alt="" coords="235,70,402,95"/>
-<area shape="poly" id="edge10_Node000001_Node000013" title=" " alt="" coords="465,140,403,109,370,98,372,93,405,104,468,135"/>
-<area shape="rect" id="Node000015" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="237,275,400,301"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="471,181,339,277,336,273,468,176"/>
+<area shape="rect" id="Node000012" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="233,119,404,145"/>
+<area shape="poly" id="edge6_Node000001_Node000012" title=" " alt="" coords="438,151,404,147,405,141,439,146"/>
+<area shape="rect" id="Node000014" href="$gf__graphic__common_8c.html#a1ce50172aa1749c26af704601fc131ef" title="Calculate text width." alt="" coords="235,70,402,95"/>
+<area shape="poly" id="edge10_Node000001_Node000014" title=" " alt="" coords="465,140,403,109,370,98,372,93,405,104,468,135"/>
+<area shape="rect" id="Node000016" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="237,275,400,301"/>
+<area shape="poly" id="edge14_Node000001_Node000016" title=" " alt="" coords="471,181,339,277,336,273,468,176"/>
 <area shape="rect" id="Node000003" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="15,70,175,95"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,166,232,158,217,146,207,133,198,121,184,109,159,98,161,93,187,104,202,117,212,130,220,142,235,154,250,161"/>
 <area shape="rect" id="Node000004" href="$gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="17,119,174,145"/>
@@ -16,14 +16,14 @@
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="294,205,246,240,186,274,156,286,154,281,184,270,243,236,290,201"/>
 <area shape="rect" id="Node000006" href="$gf__lua__graphic_8c.html#ac952e785a11505168510cce7ba9e4e2f" title=" " alt="" coords="5,234,185,259"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="263,201,186,224,143,236,141,231,185,219,262,196"/>
-<area shape="poly" id="edge7_Node000011_Node000003" title=" " alt="" coords="247,119,153,98,154,93,248,114"/>
-<area shape="poly" id="edge8_Node000011_Node000004" title=" " alt="" coords="220,135,174,135,174,129,220,129"/>
-<area shape="rect" id="Node000012" href="$gf__lua__graphic_8c.html#af5e938ad2a8b3bc6fa3d095154bb2a8f" title=" " alt="" coords="22,169,169,209"/>
-<area shape="poly" id="edge9_Node000011_Node000012" title=" " alt="" coords="256,151,170,173,168,168,255,146"/>
-<area shape="poly" id="edge11_Node000013_Node000003" title=" " alt="" coords="222,85,176,85,176,80,222,80"/>
-<area shape="poly" id="edge12_Node000013_Node000004" title=" " alt="" coords="248,101,154,122,153,117,247,96"/>
-<area shape="rect" id="Node000014" href="$gf__lua__graphic_8c.html#a9bf746b9bd9f61f3ec9839c99de2e641" title=" " alt="" coords="22,5,169,45"/>
-<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="255,69,168,47,170,42,256,64"/>
-<area shape="rect" id="Node000016" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="23,333,167,358"/>
-<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="256,307,146,335,145,330,254,302"/>
+<area shape="poly" id="edge7_Node000012_Node000003" title=" " alt="" coords="247,119,153,98,154,93,248,114"/>
+<area shape="poly" id="edge8_Node000012_Node000004" title=" " alt="" coords="220,135,174,135,174,129,220,129"/>
+<area shape="rect" id="Node000013" href="$gf__lua__graphic_8c.html#af5e938ad2a8b3bc6fa3d095154bb2a8f" title=" " alt="" coords="22,169,169,209"/>
+<area shape="poly" id="edge9_Node000012_Node000013" title=" " alt="" coords="256,151,170,173,168,168,255,146"/>
+<area shape="poly" id="edge11_Node000014_Node000003" title=" " alt="" coords="222,85,176,85,176,80,222,80"/>
+<area shape="poly" id="edge12_Node000014_Node000004" title=" " alt="" coords="248,101,154,122,153,117,247,96"/>
+<area shape="rect" id="Node000015" href="$gf__lua__graphic_8c.html#a9bf746b9bd9f61f3ec9839c99de2e641" title=" " alt="" coords="22,5,169,45"/>
+<area shape="poly" id="edge13_Node000014_Node000015" title=" " alt="" coords="255,69,168,47,170,42,256,64"/>
+<area shape="rect" id="Node000017" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="23,333,167,358"/>
+<area shape="poly" id="edge15_Node000016_Node000017" title=" " alt="" coords="256,307,146,335,145,330,254,302"/>
 </map>

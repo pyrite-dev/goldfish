@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"gf__graphic_8c.html#a996326c3cd9494d40efe7f4c34f9d62e":[2,0,1,1,0,4,10],
+"gf__graphic_8c.html#ac4482ad3b1baa754820a496f84d66c3a":[2,0,1,1,0,4,5],
 "gf__graphic_8c.html#acd5d3047cf76b63b2d1161e4e880f446":[2,0,1,1,0,4,7],
 "gf__graphic_8c.html#ad35db673e213edbadbfd938138c88a4c":[2,0,1,1,0,4,2],
 "gf__graphic_8c.html#af8285b506b90125960bf01b427a9a883":[2,0,1,1,0,4,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "gf__lua__font_8c.html#a697eb08d834a4889d84940e79575779d":[2,0,1,3,2,1],
 "gf__lua__font_8c.html#ad92129027a0f65174c3b0c9e51eaa3f4":[2,0,1,3,2,5],
 "gf__lua__font_8c_source.html":[2,0,1,3,2],
-"gf__lua__graphic_8c.html":[2,0,1,3,3],
-"gf__lua__graphic_8c.html#a13d820c4f195f0f38ce7d791a9a4ddeb":[2,0,1,3,3,0],
-"gf__lua__graphic_8c.html#a2e6fdc0f285f58339313e91b8558a49a":[2,0,1,3,3,5]
+"gf__lua__graphic_8c.html":[2,0,1,3,3]
 };

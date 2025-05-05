@@ -2,13 +2,13 @@
 <area shape="rect" id="Node000001" title="Do stuffs required on resizing window." alt="" coords="804,31,937,56"/>
 <area shape="rect" id="Node000002" href="$gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec" title="Create drawing interface." alt="" coords="180,5,303,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="806,30,756,22,630,13,504,11,303,17,303,11,504,6,630,8,756,17,807,25"/>
-<area shape="rect" id="Node000005" href="$gdi_2gf__draw_8c.html#a2e7645b135346f4f535b63f30f0dc60e" title=" " alt="" coords="584,31,756,56"/>
-<area shape="poly" id="edge3_Node000001_Node000005" title=" " alt="" coords="790,46,756,46,756,41,790,41"/>
-<area shape="rect" id="Node000007" href="$x11_2gf__draw_8c.html#af006e1dd0055cd824dd61122454d6192" title="Do platform&#45;dependent step." alt="" coords="584,80,756,105"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="806,62,723,83,722,77,805,57"/>
+<area shape="rect" id="Node000006" href="$gdi_2gf__draw_8c.html#a2e7645b135346f4f535b63f30f0dc60e" title=" " alt="" coords="584,31,756,56"/>
+<area shape="poly" id="edge3_Node000001_Node000006" title=" " alt="" coords="790,46,756,46,756,41,790,41"/>
+<area shape="rect" id="Node000008" href="$x11_2gf__draw_8c.html#af006e1dd0055cd824dd61122454d6192" title="Do platform&#45;dependent step." alt="" coords="584,80,756,105"/>
+<area shape="poly" id="edge6_Node000001_Node000008" title=" " alt="" coords="806,62,723,83,722,77,805,57"/>
 <area shape="rect" id="Node000003" href="$gf__client_8c.html#a425bf9a148d3a4d1301686fa9628de5a" title="Create client interface." alt="" coords="5,5,132,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="166,21,133,21,133,15,166,15"/>
-<area shape="rect" id="Node000006" href="$gdi_2gf__draw_8c.html#ae0d81adf1fa83413f5052dab1fc4793f" title="Create platform&#45;dependent part of drawing driver." alt="" coords="351,31,536,56"/>
-<area shape="poly" id="edge4_Node000005_Node000006" title=" " alt="" coords="570,46,536,46,536,41,570,41"/>
-<area shape="poly" id="edge5_Node000006_Node000002" title=" " alt="" coords="337,33,303,28,303,23,338,27"/>
+<area shape="rect" id="Node000007" href="$gdi_2gf__draw_8c.html#ae0d81adf1fa83413f5052dab1fc4793f" title="Create platform&#45;dependent part of drawing driver." alt="" coords="351,31,536,56"/>
+<area shape="poly" id="edge4_Node000006_Node000007" title=" " alt="" coords="570,46,536,46,536,41,570,41"/>
+<area shape="poly" id="edge5_Node000007_Node000002" title=" " alt="" coords="337,33,303,28,303,23,338,27"/>
 </map>

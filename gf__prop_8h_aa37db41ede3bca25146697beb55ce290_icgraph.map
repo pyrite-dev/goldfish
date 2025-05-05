@@ -14,10 +14,10 @@
 <area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="728,303,710,332,685,365,654,397,617,421,558,444,496,460,433,469,370,473,253,470,159,458,160,453,253,464,370,468,432,464,495,455,557,439,615,416,651,392,681,362,706,329,723,301"/>
 <area shape="rect" id="Node000016" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="457,109,595,134"/>
 <area shape="poly" id="edge10_Node000001_Node000016" title=" " alt="" coords="718,256,673,208,645,182,615,160,567,137,569,132,617,155,648,178,677,204,722,252"/>
-<area shape="rect" id="Node000023" href="$gf__gui__window_8c.html#a75e7807811b2c3380d8e20b853f9302f" title=" " alt="" coords="449,491,603,517"/>
-<area shape="poly" id="edge18_Node000001_Node000023" title=" " alt="" coords="731,304,715,342,690,387,658,434,618,474,582,494,579,489,614,470,654,430,685,384,710,339,726,302"/>
-<area shape="rect" id="Node000024" href="$gf__lua__metatable__gui_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="446,5,606,45"/>
-<area shape="poly" id="edge20_Node000001_Node000024" title=" " alt="" coords="727,253,685,168,653,118,614,74,575,48,578,43,618,70,657,115,689,165,731,251"/>
+<area shape="rect" id="Node000024" href="$gf__gui__window_8c.html#a75e7807811b2c3380d8e20b853f9302f" title=" " alt="" coords="449,491,603,517"/>
+<area shape="poly" id="edge18_Node000001_Node000024" title=" " alt="" coords="731,304,715,342,690,387,658,434,618,474,582,494,579,489,614,470,654,430,685,384,710,339,726,302"/>
+<area shape="rect" id="Node000025" href="$gf__lua__metatable__gui_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="446,5,606,45"/>
+<area shape="poly" id="edge20_Node000001_Node000025" title=" " alt="" coords="727,253,685,168,653,118,614,74,575,48,578,43,618,70,657,115,689,165,731,251"/>
 <area shape="poly" id="edge9_Node000004_Node000004" title=" " alt="" coords="564,330,554,321,526,318,503,320,491,325,489,330,495,338,491,341,484,331,487,321,502,315,526,313,556,316,567,325"/>
 <area shape="rect" id="Node000005" href="$gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="239,339,377,365"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="422,355,377,355,377,349,422,349"/>
@@ -33,5 +33,5 @@
 <area shape="poly" id="edge14_Node000016_Node000018" title=" " alt="" coords="444,123,388,122,388,117,444,118"/>
 <area shape="rect" id="Node000019" href="$gf__lua__metatable__gui_8c.html#ad82c204a1cd0be5f09632ba3ad0e66a8" title="Initialize GUI metatables." alt="" coords="13,53,172,78"/>
 <area shape="poly" id="edge15_Node000018_Node000019" title=" " alt="" coords="214,98,144,81,146,76,215,93"/>
-<area shape="poly" id="edge21_Node000024_Node000019" title=" " alt="" coords="432,27,334,30,228,39,143,55,142,50,228,33,334,24,432,22"/>
+<area shape="poly" id="edge21_Node000025_Node000019" title=" " alt="" coords="432,27,334,30,228,39,143,55,142,50,228,33,334,24,432,22"/>
 </map>

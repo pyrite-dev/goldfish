@@ -2,11 +2,11 @@
 <area shape="rect" id="Node000001" title="Destroy platform&#45;dependent part of drawing driver." alt="" coords="421,31,615,56"/>
 <area shape="rect" id="Node000002" href="$gf__draw__common_8c.html#aa7c19917300ff10b22de455323f01d83" title="Destroy drawing interface." alt="" coords="215,5,346,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="407,34,346,28,346,22,408,29"/>
-<area shape="rect" id="Node000008" href="$gdi_2gf__draw_8c.html#ae0d81adf1fa83413f5052dab1fc4793f" title="Create platform&#45;dependent part of drawing driver." alt="" coords="188,55,373,80"/>
-<area shape="poly" id="edge4_Node000001_Node000008" title=" " alt="" coords="408,57,374,61,373,55,408,52"/>
+<area shape="rect" id="Node000009" href="$gdi_2gf__draw_8c.html#ae0d81adf1fa83413f5052dab1fc4793f" title="Create platform&#45;dependent part of drawing driver." alt="" coords="188,55,373,80"/>
+<area shape="poly" id="edge4_Node000001_Node000009" title=" " alt="" coords="408,57,374,61,373,55,408,52"/>
 <area shape="rect" id="Node000003" href="$gf__client_8c.html#a1f8b044a5ca56016e55dad76cd839b53" title="Destroy client interface." alt="" coords="5,5,140,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,21,140,21,140,15,201,15"/>
-<area shape="rect" id="Node000007" href="$gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec" title="Create drawing interface." alt="" coords="11,55,134,80"/>
-<area shape="poly" id="edge3_Node000002_Node000007" title=" " alt="" coords="214,36,128,57,126,52,213,31"/>
-<area shape="poly" id="edge5_Node000008_Node000007" title=" " alt="" coords="174,70,135,70,135,65,174,65"/>
+<area shape="rect" id="Node000008" href="$gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec" title="Create drawing interface." alt="" coords="11,55,134,80"/>
+<area shape="poly" id="edge3_Node000002_Node000008" title=" " alt="" coords="214,36,128,57,126,52,213,31"/>
+<area shape="poly" id="edge5_Node000009_Node000008" title=" " alt="" coords="174,70,135,70,135,65,174,65"/>
 </map>

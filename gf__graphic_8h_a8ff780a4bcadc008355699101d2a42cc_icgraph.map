@@ -6,14 +6,14 @@
 <area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="687,124,640,96,584,71,529,54,472,42,369,26,370,21,473,36,530,49,586,66,642,92,690,120"/>
 <area shape="rect" id="Node000004" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="5,80,165,105"/>
 <area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="620,155,533,161,430,163,321,159,213,145,157,128,110,108,112,103,159,123,214,139,321,153,430,158,533,156,620,150"/>
-<area shape="rect" id="Node000013" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="457,205,568,231"/>
-<area shape="poly" id="edge8_Node000001_Node000013" title=" " alt="" coords="672,162,549,208,547,203,670,157"/>
+<area shape="rect" id="Node000014" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="457,205,568,231"/>
+<area shape="poly" id="edge8_Node000001_Node000014" title=" " alt="" coords="672,162,549,208,547,203,670,157"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="471,77,391,45,354,33,356,28,393,39,473,72"/>
 <area shape="rect" id="Node000007" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="215,55,390,80"/>
 <area shape="poly" id="edge4_Node000002_Node000007" title=" " alt="" coords="426,85,390,81,390,75,427,80"/>
 <area shape="rect" id="Node000008" href="$gf__lua__graphic_8c.html#ab59ff3a12925b2b97754c5ac1fd31d0f" title=" " alt="" coords="213,104,392,129"/>
 <area shape="poly" id="edge5_Node000002_Node000008" title=" " alt="" coords="427,105,393,109,392,104,426,100"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="239,37,214,45,117,82,115,77,212,39,237,32"/>
-<area shape="rect" id="Node000014" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="243,205,363,231"/>
-<area shape="poly" id="edge9_Node000013_Node000014" title=" " alt="" coords="443,221,363,221,363,215,443,215"/>
+<area shape="rect" id="Node000015" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="243,205,363,231"/>
+<area shape="poly" id="edge9_Node000014_Node000015" title=" " alt="" coords="443,221,363,221,363,215,443,215"/>
 </map>

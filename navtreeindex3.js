@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"globals_func.html":[2,1,1,0],
+"globals_func.html":[2,1,1],
 "globals_g.html":[2,1,0,2],
 "globals_j.html":[2,1,0,3],
 "globals_l.html":[2,1,0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "structgf__version__t.html#a573839ca44261b9ccbd73e43be57d326":[1,0,31,6],
 "structgf__version__t.html#aa67a3c7e2ee37cd404c34f837b1ff3c5":[1,0,31,3],
 "structgf__version__t.html#ab555af19af1deaab5ddbe08b15f2b803":[1,0,31,2],
-"structgf__version__t.html#ac38d0e162b52e8d20fc27ecbf4148375":[1,0,31,1],
-"structgf__version__t.html#adf3afb0a4b590b655d7e5ccd334bc51d":[1,0,31,8],
-"structgf__version__t.html#af6a2e2d97455e9a11a76e34d5b4b25c1":[1,0,31,4]
+"structgf__version__t.html#ac38d0e162b52e8d20fc27ecbf4148375":[1,0,31,1]
 };
