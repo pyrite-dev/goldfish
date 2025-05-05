@@ -83,16 +83,6 @@ void gf_draw_frame(gf_draw_t* draw) {
 	gf_gui_render(draw->gui);
 }
 
-void gf_draw_close_yes(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type) { draw->close = 2; }
-
-void gf_draw_close_no(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type) {
-	gf_gui_id_t frame  = gf_gui_get_parent(draw->gui, id);
-	gf_gui_id_t window = gf_gui_get_parent(draw->gui, frame);
-	if(type == GF_GUI_PRESS_EVENT) {
-		gf_gui_destroy_id(draw->gui, window);
-	}
-}
-
 void gf_draw_time(gf_draw_time_t* dtime) {
 #ifdef GF_DRAW_USE_CLOCK
 	*dtime = clock();
