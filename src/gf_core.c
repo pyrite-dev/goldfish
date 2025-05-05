@@ -85,7 +85,6 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 
 	engine->base = gf_resource_create(engine, packpath);
 	if (engine->base == NULL) {
-		gf_assert(engine, st == 0);
 		gf_engine_destroy(engine);
 		engine = NULL;
 		return engine;
