@@ -1,3 +1,5 @@
+#define GF_ASSERT_LUA
+
 #define GF_EXPOSE_LUA
 #define GF_EXPOSE_CORE
 #define GF_EXPOSE_CLIENT
@@ -16,6 +18,7 @@
 #include <gf_lua.h>
 
 /* Engine */
+#include <gf_assert.h>
 #include <gf_prop.h>
 #include <gf_file.h>
 #include <gf_log.h>
@@ -38,6 +41,7 @@ int gf_lua_call_graphic_text(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	if(lua_gettop(s) == 7) {
 		lua_rawgeti(s, 6, 1);
@@ -72,6 +76,7 @@ int gf_lua_call_graphic_text_width(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	lua_pushnumber(s, gf_graphic_text_width(lua->engine->client->draw, *font, sz, text));
 
@@ -86,6 +91,7 @@ int gf_lua_call_graphic_text_height(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	lua_pushnumber(s, gf_graphic_text_height(lua->engine->client->draw, *font, sz, text));
 
@@ -123,6 +129,7 @@ int gf_lua_call_graphic_rect(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	gf_graphic_fill_rect(lua->engine->client->draw, x, y, w, h, col);
 
@@ -156,6 +163,7 @@ int gf_lua_call_graphic_points(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	dim  = luaL_checknumber(s, 2);
 	plen = (dim == GF_GRAPHIC_2D ? 2 : 3);

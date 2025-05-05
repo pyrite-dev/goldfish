@@ -27,7 +27,11 @@ extern "C" {
  * @param engine Engine instance
  * @param expr Expression
  */
+#ifdef GF_ASSERT_LUA
+#define gf_assert(engine, expr) { int assert_tmp_result = ((expr) ? 0 : gf_assert_body(engine, #expr, __FILE__, __LINE__, __FUNCTION_NAME__)); if(assert_tmp_result){lua_pushstring(s, "Engine assert error");lua_error(s);return 1;} }
+#else
 #define gf_assert(engine, expr) ((expr) ? 0 : gf_assert_body(engine, #expr, __FILE__, __LINE__, __FUNCTION_NAME__))
+#endif
 
 /**
  * @~english

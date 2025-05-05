@@ -1,3 +1,5 @@
+#define GF_ASSERT_LUA
+
 #define GF_EXPOSE_LUA
 #define GF_EXPOSE_CORE
 #define GF_EXPOSE_CLIENT
@@ -16,6 +18,7 @@
 #include <gf_lua.h>
 
 /* Engine */
+#include <gf_assert.h>
 #include <gf_prop.h>
 #include <gf_file.h>
 #include <gf_log.h>
@@ -64,6 +67,7 @@ int gf_lua_call_gui_create(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	for(i = 0; i < sizeof(gf_gui_calls) / sizeof(gf_gui_calls[0]); i++) {
 		if(strcmp(gf_gui_calls[i].name, str) == 0) {
@@ -89,6 +93,7 @@ int gf_lua_call_gui_sort(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	gf_gui_sort_component(lua->engine->client->draw->gui);
 
@@ -102,6 +107,7 @@ int gf_lua_call_gui_color(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	if(lua_gettop(s) == 2) {
 		if(strcmp(type, "base") == 0) {

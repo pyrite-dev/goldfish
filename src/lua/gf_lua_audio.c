@@ -1,3 +1,5 @@
+#define GF_ASSERT_LUA
+
 #define GF_EXPOSE_LUA
 #define GF_EXPOSE_CORE
 #define GF_EXPOSE_CLIENT
@@ -16,6 +18,7 @@
 #include <gf_lua.h>
 
 /* Engine */
+#include <gf_assert.h>
 #include <gf_audio.h>
 #include <gf_prop.h>
 #include <gf_file.h>
@@ -41,6 +44,7 @@ int gf_lua_call_audio_create(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	id  = gf_lua_create_audio(lua);
 	*id = gf_audio_load_file(lua->engine->client->audio, str);
@@ -57,6 +61,7 @@ int gf_lua_call_audio_set_volume(lua_State* s) {
 
 	lua_getglobal(s, "_GF_LUA");
 	lua = lua_touserdata(s, -1);
+	gf_assert(lua->engine, lua->engine->client != NULL);
 
 	gf_audio_set_volume(lua->engine->client->audio, vol);
 

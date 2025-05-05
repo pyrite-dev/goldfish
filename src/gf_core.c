@@ -57,9 +57,7 @@ void gf_engine_end(void) {
 	gf_client_end();
 }
 
-gf_engine_t* gf_engine_create(const char* title, int nogui) {
-	return gf_engine_create_ex(title, nogui, "base.pak");
-}
+gf_engine_t* gf_engine_create(const char* title, int nogui) { return gf_engine_create_ex(title, nogui, "base.pak"); }
 
 gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packpath) {
 	int	     st;
@@ -84,12 +82,12 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	engine->server = gf_server_create(engine);
 
 	engine->base = gf_resource_create(engine, packpath);
-	if (engine->base == NULL) {
+	if(engine->base == NULL) {
 		gf_engine_destroy(engine);
 		engine = NULL;
 		return engine;
 	}
-	engine->lua  = gf_lua_create(engine);
+	engine->lua = gf_lua_create(engine);
 	if((st = gf_lua_run(engine->lua, "base:/scripts/init.lua")) != 0) {
 		gf_assert(engine, st == 0);
 		gf_engine_destroy(engine);
