@@ -18,12 +18,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#ifndef _WIN32
+#include <sys/stat.h>
+#endif
 
 #define CHUNK 32767
 
 gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 	FILE*	       f;
 	gf_resource_t* resource = malloc(sizeof(*resource));
+	int	       is_dir	= 0;
+#ifdef _WIN32
+	DWORD dw;
+#else
+	struct stat s;
+#endif
 
 	memset(resource, 0, sizeof(*resource));
 	resource->engine  = engine;
@@ -34,6 +43,31 @@ gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 		gf_log_function(engine, "Created empty resource", "");
 		return resource;
 	}
+
+	is_dir = 0;
+#ifdef _WIN32
+	dw = GetFileAttributes(path);
+	if(dw == INVALID_FILE_ATTRIBUTES) {
+		gf_log_function(engine, "Failed to create resource", "");
+		gf_resource_destroy(resource);
+		return NULL;
+	}
+	is_dir = (dw & FILE_ATTRIBUTE_DIRECTORY) ? 1 : 0;
+#else
+	if(stat(path, &s) != 0) {
+		gf_log_function(engine, "Failed to create resource", "");
+		gf_resource_destroy(resource);
+		return NULL;
+	}
+	is_dir = S_ISDIR(s.st_mode) ? 1 : 0;
+#endif
+	if(is_dir) {
+		gf_log_function(engine, "Created resource", "");
+		resource->path = malloc(strlen(path) + 1);
+		strcpy(resource->path, path);
+		return resource;
+	}
+
 	f = fopen(path, "rb");
 
 	if(f == NULL) {
@@ -76,8 +110,41 @@ gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 }
 
 int gf_resource_get(gf_resource_t* resource, const char* name, void** data, size_t* size) {
-	int		     ind = shgeti(resource->entries, name);
+	int		     ind;
 	gf_resource_entry_t* e;
+
+	if(resource->path != NULL) {
+		char* path = malloc(strlen(resource->path) + 1 + strlen(name) + 1);
+		FILE* f;
+
+		path[0] = 0;
+		strcpy(path + strlen(path), resource->path);
+		strcpy(path + strlen(path), "/");
+		strcpy(path + strlen(path), name);
+
+		f = fopen(path, "r");
+		if(f == NULL) {
+			free(path);
+			return -1;
+		}
+
+		fseek(f, 0, SEEK_END);
+		*size = ftell(f);
+		fseek(f, 0, SEEK_SET);
+
+		*data = malloc(*size);
+		fread(*data, *size, 1, f);
+
+		fclose(f);
+
+		free(path);
+
+		gf_log_function(resource->engine, "%s: File found", name);
+
+		return 0;
+	}
+
+	ind = shgeti(resource->entries, name);
 	if(ind == -1) return -1;
 
 	*size = 0;
@@ -161,6 +228,7 @@ int gf_resource_get(gf_resource_t* resource, const char* name, void** data, size
 
 void gf_resource_add(gf_resource_t* resource, const char* name, void* data, size_t size) {
 	gf_resource_entry_t e;
+	if(resource->path != NULL) return;
 	if(size == 0) return;
 
 	e.key	 = (char*)name;
@@ -175,8 +243,11 @@ void gf_resource_add(gf_resource_t* resource, const char* name, void* data, size
 
 void gf_resource_write(gf_resource_t* resource, const char* path, int progress) {
 	int	      i;
-	FILE*	      f = fopen(path, "wb");
+	FILE*	      f;
 	unsigned char fn[128];
+	if(resource->path != NULL) return;
+
+	f = fopen(path, "wb");
 	if(f == NULL) return;
 
 	for(i = 0; i < shlen(resource->entries); i++) {
@@ -282,6 +353,9 @@ void gf_resource_destroy(gf_resource_t* resource) {
 			if(e->compressed != NULL) free(e->compressed);
 		}
 		shfree(resource->entries);
+	}
+	if(resource->path != NULL) {
+		free(resource->path);
 	}
 	gf_log_function(resource->engine, "Destroyed resource", "");
 	free(resource);

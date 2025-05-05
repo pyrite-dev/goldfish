@@ -59,10 +59,14 @@ GF_DECLARE_TYPE(resource_entry, {
  *
  * @var gf_resource_t::entries
  * @brief Resource entries
+ *
+ * @var gf_resource_t::path
+ * @brief If non-`NULL`, the resource is "Type2"
  */
 GF_DECLARE_TYPE(resource, {
 	gf_engine_t*	     engine;
 	gf_resource_entry_t* entries;
+	char* path;
 });
 #else
 typedef void gf_resource_entry_t;
