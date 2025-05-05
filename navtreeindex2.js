@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"gf__lua__font_8c.html#ad92129027a0f65174c3b0c9e51eaa3f4":[2,0,1,3,2,6],
 "gf__lua__font_8c_source.html":[2,0,1,3,2],
 "gf__lua__graphic_8c.html":[2,0,1,3,3],
 "gf__lua__graphic_8c.html#a13d820c4f195f0f38ce7d791a9a4ddeb":[2,0,1,3,3,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "gf__version_8h.html":[2,0,0,29],
 "gf__version_8h.html#a6bbaecc50f6c677871dcf74d7d7dbc4a":[2,0,0,29,0],
 "gf__version_8h_source.html":[2,0,0,29],
-"globals.html":[2,1,0],
-"globals.html":[2,1,0,0]
+"globals.html":[2,1,0]
 };

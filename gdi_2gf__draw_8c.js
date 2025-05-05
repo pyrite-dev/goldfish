@@ -1,5 +1,6 @@
 var gdi_2gf__draw_8c =
 [
+    [ "GF_EXPOSE_CORE", "gdi_2gf__draw_8c.html#a697eb08d834a4889d84940e79575779d", null ],
     [ "GF_EXPOSE_DRAW", "gdi_2gf__draw_8c.html#a438e60b3ef2df2ad0a220523e95d6dca", null ],
     [ "GF_EXPOSE_DRAW_PLATFORM", "gdi_2gf__draw_8c.html#a5a117ced8c73165c3cc6144a49bf5af0", null ],
     [ "GF_EXPOSE_INPUT", "gdi_2gf__draw_8c.html#a8412a96f3ebbf985b342603585944166", null ],

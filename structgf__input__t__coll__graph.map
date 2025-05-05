@@ -2,17 +2,17 @@
 <area shape="rect" id="Node000001" title="Input interface." alt="" coords="197,5,301,111"/>
 <area shape="rect" id="Node000005" href="$structgf__client__t.html" title="Client interface." alt="" coords="162,173,245,239"/>
 <area shape="poly" id="edge6_Node000005_Node000001" title=" " alt="" coords="235,112,227,135,220,159,215,157,222,134,230,110"/>
-<area shape="rect" id="Node000002" href="$structgf__engine__t.html" title="Engine instance." alt="" coords="167,301,258,387"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,302,272,276,281,239,282,201,278,162,270,127,275,126,283,162,288,200,286,240,276,278,261,305"/>
-<area shape="rect" id="Node000003" href="$structgf__server__t.html" title="Server interface." alt="" coords="5,469,92,535"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="168,349,131,355,92,366,55,384,26,412,19,432,23,454,18,455,14,431,21,409,52,380,90,361,130,350,167,344"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="207,301,204,255,209,255,212,301"/>
-<area shape="rect" id="Node000021" href="$structgf__resource__t.html" title="Resource." alt="" coords="145,469,248,535"/>
-<area shape="poly" id="edge8_Node000021_Node000002" title=" " alt="" coords="178,388,166,411,164,433,170,454,164,455,159,433,161,410,173,386"/>
-<area shape="rect" id="Node000023" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="347,449,414,555"/>
-<area shape="poly" id="edge10_Node000023_Node000002" title=" " alt="" coords="259,385,337,457,333,461,256,389"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,468,75,438,97,409,123,387,151,370,154,375,126,392,101,413,80,441,64,470"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="163,228,137,250,132,263,134,276,156,305,152,308,129,278,126,262,133,247,160,224"/>
-<area shape="poly" id="edge7_Node000002_Node000021" title=" " alt="" coords="211,468,226,425,227,403,232,403,231,426,216,470"/>
-<area shape="poly" id="edge9_Node000002_Node000023" title=" " alt="" coords="400,449,401,429,394,412,370,388,340,370,306,359,274,352,275,347,308,354,342,365,373,383,399,409,406,429,406,449"/>
+<area shape="rect" id="Node000002" href="$structgf__engine__t.html" title="Engine instance." alt="" coords="161,301,265,447"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,300,270,277,292,188,294,167,292,157,282,151,276,146,271,135,270,127,275,126,277,134,280,143,285,146,297,154,299,166,298,188,275,278,266,302"/>
+<area shape="rect" id="Node000003" href="$structgf__server__t.html" title="Server interface." alt="" coords="5,529,92,595"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="161,388,126,400,88,417,54,441,27,472,22,492,25,514,20,514,16,492,22,469,50,437,86,413,124,395,160,383"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="206,301,203,255,209,255,211,301"/>
+<area shape="rect" id="Node000021" href="$structgf__resource__t.html" title="Resource." alt="" coords="145,529,248,595"/>
+<area shape="poly" id="edge8_Node000021_Node000002" title=" " alt="" coords="174,448,166,471,165,492,171,514,166,515,160,493,161,470,169,446"/>
+<area shape="rect" id="Node000023" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="347,509,414,615"/>
+<area shape="poly" id="edge10_Node000023_Node000002" title=" " alt="" coords="267,431,338,510,334,513,263,435"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,528,77,498,97,469,146,421,150,425,101,472,81,501,65,530"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="163,229,138,250,133,263,134,277,153,311,148,313,129,278,127,262,134,247,160,225"/>
+<area shape="poly" id="edge7_Node000002_Node000021" title=" " alt="" coords="211,528,226,485,228,463,234,464,231,486,216,530"/>
+<area shape="poly" id="edge9_Node000002_Node000023" title=" " alt="" coords="399,509,400,490,394,472,372,445,343,423,311,406,279,394,281,389,314,401,346,418,376,441,399,469,405,489,405,509"/>
 </map>
