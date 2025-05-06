@@ -148,6 +148,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ae75b99ee6c28e149e333512f46e8656a" id="r_ae75b99ee6c28e149e333512f46e8656a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="win32_2gf__thread_8c.html#ae75b99ee6c28e149e333512f46e8656a">gf_thread_destroy</a> (<a class="el" href="structgf__thread__t.html">gf_thread_t</a> *thread)</td></tr>
 <tr class="memdesc:ae75b99ee6c28e149e333512f46e8656a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy thread.  <br /></td></tr>
 <tr class="separator:ae75b99ee6c28e149e333512f46e8656a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a65ae130e16a09befc7732954ee6a6f" id="r_a6a65ae130e16a09befc7732954ee6a6f"><td class="memItemLeft" align="right" valign="top">gf_thread_mutex_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="win32_2gf__thread_8c.html#a6a65ae130e16a09befc7732954ee6a6f">gf_thread_mutex_create</a> (void)</td></tr>
+<tr class="memdesc:a6a65ae130e16a09befc7732954ee6a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create mutex.  <br /></td></tr>
+<tr class="separator:a6a65ae130e16a09befc7732954ee6a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d92314a062ae41412438dde87060cc0" id="r_a9d92314a062ae41412438dde87060cc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="win32_2gf__thread_8c.html#a9d92314a062ae41412438dde87060cc0">gf_thread_mutex_destroy</a> (gf_thread_mutex_t *mutex)</td></tr>
+<tr class="memdesc:a9d92314a062ae41412438dde87060cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy mutex @para mutex Mutex.  <br /></td></tr>
+<tr class="separator:a9d92314a062ae41412438dde87060cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c939c8cb436d4240dcb04589be4a640" id="r_a8c939c8cb436d4240dcb04589be4a640"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="win32_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640">gf_thread_mutex_lock</a> (gf_thread_mutex_t *mutex)</td></tr>
+<tr class="memdesc:a8c939c8cb436d4240dcb04589be4a640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock mutex @para mutex Mutex.  <br /></td></tr>
+<tr class="separator:a8c939c8cb436d4240dcb04589be4a640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9767edcec0121728eb6746fb47266b51" id="r_a9767edcec0121728eb6746fb47266b51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="win32_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51">gf_thread_mutex_unlock</a> (gf_thread_mutex_t *mutex)</td></tr>
+<tr class="memdesc:a9767edcec0121728eb6746fb47266b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock mutex @para mutex Mutex.  <br /></td></tr>
+<tr class="separator:a9767edcec0121728eb6746fb47266b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aeddf0443a9813483ca6bfc05190915e0" name="aeddf0443a9813483ca6bfc05190915e0"></a>
@@ -270,6 +282,95 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="win32_2gf__thread_8c_source.html#l00031">31</a> of file <a class="el" href="win32_2gf__thread_8c_source.html">gf_thread.c</a>.</p>
+
+</div>
+</div>
+<a id="a6a65ae130e16a09befc7732954ee6a6f" name="a6a65ae130e16a09befc7732954ee6a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a65ae130e16a09befc7732954ee6a6f">&#9670;&#160;</a></span>gf_thread_mutex_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gf_thread_mutex_t * gf_thread_mutex_create </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create mutex. </p>
+<dl class="section return"><dt>Returns</dt><dd>Mutex </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="win32_2gf__thread_8c_source.html#l00038">38</a> of file <a class="el" href="win32_2gf__thread_8c_source.html">gf_thread.c</a>.</p>
+
+</div>
+</div>
+<a id="a9d92314a062ae41412438dde87060cc0" name="a9d92314a062ae41412438dde87060cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d92314a062ae41412438dde87060cc0">&#9670;&#160;</a></span>gf_thread_mutex_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gf_thread_mutex_destroy </td>
+          <td>(</td>
+          <td class="paramtype">gf_thread_mutex_t *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroy mutex @para mutex Mutex. </p>
+
+<p class="definition">Definition at line <a class="el" href="win32_2gf__thread_8c_source.html#l00045">45</a> of file <a class="el" href="win32_2gf__thread_8c_source.html">gf_thread.c</a>.</p>
+
+</div>
+</div>
+<a id="a8c939c8cb436d4240dcb04589be4a640" name="a8c939c8cb436d4240dcb04589be4a640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c939c8cb436d4240dcb04589be4a640">&#9670;&#160;</a></span>gf_thread_mutex_lock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gf_thread_mutex_lock </td>
+          <td>(</td>
+          <td class="paramtype">gf_thread_mutex_t *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lock mutex @para mutex Mutex. </p>
+
+<p class="definition">Definition at line <a class="el" href="win32_2gf__thread_8c_source.html#l00050">50</a> of file <a class="el" href="win32_2gf__thread_8c_source.html">gf_thread.c</a>.</p>
+
+</div>
+</div>
+<a id="a9767edcec0121728eb6746fb47266b51" name="a9767edcec0121728eb6746fb47266b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9767edcec0121728eb6746fb47266b51">&#9670;&#160;</a></span>gf_thread_mutex_unlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gf_thread_mutex_unlock </td>
+          <td>(</td>
+          <td class="paramtype">gf_thread_mutex_t *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unlock mutex @para mutex Mutex. </p>
+
+<p class="definition">Definition at line <a class="el" href="win32_2gf__thread_8c_source.html#l00052">52</a> of file <a class="el" href="win32_2gf__thread_8c_source.html">gf_thread.c</a>.</p>
 
 </div>
 </div>
