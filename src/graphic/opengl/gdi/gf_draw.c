@@ -268,6 +268,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		DeleteObject(mask);
 
 		SetClassLongPtr(platform->window, GCLP_HICON, (LPARAM)handle);
+		SetClassLongPtr(platform->window, GCLP_HICONSM, (LPARAM)handle);
 		DestroyIcon(handle);
 	}
 
