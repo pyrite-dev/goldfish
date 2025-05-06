@@ -46,10 +46,18 @@ GF_DECLARE_TYPE(thread, {
 	gf_thread_context_t context;
 	pthread_t	    thread;
 });
+
+GF_DECLARE_TYPE(thread_mutex, {
+	pthread_mutex_t mutex;
+});
 #elif defined(THREAD_WIN32)
 GF_DECLARE_TYPE(thread, {
 	gf_thread_context_t context;
 	HANDLE		    thread;
+});
+
+GF_DECLARE_TYPE(thread_mutex, {
+	CRITICAL_SECTION mutex;
 });
 #else
 /**
@@ -59,8 +67,17 @@ GF_DECLARE_TYPE(thread, {
  * @note Definition depends on the platform, read the header file for definition
  */
 GF_DECLARE_TYPE(thread, {});
+
+/**
+ * @struct gf_thread_t
+ * @~english
+ * @brief Platform-dependent mutex
+ * @note Definition depends on the platform, read the header file for definition
+ */
+GF_DECLARE_TYPE(thread, {});
 #endif
 #else
+typedef void gf_thread_mutex_t;
 typedef void gf_thread_t;
 typedef void gf_thread_context_t;
 #endif

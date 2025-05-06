@@ -34,3 +34,19 @@ void gf_thread_destroy(gf_thread_t* thread) {
 	CloseHandle(thread->thread);
 	free(thread);
 }
+
+gf_thread_mutex_t* gf_thread_mutex_create(void) {
+	gf_thread_mutex_t* mutex = malloc(sizeof(*mutex));
+	InitializeCriticalSection(&mutex->mutex);
+
+	return mutex;
+}
+
+void gf_thread_mutex_destroy(gf_thread_mutex_t* mutex) {
+	DeleteCriticalSection(&mutex->mutex);
+	free(mutex);
+}
+
+void gf_thread_mutex_lock(gf_thread_mutex_t* mutex) { EnterCriticalSection(mutex->mutex); }
+
+void gf_thread_mutex_unlock(gf_thread_mutex_t* mutex) { LeaveCriticalSection(mutex->mutex); }
