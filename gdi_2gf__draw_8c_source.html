@@ -372,110 +372,111 @@ $(document).ready(function(){initNavTree('gdi_2gf__draw_8c_source.html',''); ini
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                DeleteObject(mask);</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                SetClassLongPtr(platform-&gt;window, GCLP_HICON, (LPARAM)handle);</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                DestroyIcon(handle);</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        }</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        SetWindowLongPtr(platform-&gt;window, GWLP_USERDATA, (LONG_PTR)draw);</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        platform-&gt;dc = GetDC(platform-&gt;window);</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#if defined(TYPE_NATIVE)</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        memset(&amp;desc, 0, <span class="keyword">sizeof</span>(desc));</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        desc.nSize      = <span class="keyword">sizeof</span>(desc);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        desc.nVersion   = 1;</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        desc.dwFlags    = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        desc.iPixelType = PFD_TYPE_RGBA;</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        desc.cColorBits = 24;</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        desc.cAlphaBits = 8;</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        desc.cDepthBits = 32;</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        fmt = ChoosePixelFormat(platform-&gt;dc, &amp;desc);</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        SetPixelFormat(platform-&gt;dc, fmt, &amp;desc);</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        platform-&gt;glrc = wglCreateContext(platform-&gt;dc);</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <span class="keywordflow">if</span>(platform-&gt;glrc == NULL) {</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(engine, <span class="stringliteral">&quot;Failed to create OpenGL context&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                <a class="code hl_function" href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(platform);</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        }</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        wglMakeCurrent(platform-&gt;dc, platform-&gt;glrc);</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#elif defined(TYPE_OSMESA)</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        platform-&gt;context = OSMesaCreateContext(OSMESA_BGRA, NULL);</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">if</span>(platform-&gt;context == NULL) {</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(engine, <span class="stringliteral">&quot;Failed to get OpenGL context&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                <a class="code hl_function" href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(platform);</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        }</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        platform-&gt;buffer = malloc(draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#adeb3586537ce39bf94c594dec0348346">width</a> * draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#ae300bda23f566c186f873c56c5d32a3f">height</a> * 4);</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        OSMesaMakeCurrent(platform-&gt;context, platform-&gt;buffer, GL_UNSIGNED_BYTE, draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#adeb3586537ce39bf94c594dec0348346">width</a>, draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#ae300bda23f566c186f873c56c5d32a3f">height</a>);</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        OSMesaPixelStore(OSMESA_Y_UP, 0);</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        memset(&amp;platform-&gt;header, 0, <span class="keyword">sizeof</span>(platform-&gt;header));</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        platform-&gt;header.bV5Size        = <span class="keyword">sizeof</span>(platform-&gt;header);</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        platform-&gt;header.bV5Width       = draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#adeb3586537ce39bf94c594dec0348346">width</a>;</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        platform-&gt;header.bV5Height      = -((LONG)draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#ae300bda23f566c186f873c56c5d32a3f">height</a>);</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        platform-&gt;header.bV5Planes      = 1;</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        platform-&gt;header.bV5BitCount    = 32;</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        platform-&gt;header.bV5Compression = BI_RGB;</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        platform-&gt;bitmap   = CreateDIBSection(platform-&gt;dc, (BITMAPINFO*)&amp;platform-&gt;header, DIB_RGB_COLORS, (<span class="keywordtype">void</span>**)&amp;platform-&gt;buffer, NULL, (DWORD)0);</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        platform-&gt;bitmapdc = CreateCompatibleDC(platform-&gt;dc);</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        SelectObject(platform-&gt;bitmapdc, platform-&gt;bitmap);</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">#if defined(DO_SWAP_INTERVAL) &amp;&amp; defined(TYPE_NATIVE)</span></div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        wglSwapIntervalEXT = (PFNWGLSWAPINTERVALPROC)wglGetProcAddress(<span class="stringliteral">&quot;wglSwapIntervalEXT&quot;</span>);</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <span class="keywordflow">if</span>(wglSwapIntervalEXT != NULL) {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(engine, <span class="stringliteral">&quot;Enabled VSync&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                wglSwapIntervalEXT(1);</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        }</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        SetRect(&amp;rect, 0, 0, draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#adeb3586537ce39bf94c594dec0348346">width</a>, draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#ae300bda23f566c186f873c56c5d32a3f">height</a>);</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        style = (DWORD)GetWindowLongPtr(platform-&gt;window, GWL_STYLE);</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        AdjustWindowRect(&amp;rect, style, FALSE);</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        SetWindowPos(platform-&gt;window, NULL, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, SWP_NOMOVE);</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        ShowWindow(platform-&gt;window, SW_NORMAL);</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        UpdateWindow(platform-&gt;window);</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="keywordflow">return</span> platform;</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>}</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                SetClassLongPtr(platform-&gt;window, GCLP_HICONSM, (LPARAM)handle);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                DestroyIcon(handle);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        }</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        SetWindowLongPtr(platform-&gt;window, GWLP_USERDATA, (LONG_PTR)draw);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        platform-&gt;dc = GetDC(platform-&gt;window);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#if defined(TYPE_NATIVE)</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        memset(&amp;desc, 0, <span class="keyword">sizeof</span>(desc));</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        desc.nSize      = <span class="keyword">sizeof</span>(desc);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        desc.nVersion   = 1;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        desc.dwFlags    = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        desc.iPixelType = PFD_TYPE_RGBA;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        desc.cColorBits = 24;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        desc.cAlphaBits = 8;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        desc.cDepthBits = 32;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        fmt = ChoosePixelFormat(platform-&gt;dc, &amp;desc);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        SetPixelFormat(platform-&gt;dc, fmt, &amp;desc);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        platform-&gt;glrc = wglCreateContext(platform-&gt;dc);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <span class="keywordflow">if</span>(platform-&gt;glrc == NULL) {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(engine, <span class="stringliteral">&quot;Failed to create OpenGL context&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                <a class="code hl_function" href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(platform);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        wglMakeCurrent(platform-&gt;dc, platform-&gt;glrc);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#elif defined(TYPE_OSMESA)</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        platform-&gt;context = OSMesaCreateContext(OSMESA_BGRA, NULL);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">if</span>(platform-&gt;context == NULL) {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(engine, <span class="stringliteral">&quot;Failed to get OpenGL context&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                <a class="code hl_function" href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(platform);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        platform-&gt;buffer = malloc(draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#adeb3586537ce39bf94c594dec0348346">width</a> * draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#ae300bda23f566c186f873c56c5d32a3f">height</a> * 4);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        OSMesaMakeCurrent(platform-&gt;context, platform-&gt;buffer, GL_UNSIGNED_BYTE, draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#adeb3586537ce39bf94c594dec0348346">width</a>, draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#ae300bda23f566c186f873c56c5d32a3f">height</a>);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        OSMesaPixelStore(OSMESA_Y_UP, 0);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        memset(&amp;platform-&gt;header, 0, <span class="keyword">sizeof</span>(platform-&gt;header));</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        platform-&gt;header.bV5Size        = <span class="keyword">sizeof</span>(platform-&gt;header);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        platform-&gt;header.bV5Width       = draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#adeb3586537ce39bf94c594dec0348346">width</a>;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        platform-&gt;header.bV5Height      = -((LONG)draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#ae300bda23f566c186f873c56c5d32a3f">height</a>);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        platform-&gt;header.bV5Planes      = 1;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        platform-&gt;header.bV5BitCount    = 32;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        platform-&gt;header.bV5Compression = BI_RGB;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        platform-&gt;bitmap   = CreateDIBSection(platform-&gt;dc, (BITMAPINFO*)&amp;platform-&gt;header, DIB_RGB_COLORS, (<span class="keywordtype">void</span>**)&amp;platform-&gt;buffer, NULL, (DWORD)0);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        platform-&gt;bitmapdc = CreateCompatibleDC(platform-&gt;dc);</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        SelectObject(platform-&gt;bitmapdc, platform-&gt;bitmap);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">#if defined(DO_SWAP_INTERVAL) &amp;&amp; defined(TYPE_NATIVE)</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        wglSwapIntervalEXT = (PFNWGLSWAPINTERVALPROC)wglGetProcAddress(<span class="stringliteral">&quot;wglSwapIntervalEXT&quot;</span>);</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        <span class="keywordflow">if</span>(wglSwapIntervalEXT != NULL) {</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(engine, <span class="stringliteral">&quot;Enabled VSync&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                wglSwapIntervalEXT(1);</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        }</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        SetRect(&amp;rect, 0, 0, draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#adeb3586537ce39bf94c594dec0348346">width</a>, draw-&gt;<a class="code hl_variable" href="structgf__draw__t.html#ae300bda23f566c186f873c56c5d32a3f">height</a>);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        style = (DWORD)GetWindowLongPtr(platform-&gt;window, GWL_STYLE);</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        AdjustWindowRect(&amp;rect, style, FALSE);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        SetWindowPos(platform-&gt;window, NULL, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, SWP_NOMOVE);</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        ShowWindow(platform-&gt;window, SW_NORMAL);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        UpdateWindow(platform-&gt;window);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        <span class="keywordflow">return</span> platform;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>}</div>
 </div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
-<div class="foldopen" id="foldopen00341" data-start="{" data-end="}">
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno"><a class="line" href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">  341</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(<a class="code hl_struct" href="structgf__draw__platform__t.html">gf_draw_platform_t</a>* platform) {</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="preprocessor">#if defined(TYPE_NATIVE)</span></div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        <span class="keywordflow">if</span>(platform-&gt;glrc != NULL) {</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                wglMakeCurrent(NULL, NULL);</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        }</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        <span class="keywordflow">if</span>(platform-&gt;dc != NULL) {</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                ReleaseDC(platform-&gt;window, platform-&gt;dc);</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        }</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="preprocessor">#if defined(TYPE_NATIVE)</span></div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        <span class="keywordflow">if</span>(platform-&gt;glrc != NULL) {</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                wglDeleteContext(platform-&gt;glrc);</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        }</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="preprocessor">#elif defined(TYPE_OSMESA)</span></div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <span class="keywordflow">if</span>(platform-&gt;context != NULL) {</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                OSMesaDestroyContext(platform-&gt;context);</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        }</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <span class="keywordflow">if</span>(platform-&gt;bitmapdc != NULL) {</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                DeleteDC(platform-&gt;bitmapdc);</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        }</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        <span class="keywordflow">if</span>(platform-&gt;bitmap != NULL) {</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>                DeleteObject(platform-&gt;bitmap);</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        }</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        <span class="keywordflow">if</span>(platform-&gt;window != NULL) {</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                DestroyWindow(platform-&gt;window);</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        }</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(platform-&gt;engine, <span class="stringliteral">&quot;Destroyed platform-dependent part of drawing driver&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        free(platform);</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>}</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="foldopen" id="foldopen00342" data-start="{" data-end="}">
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">  342</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(<a class="code hl_struct" href="structgf__draw__platform__t.html">gf_draw_platform_t</a>* platform) {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="preprocessor">#if defined(TYPE_NATIVE)</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        <span class="keywordflow">if</span>(platform-&gt;glrc != NULL) {</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                wglMakeCurrent(NULL, NULL);</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        }</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        <span class="keywordflow">if</span>(platform-&gt;dc != NULL) {</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                ReleaseDC(platform-&gt;window, platform-&gt;dc);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        }</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="preprocessor">#if defined(TYPE_NATIVE)</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        <span class="keywordflow">if</span>(platform-&gt;glrc != NULL) {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                wglDeleteContext(platform-&gt;glrc);</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        }</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="preprocessor">#elif defined(TYPE_OSMESA)</span></div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <span class="keywordflow">if</span>(platform-&gt;context != NULL) {</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                OSMesaDestroyContext(platform-&gt;context);</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        }</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        <span class="keywordflow">if</span>(platform-&gt;bitmapdc != NULL) {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>                DeleteDC(platform-&gt;bitmapdc);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        }</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        <span class="keywordflow">if</span>(platform-&gt;bitmap != NULL) {</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                DeleteObject(platform-&gt;bitmap);</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        }</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        <span class="keywordflow">if</span>(platform-&gt;window != NULL) {</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                DestroyWindow(platform-&gt;window);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        }</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(platform-&gt;engine, <span class="stringliteral">&quot;Destroyed platform-dependent part of drawing driver&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        free(platform);</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>}</div>
 </div>
-<div class="ttc" id="agdi_2gf__draw_8c_html_a24822bbf6cda6c2cbe336d70116dfb25"><div class="ttname"><a href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a></div><div class="ttdeci">void gf_draw_platform_destroy(gf_draw_platform_t *platform)</div><div class="ttdoc">Destroy platform-dependent part of drawing driver.</div><div class="ttdef"><b>Definition</b> <a href="gdi_2gf__draw_8c_source.html#l00341">gf_draw.c:341</a></div></div>
+<div class="ttc" id="agdi_2gf__draw_8c_html_a24822bbf6cda6c2cbe336d70116dfb25"><div class="ttname"><a href="gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a></div><div class="ttdeci">void gf_draw_platform_destroy(gf_draw_platform_t *platform)</div><div class="ttdoc">Destroy platform-dependent part of drawing driver.</div><div class="ttdef"><b>Definition</b> <a href="gdi_2gf__draw_8c_source.html#l00342">gf_draw.c:342</a></div></div>
 <div class="ttc" id="agdi_2gf__draw_8c_html_a2e7645b135346f4f535b63f30f0dc60e"><div class="ttname"><a href="gdi_2gf__draw_8c.html#a2e7645b135346f4f535b63f30f0dc60e">gf_draw_platform_proc</a></div><div class="ttdeci">LRESULT CALLBACK gf_draw_platform_proc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp)</div><div class="ttdef"><b>Definition</b> <a href="gdi_2gf__draw_8c_source.html#l00033">gf_draw.c:33</a></div></div>
 <div class="ttc" id="agdi_2gf__draw_8c_html_a368f0172138b75a37072d1ed357b1183"><div class="ttname"><a href="gdi_2gf__draw_8c.html#a368f0172138b75a37072d1ed357b1183">gf_draw_platform_has_extension</a></div><div class="ttdeci">int gf_draw_platform_has_extension(gf_draw_t *draw, const char *query)</div><div class="ttdoc">Check if renderer has extension.</div><div class="ttdef"><b>Definition</b> <a href="gdi_2gf__draw_8c_source.html#l00124">gf_draw.c:124</a></div></div>
 <div class="ttc" id="agdi_2gf__draw_8c_html_a3dcccef85cc05ab9be42f6527c992461"><div class="ttname"><a href="gdi_2gf__draw_8c.html#a3dcccef85cc05ab9be42f6527c992461">PFNWGLGETEXTENSIONSSTRINGARB</a></div><div class="ttdeci">const char *(APIENTRY * PFNWGLGETEXTENSIONSSTRINGARB)(HDC)</div><div class="ttdef"><b>Definition</b> <a href="gdi_2gf__draw_8c_source.html#l00025">gf_draw.c:25</a></div></div>
