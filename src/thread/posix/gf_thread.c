@@ -50,3 +50,25 @@ void gf_thread_mutex_destroy(gf_thread_mutex_t* mutex) {
 void gf_thread_mutex_lock(gf_thread_mutex_t* mutex) { pthread_mutex_lock(&mutex->mutex); }
 
 void gf_thread_mutex_unlock(gf_thread_mutex_t* mutex) { pthread_mutex_unlock(&mutex->mutex); }
+
+gf_thread_event_t* gf_thread_event_create(void) {
+	gf_thread_event_t* event = malloc(sizeof(*event));
+	pthread_cond_init(&event->event, NULL);
+	pthread_mutex_init(&event->mutex, NULL);
+
+	return event;
+}
+
+void gf_thread_event_destroy(gf_thread_event_t* event) {
+	pthread_mutex_destroy(&event->mutex);
+	pthread_cond_destroy(&event->event);
+	free(event);
+}
+
+void gf_thread_event_wait(gf_thread_event_t* event) {
+	pthread_mutex_lock(&event->mutex);
+	pthread_cond_wait(&event->event, &event->mutex);
+	pthread_mutex_unlock(&event->mutex);
+}
+
+void gf_thread_event_signal(gf_thread_event_t* event) { pthread_cond_signal(&event->event); }

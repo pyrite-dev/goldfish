@@ -50,14 +50,29 @@ GF_DECLARE_TYPE(thread, {
 GF_DECLARE_TYPE(thread_mutex, {
 	pthread_mutex_t mutex;
 });
+
+GF_DECLARE_TYPE(thread_event, {
+	pthread_cond_t event;
+	pthread_mutex_t mutex;
+});
 #elif defined(THREAD_WIN32)
 GF_DECLARE_TYPE(thread, {
 	gf_thread_context_t context;
 	HANDLE		    thread;
 });
 
+#ifdef WIN32_CRITICAL_SECTION
 GF_DECLARE_TYPE(thread_mutex, {
 	CRITICAL_SECTION mutex;
+});
+#else
+GF_DECLARE_TYPE(thread_mutex, {
+	HANDLE mutex;
+});
+#endif
+
+GF_DECLARE_TYPE(thread_event, {
+	HANDLE event;
 });
 #else
 /**
