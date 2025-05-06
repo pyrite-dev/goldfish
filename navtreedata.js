@@ -54,8 +54,8 @@ var NAVTREEINDEX =
 "annotated.html",
 "gf__graphic_8c.html#a95e7c86d8e9b64501af7de7268f6d74d",
 "gf__lua__font_8c.html#ad92129027a0f65174c3b0c9e51eaa3f4",
-"gf__version_8h.html",
-"structgf__texture__t.html#a2ebd367c1ffa28e8cd78ed57ebf3d278"
+"gf__version_8c.html",
+"structgf__resource__t.html#a03077bd2964795a0a60efaa9215c9c07"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
