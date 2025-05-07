@@ -4,10 +4,10 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="376,95,342,95,342,90,376,90"/>
 <area shape="rect" id="Node000003" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="29,5,152,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="244,76,175,44,141,33,143,28,177,40,246,71"/>
-<area shape="rect" id="Node000013" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="5,55,176,80"/>
-<area shape="poly" id="edge3_Node000002_Node000013" title=" " alt="" coords="210,86,176,81,177,76,211,81"/>
-<area shape="rect" id="Node000015" href="$gf__graphic__common_8c.html#a1ce50172aa1749c26af704601fc131ef" title="Calculate text width." alt="" coords="7,104,174,129"/>
-<area shape="poly" id="edge4_Node000002_Node000015" title=" " alt="" coords="210,104,175,109,174,104,210,99"/>
-<area shape="rect" id="Node000017" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="9,153,172,179"/>
-<area shape="poly" id="edge5_Node000002_Node000017" title=" " alt="" coords="245,114,177,143,139,156,137,151,175,138,242,109"/>
+<area shape="rect" id="Node000007" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="5,55,176,80"/>
+<area shape="poly" id="edge3_Node000002_Node000007" title=" " alt="" coords="210,86,176,81,177,76,211,81"/>
+<area shape="rect" id="Node000008" href="$gf__graphic__common_8c.html#a1ce50172aa1749c26af704601fc131ef" title="Calculate text width." alt="" coords="7,104,174,129"/>
+<area shape="poly" id="edge4_Node000002_Node000008" title=" " alt="" coords="210,104,175,109,174,104,210,99"/>
+<area shape="rect" id="Node000009" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="9,153,172,179"/>
+<area shape="poly" id="edge5_Node000002_Node000009" title=" " alt="" coords="245,114,177,143,139,156,137,151,175,138,242,109"/>
 </map>

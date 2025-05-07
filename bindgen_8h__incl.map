@@ -1,0 +1,28 @@
+<map id="src/bindgen/bindgen.h" name="src/bindgen/bindgen.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="118,7,284,32"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="251,4,291,5,304,10,310,19,306,27,295,32,265,36,264,30,294,27,302,24,305,20,301,14,290,10,251,9"/>
+<area shape="rect" id="Node000002" href="$lua_8h.html" title="Type definitions related to lua." alt="" coords="116,80,171,105"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="193,34,164,71,159,68,189,31"/>
+<area shape="rect" id="Node000030" title=" " alt="" coords="219,80,298,105"/>
+<area shape="poly" id="edge18_Node000001_Node000030" title=" " alt="" coords="212,31,242,68,238,71,208,34"/>
+<area shape="poly" id="edge6_Node000002_Node000002" title=" " alt="" coords="168,77,188,79,195,84,198,93,193,103,183,108,180,103,189,100,192,93,190,87,186,84,168,83"/>
+<area shape="rect" id="Node000003" href="$gf__pre_8h.html" title="Required headers before anything." alt="" coords="146,373,221,399"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="122,108,82,132,39,166,23,186,12,207,8,228,14,251,40,289,74,321,111,346,145,365,143,370,108,351,71,325,36,293,9,253,3,229,7,205,18,183,36,162,79,127,119,103"/>
+<area shape="rect" id="Node000005" href="$gf__macro_8h.html" title="Macro." alt="" coords="136,300,231,325"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="148,105,182,286,176,287,143,106"/>
+<area shape="rect" id="Node000006" href="$core_8h.html" title="Type definitions related to core." alt="" coords="24,227,138,252"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="136,107,110,158,87,214,82,212,105,156,131,105"/>
+<area shape="rect" id="Node000017" href="$gui_8h.html" title="Type definitions related to GUI." alt="" coords="213,153,320,179"/>
+<area shape="poly" id="edge11_Node000002_Node000017" title=" " alt="" coords="165,103,236,144,233,149,162,108"/>
+<area shape="rect" id="Node000020" href="$font_8h.html" title="Type definitions related to font." alt="" coords="315,227,428,252"/>
+<area shape="poly" id="edge15_Node000002_Node000020" title=" " alt="" coords="172,97,260,120,304,135,333,151,356,181,368,212,363,214,351,184,330,155,302,140,259,125,170,103"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="186,326,186,360,181,360,181,326"/>
+<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="89,225,114,175,137,118,142,120,119,177,93,228"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="88,251,104,285,127,324,162,362,158,365,123,327,99,287,83,253"/>
+<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="99,250,157,290,154,294,96,254"/>
+<area shape="poly" id="edge12_Node000017_Node000003" title=" " alt="" coords="270,179,268,244,261,286,246,327,231,349,213,367,209,363,227,345,241,324,255,285,263,243,264,179"/>
+<area shape="poly" id="edge13_Node000017_Node000005" title=" " alt="" coords="262,181,199,289,195,287,257,178"/>
+<area shape="poly" id="edge14_Node000017_Node000006" title=" " alt="" coords="237,181,125,224,123,219,235,176"/>
+<area shape="poly" id="edge16_Node000020_Node000003" title=" " alt="" coords="365,254,337,289,297,327,261,351,225,370,223,365,258,347,294,323,333,285,361,251"/>
+<area shape="poly" id="edge17_Node000020_Node000005" title=" " alt="" coords="342,255,228,298,226,293,340,250"/>
+</map>

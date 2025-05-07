@@ -1,7 +1,0 @@
-<map id="gf_gui_set_hover_font_color" name="gf_gui_set_hover_font_color">
-<area shape="rect" id="Node000001" title="Set hover font color." alt="" coords="420,5,587,45"/>
-<area shape="rect" id="Node000002" href="$gf__lua__metatable__gui_8c.html#aa4dd694433fcb823fad5aa4532d616d4" title=" " alt="" coords="212,5,372,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="406,28,372,28,372,23,406,23"/>
-<area shape="rect" id="Node000003" href="$gf__lua__metatable__gui_8c.html#ad82c204a1cd0be5f09632ba3ad0e66a8" title="Initialize GUI metatables." alt="" coords="5,13,164,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,28,164,28,164,23,198,23"/>
-</map>

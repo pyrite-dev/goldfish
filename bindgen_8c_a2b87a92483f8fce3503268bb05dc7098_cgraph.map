@@ -1,0 +1,15 @@
+<map id="bindgen_init" name="bindgen_init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,129,108,155"/>
+<area shape="rect" id="Node000002" href="$bindgen__font_8c.html#a8e96fafc7b1a53f67b2894fd4b1b965b" title=" " alt="" coords="221,5,355,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,127,100,84,125,60,155,40,180,29,207,22,208,27,182,34,157,44,129,64,104,87,69,131"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishAudio_8c.html#a8b24ea565098be398e626b26dfcc73bd" title=" " alt="" coords="187,55,389,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="77,127,113,107,155,89,184,81,185,86,157,94,115,112,80,132"/>
+<area shape="rect" id="Node000004" href="$bindgen__GoldFishFont_8c.html#a3cd1467daed627ccb0738b94f789e876" title=" " alt="" coords="191,104,385,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="108,134,177,126,178,131,108,139"/>
+<area shape="rect" id="Node000005" href="$bindgen__GoldFishGUIComponent_8c.html#aa66358471709c54e287a144e1930eca9" title=" " alt="" coords="156,153,420,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="108,145,153,149,152,155,108,150"/>
+<area shape="rect" id="Node000006" href="$bindgen__graphic_8c.html#abfb75e0f66f674f2274523d43d7c1e3e" title=" " alt="" coords="209,203,367,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="81,152,116,171,157,187,196,198,195,203,155,193,114,175,79,157"/>
+<area shape="rect" id="Node000007" href="$bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8" title=" " alt="" coords="223,252,353,277"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="69,153,104,195,129,218,157,237,183,248,210,255,209,260,181,253,155,242,126,222,100,199,65,157"/>
+</map>

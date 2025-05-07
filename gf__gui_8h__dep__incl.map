@@ -1,35 +1,19 @@
 <map id="include/gf_gui.h" name="include/gf_gui.h">
-<area shape="rect" id="Node000001" title="GUI." alt="" coords="1371,5,1497,31"/>
-<area shape="rect" id="Node000002" href="$gf__draw__common_8c.html" title=" " alt="" coords="5,86,177,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1358,22,1155,24,866,32,531,50,359,64,190,81,144,89,143,83,190,76,358,59,530,45,865,27,1155,19,1357,17"/>
-<area shape="rect" id="Node000003" href="$gf__gui_8c.html" title=" " alt="" coords="202,86,298,111"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1357,24,827,41,528,58,404,69,311,81,282,89,281,83,309,76,404,63,528,52,827,35,1357,18"/>
-<area shape="rect" id="Node000004" href="$gf__gui__button_8c.html" title=" " alt="" coords="323,86,492,111"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1358,24,989,39,748,56,504,81,460,89,459,83,503,76,747,50,989,33,1358,18"/>
-<area shape="rect" id="Node000005" href="$gf__gui__frame_8c.html" title=" " alt="" coords="516,86,683,111"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1358,25,1066,43,881,59,694,81,652,89,651,83,694,76,880,54,1065,38,1357,20"/>
-<area shape="rect" id="Node000006" href="$gf__gui__scrollbar_8c.html" title=" " alt="" coords="707,86,889,111"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1358,29,1151,50,901,81,857,89,856,83,900,76,1151,44,1357,24"/>
-<area shape="rect" id="Node000007" href="$gf__gui__text_8c.html" title=" " alt="" coords="913,86,1067,111"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1358,34,1080,81,1043,89,1042,83,1079,76,1357,29"/>
-<area shape="rect" id="Node000008" href="$gf__gui__window_8c.html" title=" " alt="" coords="1091,86,1267,111"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1385,37,1217,89,1216,83,1383,32"/>
-<area shape="rect" id="Node000009" href="$gf__lua_8c.html" title=" " alt="" coords="1291,86,1411,111"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1414,42,1365,88,1362,84,1410,38"/>
-<area shape="rect" id="Node000010" href="$gf__lua__audio_8c.html" title=" " alt="" coords="1435,86,1598,111"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1458,38,1506,84,1503,88,1454,42"/>
-<area shape="rect" id="Node000011" href="$gf__lua__font_8c.html" title=" " alt="" coords="1623,86,1776,111"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1486,32,1661,83,1660,89,1485,37"/>
-<area shape="rect" id="Node000012" href="$gf__lua__graphic_8c.html" title=" " alt="" coords="1800,86,1975,111"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1511,29,1789,76,1829,83,1828,89,1788,81,1510,34"/>
-<area shape="rect" id="Node000013" href="$gf__lua__gui_8c.html" title=" " alt="" coords="1999,86,2146,111"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1511,22,1726,42,1857,57,1988,76,2026,83,2024,89,1987,81,1856,63,1726,47,1511,28"/>
-<area shape="rect" id="Node000014" href="$gf__lua__metatable_8c.html" title=" " alt="" coords="2170,86,2365,111"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1511,21,1796,40,1977,56,2158,76,2207,83,2206,89,2158,81,1976,61,1796,45,1510,26"/>
-<area shape="rect" id="Node000015" href="$gf__lua__metatable__audio_8c.html" title=" " alt="" coords="2389,79,2572,119"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1511,19,1884,34,2129,51,2377,76,2389,78,2389,83,2376,81,2129,57,1884,40,1510,24"/>
-<area shape="rect" id="Node000016" href="$gf__lua__metatable__font_8c.html" title=" " alt="" coords="2596,79,2779,119"/>
-<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1511,17,1701,21,1967,30,2273,47,2585,76,2596,77,2595,83,2584,81,2273,53,1966,35,1700,26,1511,23"/>
-<area shape="rect" id="Node000017" href="$gf__lua__metatable__gui_8c.html" title=" " alt="" coords="2803,79,2985,119"/>
-<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1510,16,1730,18,2047,26,2416,44,2606,58,2792,76,2803,77,2802,83,2791,81,2605,63,2415,49,2046,31,1730,23,1510,22"/>
+<area shape="rect" id="Node000001" title="GUI." alt="" coords="635,5,761,31"/>
+<area shape="rect" id="Node000002" href="$gf__draw__common_8c.html" title=" " alt="" coords="5,79,177,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="622,31,178,83,177,77,621,26"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html" title=" " alt="" coords="202,79,298,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="622,33,310,81,299,83,298,78,310,76,621,28"/>
+<area shape="rect" id="Node000004" href="$gf__gui__button_8c.html" title=" " alt="" coords="323,79,492,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="639,37,455,81,454,76,637,31"/>
+<area shape="rect" id="Node000005" href="$gf__gui__frame_8c.html" title=" " alt="" coords="516,79,683,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="673,41,617,81,614,76,670,36"/>
+<area shape="rect" id="Node000006" href="$gf__gui__scrollbar_8c.html" title=" " alt="" coords="707,79,889,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="727,36,783,76,780,81,724,41"/>
+<area shape="rect" id="Node000007" href="$gf__gui__text_8c.html" title=" " alt="" coords="913,79,1067,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="759,31,943,76,942,81,757,36"/>
+<area shape="rect" id="Node000008" href="$gf__gui__window_8c.html" title=" " alt="" coords="1091,79,1267,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="775,28,1102,76,1102,81,774,33"/>
+<area shape="rect" id="Node000009" href="$gf__lua_8c.html" title=" " alt="" coords="1291,79,1411,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="775,23,1001,44,1280,76,1292,78,1291,83,1279,81,1001,50,774,28"/>
 </map>

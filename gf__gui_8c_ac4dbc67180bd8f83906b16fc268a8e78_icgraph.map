@@ -1,11 +1,7 @@
 <map id="gf_gui_set_callback" name="gf_gui_set_callback">
-<area shape="rect" id="Node000001" title="Set callback." alt="" coords="469,31,620,56"/>
-<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="248,5,421,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="455,35,421,31,422,26,456,30"/>
-<area shape="rect" id="Node000004" href="$gf__lua__gui_8c.html#ad4aa2bdaa2b19cb28bb28ffe1bf1d25f" title=" " alt="" coords="251,55,418,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="456,56,418,60,418,55,455,51"/>
-<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="31,5,174,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,21,174,21,174,15,234,15"/>
-<area shape="rect" id="Node000005" href="$gf__lua__gui_8c.html#ad3a5a7c019f0de98e7c36ce3a2eea444" title="Create GoldFish GUI Lua interface." alt="" coords="5,55,200,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="238,70,200,70,200,65,238,65"/>
+<area shape="rect" id="Node000001" title="Set callback." alt="" coords="417,5,568,31"/>
+<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,5,369,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="403,21,369,21,369,15,403,15"/>
+<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,5,148,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,21,148,21,148,15,182,15"/>
 </map>

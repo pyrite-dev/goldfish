@@ -1,0 +1,13 @@
+<map id="src/bindgen/bindgen_GoldFishGUIComponent.c" name="src/bindgen/bindgen_GoldFishGUIComponent.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,200,45"/>
+<area shape="rect" id="Node000002" href="$bindgen_8h.html" title=" " alt="" coords="59,93,146,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,46,105,79,100,79,100,46"/>
+<area shape="rect" id="Node000003" href="$lua_8h.html" title="Type definitions related to lua." alt="" coords="30,167,85,192"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="82,48,63,69,49,94,46,124,51,153,46,154,40,124,44,93,59,66,78,44"/>
+<area shape="rect" id="Node000031" title=" " alt="" coords="150,167,229,192"/>
+<area shape="poly" id="edge7_Node000001_Node000031" title=" " alt="" coords="138,43,164,64,185,92,194,123,195,153,190,153,189,124,180,95,160,68,134,47"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="134,91,160,92,169,97,173,106,165,118,148,122,147,117,162,113,167,106,165,101,158,97,134,96"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="97,120,74,157,70,154,93,118"/>
+<area shape="poly" id="edge5_Node000002_Node000031" title=" " alt="" coords="118,117,166,156,163,160,115,121"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="82,164,101,165,109,171,111,179,107,190,96,195,94,190,103,186,106,179,104,174,99,170,81,169"/>
+</map>

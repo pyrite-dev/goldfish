@@ -1,7 +1,0 @@
-<map id="gf_prop_set_ptr_keep" name="gf_prop_set_ptr_keep">
-<area shape="rect" id="Node000001" title="Set void pointer to property." alt="" coords="420,13,581,38"/>
-<area shape="rect" id="Node000002" href="$gf__lua__metatable__gui_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="212,5,372,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="406,28,372,28,372,23,406,23"/>
-<area shape="rect" id="Node000003" href="$gf__lua__metatable__gui_8c.html#ad82c204a1cd0be5f09632ba3ad0e66a8" title="Initialize GUI metatables." alt="" coords="5,13,164,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,28,164,28,164,23,198,23"/>
-</map>

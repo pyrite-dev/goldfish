@@ -1,13 +1,11 @@
 <map id="gf_gui_add_recursive" name="gf_gui_add_recursive">
-<area shape="rect" id="Node000001" title=" " alt="" coords="427,55,587,80"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="545,45,534,37,507,33,484,35,472,40,469,46,476,53,472,56,464,46,468,36,483,30,507,28,536,32,548,41"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="208,29,375,55"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="412,59,374,54,375,49,413,54"/>
-<area shape="rect" id="Node000009" href="$gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="204,79,379,104"/>
-<area shape="poly" id="edge5_Node000001_Node000009" title=" " alt="" coords="413,80,379,84,378,79,412,75"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="329,20,319,11,291,8,269,10,257,15,255,20,261,28,257,31,249,21,253,11,268,5,291,3,321,6,332,15"/>
-<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="25,29,136,55"/>
-<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="194,45,136,45,136,39,194,39"/>
-<area shape="rect" id="Node000010" href="$gf__lua__gui_8c.html#a0fad8152b22dbe534343dc908184a5e5" title=" " alt="" coords="5,79,156,104"/>
-<area shape="poly" id="edge6_Node000009_Node000010" title=" " alt="" coords="190,94,157,94,157,89,190,89"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="387,55,547,80"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="505,45,494,37,467,33,444,35,432,40,429,46,436,53,432,56,424,46,428,36,443,30,467,28,496,32,508,41"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="168,29,335,55"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="372,59,334,54,335,49,373,54"/>
+<area shape="rect" id="Node000009" href="$gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="164,79,339,104"/>
+<area shape="poly" id="edge5_Node000001_Node000009" title=" " alt="" coords="373,80,339,84,338,79,372,75"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="285,19,275,11,251,8,231,10,221,15,219,20,224,28,220,31,213,21,217,11,230,5,251,3,277,6,288,15"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="5,29,116,55"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="154,45,116,45,116,39,154,39"/>
 </map>

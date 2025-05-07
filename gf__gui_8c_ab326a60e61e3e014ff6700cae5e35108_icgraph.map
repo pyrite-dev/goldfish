@@ -1,11 +1,7 @@
 <map id="gf_gui_set_wh" name="gf_gui_set_wh">
-<area shape="rect" id="Node000001" title="Set width and height." alt="" coords="435,55,549,80"/>
-<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="212,5,387,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="428,54,349,33,351,28,429,49"/>
-<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="227,55,371,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="420,70,371,70,371,65,420,65"/>
-<area shape="rect" id="Node000004" href="$gf__lua__metatable__gui_8c.html#a26ab37c4ca63cc701ed20492f9be66da" title=" " alt="" coords="219,105,379,145"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="436,86,368,107,366,102,435,81"/>
-<area shape="rect" id="Node000005" href="$gf__lua__metatable__gui_8c.html#ad82c204a1cd0be5f09632ba3ad0e66a8" title="Initialize GUI metatables." alt="" coords="5,112,164,137"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="205,127,164,127,164,122,205,122"/>
+<area shape="rect" id="Node000001" title="Set width and height." alt="" coords="228,31,343,56"/>
+<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="5,5,180,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,37,180,32,181,27,215,31"/>
+<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="21,55,165,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,55,165,61,164,56,214,49"/>
 </map>

@@ -1,7 +1,5 @@
 <map id="gf_font_create" name="gf_font_create">
-<area shape="rect" id="Node000001" title="Load font." alt="" coords="404,5,520,31"/>
-<area shape="rect" id="Node000002" href="$gf__font_8c.html#a2264f26f7f9fd11d30d56d86b415b381" title="Load font." alt="" coords="213,5,356,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="391,21,356,21,356,15,391,15"/>
-<area shape="rect" id="Node000003" href="$gf__lua__font_8c.html#a0dbdd38003759c686b524c243c78098d" title=" " alt="" coords="5,5,165,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="199,21,166,21,166,15,199,15"/>
+<area shape="rect" id="Node000001" title="Load font." alt="" coords="196,5,312,31"/>
+<area shape="rect" id="Node000002" href="$gf__font_8c.html#a2264f26f7f9fd11d30d56d86b415b381" title="Load font." alt="" coords="5,5,148,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,21,148,21,148,15,183,15"/>
 </map>

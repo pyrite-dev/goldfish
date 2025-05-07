@@ -1,7 +1,0 @@
-<map id="gf_lua_create_goldfish_graphic" name="gf_lua_create_goldfish_graphic">
-<area shape="rect" id="Node000001" title="Create GoldFish Graphic Lua interface." alt="" coords="380,5,548,45"/>
-<area shape="rect" id="Node000002" href="$gf__lua_8c.html#ac25650b30652d8cb8c65252229645360" title=" " alt="" coords="164,13,332,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="366,28,332,28,332,23,366,23"/>
-<area shape="rect" id="Node000003" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,13,116,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,28,116,28,116,23,150,23"/>
-</map>

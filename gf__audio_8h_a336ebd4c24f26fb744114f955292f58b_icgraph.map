@@ -1,7 +1,0 @@
-<map id="gf_audio_resume" name="gf_audio_resume">
-<area shape="rect" id="Node000001" title="Resume audio." alt="" coords="452,13,587,38"/>
-<area shape="rect" id="Node000002" href="$gf__lua__metatable__audio_8c.html#ac03027938e38b2c90a4858b38f5abb60" title=" " alt="" coords="228,5,404,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="438,28,404,28,404,23,438,23"/>
-<area shape="rect" id="Node000003" href="$gf__lua__metatable__audio_8c.html#af640c7cc7734fdd51132ccd8a539b741" title="Initialize Audio metatables." alt="" coords="5,13,180,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
-</map>

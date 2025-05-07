@@ -1,9 +1,0 @@
-<map id="gf_lua_call_graphic_text_height" name="gf_lua_call_graphic_text_height">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,152,63"/>
-<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="200,31,371,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,41,187,41,187,46,152,46"/>
-<area shape="rect" id="Node000003" href="$gf__font_8c.html#adc4a1d10e49218c6383f5af6c4752fa1" title="Get glyph." alt="" coords="429,5,525,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="370,29,415,23,416,29,371,35"/>
-<area shape="rect" id="Node000004" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="419,55,536,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="371,51,405,56,405,61,370,57"/>
-</map>

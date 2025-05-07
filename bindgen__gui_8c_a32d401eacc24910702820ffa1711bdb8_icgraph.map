@@ -1,0 +1,7 @@
+<map id="bindgen_gui_init" name="bindgen_gui_init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="315,5,444,31"/>
+<area shape="rect" id="Node000002" href="$bindgen_8c.html#a2b87a92483f8fce3503268bb05dc7098" title=" " alt="" coords="164,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="301,21,267,21,267,15,301,15"/>
+<area shape="rect" id="Node000003" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,5,116,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,21,116,21,116,15,150,15"/>
+</map>

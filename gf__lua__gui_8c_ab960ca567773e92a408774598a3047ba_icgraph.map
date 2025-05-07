@@ -1,7 +1,0 @@
-<map id="gf_lua_gui_callback" name="gf_lua_gui_callback">
-<area shape="rect" id="Node000001" title=" " alt="" coords="463,5,613,31"/>
-<area shape="rect" id="Node000002" href="$gf__lua__gui_8c.html#ad4aa2bdaa2b19cb28bb28ffe1bf1d25f" title=" " alt="" coords="248,5,415,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="449,21,415,21,415,15,449,15"/>
-<area shape="rect" id="Node000003" href="$gf__lua__gui_8c.html#ad3a5a7c019f0de98e7c36ce3a2eea444" title="Create GoldFish GUI Lua interface." alt="" coords="5,5,200,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,21,200,21,200,15,234,15"/>
-</map>

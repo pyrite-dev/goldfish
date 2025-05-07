@@ -1,49 +1,31 @@
 <map id="include/gf_type/audio.h" name="include/gf_type/audio.h">
-<area shape="rect" id="Node000001" title="Type definitions related to audio interface." alt="" coords="710,5,885,31"/>
-<area shape="rect" id="Node000002" href="$gf__audio_8h.html" title="Audio interface." alt="" coords="485,225,627,251"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="776,42,571,227,567,223,772,38"/>
-<area shape="rect" id="Node000008" href="$gf__lua_8h.html" title="Lua." alt="" coords="1032,225,1157,251"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="863,32,913,50,962,76,1005,113,1042,155,1090,223,1086,226,1038,158,1001,117,958,81,910,55,861,37"/>
-<area shape="rect" id="Node000017" href="$client_8h.html" title="Type definitions related to client interface." alt="" coords="773,79,947,104"/>
-<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="819,39,852,77,848,80,815,43"/>
-<area shape="rect" id="Node000003" href="$gf__audio_8c.html" title=" " alt="" coords="5,306,117,331"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="472,250,313,270,130,301,100,309,99,303,129,296,312,265,472,245"/>
-<area shape="rect" id="Node000004" href="$gf__client_8c.html" title=" " alt="" coords="141,306,253,331"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="481,256,266,301,238,309,236,303,265,296,480,251"/>
-<area shape="rect" id="Node000005" href="$gf__draw__common_8c.html" title=" " alt="" coords="278,306,450,331"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="516,258,393,308,391,304,514,253"/>
-<area shape="rect" id="Node000006" href="$gf__lua__audio_8c.html" title=" " alt="" coords="475,306,637,331"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="559,264,559,306,553,306,553,264"/>
-<area shape="rect" id="Node000007" href="$gf__lua__metatable__audio_8c.html" title=" " alt="" coords="662,299,845,339"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="598,253,707,296,705,301,596,258"/>
-<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="1019,248,726,274,463,301,420,309,419,303,462,296,726,268,1018,243"/>
-<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="1018,251,849,272,650,301,610,309,609,303,649,296,848,267,1018,245"/>
-<area shape="poly" id="edge16_Node000008_Node000007" title=" " alt="" coords="1033,256,836,301,835,296,1031,251"/>
-<area shape="rect" id="Node000009" href="$gf__core_8c.html" title=" " alt="" coords="869,306,973,331"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1058,259,948,308,945,304,1056,254"/>
-<area shape="rect" id="Node000010" href="$gf__lua_8c.html" title=" " alt="" coords="1631,306,1751,331"/>
-<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="1172,242,1375,261,1497,276,1619,296,1651,303,1650,309,1618,301,1496,282,1374,266,1171,247"/>
-<area shape="rect" id="Node000011" href="$gf__lua__font_8c.html" title=" " alt="" coords="1775,306,1929,331"/>
-<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="1171,241,1434,259,1598,275,1763,296,1803,303,1802,309,1762,301,1598,280,1433,264,1171,246"/>
-<area shape="rect" id="Node000012" href="$gf__lua__graphic_8c.html" title=" " alt="" coords="1953,306,2127,331"/>
-<area shape="poly" id="edge13_Node000008_Node000012" title=" " alt="" coords="1171,239,1506,256,1723,272,1942,296,1986,303,1985,309,1941,301,1722,278,1506,261,1171,244"/>
-<area shape="rect" id="Node000013" href="$gf__lua__gui_8c.html" title=" " alt="" coords="2152,306,2299,331"/>
-<area shape="poly" id="edge14_Node000008_Node000013" title=" " alt="" coords="1171,237,1345,240,1585,248,1861,266,2002,279,2140,296,2180,303,2179,309,2140,301,2002,285,1861,271,1585,254,1345,245,1171,242"/>
-<area shape="rect" id="Node000014" href="$gf__lua__metatable_8c.html" title=" " alt="" coords="997,306,1192,331"/>
-<area shape="poly" id="edge15_Node000008_Node000014" title=" " alt="" coords="1097,264,1097,306,1092,306,1092,264"/>
-<area shape="rect" id="Node000015" href="$gf__lua__metatable__font_8c.html" title=" " alt="" coords="1217,299,1399,339"/>
-<area shape="poly" id="edge17_Node000008_Node000015" title=" " alt="" coords="1139,253,1258,296,1256,301,1138,258"/>
-<area shape="rect" id="Node000016" href="$gf__lua__metatable__gui_8c.html" title=" " alt="" coords="1423,299,1606,339"/>
-<area shape="poly" id="edge18_Node000008_Node000016" title=" " alt="" coords="1169,251,1424,298,1423,303,1169,256"/>
-<area shape="rect" id="Node000018" href="$gf__client_8h.html" title="Client interface." alt="" coords="793,225,935,251"/>
-<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="881,114,892,131,900,151,901,173,896,193,876,226,872,223,891,191,896,172,895,153,887,134,876,116"/>
-<area shape="rect" id="Node000019" href="$core_8h.html" title="Type definitions related to core." alt="" coords="719,152,886,177"/>
-<area shape="poly" id="edge23_Node000017_Node000019" title=" " alt="" coords="836,116,807,154,803,150,832,112"/>
-<area shape="poly" id="edge21_Node000018_Node000004" title=" " alt="" coords="780,246,547,263,406,279,266,301,235,309,234,303,265,296,406,274,547,258,779,241"/>
-<area shape="poly" id="edge22_Node000018_Node000009" title=" " alt="" coords="883,260,915,304,911,307,878,263"/>
-<area shape="poly" id="edge27_Node000019_Node000001" title=" " alt="" coords="780,143,767,125,757,105,756,83,762,62,784,30,788,33,767,65,761,84,763,103,772,123,784,140"/>
-<area shape="poly" id="edge24_Node000019_Node000002" title=" " alt="" coords="751,184,597,228,595,223,749,179"/>
-<area shape="poly" id="edge26_Node000019_Node000008" title=" " alt="" coords="863,178,1048,223,1047,228,862,183"/>
-<area shape="poly" id="edge28_Node000019_Node000017" title=" " alt="" coords="826,140,855,103,860,106,831,144"/>
-<area shape="poly" id="edge25_Node000019_Node000018" title=" " alt="" coords="824,186,856,223,852,227,820,190"/>
+<area shape="rect" id="Node000001" title="Type definitions related to audio interface." alt="" coords="242,5,417,31"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8h.html" title="Audio interface." alt="" coords="129,225,271,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,43,288,80,240,163,208,226,203,224,235,160,283,77,310,40"/>
+<area shape="rect" id="Node000006" href="$gf__lua_8h.html" title="Lua." alt="" coords="460,225,585,251"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="421,32,460,50,494,77,506,95,515,115,525,157,528,196,527,225,521,225,523,196,520,158,510,117,502,98,490,80,458,54,419,37"/>
+<area shape="rect" id="Node000009" href="$client_8h.html" title="Type definitions related to client interface." alt="" coords="305,79,479,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="351,39,384,77,380,80,347,43"/>
+<area shape="rect" id="Node000003" href="$gf__audio_8c.html" title=" " alt="" coords="5,299,117,324"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="167,259,85,301,83,296,164,254"/>
+<area shape="rect" id="Node000004" href="$gf__client_8c.html" title=" " alt="" coords="141,299,253,324"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="202,265,200,299,195,298,196,264"/>
+<area shape="rect" id="Node000005" href="$gf__draw__common_8c.html" title=" " alt="" coords="278,299,450,324"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="240,254,338,296,336,301,238,259"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="486,259,391,301,389,296,484,254"/>
+<area shape="rect" id="Node000007" href="$gf__core_8c.html" title=" " alt="" coords="475,299,579,324"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="527,264,529,298,523,299,521,265"/>
+<area shape="rect" id="Node000008" href="$gf__lua_8c.html" title=" " alt="" coords="603,299,723,324"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="559,254,641,296,639,301,556,259"/>
+<area shape="rect" id="Node000010" href="$gf__client_8h.html" title="Client interface." alt="" coords="295,225,436,251"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="417,113,436,143,441,161,437,178,415,207,388,227,385,223,411,204,432,176,435,161,431,145,412,115"/>
+<area shape="rect" id="Node000011" href="$core_8h.html" title="Type definitions related to core." alt="" coords="257,152,423,177"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="370,116,344,153,339,150,365,113"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="327,258,226,301,224,296,325,254"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="405,254,501,296,499,301,403,259"/>
+<area shape="poly" id="edge17_Node000011_Node000001" title=" " alt="" coords="314,143,300,126,289,105,287,83,294,63,316,30,320,33,299,65,293,84,295,103,305,123,319,140"/>
+<area shape="poly" id="edge14_Node000011_Node000002" title=" " alt="" coords="307,186,224,227,222,223,304,181"/>
+<area shape="poly" id="edge16_Node000011_Node000006" title=" " alt="" coords="383,180,494,223,492,228,381,185"/>
+<area shape="poly" id="edge18_Node000011_Node000009" title=" " alt="" coords="362,140,388,103,392,106,367,143"/>
+<area shape="poly" id="edge15_Node000011_Node000010" title=" " alt="" coords="351,189,364,224,359,226,346,191"/>
 </map>

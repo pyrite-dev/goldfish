@@ -1,7 +1,0 @@
-<map id="gf_audio_stop" name="gf_audio_stop">
-<area shape="rect" id="Node000001" title="Stop audio." alt="" coords="487,5,600,31"/>
-<area shape="rect" id="Node000002" href="$gf__lua__metatable__audio_8c.html#a0dafdb4b1923c8e76885233a9b18ad0a" title=" " alt="" coords="228,5,439,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="473,21,439,21,439,15,473,15"/>
-<area shape="rect" id="Node000003" href="$gf__lua__metatable__audio_8c.html#af640c7cc7734fdd51132ccd8a539b741" title="Initialize Audio metatables." alt="" coords="5,5,180,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,21,180,21,180,15,214,15"/>
-</map>

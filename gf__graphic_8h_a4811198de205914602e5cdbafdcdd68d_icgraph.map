@@ -1,17 +1,13 @@
 <map id="gf_graphic_fill_rect" name="gf_graphic_fill_rect">
-<area shape="rect" id="Node000001" title="Draw filled rectangle." alt="" coords="448,107,593,132"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a670ac29a4409cc16c8d77f2d33ccc499" title="Render box." alt="" coords="245,56,377,81"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="453,106,363,84,365,79,455,101"/>
-<area shape="rect" id="Node000006" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="223,107,398,132"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="435,122,398,122,398,117,435,117"/>
-<area shape="rect" id="Node000007" href="$gf__lua__graphic_8c.html#ab59ff3a12925b2b97754c5ac1fd31d0f" title=" " alt="" coords="221,157,400,183"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="455,138,365,160,363,155,453,133"/>
+<area shape="rect" id="Node000001" title="Draw filled rectangle." alt="" coords="444,80,589,105"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a670ac29a4409cc16c8d77f2d33ccc499" title="Render box." alt="" coords="243,55,375,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="430,85,375,78,375,73,431,80"/>
+<area shape="rect" id="Node000006" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="221,104,396,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="430,105,397,109,396,104,430,100"/>
 <area shape="rect" id="Node000003" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="9,5,169,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,55,145,33,146,28,241,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="238,54,146,33,147,28,239,49"/>
 <area shape="rect" id="Node000004" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="17,55,161,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="231,71,162,70,162,65,231,66"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="229,70,162,70,162,65,229,65"/>
 <area shape="rect" id="Node000005" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="5,104,173,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="238,87,149,107,148,101,237,82"/>
-<area shape="rect" id="Node000008" href="$gf__lua__graphic_8c.html#aab17fee8887f5f00879e973689fc4eaa" title="Create GoldFish Graphic Lua interface." alt="" coords="5,154,173,194"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="207,175,174,175,174,170,207,169"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="239,86,147,107,146,101,238,80"/>
 </map>

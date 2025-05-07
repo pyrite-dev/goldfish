@@ -1,37 +1,20 @@
 <map id="gf_gui_get_prop" name="gf_gui_get_prop">
-<area shape="rect" id="Node000001" title="Get property container." alt="" coords="692,278,819,303"/>
-<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="248,105,421,130"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="746,265,734,225,714,177,684,130,665,110,643,94,608,79,570,71,531,69,493,72,421,88,366,107,364,102,419,83,492,67,531,64,571,66,609,74,645,90,668,106,688,127,718,174,739,223,751,264"/>
-<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="31,54,174,79"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="748,265,738,218,719,162,705,133,688,107,667,83,643,63,611,46,579,33,509,15,437,9,366,11,298,19,236,31,141,56,140,51,235,25,297,13,366,5,438,3,510,10,580,28,614,42,645,59,671,79,692,103,709,131,724,160,743,217,753,263"/>
-<area shape="rect" id="Node000004" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="473,105,640,130"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="740,267,702,204,675,171,643,143,621,132,623,128,645,139,678,168,706,201,744,264"/>
-<area shape="rect" id="Node000005" href="$gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="473,154,640,179"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="733,270,694,230,643,193,617,182,619,177,645,188,697,226,737,266"/>
-<area shape="rect" id="Node000006" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="469,203,644,229"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="716,274,643,242,608,231,610,226,645,237,718,269"/>
-<area shape="rect" id="Node000007" href="$gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="483,253,631,278"/>
-<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="678,283,631,277,631,272,679,278"/>
-<area shape="rect" id="Node000008" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="485,302,629,327"/>
-<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="679,302,629,309,629,303,678,297"/>
-<area shape="rect" id="Node000009" href="$gf__lua__gui_8c.html#ad4aa2bdaa2b19cb28bb28ffe1bf1d25f" title=" " alt="" coords="251,378,418,403"/>
-<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="718,312,645,341,527,368,419,385,418,380,526,363,643,336,716,307"/>
-<area shape="rect" id="Node000015" href="$gf__lua__gui_8c.html#ab960ca567773e92a408774598a3047ba" title=" " alt="" coords="481,403,632,429"/>
-<area shape="poly" id="edge13_Node000001_Node000015" title=" " alt="" coords="734,316,694,351,645,386,602,406,600,401,643,382,691,347,730,312"/>
-<area shape="rect" id="Node000016" href="$gf__lua__metatable__gui_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="475,453,638,493"/>
-<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="744,317,705,378,678,412,646,442,624,455,621,451,642,438,674,409,701,375,739,314"/>
-<area shape="rect" id="Node000019" href="$gf__lua__metatable__gui_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="477,517,637,557"/>
-<area shape="poly" id="edge17_Node000001_Node000019" title=" " alt="" coords="750,318,737,359,715,410,685,462,646,507,628,519,625,515,642,503,681,459,710,407,732,357,745,316"/>
-<area shape="rect" id="Node000020" href="$gf__lua__metatable__gui_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="477,581,637,621"/>
-<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="753,318,744,370,724,438,693,509,671,542,646,571,630,583,627,579,642,567,667,538,688,506,719,436,738,369,748,317"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,104,161,82,162,77,263,99"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="485,153,392,133,393,127,486,148"/>
-<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="485,250,468,242,429,216,394,185,344,132,348,128,398,181,432,211,471,238,487,245"/>
-<area shape="rect" id="Node000010" href="$gf__lua__gui_8c.html#ad3a5a7c019f0de98e7c36ce3a2eea444" title="Create GoldFish GUI Lua interface." alt="" coords="5,378,200,403"/>
-<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="238,393,200,393,200,388,238,388"/>
-<area shape="poly" id="edge14_Node000015_Node000009" title=" " alt="" coords="467,408,418,403,418,397,468,403"/>
-<area shape="rect" id="Node000017" href="$gf__lua__metatable__gui_8c.html#ad82c204a1cd0be5f09632ba3ad0e66a8" title="Initialize GUI metatables." alt="" coords="255,525,414,550"/>
-<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="474,500,380,527,379,522,473,495"/>
-<area shape="poly" id="edge18_Node000019_Node000017" title=" " alt="" coords="463,540,414,540,414,535,463,535"/>
-<area shape="poly" id="edge20_Node000020_Node000017" title=" " alt="" coords="473,580,379,553,380,547,474,575"/>
+<area shape="rect" id="Node000001" title="Get property container." alt="" coords="640,123,767,148"/>
+<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,72,369,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="677,115,638,86,591,63,556,55,520,51,447,52,380,62,326,75,325,69,379,57,447,47,520,46,557,50,593,58,641,82,680,111"/>
+<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,47,148,72"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="683,114,644,73,619,54,591,39,527,21,461,11,394,8,328,11,209,28,120,49,119,44,208,23,327,6,394,3,461,5,529,15,593,34,622,49,647,69,686,110"/>
+<area shape="rect" id="Node000004" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="421,73,588,99"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="638,122,556,101,557,96,639,117"/>
+<area shape="rect" id="Node000005" href="$gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="421,123,588,148"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="627,138,588,138,588,133,627,133"/>
+<area shape="rect" id="Node000006" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="417,172,592,197"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="639,154,557,175,556,169,638,149"/>
+<area shape="rect" id="Node000007" href="$gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="431,221,579,247"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="677,159,639,187,593,212,563,224,561,219,591,208,636,182,674,155"/>
+<area shape="rect" id="Node000008" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="433,271,577,296"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="689,161,650,212,623,239,593,262,570,273,567,268,591,257,620,235,646,209,685,158"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,75,148,71,148,66,183,70"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="434,122,338,100,340,95,435,117"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="429,219,416,212,376,185,341,154,292,99,296,96,345,150,380,181,419,208,431,214"/>
 </map>

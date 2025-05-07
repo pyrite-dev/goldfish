@@ -1,11 +1,7 @@
 <map id="gf_graphic_text_height" name="gf_graphic_text_height">
-<area shape="rect" id="Node000001" title="Calculate text height." alt="" coords="429,55,600,80"/>
-<area shape="rect" id="Node000002" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="221,5,381,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="445,54,356,33,358,28,446,49"/>
-<area shape="rect" id="Node000003" href="$gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="223,55,380,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="415,70,380,70,380,65,415,65"/>
-<area shape="rect" id="Node000004" href="$gf__lua__graphic_8c.html#af5e938ad2a8b3bc6fa3d095154bb2a8f" title=" " alt="" coords="228,105,375,145"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="454,86,376,108,374,102,453,81"/>
-<area shape="rect" id="Node000005" href="$gf__lua__graphic_8c.html#aab17fee8887f5f00879e973689fc4eaa" title="Create GoldFish Graphic Lua interface." alt="" coords="5,105,173,145"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="215,127,174,127,174,122,215,122"/>
+<area shape="rect" id="Node000001" title="Calculate text height." alt="" coords="213,31,384,56"/>
+<area shape="rect" id="Node000002" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="5,5,165,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,34,165,30,166,25,200,29"/>
+<area shape="rect" id="Node000003" href="$gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="7,55,164,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,57,165,61,164,56,199,52"/>
 </map>

@@ -1,9 +1,5 @@
 <map id="gf_graphic_points_arr" name="gf_graphic_points_arr">
-<area shape="rect" id="Node000001" title="Draw points." alt="" coords="416,35,579,60"/>
-<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569" title="Draw points." alt="" coords="226,5,363,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="402,36,363,31,364,25,403,31"/>
-<area shape="rect" id="Node000003" href="$gf__lua__graphic_8c.html#a2e6fdc0f285f58339313e91b8558a49a" title=" " alt="" coords="221,55,368,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="403,63,369,68,368,63,402,58"/>
-<area shape="rect" id="Node000004" href="$gf__lua__graphic_8c.html#aab17fee8887f5f00879e973689fc4eaa" title="Create GoldFish Graphic Lua interface." alt="" coords="5,55,173,95"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="208,78,174,78,174,73,208,73"/>
+<area shape="rect" id="Node000001" title="Draw points." alt="" coords="191,5,353,31"/>
+<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569" title="Draw points." alt="" coords="5,5,143,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,21,143,21,143,15,177,15"/>
 </map>

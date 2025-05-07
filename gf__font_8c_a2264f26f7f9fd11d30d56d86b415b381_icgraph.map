@@ -1,7 +1,0 @@
-<map id="gf_font_create_file" name="gf_font_create_file">
-<area shape="rect" id="Node000001" title="Load font." alt="" coords="463,5,605,31"/>
-<area shape="rect" id="Node000002" href="$gf__lua__font_8c.html#a0dbdd38003759c686b524c243c78098d" title=" " alt="" coords="255,5,415,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="449,21,415,21,415,15,449,15"/>
-<area shape="rect" id="Node000003" href="$gf__lua__font_8c.html#a68e86025783f9f3f5b477e6598366292" title="Create GoldFish Font Lua interface." alt="" coords="5,5,207,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="241,21,207,21,207,15,241,15"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="gf_lua_meta_call_gui_component_parent" name="gf_lua_meta_call_gui_component_parent">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,165,87"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a8064cd04ef3d766f9502f6070e526d6e" title="Get parent component." alt="" coords="213,5,352,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,45,218,31,219,37,167,50"/>
-<area shape="rect" id="Node000003" href="$gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="213,55,352,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,65,199,65,199,70,166,70"/>
-<area shape="rect" id="Node000004" href="$gf__lua__gui_8c.html#a09c721664bb40fe3418868661bc51b99" title="Create GUI userdata." alt="" coords="214,104,351,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,85,219,98,218,103,165,90"/>
-</map>
