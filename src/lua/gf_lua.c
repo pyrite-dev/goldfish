@@ -26,6 +26,8 @@
 #include <gf_graphic.h>
 #include <gf_draw.h>
 
+#include <bindgen.h>
+
 /* Standard */
 #include <stdlib.h>
 #include <string.h>
@@ -35,7 +37,7 @@ int gf_lua_call_loop(lua_State* s) {
 	int	  call = luaL_ref(s, LUA_REGISTRYINDEX);
 	gf_lua_t* lua;
 
-	lua_getglobal(s, "_GF_LUA");
+	lua_getglobal(s, "_LUA_WRAP");
 	lua = lua_touserdata(s, -1);
 	lua_pop(s, 1);
 
@@ -48,7 +50,7 @@ int gf_lua_call_close(lua_State* s) {
 	int	  call = luaL_ref(s, LUA_REGISTRYINDEX);
 	gf_lua_t* lua;
 
-	lua_getglobal(s, "_GF_LUA");
+	lua_getglobal(s, "_LUA_WRAP");
 	lua = lua_touserdata(s, -1);
 	lua_pop(s, 1);
 
@@ -60,7 +62,7 @@ int gf_lua_call_close(lua_State* s) {
 int gf_lua_call_geometry(lua_State* s) {
 	gf_lua_t* lua;
 
-	lua_getglobal(s, "_GF_LUA");
+	lua_getglobal(s, "_LUA_WRAP");
 	lua = lua_touserdata(s, -1);
 	lua_pop(s, 1);
 
@@ -88,7 +90,7 @@ int gf_lua_call_geometry(lua_State* s) {
 int gf_lua_call_shutdown(lua_State* s) {
 	gf_lua_t* lua;
 
-	lua_getglobal(s, "_GF_LUA");
+	lua_getglobal(s, "_LUA_WRAP");
 	lua = lua_touserdata(s, -1);
 	lua_pop(s, 1);
 
@@ -102,7 +104,7 @@ int gf_lua_call_read(lua_State* s) {
 	gf_lua_t*   lua;
 	gf_file_t*  file;
 
-	lua_getglobal(s, "_GF_LUA");
+	lua_getglobal(s, "_LUA_WRAP");
 	lua = lua_touserdata(s, -1);
 	lua_pop(s, 1);
 
@@ -123,7 +125,7 @@ int gf_lua_call_read(lua_State* s) {
 int gf_lua_call_fps(lua_State* s) {
 	gf_lua_t* lua;
 
-	lua_getglobal(s, "_GF_LUA");
+	lua_getglobal(s, "_LUA_WRAP");
 	lua = lua_touserdata(s, -1);
 	lua_pop(s, 1);
 
@@ -137,7 +139,7 @@ int gf_lua_call_require(lua_State* s) {
 	gf_lua_t*   lua;
 	gf_file_t*  f;
 
-	lua_getglobal(s, "_GF_LUA");
+	lua_getglobal(s, "_LUA_WRAP");
 	lua = lua_touserdata(s, -1);
 	lua_pop(s, 1);
 
@@ -185,12 +187,7 @@ void gf_lua_create_goldfish(gf_lua_t* lua) {
 	gf_version_t ver;
 	gf_version_get(&ver);
 
-	lua_newtable(lua->lua);
-
-	gf_lua_create_goldfish_gui(lua);
-	gf_lua_create_goldfish_graphic(lua);
-	gf_lua_create_goldfish_font(lua);
-	gf_lua_create_goldfish_audio(lua);
+	lua_getglobal(lua->lua, "goldfish");
 
 	lua_pushstring(lua->lua, "loop");
 	lua_pushcfunction(lua->lua, gf_lua_call_loop);
@@ -239,10 +236,7 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 	lua->lua = luaL_newstate();
 	luaL_openlibs(lua->lua);
 
-	lua_pushlightuserdata(lua->lua, lua);
-	lua_setglobal(lua->lua, "_GF_LUA");
-
-	gf_lua_meta_init(lua);
+	bindgen_init(lua);
 
 	gf_lua_create_goldfish(lua);
 

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<Rules>
+	<Pre>
+		<![CDATA[
+#ifndef GF_EXPOSE_ALL
+#define GF_EXPOSE_ALL
+#endif
+#include <gf_type/lua.h>
+		]]>
+	</Pre>
+
+	<!-- Root table name -->
+	<LuaRoot>goldfish</LuaRoot>
+
+	<!-- Type which wraps lua_State* -->
+	<LuaWrap>gf_lua_t*</LuaWrap>
+
+	<!-- Where lua_State* is -->
+	<LuaState>wrap->lua</LuaState>
+
+	<Metatable C="gf_gui_id_t" Lua="GoldFishGUIComponent">
+		<Match Name="^gf_gui_(.+)$">
+			<Argument Index="0" Type="gf_gui_t*" Use="wrap->engine->client->draw->gui" />
+			<Argument Index="1" Type="gf_gui_id_t" />
+			<Not>
+				<Argument Type="gf_gui_callback_t" />
+			</Not>
+			<Not>
+				<Argument Type="double*" />
+			</Not>
+			<Not>
+				<Return Type="gf_prop_t**" />
+			</Not>
+		</Match>
+	</Metatable>
+	<Metatable C="gf_audio_id_t" Lua="GoldFishAudio">
+		<Match Name="^gf_audio_(.+)$">
+			<Argument Index="0" Type="gf_audio_t*" Use="wrap->engine->client->audio" />
+			<Argument Index="1" Type="gf_audio_id_t" />
+		</Match>
+	</Metatable>
+	<Metatable C="gf_font_t*" Lua="GoldFishFont" Valid="ret != NULL" />
+	<Group Name="gui">
+		<Match Name="^gf_gui_(.+)$">
+			<Name Pattern="^gf_gui_.+$" />
+			<Argument Index="0" Type="gf_gui_t*" Use="wrap->engine->client->draw->gui" />
+			<Not>
+				<Argument Index="1" Type="gf_gui_id_t" />
+			</Not>
+			<Not>
+				<Argument Type="gf_gui_component_t*" />
+			</Not>
+			<Not>
+				<Name Pattern="^gf_gui_(?:render|destroy|create|draw_box|sort_component)$" />
+			</Not>
+		</Match>
+	</Group>
+	<Group Name="font">
+		<Match Name="^gf_font_(.+)$">
+			<Name Pattern="^gf_font_.+$" />
+			<Argument Index="0" Type="gf_draw_t*" Use="wrap->engine->client->draw" />
+			<Name Pattern="^gf_font_create_file$" />
+		</Match>
+	</Group>
+	<Group Name="graphic">
+		<Match Name="^gf_graphic_(.+)$">
+			<Name Pattern="^gf_graphic_.+$" />
+			<Argument Index="0" Type="gf_draw_t*" Use="wrap->engine->client->draw" />
+			<Name Pattern="^gf_graphic_(?:text|text_width|text_height|clip_push|clip_pop|clear|text_wrap|fill_rect)$" />
+		</Match>
+	</Group>
+	<Array Name="gf_graphic_color_t">
+		<Number Field="r" />
+		<Number Field="g" />
+		<Number Field="b" />
+		<Number Field="a" />
+	</Array>
+</Rules>
