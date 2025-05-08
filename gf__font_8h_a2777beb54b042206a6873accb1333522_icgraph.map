@@ -1,7 +1,9 @@
 <map id="gf_font_destroy" name="gf_font_destroy">
-<area shape="rect" id="Node000001" title="Destroy font." alt="" coords="363,5,487,31"/>
-<area shape="rect" id="Node000002" href="$gf__lua_8c.html#aa5bfe11630255b705da173365e88598e" title="Destroy Lua interface." alt="" coords="196,5,315,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="349,21,315,21,315,15,349,15"/>
-<area shape="rect" id="Node000003" href="$gf__core_8c.html#a978d9c52b1d1098b5fc2f3e869036b64" title="Destroy engine instance." alt="" coords="5,5,148,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,21,148,21,148,15,182,15"/>
+<area shape="rect" id="Node000001" title="Destroy font." alt="" coords="367,31,491,56"/>
+<area shape="rect" id="Node000002" href="$gf__draw__common_8c.html#aa7c19917300ff10b22de455323f01d83" title="Destroy drawing interface." alt="" coords="188,31,319,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="353,46,319,46,319,41,353,41"/>
+<area shape="rect" id="Node000003" href="$gf__client_8c.html#a1f8b044a5ca56016e55dad76cd839b53" title="Destroy client interface." alt="" coords="5,5,140,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,35,140,30,141,25,175,30"/>
+<area shape="rect" id="Node000008" href="$gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec" title="Create drawing interface." alt="" coords="11,55,134,80"/>
+<area shape="poly" id="edge3_Node000002_Node000008" title=" " alt="" coords="175,56,134,62,134,57,174,51"/>
 </map>

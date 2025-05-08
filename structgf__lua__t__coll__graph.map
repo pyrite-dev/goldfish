@@ -1,17 +1,15 @@
 <map id="gf_lua_t" name="gf_lua_t">
-<area shape="rect" id="Node000001" title="Lua interface." alt="" coords="177,193,243,299"/>
-<area shape="rect" id="Node000002" href="$structgf__engine__t.html" title="Engine instance." alt="" coords="158,361,262,507"/>
-<area shape="poly" id="edge8_Node000002_Node000001" title=" " alt="" coords="183,300,175,323,174,345,168,345,170,322,178,298"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,361,211,323,211,315,216,315,217,323,217,361"/>
-<area shape="rect" id="Node000003" href="$structgf__server__t.html" title="Server interface." alt="" coords="5,569,92,635"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="159,448,123,460,85,477,50,501,23,532,19,542,20,554,15,554,14,542,18,529,47,497,82,472,121,455,157,443"/>
-<area shape="rect" id="Node000005" href="$structgf__client__t.html" title="Client interface." alt="" coords="151,569,234,635"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="171,508,163,531,164,554,159,554,158,530,166,506"/>
-<area shape="rect" id="Node000022" href="$structgf__resource__t.html" title="Resource." alt="" coords="332,569,435,635"/>
-<area shape="poly" id="edge7_Node000022_Node000002" title=" " alt="" coords="264,483,341,556,337,560,260,487"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="66,567,96,529,144,483,147,487,100,532,71,571"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="213,568,223,545,227,523,232,524,229,546,218,570"/>
-<area shape="poly" id="edge6_Node000002_Node000022" title=" " alt="" coords="398,569,401,549,397,532,373,504,343,482,310,465,277,453,279,448,312,460,346,477,377,500,402,529,407,549,403,570"/>
-<area shape="rect" id="Node000014" href="$structgf__font__t.html" title="Font." alt="" coords="163,5,257,131"/>
-<area shape="poly" id="edge9_Node000001_Node000014" title=" " alt="" coords="213,131,213,177,207,177,207,131"/>
+<area shape="rect" id="Node000001" title="Lua interface." alt="" coords="177,5,243,111"/>
+<area shape="rect" id="Node000002" href="$structgf__engine__t.html" title="Engine instance." alt="" coords="158,173,262,319"/>
+<area shape="poly" id="edge8_Node000002_Node000001" title=" " alt="" coords="183,112,175,135,174,157,168,157,170,134,178,110"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,173,211,135,211,127,216,127,217,135,217,173"/>
+<area shape="rect" id="Node000003" href="$structgf__server__t.html" title="Server interface." alt="" coords="5,381,92,447"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="159,260,123,272,85,289,50,313,23,344,19,354,20,366,15,366,14,354,18,341,47,309,82,284,121,267,157,255"/>
+<area shape="rect" id="Node000005" href="$structgf__client__t.html" title="Client interface." alt="" coords="151,381,234,447"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="171,320,163,343,164,366,159,366,158,342,166,318"/>
+<area shape="rect" id="Node000022" href="$structgf__resource__t.html" title="Resource." alt="" coords="332,381,435,447"/>
+<area shape="poly" id="edge7_Node000022_Node000002" title=" " alt="" coords="264,295,341,368,337,372,260,299"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="66,379,96,341,144,295,147,299,100,344,71,383"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="213,380,223,357,227,335,232,336,229,358,218,382"/>
+<area shape="poly" id="edge6_Node000002_Node000022" title=" " alt="" coords="398,381,401,361,397,344,373,316,343,294,310,277,277,265,279,260,312,272,346,289,377,312,402,341,407,361,403,382"/>
 </map>

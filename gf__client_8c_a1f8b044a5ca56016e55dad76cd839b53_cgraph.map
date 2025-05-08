@@ -6,12 +6,14 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,81,174,76,175,82,141,86"/>
 <area shape="rect" id="Node000005" href="$gf__draw__common_8c.html#aa7c19917300ff10b22de455323f01d83" title="Destroy drawing interface." alt="" coords="197,104,327,129"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="141,99,183,104,183,109,140,104"/>
-<area shape="rect" id="Node000008" href="$gf__input_8c.html#ac4a22f8231c87a464f6be7faead5dec2" title="Destroy input interface." alt="" coords="197,153,327,179"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="103,103,189,140,208,146,206,151,187,144,101,108"/>
+<area shape="rect" id="Node000011" href="$gf__input_8c.html#ac4a22f8231c87a464f6be7faead5dec2" title="Destroy input interface." alt="" coords="197,153,327,179"/>
+<area shape="poly" id="edge8_Node000001_Node000011" title=" " alt="" coords="104,103,189,138,211,146,209,151,187,143,102,108"/>
 <area shape="rect" id="Node000003" href="$gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="384,5,577,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,15,370,15,370,21,330,21"/>
-<area shape="rect" id="Node000006" href="$gf__driver_8c.html#af8f5a8642f6e54ece2ab4b6389877b56" title="Destroy drawing driver." alt="" coords="393,79,568,104"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="327,106,379,100,380,106,328,112"/>
-<area shape="rect" id="Node000007" href="$gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25" title="Destroy platform&#45;dependent part of drawing driver." alt="" coords="384,128,577,153"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="328,121,371,126,370,131,327,126"/>
+<area shape="rect" id="Node000006" href="$gf__driver_8c.html#af8f5a8642f6e54ece2ab4b6389877b56" title="Destroy drawing driver." alt="" coords="393,55,568,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="318,101,410,80,411,86,320,107"/>
+<area shape="rect" id="Node000007" href="$gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25" title="Destroy platform&#45;dependent part of drawing driver." alt="" coords="384,104,577,129"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="328,114,370,114,370,119,328,119"/>
+<area shape="rect" id="Node000008" href="$gf__font_8c.html#a2777beb54b042206a6873accb1333522" title="Destroy font." alt="" coords="419,153,543,179"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="320,127,411,148,410,153,318,132"/>
 </map>

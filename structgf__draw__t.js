@@ -13,6 +13,7 @@ var structgf__draw__t =
     [ "input", "structgf__draw__t.html#a1fc8d0f5c4be91a9b539275dd80e0460", null ],
     [ "last_draw", "structgf__draw__t.html#ab2c553b4527a781038de76e270ac57fc", null ],
     [ "light", "structgf__draw__t.html#a1cba7c3af17c134f9f749ff9cb5aba72", null ],
+    [ "loaded_fonts", "structgf__draw__t.html#a684b003232ec66a317af55d64f8bb4f7", null ],
     [ "lookat", "structgf__draw__t.html#a28a0e4624401155ff09056d1994f69f2", null ],
     [ "platform", "structgf__draw__t.html#ab7893e83d1d13fe68efbed786df0ce5c", null ],
     [ "running", "structgf__draw__t.html#a687948ab2189ace286eaf627fbc7c6b3", null ],

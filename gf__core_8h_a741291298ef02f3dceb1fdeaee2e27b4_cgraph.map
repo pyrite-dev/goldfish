@@ -4,8 +4,8 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,163,174,163,174,169,140,169"/>
 <area shape="rect" id="Node000003" href="$gf__client_8c.html#a425bf9a148d3a4d1301686fa9628de5a" title="Create client interface." alt="" coords="403,5,530,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="276,151,322,98,355,67,392,40,403,34,406,38,395,44,358,71,326,102,280,155"/>
-<area shape="rect" id="Node000027" href="$gf__core_8c.html#a978d9c52b1d1098b5fc2f3e869036b64" title="Destroy engine instance." alt="" coords="395,55,538,80"/>
-<area shape="poly" id="edge3_Node000002_Node000027" title=" " alt="" coords="285,151,333,121,392,89,408,82,410,87,394,94,335,125,288,156"/>
+<area shape="rect" id="Node000030" href="$gf__core_8c.html#a978d9c52b1d1098b5fc2f3e869036b64" title="Destroy engine instance." alt="" coords="395,55,538,80"/>
+<area shape="poly" id="edge3_Node000002_Node000030" title=" " alt="" coords="285,151,333,121,392,89,408,82,410,87,394,94,335,125,288,156"/>
 <area shape="rect" id="Node000036" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="411,104,522,129"/>
 <area shape="poly" id="edge4_Node000002_Node000036" title=" " alt="" coords="318,151,401,130,402,135,319,156"/>
 <area shape="rect" id="Node000172" href="$gf__lua_8c.html#ae70e8069b99f5b001c2e1a3bd4c287dd" title="Run Lua program." alt="" coords="421,153,512,179"/>

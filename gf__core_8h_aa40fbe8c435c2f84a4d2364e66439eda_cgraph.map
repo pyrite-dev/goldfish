@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title="Create engine instance." alt="" coords="5,400,163,425"/>
 <area shape="rect" id="Node000002" href="$gf__client_8c.html#a425bf9a148d3a4d1301686fa9628de5a" title="Create client interface." alt="" coords="221,129,347,155"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,398,263,164,267,167,97,402"/>
-<area shape="rect" id="Node000026" href="$gf__core_8c.html#a978d9c52b1d1098b5fc2f3e869036b64" title="Destroy engine instance." alt="" coords="213,301,355,327"/>
-<area shape="poly" id="edge7_Node000001_Node000026" title=" " alt="" coords="102,398,150,368,210,336,226,329,228,334,212,340,153,372,105,402"/>
+<area shape="rect" id="Node000029" href="$gf__core_8c.html#a978d9c52b1d1098b5fc2f3e869036b64" title="Destroy engine instance." alt="" coords="213,301,355,327"/>
+<area shape="poly" id="edge7_Node000001_Node000029" title=" " alt="" coords="102,398,150,368,210,336,226,329,228,334,212,340,153,372,105,402"/>
 <area shape="rect" id="Node000035" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="229,688,339,713"/>
 <area shape="poly" id="edge12_Node000001_Node000035" title=" " alt="" coords="96,424,268,675,264,678,92,427"/>
 <area shape="rect" id="Node000043" href="$gf__resource_8c.html#a5d9f291bd98d070914a7e252a97f94c0" title="Get data from resource." alt="" coords="816,1059,943,1084"/>
@@ -18,19 +18,19 @@
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="348,132,434,123,435,128,348,138"/>
 <area shape="rect" id="Node000007" href="$gf__client_8c.html#a1f8b044a5ca56016e55dad76cd839b53" title="Destroy client interface." alt="" coords="444,203,579,228"/>
 <area shape="poly" id="edge3_Node000002_Node000007" title=" " alt="" coords="315,152,406,187,438,197,437,202,404,193,313,157"/>
-<area shape="rect" id="Node000013" href="$gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec" title="Create drawing interface." alt="" coords="450,153,573,179"/>
-<area shape="poly" id="edge4_Node000002_Node000013" title=" " alt="" coords="348,146,437,155,436,161,348,151"/>
-<area shape="rect" id="Node000024" href="$gf__draw__common_8c.html#a4a0353d9ffdb96b2c26600b185b16f4f" title="Set input interface." alt="" coords="441,5,582,31"/>
-<area shape="poly" id="edge5_Node000002_Node000024" title=" " alt="" coords="295,127,340,84,371,60,404,40,426,31,428,36,407,44,374,64,343,88,299,131"/>
-<area shape="rect" id="Node000025" href="$gf__input_8c.html#ac926a70928c687f96cfbc24aef8ca96d" title="Create input interface." alt="" coords="450,55,573,80"/>
-<area shape="poly" id="edge6_Node000002_Node000025" title=" " alt="" coords="311,127,404,89,436,80,437,85,406,94,313,132"/>
-<area shape="poly" id="edge8_Node000026_Node000007" title=" " alt="" coords="300,299,346,268,404,237,429,228,431,233,406,242,348,272,303,303"/>
-<area shape="rect" id="Node000027" href="$gf__lua_8c.html#aa5bfe11630255b705da173365e88598e" title="Destroy Lua interface." alt="" coords="452,252,571,277"/>
-<area shape="poly" id="edge9_Node000026_Node000027" title=" " alt="" coords="343,299,438,278,439,283,344,304"/>
+<area shape="rect" id="Node000016" href="$gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec" title="Create drawing interface." alt="" coords="450,153,573,179"/>
+<area shape="poly" id="edge4_Node000002_Node000016" title=" " alt="" coords="348,146,437,155,436,161,348,151"/>
+<area shape="rect" id="Node000027" href="$gf__draw__common_8c.html#a4a0353d9ffdb96b2c26600b185b16f4f" title="Set input interface." alt="" coords="441,5,582,31"/>
+<area shape="poly" id="edge5_Node000002_Node000027" title=" " alt="" coords="295,127,340,84,371,60,404,40,426,31,428,36,407,44,374,64,343,88,299,131"/>
+<area shape="rect" id="Node000028" href="$gf__input_8c.html#ac926a70928c687f96cfbc24aef8ca96d" title="Create input interface." alt="" coords="450,55,573,80"/>
+<area shape="poly" id="edge6_Node000002_Node000028" title=" " alt="" coords="311,127,404,89,436,80,437,85,406,94,313,132"/>
+<area shape="poly" id="edge8_Node000029_Node000007" title=" " alt="" coords="300,299,346,268,404,237,429,228,431,233,406,242,348,272,303,303"/>
+<area shape="rect" id="Node000030" href="$gf__lua_8c.html#aa5bfe11630255b705da173365e88598e" title="Destroy Lua interface." alt="" coords="452,252,571,277"/>
+<area shape="poly" id="edge9_Node000029_Node000030" title=" " alt="" coords="343,299,438,278,439,283,344,304"/>
 <area shape="rect" id="Node000031" href="$gf__resource_8c.html#a943af2ca1233172ac44a8c436c11e580" title="Destroy resource." alt="" coords="434,301,589,327"/>
-<area shape="poly" id="edge10_Node000026_Node000031" title=" " alt="" coords="356,311,420,311,420,317,356,317"/>
+<area shape="poly" id="edge10_Node000029_Node000031" title=" " alt="" coords="356,311,420,311,420,317,356,317"/>
 <area shape="rect" id="Node000032" href="$gf__server_8c.html#afedff111b1691c5973e264ce4f6a3787" title="Destroy server interface." alt="" coords="442,351,581,376"/>
-<area shape="poly" id="edge11_Node000026_Node000032" title=" " alt="" coords="344,324,439,345,438,350,343,329"/>
+<area shape="poly" id="edge11_Node000029_Node000032" title=" " alt="" coords="344,324,439,345,438,350,343,329"/>
 <area shape="rect" id="Node000036" href="$bindgen_8c.html#a2b87a92483f8fce3503268bb05dc7098" title=" " alt="" coords="460,449,563,475"/>
 <area shape="poly" id="edge13_Node000035_Node000036" title=" " alt="" coords="286,687,299,647,322,592,356,533,378,507,404,484,424,472,445,465,447,470,426,477,407,488,382,510,360,536,326,594,304,649,291,688"/>
 <area shape="rect" id="Node000144" href="$gf__lua_8c.html#ad92129027a0f65174c3b0c9e51eaa3f4" title=" " alt="" coords="422,499,601,524"/>

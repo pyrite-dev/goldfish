@@ -1,7 +1,0 @@
-<map id="gf_lua_destroy" name="gf_lua_destroy">
-<area shape="rect" id="Node000001" title="Destroy Lua interface." alt="" coords="5,5,124,31"/>
-<area shape="rect" id="Node000002" href="$gf__font_8c.html#a2777beb54b042206a6873accb1333522" title="Destroy font." alt="" coords="172,5,296,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,15,158,15,158,21,124,21"/>
-<area shape="rect" id="Node000003" href="$gf__texture_8c.html#a3bfedc6c576e35173d3a7b1b9565e649" title="Destroy texture." alt="" coords="344,5,489,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,15,330,15,330,21,296,21"/>
-</map>
