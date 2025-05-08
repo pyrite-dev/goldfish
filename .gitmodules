@@ -11,3 +11,6 @@
 [submodule "external/ode"]
 	path = external/ode
 	url = https://github.com/thomasmarsh/ODE
+[submodule "external/OpenGLOnMacOS9"]
+	path = external/OpenGLOnMacOS9
+	url = https://github.com/IoIxD/OpenGLOnMacOS9

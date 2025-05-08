@@ -54,6 +54,16 @@ gf_backends = {
 					"external/rgfw"
 				}
 			},
+			agl = {
+				name = "agl",
+				includedirs = {
+					"external/OpenGLOnMacOS9/include",
+					"misc/classic_mac_os_hacks"
+				},
+				links = {
+					-- "external/OpenGLOnMacOS9/lib/libgl.a"
+				}
+			},
 			["rgfw-wayland"] = {
 				alias = "rgfw",
 				name = "RGFW (Wayland)",
@@ -79,6 +89,11 @@ gf_backends = {
 			}
 		}
 	}
+}
+
+gf_audio_backends = {
+	miniaudio = {},
+	none = {},
 }
 
 gf_l = {}
@@ -112,6 +127,12 @@ for k,v in pairs(gf_backends) do
 	table.insert(gf_l, {k, v["name"]})
 end
 
+
+gf_aud = {}
+for k,v in pairs(gf_audio_backends) do
+	table.insert(gf_aud, {k, v})
+end
+
 newoption({
 	trigger = "backend",
 	value = "API",
@@ -119,6 +140,16 @@ newoption({
 	allowed = gf_l,
 	category = "Engine",
 	default = "opengl"
+})
+
+
+newoption({
+	trigger = "audio_backend",
+	value = "API",
+	description = "Choose a backend for audio",
+	allowed = gf_aud,
+	category = "Engine",
+	default = "miniaudio"
 })
 
 newoption({
@@ -312,8 +343,12 @@ function gf_link_stuffs(cond)
 	})
 		links({
 			"m",
+		})
+	if _OPTIONS["opengl"] ~= "agl" then
+		links({
 			"pthread"
 		})
+	end
 	filter({})
 end
 
@@ -366,20 +401,29 @@ function gf_msvc_filters()
 	filter({})
 end
 
-include("util")
+if _OPTIONS["opengl"] ~= "agl" then
+	include("util")
+end
 include("src")
 
 if _ACTION and _ACTION ~= "clean" then
 	local text = ""
-
 	text = text .. "#ifndef _ODE_CONFIG_H_\n"
 	text = text .. "#define _ODE_CONFIG_H_\n"
 	text = text .. "#define dTRIMESH_ENABLED 1\n"
 	text = text .. "#define dTRIMESH_GIMPACT 1\n"
-	text = text .. "#define dOU_ENABLED 1\n"
-	text = text .. "#define dATOMICS_ENABLED 1\n"
-	text = text .. "#define dTLS_ENABLED 1\n"
-	text = text .. "#define dBUILTIN_THREADING_IMPL_ENABLED 1\n"
+	if _OPTIONS["opengl"] ~= "agl" then
+		text = text .. "#define dOU_ENABLED 1\n"
+		text = text .. "#define dATOMICS_ENABLED 1\n"
+		text = text .. "#define dTLS_ENABLED 1\n"
+		text = text .. "#define dBUILTIN_THREADING_IMPL_ENABLED 1\n"
+	else
+		text = text .. "#define dOU_ENABLED 1\n"
+		text = text .. "#define dATOMICS_ENABLED 0\n"
+		text = text .. "#define dTLS_ENABLED 0\n"
+		text = text .. "#define dBUILTIN_THREADING_IMPL_ENABLED 0\n"
+		text = text .. "#define dTHREADING_INTF_DISABLED 1\n"
+	end
 	text = text .. "#include \"typedefs.h\"\n"
 	text = text .. "#endif\n"
 
