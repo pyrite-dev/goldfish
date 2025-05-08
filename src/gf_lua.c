@@ -670,7 +670,6 @@ void gf_lua_close(gf_lua_t* lua) {
 }
 
 void gf_lua_destroy(gf_lua_t* lua) {
-	int i;
 	lua_close(lua->lua);
 
 	gf_log_function(lua->engine, "Destroyed Lua interface", "");
