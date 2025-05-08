@@ -72,7 +72,7 @@
 				<Argument Index="1" Type="gf_audio_id_t" />
 			</Not>
 			<Not>
-				<Name Pattern="^gf_audio_(?:destroy|load|is_over)$" />
+				<Name Pattern="^gf_audio_(?:destroy|load|is_over|callback)$" />
 			</Not>
 		</Match>
 	</Group>
