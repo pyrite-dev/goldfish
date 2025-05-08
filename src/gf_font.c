@@ -319,6 +319,7 @@ gf_font_t* gf_font_create(gf_draw_t* draw, const char* path, const void* data, s
 	if(size > 5 && memcmp(data, ttf_magic, 5) == 0 && stbtt_InitFont(&font->ttf, buf, 0)) {
 		font->use_glyph = 0;
 		font->buffer	= buf;
+		arrput(draw->loaded_fonts, font);
 		return font;
 	}
 
@@ -340,6 +341,7 @@ gf_font_t* gf_font_create(gf_draw_t* draw, const char* path, const void* data, s
 	}
 
 	free(buf);
+	arrput(draw->loaded_fonts, font);
 	return font;
 }
 
@@ -365,6 +367,12 @@ gf_font_t* gf_font_create_file(gf_draw_t* draw, const char* path) {
 
 void gf_font_destroy(gf_font_t* font) {
 	int i;
+	for(i = 0; i < arrlen(font->draw->loaded_fonts); i++) {
+		if(font->draw->loaded_fonts[i] == font) {
+			arrdel(font->draw->loaded_fonts, i);
+			i--;
+		}
+	}
 	if(font->glyph != NULL) {
 		for(i = 0; i < font->count; i++) {
 			gf_texture_destroy(font->glyph[i]->texture);

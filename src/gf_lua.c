@@ -250,9 +250,7 @@ void gf_lua_gui_callback(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, i
 	*pid = id;
 
 	lua_pushnumber(lua->lua, type);
-	if(lua_pcall(lua->lua, 2, 0, 0)) {
-		gf_log_function(lua->engine, "Lua error: %s", lua_tostring(lua->lua, -1));
-	}
+	lua_pcall(lua->lua, 2, 0, 0);
 }
 
 int gf_lua_meta_call_gui_component_callback(lua_State* s) {
@@ -510,9 +508,8 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 	memset(lua, 0, sizeof(*lua));
 	lua->engine = engine;
 
-	lua->loop	= 0;
-	lua->close	= 0;
-	lua->font_array = NULL;
+	lua->loop  = 0;
+	lua->close = 0;
 
 	lua->lua = luaL_newstate();
 	luaL_openlibs(lua->lua);
@@ -618,6 +615,14 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 	lua_pushcfunction(lua->lua, gf_lua_call_graphic_points);
 	lua_settable(lua->lua, -3);
 
+	lua_pushstring(lua->lua, "rect");
+	lua_getfield(lua->lua, -2, "fill_rect");
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "fill_rect");
+	lua_pushnil(lua->lua);
+	lua_settable(lua->lua, -3);
+
 	lua_pop(lua->lua, 2);
 
 	return lua;
@@ -667,11 +672,6 @@ void gf_lua_close(gf_lua_t* lua) {
 void gf_lua_destroy(gf_lua_t* lua) {
 	int i;
 	lua_close(lua->lua);
-
-	for(i = 0; i < arrlen(lua->font_array); i++) {
-		gf_font_destroy(lua->font_array[i]);
-	}
-	arrfree(lua->font_array);
 
 	gf_log_function(lua->engine, "Destroyed Lua interface", "");
 	free(lua);

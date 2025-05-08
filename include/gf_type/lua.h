@@ -19,7 +19,6 @@ typedef struct gf_lua_t gf_lua_t;
 /* Engine */
 #include <gf_type/core.h>
 #include <gf_type/gui.h>
-#include <gf_type/font.h>
 
 /* Standard */
 
@@ -39,16 +38,12 @@ typedef struct gf_lua_t gf_lua_t;
  *
  * @var gf_lua_t::close
  * @brief Close call
- *
- * @var gf_lua_t::font_array
- * @brief Font array
  */
 GF_DECLARE_TYPE(lua, {
 	gf_engine_t* engine;
 	lua_State*   lua;
 	int	     loop;
 	int	     close;
-	gf_font_t**  font_array;
 });
 #else
 typedef void gf_lua_t;

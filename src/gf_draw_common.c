@@ -35,17 +35,18 @@ void gf_draw_end(void) { gf_draw_platform_end(); }
 gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	gf_draw_t* draw = malloc(sizeof(*draw));
 	memset(draw, 0, sizeof(*draw));
-	draw->engine  = engine;
-	draw->x	      = 0;
-	draw->y	      = 0;
-	draw->width   = 800;
-	draw->height  = 600;
-	draw->running = 0;
-	draw->draw_3d = 0;
-	draw->input   = NULL;
-	draw->clip    = NULL;
-	draw->font    = NULL;
-	draw->fps     = -1;
+	draw->engine	   = engine;
+	draw->x		   = 0;
+	draw->y		   = 0;
+	draw->width	   = 800;
+	draw->height	   = 600;
+	draw->running	   = 0;
+	draw->draw_3d	   = 0;
+	draw->input	   = NULL;
+	draw->clip	   = NULL;
+	draw->font	   = NULL;
+	draw->fps	   = -1;
+	draw->loaded_fonts = NULL;
 	strcpy(draw->title, title);
 	draw->platform = gf_draw_platform_create(engine, draw);
 	if(draw->platform != NULL) {
@@ -149,6 +150,9 @@ int gf_draw_step(gf_draw_t* draw) {
 }
 
 void gf_draw_destroy(gf_draw_t* draw) {
+	while(arrlen(draw->loaded_fonts) > 0) {
+		gf_font_destroy(draw->loaded_fonts[0]);
+	}
 	if(draw->clip != NULL) {
 		arrfree(draw->clip);
 		draw->clip = NULL;
