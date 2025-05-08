@@ -78,7 +78,7 @@ void gf_sound_winmm_thread(void* ptr) {
 	while(1) {
 		int dw = GetTickCount();
 		int dw2;
-		if(diff > len) {
+		if(diff >= len) {
 			Sleep(interval);
 			diff -= len;
 			continue;

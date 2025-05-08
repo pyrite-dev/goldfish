@@ -123,11 +123,14 @@ void gf_gui_button_drag(gf_gui_t* gui, gf_gui_component_t* c) {
 void gf_gui_button_click(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_input_t*	  input = gui->draw->input;
 	gf_prop_integer_t prop;
+	gf_gui_id_t	  id = c->key;
 	if(c->type != GF_GUI_BUTTON) return;
 	if(c->callback != NULL) {
 		c->callback(gui->engine, gui->draw, gui->pressed, GF_GUI_PRESS_EVENT);
+		c = &gui->area[hmgeti(gui->area, id)];
 	}
 	c->pressed = 1;
+
 	if((prop = gf_prop_get_integer(&c->prop, "close-parent")) != GF_PROP_NO_SUCH && prop) {
 		gf_gui_destroy_id(gui, c->parent);
 	}
