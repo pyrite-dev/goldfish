@@ -19,13 +19,18 @@ FILE* gf_log_default = NULL;
 
 void gf_log(gf_engine_t* engine, const char* fmt, ...) {
 	va_list va;
-	FILE*	out = gf_log_default;
+	FILE*	out = NULL;
 	if(engine != NULL) {
 		out = engine->log;
 	}
 	if(out != NULL) {
 		va_start(va, fmt);
 		vfprintf(out, fmt, va);
+		va_end(va);
+	}
+	if(gf_log_default != NULL){
+		va_start(va, fmt);
+		vfprintf(gf_log_default, fmt, va);
 		va_end(va);
 	}
 }
