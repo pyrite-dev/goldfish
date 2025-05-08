@@ -2,22 +2,22 @@
 <area shape="rect" id="Node000001" title="Destroy engine instance." alt="" coords="5,167,148,192"/>
 <area shape="rect" id="Node000002" href="$gf__client_8c.html#a1f8b044a5ca56016e55dad76cd839b53" title="Destroy client interface." alt="" coords="206,92,341,117"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,164,195,126,215,119,217,124,197,131,107,169"/>
-<area shape="rect" id="Node000013" href="$gf__lua_8c.html#aa5bfe11630255b705da173365e88598e" title="Destroy Lua interface." alt="" coords="214,141,333,167"/>
-<area shape="poly" id="edge6_Node000001_Node000013" title=" " alt="" coords="148,168,200,161,201,166,148,173"/>
-<area shape="rect" id="Node000014" href="$gf__resource_8c.html#a943af2ca1233172ac44a8c436c11e580" title="Destroy resource." alt="" coords="196,191,351,216"/>
-<area shape="poly" id="edge7_Node000001_Node000014" title=" " alt="" coords="148,185,182,190,182,195,148,191"/>
-<area shape="rect" id="Node000015" href="$gf__server_8c.html#afedff111b1691c5973e264ce4f6a3787" title="Destroy server interface." alt="" coords="204,240,343,265"/>
-<area shape="poly" id="edge8_Node000001_Node000015" title=" " alt="" coords="109,190,197,225,220,233,218,238,195,230,107,195"/>
+<area shape="rect" id="Node000016" href="$gf__lua_8c.html#aa5bfe11630255b705da173365e88598e" title="Destroy Lua interface." alt="" coords="214,141,333,167"/>
+<area shape="poly" id="edge6_Node000001_Node000016" title=" " alt="" coords="148,168,200,161,201,166,148,173"/>
+<area shape="rect" id="Node000017" href="$gf__resource_8c.html#a943af2ca1233172ac44a8c436c11e580" title="Destroy resource." alt="" coords="196,191,351,216"/>
+<area shape="poly" id="edge7_Node000001_Node000017" title=" " alt="" coords="148,185,182,190,182,195,148,191"/>
+<area shape="rect" id="Node000018" href="$gf__server_8c.html#afedff111b1691c5973e264ce4f6a3787" title="Destroy server interface." alt="" coords="204,240,343,265"/>
+<area shape="poly" id="edge8_Node000001_Node000018" title=" " alt="" coords="109,190,197,225,220,233,218,238,195,230,107,195"/>
 <area shape="rect" id="Node000003" href="$gf__audio_8c.html#ab5022a62ecc7ba83ccb5da4a1add398b" title="Destroy audio interface." alt="" coords="408,5,543,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,89,342,65,398,40,416,33,418,37,400,44,345,70,299,94"/>
-<area shape="rect" id="Node000005" href="$gf__client_8c.html#abf0adb933d1fc4b708760878745e8a1e" title="Start client shutdown." alt="" coords="401,55,549,80"/>
-<area shape="poly" id="edge3_Node000002_Node000005" title=" " alt="" coords="341,90,392,80,393,85,342,95"/>
-<area shape="rect" id="Node000006" href="$gf__draw__common_8c.html#aa7c19917300ff10b22de455323f01d83" title="Destroy drawing interface." alt="" coords="410,104,541,129"/>
-<area shape="poly" id="edge4_Node000002_Node000006" title=" " alt="" coords="341,106,396,109,396,115,341,111"/>
-<area shape="rect" id="Node000012" href="$gf__input_8c.html#ac4a22f8231c87a464f6be7faead5dec2" title="Destroy input interface." alt="" coords="410,153,541,179"/>
-<area shape="poly" id="edge5_Node000002_Node000012" title=" " alt="" coords="317,115,421,147,419,152,315,120"/>
-<area shape="rect" id="Node000016" href="$gf__physics_8c.html#ad9f65aa74657b4558c67f809c590fad3" title="Destroy physics interface." alt="" coords="402,215,549,240"/>
-<area shape="poly" id="edge9_Node000015_Node000016" title=" " alt="" coords="342,241,388,236,389,241,343,247"/>
-<area shape="rect" id="Node000017" href="$gf__server_8c.html#a57e10ab1ec7f3353f7fd1247edd5bd0d" title="Start server shutdown." alt="" coords="399,264,552,289"/>
-<area shape="poly" id="edge10_Node000015_Node000017" title=" " alt="" coords="343,258,385,263,385,269,342,264"/>
+<area shape="rect" id="Node000008" href="$gf__client_8c.html#abf0adb933d1fc4b708760878745e8a1e" title="Start client shutdown." alt="" coords="401,55,549,80"/>
+<area shape="poly" id="edge3_Node000002_Node000008" title=" " alt="" coords="341,90,392,80,393,85,342,95"/>
+<area shape="rect" id="Node000009" href="$gf__draw__common_8c.html#aa7c19917300ff10b22de455323f01d83" title="Destroy drawing interface." alt="" coords="410,104,541,129"/>
+<area shape="poly" id="edge4_Node000002_Node000009" title=" " alt="" coords="341,106,396,109,396,115,341,111"/>
+<area shape="rect" id="Node000015" href="$gf__input_8c.html#ac4a22f8231c87a464f6be7faead5dec2" title="Destroy input interface." alt="" coords="410,153,541,179"/>
+<area shape="poly" id="edge5_Node000002_Node000015" title=" " alt="" coords="317,115,421,147,419,152,315,120"/>
+<area shape="rect" id="Node000019" href="$gf__physics_8c.html#ad9f65aa74657b4558c67f809c590fad3" title="Destroy physics interface." alt="" coords="402,215,549,240"/>
+<area shape="poly" id="edge9_Node000018_Node000019" title=" " alt="" coords="342,241,388,236,389,241,343,247"/>
+<area shape="rect" id="Node000020" href="$gf__server_8c.html#a57e10ab1ec7f3353f7fd1247edd5bd0d" title="Start server shutdown." alt="" coords="399,264,552,289"/>
+<area shape="poly" id="edge10_Node000018_Node000020" title=" " alt="" coords="343,258,385,263,385,269,342,264"/>
 </map>

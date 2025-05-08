@@ -4,31 +4,31 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,47,114,83,110,80,134,44"/>
 <area shape="rect" id="Node000003" href="$lua_8h.html" title="Type definitions related to lua." alt="" coords="129,240,184,265"/>
 <area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="162,45,179,93,183,130,180,166,167,227,162,226,175,166,177,130,174,94,157,47"/>
-<area shape="rect" id="Node000031" title=" " alt="" coords="5,167,84,192"/>
-<area shape="poly" id="edge10_Node000001_Node000031" title=" " alt="" coords="98,48,67,67,43,95,38,108,36,123,39,153,34,153,31,123,33,107,38,92,63,63,95,43"/>
-<area shape="rect" id="Node000032" href="$gf__graphic_8h.html" title="Graphic interface." alt="" coords="375,93,477,119"/>
-<area shape="poly" id="edge11_Node000001_Node000032" title=" " alt="" coords="216,43,373,87,371,92,214,48"/>
+<area shape="rect" id="Node000032" title=" " alt="" coords="5,167,84,192"/>
+<area shape="poly" id="edge10_Node000001_Node000032" title=" " alt="" coords="98,48,67,67,43,95,38,108,36,123,39,153,34,153,31,123,33,107,38,92,63,63,95,43"/>
+<area shape="rect" id="Node000033" href="$gf__graphic_8h.html" title="Graphic interface." alt="" coords="375,93,477,119"/>
+<area shape="poly" id="edge11_Node000001_Node000033" title=" " alt="" coords="216,43,373,87,371,92,214,48"/>
 <area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="128,91,154,92,163,97,167,106,159,118,142,122,141,117,156,113,161,106,159,101,152,97,128,96"/>
 <area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="104,118,149,226,144,228,99,120"/>
-<area shape="poly" id="edge8_Node000002_Node000031" title=" " alt="" coords="90,121,63,157,59,154,86,117"/>
+<area shape="poly" id="edge8_Node000002_Node000032" title=" " alt="" coords="90,121,63,157,59,154,86,117"/>
 <area shape="poly" id="edge7_Node000003_Node000003" title=" " alt="" coords="181,237,201,239,208,244,211,253,206,263,196,268,193,263,202,260,205,253,204,247,199,244,181,243"/>
 <area shape="rect" id="Node000004" href="$gf__pre_8h.html" title="Required headers before anything." alt="" coords="451,460,526,485"/>
 <area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="161,265,169,295,183,334,205,375,236,410,284,438,338,456,391,466,438,469,438,475,390,471,336,461,282,443,232,414,200,378,178,336,164,296,156,266"/>
 <area shape="rect" id="Node000006" href="$gf__macro_8h.html" title="Macro." alt="" coords="441,387,536,412"/>
 <area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="172,263,218,299,280,336,356,365,428,384,427,389,354,370,278,341,215,303,168,268"/>
 <area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="491,412,491,446,486,446,486,412"/>
-<area shape="poly" id="edge12_Node000032_Node000004" title=" " alt="" coords="392,121,349,140,304,168,285,185,269,205,259,227,255,252,255,327,260,356,274,381,295,403,321,420,381,446,439,461,437,466,379,451,318,425,291,407,270,385,255,358,250,328,250,251,254,225,265,202,281,181,301,163,346,135,389,116"/>
-<area shape="poly" id="edge13_Node000032_Node000006" title=" " alt="" coords="431,118,486,373,481,374,426,119"/>
+<area shape="poly" id="edge12_Node000033_Node000004" title=" " alt="" coords="392,121,349,140,304,168,285,185,269,205,259,227,255,252,255,327,260,356,274,381,295,403,321,420,381,446,439,461,437,466,379,451,318,425,291,407,270,385,255,358,250,328,250,251,254,225,265,202,281,181,301,163,346,135,389,116"/>
+<area shape="poly" id="edge13_Node000033_Node000006" title=" " alt="" coords="431,118,486,373,481,374,426,119"/>
 <area shape="rect" id="Node000020" href="$graphic_8h.html" title="Type definitions related to graphic interface." alt="" coords="291,313,425,339"/>
-<area shape="poly" id="edge14_Node000032_Node000020" title=" " alt="" coords="398,121,366,140,352,153,342,168,332,202,332,237,340,271,350,300,344,301,335,273,327,238,326,201,337,166,348,149,363,136,395,116"/>
+<area shape="poly" id="edge14_Node000033_Node000020" title=" " alt="" coords="398,121,366,140,352,153,342,168,332,202,332,237,340,271,350,300,344,301,335,273,327,238,326,201,337,166,348,149,363,136,395,116"/>
 <area shape="rect" id="Node000012" href="$draw_8h.html" title="Type definitions related to drawing interface." alt="" coords="552,167,671,192"/>
-<area shape="poly" id="edge17_Node000032_Node000012" title=" " alt="" coords="457,116,569,159,568,164,455,121"/>
+<area shape="poly" id="edge17_Node000033_Node000012" title=" " alt="" coords="457,116,569,159,568,164,455,121"/>
 <area shape="rect" id="Node000016" href="$texture_8h.html" title="Type definitions related to texture." alt="" coords="653,313,788,339"/>
-<area shape="poly" id="edge28_Node000032_Node000016" title=" " alt="" coords="478,110,595,130,649,145,685,165,707,196,720,232,725,269,725,299,720,300,719,269,714,234,703,198,682,169,647,150,594,135,477,116"/>
+<area shape="poly" id="edge28_Node000033_Node000016" title=" " alt="" coords="478,110,595,130,649,145,685,165,707,196,720,232,725,269,725,299,720,300,719,269,714,234,703,198,682,169,647,150,594,135,477,116"/>
 <area shape="rect" id="Node000021" href="$font_8h.html" title="Type definitions related to font." alt="" coords="553,240,667,265"/>
-<area shape="poly" id="edge29_Node000032_Node000021" title=" " alt="" coords="443,117,586,229,583,233,439,121"/>
-<area shape="rect" id="Node000033" title=" " alt="" coords="351,167,426,192"/>
-<area shape="poly" id="edge30_Node000032_Node000033" title=" " alt="" coords="422,120,403,156,399,153,417,118"/>
+<area shape="poly" id="edge29_Node000033_Node000021" title=" " alt="" coords="443,117,586,229,583,233,439,121"/>
+<area shape="rect" id="Node000034" title=" " alt="" coords="351,167,426,192"/>
+<area shape="poly" id="edge30_Node000033_Node000034" title=" " alt="" coords="422,120,403,156,399,153,417,118"/>
 <area shape="poly" id="edge15_Node000020_Node000004" title=" " alt="" coords="370,337,432,410,469,448,465,452,428,414,365,341"/>
 <area shape="poly" id="edge16_Node000020_Node000006" title=" " alt="" coords="380,336,457,378,454,382,378,341"/>
 <area shape="poly" id="edge18_Node000012_Node000004" title=" " alt="" coords="650,190,707,212,767,245,790,265,806,288,812,313,803,340,779,372,749,398,715,420,678,437,604,459,540,470,539,465,603,454,676,432,712,415,746,394,775,368,798,337,806,313,801,290,787,269,764,249,705,217,648,195"/>

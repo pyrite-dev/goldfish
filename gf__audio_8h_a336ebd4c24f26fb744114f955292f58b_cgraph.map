@@ -1,0 +1,7 @@
+<map id="gf_audio_resume" name="gf_audio_resume">
+<area shape="rect" id="Node000001" title="Resume audio." alt="" coords="5,31,140,56"/>
+<area shape="rect" id="Node000002" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="196,5,363,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,32,182,27,182,33,141,38"/>
+<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="188,55,371,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,48,175,52,174,58,140,54"/>
+</map>

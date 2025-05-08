@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('gf__audio_8c.html',''); initResizable(
 <code>#include &lt;<a class="el" href="gf__audio_8h_source.html">gf_audio.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="gf__log_8h_source.html">gf_log.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="gf__file_8h_source.html">gf_file.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="gf__thread_8h_source.html">gf_thread.h</a>&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -113,63 +114,72 @@ Include dependency graph for gf_audio.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__audio_8c__incl.png" border="0" usemap="#asrc_2gf__audio_8c" alt=""/></div>
 <map name="asrc_2gf__audio_8c" id="asrc_2gf__audio_8c">
-<area shape="rect" title=" " alt="" coords="628,5,740,31"/>
-<area shape="rect" href="gf__pre_8h.html" title="Required headers before anything." alt="" coords="668,372,743,397"/>
-<area shape="poly" title=" " alt="" coords="741,21,865,35,1011,61,1078,80,1133,102,1155,115,1171,130,1182,146,1185,163,1185,239,1183,260,1176,275,1166,288,1153,297,1120,311,1081,327,995,356,906,374,823,383,756,386,756,381,823,378,905,369,994,351,1079,321,1118,306,1150,292,1163,284,1172,273,1178,258,1180,239,1180,164,1177,148,1167,133,1151,120,1131,107,1076,85,1010,66,864,40,740,26"/>
+<area shape="rect" title=" " alt="" coords="791,5,903,31"/>
+<area shape="rect" href="gf__pre_8h.html" title="Required headers before anything." alt="" coords="824,372,899,397"/>
+<area shape="poly" title=" " alt="" coords="903,18,1049,28,1138,37,1227,51,1309,69,1377,93,1403,108,1424,124,1437,143,1441,163,1441,239,1439,288,1430,307,1412,326,1384,338,1335,348,1196,364,913,384,912,378,1195,359,1334,342,1383,333,1409,322,1426,304,1434,287,1436,239,1436,164,1432,145,1420,128,1400,112,1375,98,1307,74,1226,56,1137,43,1049,33,903,24"/>
 <area shape="rect" title=" " alt="" coords="5,225,104,251"/>
-<area shape="poly" title=" " alt="" coords="628,23,558,27,473,36,380,54,290,81,227,112,168,149,79,218,76,214,165,145,224,107,288,76,379,49,472,31,558,21,628,17"/>
+<area shape="poly" title=" " alt="" coords="790,25,542,45,411,61,317,81,246,111,180,149,123,187,81,219,78,214,120,183,177,144,244,107,315,76,410,56,541,40,790,20"/>
 <area shape="rect" title=" " alt="" coords="129,225,207,251"/>
-<area shape="poly" title=" " alt="" coords="628,21,565,25,489,34,409,52,333,81,287,111,245,147,211,184,186,216,182,212,207,181,242,144,284,107,331,76,408,47,488,28,564,19,628,16"/>
+<area shape="poly" title=" " alt="" coords="791,26,568,45,452,61,405,71,370,81,314,110,263,147,221,185,189,217,185,213,217,181,260,143,312,105,368,76,404,66,451,56,567,40,790,20"/>
 <area shape="rect" title=" " alt="" coords="231,225,318,251"/>
-<area shape="poly" title=" " alt="" coords="628,22,548,29,502,37,454,49,407,66,362,88,321,117,288,153,276,182,274,212,269,211,271,181,283,151,318,113,359,84,405,61,453,44,501,32,548,24,627,17"/>
-<area shape="rect" title=" " alt="" coords="609,79,685,104"/>
-<area shape="poly" title=" " alt="" coords="680,32,661,68,657,65,675,30"/>
-<area shape="rect" href="gf__audio_8h.html" title="Audio interface." alt="" coords="465,79,556,104"/>
-<area shape="poly" title=" " alt="" coords="657,33,553,76,551,71,655,28"/>
-<area shape="rect" href="gf__log_8h.html" title="Logger." alt="" coords="685,152,760,177"/>
-<area shape="poly" title=" " alt="" coords="690,30,719,138,713,139,685,32"/>
-<area shape="rect" href="gf__file_8h.html" title="File I/O." alt="" coords="857,152,932,177"/>
-<area shape="poly" title=" " alt="" coords="702,29,868,142,865,146,699,33"/>
-<area shape="rect" title=" " alt="" coords="1221,79,1291,104"/>
-<area shape="poly" title=" " alt="" coords="740,21,944,42,1202,76,1207,77,1206,82,1201,81,944,47,740,27"/>
-<area shape="rect" title=" " alt="" coords="1315,79,1386,104"/>
-<area shape="poly" title=" " alt="" coords="741,19,981,37,1139,53,1302,76,1301,81,1138,58,981,42,740,25"/>
-<area shape="rect" title=" " alt="" coords="659,445,752,471"/>
-<area shape="poly" title=" " alt="" coords="708,398,708,432,703,432,703,398"/>
-<area shape="poly" title=" " alt="" coords="510,105,505,132,501,170,504,211,517,249,546,289,584,321,624,346,662,364,660,369,622,351,581,325,542,292,512,252,499,212,496,169,500,132,505,104"/>
-<area shape="rect" href="gf__macro_8h.html" title="Macro." alt="" coords="615,299,710,324"/>
-<area shape="poly" title=" " alt="" coords="512,105,509,133,510,171,517,212,536,249,549,264,566,276,603,294,601,298,563,281,546,268,531,252,512,214,504,171,504,133,506,104"/>
-<area shape="rect" href="audio_8h.html" title="Type definitions related to audio interface." alt="" coords="297,152,420,177"/>
-<area shape="poly" title=" " alt="" coords="487,106,397,149,395,144,485,102"/>
-<area shape="rect" href="core_8h.html" title="Type definitions related to core." alt="" coords="545,225,660,251"/>
-<area shape="poly" title=" " alt="" coords="520,103,590,212,586,215,516,106"/>
-<area shape="rect" title=" " alt="" coords="969,299,1044,324"/>
-<area shape="poly" title=" " alt="" coords="556,96,945,149,975,163,997,177,1015,196,1030,224,1035,241,1034,257,1023,288,1018,286,1028,256,1029,241,1026,226,1010,199,994,182,972,168,943,155,556,101"/>
-<area shape="poly" title=" " alt="" coords="672,323,694,359,689,362,667,326"/>
-<area shape="poly" title=" " alt="" coords="364,177,371,207,386,246,409,287,440,322,465,338,492,351,549,369,605,379,655,382,654,387,605,384,548,375,490,356,462,343,437,326,404,291,381,249,366,208,358,178"/>
-<area shape="poly" title=" " alt="" coords="310,180,118,225,116,220,309,175"/>
-<area shape="poly" title=" " alt="" coords="329,180,213,223,211,218,327,175"/>
-<area shape="poly" title=" " alt="" coords="347,179,301,218,297,214,343,175"/>
-<area shape="poly" title=" " alt="" coords="375,175,425,210,491,248,550,273,608,292,606,297,548,278,488,253,422,215,372,180"/>
-<area shape="poly" title=" " alt="" coords="399,175,551,219,549,224,397,180"/>
-<area shape="poly" title=" " alt="" coords="602,251,598,285,600,305,606,323,628,347,656,364,654,369,625,351,602,325,594,306,593,285,597,250"/>
-<area shape="poly" title=" " alt="" coords="615,249,646,286,642,290,611,253"/>
-<area shape="rect" title=" " alt="" coords="785,299,852,324"/>
-<area shape="poly" title=" " alt="" coords="638,248,773,292,771,297,637,253"/>
-<area shape="poly" title=" " alt="" coords="726,177,730,240,725,324,717,359,712,358,720,324,724,240,721,178"/>
-<area shape="poly" title=" " alt="" coords="720,179,675,287,670,285,715,177"/>
-<area shape="poly" title=" " alt="" coords="705,180,636,220,633,216,702,175"/>
-<area shape="poly" title=" " alt="" coords="734,176,769,224,807,285,803,288,764,227,730,179"/>
-<area shape="poly" title=" " alt="" coords="933,172,983,190,1008,205,1030,223,1052,248,1067,273,1071,299,1067,312,1058,326,1037,342,1006,354,926,372,835,381,757,385,756,380,835,376,925,366,1005,349,1035,337,1054,322,1062,310,1066,298,1062,275,1048,251,1026,227,1005,209,980,195,931,177"/>
-<area shape="poly" title=" " alt="" coords="877,180,695,293,692,289,875,175"/>
-<area shape="poly" title=" " alt="" coords="858,178,663,225,662,220,856,173"/>
-<area shape="poly" title=" " alt="" coords="934,173,974,192,993,206,1008,224,1014,239,1017,255,1015,285,1010,285,1011,255,1009,240,1003,227,989,210,971,196,931,178"/>
-<area shape="rect" href="file_8h.html" title="Type definitions related to file I/O." alt="" coords="887,225,993,251"/>
-<area shape="poly" title=" " alt="" coords="904,176,928,212,923,215,900,179"/>
-<area shape="poly" title=" " alt="" coords="935,252,907,288,866,326,811,355,757,374,755,369,809,350,862,322,903,285,930,249"/>
-<area shape="poly" title=" " alt="" coords="896,253,722,298,720,293,895,248"/>
-<area shape="poly" title=" " alt="" coords="922,253,851,294,849,289,919,248"/>
-<area shape="poly" title=" " alt="" coords="953,249,988,287,985,290,949,253"/>
+<area shape="poly" title=" " alt="" coords="791,27,666,42,514,67,439,84,373,104,320,127,285,154,277,167,273,181,273,212,267,212,268,181,272,164,281,150,317,123,371,99,438,79,513,62,666,36,790,22"/>
+<area shape="rect" title=" " alt="" coords="701,79,777,104"/>
+<area shape="poly" title=" " alt="" coords="831,33,769,73,766,69,828,28"/>
+<area shape="rect" href="gf__audio_8h.html" title="Audio interface." alt="" coords="801,79,892,104"/>
+<area shape="poly" title=" " alt="" coords="849,31,849,65,844,65,844,31"/>
+<area shape="rect" href="gf__log_8h.html" title="Logger." alt="" coords="892,152,967,177"/>
+<area shape="poly" title=" " alt="" coords="863,29,885,50,906,77,920,108,928,137,922,139,915,110,902,80,881,54,860,33"/>
+<area shape="rect" href="gf__file_8h.html" title="File I/O." alt="" coords="1105,152,1180,177"/>
+<area shape="poly" title=" " alt="" coords="872,28,1108,144,1106,148,869,33"/>
+<area shape="rect" href="gf__thread_8h.html" title="Thread interface." alt="" coords="615,152,711,177"/>
+<area shape="poly" title=" " alt="" coords="791,30,738,48,712,62,690,80,674,109,667,139,662,138,669,107,686,77,709,58,735,43,790,25"/>
+<area shape="rect" title=" " alt="" coords="1477,79,1547,104"/>
+<area shape="poly" title=" " alt="" coords="903,20,1145,39,1301,55,1458,76,1463,77,1462,82,1457,81,1300,61,1144,44,903,25"/>
+<area shape="rect" title=" " alt="" coords="1571,79,1642,104"/>
+<area shape="poly" title=" " alt="" coords="903,18,1181,34,1367,51,1558,76,1557,81,1366,56,1181,39,903,24"/>
+<area shape="rect" title=" " alt="" coords="815,445,908,471"/>
+<area shape="poly" title=" " alt="" coords="864,398,864,432,859,432,859,398"/>
+<area shape="poly" title=" " alt="" coords="802,105,693,129,603,155,553,173,507,191,491,202,480,215,478,230,485,249,514,287,551,317,593,340,639,357,686,369,731,376,810,382,810,387,731,381,685,374,637,362,591,345,548,322,510,291,480,252,473,231,476,213,487,198,505,186,551,168,602,149,692,124,800,99"/>
+<area shape="rect" href="gf__macro_8h.html" title="Macro." alt="" coords="767,299,862,324"/>
+<area shape="poly" title=" " alt="" coords="847,105,825,226,819,285,814,285,820,225,842,104"/>
+<area shape="rect" href="audio_8h.html" title="Type definitions related to audio interface." alt="" coords="295,152,417,177"/>
+<area shape="poly" title=" " alt="" coords="802,104,788,107,613,132,436,155,431,155,431,150,436,149,612,127,788,101,801,99"/>
+<area shape="rect" href="core_8h.html" title="Type definitions related to core." alt="" coords="852,225,967,251"/>
+<area shape="poly" title=" " alt="" coords="853,103,882,176,899,212,895,214,878,178,848,105"/>
+<area shape="rect" title=" " alt="" coords="1324,299,1399,324"/>
+<area shape="poly" title=" " alt="" coords="893,93,1029,111,1111,127,1193,149,1273,174,1304,192,1337,224,1353,253,1361,284,1356,285,1348,255,1333,227,1301,196,1270,179,1191,155,1110,132,1028,116,892,99"/>
+<area shape="poly" title=" " alt="" coords="825,323,848,359,844,362,820,326"/>
+<area shape="poly" title=" " alt="" coords="357,178,355,208,357,247,367,288,377,306,390,322,420,340,465,355,520,365,581,373,707,380,810,381,810,387,707,386,581,378,519,370,463,360,418,345,386,326,372,309,362,290,351,248,349,207,352,177"/>
+<area shape="poly" title=" " alt="" coords="308,180,117,225,116,220,307,175"/>
+<area shape="poly" title=" " alt="" coords="327,180,212,223,211,218,325,175"/>
+<area shape="poly" title=" " alt="" coords="345,179,300,218,296,214,341,175"/>
+<area shape="poly" title=" " alt="" coords="371,175,418,212,450,232,484,248,554,271,627,288,754,304,753,309,626,293,553,276,482,253,447,236,415,216,367,180"/>
+<area shape="poly" title=" " alt="" coords="418,171,838,225,838,230,418,177"/>
+<area shape="rect" href="thread_8h.html" title="Type definitions related to thread interface." alt="" coords="495,225,625,251"/>
+<area shape="poly" title=" " alt="" coords="390,175,515,218,513,223,388,180"/>
+<area shape="poly" title=" " alt="" coords="908,252,872,360,867,358,903,250"/>
+<area shape="poly" title=" " alt="" coords="896,253,843,292,840,288,893,249"/>
+<area shape="rect" title=" " alt="" coords="1072,299,1139,324"/>
+<area shape="poly" title=" " alt="" coords="942,248,1061,291,1060,296,940,253"/>
+<area shape="poly" title=" " alt="" coords="570,249,601,285,622,305,645,322,686,342,730,357,811,374,810,380,729,362,684,347,643,326,619,309,597,289,566,253"/>
+<area shape="poly" title=" " alt="" coords="602,248,761,292,760,298,600,253"/>
+<area shape="poly" title=" " alt="" coords="946,176,974,208,983,229,981,251,963,287,939,318,889,366,886,362,935,315,959,284,976,250,978,230,970,211,942,179"/>
+<area shape="poly" title=" " alt="" coords="904,180,872,199,842,227,828,256,820,286,815,284,823,254,838,224,868,195,902,175"/>
+<area shape="poly" title=" " alt="" coords="929,178,919,213,914,211,923,177"/>
+<area shape="poly" title=" " alt="" coords="952,175,987,196,1024,223,1059,255,1089,286,1085,290,1056,259,1021,227,984,201,949,180"/>
+<area shape="poly" title=" " alt="" coords="1181,173,1214,184,1244,201,1264,223,1267,237,1264,252,1249,279,1231,298,1181,326,1111,353,1038,371,970,381,912,385,912,380,969,375,1037,366,1110,348,1179,322,1228,294,1244,276,1259,250,1262,237,1259,225,1241,205,1211,189,1179,178"/>
+<area shape="poly" title=" " alt="" coords="1124,180,1060,214,980,253,864,297,862,292,978,248,1058,209,1121,175"/>
+<area shape="poly" title=" " alt="" coords="1106,180,961,224,959,219,1104,175"/>
+<area shape="poly" title=" " alt="" coords="1181,170,1243,188,1276,204,1307,223,1334,253,1353,285,1348,288,1330,256,1304,227,1274,208,1241,193,1179,175"/>
+<area shape="rect" href="file_8h.html" title="Type definitions related to file I/O." alt="" coords="1143,225,1249,251"/>
+<area shape="poly" title=" " alt="" coords="1154,176,1181,213,1177,216,1149,179"/>
+<area shape="poly" title=" " alt="" coords="1196,252,1182,288,1169,309,1152,326,1109,345,1045,361,913,381,912,375,1044,356,1107,340,1149,322,1165,306,1177,286,1191,250"/>
+<area shape="poly" title=" " alt="" coords="1143,252,876,301,875,296,1142,247"/>
+<area shape="poly" title=" " alt="" coords="1183,253,1133,292,1129,288,1180,249"/>
+<area shape="poly" title=" " alt="" coords="1224,248,1323,291,1321,296,1222,253"/>
+<area shape="poly" title=" " alt="" coords="669,177,700,243,725,285,757,322,787,346,820,364,818,369,784,350,753,326,721,288,695,246,665,179"/>
+<area shape="poly" title=" " alt="" coords="675,176,747,249,792,288,788,292,744,253,672,180"/>
+<area shape="poly" title=" " alt="" coords="648,180,590,219,587,215,645,175"/>
 </map>
 </div>
 </div>
@@ -276,7 +286,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00024">24</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00025">25</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__audio_8c_a71564ab94762d2f58159e0666b84c788_cgraph.png" border="0" usemap="#agf__audio_8c_a71564ab94762d2f58159e0666b84c788_cgraph" alt=""/></div>
+<map name="agf__audio_8c_a71564ab94762d2f58159e0666b84c788_cgraph" id="agf__audio_8c_a71564ab94762d2f58159e0666b84c788_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,144,56"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="200,5,367,31"/>
+<area shape="poly" title=" " alt="" coords="144,32,186,27,186,32,144,38"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="192,55,375,80"/>
+<area shape="poly" title=" " alt="" coords="144,49,178,53,178,58,144,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -317,19 +339,29 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Audio interface </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00188">188</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00189">189</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__audio_8c_a52e61cbf2518774a590141631e053330_cgraph.png" border="0" usemap="#agf__audio_8c_a52e61cbf2518774a590141631e053330_cgraph" alt=""/></div>
 <map name="agf__audio_8c_a52e61cbf2518774a590141631e053330_cgraph" id="agf__audio_8c_a52e61cbf2518774a590141631e053330_cgraph">
-<area shape="rect" title="Create audio interface." alt="" coords="5,31,132,56"/>
-<area shape="rect" href="gf__audio_8c.html#a71564ab94762d2f58159e0666b84c788" title=" " alt="" coords="180,5,319,31"/>
-<area shape="poly" title=" " alt="" coords="132,32,166,27,167,32,133,37"/>
-<area shape="rect" href="gf__audio_8c.html#ab5022a62ecc7ba83ccb5da4a1add398b" title="Destroy audio interface." alt="" coords="182,55,317,80"/>
-<area shape="poly" title=" " alt="" coords="133,49,169,54,168,59,132,54"/>
-<area shape="rect" href="gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="367,55,560,80"/>
-<area shape="poly" title=" " alt="" coords="317,65,353,65,353,70,317,70"/>
+<area shape="rect" title="Create audio interface." alt="" coords="5,104,132,129"/>
+<area shape="rect" href="gf__audio_8c.html#a71564ab94762d2f58159e0666b84c788" title=" " alt="" coords="437,104,575,129"/>
+<area shape="poly" title=" " alt="" coords="132,114,423,114,423,119,132,119"/>
+<area shape="rect" href="gf__audio_8c.html#ab5022a62ecc7ba83ccb5da4a1add398b" title="Destroy audio interface." alt="" coords="203,53,338,79"/>
+<area shape="poly" title=" " alt="" coords="120,101,206,79,207,85,121,106"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a6a65ae130e16a09befc7732954ee6a6f" title="Create mutex." alt="" coords="180,155,361,180"/>
+<area shape="poly" title=" " alt="" coords="121,127,207,149,206,154,120,132"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="659,19,825,44"/>
+<area shape="poly" title=" " alt="" coords="566,101,602,90,650,66,695,47,697,52,652,71,604,95,567,106"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="651,80,833,105"/>
+<area shape="poly" title=" " alt="" coords="575,107,636,101,637,106,576,112"/>
+<area shape="rect" href="gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="409,5,603,31"/>
+<area shape="poly" title=" " alt="" coords="333,51,429,31,430,36,334,56"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9d92314a062ae41412438dde87060cc0" title="Destroy mutex." alt="" coords="411,55,601,80"/>
+<area shape="poly" title=" " alt="" coords="338,64,397,64,397,69,338,69"/>
+<area shape="poly" title=" " alt="" coords="603,21,645,23,645,29,603,26"/>
+<area shape="poly" title=" " alt="" coords="563,28,603,39,697,72,695,77,602,45,561,33"/>
 </map>
 </div>
 <div class="dynheader">
@@ -371,7 +403,19 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00233">233</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00232">232</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__audio_8c_ae34c8bd9d398a4335a1c6f9cc290ebdb_cgraph.png" border="0" usemap="#agf__audio_8c_ae34c8bd9d398a4335a1c6f9cc290ebdb_cgraph" alt=""/></div>
+<map name="agf__audio_8c_ae34c8bd9d398a4335a1c6f9cc290ebdb_cgraph" id="agf__audio_8c_ae34c8bd9d398a4335a1c6f9cc290ebdb_cgraph">
+<area shape="rect" title="Destroy audio decoder." alt="" coords="5,31,199,56"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="255,5,421,31"/>
+<area shape="poly" title=" " alt="" coords="199,30,241,26,242,31,199,36"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="247,55,429,80"/>
+<area shape="poly" title=" " alt="" coords="199,51,233,54,233,59,199,56"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -417,15 +461,21 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00258">258</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00257">257</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__audio_8c_ab5022a62ecc7ba83ccb5da4a1add398b_cgraph.png" border="0" usemap="#agf__audio_8c_ab5022a62ecc7ba83ccb5da4a1add398b_cgraph" alt=""/></div>
 <map name="agf__audio_8c_ab5022a62ecc7ba83ccb5da4a1add398b_cgraph" id="agf__audio_8c_ab5022a62ecc7ba83ccb5da4a1add398b_cgraph">
-<area shape="rect" title="Destroy audio interface." alt="" coords="5,5,140,31"/>
-<area shape="rect" href="gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="188,5,381,31"/>
-<area shape="poly" title=" " alt="" coords="140,15,174,15,174,21,140,21"/>
+<area shape="rect" title="Destroy audio interface." alt="" coords="5,55,140,80"/>
+<area shape="rect" href="gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="188,29,381,55"/>
+<area shape="poly" title=" " alt="" coords="140,57,174,53,174,58,141,62"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9d92314a062ae41412438dde87060cc0" title="Destroy mutex." alt="" coords="190,79,379,104"/>
+<area shape="poly" title=" " alt="" coords="141,72,177,76,176,82,140,78"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="437,5,604,31"/>
+<area shape="poly" title=" " alt="" coords="381,30,424,25,424,30,382,35"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="429,55,612,80"/>
+<area shape="poly" title=" " alt="" coords="382,50,416,53,416,59,381,55"/>
 </map>
 </div>
 <div class="dynheader">
@@ -484,7 +534,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>1</code> if it is over, otherwise <code>0</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00314">314</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00312">312</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -547,7 +597,19 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ID if successful, otherwise <code>-1</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00089">89</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00090">90</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__audio_8c_a391139463501e0f9962974b208d9e4b2_cgraph.png" border="0" usemap="#agf__audio_8c_a391139463501e0f9962974b208d9e4b2_cgraph" alt=""/></div>
+<map name="agf__audio_8c_a391139463501e0f9962974b208d9e4b2_cgraph" id="agf__audio_8c_a391139463501e0f9962974b208d9e4b2_cgraph">
+<area shape="rect" title="Load and play data." alt="" coords="5,31,119,56"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="175,5,341,31"/>
+<area shape="poly" title=" " alt="" coords="118,33,161,28,162,33,119,39"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="167,55,349,80"/>
+<area shape="poly" title=" " alt="" coords="119,48,154,52,153,57,118,53"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -599,23 +661,27 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ID if successful, otherwise <code>-1</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00171">171</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00172">172</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__audio_8c_af3ae4fe048705bae7ce8a377976a4c2d_cgraph.png" border="0" usemap="#agf__audio_8c_af3ae4fe048705bae7ce8a377976a4c2d_cgraph" alt=""/></div>
 <map name="agf__audio_8c_af3ae4fe048705bae7ce8a377976a4c2d_cgraph" id="agf__audio_8c_af3ae4fe048705bae7ce8a377976a4c2d_cgraph">
-<area shape="rect" title="Load and play file." alt="" coords="5,80,145,105"/>
-<area shape="rect" href="gf__audio_8c.html#a391139463501e0f9962974b208d9e4b2" title="Load and play data." alt="" coords="193,5,307,31"/>
-<area shape="poly" title=" " alt="" coords="105,78,192,40,206,34,208,39,194,44,107,82"/>
-<area shape="rect" href="gf__file_8c.html#a21009a41c9139fba583fd9034cc5f58d" title="Close file." alt="" coords="199,55,301,80"/>
-<area shape="poly" title=" " alt="" coords="145,80,184,74,185,79,146,85"/>
-<area shape="rect" href="gf__file_8c.html#a75171efe7e9e4fb445ce99766db046bb" title="Open file." alt="" coords="199,104,301,129"/>
-<area shape="poly" title=" " alt="" coords="146,100,186,105,186,111,145,105"/>
-<area shape="rect" href="gf__file_8c.html#a50307b5b19b902357320ed26d4f000fd" title="Read file." alt="" coords="201,153,299,179"/>
-<area shape="poly" title=" " alt="" coords="108,103,207,145,205,150,106,108"/>
-<area shape="rect" href="gf__resource_8c.html#a5d9f291bd98d070914a7e252a97f94c0" title="Get data from resource." alt="" coords="355,104,481,129"/>
-<area shape="poly" title=" " alt="" coords="301,114,341,114,341,119,301,119"/>
+<area shape="rect" title="Load and play file." alt="" coords="5,104,145,129"/>
+<area shape="rect" href="gf__audio_8c.html#a391139463501e0f9962974b208d9e4b2" title="Load and play data." alt="" coords="193,29,307,55"/>
+<area shape="poly" title=" " alt="" coords="105,102,192,64,206,58,208,63,194,68,107,106"/>
+<area shape="rect" href="gf__file_8c.html#a21009a41c9139fba583fd9034cc5f58d" title="Close file." alt="" coords="199,79,301,104"/>
+<area shape="poly" title=" " alt="" coords="145,104,184,98,185,103,146,109"/>
+<area shape="rect" href="gf__file_8c.html#a75171efe7e9e4fb445ce99766db046bb" title="Open file." alt="" coords="199,128,301,153"/>
+<area shape="poly" title=" " alt="" coords="146,124,186,129,186,135,145,129"/>
+<area shape="rect" href="gf__file_8c.html#a50307b5b19b902357320ed26d4f000fd" title="Read file." alt="" coords="201,177,299,203"/>
+<area shape="poly" title=" " alt="" coords="108,127,207,169,205,174,106,132"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="363,5,529,31"/>
+<area shape="poly" title=" " alt="" coords="306,32,349,27,350,32,307,38"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="355,55,537,80"/>
+<area shape="poly" title=" " alt="" coords="307,47,342,51,341,56,306,52"/>
+<area shape="rect" href="gf__resource_8c.html#a5d9f291bd98d070914a7e252a97f94c0" title="Get data from resource." alt="" coords="383,128,509,153"/>
+<area shape="poly" title=" " alt="" coords="301,138,369,138,369,143,301,143"/>
 </map>
 </div>
 <div class="dynheader">
@@ -668,7 +734,19 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00291">291</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00289">289</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__audio_8c_af319f87c14e6b784de694c065d147c80_cgraph.png" border="0" usemap="#agf__audio_8c_af319f87c14e6b784de694c065d147c80_cgraph" alt=""/></div>
+<map name="agf__audio_8c_af319f87c14e6b784de694c065d147c80_cgraph" id="agf__audio_8c_af319f87c14e6b784de694c065d147c80_cgraph">
+<area shape="rect" title="Pause audio." alt="" coords="5,31,129,56"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="185,5,352,31"/>
+<area shape="poly" title=" " alt="" coords="129,33,171,28,172,33,130,38"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="177,55,360,80"/>
+<area shape="poly" title=" " alt="" coords="130,48,164,52,163,57,129,53"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -719,7 +797,19 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00277">277</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00275">275</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__audio_8c_a336ebd4c24f26fb744114f955292f58b_cgraph.png" border="0" usemap="#agf__audio_8c_a336ebd4c24f26fb744114f955292f58b_cgraph" alt=""/></div>
+<map name="agf__audio_8c_a336ebd4c24f26fb744114f955292f58b_cgraph" id="agf__audio_8c_a336ebd4c24f26fb744114f955292f58b_cgraph">
+<area shape="rect" title="Resume audio." alt="" coords="5,31,140,56"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="196,5,363,31"/>
+<area shape="poly" title=" " alt="" coords="140,32,182,27,182,33,141,38"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="188,55,371,80"/>
+<area shape="poly" title=" " alt="" coords="141,48,175,52,174,58,140,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -770,7 +860,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00312">312</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00310">310</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -822,15 +912,19 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This frees the decoder </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00305">305</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00303">303</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__audio_8c_a270465ee43fdc71840bd1a5dbd0a1ec1_cgraph.png" border="0" usemap="#agf__audio_8c_a270465ee43fdc71840bd1a5dbd0a1ec1_cgraph" alt=""/></div>
 <map name="agf__audio_8c_a270465ee43fdc71840bd1a5dbd0a1ec1_cgraph" id="agf__audio_8c_a270465ee43fdc71840bd1a5dbd0a1ec1_cgraph">
-<area shape="rect" title="Stop audio." alt="" coords="5,5,119,31"/>
-<area shape="rect" href="gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="167,5,360,31"/>
-<area shape="poly" title=" " alt="" coords="119,15,153,15,153,21,119,21"/>
+<area shape="rect" title="Stop audio." alt="" coords="5,31,119,56"/>
+<area shape="rect" href="gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="167,31,360,56"/>
+<area shape="poly" title=" " alt="" coords="119,41,153,41,153,46,119,46"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="416,5,583,31"/>
+<area shape="poly" title=" " alt="" coords="360,30,402,26,403,31,361,36"/>
+<area shape="rect" href="posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="408,55,591,80"/>
+<area shape="poly" title=" " alt="" coords="361,51,395,54,394,59,360,56"/>
 </map>
 </div>
 <div class="dynheader">
@@ -861,7 +955,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00022">22</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__audio_8c_source.html#l00023">23</a> of file <a class="el" href="gf__audio_8c_source.html">gf_audio.c</a>.</p>
 
 </div>
 </div>

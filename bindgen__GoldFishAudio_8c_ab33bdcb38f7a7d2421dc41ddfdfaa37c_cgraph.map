@@ -1,5 +1,9 @@
 <map id="bindgen_GoldFishAudio_gf_audio_resume" name="bindgen_GoldFishAudio_gf_audio_resume">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,180,45"/>
-<area shape="rect" id="Node000002" href="$gf__audio_8c.html#a336ebd4c24f26fb744114f955292f58b" title="Resume audio." alt="" coords="228,13,363,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,23,214,23,214,28,181,28"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,180,63"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#a336ebd4c24f26fb744114f955292f58b" title="Resume audio." alt="" coords="228,31,363,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,41,214,41,214,46,181,46"/>
+<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="419,5,585,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="363,32,405,27,405,33,363,38"/>
+<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="411,55,593,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="363,48,397,52,397,58,363,54"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="gf_audio_load" name="gf_audio_load">
+<area shape="rect" id="Node000001" title="Load and play data." alt="" coords="5,31,119,56"/>
+<area shape="rect" id="Node000002" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="175,5,341,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,33,161,28,162,33,119,39"/>
+<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="167,55,349,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,48,154,52,153,57,118,53"/>
+</map>
