@@ -17,21 +17,216 @@
 #define GF_EXPOSE_ALL
 #endif
 #include <gf_type/lua.h>
-		
+
 /*** </Pre> ***/
 
 /*** Dependency ***/
+#include <gf_gui.h>
+#include <gf_gui_component.h>
 /******************/
 
 /**
  * Symbols:
+ *   gf_gui_sort_component
+ *   gf_gui_create_button
+ *   gf_gui_create_frame
+ *   gf_gui_create_scrollbar
+ *   gf_gui_create_text
+ *   gf_gui_create_window
  */
 
-void bindgen_gui_init(gf_lua_t* lua){
+/**
+ * C: void gf_gui_sort_component(gf_gui_t*)
+ */
+int bindgen_gui_gf_gui_sort_component(lua_State* s) {
+	gf_gui_t* param0;
+	gf_lua_t* wrap;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	gf_gui_sort_component(param0);
+
+	return 0;
+}
+
+/**
+ * C: gf_gui_id_t gf_gui_create_button(gf_gui_t*, double, double, double, double)
+ */
+int bindgen_gui_gf_gui_create_button(lua_State* s) {
+	gf_gui_t*    param0;
+	double	     param1 = (double)luaL_checknumber(s, 1);
+	double	     param2 = (double)luaL_checknumber(s, 2);
+	double	     param3 = (double)luaL_checknumber(s, 3);
+	double	     param4 = (double)luaL_checknumber(s, 4);
+	gf_lua_t*    wrap;
+	gf_gui_id_t  ret;
+	gf_gui_id_t* lret;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	ret = gf_gui_create_button(param0, param1, param2, param3, param4);
+	if(!(ret >= 0)) return 0;
+	lret = lua_newuserdata(s, sizeof(*lret));
+	luaL_getmetatable(s, "GoldFishGUIComponent");
+	lua_setmetatable(s, -2);
+	*lret = ret;
+
+	return 1;
+}
+
+/**
+ * C: gf_gui_id_t gf_gui_create_frame(gf_gui_t*, double, double, double, double)
+ */
+int bindgen_gui_gf_gui_create_frame(lua_State* s) {
+	gf_gui_t*    param0;
+	double	     param1 = (double)luaL_checknumber(s, 1);
+	double	     param2 = (double)luaL_checknumber(s, 2);
+	double	     param3 = (double)luaL_checknumber(s, 3);
+	double	     param4 = (double)luaL_checknumber(s, 4);
+	gf_lua_t*    wrap;
+	gf_gui_id_t  ret;
+	gf_gui_id_t* lret;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	ret = gf_gui_create_frame(param0, param1, param2, param3, param4);
+	if(!(ret >= 0)) return 0;
+	lret = lua_newuserdata(s, sizeof(*lret));
+	luaL_getmetatable(s, "GoldFishGUIComponent");
+	lua_setmetatable(s, -2);
+	*lret = ret;
+
+	return 1;
+}
+
+/**
+ * C: gf_gui_id_t gf_gui_create_scrollbar(gf_gui_t*, double, double, double, double)
+ */
+int bindgen_gui_gf_gui_create_scrollbar(lua_State* s) {
+	gf_gui_t*    param0;
+	double	     param1 = (double)luaL_checknumber(s, 1);
+	double	     param2 = (double)luaL_checknumber(s, 2);
+	double	     param3 = (double)luaL_checknumber(s, 3);
+	double	     param4 = (double)luaL_checknumber(s, 4);
+	gf_lua_t*    wrap;
+	gf_gui_id_t  ret;
+	gf_gui_id_t* lret;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	ret = gf_gui_create_scrollbar(param0, param1, param2, param3, param4);
+	if(!(ret >= 0)) return 0;
+	lret = lua_newuserdata(s, sizeof(*lret));
+	luaL_getmetatable(s, "GoldFishGUIComponent");
+	lua_setmetatable(s, -2);
+	*lret = ret;
+
+	return 1;
+}
+
+/**
+ * C: gf_gui_id_t gf_gui_create_text(gf_gui_t*, double, double, double, double)
+ */
+int bindgen_gui_gf_gui_create_text(lua_State* s) {
+	gf_gui_t*    param0;
+	double	     param1 = (double)luaL_checknumber(s, 1);
+	double	     param2 = (double)luaL_checknumber(s, 2);
+	double	     param3 = (double)luaL_checknumber(s, 3);
+	double	     param4 = (double)luaL_checknumber(s, 4);
+	gf_lua_t*    wrap;
+	gf_gui_id_t  ret;
+	gf_gui_id_t* lret;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	ret = gf_gui_create_text(param0, param1, param2, param3, param4);
+	if(!(ret >= 0)) return 0;
+	lret = lua_newuserdata(s, sizeof(*lret));
+	luaL_getmetatable(s, "GoldFishGUIComponent");
+	lua_setmetatable(s, -2);
+	*lret = ret;
+
+	return 1;
+}
+
+/**
+ * C: gf_gui_id_t gf_gui_create_window(gf_gui_t*, double, double, double, double)
+ */
+int bindgen_gui_gf_gui_create_window(lua_State* s) {
+	gf_gui_t*    param0;
+	double	     param1 = (double)luaL_checknumber(s, 1);
+	double	     param2 = (double)luaL_checknumber(s, 2);
+	double	     param3 = (double)luaL_checknumber(s, 3);
+	double	     param4 = (double)luaL_checknumber(s, 4);
+	gf_lua_t*    wrap;
+	gf_gui_id_t  ret;
+	gf_gui_id_t* lret;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	ret = gf_gui_create_window(param0, param1, param2, param3, param4);
+	if(!(ret >= 0)) return 0;
+	lret = lua_newuserdata(s, sizeof(*lret));
+	luaL_getmetatable(s, "GoldFishGUIComponent");
+	lua_setmetatable(s, -2);
+	*lret = ret;
+
+	return 1;
+}
+
+void bindgen_gui_init(gf_lua_t* lua) {
 	lua_pushstring(LUA(lua), "gui");
 	lua_newtable(LUA(lua));
+
+	lua_pushstring(LUA(lua), "sort");
+	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_sort_component);
+	lua_settable(LUA(lua), -3);
+
+	lua_pushstring(LUA(lua), "create_button");
+	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_create_button);
+	lua_settable(LUA(lua), -3);
+
+	lua_pushstring(LUA(lua), "create_frame");
+	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_create_frame);
+	lua_settable(LUA(lua), -3);
+
+	lua_pushstring(LUA(lua), "create_scrollbar");
+	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_create_scrollbar);
+	lua_settable(LUA(lua), -3);
+
+	lua_pushstring(LUA(lua), "create_text");
+	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_create_text);
+	lua_settable(LUA(lua), -3);
+
+	lua_pushstring(LUA(lua), "create_window");
+	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_create_window);
+	lua_settable(LUA(lua), -3);
 
 	lua_settable(LUA(lua), -3);
 }
 
-/*** Generated at Wed May 7 2025 ***/
+/*** Generated at Thu May 8 2025 ***/

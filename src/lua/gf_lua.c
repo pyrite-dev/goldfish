@@ -25,6 +25,7 @@
 #include <gf_gui_component.h>
 #include <gf_graphic.h>
 #include <gf_draw.h>
+#include <gf_audio.h>
 
 #include <bindgen.h>
 
@@ -134,6 +135,19 @@ int gf_lua_call_fps(lua_State* s) {
 	return 1;
 }
 
+int gf_lua_call_font_default(lua_State* s) {
+	gf_font_t** font = luaL_checkudata(s, 1, "GoldFishFont");
+	gf_lua_t*   lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	lua->engine->client->draw->font = *font;
+
+	return 1;
+}
+
 int gf_lua_call_require(lua_State* s) {
 	const char* path = luaL_checkstring(s, 1);
 	gf_lua_t*   lua;
@@ -179,6 +193,273 @@ int gf_lua_call_require(lua_State* s) {
 
 		return lua_gettop(s) - 1;
 	}
+
+	return 0;
+}
+
+int gf_lua_meta_call_gui_component_prop(lua_State* s) {
+	gf_gui_id_t* id	  = luaL_checkudata(s, 1, "GoldFishGUIComponent");
+	const char*  type = luaL_checkstring(s, 2);
+	const char*  str  = luaL_checkstring(s, 3);
+	gf_lua_t*    lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	if(lua_gettop(s) == 4) {
+		if(strcmp(type, "id") == 0) {
+			gf_gui_id_t* t = luaL_checkudata(s, 4, "GoldFishGUIComponent");
+			gf_gui_set_prop_id(lua->engine->client->draw->gui, *id, str, *t);
+		} else if(strcmp(type, "integer") == 0) {
+			lua_Integer t = luaL_checkinteger(s, 4);
+			gf_prop_set_integer(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str, t);
+		} else if(strcmp(type, "floating") == 0) {
+			lua_Number t = luaL_checknumber(s, 4);
+			gf_prop_set_floating(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str, t);
+		}
+		return 0;
+	} else {
+		if(strcmp(type, "id") == 0) {
+			gf_gui_id_t* r = lua_newuserdata(s, sizeof(*r));
+			luaL_getmetatable(s, "GoldFishGUIComponent");
+			lua_setmetatable(s, -2);
+			*r = gf_gui_get_prop_id(lua->engine->client->draw->gui, *id, str);
+		} else if(strcmp(type, "integer") == 0) {
+			lua_pushinteger(s, gf_prop_get_integer(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str));
+		} else if(strcmp(type, "floating") == 0) {
+			lua_pushnumber(s, gf_prop_get_floating(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str));
+		}
+	}
+	return 1;
+}
+
+void gf_lua_gui_callback(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type) {
+	int*	     call = gf_prop_get_ptr(gf_gui_get_prop(draw->gui, id), "luacall");
+	gf_lua_t*    lua;
+	gf_gui_id_t* pid;
+	if(call == NULL) return;
+
+	lua = (gf_lua_t*)gf_prop_get_ptr_keep(gf_gui_get_prop(draw->gui, id), "lua");
+
+	lua_rawgeti(lua->lua, LUA_REGISTRYINDEX, *call);
+
+	pid = lua_newuserdata(lua->lua, sizeof(*pid));
+	luaL_getmetatable(lua->lua, "GoldFishGUIComponent");
+	lua_setmetatable(lua->lua, -2);
+	*pid = id;
+
+	lua_pushnumber(lua->lua, type);
+	if(lua_pcall(lua->lua, 2, 0, 0)) {
+		gf_log_function(lua->engine, "Lua error: %s", lua_tostring(lua->lua, -1));
+	}
+}
+
+int gf_lua_meta_call_gui_component_callback(lua_State* s) {
+	gf_gui_id_t* id = luaL_checkudata(s, 1, "GoldFishGUIComponent");
+	gf_lua_t*    lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	if(lua_gettop(s) == 2) {
+		int* ptr = malloc(sizeof(*ptr));
+		*ptr	 = luaL_ref(s, LUA_REGISTRYINDEX);
+		gf_prop_set_ptr(gf_gui_get_prop(lua->engine->client->draw->gui, *id), "luacall", (void*)ptr);
+		gf_gui_set_callback(lua->engine->client->draw->gui, *id, gf_lua_gui_callback);
+		gf_prop_set_ptr_keep(gf_gui_get_prop(lua->engine->client->draw->gui, *id), "lua", (void*)lua);
+	} else {
+		gf_prop_delete(gf_gui_get_prop(lua->engine->client->draw->gui, *id), "luacall");
+	}
+	return 0;
+}
+
+int gf_lua_meta_call_gui_component_font(lua_State* s) {
+	gf_gui_id_t* id = luaL_checkudata(s, 1, "GoldFishGUIComponent");
+	gf_lua_t*    lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	if(lua_gettop(s) == 2) {
+		gf_font_t** font = luaL_checkudata(s, 2, "GoldFishFont");
+		gf_prop_set_ptr_keep(gf_gui_get_prop(lua->engine->client->draw->gui, *id), "font", *font);
+	} else {
+		gf_font_t*  pfont = gf_prop_get_ptr_keep(gf_gui_get_prop(lua->engine->client->draw->gui, *id), "font");
+		gf_font_t** font  = lua_newuserdata(s, sizeof(*font));
+		luaL_getmetatable(s, "GoldFishFont");
+		lua_setmetatable(s, -2);
+		*font = pfont;
+
+		*font = pfont;
+		return 1;
+	}
+	return 0;
+}
+
+int gf_lua_meta_call_gui_component_size(lua_State* s) {
+	gf_gui_id_t* id = luaL_checkudata(s, 1, "GoldFishGUIComponent");
+	gf_lua_t*    lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	if(lua_gettop(s) == 2) {
+		double w;
+		double h;
+
+		lua_rawgeti(s, 2, 1);
+		w = lua_tonumber(s, -1);
+		lua_pop(s, 1);
+
+		lua_rawgeti(s, 2, 2);
+		h = lua_tonumber(s, -1);
+		lua_pop(s, 1);
+
+		gf_gui_set_wh(lua->engine->client->draw->gui, *id, w, h);
+	} else {
+		double w;
+		double h;
+
+		gf_gui_get_wh(lua->engine->client->draw->gui, *id, &w, &h);
+
+		lua_newtable(s);
+
+		lua_pushnumber(s, w);
+		lua_rawseti(s, -2, 1);
+
+		lua_pushnumber(s, h);
+		lua_rawseti(s, -2, 2);
+
+		return 1;
+	}
+	return 0;
+}
+
+int gf_lua_meta_call_gui_component_move(lua_State* s) {
+	gf_gui_id_t* id = luaL_checkudata(s, 1, "GoldFishGUIComponent");
+	gf_lua_t*    lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	if(lua_gettop(s) == 2) {
+		double x;
+		double y;
+
+		lua_rawgeti(s, 2, 1);
+		x = lua_tonumber(s, -1);
+		lua_pop(s, 1);
+
+		lua_rawgeti(s, 2, 2);
+		y = lua_tonumber(s, -1);
+		lua_pop(s, 1);
+
+		gf_gui_set_xy(lua->engine->client->draw->gui, *id, x, y);
+	} else {
+		double x;
+		double y;
+
+		gf_gui_get_xy(lua->engine->client->draw->gui, *id, &x, &y);
+
+		lua_newtable(s);
+
+		lua_pushnumber(s, x);
+		lua_rawseti(s, -2, 1);
+
+		lua_pushnumber(s, y);
+		lua_rawseti(s, -2, 2);
+
+		return 1;
+	}
+	return 0;
+}
+
+int gf_lua_meta_call_audio_over(lua_State* s) {
+	gf_audio_id_t* id = luaL_checkudata(s, 1, "GoldFishAudio");
+	gf_lua_t*      lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	lua_pushboolean(s, gf_audio_is_over(lua->engine->client->audio, *id));
+
+	return 1;
+}
+
+int gf_lua_call_graphic_points(lua_State* s) {
+	int		   i;
+	int		   len;
+	int		   dim;
+	int		   plen;
+	double*		   arr;
+	gf_lua_t*	   lua;
+	gf_graphic_color_t col;
+
+	lua_rawgeti(s, 1, 1);
+	col.r = luaL_checknumber(s, -1);
+	lua_pop(s, 1);
+
+	lua_rawgeti(s, 1, 2);
+	col.g = luaL_checknumber(s, -1);
+	lua_pop(s, 1);
+
+	lua_rawgeti(s, 1, 3);
+	col.b = luaL_checknumber(s, -1);
+	lua_pop(s, 1);
+
+	lua_rawgeti(s, 1, 4);
+	col.a = luaL_checknumber(s, -1);
+	lua_pop(s, 1);
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	dim  = luaL_checknumber(s, 2);
+	plen = (dim == GF_GRAPHIC_2D ? 2 : 3);
+
+	len = lua_rawlen(s, 3);
+
+	arr = malloc(sizeof(*arr) * plen * len);
+	for(i = 1; i <= len; i++) {
+		double x;
+		double y;
+		double z;
+
+		lua_rawgeti(s, 3, i);
+		lua_rawgeti(s, -1, 1);
+		x = luaL_checknumber(s, -1);
+		lua_pop(s, 1);
+
+		lua_rawgeti(s, -1, 2);
+		y = luaL_checknumber(s, -1);
+		lua_pop(s, 1);
+
+		if(dim == GF_GRAPHIC_3D) {
+			lua_rawgeti(s, -1, 3);
+			z = luaL_checknumber(s, -1);
+			lua_pop(s, 1);
+			lua_pop(s, 1);
+
+			arr[plen * (i - 1) + 0] = x;
+			arr[plen * (i - 1) + 1] = y;
+			arr[plen * (i - 1) + 2] = z;
+		} else {
+			lua_pop(s, 1);
+
+			arr[plen * (i - 1) + 0] = x;
+			arr[plen * (i - 1) + 1] = y;
+		}
+	}
+
+	gf_graphic_points_arr(lua->engine->client->draw, col, dim, len, arr);
+	free(arr);
 
 	return 0;
 }
@@ -242,6 +523,80 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 
 	lua_pushcfunction(lua->lua, gf_lua_call_require);
 	lua_setglobal(lua->lua, "require");
+
+	/* GoldFishGUIComponent */
+	luaL_getmetatable(lua->lua, "GoldFishGUIComponent");
+
+	lua_pushstring(lua->lua, "prop");
+	lua_pushcfunction(lua->lua, gf_lua_meta_call_gui_component_prop);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "size");
+	lua_pushcfunction(lua->lua, gf_lua_meta_call_gui_component_size);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "move");
+	lua_pushcfunction(lua->lua, gf_lua_meta_call_gui_component_move);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "font");
+	lua_pushcfunction(lua->lua, gf_lua_meta_call_gui_component_font);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "callback");
+	lua_pushcfunction(lua->lua, gf_lua_meta_call_gui_component_callback);
+	lua_settable(lua->lua, -3);
+
+	lua_pop(lua->lua, 1);
+
+	/* GoldFishAudio */
+	luaL_getmetatable(lua->lua, "GoldFishAudio");
+
+	lua_pushstring(lua->lua, "over");
+	lua_pushcfunction(lua->lua, gf_lua_meta_call_audio_over);
+	lua_settable(lua->lua, -3);
+
+	lua_settable(lua->lua, -3);
+
+	lua_pop(lua->lua, 1);
+
+	/* goldfish.font */
+	lua_getglobal(lua->lua, "goldfish");
+	lua_getfield(lua->lua, -1, "font");
+
+	lua_pushstring(lua->lua, "default");
+	lua_pushcfunction(lua->lua, gf_lua_call_font_default);
+	lua_settable(lua->lua, -3);
+
+	lua_pop(lua->lua, 2);
+
+	/* goldfish.gui */
+	lua_getglobal(lua->lua, "goldfish");
+	lua_getfield(lua->lua, -1, "gui");
+
+	lua_pushstring(lua->lua, "PRESS_EVENT");
+	lua_pushinteger(lua->lua, GF_GUI_PRESS_EVENT);
+	lua_settable(lua->lua, -3);
+
+	lua_pop(lua->lua, 2);
+
+	/* goldfish.graphic */
+	lua_getglobal(lua->lua, "goldfish");
+	lua_getfield(lua->lua, -1, "graphic");
+
+	lua_pushstring(lua->lua, "DIM_2D");
+	lua_pushinteger(lua->lua, GF_GRAPHIC_2D);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "DIM_3D");
+	lua_pushinteger(lua->lua, GF_GRAPHIC_3D);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "points");
+	lua_pushcfunction(lua->lua, gf_lua_call_graphic_points);
+	lua_settable(lua->lua, -3);
+
+	lua_pop(lua->lua, 2);
 
 	return lua;
 }

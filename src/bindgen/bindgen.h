@@ -22,13 +22,14 @@ extern "C" {
 #define GF_EXPOSE_ALL
 #endif
 #include <gf_type/lua.h>
-		
+
 /*** </Pre> ***/
 
 void bindgen_GoldFishGUIComponent_init(gf_lua_t* lua);
 void bindgen_GoldFishAudio_init(gf_lua_t* lua);
 void bindgen_GoldFishFont_init(gf_lua_t* lua);
 void bindgen_gui_init(gf_lua_t* lua);
+void bindgen_audio_init(gf_lua_t* lua);
 void bindgen_font_init(gf_lua_t* lua);
 void bindgen_graphic_init(gf_lua_t* lua);
 void bindgen_init(gf_lua_t* lua);
@@ -37,5 +38,5 @@ void bindgen_init(gf_lua_t* lua);
 }
 #endif
 
-/*** Generated at Wed May 7 2025 ***/
+/*** Generated at Thu May 8 2025 ***/
 #endif

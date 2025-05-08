@@ -17,7 +17,7 @@
 #define GF_EXPOSE_ALL
 #endif
 #include <gf_type/lua.h>
-		
+
 /*** </Pre> ***/
 
 /*** Dependency ***/
@@ -27,11 +27,11 @@
  * Symbols:
  */
 
-void bindgen_GoldFishFont_init(gf_lua_t* lua){
+void bindgen_GoldFishFont_init(gf_lua_t* lua) {
 	luaL_newmetatable(LUA(lua), "GoldFishFont");
 
 	lua_pushvalue(LUA(lua), -1);
 	lua_setfield(LUA(lua), -2, "__index");
 }
 
-/*** Generated at Wed May 7 2025 ***/
+/*** Generated at Thu May 8 2025 ***/
