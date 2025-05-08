@@ -11,3 +11,9 @@
 [submodule "external/ode"]
 	path = external/ode
 	url = https://github.com/thomasmarsh/ODE
+[submodule "external/jar"]
+	path = external/jar
+	url = https://github.com/pyrite-dev/jar
+[submodule "external/osmesa"]
+	path = external/osmesa
+	url = https://github.com/pyrite-dev/osmesa
