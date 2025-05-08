@@ -1,7 +1,11 @@
 <map id="gf_gui_set_wh" name="gf_gui_set_wh">
-<area shape="rect" id="Node000001" title="Set width and height." alt="" coords="228,31,343,56"/>
-<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="5,5,180,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,37,180,32,181,27,215,31"/>
-<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="21,55,165,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,55,165,61,164,56,214,49"/>
+<area shape="rect" id="Node000001" title="Set width and height." alt="" coords="387,55,501,80"/>
+<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="164,5,339,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,54,301,33,303,28,381,49"/>
+<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="179,55,323,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="372,70,323,70,323,65,372,65"/>
+<area shape="rect" id="Node000004" href="$gf__lua_8c.html#a26ab37c4ca63cc701ed20492f9be66da" title=" " alt="" coords="171,105,331,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="388,86,320,107,318,102,387,81"/>
+<area shape="rect" id="Node000005" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,112,116,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="157,127,116,127,116,122,157,122"/>
 </map>

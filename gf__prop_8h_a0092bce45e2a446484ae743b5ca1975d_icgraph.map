@@ -1,0 +1,10 @@
+<map id="gf_prop_set_ptr_keep" name="gf_prop_set_ptr_keep">
+<area shape="rect" id="Node000001" title="Set void pointer to property." alt="" coords="375,45,536,70"/>
+<area shape="rect" id="Node000002" href="$gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="164,5,327,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="361,46,326,40,327,35,361,40"/>
+<area shape="rect" id="Node000006" href="$gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="165,69,325,109"/>
+<area shape="poly" id="edge3_Node000001_Node000006" title=" " alt="" coords="361,74,326,80,325,75,361,69"/>
+<area shape="rect" id="Node000003" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,45,116,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="151,44,117,50,116,45,150,39"/>
+<area shape="poly" id="edge4_Node000006_Node000003" title=" " alt="" coords="152,76,116,69,117,64,152,71"/>
+</map>

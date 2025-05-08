@@ -1,11 +1,20 @@
 <map id="gf_prop_get_ptr_keep" name="gf_prop_get_ptr_keep">
-<area shape="rect" id="Node000001" title="Get void pointer from property." alt="" coords="221,80,384,105"/>
-<area shape="rect" id="Node000002" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="9,5,169,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,77,172,45,136,33,138,28,174,39,260,72"/>
-<area shape="rect" id="Node000003" href="$gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="11,55,168,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,84,168,79,169,74,208,79"/>
-<area shape="rect" id="Node000004" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="17,104,161,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,106,162,111,161,106,207,101"/>
-<area shape="rect" id="Node000005" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="5,153,173,179"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="257,113,174,143,135,156,133,151,172,138,255,108"/>
+<area shape="rect" id="Node000001" title="Get void pointer from property." alt="" coords="591,129,753,155"/>
+<area shape="rect" id="Node000002" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="379,5,539,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="646,122,600,82,541,44,514,33,516,28,544,40,603,78,649,118"/>
+<area shape="rect" id="Node000003" href="$gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="380,55,537,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="627,127,542,94,506,83,507,77,544,89,629,122"/>
+<area shape="rect" id="Node000004" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="387,104,531,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="577,133,530,128,531,123,577,128"/>
+<area shape="rect" id="Node000005" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="375,153,543,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="577,155,543,159,543,154,577,150"/>
+<area shape="rect" id="Node000006" href="$gf__lua_8c.html#ab960ca567773e92a408774598a3047ba" title=" " alt="" coords="383,203,534,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="627,162,544,193,504,205,503,200,542,187,625,157"/>
+<area shape="rect" id="Node000011" href="$gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="165,255,325,295"/>
+<area shape="poly" id="edge8_Node000001_Node000011" title=" " alt="" coords="651,167,604,207,575,227,544,243,489,261,431,272,326,280,325,275,431,267,487,256,542,238,572,223,601,203,647,163"/>
+<area shape="rect" id="Node000007" href="$gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="164,191,327,231"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="370,216,327,216,327,210,370,211"/>
+<area shape="rect" id="Node000008" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,231,116,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="151,230,117,236,116,231,150,225"/>
+<area shape="poly" id="edge9_Node000011_Node000008" title=" " alt="" coords="152,262,116,255,117,250,152,257"/>
 </map>

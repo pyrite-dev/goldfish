@@ -1,0 +1,22 @@
+<map id="bindgen_gui_gf_gui_create_text" name="bindgen_gui_gf_gui_create_text">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,111,153,151"/>
+<area shape="rect" id="Node000002" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="201,119,344,144"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,129,188,129,188,134,154,134"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="613,5,804,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,116,333,85,391,56,443,40,497,29,599,18,600,23,498,34,444,45,393,60,335,89,291,121"/>
+<area shape="rect" id="Node000005" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="392,93,565,119"/>
+<area shape="poly" id="edge3_Node000002_Node000005" title=" " alt="" coords="344,120,378,116,379,121,345,125"/>
+<area shape="rect" id="Node000007" href="$gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="645,80,772,105"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="295,116,339,95,391,78,454,70,518,68,632,77,632,82,518,73,455,75,393,83,341,100,297,121"/>
+<area shape="rect" id="Node000017" href="$gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="639,137,778,163"/>
+<area shape="poly" id="edge10_Node000002_Node000017" title=" " alt="" coords="344,132,626,144,625,149,344,137"/>
+<area shape="rect" id="Node000018" href="$gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="637,195,781,220"/>
+<area shape="poly" id="edge11_Node000002_Node000018" title=" " alt="" coords="345,141,624,190,623,195,344,146"/>
+<area shape="rect" id="Node000020" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="633,244,784,269"/>
+<area shape="poly" id="edge12_Node000002_Node000020" title=" " alt="" coords="299,142,342,163,393,183,511,217,620,240,619,245,509,222,391,189,340,168,297,147"/>
+<area shape="poly" id="edge4_Node000005_Node000003" title=" " alt="" coords="512,91,661,33,663,38,514,96"/>
+<area shape="poly" id="edge5_Node000005_Node000007" title=" " alt="" coords="566,98,631,94,632,100,566,104"/>
+<area shape="poly" id="edge6_Node000005_Node000017" title=" " alt="" coords="546,116,629,132,628,137,545,121"/>
+<area shape="poly" id="edge7_Node000005_Node000018" title=" " alt="" coords="504,116,614,172,656,188,654,193,612,176,501,121"/>
+<area shape="poly" id="edge8_Node000005_Node000020" title=" " alt="" coords="492,117,541,172,576,204,615,230,628,237,626,242,612,235,572,208,537,176,488,121"/>
+</map>

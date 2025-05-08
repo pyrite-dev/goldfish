@@ -1,6 +1,7 @@
 var bindgen_8h =
 [
     [ "LUA", "bindgen_8h.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7", null ],
+    [ "bindgen_audio_init", "bindgen_8h.html#a732280a604cdb684da75ddac7515492a", null ],
     [ "bindgen_font_init", "bindgen_8h.html#a8e96fafc7b1a53f67b2894fd4b1b965b", null ],
     [ "bindgen_GoldFishAudio_init", "bindgen_8h.html#a8b24ea565098be398e626b26dfcc73bd", null ],
     [ "bindgen_GoldFishFont_init", "bindgen_8h.html#a3cd1467daed627ccb0738b94f789e876", null ],

@@ -1,0 +1,7 @@
+<map id="gf_lua_meta_call_gui_component_size" name="gf_lua_meta_call_gui_component_size">
+<area shape="rect" id="Node000001" title=" " alt="" coords="369,5,529,45"/>
+<area shape="rect" id="Node000002" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="211,13,321,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="356,28,321,28,321,23,356,23"/>
+<area shape="rect" id="Node000003" href="$gf__core_8c.html#aa40fbe8c435c2f84a4d2364e66439eda" title="Create engine instance." alt="" coords="5,13,163,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,28,163,28,163,23,197,23"/>
+</map>

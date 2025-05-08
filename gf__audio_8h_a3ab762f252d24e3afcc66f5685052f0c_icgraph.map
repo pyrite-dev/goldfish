@@ -1,0 +1,11 @@
+<map id="gf_audio_is_over" name="gf_audio_is_over">
+<area shape="rect" id="Node000001" title="Check if audio is over." alt="" coords="516,42,648,67"/>
+<area shape="rect" id="Node000002" href="$bindgen__GoldFishAudio_8c.html#a719f2835d214a84f1977a2f75a9719c5" title=" " alt="" coords="275,5,449,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="502,47,449,40,450,34,502,41"/>
+<area shape="rect" id="Node000008" href="$gf__lua_8c.html#ae7832e4227620202272a90286df3889f" title=" " alt="" coords="256,70,468,95"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="502,67,462,73,462,67,502,62"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishAudio_8c.html#a8b24ea565098be398e626b26dfcc73bd" title=" " alt="" coords="5,13,208,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,28,208,28,208,23,261,23"/>
+<area shape="rect" id="Node000005" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="51,70,162,95"/>
+<area shape="poly" id="edge4_Node000008_Node000005" title=" " alt="" coords="242,85,162,85,162,80,242,80"/>
+</map>

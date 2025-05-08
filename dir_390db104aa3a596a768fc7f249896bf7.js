@@ -2,6 +2,7 @@ var dir_390db104aa3a596a768fc7f249896bf7 =
 [
     [ "bindgen.c", "bindgen_8c.html", "bindgen_8c" ],
     [ "bindgen.h", "bindgen_8h.html", "bindgen_8h" ],
+    [ "bindgen_audio.c", "bindgen__audio_8c.html", "bindgen__audio_8c" ],
     [ "bindgen_font.c", "bindgen__font_8c.html", "bindgen__font_8c" ],
     [ "bindgen_GoldFishAudio.c", "bindgen__GoldFishAudio_8c.html", "bindgen__GoldFishAudio_8c" ],
     [ "bindgen_GoldFishFont.c", "bindgen__GoldFishFont_8c.html", "bindgen__GoldFishFont_8c" ],

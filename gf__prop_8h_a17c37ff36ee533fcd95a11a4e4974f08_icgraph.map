@@ -1,18 +1,27 @@
 <map id="gf_prop_delete" name="gf_prop_delete">
-<area shape="rect" id="Node000001" title="Delete property." alt="" coords="744,56,863,82"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="173,55,284,80"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="749,55,668,34,564,15,507,10,448,8,390,12,333,21,288,37,251,57,248,52,286,32,331,16,389,6,448,3,507,5,564,10,669,29,751,50"/>
-<area shape="rect" id="Node000008" href="$gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="554,56,677,82"/>
-<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="730,72,677,72,677,66,730,66"/>
-<area shape="rect" id="Node000024" href="$gf__prop_8c.html#a0092bce45e2a446484ae743b5ca1975d" title="Set void pointer to property." alt="" coords="535,106,696,131"/>
-<area shape="poly" id="edge8_Node000001_Node000024" title=" " alt="" coords="742,88,666,108,664,103,741,83"/>
-<area shape="rect" id="Node000003" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="5,55,125,80"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="159,70,125,70,125,65,159,65"/>
-<area shape="rect" id="Node000009" href="$gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="337,31,481,56"/>
-<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="540,62,481,55,482,50,540,57"/>
-<area shape="rect" id="Node000013" href="$gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="332,80,487,106"/>
-<area shape="poly" id="edge5_Node000008_Node000013" title=" " alt="" coords="540,80,487,87,486,81,540,75"/>
-<area shape="rect" id="Node000018" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="334,130,485,155"/>
-<area shape="poly" id="edge6_Node000008_Node000018" title=" " alt="" coords="555,88,536,95,488,119,453,132,452,127,486,114,534,90,553,83"/>
-<area shape="poly" id="edge7_Node000018_Node000002" title=" " alt="" coords="353,128,331,119,253,83,255,78,333,114,355,123"/>
+<area shape="rect" id="Node000001" title="Delete property." alt="" coords="752,129,871,154"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="173,26,284,52"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="775,125,722,97,654,66,575,37,494,16,449,10,414,8,332,16,272,29,271,24,332,11,413,3,450,4,495,11,577,32,656,61,725,93,777,120"/>
+<area shape="rect" id="Node000008" href="$gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="332,175,495,215"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="739,154,495,187,494,182,738,149"/>
+<area shape="rect" id="Node000012" href="$gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="562,104,685,129"/>
+<area shape="poly" id="edge5_Node000001_Node000012" title=" " alt="" coords="738,135,685,127,686,122,739,129"/>
+<area shape="rect" id="Node000038" href="$gf__prop_8c.html#a0092bce45e2a446484ae743b5ca1975d" title="Set void pointer to property." alt="" coords="543,205,704,230"/>
+<area shape="poly" id="edge11_Node000001_Node000038" title=" " alt="" coords="768,162,705,188,657,207,655,202,703,183,766,157"/>
+<area shape="rect" id="Node000003" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="5,26,125,52"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="159,42,125,42,125,36,159,36"/>
+<area shape="rect" id="Node000009" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="173,214,284,240"/>
+<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="319,214,285,220,284,215,318,209"/>
+<area shape="poly" id="edge7_Node000012_Node000008" title=" " alt="" coords="577,136,468,177,467,172,575,131"/>
+<area shape="rect" id="Node000013" href="$gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="341,125,485,150"/>
+<area shape="poly" id="edge6_Node000012_Node000013" title=" " alt="" coords="548,127,486,133,485,128,547,121"/>
+<area shape="rect" id="Node000023" href="$gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="336,26,491,52"/>
+<area shape="poly" id="edge8_Node000012_Node000023" title=" " alt="" coords="581,101,494,65,459,54,461,49,496,60,583,96"/>
+<area shape="rect" id="Node000028" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="338,76,489,101"/>
+<area shape="poly" id="edge9_Node000012_Node000028" title=" " alt="" coords="547,109,489,101,489,96,548,104"/>
+<area shape="poly" id="edge10_Node000028_Node000002" title=" " alt="" coords="351,75,277,54,278,49,353,69"/>
+<area shape="poly" id="edge12_Node000038_Node000008" title=" " alt="" coords="529,210,494,206,495,201,529,205"/>
+<area shape="rect" id="Node000039" href="$gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="333,239,493,279"/>
+<area shape="poly" id="edge13_Node000038_Node000039" title=" " alt="" coords="545,236,494,246,493,241,544,230"/>
+<area shape="poly" id="edge14_Node000039_Node000009" title=" " alt="" coords="320,245,284,239,285,234,320,240"/>
 </map>

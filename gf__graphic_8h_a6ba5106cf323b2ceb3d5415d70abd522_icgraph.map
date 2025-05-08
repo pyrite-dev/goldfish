@@ -1,5 +1,9 @@
 <map id="gf_graphic_text_wrap" name="gf_graphic_text_wrap">
-<area shape="rect" id="Node000001" title="Draw text with wrapping." alt="" coords="197,5,360,31"/>
-<area shape="rect" id="Node000002" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="5,5,149,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,21,150,21,150,15,184,15"/>
+<area shape="rect" id="Node000001" title="Draw text with wrapping." alt="" coords="408,42,571,67"/>
+<area shape="rect" id="Node000002" href="$bindgen__graphic_8c.html#a9476ee01c3ff84e78a5ddaca7d2b371b" title=" " alt="" coords="211,5,360,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="394,44,360,39,360,33,395,38"/>
+<area shape="rect" id="Node000008" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="213,70,357,95"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="395,70,358,75,357,70,394,65"/>
+<area shape="rect" id="Node000003" href="$bindgen__graphic_8c.html#abfb75e0f66f674f2274523d43d7c1e3e" title=" " alt="" coords="5,13,163,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,28,163,28,163,23,197,23"/>
 </map>

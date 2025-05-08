@@ -1,9 +1,17 @@
 <map id="gf_gui_set_text" name="gf_gui_set_text">
-<area shape="rect" id="Node000001" title="Set text." alt="" coords="417,31,540,56"/>
-<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,5,369,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="403,36,369,32,370,27,404,31"/>
-<area shape="rect" id="Node000004" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="199,55,366,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="404,55,366,60,366,54,403,50"/>
-<area shape="rect" id="Node000003" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,5,148,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,21,148,21,148,15,182,15"/>
+<area shape="rect" id="Node000001" title="Set text." alt="" coords="601,105,724,131"/>
+<area shape="rect" id="Node000002" href="$bindgen__GoldFishGUIComponent_8c.html#a87b8c7922cc36384e42e56c6bf225f7d" title=" " alt="" coords="317,13,553,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="614,103,488,55,490,50,616,98"/>
+<area shape="rect" id="Node000008" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="349,105,522,131"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="588,121,522,121,522,115,588,115"/>
+<area shape="rect" id="Node000013" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="352,159,519,184"/>
+<area shape="poly" id="edge6_Node000001_Node000013" title=" " alt="" coords="595,137,491,161,489,156,594,131"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishGUIComponent_8c.html#aa66358471709c54e287a144e1930eca9" title=" " alt="" coords="5,5,269,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="303,29,270,27,270,22,304,24"/>
+<area shape="rect" id="Node000009" href="$bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad" title=" " alt="" coords="63,55,211,95"/>
+<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="335,106,211,88,212,83,335,101"/>
+<area shape="rect" id="Node000011" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="66,120,209,145"/>
+<area shape="poly" id="edge5_Node000008_Node000011" title=" " alt="" coords="335,126,209,132,209,127,335,120"/>
+<area shape="rect" id="Node000014" href="$bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="63,170,211,210"/>
+<area shape="poly" id="edge7_Node000013_Node000014" title=" " alt="" coords="338,180,212,188,211,183,338,175"/>
 </map>

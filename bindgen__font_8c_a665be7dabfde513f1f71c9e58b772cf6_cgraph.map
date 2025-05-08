@@ -1,0 +1,13 @@
+<map id="bindgen_font_gf_font_create_file" name="bindgen_font_gf_font_create_file">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,73,165,113"/>
+<area shape="rect" id="Node000002" href="$gf__font_8c.html#a2264f26f7f9fd11d30d56d86b415b381" title="Load font." alt="" coords="213,80,356,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,90,199,90,199,95,166,95"/>
+<area shape="rect" id="Node000003" href="$gf__file_8c.html#a21009a41c9139fba583fd9034cc5f58d" title="Close file." alt="" coords="411,5,513,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,77,403,40,417,34,419,38,405,44,317,82"/>
+<area shape="rect" id="Node000004" href="$gf__file_8c.html#a75171efe7e9e4fb445ce99766db046bb" title="Open file." alt="" coords="411,55,513,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="356,80,397,74,398,79,356,85"/>
+<area shape="rect" id="Node000006" href="$gf__file_8c.html#a50307b5b19b902357320ed26d4f000fd" title="Read file." alt="" coords="413,104,511,129"/>
+<area shape="poly" id="edge4_Node000002_Node000006" title=" " alt="" coords="356,100,399,106,399,111,356,105"/>
+<area shape="rect" id="Node000007" href="$gf__font_8c.html#ac0048135a16cab856891b9686a17809d" title="Load font." alt="" coords="404,153,520,179"/>
+<area shape="poly" id="edge5_Node000002_Node000007" title=" " alt="" coords="317,103,419,145,417,150,315,108"/>
+</map>

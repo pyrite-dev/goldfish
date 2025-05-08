@@ -1,10 +1,14 @@
 <map id="gf_gui_get_parent" name="gf_gui_get_parent">
-<area shape="rect" id="Node000001" title="Get parent component." alt="" coords="441,31,580,56"/>
-<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="227,5,393,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="427,36,393,31,394,26,428,30"/>
-<area shape="rect" id="Node000005" href="$gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="236,55,384,80"/>
-<area shape="poly" id="edge3_Node000001_Node000005" title=" " alt="" coords="428,56,385,61,384,56,427,51"/>
-<area shape="rect" id="Node000003" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="5,31,179,56"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,32,179,36,178,31,213,27"/>
-<area shape="poly" id="edge4_Node000005_Node000003" title=" " alt="" coords="222,60,179,56,179,50,223,55"/>
+<area shape="rect" id="Node000001" title="Get parent component." alt="" coords="601,70,740,95"/>
+<area shape="rect" id="Node000002" href="$bindgen__GoldFishGUIComponent_8c.html#a08c8275d9801920248a6e9dcb9370c62" title=" " alt="" coords="317,5,553,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="604,69,517,48,519,43,605,64"/>
+<area shape="rect" id="Node000008" href="$gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="352,70,519,95"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="587,85,519,85,519,80,587,80"/>
+<area shape="rect" id="Node000014" href="$gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="361,119,509,145"/>
+<area shape="poly" id="edge5_Node000001_Node000014" title=" " alt="" coords="599,101,554,111,500,122,499,117,553,105,598,96"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishGUIComponent_8c.html#aa66358471709c54e287a144e1930eca9" title=" " alt="" coords="5,13,269,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,28,270,28,270,23,304,23"/>
+<area shape="rect" id="Node000009" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="51,94,224,119"/>
+<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="339,93,224,102,224,97,338,88"/>
+<area shape="poly" id="edge6_Node000014_Node000009" title=" " alt="" coords="347,127,224,117,225,111,348,122"/>
 </map>

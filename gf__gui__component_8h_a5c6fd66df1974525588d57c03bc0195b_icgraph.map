@@ -1,5 +1,12 @@
 <map id="gf_gui_create_scrollbar" name="gf_gui_create_scrollbar">
-<area shape="rect" id="Node000001" title="Create scrollbar component." alt="" coords="196,5,369,31"/>
-<area shape="rect" id="Node000002" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,5,148,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,21,148,21,148,15,182,15"/>
+<area shape="rect" id="Node000001" title="Create scrollbar component." alt="" coords="569,45,743,70"/>
+<area shape="rect" id="Node000002" href="$bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad" title=" " alt="" coords="183,5,331,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="555,52,331,34,331,29,556,47"/>
+<area shape="rect" id="Node000008" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="379,70,521,95"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="556,72,522,77,521,71,555,67"/>
+<area shape="rect" id="Node000003" href="$bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8" title=" " alt="" coords="5,45,135,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,43,136,49,135,44,169,38"/>
+<area shape="rect" id="Node000009" href="$bindgen__gui_8c.html#a28909a4b4bdd3dbdc27bc8e7e25d2986" title=" " alt="" coords="183,69,331,109"/>
+<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="365,88,331,89,331,84,364,83"/>
+<area shape="poly" id="edge5_Node000009_Node000003" title=" " alt="" coords="169,77,135,71,136,66,170,72"/>
 </map>

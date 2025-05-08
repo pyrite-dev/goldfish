@@ -1,0 +1,9 @@
+<map id="bindgen_graphic_gf_graphic_text_height" name="bindgen_graphic_gf_graphic_text_height">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,164,63"/>
+<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="212,31,383,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,41,198,41,198,46,164,46"/>
+<area shape="rect" id="Node000003" href="$gf__font_8c.html#adc4a1d10e49218c6383f5af6c4752fa1" title="Get glyph." alt="" coords="441,5,537,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="382,29,427,23,428,29,383,35"/>
+<area shape="rect" id="Node000004" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="431,55,548,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="383,51,417,56,417,61,382,57"/>
+</map>

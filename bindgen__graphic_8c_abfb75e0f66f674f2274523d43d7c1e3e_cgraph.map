@@ -1,0 +1,35 @@
+<map id="bindgen_graphic_init" name="bindgen_graphic_init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,237,163,262"/>
+<area shape="rect" id="Node000002" href="$bindgen__graphic_8c.html#ac5e10f2a2021240989020f5e3a8c4543" title=" " alt="" coords="215,5,365,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,235,104,200,130,152,165,101,209,55,215,50,219,55,212,59,169,104,135,155,109,202,93,237"/>
+<area shape="rect" id="Node000004" href="$bindgen__graphic_8c.html#a085344d3ff6592de76c4e57dfa69de6a" title=" " alt="" coords="215,69,365,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="93,235,139,180,172,148,209,119,218,114,221,118,212,124,176,152,143,184,97,238"/>
+<area shape="rect" id="Node000006" href="$bindgen__graphic_8c.html#a961ebfca3596629d011d93832fb0d9d5" title=" " alt="" coords="215,133,365,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="108,234,210,183,224,176,227,181,212,188,110,239"/>
+<area shape="rect" id="Node000008" href="$bindgen__graphic_8c.html#a2966b0ff67d94f6d5c154c09d562d59b" title=" " alt="" coords="215,197,365,237"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="162,235,201,228,202,234,163,240"/>
+<area shape="rect" id="Node000015" href="$bindgen__graphic_8c.html#a8894fc4e08d45d9fb885e1ffc889ca4e" title=" " alt="" coords="215,261,365,301"/>
+<area shape="poly" id="edge9_Node000001_Node000015" title=" " alt="" coords="163,259,202,265,201,270,162,264"/>
+<area shape="rect" id="Node000029" href="$bindgen__graphic_8c.html#a33b0a8f31ed70e130536c14a1174e74b" title=" " alt="" coords="211,325,369,365"/>
+<area shape="poly" id="edge11_Node000001_Node000029" title=" " alt="" coords="110,260,212,311,227,318,224,322,210,316,108,265"/>
+<area shape="rect" id="Node000031" href="$bindgen__graphic_8c.html#a6f8bc806000c3fa2779d02f8562f7317" title=" " alt="" coords="213,389,367,429"/>
+<area shape="poly" id="edge13_Node000001_Node000031" title=" " alt="" coords="97,261,143,315,176,347,212,375,221,381,218,385,209,380,172,351,139,318,93,264"/>
+<area shape="rect" id="Node000033" href="$bindgen__graphic_8c.html#a9476ee01c3ff84e78a5ddaca7d2b371b" title=" " alt="" coords="215,453,365,493"/>
+<area shape="poly" id="edge15_Node000001_Node000033" title=" " alt="" coords="93,261,109,296,135,344,169,394,212,439,219,444,215,448,209,443,165,398,130,346,104,299,88,264"/>
+<area shape="rect" id="Node000003" href="$gf__graphic_8c.html#a74f8bf7e2fc346f7d85ecfcea061f3fb" title="Clear the screen." alt="" coords="438,13,567,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="365,23,424,23,424,28,365,28"/>
+<area shape="rect" id="Node000005" href="$gf__graphic_8c.html#a63ff697af8cf405a5fab29b0bd893954" title="Pop clipping region." alt="" coords="427,77,578,102"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="365,87,414,87,414,92,365,92"/>
+<area shape="rect" id="Node000007" href="$gf__graphic_8c.html#ac4482ad3b1baa754820a496f84d66c3a" title="Push clipping region." alt="" coords="423,141,582,166"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="365,151,410,151,410,156,365,156"/>
+<area shape="rect" id="Node000009" href="$gf__graphic__common_8c.html#a4811198de205914602e5cdbafdcdd68d" title="Draw filled rectangle." alt="" coords="430,205,575,230"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="365,215,416,215,416,220,365,220"/>
+<area shape="rect" id="Node000016" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="441,269,564,294"/>
+<area shape="poly" id="edge10_Node000015_Node000016" title=" " alt="" coords="365,279,427,279,427,284,365,284"/>
+<area shape="rect" id="Node000030" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="417,333,588,358"/>
+<area shape="poly" id="edge12_Node000029_Node000030" title=" " alt="" coords="370,343,404,343,404,348,370,348"/>
+<area shape="rect" id="Node000032" href="$gf__graphic__common_8c.html#a1ce50172aa1749c26af704601fc131ef" title="Calculate text width." alt="" coords="419,397,586,422"/>
+<area shape="poly" id="edge14_Node000031_Node000032" title=" " alt="" coords="367,407,406,407,406,412,367,412"/>
+<area shape="rect" id="Node000034" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="421,461,584,486"/>
+<area shape="poly" id="edge16_Node000033_Node000034" title=" " alt="" coords="365,471,408,471,408,476,365,476"/>
+</map>

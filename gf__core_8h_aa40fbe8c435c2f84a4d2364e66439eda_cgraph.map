@@ -4,51 +4,67 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,398,263,164,267,167,97,402"/>
 <area shape="rect" id="Node000026" href="$gf__core_8c.html#a978d9c52b1d1098b5fc2f3e869036b64" title="Destroy engine instance." alt="" coords="213,301,355,327"/>
 <area shape="poly" id="edge7_Node000001_Node000026" title=" " alt="" coords="102,398,150,368,210,336,226,329,228,334,212,340,153,372,105,402"/>
-<area shape="rect" id="Node000035" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="229,475,339,500"/>
-<area shape="poly" id="edge12_Node000001_Node000035" title=" " alt="" coords="120,423,238,467,236,472,118,428"/>
-<area shape="rect" id="Node000046" href="$gf__resource_8c.html#a5d9f291bd98d070914a7e252a97f94c0" title="Get data from resource." alt="" coords="772,573,899,599"/>
-<area shape="poly" id="edge26_Node000001_Node000046" title=" " alt="" coords="94,424,137,495,171,537,212,573,261,602,303,616,406,631,495,644,565,650,635,646,723,631,763,619,799,603,801,608,765,624,725,637,636,652,565,655,494,649,405,637,302,622,259,607,209,577,167,541,132,498,89,427"/>
-<area shape="rect" id="Node000057" href="$gf__lua_8c.html#ae70e8069b99f5b001c2e1a3bd4c287dd" title="Run Lua program." alt="" coords="444,597,535,623"/>
-<area shape="poly" id="edge20_Node000001_Node000057" title=" " alt="" coords="100,423,148,464,212,509,264,535,306,551,406,582,433,591,431,596,405,587,305,556,262,540,209,514,144,469,97,427"/>
-<area shape="rect" id="Node000058" href="$gf__resource_8c.html#a594392497cc148244da9ee36f3829295" title="Create resource." alt="" coords="211,351,357,376"/>
-<area shape="poly" id="edge24_Node000001_Node000058" title=" " alt="" coords="136,397,218,377,219,382,137,403"/>
-<area shape="rect" id="Node000059" href="$gf__server_8c.html#a861aac514f048d33ce16e3209e125df5" title="Create server interface." alt="" coords="219,400,349,425"/>
-<area shape="poly" id="edge27_Node000001_Node000059" title=" " alt="" coords="163,410,205,410,205,415,163,415"/>
-<area shape="rect" id="Node000003" href="$gf__audio_8c.html#a52e61cbf2518774a590141631e053330" title="Create audio interface." alt="" coords="426,104,553,129"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,132,412,124,412,129,348,137"/>
-<area shape="rect" id="Node000007" href="$gf__client_8c.html#a1f8b044a5ca56016e55dad76cd839b53" title="Destroy client interface." alt="" coords="422,203,557,228"/>
-<area shape="poly" id="edge3_Node000002_Node000007" title=" " alt="" coords="316,152,406,187,432,196,430,201,404,193,314,157"/>
-<area shape="rect" id="Node000013" href="$gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec" title="Create drawing interface." alt="" coords="428,153,551,179"/>
-<area shape="poly" id="edge4_Node000002_Node000013" title=" " alt="" coords="348,147,415,155,414,160,347,152"/>
-<area shape="rect" id="Node000024" href="$gf__draw__common_8c.html#a4a0353d9ffdb96b2c26600b185b16f4f" title="Set input interface." alt="" coords="419,5,560,31"/>
-<area shape="poly" id="edge5_Node000002_Node000024" title=" " alt="" coords="295,127,340,85,371,61,404,40,419,33,421,38,407,44,374,65,344,89,299,131"/>
-<area shape="rect" id="Node000025" href="$gf__input_8c.html#ac926a70928c687f96cfbc24aef8ca96d" title="Create input interface." alt="" coords="428,55,551,80"/>
-<area shape="poly" id="edge6_Node000002_Node000025" title=" " alt="" coords="312,127,404,89,426,82,428,87,406,94,314,132"/>
-<area shape="poly" id="edge8_Node000026_Node000007" title=" " alt="" coords="301,299,346,268,404,237,422,230,424,235,406,242,349,273,304,303"/>
-<area shape="rect" id="Node000027" href="$gf__lua_8c.html#aa5bfe11630255b705da173365e88598e" title="Destroy Lua interface." alt="" coords="430,252,549,277"/>
-<area shape="poly" id="edge9_Node000026_Node000027" title=" " alt="" coords="337,299,422,278,423,283,338,304"/>
-<area shape="rect" id="Node000031" href="$gf__resource_8c.html#a943af2ca1233172ac44a8c436c11e580" title="Destroy resource." alt="" coords="412,301,567,327"/>
-<area shape="poly" id="edge10_Node000026_Node000031" title=" " alt="" coords="356,311,398,311,398,317,356,317"/>
-<area shape="rect" id="Node000032" href="$gf__server_8c.html#afedff111b1691c5973e264ce4f6a3787" title="Destroy server interface." alt="" coords="420,351,559,376"/>
-<area shape="poly" id="edge11_Node000026_Node000032" title=" " alt="" coords="338,324,423,345,422,350,337,329"/>
-<area shape="rect" id="Node000036" href="$bindgen_8c.html#a2b87a92483f8fce3503268bb05dc7098" title=" " alt="" coords="438,449,541,475"/>
-<area shape="poly" id="edge13_Node000035_Node000036" title=" " alt="" coords="339,478,424,467,425,473,340,483"/>
-<area shape="rect" id="Node000043" href="$gf__lua_8c.html#adef2beb9b1da24406f51000a734cf02a" title=" " alt="" coords="417,499,562,524"/>
-<area shape="poly" id="edge14_Node000035_Node000043" title=" " alt="" coords="340,491,403,499,402,504,339,496"/>
-<area shape="rect" id="Node000048" href="$gf__lua_8c.html#ac25650b30652d8cb8c65252229645360" title=" " alt="" coords="405,548,573,573"/>
-<area shape="poly" id="edge19_Node000035_Node000048" title=" " alt="" coords="316,498,406,533,432,541,430,546,404,538,314,503"/>
-<area shape="rect" id="Node000044" href="$gf__file_8c.html#a21009a41c9139fba583fd9034cc5f58d" title="Close file." alt="" coords="621,597,724,623"/>
-<area shape="poly" id="edge15_Node000043_Node000044" title=" " alt="" coords="550,522,575,533,590,545,600,557,609,570,623,583,631,588,629,593,620,587,605,573,596,561,587,549,572,538,548,526"/>
-<area shape="rect" id="Node000045" href="$gf__file_8c.html#a75171efe7e9e4fb445ce99766db046bb" title="Open file." alt="" coords="622,499,723,524"/>
-<area shape="poly" id="edge16_Node000043_Node000045" title=" " alt="" coords="562,509,608,509,608,514,562,514"/>
-<area shape="rect" id="Node000047" href="$gf__file_8c.html#a50307b5b19b902357320ed26d4f000fd" title="Read file." alt="" coords="623,548,722,573"/>
-<area shape="poly" id="edge18_Node000043_Node000047" title=" " alt="" coords="538,521,612,542,611,547,536,527"/>
-<area shape="poly" id="edge17_Node000045_Node000046" title=" " alt="" coords="703,522,796,565,794,570,700,527"/>
-<area shape="poly" id="edge21_Node000057_Node000044" title=" " alt="" coords="535,607,608,607,608,613,535,613"/>
-<area shape="poly" id="edge22_Node000057_Node000045" title=" " alt="" coords="534,598,572,582,586,571,596,559,605,547,620,533,627,529,630,533,623,537,609,550,600,562,590,575,575,587,536,603"/>
-<area shape="poly" id="edge23_Node000057_Node000047" title=" " alt="" coords="534,595,611,574,612,580,536,601"/>
-<area shape="poly" id="edge25_Node000058_Node000031" title=" " alt="" coords="337,348,422,327,423,333,338,353"/>
-<area shape="poly" id="edge29_Node000059_Node000032" title=" " alt="" coords="337,397,422,377,423,382,338,403"/>
-<area shape="rect" id="Node000060" href="$gf__physics_8c.html#a7e225db0a916463d791036c4d8636993" title="Create physics interface." alt="" coords="420,400,559,425"/>
-<area shape="poly" id="edge28_Node000059_Node000060" title=" " alt="" coords="349,410,406,410,406,415,349,415"/>
+<area shape="rect" id="Node000035" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="229,688,339,713"/>
+<area shape="poly" id="edge12_Node000001_Node000035" title=" " alt="" coords="96,424,268,675,264,678,92,427"/>
+<area shape="rect" id="Node000043" href="$gf__resource_8c.html#a5d9f291bd98d070914a7e252a97f94c0" title="Get data from resource." alt="" coords="816,1059,943,1084"/>
+<area shape="poly" id="edge34_Node000001_Node000043" title=" " alt="" coords="89,425,101,539,125,717,142,812,162,900,186,973,213,1023,271,1086,300,1109,329,1128,360,1142,390,1153,455,1163,524,1162,598,1151,767,1117,807,1104,843,1088,845,1093,809,1109,769,1122,599,1157,524,1167,455,1168,389,1158,358,1147,327,1133,297,1114,267,1090,208,1026,181,975,157,901,137,813,120,718,95,539,84,426"/>
+<area shape="rect" id="Node000171" href="$gf__lua_8c.html#ae70e8069b99f5b001c2e1a3bd4c287dd" title="Run Lua program." alt="" coords="466,1083,557,1108"/>
+<area shape="poly" id="edge28_Node000001_Node000171" title=" " alt="" coords="90,425,112,533,134,616,166,709,208,808,261,904,293,950,327,993,365,1033,407,1068,429,1080,453,1088,452,1093,427,1085,404,1072,362,1036,323,997,288,953,257,907,203,810,161,711,129,617,107,534,85,426"/>
+<area shape="rect" id="Node000172" href="$gf__resource_8c.html#a594392497cc148244da9ee36f3829295" title="Create resource." alt="" coords="211,351,357,376"/>
+<area shape="poly" id="edge32_Node000001_Node000172" title=" " alt="" coords="136,397,218,377,219,382,137,403"/>
+<area shape="rect" id="Node000173" href="$gf__server_8c.html#a861aac514f048d33ce16e3209e125df5" title="Create server interface." alt="" coords="219,400,349,425"/>
+<area shape="poly" id="edge35_Node000001_Node000173" title=" " alt="" coords="163,410,205,410,205,415,163,415"/>
+<area shape="rect" id="Node000003" href="$gf__audio_8c.html#a52e61cbf2518774a590141631e053330" title="Create audio interface." alt="" coords="448,104,575,129"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="348,132,434,123,435,128,348,138"/>
+<area shape="rect" id="Node000007" href="$gf__client_8c.html#a1f8b044a5ca56016e55dad76cd839b53" title="Destroy client interface." alt="" coords="444,203,579,228"/>
+<area shape="poly" id="edge3_Node000002_Node000007" title=" " alt="" coords="315,152,406,187,438,197,437,202,404,193,313,157"/>
+<area shape="rect" id="Node000013" href="$gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec" title="Create drawing interface." alt="" coords="450,153,573,179"/>
+<area shape="poly" id="edge4_Node000002_Node000013" title=" " alt="" coords="348,146,437,155,436,161,348,151"/>
+<area shape="rect" id="Node000024" href="$gf__draw__common_8c.html#a4a0353d9ffdb96b2c26600b185b16f4f" title="Set input interface." alt="" coords="441,5,582,31"/>
+<area shape="poly" id="edge5_Node000002_Node000024" title=" " alt="" coords="295,127,340,84,371,60,404,40,426,31,428,36,407,44,374,64,343,88,299,131"/>
+<area shape="rect" id="Node000025" href="$gf__input_8c.html#ac926a70928c687f96cfbc24aef8ca96d" title="Create input interface." alt="" coords="450,55,573,80"/>
+<area shape="poly" id="edge6_Node000002_Node000025" title=" " alt="" coords="311,127,404,89,436,80,437,85,406,94,313,132"/>
+<area shape="poly" id="edge8_Node000026_Node000007" title=" " alt="" coords="300,299,346,268,404,237,429,228,431,233,406,242,348,272,303,303"/>
+<area shape="rect" id="Node000027" href="$gf__lua_8c.html#aa5bfe11630255b705da173365e88598e" title="Destroy Lua interface." alt="" coords="452,252,571,277"/>
+<area shape="poly" id="edge9_Node000026_Node000027" title=" " alt="" coords="343,299,438,278,439,283,344,304"/>
+<area shape="rect" id="Node000031" href="$gf__resource_8c.html#a943af2ca1233172ac44a8c436c11e580" title="Destroy resource." alt="" coords="434,301,589,327"/>
+<area shape="poly" id="edge10_Node000026_Node000031" title=" " alt="" coords="356,311,420,311,420,317,356,317"/>
+<area shape="rect" id="Node000032" href="$gf__server_8c.html#afedff111b1691c5973e264ce4f6a3787" title="Destroy server interface." alt="" coords="442,351,581,376"/>
+<area shape="poly" id="edge11_Node000026_Node000032" title=" " alt="" coords="344,324,439,345,438,350,343,329"/>
+<area shape="rect" id="Node000036" href="$bindgen_8c.html#a2b87a92483f8fce3503268bb05dc7098" title=" " alt="" coords="460,449,563,475"/>
+<area shape="poly" id="edge13_Node000035_Node000036" title=" " alt="" coords="286,687,299,647,322,592,356,533,378,507,404,484,424,472,445,465,447,470,426,477,407,488,382,510,360,536,326,594,304,649,291,688"/>
+<area shape="rect" id="Node000144" href="$gf__lua_8c.html#ad92129027a0f65174c3b0c9e51eaa3f4" title=" " alt="" coords="422,499,601,524"/>
+<area shape="poly" id="edge14_Node000035_Node000144" title=" " alt="" coords="289,686,304,655,329,614,362,571,404,534,417,527,420,532,407,539,366,574,333,617,309,658,293,689"/>
+<area shape="rect" id="Node000145" href="$gf__lua_8c.html#a2e6fdc0f285f58339313e91b8558a49a" title=" " alt="" coords="438,549,585,589"/>
+<area shape="poly" id="edge15_Node000035_Node000145" title=" " alt="" coords="296,686,341,643,371,619,404,598,423,589,426,594,407,603,374,624,344,647,299,690"/>
+<area shape="rect" id="Node000147" href="$gf__lua_8c.html#adef2beb9b1da24406f51000a734cf02a" title=" " alt="" coords="439,613,584,639"/>
+<area shape="poly" id="edge16_Node000035_Node000147" title=" " alt="" coords="311,685,404,647,433,639,434,644,406,653,313,690"/>
+<area shape="rect" id="Node000148" href="$gf__lua_8c.html#ac25650b30652d8cb8c65252229645360" title=" " alt="" coords="427,663,595,688"/>
+<area shape="poly" id="edge21_Node000035_Node000148" title=" " alt="" coords="339,692,413,684,414,689,340,697"/>
+<area shape="rect" id="Node000157" href="$gf__lua_8c.html#ae7832e4227620202272a90286df3889f" title=" " alt="" coords="405,712,617,737"/>
+<area shape="poly" id="edge22_Node000035_Node000157" title=" " alt="" coords="340,704,392,709,392,715,339,709"/>
+<area shape="rect" id="Node000158" href="$gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="430,762,593,802"/>
+<area shape="poly" id="edge23_Node000035_Node000158" title=" " alt="" coords="317,711,406,746,432,755,431,760,404,751,315,716"/>
+<area shape="rect" id="Node000162" href="$gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="431,826,591,866"/>
+<area shape="poly" id="edge24_Node000035_Node000162" title=" " alt="" coords="297,712,342,760,373,788,407,812,420,819,417,823,404,816,369,792,338,764,293,715"/>
+<area shape="rect" id="Node000163" href="$gf__lua_8c.html#ac8ada75c50e0c19a9fb54361995fea9f" title=" " alt="" coords="431,890,591,930"/>
+<area shape="poly" id="edge25_Node000035_Node000163" title=" " alt="" coords="293,712,308,745,332,790,365,836,407,876,420,884,418,889,404,880,361,840,328,792,303,748,288,715"/>
+<area shape="rect" id="Node000166" href="$gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="431,954,591,994"/>
+<area shape="poly" id="edge26_Node000035_Node000166" title=" " alt="" coords="290,713,302,756,324,817,358,883,381,914,407,940,420,949,417,954,404,944,377,917,354,886,319,820,297,758,285,714"/>
+<area shape="rect" id="Node000168" href="$gf__lua_8c.html#a26ab37c4ca63cc701ed20492f9be66da" title=" " alt="" coords="431,1018,591,1058"/>
+<area shape="poly" id="edge27_Node000035_Node000168" title=" " alt="" coords="292,713,348,871,382,958,407,1004,421,1014,417,1018,403,1008,378,960,343,873,287,714"/>
+<area shape="rect" id="Node000041" href="$gf__file_8c.html#a21009a41c9139fba583fd9034cc5f58d" title="Close file." alt="" coords="665,1083,768,1108"/>
+<area shape="poly" id="edge17_Node000147_Node000041" title=" " alt="" coords="585,628,604,636,619,648,640,675,653,701,662,727,665,753,662,804,651,855,639,907,633,959,634,986,640,1013,651,1040,668,1068,671,1072,667,1076,663,1072,646,1043,635,1014,629,986,628,959,633,906,645,854,657,803,660,753,656,728,648,703,635,678,615,652,601,640,583,633"/>
+<area shape="rect" id="Node000042" href="$gf__file_8c.html#a75171efe7e9e4fb445ce99766db046bb" title="Open file." alt="" coords="666,984,767,1009"/>
+<area shape="poly" id="edge18_Node000147_Node000042" title=" " alt="" coords="585,629,603,637,619,648,650,685,674,727,692,772,704,819,717,905,719,970,714,971,712,906,699,820,687,774,670,729,646,688,616,652,601,641,583,634"/>
+<area shape="rect" id="Node000044" href="$gf__file_8c.html#a50307b5b19b902357320ed26d4f000fd" title="Read file." alt="" coords="667,1033,766,1059"/>
+<area shape="poly" id="edge20_Node000147_Node000044" title=" " alt="" coords="585,628,604,636,619,648,637,671,650,695,658,718,661,741,659,786,650,831,640,877,636,923,643,970,653,994,668,1019,671,1023,667,1026,663,1022,648,997,638,972,630,923,635,876,645,830,654,785,656,741,652,719,645,697,633,674,615,652,601,640,583,633"/>
+<area shape="poly" id="edge19_Node000042_Node000043" title=" " alt="" coords="747,1007,840,1051,838,1055,744,1012"/>
+<area shape="poly" id="edge29_Node000171_Node000041" title=" " alt="" coords="557,1093,652,1093,652,1098,557,1098"/>
+<area shape="poly" id="edge30_Node000171_Node000042" title=" " alt="" coords="556,1088,587,1080,616,1068,631,1057,640,1045,649,1032,664,1019,671,1014,674,1018,667,1023,653,1036,644,1048,634,1060,619,1072,588,1085,558,1093"/>
+<area shape="poly" id="edge31_Node000171_Node000044" title=" " alt="" coords="556,1082,617,1067,653,1059,654,1064,618,1073,558,1087"/>
+<area shape="poly" id="edge33_Node000172_Node000031" title=" " alt="" coords="343,348,438,327,439,332,344,353"/>
+<area shape="poly" id="edge37_Node000173_Node000032" title=" " alt="" coords="343,397,438,376,439,382,344,403"/>
+<area shape="rect" id="Node000174" href="$gf__physics_8c.html#a7e225db0a916463d791036c4d8636993" title="Create physics interface." alt="" coords="442,400,581,425"/>
+<area shape="poly" id="edge36_Node000173_Node000174" title=" " alt="" coords="350,410,428,410,428,415,350,415"/>
 </map>

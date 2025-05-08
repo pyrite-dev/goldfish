@@ -1,0 +1,7 @@
+<map id="gf_audio_resume" name="gf_audio_resume">
+<area shape="rect" id="Node000001" title="Resume audio." alt="" coords="479,13,613,38"/>
+<area shape="rect" id="Node000002" href="$bindgen__GoldFishAudio_8c.html#ab33bdcb38f7a7d2421dc41ddfdfaa37c" title=" " alt="" coords="256,5,431,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="465,28,431,28,431,23,465,23"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishAudio_8c.html#a8b24ea565098be398e626b26dfcc73bd" title=" " alt="" coords="5,13,208,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="242,28,208,28,208,23,242,23"/>
+</map>

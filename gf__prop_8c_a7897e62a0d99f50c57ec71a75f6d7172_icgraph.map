@@ -1,10 +1,12 @@
 <map id="gf_prop_destroy" name="gf_prop_destroy">
-<area shape="rect" id="Node000001" title="Destroy property container." alt="" coords="387,31,513,56"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="201,31,339,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="373,46,339,46,339,41,373,41"/>
-<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="301,20,292,12,270,9,251,11,241,16,239,22,245,29,240,32,234,22,237,13,250,6,270,4,295,8,305,16"/>
-<area shape="rect" id="Node000003" href="$gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="5,5,153,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="187,35,154,31,154,25,188,30"/>
-<area shape="rect" id="Node000004" href="$gf__gui_8c.html#ab8c8f2db437bffd27987005978c9a766" title="Destroy GUI." alt="" coords="20,55,139,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="188,56,139,63,138,57,187,51"/>
+<area shape="rect" id="Node000001" title="Destroy property container." alt="" coords="475,70,601,95"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="289,70,427,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="461,85,427,85,427,80,461,80"/>
+<area shape="poly" id="edge5_Node000002_Node000002" title=" " alt="" coords="389,60,380,52,358,49,339,51,329,55,327,61,333,68,328,71,322,62,325,52,338,46,358,43,383,47,393,56"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishGUIComponent_8c.html#ac9ee38e5442042dfd34828f37b999737" title=" " alt="" coords="5,5,241,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="291,69,205,48,206,43,293,64"/>
+<area shape="rect" id="Node000009" href="$gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="49,70,197,95"/>
+<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="275,85,197,85,197,80,275,80"/>
+<area shape="rect" id="Node000010" href="$gf__gui_8c.html#ab8c8f2db437bffd27987005978c9a766" title="Destroy GUI." alt="" coords="64,119,183,145"/>
+<area shape="poly" id="edge4_Node000002_Node000010" title=" " alt="" coords="284,101,184,122,182,117,283,96"/>
 </map>

@@ -1,11 +1,15 @@
 <map id="gf_gui_add_recursive" name="gf_gui_add_recursive">
-<area shape="rect" id="Node000001" title=" " alt="" coords="387,55,547,80"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="505,45,494,37,467,33,444,35,432,40,429,46,436,53,432,56,424,46,428,36,443,30,467,28,496,32,508,41"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="168,29,335,55"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="372,59,334,54,335,49,373,54"/>
-<area shape="rect" id="Node000009" href="$gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="164,79,339,104"/>
-<area shape="poly" id="edge5_Node000001_Node000009" title=" " alt="" coords="373,80,339,84,338,79,372,75"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="285,19,275,11,251,8,231,10,221,15,219,20,224,28,220,31,213,21,217,11,230,5,251,3,277,6,288,15"/>
-<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="5,29,116,55"/>
-<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="154,45,116,45,116,39,154,39"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="512,99,672,125"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="630,90,620,81,592,78,569,80,557,85,555,90,561,98,557,101,550,91,553,81,568,75,592,73,622,76,633,85"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="293,70,460,95"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="498,102,460,97,460,91,498,97"/>
+<area shape="rect" id="Node000015" href="$gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="289,123,464,149"/>
+<area shape="poly" id="edge6_Node000001_Node000015" title=" " alt="" coords="498,125,464,129,464,124,498,120"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="415,60,404,52,377,49,354,51,342,56,339,61,346,68,342,72,334,62,338,52,353,46,377,43,406,47,418,56"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishGUIComponent_8c.html#aeb48b5a46d3ffea75114d05216d0bce3" title=" " alt="" coords="5,5,241,45"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="306,70,212,48,213,43,307,64"/>
+<area shape="rect" id="Node000009" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="68,70,179,95"/>
+<area shape="poly" id="edge5_Node000002_Node000009" title=" " alt="" coords="280,85,179,85,179,80,280,80"/>
+<area shape="rect" id="Node000016" href="$bindgen__gui_8c.html#aeefeecd0ff17aa1db4d8540bf1123ae5" title=" " alt="" coords="49,120,197,160"/>
+<area shape="poly" id="edge7_Node000015_Node000016" title=" " alt="" coords="276,140,197,142,197,136,276,135"/>
 </map>

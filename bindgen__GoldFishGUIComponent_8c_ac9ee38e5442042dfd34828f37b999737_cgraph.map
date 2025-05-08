@@ -1,0 +1,12 @@
+<map id="bindgen_GoldFishGUIComponent_gf_gui_destroy_id" name="bindgen_GoldFishGUIComponent_gf_gui_destroy_id">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,241,87"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="289,55,427,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,65,275,65,275,70,241,70"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="326,56,320,46,323,36,336,30,358,28,384,32,395,40,392,44,382,36,358,33,338,35,327,40,325,46,331,53"/>
+<area shape="rect" id="Node000003" href="$gf__prop_8c.html#a7897e62a0d99f50c57ec71a75f6d7172" title="Destroy property container." alt="" coords="487,5,614,31"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="408,52,486,32,488,37,409,57"/>
+<area shape="rect" id="Node000004" href="$gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="475,55,627,80"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="427,65,461,65,461,70,427,70"/>
+<area shape="rect" id="Node000006" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="475,104,626,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="409,77,488,98,486,103,408,83"/>
+</map>

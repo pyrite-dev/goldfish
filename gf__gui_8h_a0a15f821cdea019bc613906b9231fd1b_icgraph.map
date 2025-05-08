@@ -1,5 +1,9 @@
 <map id="gf_gui_set_xy" name="gf_gui_set_xy">
-<area shape="rect" id="Node000001" title="Set X coord and Y coord." alt="" coords="228,5,340,31"/>
-<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="5,5,180,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,21,180,21,180,15,214,15"/>
+<area shape="rect" id="Node000001" title="Set X coord and Y coord." alt="" coords="387,35,499,60"/>
+<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="164,5,339,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="373,39,334,33,335,28,373,34"/>
+<area shape="rect" id="Node000003" href="$gf__lua_8c.html#ac8ada75c50e0c19a9fb54361995fea9f" title=" " alt="" coords="171,55,331,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="373,60,332,66,331,61,372,55"/>
+<area shape="rect" id="Node000004" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,63,116,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,78,116,78,116,73,157,73"/>
 </map>

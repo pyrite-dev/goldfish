@@ -1,5 +1,9 @@
 <map id="gf_graphic_points_arr" name="gf_graphic_points_arr">
-<area shape="rect" id="Node000001" title="Draw points." alt="" coords="191,5,353,31"/>
-<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569" title="Draw points." alt="" coords="5,5,143,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,21,143,21,143,15,177,15"/>
+<area shape="rect" id="Node000001" title="Draw points." alt="" coords="359,35,521,60"/>
+<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569" title="Draw points." alt="" coords="169,5,306,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="345,36,306,31,306,25,345,31"/>
+<area shape="rect" id="Node000003" href="$gf__lua_8c.html#a2e6fdc0f285f58339313e91b8558a49a" title=" " alt="" coords="164,55,311,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="346,63,311,68,311,63,345,58"/>
+<area shape="rect" id="Node000004" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,63,116,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="150,78,116,78,116,73,150,73"/>
 </map>

@@ -1,0 +1,10 @@
+<map id="bindgen_gui_gf_gui_sort_component" name="bindgen_gui_gf_gui_sort_component">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,153,87"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="201,55,376,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,65,188,65,188,70,154,70"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a5ceaabe70d36f2bf14501d5d8ac04d48" title=" " alt="" coords="424,29,584,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="376,54,410,50,411,56,377,60"/>
+<area shape="rect" id="Node000004" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="429,79,579,104"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="377,74,415,79,415,84,376,80"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="469,31,462,21,465,11,480,5,504,3,534,6,545,15,542,20,532,11,504,8,481,10,469,15,467,20,473,28"/>
+</map>

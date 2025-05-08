@@ -1,0 +1,7 @@
+<map id="gf_gui_set_font_color" name="gf_gui_set_font_color">
+<area shape="rect" id="Node000001" title="Set font color." alt="" coords="601,13,763,38"/>
+<area shape="rect" id="Node000002" href="$bindgen__GoldFishGUIComponent_8c.html#a3154f822c1380f11b43acf5fa2db7501" title=" " alt="" coords="317,5,553,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="588,28,554,28,554,23,588,23"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishGUIComponent_8c.html#aa66358471709c54e287a144e1930eca9" title=" " alt="" coords="5,13,269,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,28,270,28,270,23,304,23"/>
+</map>

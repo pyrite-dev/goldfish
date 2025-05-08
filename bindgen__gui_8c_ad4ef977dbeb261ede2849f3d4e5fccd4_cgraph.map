@@ -1,0 +1,7 @@
+<map id="bindgen_gui_gf_gui_create_frame" name="bindgen_gui_gf_gui_create_frame">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,153,45"/>
+<area shape="rect" id="Node000002" href="$gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e" title="Create frame component." alt="" coords="201,13,357,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,23,187,23,187,28,154,28"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="405,13,596,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="358,23,392,23,392,28,358,28"/>
+</map>
