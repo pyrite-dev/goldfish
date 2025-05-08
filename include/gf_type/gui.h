@@ -143,7 +143,7 @@ GF_DECLARE_TYPE(gui, {
 	gf_engine_t*	    engine;
 	gf_draw_t*	    draw;
 	gf_gui_id_t	    pressed;
-	gf_gui_component_t* area;
+	gf_gui_component_t** area;
 	gf_graphic_color_t  base;
 	gf_graphic_color_t  font;
 	gf_gui_id_t	    hover;

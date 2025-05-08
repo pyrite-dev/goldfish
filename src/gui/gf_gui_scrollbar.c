@@ -15,6 +15,7 @@
 #include <gf_prop.h>
 
 /* Standard */
+#include <stdlib.h>
 
 extern const int gf_gui_border_color_diff;
 
@@ -48,16 +49,16 @@ void gf_gui_scrollbar_down(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id,
 }
 
 gf_gui_id_t gf_gui_create_scrollbar(gf_gui_t* gui, double x, double y, double w, double h) {
-	gf_gui_component_t c;
-	gf_gui_id_t	   up;
-	gf_gui_id_t	   dn;
-	gf_gui_id_t	   gr;
+	gf_gui_component_t* c = malloc(sizeof(*c));
+	gf_gui_id_t	    up;
+	gf_gui_id_t	    dn;
+	gf_gui_id_t	    gr;
 
-	gf_gui_create_component(gui, &c, x, y, w, h);
+	gf_gui_create_component(gui, c, x, y, w, h);
 
-	c.type = GF_GUI_SCROLLBAR;
+	c->type = GF_GUI_SCROLLBAR;
 
-	hmputs(gui->area, c);
+	arrput(gui->area, c);
 
 	up = gf_gui_create_button(gui, 0, 0, w, w);
 	dn = gf_gui_create_button(gui, 0, 0, w, w);
@@ -68,23 +69,23 @@ gf_gui_id_t gf_gui_create_scrollbar(gf_gui_t* gui, double x, double y, double w,
 
 	gf_prop_set_integer(gf_gui_get_prop(gui, dn), "y-base", 1);
 
-	gf_gui_set_parent(gui, up, c.key);
-	gf_gui_set_parent(gui, dn, c.key);
-	gf_gui_set_parent(gui, gr, c.key);
+	gf_gui_set_parent(gui, up, c->key);
+	gf_gui_set_parent(gui, dn, c->key);
+	gf_gui_set_parent(gui, gr, c->key);
 
-	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "min-value", 0);
-	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "step", 10);
-	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "value", 0);
-	gf_prop_set_floating(gf_gui_get_prop(gui, c.key), "max-value", 100);
+	gf_prop_set_floating(gf_gui_get_prop(gui, c->key), "min-value", 0);
+	gf_prop_set_floating(gf_gui_get_prop(gui, c->key), "step", 10);
+	gf_prop_set_floating(gf_gui_get_prop(gui, c->key), "value", 0);
+	gf_prop_set_floating(gf_gui_get_prop(gui, c->key), "max-value", 100);
 
-	gf_gui_set_prop_id(gui, c.key, "grab", gr);
-	gf_gui_set_prop_id(gui, up, "scrollbar", c.key);
-	gf_gui_set_prop_id(gui, dn, "scrollbar", c.key);
+	gf_gui_set_prop_id(gui, c->key, "grab", gr);
+	gf_gui_set_prop_id(gui, up, "scrollbar", c->key);
+	gf_gui_set_prop_id(gui, dn, "scrollbar", c->key);
 
 	gf_gui_set_callback(gui, up, gf_gui_scrollbar_up);
 	gf_gui_set_callback(gui, dn, gf_gui_scrollbar_down);
 
-	return c.key;
+	return c->key;
 }
 
 void gf_gui_scrollbar_render(gf_gui_t* gui, gf_gui_component_t* c) {

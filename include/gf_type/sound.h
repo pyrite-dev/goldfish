@@ -38,8 +38,31 @@ GF_DECLARE_TYPE(sound_context, {
 GF_DECLARE_TYPE(sound_context, {
 	ma_device device;
 });
+#else
+/**
+ * @struct gf_sound_context_t
+ * @~english
+ * @brief Platform-dependent sound driver context
+ * @note Definition depends on the platform, read the header file for definition
+ */
+GF_DECLARE_TYPE(sound_context, {
+});
 #endif
 
+/**
+ * @struct gf_sound_t
+ * @~english
+ * @brief Sound driver
+ *
+ * @var gf_sound_t::audio
+ * @brief Audio interface
+ *
+ * @var gf_sound_t::sample_rate
+ * @brief Sample rate
+ *
+ * @var gf_sound_t::context
+ * @brief Platform-dependent sound driver context
+ */
 GF_DECLARE_TYPE(sound, {
 	gf_audio_t* audio;
 	int sample_rate;

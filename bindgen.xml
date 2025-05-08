@@ -37,6 +37,9 @@
 			<Not>
 				<Name Pattern="^gf_gui_(set|get)_(wh|xy)$" />
 			</Not>
+			<Not>
+				<Name Pattern="^gf_gui_get_index$" />
+			</Not>
 		</Match>
 	</Metatable>
 	<Metatable C="gf_audio_id_t" Lua="GoldFishAudio" Valid="ret >= 0">

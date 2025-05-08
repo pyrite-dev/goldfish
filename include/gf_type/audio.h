@@ -47,6 +47,15 @@ typedef struct gf_audio_decoder_t gf_audio_decoder_t;
  * @var gf_audio_decoder_t::mod
  * @brief MOD context
  *
+ * @var gf_audio_decoder_t::mp3
+ * @brief MP3 context
+ *
+ * @var gf_audio_decoder_t::flac
+ * @brief FLAC context
+ *
+ * @var gf_audio_decoder_t::wav
+ * @brief WAV context
+ *
  * @var gf_audio_decoder_t::internal
  * @brief Used internally
  *

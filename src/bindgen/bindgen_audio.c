@@ -26,9 +26,30 @@
 
 /**
  * Symbols:
+ *   gf_audio_callback
  *   gf_audio_load_file
  *   gf_audio_set_volume
  */
+
+/**
+ * C: void gf_audio_callback(gf_audio_t*, void*, int)
+ */
+int bindgen_audio_gf_audio_callback(lua_State* s) {
+	gf_audio_t* param0;
+	void*	    param1 = (void*)luaL_check(s, 1);
+	int	    param2 = (int)luaL_checkinteger(s, 2);
+	gf_lua_t*   wrap;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->audio;
+
+	gf_audio_callback(param0, param1, param2);
+
+	return 0;
+}
 
 /**
  * C: gf_audio_id_t gf_audio_load_file(gf_audio_t*, const char*)
@@ -78,6 +99,10 @@ int bindgen_audio_gf_audio_set_volume(lua_State* s) {
 void bindgen_audio_init(gf_lua_t* lua) {
 	lua_pushstring(LUA(lua), "audio");
 	lua_newtable(LUA(lua));
+
+	lua_pushstring(LUA(lua), "callback");
+	lua_pushcfunction(LUA(lua), bindgen_audio_gf_audio_callback);
+	lua_settable(LUA(lua), -3);
 
 	lua_pushstring(LUA(lua), "load_file");
 	lua_pushcfunction(LUA(lua), bindgen_audio_gf_audio_load_file);
