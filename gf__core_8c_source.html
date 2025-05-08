@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('gf__core_8c_source.html',''); initResi
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#ifdef _WIN32</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        WSADATA wsa;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="gf__log_8c.html#acd1b8a5daa02c81f5411d2033cbb4aea">gf_log_default</a> = stderr;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="gf__log_8c.html#acd1b8a5daa02c81f5411d2033cbb4aea">gf_log_default</a> == NULL) <a class="code hl_variable" href="gf__log_8c.html#acd1b8a5daa02c81f5411d2033cbb4aea">gf_log_default</a> = stderr;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        gf_gui_init_calls();</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
