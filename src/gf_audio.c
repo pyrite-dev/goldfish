@@ -14,6 +14,7 @@
 /* Engine */
 #include <gf_log.h>
 #include <gf_file.h>
+#include <gf_thread.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -32,7 +33,7 @@ void gf_audio_callback(ma_device* dev, void* output, const void* input, ma_uint3
 		tmp[2 * i + 1] = 0;
 	}
 
-	ma_mutex_lock(audio->mutex);
+	gf_thread_mutex_lock(audio->mutex);
 	for(i = 0; i < (ma_uint32)hmlen(audio->decoder); i++) {
 		if(audio->decoder[i].used == 1 && audio->decoder[i].decoder != NULL) {
 			ma_uint64 readframe;
@@ -77,7 +78,7 @@ void gf_audio_callback(ma_device* dev, void* output, const void* input, ma_uint3
 			}
 		}
 	}
-	ma_mutex_unlock(audio->mutex);
+	gf_thread_mutex_unlock(audio->mutex);
 
 	for(i = 0; i < frame; i++) {
 		out[2 * i + 0] = tmp[2 * i + 0] * audio->volume * 32768;
@@ -92,7 +93,7 @@ gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size) {
 	int		   mod_cond;
 	int		   ind;
 
-	ma_mutex_lock(audio->mutex);
+	gf_thread_mutex_lock(audio->mutex);
 
 	decoder.used	       = 0;
 	decoder.audio	       = audio;
@@ -128,7 +129,7 @@ gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size) {
 			decoder.used	 = -1;
 			jar_xm_set_max_loop_count(decoder.xm, 1);
 			hmputs(audio->decoder, decoder);
-			ma_mutex_unlock(audio->mutex);
+			gf_thread_mutex_unlock(audio->mutex);
 			return decoder.key;
 		}
 		decoder.xm = NULL;
@@ -144,7 +145,7 @@ gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size) {
 			decoder.internal = decoder.mod->loopcount;
 			decoder.used	 = -1;
 			hmputs(audio->decoder, decoder);
-			ma_mutex_unlock(audio->mutex);
+			gf_thread_mutex_unlock(audio->mutex);
 			return decoder.key;
 		}
 		free(decoder.mod->modfile);
@@ -158,13 +159,13 @@ gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size) {
 	if(ma_decoder_init_memory(decoder.data, decoder.size, &decoder.decoder_config, decoder.decoder) == MA_SUCCESS) {
 		decoder.used = -1;
 		hmputs(audio->decoder, decoder);
-		ma_mutex_unlock(audio->mutex);
+		gf_thread_mutex_unlock(audio->mutex);
 		return decoder.key;
 	}
 	free(decoder.data);
 	free(decoder.decoder);
 	decoder.decoder = NULL;
-	ma_mutex_unlock(audio->mutex);
+	gf_thread_mutex_unlock(audio->mutex);
 	return -1;
 }
 
@@ -210,10 +211,8 @@ gf_audio_t* gf_audio_create(gf_engine_t* engine) {
 		return NULL;
 	}
 
-	audio->mutex = malloc(sizeof(*audio->mutex));
-	if(ma_mutex_init(audio->mutex) != MA_SUCCESS) {
+	if((audio->mutex = gf_thread_mutex_create()) == NULL) {
 		gf_log_function(engine, "Failed to create mutex", "");
-		free(audio->mutex);
 		audio->mutex = NULL;
 		gf_audio_destroy(audio);
 		return NULL;
@@ -232,7 +231,7 @@ gf_audio_t* gf_audio_create(gf_engine_t* engine) {
 
 void gf_audio_decoder_destroy(gf_audio_decoder_t* decoder) {
 	gf_audio_t* audio = decoder->audio;
-	ma_mutex_lock(audio->mutex);
+	gf_thread_mutex_lock(audio->mutex);
 	if(decoder->decoder != NULL) {
 		ma_decoder_uninit(decoder->decoder);
 		free(decoder->decoder);
@@ -252,7 +251,7 @@ void gf_audio_decoder_destroy(gf_audio_decoder_t* decoder) {
 	}
 	decoder->used = 0;
 	hmdel(audio->decoder, decoder->key);
-	ma_mutex_unlock(audio->mutex);
+	gf_thread_mutex_unlock(audio->mutex);
 }
 
 void gf_audio_destroy(gf_audio_t* audio) {
@@ -261,8 +260,7 @@ void gf_audio_destroy(gf_audio_t* audio) {
 		free(audio->device);
 	}
 	if(audio->mutex != NULL) {
-		ma_mutex_uninit(audio->mutex);
-		free(audio->mutex);
+		gf_thread_mutex_destroy(audio->mutex);
 	}
 	if(audio->decoder != NULL) {
 		while(hmlen(audio->decoder) > 0) {
@@ -277,29 +275,29 @@ void gf_audio_destroy(gf_audio_t* audio) {
 void gf_audio_resume(gf_audio_t* audio, gf_audio_id_t id) {
 	int ind;
 
-	ma_mutex_lock(audio->mutex);
+	gf_thread_mutex_lock(audio->mutex);
 	ind = hmgeti(audio->decoder, id);
 	if(ind == -1) {
-		ma_mutex_unlock(audio->mutex);
+		gf_thread_mutex_unlock(audio->mutex);
 		return;
 	}
 
 	audio->decoder[ind].used = 1;
-	ma_mutex_unlock(audio->mutex);
+	gf_thread_mutex_unlock(audio->mutex);
 }
 
 void gf_audio_pause(gf_audio_t* audio, gf_audio_id_t id) {
 	int ind;
 
-	ma_mutex_lock(audio->mutex);
+	gf_thread_mutex_lock(audio->mutex);
 	ind = hmgeti(audio->decoder, id);
 	if(ind == -1) {
-		ma_mutex_unlock(audio->mutex);
+		gf_thread_mutex_unlock(audio->mutex);
 		return;
 	}
 
 	audio->decoder[ind].used = -1;
-	ma_mutex_unlock(audio->mutex);
+	gf_thread_mutex_unlock(audio->mutex);
 }
 
 void gf_audio_stop(gf_audio_t* audio, gf_audio_id_t id) {

@@ -23,6 +23,7 @@ typedef struct gf_audio_decoder_t gf_audio_decoder_t;
 
 /* Engine */
 #include <gf_type/core.h>
+#include <gf_type/thread.h>
 
 /* Standard */
 
@@ -102,7 +103,7 @@ GF_DECLARE_TYPE(audio, {
 	ma_device_config    device_config;
 	ma_device*	    device;
 	gf_audio_decoder_t* decoder;
-	ma_mutex*	    mutex;
+	gf_thread_mutex_t*	    mutex;
 	double volume;
 });
 #else

@@ -93,6 +93,7 @@ GF_DECLARE_TYPE(thread, {});
 #endif
 #else
 typedef void gf_thread_mutex_t;
+typedef void gf_thread_event_t;
 typedef void gf_thread_t;
 typedef void gf_thread_context_t;
 #endif
