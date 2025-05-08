@@ -112,6 +112,9 @@ typedef struct gf_draw_t gf_draw_t;
  *
  * @var gf_draw_t::fps
  * @brief FPS
+ *
+ * @var gf_draw_t::loaded_fonts
+ * @brief Loaded fonts
  */
 GF_DECLARE_TYPE(draw, {
 	gf_engine_t*	    engine;
@@ -134,6 +137,7 @@ GF_DECLARE_TYPE(draw, {
 	gf_font_t*	    font;
 	gf_draw_time_t	    last_draw;
 	double		    fps;
+	gf_font_t** loaded_fonts;
 });
 #else
 typedef void gf_draw_t;

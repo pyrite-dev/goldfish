@@ -525,6 +525,16 @@ gf_graphic_color_t gf_gui_get_hover_font_color(gf_gui_t* gui, gf_gui_id_t id) {
 	return gui->area[ind].hover_font;
 }
 
+gf_gui_id_t gf_gui_create_common(gf_gui_t* gui, const char* name, double x, double y, double w, double h) {
+	int i;
+	for(i = 0; i < sizeof(gf_gui_calls) / sizeof(gf_gui_calls[0]); i++) {
+		if(strcmp(gf_gui_calls[i].name, name) == 0) {
+			return gf_gui_calls[i].call(gui, x, y, w, h);
+		}
+	}
+	return -1;
+}
+
 void gf_gui_set_wh(gf_gui_t* gui, gf_gui_id_t id, double w, double h) {
 	int ind = hmgeti(gui->area, id);
 	if(ind == -1) return;

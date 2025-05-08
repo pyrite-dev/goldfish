@@ -193,6 +193,18 @@ GF_EXPORT void gf_gui_create_component(gf_gui_t* gui, gf_gui_component_t* c, dou
 
 /**
  * @~english
+ * @brief Create component specified by name
+ * @param gui GUI
+ * @param name Component name
+ * @param x X
+ * @param y Y
+ * @param w Width
+ * @param h Height
+ */
+GF_EXPORT gf_gui_id_t gf_gui_create_common(gf_gui_t* gui, const char* name, double x, double y, double w, double h);
+
+/**
+ * @~english
  * @brief Calculate component X/Y/width/height
  * @param gui GUI
  * @param c Component

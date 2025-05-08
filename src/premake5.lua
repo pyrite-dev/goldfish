@@ -37,6 +37,7 @@ project("GoldFish")
 		"../external/zlib",
 		"../external/stb",
 		"../external/jar",
+		"bindgen"
 	})
 	files({
 		"../include/**.h",
@@ -45,6 +46,8 @@ project("GoldFish")
 		"../external/zlib/*.c",
 		"../external/lua/l*.h",
 		"../external/lua/l*.c",
+		"bindgen/*.c",
+		"bindgen/*.h"
 	})
 	files({
 		"audio/*.c",
@@ -52,9 +55,6 @@ project("GoldFish")
 	})
 	files({
 		"gui/*.c"
-	})
-	files({
-		"lua/*.c"
 	})
 	filter({
 		"system:windows",
