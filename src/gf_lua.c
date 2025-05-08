@@ -568,6 +568,14 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 	lua_pushcfunction(lua->lua, gf_lua_call_font_default);
 	lua_settable(lua->lua, -3);
 
+	lua_pushstring(lua->lua, "load");
+	lua_getfield(lua->lua, -2, "create_file");
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "create_file");
+	lua_pushnil(lua->lua);
+	lua_settable(lua->lua, -3);
+
 	lua_pop(lua->lua, 2);
 
 	/* goldfish.gui */
@@ -576,6 +584,20 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 
 	lua_pushstring(lua->lua, "PRESS_EVENT");
 	lua_pushinteger(lua->lua, GF_GUI_PRESS_EVENT);
+	lua_settable(lua->lua, -3);
+
+	lua_pop(lua->lua, 2);
+
+	/* goldfish.audio */
+	lua_getglobal(lua->lua, "goldfish");
+	lua_getfield(lua->lua, -1, "audio");
+
+	lua_pushstring(lua->lua, "load");
+	lua_getfield(lua->lua, -2, "load_file");
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "load_file");
+	lua_pushnil(lua->lua);
 	lua_settable(lua->lua, -3);
 
 	lua_pop(lua->lua, 2);
