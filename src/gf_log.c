@@ -28,7 +28,7 @@ void gf_log(gf_engine_t* engine, const char* fmt, ...) {
 		vfprintf(out, fmt, va);
 		va_end(va);
 	}
-	if(gf_log_default != NULL){
+	if(gf_log_default != NULL) {
 		va_start(va, fmt);
 		vfprintf(gf_log_default, fmt, va);
 		va_end(va);
