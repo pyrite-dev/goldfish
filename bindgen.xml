@@ -47,7 +47,7 @@
 	</Metatable>
 	<Metatable C="gf_font_t*" Lua="GoldFishFont" Valid="ret != NULL" />
 	<Group Name="gui">
-		<Match Name="^gf_gui_(.+)_component$|^gf_gui_(.+)$">
+		<Match Name="^gf_gui_(.+)_common$|^gf_gui_(.+)_component$|^gf_gui_(.+)$">
 			<Name Pattern="^gf_gui_.+$" />
 			<Argument Index="0" Type="gf_gui_t*" Use="wrap->engine->client->draw->gui" />
 			<Not>
