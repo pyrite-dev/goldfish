@@ -54,21 +54,21 @@ GF_EXPORT gf_thread_mutex_t* gf_thread_mutex_create(void);
 /**
  * @~english
  * @brief Destroy mutex
- * @para mutex Mutex
+ * @param mutex Mutex
  */
 GF_EXPORT void gf_thread_mutex_destroy(gf_thread_mutex_t* mutex);
 
 /**
  * @~english
  * @brief Lock mutex
- * @para mutex Mutex
+ * @param mutex Mutex
  */
 GF_EXPORT void gf_thread_mutex_lock(gf_thread_mutex_t* mutex);
 
 /**
  * @~english
  * @brief Unlock mutex
- * @para mutex Mutex
+ * @param mutex Mutex
  */
 GF_EXPORT void gf_thread_mutex_unlock(gf_thread_mutex_t* mutex);
 
@@ -82,21 +82,21 @@ GF_EXPORT gf_thread_event_t* gf_thread_event_create(void);
 /**
  * @~english
  * @brief Destroy event
- * @para event Event
+ * @param event Event
  */
 GF_EXPORT void gf_thread_event_destroy(gf_thread_event_t* event);
 
 /**
  * @~english
  * @brief Wait for event
- * @para event Event
+ * @param event Event
  */
 GF_EXPORT void gf_thread_event_wait(gf_thread_event_t* event);
 
 /**
  * @~english
  * @brief Signal event
- * @para event Event
+ * @param event Event
  */
 GF_EXPORT void gf_thread_event_signal(gf_thread_event_t* event);
 
