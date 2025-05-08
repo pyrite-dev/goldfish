@@ -2,10 +2,12 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,47,165,87"/>
 <area shape="rect" id="Node000002" href="$gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="231,5,358,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,46,226,31,227,37,166,51"/>
-<area shape="rect" id="Node000003" href="$gf__prop_8c.html#aaa1dbc560946c6015231b6d78927a8a7" title="Get void pointer from property." alt="" coords="213,55,376,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,65,200,65,200,70,165,70"/>
-<area shape="rect" id="Node000004" href="$gf__prop_8c.html#a0092bce45e2a446484ae743b5ca1975d" title="Set void pointer to property." alt="" coords="214,104,375,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="166,84,227,98,226,103,165,89"/>
-<area shape="rect" id="Node000005" href="$gf__prop_8c.html#a17c37ff36ee533fcd95a11a4e4974f08" title="Delete property." alt="" coords="424,104,543,129"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="375,114,410,114,410,119,375,119"/>
+<area shape="rect" id="Node000004" href="$gf__prop_8c.html#aaa1dbc560946c6015231b6d78927a8a7" title="Get void pointer from property." alt="" coords="213,55,376,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,65,200,65,200,70,165,70"/>
+<area shape="rect" id="Node000005" href="$gf__prop_8c.html#a0092bce45e2a446484ae743b5ca1975d" title="Set void pointer to property." alt="" coords="214,104,375,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="166,84,227,98,226,103,165,89"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="424,5,557,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="358,15,410,15,410,21,358,21"/>
+<area shape="rect" id="Node000006" href="$gf__prop_8c.html#a17c37ff36ee533fcd95a11a4e4974f08" title="Delete property." alt="" coords="431,104,550,129"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="376,114,418,114,418,119,376,119"/>
 </map>

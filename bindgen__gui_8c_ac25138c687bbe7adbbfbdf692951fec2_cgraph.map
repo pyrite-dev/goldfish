@@ -10,14 +10,14 @@
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="316,179,415,141,437,134,438,139,417,146,318,184"/>
 <area shape="rect" id="Node000007" href="$gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="432,156,559,181"/>
 <area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="368,181,418,175,419,181,369,187"/>
-<area shape="rect" id="Node000008" href="$gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="426,205,565,231"/>
-<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="369,201,412,206,412,211,368,206"/>
-<area shape="rect" id="Node000009" href="$gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="423,255,567,280"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="320,204,417,239,442,248,440,253,415,245,319,209"/>
-<area shape="rect" id="Node000012" href="$gf__gui_8c.html#a614b9f913cd69de5659797a68ec8e03f" title="Set text." alt="" coords="434,304,557,329"/>
-<area shape="poly" id="edge10_Node000002_Node000012" title=" " alt="" coords="301,205,351,246,417,289,435,297,433,302,415,294,347,250,298,209"/>
-<area shape="rect" id="Node000013" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="420,353,571,379"/>
-<area shape="poly" id="edge11_Node000002_Node000013" title=" " alt="" coords="296,205,343,269,377,306,417,338,430,346,428,350,415,343,374,310,339,272,292,209"/>
+<area shape="rect" id="Node000009" href="$gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="426,205,565,231"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="369,201,412,206,412,211,368,206"/>
+<area shape="rect" id="Node000010" href="$gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="423,255,567,280"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="320,204,417,239,442,248,440,253,415,245,319,209"/>
+<area shape="rect" id="Node000013" href="$gf__gui_8c.html#a614b9f913cd69de5659797a68ec8e03f" title="Set text." alt="" coords="434,304,557,329"/>
+<area shape="poly" id="edge10_Node000002_Node000013" title=" " alt="" coords="301,205,351,246,417,289,435,297,433,302,415,294,347,250,298,209"/>
+<area shape="rect" id="Node000014" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="420,353,571,379"/>
+<area shape="poly" id="edge11_Node000002_Node000014" title=" " alt="" coords="296,205,343,269,377,306,417,338,430,346,428,350,415,343,374,310,339,272,292,209"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="553,28,649,50,648,56,552,33"/>
 <area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="552,104,648,82,649,87,553,109"/>
 </map>

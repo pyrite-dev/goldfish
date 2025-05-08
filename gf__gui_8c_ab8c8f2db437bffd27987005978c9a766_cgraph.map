@@ -1,12 +1,14 @@
 <map id="gf_gui_destroy" name="gf_gui_destroy">
-<area shape="rect" id="Node000001" title="Destroy GUI." alt="" coords="5,55,124,80"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="172,55,309,80"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,65,158,65,158,70,124,70"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="211,56,205,46,208,37,221,30,241,28,265,32,275,40,272,44,263,36,241,33,222,35,212,40,210,46,216,53"/>
-<area shape="rect" id="Node000003" href="$gf__prop_8c.html#a7897e62a0d99f50c57ec71a75f6d7172" title="Destroy property container." alt="" coords="370,5,497,31"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="290,52,369,32,370,37,292,57"/>
-<area shape="rect" id="Node000004" href="$gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="357,55,509,80"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="310,65,344,65,344,70,310,70"/>
-<area shape="rect" id="Node000006" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="358,104,509,129"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="292,77,370,98,369,103,290,83"/>
+<area shape="rect" id="Node000001" title="Destroy GUI." alt="" coords="5,80,124,105"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="172,80,309,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,90,158,90,158,95,124,95"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="211,81,205,72,208,62,221,56,241,53,265,57,275,66,272,70,263,62,241,59,222,61,212,65,210,71,216,78"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="367,5,500,31"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="268,78,356,40,376,32,378,37,358,44,270,82"/>
+<area shape="rect" id="Node000004" href="$gf__prop_8c.html#a7897e62a0d99f50c57ec71a75f6d7172" title="Destroy property container." alt="" coords="370,55,497,80"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="309,81,356,75,357,80,310,86"/>
+<area shape="rect" id="Node000005" href="$gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="357,104,509,129"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="310,99,344,103,343,108,309,104"/>
+<area shape="rect" id="Node000007" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="358,153,509,179"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="272,103,358,138,381,146,379,151,356,143,270,108"/>
 </map>

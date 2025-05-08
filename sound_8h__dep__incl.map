@@ -1,15 +1,16 @@
 <map id="include/gf_type/sound.h" name="include/gf_type/sound.h">
-<area shape="rect" id="Node000001" title="Type definitions related to sound backend." alt="" coords="134,5,311,31"/>
+<area shape="rect" id="Node000001" title="Type definitions related to sound backend." alt="" coords="217,5,394,31"/>
 <area shape="rect" id="Node000002" href="$gf__sound_8h.html" title="Sound driver." alt="" coords="67,152,211,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,44,148,153,143,150,207,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,39,238,58,207,81,172,119,148,153,144,150,168,115,204,77,235,53,267,35"/>
 <area shape="rect" id="Node000006" href="$audio_8h.html" title="Type definitions related to audio interface." alt="" coords="218,79,393,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="248,38,294,76,290,80,245,42"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="299,44,301,78,296,79,294,45"/>
 <area shape="rect" id="Node000003" href="$gf__audio_8c.html" title=" " alt="" coords="5,233,117,258"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,189,75,234,71,231,116,185"/>
 <area shape="rect" id="Node000004" href="$miniaudio_2gf__sound_8c.html" title=" " alt="" coords="141,225,294,265"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="162,185,200,223,196,227,158,189"/>
 <area shape="rect" id="Node000005" href="$windows_2gf__sound_8c.html" title=" " alt="" coords="319,225,481,265"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="190,179,338,223,336,228,189,184"/>
+<area shape="poly" id="edge13_Node000006_Node000001" title=" " alt="" coords="311,65,310,31,315,31,317,65"/>
 <area shape="poly" id="edge11_Node000006_Node000002" title=" " alt="" coords="267,112,167,154,165,149,265,107"/>
 <area shape="rect" id="Node000007" href="$gf__audio_8h.html" title="Audio interface." alt="" coords="235,152,376,177"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="308,118,308,152,303,152,303,118"/>

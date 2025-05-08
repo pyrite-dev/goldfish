@@ -103,79 +103,82 @@ $(document).ready(function(){initNavTree('gf__gui__scrollbar_8c.html',''); initR
 <code>#include &lt;<a class="el" href="gf__gui_8h_source.html">gf_gui.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="gf__graphic_8h_source.html">gf_graphic.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="gf__prop_8h_source.html">gf_prop.h</a>&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for gf_gui_scrollbar.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__gui__scrollbar_8c__incl.png" border="0" usemap="#asrc_2gui_2gf__gui__scrollbar_8c" alt=""/></div>
 <map name="asrc_2gui_2gf__gui__scrollbar_8c" id="asrc_2gui_2gf__gui__scrollbar_8c">
-<area shape="rect" title=" " alt="" coords="66,5,249,31"/>
-<area shape="rect" href="gf__pre_8h.html" title="Required headers before anything." alt="" coords="613,592,688,617"/>
-<area shape="poly" title=" " alt="" coords="112,33,70,51,50,64,33,80,18,100,11,118,8,163,8,459,13,480,27,498,49,515,78,530,154,555,246,573,345,586,443,594,600,600,600,605,443,599,345,591,245,578,153,560,76,535,46,520,23,502,8,482,3,460,3,163,6,117,14,98,29,77,47,60,67,47,110,28"/>
-<area shape="rect" title=" " alt="" coords="43,79,119,104"/>
-<area shape="poly" title=" " alt="" coords="147,33,106,71,102,67,143,29"/>
-<area shape="rect" href="gf__gui_8h.html" title="GUI." alt="" coords="443,79,517,104"/>
-<area shape="poly" title=" " alt="" coords="210,28,430,76,429,81,209,33"/>
-<area shape="rect" href="gf__graphic_8h.html" title="Graphic interface." alt="" coords="938,225,1041,251"/>
-<area shape="poly" title=" " alt="" coords="249,20,376,31,535,53,620,70,706,91,792,117,873,150,926,180,968,213,965,218,923,185,871,154,790,122,705,96,619,75,534,58,375,36,249,25"/>
-<area shape="rect" href="gf__prop_8h.html" title="Property." alt="" coords="88,372,171,397"/>
-<area shape="poly" title=" " alt="" coords="160,31,160,163,160,239,153,305,140,360,135,358,148,304,155,239,155,163,155,31"/>
-<area shape="rect" title=" " alt="" coords="604,665,697,691"/>
-<area shape="poly" title=" " alt="" coords="653,618,653,652,648,652,648,618"/>
-<area shape="poly" title=" " alt="" coords="518,92,713,107,982,136,1112,156,1222,178,1265,191,1297,205,1319,220,1327,236,1327,460,1321,483,1306,504,1281,522,1250,538,1169,563,1072,581,968,593,865,601,702,606,702,601,865,595,967,588,1071,576,1168,558,1248,533,1279,517,1302,500,1316,481,1321,459,1321,237,1315,223,1295,210,1263,196,1220,184,1111,161,982,141,712,113,517,98"/>
-<area shape="rect" href="gf__macro_8h.html" title="Macro." alt="" coords="603,519,698,544"/>
-<area shape="poly" title=" " alt="" coords="472,106,435,155,414,189,393,229,378,271,370,314,372,356,388,396,406,421,429,442,482,477,538,501,591,516,589,521,537,506,479,482,426,447,402,424,383,399,367,358,364,314,373,270,388,227,409,187,431,152,468,102"/>
-<area shape="rect" href="gui_8h.html" title="Type definitions related to GUI." alt="" coords="504,225,611,251"/>
-<area shape="poly" title=" " alt="" coords="489,103,547,212,543,215,484,106"/>
-<area shape="rect" href="draw_8h.html" title="Type definitions related to drawing interface." alt="" coords="646,299,765,324"/>
-<area shape="poly" title=" " alt="" coords="495,102,625,223,687,287,683,291,621,227,491,106"/>
-<area shape="rect" href="core_8h.html" title="Type definitions related to core." alt="" coords="397,372,512,397"/>
-<area shape="poly" title=" " alt="" coords="482,104,460,358,454,358,476,104"/>
-<area shape="rect" href="prop_8h.html" title="Type definitions related to property." alt="" coords="193,445,309,471"/>
-<area shape="poly" title=" " alt="" coords="443,94,398,97,344,106,290,124,264,137,242,154,225,172,215,190,212,211,211,237,211,313,214,345,221,378,242,432,237,434,216,379,209,346,205,313,205,237,206,210,210,188,220,169,238,150,262,133,288,119,343,101,397,92,443,89"/>
-<area shape="rect" href="gf__gui__component_8h.html" title="GUI component stuff." alt="" coords="705,152,860,177"/>
-<area shape="poly" title=" " alt="" coords="518,99,721,146,720,151,517,104"/>
-<area shape="poly" title=" " alt="" coords="653,544,653,578,648,578,648,544"/>
-<area shape="poly" title=" " alt="" coords="526,253,478,275,429,306,409,326,394,347,387,371,388,397,399,443,411,479,430,510,463,542,495,563,531,579,601,596,599,601,529,584,493,568,460,546,426,513,406,481,394,444,383,398,381,370,389,345,405,322,426,302,476,270,523,248"/>
-<area shape="poly" title=" " alt="" coords="564,250,645,505,640,506,559,252"/>
-<area shape="poly" title=" " alt="" coords="576,248,663,291,661,295,573,253"/>
-<area shape="poly" title=" " alt="" coords="551,253,473,362,469,359,547,250"/>
-<area shape="poly" title=" " alt="" coords="504,245,466,251,424,262,381,278,343,301,313,331,290,367,272,402,261,433,256,431,267,400,285,364,309,328,340,297,379,273,422,256,465,246,504,240"/>
-<area shape="rect" href="graphic_8h.html" title="Type definitions related to graphic interface." alt="" coords="841,445,975,471"/>
-<area shape="poly" title=" " alt="" coords="568,249,595,284,635,322,693,360,755,393,863,438,861,443,752,397,690,365,632,326,592,288,564,253"/>
-<area shape="poly" title=" " alt="" coords="698,326,645,404,615,459,593,519,591,532,593,543,606,564,624,581,620,585,602,567,588,545,585,532,588,518,610,457,640,401,694,323"/>
-<area shape="poly" title=" " alt="" coords="703,325,685,373,668,445,657,505,652,505,663,443,680,371,698,323"/>
-<area shape="poly" title=" " alt="" coords="687,301,599,259,602,254,689,296"/>
-<area shape="rect" href="texture_8h.html" title="Type definitions related to texture." alt="" coords="999,445,1134,471"/>
-<area shape="poly" title=" " alt="" coords="728,322,795,356,880,395,948,419,1012,439,1011,444,946,424,878,400,792,361,725,327"/>
-<area shape="poly" title=" " alt="" coords="666,327,509,371,508,366,664,321"/>
-<area shape="rect" href="font_8h.html" title="Type definitions related to font." alt="" coords="891,372,1005,397"/>
-<area shape="poly" title=" " alt="" coords="738,321,890,366,888,371,737,327"/>
-<area shape="poly" title=" " alt="" coords="1035,473,697,590,696,585,1033,468"/>
-<area shape="poly" title=" " alt="" coords="1000,473,712,522,711,517,999,468"/>
-<area shape="poly" title=" " alt="" coords="456,398,453,426,454,465,463,506,471,525,482,542,507,564,537,580,569,591,600,597,599,602,568,596,535,585,504,569,478,546,466,528,457,508,449,465,448,426,450,397"/>
-<area shape="poly" title=" " alt="" coords="472,395,625,508,622,512,469,400"/>
-<area shape="poly" title=" " alt="" coords="1006,388,1064,396,1119,411,1140,422,1154,436,1158,453,1149,472,1118,498,1072,521,1013,541,948,558,813,584,702,600,701,595,812,579,947,553,1012,536,1069,516,1115,494,1145,469,1153,452,1149,438,1137,426,1117,416,1063,401,1005,393"/>
-<area shape="poly" title=" " alt="" coords="925,400,688,515,685,510,923,395"/>
-<area shape="poly" title=" " alt="" coords="915,374,763,330,765,325,916,369"/>
-<area shape="poly" title=" " alt="" coords="969,395,1037,436,1034,440,966,400"/>
-<area shape="poly" title=" " alt="" coords="260,469,287,506,307,526,329,542,399,571,472,589,542,598,600,601,600,606,541,603,471,594,397,576,327,546,303,530,283,509,256,472"/>
-<area shape="poly" title=" " alt="" coords="309,467,590,517,589,522,308,472"/>
-<area shape="poly" title=" " alt="" coords="889,473,684,588,682,583,886,469"/>
-<area shape="poly" title=" " alt="" coords="867,473,706,518,705,512,866,468"/>
-<area shape="poly" title=" " alt="" coords="861,170,984,185,1119,212,1180,230,1230,252,1263,278,1273,294,1276,310,1276,460,1271,481,1257,501,1235,518,1206,533,1132,558,1044,576,948,589,854,597,702,605,702,600,854,592,948,584,1043,571,1131,552,1204,528,1232,513,1253,497,1266,479,1271,459,1271,310,1268,296,1259,282,1227,257,1178,235,1118,217,983,191,860,175"/>
-<area shape="poly" title=" " alt="" coords="787,177,790,241,787,283,779,325,756,380,728,432,672,509,667,506,723,429,752,378,774,323,782,282,785,241,782,178"/>
-<area shape="poly" title=" " alt="" coords="747,180,608,224,606,219,746,175"/>
-<area shape="poly" title=" " alt="" coords="1042,245,1099,261,1159,287,1185,305,1206,327,1220,353,1225,383,1225,460,1221,480,1208,498,1188,514,1162,528,1096,552,1015,571,929,584,843,594,702,604,702,599,842,589,928,579,1014,565,1094,547,1160,523,1185,509,1204,494,1216,477,1220,459,1220,384,1215,355,1202,330,1182,309,1156,291,1098,266,1041,250"/>
-<area shape="poly" title=" " alt="" coords="978,253,722,473,676,512,673,508,718,469,974,249"/>
-<area shape="poly" title=" " alt="" coords="944,253,765,298,764,293,943,248"/>
-<area shape="poly" title=" " alt="" coords="1042,242,1069,249,1097,259,1123,275,1144,297,1152,316,1154,335,1150,355,1142,374,1118,409,1092,438,1088,434,1114,406,1137,371,1145,353,1148,335,1147,317,1139,300,1119,279,1095,264,1067,254,1040,247"/>
-<area shape="poly" title=" " alt="" coords="989,252,958,359,953,358,983,250"/>
-<area shape="poly" title=" " alt="" coords="999,250,1013,278,1026,316,1031,358,1028,379,1020,399,995,425,965,442,962,438,992,421,1015,396,1023,378,1026,358,1021,317,1008,280,994,252"/>
-<area shape="rect" title=" " alt="" coords="1055,299,1129,324"/>
-<area shape="poly" title=" " alt="" coords="1007,248,1065,288,1062,293,1004,253"/>
-<area shape="poly" title=" " alt="" coords="132,397,137,432,143,452,153,469,183,500,213,517,291,541,375,564,459,581,600,597,599,603,458,586,373,570,290,547,211,522,180,504,149,472,138,454,131,433,127,398"/>
-<area shape="poly" title=" " alt="" coords="135,397,151,433,164,453,182,468,213,483,257,495,368,512,488,522,590,526,590,532,488,527,368,517,256,500,211,488,179,473,160,456,146,436,130,399"/>
-<area shape="poly" title=" " alt="" coords="150,395,221,436,218,441,148,400"/>
+<area shape="rect" title=" " alt="" coords="192,5,375,31"/>
+<area shape="rect" href="gf__pre_8h.html" title="Required headers before anything." alt="" coords="591,592,666,617"/>
+<area shape="poly" title=" " alt="" coords="195,33,99,53,59,66,33,81,18,99,11,117,9,163,9,459,13,479,27,497,48,513,76,528,148,552,237,571,332,584,426,592,578,600,578,605,425,597,331,589,236,576,147,558,73,533,45,518,23,501,9,481,3,460,3,163,5,116,13,96,30,77,57,61,98,47,194,28"/>
+<area shape="rect" title=" " alt="" coords="44,79,120,104"/>
+<area shape="poly" title=" " alt="" coords="252,33,129,77,127,71,250,28"/>
+<area shape="rect" href="gf__gui_8h.html" title="GUI." alt="" coords="446,79,521,104"/>
+<area shape="poly" title=" " alt="" coords="317,28,439,71,437,76,315,33"/>
+<area shape="rect" href="gf__graphic_8h.html" title="Graphic interface." alt="" coords="912,225,1015,251"/>
+<area shape="poly" title=" " alt="" coords="362,28,457,45,574,71,701,105,825,150,887,182,938,215,936,220,884,186,822,154,699,110,573,76,456,50,361,33"/>
+<area shape="rect" href="gf__prop_8h.html" title="Property." alt="" coords="66,372,149,397"/>
+<area shape="poly" title=" " alt="" coords="272,33,222,82,194,116,170,153,146,208,130,265,113,359,108,358,125,264,141,206,165,151,189,113,218,78,268,29"/>
+<area shape="rect" title=" " alt="" coords="887,79,957,104"/>
+<area shape="poly" title=" " alt="" coords="375,23,600,43,868,76,873,77,872,82,867,81,599,48,375,28"/>
+<area shape="rect" title=" " alt="" coords="582,665,675,691"/>
+<area shape="poly" title=" " alt="" coords="631,618,631,652,626,652,626,618"/>
+<area shape="poly" title=" " alt="" coords="522,93,712,108,972,137,1098,157,1203,180,1245,192,1276,206,1297,220,1305,236,1305,460,1299,483,1284,504,1260,522,1228,538,1147,563,1050,581,946,593,843,601,680,606,680,601,843,595,945,588,1049,576,1146,558,1226,533,1257,517,1280,500,1294,481,1299,459,1300,237,1293,224,1274,210,1243,197,1202,185,1097,162,972,143,711,114,521,98"/>
+<area shape="rect" href="gf__macro_8h.html" title="Macro." alt="" coords="581,519,676,544"/>
+<area shape="poly" title=" " alt="" coords="473,106,430,155,404,189,380,229,361,271,350,314,350,356,356,376,366,396,384,421,407,442,460,477,517,501,569,516,567,521,515,506,457,482,404,447,380,424,361,399,351,378,345,357,345,313,356,269,375,226,400,186,426,151,469,103"/>
+<area shape="rect" href="gui_8h.html" title="Type definitions related to GUI." alt="" coords="475,225,582,251"/>
+<area shape="poly" title=" " alt="" coords="490,104,524,211,519,213,485,105"/>
+<area shape="rect" href="draw_8h.html" title="Type definitions related to drawing interface." alt="" coords="623,299,741,324"/>
+<area shape="poly" title=" " alt="" coords="496,103,664,286,660,290,492,106"/>
+<area shape="rect" href="core_8h.html" title="Type definitions related to core." alt="" coords="375,372,490,397"/>
+<area shape="poly" title=" " alt="" coords="484,105,440,359,435,358,479,104"/>
+<area shape="rect" href="prop_8h.html" title="Type definitions related to property." alt="" coords="171,445,287,471"/>
+<area shape="poly" title=" " alt="" coords="446,99,321,119,260,135,236,144,220,154,202,172,193,190,190,210,189,237,189,313,192,345,199,378,220,432,215,434,194,379,187,346,183,313,183,237,184,210,188,188,198,169,216,150,234,139,258,130,320,114,445,94"/>
+<area shape="rect" href="gf__gui__component_8h.html" title="GUI component stuff." alt="" coords="657,152,811,177"/>
+<area shape="poly" title=" " alt="" coords="522,101,682,146,680,151,520,106"/>
+<area shape="poly" title=" " alt="" coords="631,544,631,578,626,578,626,544"/>
+<area shape="poly" title=" " alt="" coords="499,253,454,275,406,307,386,326,372,348,365,371,366,397,377,443,389,479,408,510,441,542,473,563,509,579,579,596,577,601,507,584,471,568,438,546,404,513,384,481,372,444,361,398,359,371,367,345,382,323,403,303,451,270,497,248"/>
+<area shape="poly" title=" " alt="" coords="535,250,623,505,618,506,530,252"/>
+<area shape="poly" title=" " alt="" coords="548,248,639,291,637,296,546,253"/>
+<area shape="poly" title=" " alt="" coords="523,253,450,362,446,359,519,250"/>
+<area shape="poly" title=" " alt="" coords="476,246,439,252,398,262,358,278,321,301,291,331,268,367,239,433,234,431,263,364,287,328,318,297,355,274,396,257,437,247,475,241"/>
+<area shape="rect" href="graphic_8h.html" title="Type definitions related to graphic interface." alt="" coords="819,445,953,471"/>
+<area shape="poly" title=" " alt="" coords="540,249,570,284,612,322,671,360,733,392,842,438,839,443,731,397,668,364,609,326,566,288,536,253"/>
+<area shape="poly" title=" " alt="" coords="675,326,622,404,593,459,571,519,569,532,571,543,584,564,602,581,598,585,580,567,566,545,563,532,566,518,588,457,618,401,671,323"/>
+<area shape="poly" title=" " alt="" coords="680,325,663,373,646,445,635,506,630,505,641,444,658,371,675,323"/>
+<area shape="poly" title=" " alt="" coords="663,301,572,258,574,254,665,296"/>
+<area shape="rect" href="texture_8h.html" title="Type definitions related to texture." alt="" coords="977,445,1112,471"/>
+<area shape="poly" title=" " alt="" coords="704,322,772,356,858,395,926,419,990,439,989,444,925,424,856,400,770,361,702,326"/>
+<area shape="poly" title=" " alt="" coords="643,327,487,371,486,366,641,321"/>
+<area shape="rect" href="font_8h.html" title="Type definitions related to font." alt="" coords="869,372,983,397"/>
+<area shape="poly" title=" " alt="" coords="715,321,868,366,866,371,714,327"/>
+<area shape="poly" title=" " alt="" coords="1013,473,675,590,674,585,1011,468"/>
+<area shape="poly" title=" " alt="" coords="978,473,690,522,689,517,978,468"/>
+<area shape="poly" title=" " alt="" coords="434,398,431,426,432,465,441,506,449,525,460,542,485,564,515,580,548,591,578,597,577,602,546,596,513,585,482,569,456,546,444,528,435,508,427,465,426,426,428,397"/>
+<area shape="poly" title=" " alt="" coords="450,395,603,508,600,512,447,400"/>
+<area shape="poly" title=" " alt="" coords="984,388,1042,396,1097,411,1118,422,1132,436,1136,453,1127,472,1096,498,1050,521,991,541,926,558,791,584,680,600,680,595,790,579,925,553,990,536,1048,516,1093,494,1123,469,1131,452,1127,438,1115,426,1095,416,1041,401,983,393"/>
+<area shape="poly" title=" " alt="" coords="903,400,666,515,663,510,901,395"/>
+<area shape="poly" title=" " alt="" coords="893,374,740,330,742,325,894,369"/>
+<area shape="poly" title=" " alt="" coords="947,395,1015,436,1012,440,944,400"/>
+<area shape="poly" title=" " alt="" coords="238,469,265,506,285,526,307,542,377,571,450,589,520,598,578,601,578,606,519,603,449,594,375,576,305,546,281,530,261,509,234,472"/>
+<area shape="poly" title=" " alt="" coords="287,467,568,517,567,522,287,472"/>
+<area shape="poly" title=" " alt="" coords="867,473,662,588,660,583,864,469"/>
+<area shape="poly" title=" " alt="" coords="846,473,684,518,683,512,844,468"/>
+<area shape="poly" title=" " alt="" coords="812,169,942,183,1086,209,1151,227,1204,250,1225,263,1241,277,1251,293,1254,310,1254,460,1249,481,1235,501,1213,518,1184,533,1111,558,1022,576,926,589,832,597,680,605,680,600,832,592,926,584,1021,571,1109,552,1182,528,1210,513,1231,497,1244,479,1249,459,1249,310,1246,295,1236,280,1222,267,1202,254,1149,232,1085,214,941,188,811,174"/>
+<area shape="poly" title=" " alt="" coords="741,177,757,240,761,282,755,325,734,380,706,432,650,510,646,506,701,429,729,378,750,323,755,282,752,241,736,178"/>
+<area shape="poly" title=" " alt="" coords="702,180,576,223,574,218,700,175"/>
+<area shape="poly" title=" " alt="" coords="1016,245,1074,260,1135,286,1162,304,1184,326,1198,352,1203,383,1203,460,1199,480,1186,498,1166,514,1140,528,1074,552,993,571,907,584,821,594,680,604,680,599,820,589,906,579,992,565,1072,547,1138,523,1163,509,1182,494,1194,477,1198,459,1198,384,1193,354,1179,329,1159,308,1133,290,1073,265,1014,250"/>
+<area shape="poly" title=" " alt="" coords="952,253,700,473,654,512,651,508,696,469,949,249"/>
+<area shape="poly" title=" " alt="" coords="919,253,742,298,740,293,918,248"/>
+<area shape="poly" title=" " alt="" coords="1015,241,1044,248,1073,259,1100,275,1122,297,1130,316,1132,335,1128,354,1120,374,1096,409,1070,438,1066,434,1092,406,1115,371,1123,353,1126,335,1125,317,1117,300,1097,279,1071,263,1042,253,1014,247"/>
+<area shape="poly" title=" " alt="" coords="963,252,935,359,930,358,958,250"/>
+<area shape="poly" title=" " alt="" coords="973,250,988,277,1003,316,1009,358,1006,379,998,399,974,425,943,442,940,438,970,421,993,396,1001,378,1004,358,998,317,984,280,969,252"/>
+<area shape="rect" title=" " alt="" coords="1033,299,1107,324"/>
+<area shape="poly" title=" " alt="" coords="982,248,1043,289,1040,293,979,253"/>
+<area shape="poly" title=" " alt="" coords="110,397,115,432,121,452,131,469,161,500,191,517,270,541,353,564,437,581,578,597,577,603,436,586,351,570,268,547,189,522,158,504,127,472,116,454,109,433,105,398"/>
+<area shape="poly" title=" " alt="" coords="113,397,129,433,142,453,160,468,191,483,235,495,346,512,466,522,568,526,568,532,466,527,346,517,234,500,189,488,157,473,138,456,124,436,108,399"/>
+<area shape="poly" title=" " alt="" coords="128,395,199,436,196,441,126,400"/>
 </map>
 </div>
 </div>
@@ -318,7 +321,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Component ID </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00050">50</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00051">51</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -331,37 +334,44 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="98,256,116,225,144,185,181,143,225,108,274,84,326,66,378,54,427,47,428,52,379,59,327,71,276,89,228,112,185,147,148,188,120,228,102,259"/>
 <area shape="rect" href="gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="473,108,600,133"/>
 <area shape="poly" title=" " alt="" coords="100,255,148,199,184,167,226,142,285,123,347,113,407,109,460,110,460,116,407,114,347,118,286,128,228,147,187,171,152,202,104,259"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="227,207,393,232"/>
-<area shape="poly" title=" " alt="" coords="147,255,241,233,242,238,148,260"/>
-<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="459,257,614,283"/>
-<area shape="poly" title=" " alt="" coords="179,267,445,267,445,273,179,273"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="236,157,384,183"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="227,157,393,183"/>
 <area shape="poly" title=" " alt="" coords="111,255,162,224,226,192,244,184,246,189,228,196,164,229,114,259"/>
-<area shape="rect" href="gf__gui_8c.html#ac4dbc67180bd8f83906b16fc268a8e78" title="Set callback." alt="" coords="235,409,385,435"/>
-<area shape="poly" title=" " alt="" coords="107,281,156,332,191,361,228,388,256,402,253,407,225,392,188,365,153,336,103,285"/>
-<area shape="rect" href="gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="241,459,379,484"/>
-<area shape="poly" title=" " alt="" coords="102,282,119,315,147,359,184,405,228,445,237,451,235,455,225,449,180,409,142,362,115,317,97,284"/>
-<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="465,357,609,383"/>
-<area shape="poly" title=" " alt="" coords="133,280,227,307,344,333,452,353,451,359,343,338,226,313,131,285"/>
-<area shape="rect" href="gf__gui_8c.html#a614b9f913cd69de5659797a68ec8e03f" title="Set text." alt="" coords="249,508,371,533"/>
-<area shape="poly" title=" " alt="" coords="100,282,114,323,140,381,178,442,202,470,228,495,237,501,234,505,225,499,198,474,174,445,136,383,109,325,95,284"/>
-<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="461,308,612,333"/>
-<area shape="poly" title=" " alt="" coords="179,277,448,308,447,313,179,282"/>
+<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="459,256,614,281"/>
+<area shape="poly" title=" " alt="" coords="179,267,445,266,445,272,179,272"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="236,207,384,232"/>
+<area shape="poly" title=" " alt="" coords="147,255,241,233,242,238,148,260"/>
+<area shape="rect" href="gf__gui_8c.html#ac4dbc67180bd8f83906b16fc268a8e78" title="Set callback." alt="" coords="235,308,385,333"/>
+<area shape="poly" title=" " alt="" coords="148,280,242,302,241,307,147,285"/>
+<area shape="rect" href="gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="241,357,379,383"/>
+<area shape="poly" title=" " alt="" coords="114,280,165,311,228,342,249,350,247,355,226,347,162,315,112,285"/>
+<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="465,459,609,484"/>
+<area shape="poly" title=" " alt="" coords="101,282,118,316,145,360,182,405,204,425,228,441,282,463,340,475,398,480,451,479,451,484,398,485,340,480,281,468,225,446,200,429,178,409,140,363,113,318,96,284"/>
+<area shape="rect" href="gf__gui_8c.html#a614b9f913cd69de5659797a68ec8e03f" title="Set text." alt="" coords="249,407,371,432"/>
+<area shape="poly" title=" " alt="" coords="106,281,155,334,190,365,228,392,243,399,241,404,225,396,186,369,151,338,102,285"/>
+<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="461,508,612,533"/>
+<area shape="poly" title=" " alt="" coords="99,282,114,323,139,379,177,437,201,463,228,484,280,508,337,522,394,528,447,528,447,533,394,533,336,527,279,513,225,488,197,467,173,440,134,382,109,325,94,284"/>
 <area shape="poly" title=" " alt="" coords="390,24,428,29,428,34,389,30"/>
-<area shape="poly" title=" " alt="" coords="365,204,392,192,406,180,415,168,424,155,440,142,459,133,461,138,443,147,428,158,419,171,410,184,395,196,367,209"/>
-<area shape="rect" href="gf__gui_8c.html#a8064cd04ef3d766f9502f6070e526d6e" title="Get parent component." alt="" coords="467,207,606,232"/>
-<area shape="poly" title=" " alt="" coords="393,217,454,217,454,222,393,222"/>
-<area shape="rect" href="gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd" title="Get floating number from property." alt="" coords="459,157,614,183"/>
-<area shape="poly" title=" " alt="" coords="368,204,464,183,465,188,370,209"/>
-<area shape="poly" title=" " alt="" coords="368,230,467,252,465,257,367,235"/>
-<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="680,308,803,333"/>
-<area shape="poly" title=" " alt="" coords="590,280,677,302,676,307,588,285"/>
+<area shape="rect" href="gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="680,332,813,357"/>
+<area shape="poly" title=" " alt="" coords="602,127,634,143,674,183,704,231,726,279,740,318,735,320,722,281,700,234,670,187,630,147,599,131"/>
 <area shape="poly" title=" " alt="" coords="368,155,464,134,465,139,370,160"/>
+<area shape="rect" href="gf__gui_8c.html#a8064cd04ef3d766f9502f6070e526d6e" title="Get parent component." alt="" coords="467,207,606,232"/>
 <area shape="poly" title=" " alt="" coords="370,180,465,201,464,206,368,185"/>
-<area shape="poly" title=" " alt="" coords="384,167,445,167,445,173,384,173"/>
-<area shape="poly" title=" " alt="" coords="370,180,395,192,410,204,419,217,428,229,443,241,461,250,459,255,440,246,425,233,415,220,406,208,392,196,368,185"/>
-<area shape="poly" title=" " alt="" coords="589,355,674,334,675,339,591,360"/>
-<area shape="poly" title=" " alt="" coords="612,318,666,318,666,323,612,323"/>
+<area shape="rect" href="gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd" title="Get floating number from property." alt="" coords="459,157,614,183"/>
+<area shape="poly" title=" " alt="" coords="393,167,446,167,446,173,393,173"/>
+<area shape="poly" title=" " alt="" coords="370,180,395,192,410,204,419,217,428,229,443,241,458,249,456,253,440,246,424,233,415,220,406,208,392,196,368,185"/>
+<area shape="poly" title=" " alt="" coords="606,230,633,241,661,259,687,279,728,320,724,324,683,283,658,263,631,246,604,235"/>
+<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="685,459,808,484"/>
+<area shape="poly" title=" " alt="" coords="553,279,724,447,721,451,549,283"/>
+<area shape="poly" title=" " alt="" coords="365,204,392,192,406,180,415,168,424,155,440,142,459,133,461,138,443,147,428,158,419,171,410,184,395,196,367,209"/>
+<area shape="poly" title=" " alt="" coords="384,217,453,217,453,222,384,222"/>
+<area shape="poly" title=" " alt="" coords="368,204,464,183,465,188,370,209"/>
+<area shape="poly" title=" " alt="" coords="370,229,465,250,464,256,368,235"/>
+<area shape="poly" title=" " alt="" coords="386,322,666,338,666,343,385,327"/>
+<area shape="poly" title=" " alt="" coords="379,363,666,347,666,352,380,369"/>
+<area shape="poly" title=" " alt="" coords="585,456,631,437,681,402,722,365,726,369,685,406,633,442,587,461"/>
+<area shape="poly" title=" " alt="" coords="609,469,671,469,671,474,609,474"/>
+<area shape="poly" title=" " alt="" coords="371,408,632,365,670,357,671,363,632,370,372,413"/>
+<area shape="poly" title=" " alt="" coords="591,505,678,485,679,490,592,511"/>
 </map>
 </div>
 <div class="dynheader">
@@ -410,7 +420,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00151">151</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00152">152</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
 
 </div>
 </div>
@@ -452,7 +462,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00035">35</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00036">36</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -467,10 +477,13 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="172,100,207,104,206,109,172,105"/>
 <area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="220,153,375,179"/>
 <area shape="poly" title=" " alt="" coords="124,103,221,138,245,146,243,151,219,143,123,108"/>
-<area shape="rect" href="gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="423,104,547,129"/>
-<area shape="poly" title=" " alt="" coords="375,114,409,114,409,119,375,119"/>
-<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="423,153,546,179"/>
-<area shape="poly" title=" " alt="" coords="375,163,409,163,409,169,375,169"/>
+<area shape="rect" href="gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="423,31,556,56"/>
+<area shape="poly" title=" " alt="" coords="367,25,409,30,408,35,367,30"/>
+<area shape="poly" title=" " alt="" coords="361,57,409,51,409,56,362,62"/>
+<area shape="rect" href="gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="427,104,551,129"/>
+<area shape="poly" title=" " alt="" coords="375,114,414,114,414,119,375,119"/>
+<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="428,153,551,179"/>
+<area shape="poly" title=" " alt="" coords="375,163,414,163,414,169,375,169"/>
 </map>
 </div>
 <div class="dynheader">
@@ -516,7 +529,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00147">147</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00148">148</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
 
 </div>
 </div>
@@ -546,46 +559,52 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00090">90</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00091">91</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__gui__scrollbar_8c_aef7872e7d1690010388a64e253af955b_cgraph.png" border="0" usemap="#agf__gui__scrollbar_8c_aef7872e7d1690010388a64e253af955b_cgraph" alt=""/></div>
 <map name="agf__gui__scrollbar_8c_aef7872e7d1690010388a64e253af955b_cgraph" id="agf__gui__scrollbar_8c_aef7872e7d1690010388a64e253af955b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,251,180,276"/>
-<area shape="rect" href="gf__graphic_8c.html#a63ff697af8cf405a5fab29b0bd893954" title="Pop clipping region." alt="" coords="659,63,810,88"/>
-<area shape="poly" title=" " alt="" coords="95,250,109,209,135,152,174,94,198,69,227,48,286,22,349,7,415,3,479,6,542,15,599,28,689,56,688,61,598,33,541,20,479,11,415,8,350,12,288,27,229,53,202,73,178,98,140,155,114,211,100,252"/>
-<area shape="rect" href="gf__graphic__common_8c.html#a4811198de205914602e5cdbafdcdd68d" title="Draw filled rectangle." alt="" coords="233,63,378,88"/>
-<area shape="poly" title=" " alt="" coords="101,249,150,185,186,145,226,110,256,92,259,96,230,114,189,149,154,188,105,252"/>
-<area shape="rect" href="gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="237,124,374,150"/>
-<area shape="poly" title=" " alt="" coords="108,249,159,210,227,167,255,153,258,158,229,171,163,214,111,253"/>
-<area shape="rect" href="gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="659,175,811,200"/>
-<area shape="poly" title=" " alt="" coords="119,249,169,228,227,211,339,193,452,184,557,181,644,181,644,187,557,186,452,189,340,198,229,216,171,233,121,253"/>
-<area shape="rect" href="gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="242,226,369,251"/>
-<area shape="poly" title=" " alt="" coords="180,251,228,245,228,250,180,256"/>
-<area shape="rect" href="gf__gui_8c.html#a05004186493f4e7b02b67baf5e8c97b7" title="Get component ID from property." alt="" coords="662,276,807,302"/>
-<area shape="poly" title=" " alt="" coords="180,265,648,283,648,288,180,270"/>
-<area shape="rect" href="gf__gui_8c.html#ab326a60e61e3e014ff6700cae5e35108" title="Set width and height." alt="" coords="248,327,363,352"/>
-<area shape="poly" title=" " alt="" coords="130,274,257,320,255,325,128,279"/>
-<area shape="rect" href="gf__gui_8c.html#a0a15f821cdea019bc613906b9231fd1b" title="Set X coord and Y coord." alt="" coords="249,376,361,402"/>
-<area shape="poly" title=" " alt="" coords="109,275,160,318,194,342,229,363,244,369,241,374,227,368,191,346,157,322,106,279"/>
-<area shape="rect" href="gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd" title="Get floating number from property." alt="" coords="443,402,598,427"/>
-<area shape="poly" title=" " alt="" coords="103,275,120,306,148,345,185,383,206,399,229,412,285,429,344,435,401,433,451,427,452,432,401,439,343,441,284,434,227,417,203,404,181,387,144,348,116,309,98,278"/>
-<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="228,478,383,503"/>
-<area shape="poly" title=" " alt="" coords="102,275,119,311,147,359,184,411,230,456,251,470,248,474,226,461,180,414,143,362,115,313,97,278"/>
-<area shape="rect" href="gf__graphic__common_8c.html#a8ff780a4bcadc008355699101d2a42cc" title="Draw polygon." alt="" coords="435,51,607,76"/>
-<area shape="poly" title=" " alt="" coords="378,69,421,67,421,72,378,74"/>
-<area shape="rect" href="gf__gui_8c.html#a2afb67331b3c6b3405299c2b55625e0c" title=" " alt="" coords="431,124,611,150"/>
-<area shape="poly" title=" " alt="" coords="375,134,417,134,417,140,375,140"/>
-<area shape="poly" title=" " alt="" coords="565,122,676,90,677,95,567,127"/>
-<area shape="poly" title=" " alt="" coords="486,126,478,116,482,106,497,100,521,98,550,102,562,111,559,115,548,106,521,103,498,105,486,110,483,115,490,123"/>
-<area shape="poly" title=" " alt="" coords="576,147,668,169,667,175,575,153"/>
-<area shape="rect" href="gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="859,276,983,302"/>
-<area shape="poly" title=" " alt="" coords="761,198,885,267,883,272,758,203"/>
-<area shape="poly" title=" " alt="" coords="807,286,845,286,845,292,807,292"/>
-<area shape="poly" title=" " alt="" coords="561,399,865,303,867,308,563,404"/>
-<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="459,478,582,503"/>
-<area shape="poly" title=" " alt="" coords="383,488,445,488,445,493,383,493"/>
+<area shape="rect" title=" " alt="" coords="5,253,180,279"/>
+<area shape="rect" href="gf__graphic_8c.html#a63ff697af8cf405a5fab29b0bd893954" title="Pop clipping region." alt="" coords="661,127,811,152"/>
+<area shape="poly" title=" " alt="" coords="104,251,154,205,189,181,227,162,281,145,337,133,451,121,557,120,647,126,647,131,557,126,451,126,338,139,283,151,229,167,191,185,157,209,108,255"/>
+<area shape="rect" href="gf__graphic__common_8c.html#a4811198de205914602e5cdbafdcdd68d" title="Draw filled rectangle." alt="" coords="233,431,378,456"/>
+<area shape="poly" title=" " alt="" coords="105,277,154,339,190,376,230,409,254,423,251,427,226,413,186,380,150,343,101,280"/>
+<area shape="rect" href="gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="237,76,374,101"/>
+<area shape="poly" title=" " alt="" coords="101,251,150,189,186,152,226,118,251,104,254,109,230,123,190,156,154,193,105,255"/>
+<area shape="rect" href="gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="660,76,812,101"/>
+<area shape="poly" title=" " alt="" coords="96,252,111,213,137,160,176,106,200,81,227,61,278,33,325,15,368,5,411,3,455,6,501,14,611,37,658,50,699,67,697,72,656,55,610,42,500,19,454,12,411,8,369,10,326,20,280,38,229,65,203,85,180,109,142,163,116,215,101,254"/>
+<area shape="rect" href="gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="457,228,584,253"/>
+<area shape="poly" title=" " alt="" coords="180,258,443,242,444,248,180,263"/>
+<area shape="rect" href="gf__gui_8c.html#a05004186493f4e7b02b67baf5e8c97b7" title="Get component ID from property." alt="" coords="448,329,593,355"/>
+<area shape="poly" title=" " alt="" coords="123,276,172,296,229,313,335,330,434,337,434,343,334,335,227,318,170,301,121,281"/>
+<area shape="rect" href="gf__gui_8c.html#ab326a60e61e3e014ff6700cae5e35108" title="Set width and height." alt="" coords="248,177,363,203"/>
+<area shape="poly" title=" " alt="" coords="128,251,255,205,257,210,130,256"/>
+<area shape="rect" href="gf__gui_8c.html#a0a15f821cdea019bc613906b9231fd1b" title="Set X coord and Y coord." alt="" coords="249,279,361,304"/>
+<area shape="poly" title=" " alt="" coords="180,274,236,280,236,286,180,279"/>
+<area shape="rect" href="gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd" title="Get floating number from property." alt="" coords="659,380,813,405"/>
+<area shape="poly" title=" " alt="" coords="113,276,163,309,195,326,229,339,338,367,451,383,556,391,645,392,645,398,556,396,450,389,337,372,227,344,193,331,160,314,110,281"/>
+<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="228,480,383,505"/>
+<area shape="poly" title=" " alt="" coords="101,278,118,315,145,366,182,420,205,445,230,466,237,471,234,476,226,471,201,449,178,423,140,369,113,317,97,280"/>
+<area shape="rect" href="gf__graphic__common_8c.html#a8ff780a4bcadc008355699101d2a42cc" title="Draw polygon." alt="" coords="435,431,607,456"/>
+<area shape="poly" title=" " alt="" coords="378,441,421,441,421,446,378,446"/>
+<area shape="rect" href="gf__gui_8c.html#a2afb67331b3c6b3405299c2b55625e0c" title=" " alt="" coords="431,76,611,101"/>
+<area shape="poly" title=" " alt="" coords="375,86,417,86,417,91,375,91"/>
+<area shape="poly" title=" " alt="" coords="576,99,669,121,667,126,575,104"/>
+<area shape="poly" title=" " alt="" coords="486,77,478,68,482,58,497,51,521,49,550,53,562,62,559,66,548,58,521,55,498,57,486,61,483,67,490,74"/>
+<area shape="rect" href="gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="669,228,803,253"/>
+<area shape="poly" title=" " alt="" coords="541,99,707,217,704,222,538,103"/>
+<area shape="poly" title=" " alt="" coords="611,86,646,86,646,91,611,91"/>
+<area shape="rect" href="gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="861,329,985,355"/>
+<area shape="poly" title=" " alt="" coords="795,99,815,112,837,135,857,161,887,217,907,271,919,315,914,316,902,273,882,219,852,163,833,138,812,116,792,104"/>
+<area shape="poly" title=" " alt="" coords="584,238,656,238,656,243,584,243"/>
+<area shape="poly" title=" " alt="" coords="560,327,610,307,701,258,704,263,612,312,562,332"/>
+<area shape="poly" title=" " alt="" coords="594,339,847,339,847,345,594,345"/>
+<area shape="poly" title=" " alt="" coords="363,190,478,198,611,213,666,222,666,228,610,218,477,203,363,195"/>
+<area shape="poly" title=" " alt="" coords="362,285,476,277,610,262,662,253,663,258,611,267,477,282,362,291"/>
+<area shape="poly" title=" " alt="" coords="783,377,862,356,863,361,785,382"/>
+<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="459,480,582,505"/>
+<area shape="poly" title=" " alt="" coords="383,490,445,490,445,495,383,495"/>
 </map>
 </div>
 
@@ -629,7 +648,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00021">21</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui__scrollbar_8c_source.html#l00022">22</a> of file <a class="el" href="gf__gui__scrollbar_8c_source.html">gf_gui_scrollbar.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -644,10 +663,13 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="154,99,188,103,187,108,153,104"/>
 <area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="201,153,356,179"/>
 <area shape="poly" title=" " alt="" coords="112,103,202,138,226,146,224,151,200,143,110,108"/>
-<area shape="rect" href="gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="404,104,528,129"/>
-<area shape="poly" title=" " alt="" coords="356,114,390,114,390,119,356,119"/>
-<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="405,153,527,179"/>
-<area shape="poly" title=" " alt="" coords="356,163,391,163,391,169,356,169"/>
+<area shape="rect" href="gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="404,31,537,56"/>
+<area shape="poly" title=" " alt="" coords="349,25,390,30,390,35,348,30"/>
+<area shape="poly" title=" " alt="" coords="342,57,390,51,391,56,343,62"/>
+<area shape="rect" href="gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="409,104,533,129"/>
+<area shape="poly" title=" " alt="" coords="356,114,395,114,395,119,356,119"/>
+<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="409,153,532,179"/>
+<area shape="poly" title=" " alt="" coords="356,163,395,163,395,169,356,169"/>
 </map>
 </div>
 <div class="dynheader">

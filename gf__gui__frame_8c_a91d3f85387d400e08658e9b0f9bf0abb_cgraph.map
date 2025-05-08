@@ -12,8 +12,8 @@
 <area shape="poly" id="edge10_Node000001_Node000021" title=" " alt="" coords="163,177,199,177,199,182,163,182"/>
 <area shape="rect" id="Node000022" href="$gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="227,65,365,91"/>
 <area shape="poly" id="edge13_Node000001_Node000022" title=" " alt="" coords="105,164,210,108,244,93,246,98,212,112,107,169"/>
-<area shape="rect" id="Node000026" href="$gf__prop_8c.html#aaa1dbc560946c6015231b6d78927a8a7" title="Get void pointer from property." alt="" coords="215,315,377,340"/>
-<area shape="poly" id="edge18_Node000001_Node000026" title=" " alt="" coords="97,191,143,244,175,275,212,301,224,307,222,312,209,306,172,279,139,248,93,194"/>
+<area shape="rect" id="Node000027" href="$gf__prop_8c.html#aaa1dbc560946c6015231b6d78927a8a7" title="Get void pointer from property." alt="" coords="215,315,377,340"/>
+<area shape="poly" id="edge18_Node000001_Node000027" title=" " alt="" coords="97,191,143,244,175,275,212,301,224,307,222,312,209,306,172,279,139,248,93,194"/>
 <area shape="rect" id="Node000005" href="$gf__font_8c.html#adc4a1d10e49218c6383f5af6c4752fa1" title="Get glyph." alt="" coords="485,167,581,192"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="356,263,380,252,394,240,403,228,412,215,428,202,471,186,473,191,431,207,416,218,407,231,398,244,383,256,358,268"/>
 <area shape="rect" id="Node000006" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="474,216,591,241"/>

@@ -28,6 +28,8 @@ var annotated_dup =
     [ "gf_resource_entry_t", "structgf__resource__entry__t.html", "structgf__resource__entry__t" ],
     [ "gf_resource_t", "structgf__resource__t.html", "structgf__resource__t" ],
     [ "gf_server_t", "structgf__server__t.html", "structgf__server__t" ],
+    [ "gf_sound_context_t", "structgf__sound__context__t.html", null ],
+    [ "gf_sound_t", "structgf__sound__t.html", "structgf__sound__t" ],
     [ "gf_texture_t", "structgf__texture__t.html", "structgf__texture__t" ],
     [ "gf_thread_context_t", "structgf__thread__context__t.html", "structgf__thread__context__t" ],
     [ "gf_thread_t", "structgf__thread__t.html", null ],

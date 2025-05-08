@@ -1,0 +1,5 @@
+<map id="gf_gui_get_font_color" name="gf_gui_get_font_color">
+<area shape="rect" id="Node000001" title="Get font color." alt="" coords="5,5,168,31"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="216,5,349,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,15,202,15,202,21,168,21"/>
+</map>

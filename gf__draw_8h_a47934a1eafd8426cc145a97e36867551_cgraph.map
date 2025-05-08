@@ -2,12 +2,12 @@
 <area shape="rect" id="Node000001" title="Do drawing single step." alt="" coords="5,129,115,155"/>
 <area shape="rect" id="Node000002" href="$gdi_2gf__draw_8c.html#af006e1dd0055cd824dd61122454d6192" title="Do platform&#45;dependent step." alt="" coords="163,55,335,80"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,127,162,89,183,81,185,86,164,94,85,132"/>
-<area shape="rect" id="Node000031" href="$gf__draw__common_8c.html#a406f60d896bc4564af10618d2f572310" title=" " alt="" coords="193,104,304,129"/>
-<area shape="poly" id="edge5_Node000001_Node000031" title=" " alt="" coords="115,132,179,123,180,129,115,137"/>
-<area shape="rect" id="Node000032" href="$gf__draw__common_8c.html#ab29cdd129c74c05767369a0e835ea514" title=" " alt="" coords="165,153,333,179"/>
-<area shape="poly" id="edge6_Node000001_Node000032" title=" " alt="" coords="115,146,151,151,151,156,115,152"/>
-<area shape="rect" id="Node000033" href="$gf__lua_8c.html#a7841ee0b8dd0ab3b04b6d8d555b9fa52" title="Run close hook for Lua interface." alt="" coords="197,203,300,228"/>
-<area shape="poly" id="edge7_Node000001_Node000033" title=" " alt="" coords="86,152,164,189,185,196,183,201,162,194,83,157"/>
+<area shape="rect" id="Node000032" href="$gf__draw__common_8c.html#a406f60d896bc4564af10618d2f572310" title=" " alt="" coords="193,104,304,129"/>
+<area shape="poly" id="edge5_Node000001_Node000032" title=" " alt="" coords="115,132,179,123,180,129,115,137"/>
+<area shape="rect" id="Node000033" href="$gf__draw__common_8c.html#ab29cdd129c74c05767369a0e835ea514" title=" " alt="" coords="165,153,333,179"/>
+<area shape="poly" id="edge6_Node000001_Node000033" title=" " alt="" coords="115,146,151,151,151,156,115,152"/>
+<area shape="rect" id="Node000034" href="$gf__lua_8c.html#a7841ee0b8dd0ab3b04b6d8d555b9fa52" title="Run close hook for Lua interface." alt="" coords="197,203,300,228"/>
+<area shape="poly" id="edge7_Node000001_Node000034" title=" " alt="" coords="86,152,164,189,185,196,183,201,162,194,83,157"/>
 <area shape="rect" id="Node000003" href="$gf__driver_8c.html#a646a68acd6e610379fc6ef5511e8c5d9" title="Called after gf_draw_frame." alt="" coords="389,5,545,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="305,52,396,31,397,36,306,57"/>
 <area shape="rect" id="Node000004" href="$gf__driver_8c.html#a5d2d7820e9dabe9f558d3f5a45b0ea60" title="Called before gf_draw_frame." alt="" coords="383,55,551,80"/>

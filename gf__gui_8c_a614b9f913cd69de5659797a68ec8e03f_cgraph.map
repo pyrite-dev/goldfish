@@ -1,0 +1,5 @@
+<map id="gf_gui_set_text" name="gf_gui_set_text">
+<area shape="rect" id="Node000001" title="Set text." alt="" coords="5,5,128,31"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="176,5,309,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,15,163,15,163,21,128,21"/>
+</map>

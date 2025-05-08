@@ -5,14 +5,14 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,132,348,108,359,85,364,87,353,111,340,134"/>
 <area shape="rect" id="Node000003" href="$structgf__client__t.html" title="Client interface." alt="" coords="5,361,88,427"/>
 <area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="240,212,188,220,130,235,102,247,75,263,51,281,32,304,25,324,27,345,22,346,20,323,27,301,48,278,72,258,99,243,128,230,187,214,239,207"/>
-<area shape="rect" id="Node000020" href="$structgf__resource__t.html" title="Resource." alt="" coords="141,361,243,427"/>
-<area shape="poly" id="edge6_Node000020_Node000002" title=" " alt="" coords="241,235,201,264,184,283,170,304,166,324,170,346,165,347,161,324,166,302,180,280,198,260,238,231"/>
-<area shape="rect" id="Node000022" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="323,341,389,447"/>
-<area shape="poly" id="edge8_Node000022_Node000002" title=" " alt="" coords="316,278,329,316,332,325,327,327,324,318,311,280"/>
-<area shape="rect" id="Node000023" href="$structgf__physics__t.html" title="Physics interface." alt="" coords="481,361,575,427"/>
-<area shape="poly" id="edge10_Node000023_Node000002" title=" " alt="" coords="346,236,438,301,489,348,486,352,434,305,343,241"/>
+<area shape="rect" id="Node000022" href="$structgf__resource__t.html" title="Resource." alt="" coords="141,361,243,427"/>
+<area shape="poly" id="edge6_Node000022_Node000002" title=" " alt="" coords="241,235,201,264,184,283,170,304,166,324,170,346,165,347,161,324,166,302,180,280,198,260,238,231"/>
+<area shape="rect" id="Node000024" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="323,341,389,447"/>
+<area shape="poly" id="edge8_Node000024_Node000002" title=" " alt="" coords="316,278,329,316,332,325,327,327,324,318,311,280"/>
+<area shape="rect" id="Node000025" href="$structgf__physics__t.html" title="Physics interface." alt="" coords="481,361,575,427"/>
+<area shape="poly" id="edge10_Node000025_Node000002" title=" " alt="" coords="346,236,438,301,489,348,486,352,434,305,343,241"/>
 <area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="60,360,80,329,105,301,163,260,224,230,226,234,166,264,108,305,84,333,65,362"/>
-<area shape="poly" id="edge5_Node000002_Node000020" title=" " alt="" coords="207,360,243,292,248,294,211,362"/>
-<area shape="poly" id="edge7_Node000002_Node000022" title=" " alt="" coords="387,345,392,324,389,304,375,278,355,256,359,252,379,275,395,302,398,324,392,346"/>
-<area shape="poly" id="edge9_Node000001_Node000023" title=" " alt="" coords="524,361,515,303,496,242,477,196,420,96,414,86,418,83,425,93,482,193,501,240,520,302,529,361"/>
+<area shape="poly" id="edge5_Node000002_Node000022" title=" " alt="" coords="207,360,243,292,248,294,211,362"/>
+<area shape="poly" id="edge7_Node000002_Node000024" title=" " alt="" coords="387,345,392,324,389,304,375,278,355,256,359,252,379,275,395,302,398,324,392,346"/>
+<area shape="poly" id="edge9_Node000001_Node000025" title=" " alt="" coords="524,361,515,303,496,242,477,196,420,96,414,86,418,83,425,93,482,193,501,240,520,302,529,361"/>
 </map>

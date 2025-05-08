@@ -2,15 +2,15 @@
 <area shape="rect" id="Node000001" title="Create audio interface." alt="" coords="5,165,132,191"/>
 <area shape="rect" id="Node000002" href="$gf__audio_8c.html#ab5022a62ecc7ba83ccb5da4a1add398b" title="Destroy audio interface." alt="" coords="203,79,338,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,163,179,125,223,107,225,112,181,130,98,168"/>
-<area shape="rect" id="Node000008" href="$miniaudio_2gf__sound_8c.html#a7597101917199711d69621a76ead2321" title=" " alt="" coords="206,140,335,165"/>
+<area shape="rect" id="Node000008" href="$miniaudio_2gf__sound_8c.html#a7597101917199711d69621a76ead2321" title="Create sound driver." alt="" coords="206,140,335,165"/>
 <area shape="poly" id="edge5_Node000001_Node000008" title=" " alt="" coords="132,167,192,160,193,165,133,173"/>
-<area shape="rect" id="Node000011" href="$miniaudio_2gf__sound_8c.html#a9bb6699b9487f84981e5c9667ffb326b" title=" " alt="" coords="211,189,330,215"/>
+<area shape="rect" id="Node000011" href="$miniaudio_2gf__sound_8c.html#a9bb6699b9487f84981e5c9667ffb326b" title="Start sound driver." alt="" coords="211,189,330,215"/>
 <area shape="poly" id="edge7_Node000001_Node000011" title=" " alt="" coords="133,183,198,191,197,196,132,188"/>
 <area shape="rect" id="Node000012" href="$posix_2gf__thread_8c.html#a6a65ae130e16a09befc7732954ee6a6f" title="Create mutex." alt="" coords="180,239,361,264"/>
 <area shape="poly" id="edge8_Node000001_Node000012" title=" " alt="" coords="96,188,181,225,204,232,202,237,179,230,94,193"/>
 <area shape="rect" id="Node000003" href="$gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="409,5,603,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,76,409,39,436,32,437,37,410,45,305,81"/>
-<area shape="rect" id="Node000006" href="$miniaudio_2gf__sound_8c.html#a6ff4c4fc8baf37b30647debb3ef310dd" title=" " alt="" coords="437,55,575,80"/>
+<area shape="rect" id="Node000006" href="$miniaudio_2gf__sound_8c.html#a6ff4c4fc8baf37b30647debb3ef310dd" title="Destroy sound driver." alt="" coords="437,55,575,80"/>
 <area shape="poly" id="edge3_Node000002_Node000006" title=" " alt="" coords="338,82,423,73,424,78,338,87"/>
 <area shape="rect" id="Node000007" href="$posix_2gf__thread_8c.html#a9d92314a062ae41412438dde87060cc0" title="Destroy mutex." alt="" coords="411,104,601,129"/>
 <area shape="poly" id="edge4_Node000002_Node000007" title=" " alt="" coords="338,96,398,102,398,108,338,101"/>

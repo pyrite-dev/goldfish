@@ -8,14 +8,14 @@
 <area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="381,150,391,174,396,204,396,236,386,292,381,292,390,235,390,205,385,175,376,152"/>
 <area shape="rect" id="Node000006" href="$structgf__client__t.html" title="Client interface." alt="" coords="5,308,88,373"/>
 <area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="277,82,220,88,156,103,124,115,94,131,67,151,45,176,32,203,27,233,29,263,34,291,29,292,23,263,22,232,27,201,40,173,64,147,91,127,122,110,154,98,219,83,277,77"/>
-<area shape="rect" id="Node000021" href="$structgf__resource__t.html" title="Resource." alt="" coords="141,308,243,373"/>
-<area shape="poly" id="edge8_Node000021_Node000003" title=" " alt="" coords="279,105,234,134,215,154,200,176,189,204,184,234,186,292,180,292,179,233,184,203,195,173,211,150,231,130,276,100"/>
-<area shape="rect" id="Node000023" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="520,288,587,393"/>
-<area shape="poly" id="edge10_Node000023_Node000003" title=" " alt="" coords="383,109,423,138,461,173,497,222,526,272,521,275,492,224,457,176,420,142,380,113"/>
+<area shape="rect" id="Node000023" href="$structgf__resource__t.html" title="Resource." alt="" coords="141,308,243,373"/>
+<area shape="poly" id="edge8_Node000023_Node000003" title=" " alt="" coords="279,105,234,134,215,154,200,176,189,204,184,234,186,292,180,292,179,233,184,203,195,173,211,150,231,130,276,100"/>
+<area shape="rect" id="Node000025" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="520,288,587,393"/>
+<area shape="poly" id="edge10_Node000025_Node000003" title=" " alt="" coords="383,109,423,138,461,173,497,222,526,272,521,275,492,224,457,176,420,142,380,113"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="354,308,340,260,328,204,325,167,330,167,333,204,345,259,359,307"/>
 <area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="53,307,80,241,101,205,127,173,158,148,192,127,260,97,262,102,195,131,161,152,131,177,105,208,85,243,58,309"/>
-<area shape="poly" id="edge7_Node000003_Node000021" title=" " alt="" coords="205,306,274,173,279,164,283,166,278,176,210,309"/>
-<area shape="poly" id="edge9_Node000003_Node000023" title=" " alt="" coords="572,287,579,260,582,231,578,202,567,176,551,157,533,141,489,115,442,98,397,89,398,83,444,93,491,110,536,136,555,153,572,173,584,201,587,231,584,261,577,289"/>
+<area shape="poly" id="edge7_Node000003_Node000023" title=" " alt="" coords="205,306,274,173,279,164,283,166,278,176,210,309"/>
+<area shape="poly" id="edge9_Node000003_Node000025" title=" " alt="" coords="572,287,579,260,582,231,578,202,567,176,551,157,533,141,489,115,442,98,397,89,398,83,444,93,491,110,536,136,555,153,572,173,584,201,587,231,584,261,577,289"/>
 <area shape="rect" id="Node000012" href="$structgf__graphic__color__t.html" title="Color." alt="" coords="699,15,832,141"/>
 <area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="768,141,768,212,763,212,763,141"/>
 </map>

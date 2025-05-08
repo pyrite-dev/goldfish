@@ -1,0 +1,9 @@
+<map id="bindgen_audio_gf_audio_callback" name="bindgen_audio_gf_audio_callback">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,185,63"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="233,31,372,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,41,219,41,219,46,186,46"/>
+<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="428,5,595,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="372,32,414,27,414,32,372,38"/>
+<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="420,55,603,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="372,49,406,53,406,58,372,54"/>
+</map>

@@ -22,6 +22,7 @@ var gf__macro_8h =
     [ "GF_EXPOSE_PROP", "gf__macro_8h.html#af83ce466bf100096424fe67a689bbaaa", null ],
     [ "GF_EXPOSE_RESOURCE", "gf__macro_8h.html#a1ad7d429d534dab7ebfb4c7bdbd5b28f", null ],
     [ "GF_EXPOSE_SERVER", "gf__macro_8h.html#a7bbb6e42ee5fdf2e1dbbb4678e46973a", null ],
+    [ "GF_EXPOSE_SOUND", "gf__macro_8h.html#ac582eedc9835bfc2c920d0afce297920", null ],
     [ "GF_EXPOSE_TEXTURE", "gf__macro_8h.html#a1b10588ebedb9c8ea44c1e4d2dd11086", null ],
     [ "GF_EXPOSE_THREAD", "gf__macro_8h.html#aeddf0443a9813483ca6bfc05190915e0", null ],
     [ "GF_EXPOSE_VERSION", "gf__macro_8h.html#a522da62928e59f2d7e01a128eb2441f2", null ]

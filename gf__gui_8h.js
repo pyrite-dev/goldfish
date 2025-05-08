@@ -13,6 +13,7 @@ var gf__gui_8h =
     [ "gf_gui_draw_box", "gf__gui_8h.html#a670ac29a4409cc16c8d77f2d33ccc499", null ],
     [ "gf_gui_get_font_color", "gf__gui_8h.html#a01c6ec1d1ee87cf4be09c8eaa9a0f28a", null ],
     [ "gf_gui_get_hover_font_color", "gf__gui_8h.html#a37b17663c2423b74e8d21e60ad35bf89", null ],
+    [ "gf_gui_get_index", "gf__gui_8h.html#a88ad797024acf7857ccb768243c1a0a8", null ],
     [ "gf_gui_get_parent", "gf__gui_8h.html#a8064cd04ef3d766f9502f6070e526d6e", null ],
     [ "gf_gui_get_prop", "gf__gui_8h.html#a3e1d6b234e2a3c3f54a58ec461203d3c", null ],
     [ "gf_gui_get_prop_id", "gf__gui_8h.html#a05004186493f4e7b02b67baf5e8c97b7", null ],

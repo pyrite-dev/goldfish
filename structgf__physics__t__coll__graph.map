@@ -7,12 +7,12 @@
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="200,261,197,215,202,215,205,261"/>
 <area shape="rect" id="Node000004" href="$structgf__client__t.html" title="Client interface." alt="" coords="5,489,88,555"/>
 <area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="156,349,122,361,86,378,53,402,28,432,22,452,25,474,20,474,17,452,23,429,50,398,83,374,120,356,155,344"/>
-<area shape="rect" id="Node000021" href="$structgf__resource__t.html" title="Resource." alt="" coords="141,489,243,555"/>
-<area shape="poly" id="edge8_Node000021_Node000002" title=" " alt="" coords="169,408,161,431,160,452,166,474,161,475,155,453,156,430,164,406"/>
-<area shape="rect" id="Node000023" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="343,469,409,575"/>
-<area shape="poly" id="edge10_Node000023_Node000002" title=" " alt="" coords="262,391,333,470,329,473,258,395"/>
+<area shape="rect" id="Node000023" href="$structgf__resource__t.html" title="Resource." alt="" coords="141,489,243,555"/>
+<area shape="poly" id="edge8_Node000023_Node000002" title=" " alt="" coords="169,408,161,431,160,452,166,474,161,475,155,453,156,430,164,406"/>
+<area shape="rect" id="Node000025" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="343,469,409,575"/>
+<area shape="poly" id="edge10_Node000025_Node000002" title=" " alt="" coords="262,391,333,470,329,473,258,395"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="154,188,128,210,122,223,124,236,147,275,143,278,119,238,117,222,124,207,151,184"/>
 <area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="60,488,77,458,98,429,142,384,146,388,102,432,81,461,65,490"/>
-<area shape="poly" id="edge7_Node000002_Node000021" title=" " alt="" coords="206,488,221,445,224,423,229,424,227,446,211,490"/>
-<area shape="poly" id="edge9_Node000002_Node000023" title=" " alt="" coords="395,469,395,450,390,432,367,405,339,383,307,366,275,354,277,349,309,361,341,378,371,401,394,429,401,449,400,469"/>
+<area shape="poly" id="edge7_Node000002_Node000023" title=" " alt="" coords="206,488,221,445,224,423,229,424,227,446,211,490"/>
+<area shape="poly" id="edge9_Node000002_Node000025" title=" " alt="" coords="395,469,395,450,390,432,367,405,339,383,307,366,275,354,277,349,309,361,341,378,371,401,394,429,401,449,400,469"/>
 </map>

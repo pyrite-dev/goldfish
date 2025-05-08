@@ -7,11 +7,11 @@
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="159,428,123,440,85,457,51,481,24,512,19,532,23,554,18,555,14,532,20,509,48,477,83,453,121,435,157,423"/>
 <area shape="rect" id="Node000005" href="$structgf__client__t.html" title="Client interface." alt="" coords="151,569,234,635"/>
 <area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="171,488,163,511,162,532,168,554,163,555,157,533,158,510,166,486"/>
-<area shape="rect" id="Node000022" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="350,549,417,655"/>
-<area shape="poly" id="edge8_Node000022_Node000002" title=" " alt="" coords="264,469,341,551,337,555,260,473"/>
+<area shape="rect" id="Node000024" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="350,549,417,655"/>
+<area shape="poly" id="edge8_Node000024_Node000002" title=" " alt="" coords="264,469,341,551,337,555,260,473"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,568,75,538,95,509,143,461,147,465,99,512,79,541,64,571"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="208,568,223,525,226,503,231,504,229,526,213,570"/>
-<area shape="poly" id="edge7_Node000002_Node000022" title=" " alt="" coords="402,549,403,530,397,512,373,484,343,462,310,445,277,433,279,428,312,440,346,457,377,480,402,509,408,529,407,549"/>
-<area shape="rect" id="Node000023" href="$structgf__resource__entry__t.html" title="Resource entry." alt="" coords="139,5,281,151"/>
-<area shape="poly" id="edge9_Node000001_Node000023" title=" " alt="" coords="213,151,213,197,207,197,207,151"/>
+<area shape="poly" id="edge7_Node000002_Node000024" title=" " alt="" coords="402,549,403,530,397,512,373,484,343,462,310,445,277,433,279,428,312,440,346,457,377,480,402,509,408,529,407,549"/>
+<area shape="rect" id="Node000025" href="$structgf__resource__entry__t.html" title="Resource entry." alt="" coords="139,5,281,151"/>
+<area shape="poly" id="edge9_Node000001_Node000025" title=" " alt="" coords="213,151,213,197,207,197,207,151"/>
 </map>

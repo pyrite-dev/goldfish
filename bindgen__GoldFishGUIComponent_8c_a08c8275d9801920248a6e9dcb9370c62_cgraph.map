@@ -2,4 +2,6 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,5,241,45"/>
 <area shape="rect" id="Node000002" href="$gf__gui_8c.html#a8064cd04ef3d766f9502f6070e526d6e" title="Get parent component." alt="" coords="289,13,428,38"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,23,275,23,275,28,241,28"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="476,13,609,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="428,23,463,23,463,28,428,28"/>
 </map>

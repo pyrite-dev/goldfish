@@ -1,5 +1,7 @@
 <map id="gf_gui_get_prop_id" name="gf_gui_get_prop_id">
-<area shape="rect" id="Node000001" title="Get component ID from property." alt="" coords="5,5,151,31"/>
-<area shape="rect" id="Node000002" href="$gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="199,5,323,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,15,185,15,185,21,151,21"/>
+<area shape="rect" id="Node000001" title="Get component ID from property." alt="" coords="5,31,151,56"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="199,5,332,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,31,184,26,185,32,151,36"/>
+<area shape="rect" id="Node000003" href="$gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="203,55,327,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,50,190,55,189,60,150,55"/>
 </map>

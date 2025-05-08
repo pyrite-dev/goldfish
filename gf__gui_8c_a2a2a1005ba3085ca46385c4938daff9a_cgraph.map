@@ -1,7 +1,9 @@
 <map id="gf_gui_set_prop_id" name="gf_gui_set_prop_id">
-<area shape="rect" id="Node000001" title="Set component ID to property." alt="" coords="5,5,149,31"/>
-<area shape="rect" id="Node000002" href="$gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="197,5,320,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,15,183,15,183,21,150,21"/>
-<area shape="rect" id="Node000003" href="$gf__prop_8c.html#a17c37ff36ee533fcd95a11a4e4974f08" title="Delete property." alt="" coords="368,5,487,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="320,15,354,15,354,21,320,21"/>
+<area shape="rect" id="Node000001" title="Set component ID to property." alt="" coords="5,31,149,56"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="197,5,331,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,31,183,26,184,32,150,36"/>
+<area shape="rect" id="Node000003" href="$gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="203,55,325,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,50,190,55,189,60,149,55"/>
+<area shape="rect" id="Node000004" href="$gf__prop_8c.html#a17c37ff36ee533fcd95a11a4e4974f08" title="Delete property." alt="" coords="379,55,497,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="326,65,365,65,365,70,326,70"/>
 </map>

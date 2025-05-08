@@ -28,8 +28,10 @@ var searchData=
   ['gf_5fresource_5fentry_5ft_25',['gf_resource_entry_t',['../structgf__resource__entry__t.html',1,'']]],
   ['gf_5fresource_5ft_26',['gf_resource_t',['../structgf__resource__t.html',1,'']]],
   ['gf_5fserver_5ft_27',['gf_server_t',['../structgf__server__t.html',1,'']]],
-  ['gf_5ftexture_5ft_28',['gf_texture_t',['../structgf__texture__t.html',1,'']]],
-  ['gf_5fthread_5fcontext_5ft_29',['gf_thread_context_t',['../structgf__thread__context__t.html',1,'']]],
-  ['gf_5fthread_5ft_30',['gf_thread_t',['../structgf__thread__t.html',1,'']]],
-  ['gf_5fversion_5ft_31',['gf_version_t',['../structgf__version__t.html',1,'']]]
+  ['gf_5fsound_5fcontext_5ft_28',['gf_sound_context_t',['../structgf__sound__context__t.html',1,'']]],
+  ['gf_5fsound_5ft_29',['gf_sound_t',['../structgf__sound__t.html',1,'']]],
+  ['gf_5ftexture_5ft_30',['gf_texture_t',['../structgf__texture__t.html',1,'']]],
+  ['gf_5fthread_5fcontext_5ft_31',['gf_thread_context_t',['../structgf__thread__context__t.html',1,'']]],
+  ['gf_5fthread_5ft_32',['gf_thread_t',['../structgf__thread__t.html',1,'']]],
+  ['gf_5fversion_5ft_33',['gf_version_t',['../structgf__version__t.html',1,'']]]
 ];

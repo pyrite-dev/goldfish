@@ -1,5 +1,5 @@
 <map id="gf_sound_start" name="gf_sound_start">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,124,80"/>
+<area shape="rect" id="Node000001" title="Start sound driver." alt="" coords="5,55,124,80"/>
 <area shape="rect" id="Node000002" href="$windows_2gf__sound_8c.html#a2cd508e16c68916161e2b944b8034ddb" title=" " alt="" coords="173,5,357,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,52,199,31,200,37,118,57"/>
 <area shape="rect" id="Node000006" href="$windows_2gf__sound_8c.html#a5cb5c3b68cde0e5e9244887679088474" title=" " alt="" coords="172,55,359,80"/>
