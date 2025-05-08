@@ -296,6 +296,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a37b17663c2423b74e8d21e60ad35bf89" id="r_a37b17663c2423b74e8d21e60ad35bf89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgf__graphic__color__t.html">gf_graphic_color_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gf__gui_8c.html#a37b17663c2423b74e8d21e60ad35bf89">gf_gui_get_hover_font_color</a> (<a class="el" href="structgf__gui__t.html">gf_gui_t</a> *gui, <a class="el" href="gui_8h.html#a17ba559c53b849a8391b8f48d91b4f11">gf_gui_id_t</a> id)</td></tr>
 <tr class="memdesc:a37b17663c2423b74e8d21e60ad35bf89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get hover font color.  <br /></td></tr>
 <tr class="separator:a37b17663c2423b74e8d21e60ad35bf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889a54075cbe3114cd51eae892774541" id="r_a889a54075cbe3114cd51eae892774541"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gui_8h.html#a17ba559c53b849a8391b8f48d91b4f11">gf_gui_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gf__gui_8c.html#a889a54075cbe3114cd51eae892774541">gf_gui_create_common</a> (<a class="el" href="structgf__gui__t.html">gf_gui_t</a> *gui, const char *name, double x, double y, double w, double h)</td></tr>
+<tr class="memdesc:a889a54075cbe3114cd51eae892774541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create component specified by name.  <br /></td></tr>
+<tr class="separator:a889a54075cbe3114cd51eae892774541"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab326a60e61e3e014ff6700cae5e35108" id="r_ab326a60e61e3e014ff6700cae5e35108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gf__gui_8c.html#ab326a60e61e3e014ff6700cae5e35108">gf_gui_set_wh</a> (<a class="el" href="structgf__gui__t.html">gf_gui_t</a> *gui, <a class="el" href="gui_8h.html#a17ba559c53b849a8391b8f48d91b4f11">gf_gui_id_t</a> id, double w, double h)</td></tr>
 <tr class="memdesc:ab326a60e61e3e014ff6700cae5e35108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set width and height.  <br /></td></tr>
 <tr class="separator:ab326a60e61e3e014ff6700cae5e35108"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -680,6 +683,85 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="337,21,303,21,303,15,337,15"/>
 <area shape="rect" href="gf__client_8c.html#a425bf9a148d3a4d1301686fa9628de5a" title="Create client interface." alt="" coords="5,5,132,31"/>
 <area shape="poly" title=" " alt="" coords="166,21,133,21,133,15,166,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a889a54075cbe3114cd51eae892774541" name="a889a54075cbe3114cd51eae892774541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889a54075cbe3114cd51eae892774541">&#9670;&#160;</a></span>gf_gui_create_common()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gui_8h.html#a17ba559c53b849a8391b8f48d91b4f11">gf_gui_id_t</a> gf_gui_create_common </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgf__gui__t.html">gf_gui_t</a> *&#160;</td>
+          <td class="paramname"><em>gui</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create component specified by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gui</td><td>GUI </td></tr>
+    <tr><td class="paramname">name</td><td>Component name </td></tr>
+    <tr><td class="paramname">x</td><td>X </td></tr>
+    <tr><td class="paramname">y</td><td>Y </td></tr>
+    <tr><td class="paramname">w</td><td>Width </td></tr>
+    <tr><td class="paramname">h</td><td>Height </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00528">528</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__gui_8c_a889a54075cbe3114cd51eae892774541_icgraph.png" border="0" usemap="#agf__gui_8c_a889a54075cbe3114cd51eae892774541_icgraph" alt=""/></div>
+<map name="agf__gui_8c_a889a54075cbe3114cd51eae892774541_icgraph" id="agf__gui_8c_a889a54075cbe3114cd51eae892774541_icgraph">
+<area shape="rect" title="Create component specified by name." alt="" coords="379,13,553,38"/>
+<area shape="rect" href="bindgen__gui_8c.html#a486808d300abbd2a75969a064ad711e5" title=" " alt="" coords="183,5,331,45"/>
+<area shape="poly" title=" " alt="" coords="365,28,331,28,331,23,365,23"/>
+<area shape="rect" href="bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8" title=" " alt="" coords="5,13,135,38"/>
+<area shape="poly" title=" " alt="" coords="169,28,135,28,135,23,169,23"/>
 </map>
 </div>
 
@@ -1373,7 +1455,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00535">535</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00545">545</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1438,7 +1520,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00549">549</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00559">559</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2057,7 +2139,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00528">528</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00538">538</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2126,7 +2208,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00542">542</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__gui_8c_source.html#l00552">552</a> of file <a class="el" href="gf__gui_8c_source.html">gf_gui.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

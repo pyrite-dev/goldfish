@@ -31,11 +31,12 @@ var searchData=
   ['bindgen_5fgraphic_5fgf_5fgraphic_5ftext_5fwrap_28',['bindgen_graphic_gf_graphic_text_wrap',['../bindgen__graphic_8c.html#a9476ee01c3ff84e78a5ddaca7d2b371b',1,'bindgen_graphic.c']]],
   ['bindgen_5fgraphic_5finit_29',['bindgen_graphic_init',['../bindgen__graphic_8c.html#abfb75e0f66f674f2274523d43d7c1e3e',1,'bindgen_graphic_init(gf_lua_t *lua):&#160;bindgen_graphic.c'],['../bindgen_8h.html#abfb75e0f66f674f2274523d43d7c1e3e',1,'bindgen_graphic_init(gf_lua_t *lua):&#160;bindgen_graphic.c']]],
   ['bindgen_5fgui_5fgf_5fgui_5fcreate_5fbutton_30',['bindgen_gui_gf_gui_create_button',['../bindgen__gui_8c.html#a160dd5dcf2ce56b61dc84ae7ed1aa0bf',1,'bindgen_gui.c']]],
-  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5fframe_31',['bindgen_gui_gf_gui_create_frame',['../bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4',1,'bindgen_gui.c']]],
-  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5fscrollbar_32',['bindgen_gui_gf_gui_create_scrollbar',['../bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad',1,'bindgen_gui.c']]],
-  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5ftext_33',['bindgen_gui_gf_gui_create_text',['../bindgen__gui_8c.html#a28909a4b4bdd3dbdc27bc8e7e25d2986',1,'bindgen_gui.c']]],
-  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5fwindow_34',['bindgen_gui_gf_gui_create_window',['../bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2',1,'bindgen_gui.c']]],
-  ['bindgen_5fgui_5fgf_5fgui_5fsort_5fcomponent_35',['bindgen_gui_gf_gui_sort_component',['../bindgen__gui_8c.html#aeefeecd0ff17aa1db4d8540bf1123ae5',1,'bindgen_gui.c']]],
-  ['bindgen_5fgui_5finit_36',['bindgen_gui_init',['../bindgen_8h.html#a32d401eacc24910702820ffa1711bdb8',1,'bindgen_gui_init(gf_lua_t *lua):&#160;bindgen_gui.c'],['../bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8',1,'bindgen_gui_init(gf_lua_t *lua):&#160;bindgen_gui.c']]],
-  ['bindgen_5finit_37',['bindgen_init',['../bindgen_8c.html#a2b87a92483f8fce3503268bb05dc7098',1,'bindgen_init(gf_lua_t *lua):&#160;bindgen.c'],['../bindgen_8h.html#a2b87a92483f8fce3503268bb05dc7098',1,'bindgen_init(gf_lua_t *lua):&#160;bindgen.c']]]
+  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5fcommon_31',['bindgen_gui_gf_gui_create_common',['../bindgen__gui_8c.html#a486808d300abbd2a75969a064ad711e5',1,'bindgen_gui.c']]],
+  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5fframe_32',['bindgen_gui_gf_gui_create_frame',['../bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4',1,'bindgen_gui.c']]],
+  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5fscrollbar_33',['bindgen_gui_gf_gui_create_scrollbar',['../bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad',1,'bindgen_gui.c']]],
+  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5ftext_34',['bindgen_gui_gf_gui_create_text',['../bindgen__gui_8c.html#a28909a4b4bdd3dbdc27bc8e7e25d2986',1,'bindgen_gui.c']]],
+  ['bindgen_5fgui_5fgf_5fgui_5fcreate_5fwindow_35',['bindgen_gui_gf_gui_create_window',['../bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2',1,'bindgen_gui.c']]],
+  ['bindgen_5fgui_5fgf_5fgui_5fsort_5fcomponent_36',['bindgen_gui_gf_gui_sort_component',['../bindgen__gui_8c.html#aeefeecd0ff17aa1db4d8540bf1123ae5',1,'bindgen_gui.c']]],
+  ['bindgen_5fgui_5finit_37',['bindgen_gui_init',['../bindgen_8h.html#a32d401eacc24910702820ffa1711bdb8',1,'bindgen_gui_init(gf_lua_t *lua):&#160;bindgen_gui.c'],['../bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8',1,'bindgen_gui_init(gf_lua_t *lua):&#160;bindgen_gui.c']]],
+  ['bindgen_5finit_38',['bindgen_init',['../bindgen_8c.html#a2b87a92483f8fce3503268bb05dc7098',1,'bindgen_init(gf_lua_t *lua):&#160;bindgen.c'],['../bindgen_8h.html#a2b87a92483f8fce3503268bb05dc7098',1,'bindgen_init(gf_lua_t *lua):&#160;bindgen.c']]]
 ];

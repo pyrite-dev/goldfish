@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"gf__input_8c.html#ac926a70928c687f96cfbc24aef8ca96d":[2,0,1,14,1],
+"gf__input_8c_source.html":[2,0,1,14],
+"gf__input_8h.html":[2,0,0,14],
 "gf__input_8h.html#ac4a22f8231c87a464f6be7faead5dec2":[2,0,0,14,1],
 "gf__input_8h.html#ac926a70928c687f96cfbc24aef8ca96d":[2,0,0,14,0],
 "gf__input_8h_source.html":[2,0,0,14],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "globals_l.html":[2,1,0,5],
 "globals_p.html":[2,1,0,6],
 "globals_r.html":[2,1,0,7],
-"globals_s.html":[2,1,0,8],
-"globals_type.html":[2,1,3],
-"globals_vars.html":[2,1,2],
-"graphic_8h.html":[2,0,0,0,9]
+"globals_s.html":[2,1,0,8]
 };

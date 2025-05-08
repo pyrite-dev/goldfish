@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"globals_type.html":[2,1,3],
+"globals_vars.html":[2,1,2],
+"graphic_8h.html":[2,0,0,0,9],
 "graphic_8h_source.html":[2,0,0,0,9],
 "gui_8h.html":[2,0,0,0,10],
 "gui_8h.html#a069cd186008e4a5b6c33776a3fd796af":[2,0,0,0,10,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "structgf__version__t.html":[1,0,31],
 "structgf__version__t.html#a18c4ea6d16bd4d27da71586779ea3295":[1,0,31,5],
 "structgf__version__t.html#a2a478dbfcd02eaead8b77aad204cfc0d":[1,0,31,0],
-"structgf__version__t.html#a3515c56f3a2a337aaa0cb45ee8224e7d":[1,0,31,9],
-"structgf__version__t.html#a4ae35b795688ecbcb98562b52ce03509":[1,0,31,7],
-"structgf__version__t.html#a573839ca44261b9ccbd73e43be57d326":[1,0,31,6],
-"structgf__version__t.html#aa67a3c7e2ee37cd404c34f837b1ff3c5":[1,0,31,3]
+"structgf__version__t.html#a3515c56f3a2a337aaa0cb45ee8224e7d":[1,0,31,9]
 };

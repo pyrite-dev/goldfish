@@ -6,6 +6,7 @@ var gf__gui_8h =
     [ "GF_GUI_SMALL_FONT_SIZE", "gf__gui_8h.html#a582b0b94540ffd4523d44696d470f6ec", null ],
     [ "gf_gui_calc_xywh", "gf__gui_8h.html#a12905d9750d06d3440efc96eab4574e9", null ],
     [ "gf_gui_create", "gf__gui_8h.html#a929e99bf9dd58e4abc0c9f2a6b1341a1", null ],
+    [ "gf_gui_create_common", "gf__gui_8h.html#a889a54075cbe3114cd51eae892774541", null ],
     [ "gf_gui_create_component", "gf__gui_8h.html#a757066a859b84758831fbfbd4c5d47ad", null ],
     [ "gf_gui_destroy", "gf__gui_8h.html#ab8c8f2db437bffd27987005978c9a766", null ],
     [ "gf_gui_destroy_id", "gf__gui_8h.html#afca0bddbe4a2ffefa86cf963cf0cc925", null ],
