@@ -1,4 +1,3 @@
-#include "gf_type/draw_platform.h"
 #define GF_EXPOSE_DRAW_PLATFORM
 #define GF_EXPOSE_DRAW
 #define GF_EXPOSE_CORE
