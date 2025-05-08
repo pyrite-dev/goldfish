@@ -11,6 +11,8 @@
 #if defined(SND_WINDOWS)
 #include <windows.h>
 #include <dsound.h>
+#elif defined(SND_MINIAUDIO)
+#include <miniaudio.h>
 #endif
 
 #endif

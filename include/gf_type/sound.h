@@ -34,6 +34,10 @@ GF_DECLARE_TYPE(sound_context, {
 	gf_thread_t* thread;
 	int quit;
 });
+#elif defined(SND_MINIAUDIO)
+GF_DECLARE_TYPE(sound_context, {
+	ma_device device;
+});
 #endif
 
 GF_DECLARE_TYPE(sound, {
