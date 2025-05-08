@@ -23,7 +23,7 @@ void gf_log(gf_engine_t* engine, const char* fmt, ...) {
 	if(engine != NULL) {
 		out = engine->log;
 	}
-	if(out != NULL) {
+	if(out != NULL && gf_log_default != out) {
 		va_start(va, fmt);
 		vfprintf(out, fmt, va);
 		va_end(va);
