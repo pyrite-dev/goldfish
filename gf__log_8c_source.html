@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('gf__log_8c_source.html',''); initResiz
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(engine != NULL) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                out = engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a311f3b1680291fbfb3271fc73a05748c">log</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span>(out != NULL) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span>(out != NULL &amp;&amp; <a class="code hl_variable" href="gf__log_8c.html#acd1b8a5daa02c81f5411d2033cbb4aea">gf_log_default</a> != out) {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                va_start(va, fmt);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                vfprintf(out, fmt, va);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                va_end(va);</div>
