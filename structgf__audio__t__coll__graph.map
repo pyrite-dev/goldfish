@@ -1,21 +1,21 @@
 <map id="gf_audio_t" name="gf_audio_t">
-<area shape="rect" id="Node000001" title="Audio interface." alt="" coords="197,5,314,131"/>
-<area shape="rect" id="Node000005" href="$structgf__client__t.html" title="Client interface." alt="" coords="89,273,171,339"/>
-<area shape="poly" id="edge6_Node000005_Node000001" title=" " alt="" coords="198,108,174,130,155,156,144,180,137,206,131,257,126,257,132,205,139,179,150,153,170,127,195,104"/>
-<area shape="rect" id="Node000023" href="$structgf__audio__decoder__t.html" title="Audio decoder." alt="" coords="195,193,337,419"/>
-<area shape="poly" id="edge12_Node000023_Node000001" title=" " alt="" coords="217,131,212,150,213,169,214,177,209,178,207,170,207,150,211,130"/>
+<area shape="rect" id="Node000001" title="Audio interface." alt="" coords="214,5,297,111"/>
+<area shape="rect" id="Node000005" href="$structgf__client__t.html" title="Client interface." alt="" coords="89,263,171,329"/>
+<area shape="poly" id="edge6_Node000005_Node000001" title=" " alt="" coords="215,82,182,105,155,136,143,162,135,191,130,247,125,246,130,190,138,161,150,133,179,101,212,77"/>
+<area shape="rect" id="Node000023" href="$structgf__audio__decoder__t.html" title="Audio decoder." alt="" coords="195,173,337,419"/>
+<area shape="poly" id="edge12_Node000023_Node000001" title=" " alt="" coords="219,112,213,130,213,149,214,157,209,158,207,150,207,129,213,110"/>
 <area shape="rect" id="Node000002" href="$structgf__engine__t.html" title="Engine instance." alt="" coords="161,481,265,627"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,516,310,473,330,446,346,418,361,376,371,338,375,303,375,270,371,240,363,211,338,156,323,133,327,130,343,153,368,209,376,239,381,270,381,303,376,339,367,377,351,420,335,449,314,476,267,520"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,516,310,473,330,446,346,418,368,361,381,314,386,275,385,243,378,215,368,189,338,136,324,117,307,99,311,96,328,113,343,133,373,186,384,213,390,242,391,275,386,315,373,362,351,420,335,449,314,476,267,520"/>
 <area shape="rect" id="Node000003" href="$structgf__server__t.html" title="Server interface." alt="" coords="5,709,92,775"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="161,568,126,580,88,597,54,621,27,652,22,672,25,694,20,694,16,672,22,649,50,617,86,593,124,575,160,563"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="192,482,181,444,147,355,152,353,186,442,197,481"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="192,482,181,443,146,345,151,343,186,442,197,480"/>
 <area shape="rect" id="Node000020" href="$structgf__resource__t.html" title="Resource." alt="" coords="145,709,248,775"/>
 <area shape="poly" id="edge8_Node000020_Node000002" title=" " alt="" coords="174,628,166,651,165,672,171,694,166,695,160,673,161,650,169,626"/>
 <area shape="rect" id="Node000022" href="$structgf__lua__t.html" title="Lua interface." alt="" coords="347,689,414,795"/>
 <area shape="poly" id="edge10_Node000022_Node000002" title=" " alt="" coords="267,611,338,690,334,693,263,615"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,708,77,678,97,649,146,601,150,605,101,652,81,681,65,710"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="127,339,123,395,126,426,134,456,153,491,148,493,129,458,121,427,118,395,122,339"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="127,329,123,390,126,424,134,456,153,491,148,493,129,458,120,425,117,390,121,329"/>
 <area shape="poly" id="edge7_Node000002_Node000020" title=" " alt="" coords="211,708,226,665,228,643,234,644,231,666,216,710"/>
 <area shape="poly" id="edge9_Node000002_Node000022" title=" " alt="" coords="399,689,400,670,394,652,372,625,343,603,311,586,279,574,281,569,314,581,346,598,376,621,399,649,405,669,405,689"/>
-<area shape="poly" id="edge11_Node000001_Node000023" title=" " alt="" coords="266,193,265,155,264,147,269,147,270,155,272,193"/>
+<area shape="poly" id="edge11_Node000001_Node000023" title=" " alt="" coords="267,173,265,135,264,127,269,127,270,134,272,173"/>
 </map>

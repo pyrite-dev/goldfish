@@ -1,0 +1,10 @@
+<map id="include/gf_type/sound.h" name="include/gf_type/sound.h">
+<area shape="rect" id="Node000001" title="Type definitions related to sound backend." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="Node000002" href="$gf__pre_8h.html" title="Required headers before anything." alt="" coords="57,152,131,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,32,82,64,79,84,79,104,88,138,83,139,74,104,73,84,76,63,87,30"/>
+<area shape="rect" id="Node000004" href="$gf__macro_8h.html" title="Macro." alt="" coords="89,79,184,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="103,30,125,66,121,68,99,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="47,225,141,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,178,97,212,91,212,91,178"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="132,106,110,142,106,139,127,103"/>
+</map>

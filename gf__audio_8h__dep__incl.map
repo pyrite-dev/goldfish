@@ -1,15 +1,19 @@
 <map id="include/gf_audio.h" name="include/gf_audio.h">
-<area shape="rect" id="Node000001" title="Audio interface." alt="" coords="414,5,555,31"/>
+<area shape="rect" id="Node000001" title="Audio interface." alt="" coords="565,5,706,31"/>
 <area shape="rect" id="Node000002" href="$bindgen__GoldFishAudio_8c.html" title=" " alt="" coords="5,79,159,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,36,171,81,159,84,158,78,169,76,408,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="551,31,376,51,170,81,159,83,158,78,170,76,375,46,551,25"/>
 <area shape="rect" id="Node000003" href="$bindgen__audio_8c.html" title=" " alt="" coords="183,79,336,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="440,38,314,81,313,76,438,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="567,36,349,81,337,84,336,79,348,76,566,31"/>
 <area shape="rect" id="Node000004" href="$gf__audio_8c.html" title=" " alt="" coords="361,86,473,111"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="468,43,429,88,425,84,464,39"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="591,38,449,88,448,83,590,33"/>
 <area shape="rect" id="Node000005" href="$gf__client_8c.html" title=" " alt="" coords="497,86,609,111"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="506,39,545,84,541,88,502,43"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="615,42,567,88,563,84,611,38"/>
 <area shape="rect" id="Node000006" href="$gf__draw__common_8c.html" title=" " alt="" coords="633,86,805,111"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="532,32,686,83,684,89,531,37"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="660,38,709,84,705,88,656,42"/>
 <area shape="rect" id="Node000007" href="$gf__lua_8c.html" title=" " alt="" coords="830,86,926,111"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="569,29,688,49,819,76,845,83,843,88,817,81,687,54,569,34"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="685,32,843,83,842,89,683,37"/>
+<area shape="rect" id="Node000008" href="$miniaudio_2gf__sound_8c.html" title=" " alt="" coords="951,79,1104,119"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="708,31,939,76,951,79,950,84,937,81,707,36"/>
+<area shape="rect" id="Node000009" href="$windows_2gf__sound_8c.html" title=" " alt="" coords="1129,79,1291,119"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="720,25,903,46,1117,76,1129,78,1128,83,1116,81,902,51,720,30"/>
 </map>

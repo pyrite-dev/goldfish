@@ -1,7 +1,8 @@
 var gf__audio_8c =
 [
     [ "GF_EXPOSE_AUDIO", "gf__audio_8c.html#a0c037da6649bf5ca0c58c12ec3a422ff", null ],
-    [ "gf_audio_callback", "gf__audio_8c.html#a71564ab94762d2f58159e0666b84c788", null ],
+    [ "GF_EXPOSE_SOUND", "gf__audio_8c.html#ac582eedc9835bfc2c920d0afce297920", null ],
+    [ "gf_audio_callback", "gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77", null ],
     [ "gf_audio_create", "gf__audio_8c.html#a52e61cbf2518774a590141631e053330", null ],
     [ "gf_audio_decoder_destroy", "gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb", null ],
     [ "gf_audio_destroy", "gf__audio_8c.html#ab5022a62ecc7ba83ccb5da4a1add398b", null ],

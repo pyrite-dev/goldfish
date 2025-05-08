@@ -1,0 +1,9 @@
+<map id="include/gf_sound.h" name="include/gf_sound.h">
+<area shape="rect" id="Node000001" title="Sound driver." alt="" coords="145,5,289,31"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html" title=" " alt="" coords="5,86,117,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,39,85,88,83,84,181,34"/>
+<area shape="rect" id="Node000003" href="$miniaudio_2gf__sound_8c.html" title=" " alt="" coords="141,79,294,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,44,220,79,215,79,215,44"/>
+<area shape="rect" id="Node000004" href="$windows_2gf__sound_8c.html" title=" " alt="" coords="319,79,481,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="258,34,357,76,355,81,255,39"/>
+</map>

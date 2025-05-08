@@ -1,8 +1,8 @@
 <map id="gf_audio_decoder_t" name="gf_audio_decoder_t">
-<area shape="rect" id="Node000001" title="Audio decoder." alt="" coords="5,5,147,231"/>
-<area shape="rect" id="Node000002" href="$structgf__audio__t.html" title="Audio interface." alt="" coords="99,293,216,419"/>
-<area shape="poly" id="edge3_Node000002_Node000001" title=" " alt="" coords="49,231,51,250,57,268,70,289,88,308,84,311,66,292,52,270,46,251,43,231"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,294,125,256,123,247,128,245,131,254,143,292"/>
-<area shape="rect" id="Node000003" href="$structgf__engine__t.html" title="Engine instance." alt="" coords="188,45,292,191"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,192,192,270,189,279,184,277,187,268,214,190"/>
+<area shape="rect" id="Node000001" title="Audio decoder." alt="" coords="5,5,147,251"/>
+<area shape="rect" id="Node000002" href="$structgf__audio__t.html" title="Audio interface." alt="" coords="116,313,199,419"/>
+<area shape="poly" id="edge3_Node000002_Node000001" title=" " alt="" coords="47,250,50,270,57,288,77,315,103,335,100,340,73,318,52,291,45,271,42,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,314,125,276,123,267,128,265,131,274,143,312"/>
+<area shape="rect" id="Node000003" href="$structgf__engine__t.html" title="Engine instance." alt="" coords="188,55,292,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="222,202,192,290,188,299,183,297,187,288,216,200"/>
 </map>

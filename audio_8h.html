@@ -102,63 +102,74 @@ $(document).ready(function(){initNavTree('audio_8h.html',''); initResizable(); }
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="gf__pre_8h_source.html">gf_pre.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="gf__macro_8h_source.html">gf_macro.h</a>&gt;</code><br />
-<code>#include &lt;miniaudio.h&gt;</code><br />
 <code>#include &lt;jar_xm.h&gt;</code><br />
 <code>#include &lt;jar_mod.h&gt;</code><br />
+<code>#include &lt;dr_mp3.h&gt;</code><br />
+<code>#include &lt;dr_flac.h&gt;</code><br />
+<code>#include &lt;dr_wav.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="core_8h_source.html">gf_type/core.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="thread_8h_source.html">gf_type/thread.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sound_8h_source.html">gf_type/sound.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for audio.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="audio_8h__incl.png" border="0" usemap="#ainclude_2gf__type_2audio_8h" alt=""/></div>
 <map name="ainclude_2gf__type_2audio_8h" id="ainclude_2gf__type_2audio_8h">
-<area shape="rect" title="Type definitions related to audio interface." alt="" coords="781,5,956,31"/>
-<area shape="rect" href="gf__pre_8h.html" title="Required headers before anything." alt="" coords="434,299,509,324"/>
-<area shape="poly" title=" " alt="" coords="880,29,898,58,915,96,921,118,923,139,919,160,910,179,883,202,844,223,794,242,737,259,621,287,523,305,522,300,620,282,736,254,792,237,841,218,880,198,905,176,914,158,917,139,916,119,910,98,893,60,875,32"/>
-<area shape="rect" href="gf__macro_8h.html" title="Macro." alt="" coords="468,225,563,251"/>
-<area shape="poly" title=" " alt="" coords="862,32,801,101,755,143,703,180,640,209,577,227,576,222,638,204,701,175,752,139,797,97,858,29"/>
-<area shape="rect" title=" " alt="" coords="957,79,1055,104"/>
-<area shape="poly" title=" " alt="" coords="892,28,973,70,970,75,890,33"/>
-<area shape="rect" title=" " alt="" coords="1080,79,1159,104"/>
-<area shape="poly" title=" " alt="" coords="910,28,1068,73,1066,78,908,33"/>
-<area shape="rect" title=" " alt="" coords="1183,79,1269,104"/>
-<area shape="poly" title=" " alt="" coords="928,28,1170,76,1169,81,927,33"/>
-<area shape="rect" href="core_8h.html" title="Type definitions related to core." alt="" coords="287,79,402,104"/>
-<area shape="poly" title=" " alt="" coords="785,33,416,83,416,78,784,28"/>
-<area shape="rect" href="thread_8h.html" title="Type definitions related to thread interface." alt="" coords="765,152,895,177"/>
-<area shape="poly" title=" " alt="" coords="868,32,839,139,834,138,863,30"/>
-<area shape="rect" title=" " alt="" coords="425,372,518,397"/>
-<area shape="poly" title=" " alt="" coords="474,324,474,358,469,358,469,324"/>
-<area shape="poly" title=" " alt="" coords="510,252,488,288,483,286,506,250"/>
-<area shape="poly" title=" " alt="" coords="287,97,215,102,136,113,66,129,40,141,23,154,14,171,9,195,12,222,28,249,55,267,96,281,147,292,204,299,322,307,420,308,420,314,322,312,203,305,146,297,94,286,53,272,24,253,7,224,3,194,9,169,19,150,37,136,64,124,135,107,215,97,287,92"/>
-<area shape="poly" title=" " alt="" coords="403,97,459,114,485,129,507,150,515,165,520,180,521,211,516,211,514,181,510,167,503,154,482,134,456,119,402,102"/>
-<area shape="rect" href="server_8h.html" title="Type definitions related to server interface." alt="" coords="211,152,337,177"/>
-<area shape="poly" title=" " alt="" coords="328,106,290,143,286,139,325,102"/>
-<area shape="rect" href="client_8h.html" title="Type definitions related to client interface." alt="" coords="567,152,690,177"/>
+<area shape="rect" title="Type definitions related to audio interface." alt="" coords="946,5,1120,31"/>
+<area shape="rect" href="gf__pre_8h.html" title="Required headers before anything." alt="" coords="496,299,570,324"/>
+<area shape="poly" title=" " alt="" coords="1040,30,1061,107,1067,149,1065,166,1060,179,1027,206,977,230,915,250,845,267,701,293,584,308,583,302,700,288,844,262,913,245,975,225,1025,202,1056,176,1060,165,1061,149,1056,108,1034,32"/>
+<area shape="rect" href="gf__macro_8h.html" title="Macro." alt="" coords="486,225,580,251"/>
+<area shape="poly" title=" " alt="" coords="1010,33,755,154,703,180,584,223,582,218,701,175,753,150,1008,28"/>
+<area shape="rect" title=" " alt="" coords="1071,79,1150,104"/>
+<area shape="poly" title=" " alt="" coords="1047,29,1089,67,1086,71,1044,33"/>
+<area shape="rect" title=" " alt="" coords="1174,79,1260,104"/>
+<area shape="poly" title=" " alt="" coords="1063,28,1175,71,1173,76,1062,33"/>
+<area shape="rect" title=" " alt="" coords="1285,79,1368,104"/>
+<area shape="poly" title=" " alt="" coords="1081,28,1272,74,1271,79,1079,33"/>
+<area shape="rect" title=" " alt="" coords="1392,79,1469,104"/>
+<area shape="poly" title=" " alt="" coords="1106,28,1378,76,1377,81,1105,33"/>
+<area shape="rect" title=" " alt="" coords="1493,79,1573,104"/>
+<area shape="poly" title=" " alt="" coords="1121,26,1283,46,1480,76,1479,81,1283,51,1120,31"/>
+<area shape="rect" href="core_8h.html" title="Type definitions related to core." alt="" coords="288,79,402,104"/>
+<area shape="poly" title=" " alt="" coords="946,31,416,85,415,80,945,26"/>
+<area shape="rect" href="thread_8h.html" title="Type definitions related to thread interface." alt="" coords="766,152,895,177"/>
+<area shape="poly" title=" " alt="" coords="1018,33,859,146,856,142,1015,29"/>
+<area shape="rect" href="sound_8h.html" title="Type definitions related to sound backend." alt="" coords="919,152,1046,177"/>
+<area shape="poly" title=" " alt="" coords="1031,32,993,140,988,138,1026,30"/>
+<area shape="rect" title=" " alt="" coords="486,372,580,397"/>
+<area shape="poly" title=" " alt="" coords="536,324,536,358,530,358,530,324"/>
+<area shape="poly" title=" " alt="" coords="536,251,536,285,530,285,530,251"/>
+<area shape="poly" title=" " alt="" coords="288,97,215,102,136,113,66,129,40,141,23,154,14,171,9,195,12,222,28,249,51,260,94,270,220,286,363,298,482,305,481,310,363,303,219,292,93,275,49,265,24,253,7,224,3,195,9,169,19,150,37,136,64,124,135,107,215,97,287,92"/>
+<area shape="poly" title=" " alt="" coords="403,99,457,117,484,131,507,150,525,180,533,211,528,213,520,182,503,154,481,136,455,121,402,104"/>
+<area shape="rect" href="server_8h.html" title="Type definitions related to server interface." alt="" coords="211,152,338,177"/>
+<area shape="poly" title=" " alt="" coords="329,106,290,143,286,139,325,102"/>
+<area shape="rect" href="client_8h.html" title="Type definitions related to client interface." alt="" coords="568,152,690,177"/>
 <area shape="poly" title=" " alt="" coords="384,101,563,146,562,151,383,107"/>
 <area shape="rect" href="resource_8h.html" title="Type definitions related to resource." alt="" coords="44,152,187,177"/>
 <area shape="poly" title=" " alt="" coords="302,107,160,150,158,145,300,101"/>
 <area shape="rect" title=" " alt="" coords="38,225,105,251"/>
-<area shape="poly" title=" " alt="" coords="288,98,218,103,141,114,74,130,50,141,34,154,28,168,31,183,51,214,47,217,26,185,23,167,29,150,47,136,73,125,140,108,217,98,287,92"/>
+<area shape="poly" title=" " alt="" coords="288,98,218,103,141,114,74,130,50,141,34,154,28,168,31,183,52,214,47,217,26,185,23,167,29,150,47,136,73,125,140,108,217,98,287,92"/>
 <area shape="rect" href="lua_8h.html" title="Type definitions related to lua." alt="" coords="362,152,469,177"/>
-<area shape="poly" title=" " alt="" coords="351,102,389,141,385,145,348,106"/>
-<area shape="poly" title=" " alt="" coords="292,175,446,288,443,292,288,180"/>
-<area shape="poly" title=" " alt="" coords="314,175,464,219,462,224,312,180"/>
+<area shape="poly" title=" " alt="" coords="352,102,389,141,385,145,348,106"/>
+<area shape="poly" title=" " alt="" coords="296,175,502,290,499,294,294,180"/>
+<area shape="poly" title=" " alt="" coords="317,175,479,219,477,224,315,180"/>
 <area shape="poly" title=" " alt="" coords="291,150,329,113,333,117,294,154"/>
-<area shape="poly" title=" " alt="" coords="635,150,664,114,707,76,757,50,807,32,809,37,759,55,710,81,668,118,639,154"/>
-<area shape="poly" title=" " alt="" coords="626,179,607,214,576,253,545,277,512,295,509,291,542,272,572,249,602,211,621,176"/>
-<area shape="poly" title=" " alt="" coords="612,180,547,220,544,216,609,175"/>
+<area shape="poly" title=" " alt="" coords="634,150,663,113,684,93,708,76,762,52,821,36,878,25,932,19,932,24,879,30,822,41,764,57,710,81,687,97,667,117,638,153"/>
+<area shape="poly" title=" " alt="" coords="628,179,615,213,594,252,559,291,555,287,589,249,610,210,623,177"/>
+<area shape="poly" title=" " alt="" coords="615,180,561,219,558,215,612,175"/>
 <area shape="poly" title=" " alt="" coords="589,154,410,110,411,105,590,149"/>
-<area shape="poly" title=" " alt="" coords="145,175,432,291,430,296,143,180"/>
-<area shape="poly" title=" " alt="" coords="180,175,455,223,454,229,179,180"/>
+<area shape="poly" title=" " alt="" coords="150,175,488,292,486,297,148,180"/>
+<area shape="poly" title=" " alt="" coords="183,175,473,224,472,229,182,180"/>
 <area shape="poly" title=" " alt="" coords="159,149,301,106,303,111,160,154"/>
-<area shape="poly" title=" " alt="" coords="110,179,88,215,83,212,106,176"/>
-<area shape="poly" title=" " alt="" coords="423,177,465,285,460,287,418,179"/>
-<area shape="poly" title=" " alt="" coords="433,175,490,215,486,219,430,180"/>
+<area shape="poly" title=" " alt="" coords="111,179,88,215,84,212,106,176"/>
+<area shape="poly" title=" " alt="" coords="425,176,446,210,475,249,512,287,508,291,471,252,442,213,420,179"/>
+<area shape="poly" title=" " alt="" coords="436,175,503,216,501,220,433,180"/>
 <area shape="poly" title=" " alt="" coords="409,154,371,115,375,111,413,150"/>
-<area shape="poly" title=" " alt="" coords="452,149,481,151,491,156,495,165,493,172,486,177,466,181,465,176,484,172,489,169,490,165,487,159,480,156,452,155"/>
-<area shape="poly" title=" " alt="" coords="802,180,514,296,512,291,800,175"/>
-<area shape="poly" title=" " alt="" coords="780,180,577,226,575,220,779,175"/>
+<area shape="poly" title=" " alt="" coords="452,149,481,151,491,156,496,165,493,172,486,177,466,181,465,176,484,172,489,169,490,165,488,159,480,156,452,155"/>
+<area shape="poly" title=" " alt="" coords="808,180,570,295,567,290,805,175"/>
+<area shape="poly" title=" " alt="" coords="783,180,594,225,593,220,782,175"/>
+<area shape="poly" title=" " alt="" coords="947,180,583,297,581,292,946,175"/>
+<area shape="poly" title=" " alt="" coords="919,179,595,230,594,224,918,173"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -166,40 +177,49 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="audio_8h__dep__incl.png" border="0" usemap="#ainclude_2gf__type_2audio_8hdep" alt=""/></div>
 <map name="ainclude_2gf__type_2audio_8hdep" id="ainclude_2gf__type_2audio_8hdep">
-<area shape="rect" title="Type definitions related to audio interface." alt="" coords="551,5,725,31"/>
-<area shape="rect" href="gf__audio_8h.html" title="Audio interface." alt="" coords="475,225,617,251"/>
-<area shape="poly" title=" " alt="" coords="630,45,553,226,549,224,625,43"/>
-<area shape="rect" href="gf__lua_8h.html" title="Lua." alt="" coords="641,225,766,251"/>
-<area shape="poly" title=" " alt="" coords="635,44,630,106,633,142,643,176,662,203,686,223,683,227,658,207,638,178,628,143,625,106,630,44"/>
-<area shape="rect" href="client_8h.html" title="Type definitions related to client interface." alt="" coords="701,79,876,104"/>
-<area shape="poly" title=" " alt="" coords="676,34,765,76,763,81,673,39"/>
-<area shape="rect" href="bindgen__GoldFishAudio_8c.html" title=" " alt="" coords="5,299,159,339"/>
-<area shape="poly" title=" " alt="" coords="462,254,170,301,159,303,158,298,170,296,461,249"/>
-<area shape="rect" href="bindgen__audio_8c.html" title=" " alt="" coords="183,299,336,339"/>
-<area shape="poly" title=" " alt="" coords="492,257,329,301,328,296,491,252"/>
-<area shape="rect" href="gf__audio_8c.html" title=" " alt="" coords="361,306,473,331"/>
-<area shape="poly" title=" " alt="" coords="517,260,437,308,434,303,514,256"/>
-<area shape="rect" href="gf__client_8c.html" title=" " alt="" coords="814,306,926,331"/>
-<area shape="poly" title=" " alt="" coords="611,251,801,296,829,303,828,309,800,301,610,256"/>
-<area shape="rect" href="gf__draw__common_8c.html" title=" " alt="" coords="617,306,789,331"/>
-<area shape="poly" title=" " alt="" coords="582,254,682,304,679,308,580,259"/>
-<area shape="rect" href="gf__lua_8c.html" title=" " alt="" coords="497,306,593,331"/>
-<area shape="poly" title=" " alt="" coords="548,264,548,306,542,306,543,264"/>
-<area shape="poly" title=" " alt="" coords="706,264,706,306,701,306,701,264"/>
-<area shape="poly" title=" " alt="" coords="669,259,569,308,567,304,667,254"/>
-<area shape="rect" href="gf__core_8c.html" title=" " alt="" coords="950,306,1054,331"/>
-<area shape="poly" title=" " alt="" coords="765,251,939,296,965,303,963,309,937,301,763,257"/>
-<area shape="rect" href="gf__client_8h.html" title="Client interface." alt="" coords="794,225,935,251"/>
-<area shape="poly" title=" " alt="" coords="809,113,834,151,852,191,864,224,859,226,847,193,829,153,804,116"/>
-<area shape="rect" href="core_8h.html" title="Type definitions related to core." alt="" coords="653,152,820,177"/>
-<area shape="poly" title=" " alt="" coords="767,116,740,153,736,150,762,113"/>
-<area shape="poly" title=" " alt="" coords="869,264,872,306,867,306,864,265"/>
-<area shape="poly" title=" " alt="" coords="898,255,983,303,980,308,895,260"/>
-<area shape="poly" title=" " alt="" coords="716,143,686,106,642,33,647,30,691,102,720,140"/>
-<area shape="poly" title=" " alt="" coords="694,185,578,228,576,223,692,180"/>
-<area shape="poly" title=" " alt="" coords="728,191,711,226,706,224,723,189"/>
-<area shape="poly" title=" " alt="" coords="759,140,785,103,789,106,763,143"/>
-<area shape="poly" title=" " alt="" coords="771,182,845,223,842,227,768,186"/>
+<area shape="rect" title="Type definitions related to audio interface." alt="" coords="719,5,894,31"/>
+<area shape="rect" href="gf__audio_8h.html" title="Audio interface." alt="" coords="685,225,827,251"/>
+<area shape="poly" title=" " alt="" coords="803,45,761,226,756,224,798,44"/>
+<area shape="rect" href="gf__lua_8h.html" title="Lua." alt="" coords="1016,225,1141,251"/>
+<area shape="poly" title=" " alt="" coords="908,22,941,29,975,40,1006,55,1034,77,1048,94,1059,114,1074,156,1080,196,1082,225,1076,225,1075,196,1069,157,1055,116,1044,97,1030,81,1003,60,973,45,940,34,907,27"/>
+<area shape="rect" href="gf__sound_8h.html" title="Sound driver." alt="" coords="237,225,381,251"/>
+<area shape="poly" title=" " alt="" coords="769,39,337,228,335,223,767,34"/>
+<area shape="rect" href="client_8h.html" title="Type definitions related to client interface." alt="" coords="845,79,1019,104"/>
+<area shape="poly" title=" " alt="" coords="840,35,913,76,910,81,837,40"/>
+<area shape="rect" href="bindgen__GoldFishAudio_8c.html" title=" " alt="" coords="506,299,659,339"/>
+<area shape="poly" title=" " alt="" coords="720,259,625,301,623,296,717,254"/>
+<area shape="rect" href="bindgen__audio_8c.html" title=" " alt="" coords="683,299,837,339"/>
+<area shape="poly" title=" " alt="" coords="760,264,762,298,756,299,755,265"/>
+<area shape="rect" href="gf__audio_8c.html" title=" " alt="" coords="5,306,117,331"/>
+<area shape="poly" title=" " alt="" coords="672,245,427,262,278,278,129,301,98,309,97,303,127,296,277,273,426,257,672,240"/>
+<area shape="rect" href="gf__client_8c.html" title=" " alt="" coords="861,306,973,331"/>
+<area shape="poly" title=" " alt="" coords="793,254,895,304,893,308,790,259"/>
+<area shape="rect" href="gf__draw__common_8c.html" title=" " alt="" coords="1118,306,1290,331"/>
+<area shape="poly" title=" " alt="" coords="839,250,1106,296,1146,303,1145,309,1105,301,838,256"/>
+<area shape="rect" href="gf__lua_8c.html" title=" " alt="" coords="997,306,1093,331"/>
+<area shape="poly" title=" " alt="" coords="817,251,986,296,1011,303,1009,309,985,301,815,257"/>
+<area shape="rect" href="miniaudio_2gf__sound_8c.html" title=" " alt="" coords="141,299,294,339"/>
+<area shape="poly" title=" " alt="" coords="672,251,503,272,307,301,295,304,294,298,306,296,502,267,672,246"/>
+<area shape="rect" href="windows_2gf__sound_8c.html" title=" " alt="" coords="319,299,481,339"/>
+<area shape="poly" title=" " alt="" coords="692,256,482,302,481,297,690,251"/>
+<area shape="poly" title=" " alt="" coords="1110,256,1187,304,1184,308,1107,260"/>
+<area shape="poly" title=" " alt="" coords="1071,264,1053,307,1048,305,1066,262"/>
+<area shape="rect" href="gf__core_8c.html" title=" " alt="" coords="1315,306,1419,331"/>
+<area shape="poly" title=" " alt="" coords="1137,252,1303,296,1329,303,1327,308,1302,301,1136,257"/>
+<area shape="poly" title=" " alt="" coords="261,257,98,309,97,303,260,252"/>
+<area shape="poly" title=" " alt="" coords="287,262,241,301,238,296,284,258"/>
+<area shape="poly" title=" " alt="" coords="335,258,380,296,376,301,331,262"/>
+<area shape="rect" href="gf__client_8h.html" title="Client interface." alt="" coords="851,225,992,251"/>
+<area shape="poly" title=" " alt="" coords="959,112,981,142,987,160,984,178,965,207,941,227,938,223,961,203,979,176,981,160,977,144,955,115"/>
+<area shape="rect" href="core_8h.html" title="Type definitions related to core." alt="" coords="803,152,970,177"/>
+<area shape="poly" title=" " alt="" coords="911,116,889,153,885,151,907,114"/>
+<area shape="poly" title=" " alt="" coords="923,265,921,306,915,306,917,264"/>
+<area shape="poly" title=" " alt="" coords="1006,249,1169,273,1303,296,1331,303,1330,309,1302,301,1169,278,1005,254"/>
+<area shape="poly" title=" " alt="" coords="861,145,845,126,830,105,814,66,806,32,811,30,819,64,834,103,849,123,865,141"/>
+<area shape="poly" title=" " alt="" coords="855,186,779,227,776,223,852,182"/>
+<area shape="poly" title=" " alt="" coords="931,180,1048,223,1046,228,930,185"/>
+<area shape="poly" title=" " alt="" coords="907,140,929,103,934,106,912,143"/>
+<area shape="poly" title=" " alt="" coords="901,189,918,224,913,226,896,191"/>
 </map>
 </div>
 </div>

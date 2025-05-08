@@ -27,6 +27,8 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "gf_prop.h", "gf__prop_8h.html", "gf__prop_8h" ],
     [ "gf_resource.h", "gf__resource_8h.html", "gf__resource_8h" ],
     [ "gf_server.h", "gf__server_8h.html", "gf__server_8h" ],
+    [ "gf_snddrv.h", "gf__snddrv_8h.html", null ],
+    [ "gf_sound.h", "gf__sound_8h.html", "gf__sound_8h" ],
     [ "gf_texture.h", "gf__texture_8h.html", "gf__texture_8h" ],
     [ "gf_thread.h", "gf__thread_8h.html", "gf__thread_8h" ],
     [ "gf_version.h", "gf__version_8h.html", "gf__version_8h" ]

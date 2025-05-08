@@ -20,6 +20,7 @@ var dir_e60f2706c8c207c5a951446d03370319 =
     [ "prop.h", "prop_8h.html", "prop_8h" ],
     [ "resource.h", "resource_8h.html", "resource_8h" ],
     [ "server.h", "server_8h.html", "server_8h" ],
+    [ "sound.h", "sound_8h.html", "sound_8h" ],
     [ "texture.h", "texture_8h.html", "texture_8h" ],
     [ "thread.h", "thread_8h.html", "thread_8h" ],
     [ "version.h", "version_8h.html", "version_8h" ]
