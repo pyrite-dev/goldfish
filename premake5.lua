@@ -7,6 +7,16 @@ if premake.modules.gmake.cpp.pchRules and not(premake.modules.gmake.patched_reso
 	end)
 end
 
+gf_sound_backends = {
+	miniaudio = {
+		name = "miniaudio"
+	},
+	windows = {
+		name = "DirectSound/WinMM",
+		links = {"winmm"}
+	}
+}
+
 gf_backends = {
 	opengl = {
 		name = "OpenGL",
@@ -121,6 +131,19 @@ newoption({
 	default = "opengl"
 })
 
+gf_l = {}
+for k,v in pairs(gf_sound_backends) do
+	table.insert(gf_l, {k, v["name"]})
+end
+newoption({
+	trigger = "sound",
+	value = "API",
+	description = "Choose a sound backend",
+	allowed = gf_l,
+	category = "Engine",
+	default = "miniaudio"
+})
+
 newoption({
 	trigger = "engine",
 	value = "type",
@@ -153,6 +176,14 @@ function gf_default_stuffs()
 		defines({
 			"THREAD_POSIX"
 		})
+	for k,v in pairs(gf_sound_backends) do
+		filter({
+			"options:sound=" .. k
+		})
+			defines({
+				"SND_" .. string.upper(k)
+			})
+	end
 	for k,v in pairs(gf_backends) do
 		for k2,v2 in pairs(v["backends"]) do
 			for k3,v3 in pairs(v["types"]) do
@@ -254,6 +285,14 @@ function gf_link_stuffs(cond)
 		links({
 			"stdc++"
 		})
+	for k,v in pairs(gf_sound_backends) do
+		filter({
+			"options:sound=" .. k
+		})
+			if v.links then
+				links(v.links)
+			end
+	end
 	for k,v in pairs(gf_backends) do
 		for k2,v2 in pairs(v["backends"]) do
 			for k3,v3 in pairs(v["types"]) do

@@ -31,6 +31,7 @@ project("GoldFish")
 		"../include",
 		"../external/lua",
 		"../external/zlib",
+		"../external/dr_libs",
 		"../external/miniaudio",
 		"../external/stb",
 		"../external/jar",
@@ -140,7 +141,19 @@ project("GoldFish")
 		"dLIBCCD_CONVEX_CONVEX"
 	})
 	-- End ODE
-	
+
+	for k,v in pairs(gf_sound_backends) do
+		filter({
+			"options:sound=" .. k
+		})
+			if v.includedirs then
+				local l = {}
+				for _,d in ipairs(v.includedirs) do
+					table.insert(l, "../" .. d)
+				end
+				includedirs(l)
+			end
+	end
 	for k,v in pairs(gf_backends) do
 		for k2,v2 in pairs(v["backends"]) do
 			for k3,v3 in pairs(v["types"]) do
@@ -205,4 +218,12 @@ project("GoldFish")
 					"graphic/" .. k .. "/" .. (v2.alias or k2) .. "/*.c"
 				})
 		end
+	end
+	for k,v in pairs(gf_sound_backends) do
+		filter({
+			"options:sound=" .. k
+		})
+			files({
+				"sound/" .. k .. "/*.c"
+			})
 	end
