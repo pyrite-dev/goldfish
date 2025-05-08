@@ -121,12 +121,13 @@ $(document).ready(function(){initNavTree('bindgen__audio_8c_source.html',''); in
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="gf__audio_8h.html">gf_audio.h</a>&gt;</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/******************/</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="bindgen__audio_8c.html#a2d5227ed72fcf7b582e899d7bd9f70d6">   37</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="bindgen__audio_8c.html#a2d5227ed72fcf7b582e899d7bd9f70d6">bindgen_audio_gf_audio_callback</a>(lua_State* s) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_struct" href="structgf__audio__t.html">gf_audio_t</a>* param0;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">void</span>*       param1 = (<span class="keywordtype">void</span>*)luaL_check(s, 1);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">int</span>         param2 = (int)luaL_checkinteger(s, 2);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_struct" href="structgf__lua__t.html">gf_lua_t</a>*   wrap;</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c">   36</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c">bindgen_audio_gf_audio_load_file</a>(lua_State* s) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_struct" href="structgf__audio__t.html">gf_audio_t</a>*    param0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>*    param1 = (<span class="keyword">const</span> <span class="keywordtype">char</span>*)luaL_checkstring(s, 1);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_struct" href="structgf__lua__t.html">gf_lua_t</a>*      wrap;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_typedef" href="audio_8h.html#a6fbf4c2ca3f12771ae05716f4b356a9c">gf_audio_id_t</a>  ret;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_typedef" href="audio_8h.html#a6fbf4c2ca3f12771ae05716f4b356a9c">gf_audio_id_t</a>* lret;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        lua_getglobal(s, <span class="stringliteral">&quot;_LUA_WRAP&quot;</span>);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        wrap = lua_touserdata(s, -1);</div>
@@ -134,86 +135,60 @@ $(document).ready(function(){initNavTree('bindgen__audio_8c_source.html',''); in
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        param0 = wrap-&gt;<a class="code hl_variable" href="structgf__lua__t.html#ada5d02626afb7aed00b557c210113ca1">engine</a>-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a4f2720244393f64efe90ef5079338ac2">client</a>-&gt;<a class="code hl_variable" href="structgf__client__t.html#ac3381045a3080752363026d7d6607435">audio</a>;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_function" href="gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77">gf_audio_callback</a>(param0, param1, param2);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        ret = <a class="code hl_function" href="gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d">gf_audio_load_file</a>(param0, param1);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span>(!(ret &gt;= 0)) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        lret = lua_newuserdata(s, <span class="keyword">sizeof</span>(*lret));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        luaL_getmetatable(s, <span class="stringliteral">&quot;GoldFishAudio&quot;</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        lua_setmetatable(s, -2);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        *lret = ret;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c">   57</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c">bindgen_audio_gf_audio_load_file</a>(lua_State* s) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_struct" href="structgf__audio__t.html">gf_audio_t</a>*    param0;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>*    param1 = (<span class="keyword">const</span> <span class="keywordtype">char</span>*)luaL_checkstring(s, 1);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_struct" href="structgf__lua__t.html">gf_lua_t</a>*      wrap;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_typedef" href="audio_8h.html#a6fbf4c2ca3f12771ae05716f4b356a9c">gf_audio_id_t</a>  ret;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_typedef" href="audio_8h.html#a6fbf4c2ca3f12771ae05716f4b356a9c">gf_audio_id_t</a>* lret;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        lua_getglobal(s, <span class="stringliteral">&quot;_LUA_WRAP&quot;</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        wrap = lua_touserdata(s, -1);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        lua_pop(s, 1);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        param0 = wrap-&gt;<a class="code hl_variable" href="structgf__lua__t.html#ada5d02626afb7aed00b557c210113ca1">engine</a>-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a4f2720244393f64efe90ef5079338ac2">client</a>-&gt;<a class="code hl_variable" href="structgf__client__t.html#ac3381045a3080752363026d7d6607435">audio</a>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        ret = <a class="code hl_function" href="gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d">gf_audio_load_file</a>(param0, param1);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span>(!(ret &gt;= 0)) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        lret = lua_newuserdata(s, <span class="keyword">sizeof</span>(*lret));</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        luaL_getmetatable(s, <span class="stringliteral">&quot;GoldFishAudio&quot;</span>);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        lua_setmetatable(s, -2);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        *lret = ret;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077">   62</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077">bindgen_audio_gf_audio_set_volume</a>(lua_State* s) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_struct" href="structgf__audio__t.html">gf_audio_t</a>* param0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">double</span>      param1 = (double)luaL_checknumber(s, 1);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <a class="code hl_struct" href="structgf__lua__t.html">gf_lua_t</a>*   wrap;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        lua_getglobal(s, <span class="stringliteral">&quot;_LUA_WRAP&quot;</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        wrap = lua_touserdata(s, -1);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        lua_pop(s, 1);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        param0 = wrap-&gt;<a class="code hl_variable" href="structgf__lua__t.html#ada5d02626afb7aed00b557c210113ca1">engine</a>-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a4f2720244393f64efe90ef5079338ac2">client</a>-&gt;<a class="code hl_variable" href="structgf__client__t.html#ac3381045a3080752363026d7d6607435">audio</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_function" href="gf__audio_8c.html#a3fe618670d753c212cef4707b03e3fb9">gf_audio_set_volume</a>(param0, param1);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
 </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077">   83</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077">bindgen_audio_gf_audio_set_volume</a>(lua_State* s) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_struct" href="structgf__audio__t.html">gf_audio_t</a>* param0;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordtype">double</span>      param1 = (double)luaL_checknumber(s, 1);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_struct" href="structgf__lua__t.html">gf_lua_t</a>*   wrap;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        lua_getglobal(s, <span class="stringliteral">&quot;_LUA_WRAP&quot;</span>);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        wrap = lua_touserdata(s, -1);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        lua_pop(s, 1);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        param0 = wrap-&gt;<a class="code hl_variable" href="structgf__lua__t.html#ada5d02626afb7aed00b557c210113ca1">engine</a>-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a4f2720244393f64efe90ef5079338ac2">client</a>-&gt;<a class="code hl_variable" href="structgf__client__t.html#ac3381045a3080752363026d7d6607435">audio</a>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_function" href="gf__audio_8c.html#a3fe618670d753c212cef4707b03e3fb9">gf_audio_set_volume</a>(param0, param1);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="bindgen_8h.html#a732280a604cdb684da75ddac7515492a">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="bindgen__audio_8c.html#a732280a604cdb684da75ddac7515492a">bindgen_audio_init</a>(<a class="code hl_struct" href="structgf__lua__t.html">gf_lua_t</a>* lua) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        lua_pushstring(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <span class="stringliteral">&quot;audio&quot;</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        lua_newtable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua));</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        lua_pushstring(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <span class="stringliteral">&quot;load_file&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        lua_pushcfunction(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <a class="code hl_function" href="bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c">bindgen_audio_gf_audio_load_file</a>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        lua_settable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), -3);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        lua_pushstring(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <span class="stringliteral">&quot;set_volume&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        lua_pushcfunction(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <a class="code hl_function" href="bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077">bindgen_audio_gf_audio_set_volume</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        lua_settable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), -3);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        lua_settable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), -3);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
 </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="bindgen_8h.html#a732280a604cdb684da75ddac7515492a">   99</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="bindgen__audio_8c.html#a732280a604cdb684da75ddac7515492a">bindgen_audio_init</a>(<a class="code hl_struct" href="structgf__lua__t.html">gf_lua_t</a>* lua) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        lua_pushstring(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <span class="stringliteral">&quot;audio&quot;</span>);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        lua_newtable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua));</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        lua_pushstring(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <span class="stringliteral">&quot;callback&quot;</span>);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        lua_pushcfunction(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <a class="code hl_function" href="bindgen__audio_8c.html#a2d5227ed72fcf7b582e899d7bd9f70d6">bindgen_audio_gf_audio_callback</a>);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        lua_settable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), -3);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        lua_pushstring(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <span class="stringliteral">&quot;load_file&quot;</span>);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        lua_pushcfunction(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <a class="code hl_function" href="bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c">bindgen_audio_gf_audio_load_file</a>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        lua_settable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), -3);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        lua_pushstring(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <span class="stringliteral">&quot;set_volume&quot;</span>);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        lua_pushcfunction(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), <a class="code hl_function" href="bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077">bindgen_audio_gf_audio_set_volume</a>);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        lua_settable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), -3);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        lua_settable(<a class="code hl_define" href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a>(lua), -3);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
-</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">/*** Generated at Thu May 8 2025 ***/</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">/*** Generated at Thu May 8 2025 ***/</span></div>
 <div class="ttc" id="aaudio_8h_html_a6fbf4c2ca3f12771ae05716f4b356a9c"><div class="ttname"><a href="audio_8h.html#a6fbf4c2ca3f12771ae05716f4b356a9c">gf_audio_id_t</a></div><div class="ttdeci">int gf_audio_id_t</div><div class="ttdef"><b>Definition</b> <a href="audio_8h_source.html#l00013">audio.h:13</a></div></div>
 <div class="ttc" id="abindgen_8h_html"><div class="ttname"><a href="bindgen_8h.html">bindgen.h</a></div></div>
-<div class="ttc" id="abindgen__audio_8c_html_a127cfd795493b54a99c1ee527b620077"><div class="ttname"><a href="bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077">bindgen_audio_gf_audio_set_volume</a></div><div class="ttdeci">int bindgen_audio_gf_audio_set_volume(lua_State *s)</div><div class="ttdef"><b>Definition</b> <a href="bindgen__audio_8c_source.html#l00083">bindgen_audio.c:83</a></div></div>
-<div class="ttc" id="abindgen__audio_8c_html_a2d5227ed72fcf7b582e899d7bd9f70d6"><div class="ttname"><a href="bindgen__audio_8c.html#a2d5227ed72fcf7b582e899d7bd9f70d6">bindgen_audio_gf_audio_callback</a></div><div class="ttdeci">int bindgen_audio_gf_audio_callback(lua_State *s)</div><div class="ttdef"><b>Definition</b> <a href="bindgen__audio_8c_source.html#l00037">bindgen_audio.c:37</a></div></div>
+<div class="ttc" id="abindgen__audio_8c_html_a127cfd795493b54a99c1ee527b620077"><div class="ttname"><a href="bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077">bindgen_audio_gf_audio_set_volume</a></div><div class="ttdeci">int bindgen_audio_gf_audio_set_volume(lua_State *s)</div><div class="ttdef"><b>Definition</b> <a href="bindgen__audio_8c_source.html#l00062">bindgen_audio.c:62</a></div></div>
 <div class="ttc" id="abindgen__audio_8c_html_a55ef8f3e0c1308d5bedbd69ef0dd6bf7"><div class="ttname"><a href="bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7">LUA</a></div><div class="ttdeci">#define LUA(wrap)</div><div class="ttdef"><b>Definition</b> <a href="bindgen__audio_8c_source.html#l00011">bindgen_audio.c:11</a></div></div>
-<div class="ttc" id="abindgen__audio_8c_html_a732280a604cdb684da75ddac7515492a"><div class="ttname"><a href="bindgen__audio_8c.html#a732280a604cdb684da75ddac7515492a">bindgen_audio_init</a></div><div class="ttdeci">void bindgen_audio_init(gf_lua_t *lua)</div><div class="ttdef"><b>Definition</b> <a href="bindgen__audio_8c_source.html#l00099">bindgen_audio.c:99</a></div></div>
-<div class="ttc" id="abindgen__audio_8c_html_ab35b12242c5e2e705d3e369320aa889c"><div class="ttname"><a href="bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c">bindgen_audio_gf_audio_load_file</a></div><div class="ttdeci">int bindgen_audio_gf_audio_load_file(lua_State *s)</div><div class="ttdef"><b>Definition</b> <a href="bindgen__audio_8c_source.html#l00057">bindgen_audio.c:57</a></div></div>
+<div class="ttc" id="abindgen__audio_8c_html_a732280a604cdb684da75ddac7515492a"><div class="ttname"><a href="bindgen__audio_8c.html#a732280a604cdb684da75ddac7515492a">bindgen_audio_init</a></div><div class="ttdeci">void bindgen_audio_init(gf_lua_t *lua)</div><div class="ttdef"><b>Definition</b> <a href="bindgen__audio_8c_source.html#l00078">bindgen_audio.c:78</a></div></div>
+<div class="ttc" id="abindgen__audio_8c_html_ab35b12242c5e2e705d3e369320aa889c"><div class="ttname"><a href="bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c">bindgen_audio_gf_audio_load_file</a></div><div class="ttdeci">int bindgen_audio_gf_audio_load_file(lua_State *s)</div><div class="ttdef"><b>Definition</b> <a href="bindgen__audio_8c_source.html#l00036">bindgen_audio.c:36</a></div></div>
 <div class="ttc" id="agf__audio_8c_html_a3fe618670d753c212cef4707b03e3fb9"><div class="ttname"><a href="gf__audio_8c.html#a3fe618670d753c212cef4707b03e3fb9">gf_audio_set_volume</a></div><div class="ttdeci">void gf_audio_set_volume(gf_audio_t *audio, double volume)</div><div class="ttdoc">Set volume.</div><div class="ttdef"><b>Definition</b> <a href="gf__audio_8c_source.html#l00368">gf_audio.c:368</a></div></div>
-<div class="ttc" id="agf__audio_8c_html_aa69518f19d42d46f4d4d5aa4de1fbf77"><div class="ttname"><a href="gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77">gf_audio_callback</a></div><div class="ttdeci">void gf_audio_callback(gf_audio_t *audio, void *output, int frame)</div><div class="ttdoc">Audio callback.</div><div class="ttdef"><b>Definition</b> <a href="gf__audio_8c_source.html#l00030">gf_audio.c:30</a></div></div>
 <div class="ttc" id="agf__audio_8c_html_af3ae4fe048705bae7ce8a377976a4c2d"><div class="ttname"><a href="gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d">gf_audio_load_file</a></div><div class="ttdeci">gf_audio_id_t gf_audio_load_file(gf_audio_t *audio, const char *path)</div><div class="ttdoc">Load and play file.</div><div class="ttdef"><b>Definition</b> <a href="gf__audio_8c_source.html#l00229">gf_audio.c:229</a></div></div>
 <div class="ttc" id="agf__audio_8h_html"><div class="ttname"><a href="gf__audio_8h.html">gf_audio.h</a></div><div class="ttdoc">Audio interface.</div></div>
 <div class="ttc" id="alua_8h_html"><div class="ttname"><a href="lua_8h.html">lua.h</a></div><div class="ttdoc">Type definitions related to lua.</div></div>

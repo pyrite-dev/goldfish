@@ -45,11 +45,10 @@ var NAVTREEINDEX0 =
 "bindgen__GoldFishGUIComponent_8c.html#aeb48b5a46d3ffea75114d05216d0bce3":[2,0,1,1,6,5],
 "bindgen__GoldFishGUIComponent_8c_source.html":[2,0,1,1,6],
 "bindgen__audio_8c.html":[2,0,1,1,2],
-"bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077":[2,0,1,1,2,3],
-"bindgen__audio_8c.html#a2d5227ed72fcf7b582e899d7bd9f70d6":[2,0,1,1,2,1],
+"bindgen__audio_8c.html#a127cfd795493b54a99c1ee527b620077":[2,0,1,1,2,2],
 "bindgen__audio_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7":[2,0,1,1,2,0],
-"bindgen__audio_8c.html#a732280a604cdb684da75ddac7515492a":[2,0,1,1,2,4],
-"bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c":[2,0,1,1,2,2],
+"bindgen__audio_8c.html#a732280a604cdb684da75ddac7515492a":[2,0,1,1,2,3],
+"bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c":[2,0,1,1,2,1],
 "bindgen__audio_8c_source.html":[2,0,1,1,2],
 "bindgen__font_8c.html":[2,0,1,1,3],
 "bindgen__font_8c.html#a55ef8f3e0c1308d5bedbd69ef0dd6bf7":[2,0,1,1,3,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "gf__draw__common_8c.html#a13d820c4f195f0f38ce7d791a9a4ddeb":[2,0,1,10,0],
 "gf__draw__common_8c.html#a3a5f39198319c4f71820b07850d41e21":[2,0,1,10,8],
 "gf__draw__common_8c.html#a406f60d896bc4564af10618d2f572310":[2,0,1,10,12],
-"gf__draw__common_8c.html#a438e60b3ef2df2ad0a220523e95d6dca":[2,0,1,10,2]
+"gf__draw__common_8c.html#a438e60b3ef2df2ad0a220523e95d6dca":[2,0,1,10,2],
+"gf__draw__common_8c.html#a4575368fee8a93966d657874a0906aaf":[2,0,1,10,3]
 };

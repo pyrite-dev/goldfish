@@ -8,12 +8,12 @@
 <area shape="poly" id="edge3_Node000002_Node000038" title=" " alt="" coords="285,151,333,121,392,89,408,82,410,87,394,94,335,125,288,156"/>
 <area shape="rect" id="Node000044" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="411,104,522,129"/>
 <area shape="poly" id="edge4_Node000002_Node000044" title=" " alt="" coords="318,151,401,130,402,135,319,156"/>
-<area shape="rect" id="Node000184" href="$gf__lua_8c.html#ae70e8069b99f5b001c2e1a3bd4c287dd" title="Run Lua program." alt="" coords="421,153,512,179"/>
-<area shape="poly" id="edge5_Node000002_Node000184" title=" " alt="" coords="345,163,408,163,408,169,345,169"/>
-<area shape="rect" id="Node000185" href="$gf__resource_8c.html#a594392497cc148244da9ee36f3829295" title="Create resource." alt="" coords="393,203,540,228"/>
-<area shape="poly" id="edge6_Node000002_Node000185" title=" " alt="" coords="319,176,402,197,401,202,318,181"/>
-<area shape="rect" id="Node000053" href="$gf__resource_8c.html#a5d9f291bd98d070914a7e252a97f94c0" title="Get data from resource." alt="" coords="403,252,530,277"/>
-<area shape="poly" id="edge7_Node000002_Node000053" title=" " alt="" coords="289,177,336,206,394,237,413,245,411,250,392,242,333,211,286,181"/>
-<area shape="rect" id="Node000186" href="$gf__server_8c.html#a861aac514f048d33ce16e3209e125df5" title="Create server interface." alt="" coords="401,301,532,327"/>
-<area shape="poly" id="edge8_Node000002_Node000186" title=" " alt="" coords="280,177,326,230,359,260,395,286,408,294,406,298,392,291,355,264,322,233,276,181"/>
+<area shape="rect" id="Node000183" href="$gf__lua_8c.html#ae70e8069b99f5b001c2e1a3bd4c287dd" title="Run Lua program." alt="" coords="421,153,512,179"/>
+<area shape="poly" id="edge5_Node000002_Node000183" title=" " alt="" coords="345,163,408,163,408,169,345,169"/>
+<area shape="rect" id="Node000184" href="$gf__resource_8c.html#a594392497cc148244da9ee36f3829295" title="Create resource." alt="" coords="393,203,540,228"/>
+<area shape="poly" id="edge6_Node000002_Node000184" title=" " alt="" coords="319,176,402,197,401,202,318,181"/>
+<area shape="rect" id="Node000052" href="$gf__resource_8c.html#a5d9f291bd98d070914a7e252a97f94c0" title="Get data from resource." alt="" coords="403,252,530,277"/>
+<area shape="poly" id="edge7_Node000002_Node000052" title=" " alt="" coords="289,177,336,206,394,237,413,245,411,250,392,242,333,211,286,181"/>
+<area shape="rect" id="Node000185" href="$gf__server_8c.html#a861aac514f048d33ce16e3209e125df5" title="Create server interface." alt="" coords="401,301,532,327"/>
+<area shape="poly" id="edge8_Node000002_Node000185" title=" " alt="" coords="280,177,326,230,359,260,395,286,408,294,406,298,392,291,355,264,322,233,276,181"/>
 </map>
