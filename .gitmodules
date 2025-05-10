@@ -11,15 +11,12 @@
 [submodule "external/ode"]
 	path = external/ode
 	url = https://github.com/thomasmarsh/ODE
-<<<<<<< HEAD
 [submodule "external/OpenGLOnMacOS9"]
 	path = external/OpenGLOnMacOS9
 	url = https://github.com/IoIxD/OpenGLOnMacOS9
-=======
 [submodule "external/jar"]
 	path = external/jar
 	url = https://github.com/pyrite-dev/jar
 [submodule "external/osmesa"]
 	path = external/osmesa
 	url = https://github.com/pyrite-dev/osmesa
->>>>>>> c1fad7c7f84de6a5a77035482e055f38d65ade82

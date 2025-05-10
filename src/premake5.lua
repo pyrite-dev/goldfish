@@ -233,15 +233,6 @@ project("GoldFish")
 				})
 		end
 	end
-<<<<<<< HEAD
-	for k,v in pairs(gf_audio_backends) do
-		filter({
-			"options:audio_backend=" .. k,
-		})
-		files({
-			"audio/" .. k .. "/*.c",
-		})
-=======
 	for k,v in pairs(gf_sound_backends) do
 		filter({
 			"options:sound=" .. k
@@ -249,5 +240,4 @@ project("GoldFish")
 			files({
 				"sound/" .. k .. "/*.c"
 			})
->>>>>>> c1fad7c7f84de6a5a77035482e055f38d65ade82
 	end
