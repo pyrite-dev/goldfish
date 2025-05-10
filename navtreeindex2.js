@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa":[2,0,1,3,2,5],
-"gf__gui__scrollbar_8c.html#a8412a96f3ebbf985b342603585944166":[2,0,1,3,2,2],
 "gf__gui__scrollbar_8c.html#abbdc959b66f4163132f471b6a63cde6f":[2,0,1,3,2,4],
 "gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b":[2,0,1,3,2,7],
 "gf__gui__scrollbar_8c_source.html":[2,0,1,3,2],
@@ -142,6 +140,8 @@ var NAVTREEINDEX2 =
 "gf__mesh_8c_source.html":[2,0,1,19],
 "gf__mesh_8h.html":[2,0,0,19],
 "gf__mesh_8h_source.html":[2,0,0,19],
+"gf__miniaudio_8c.html":[2,0,1,4,0,0],
+"gf__miniaudio_8c_source.html":[2,0,1,4,0,0],
 "gf__model_8c.html":[2,0,1,20],
 "gf__model_8c.html#a162dc93ccefb746c38c3874a79b42eca":[2,0,1,20,0],
 "gf__model_8c_source.html":[2,0,1,20],

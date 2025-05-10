@@ -21,8 +21,8 @@ var NAVTREEINDEX3 =
 "gf__version_8h.html":[2,0,0,31],
 "gf__version_8h.html#a6bbaecc50f6c677871dcf74d7d7dbc4a":[2,0,0,31,0],
 "gf__version_8h_source.html":[2,0,0,31],
-"globals.html":[2,1,0],
 "globals.html":[2,1,0,0],
+"globals.html":[2,1,0],
 "globals_b.html":[2,1,0,1],
 "globals_c.html":[2,1,0,2],
 "globals_d.html":[2,1,0,3],
@@ -116,8 +116,6 @@ var NAVTREEINDEX3 =
 "rgfw_2gf__draw_8c_source.html":[2,0,1,2,0,2,0],
 "server_8h.html":[2,0,0,0,19],
 "server_8h_source.html":[2,0,0,0,19],
-"sound_2miniaudio_2gf__miniaudio_8c.html":[2,0,1,4,0,0],
-"sound_2miniaudio_2gf__miniaudio_8c_source.html":[2,0,1,4,0,0],
 "sound_8h.html":[2,0,0,0,20],
 "sound_8h_source.html":[2,0,0,0,20],
 "structgf__audio__decoder__t.html":[1,0,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "structgf__input__t.html#a72fd9e5cdc44ca92b7846babcf2bfbb1":[1,0,18,1],
 "structgf__input__t.html#ac47540120552de68249a985e09d7bd9f":[1,0,18,3],
 "structgf__input__t.html#ad67369fac1e057907a6486d4619f2a4f":[1,0,18,0],
-"structgf__input__t.html#afbcc3c078ca608826acd824499a8b8b5":[1,0,18,2]
+"structgf__input__t.html#afbcc3c078ca608826acd824499a8b8b5":[1,0,18,2],
+"structgf__lua__t.html":[1,0,19],
+"structgf__lua__t.html#a734750b67414e51fe2773f85bd24a43e":[1,0,19,0]
 };
