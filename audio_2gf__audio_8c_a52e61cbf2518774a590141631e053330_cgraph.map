@@ -1,0 +1,9 @@
+<map id="gf_audio_create" name="gf_audio_create">
+<area shape="rect" id="Node000001" title="Create audio interface." alt="" coords="5,31,132,56"/>
+<area shape="rect" id="Node000002" href="$audio_2gf__audio_8c.html#a71564ab94762d2f58159e0666b84c788" title=" " alt="" coords="180,5,319,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,32,166,27,167,32,133,37"/>
+<area shape="rect" id="Node000003" href="$audio_2gf__audio_8c.html#ab5022a62ecc7ba83ccb5da4a1add398b" title="Destroy audio interface." alt="" coords="182,55,317,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,49,169,54,168,59,132,54"/>
+<area shape="rect" id="Node000004" href="$audio_2gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="367,55,560,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="317,65,353,65,353,70,317,70"/>
+</map>

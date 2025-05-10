@@ -1,5 +1,5 @@
 <map id="gf_draw_platform_create" name="gf_draw_platform_create">
 <area shape="rect" id="Node000001" title="Create platform&#45;dependent part of drawing driver." alt="" coords="5,5,191,31"/>
-<area shape="rect" id="Node000002" href="$gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25" title="Destroy platform&#45;dependent part of drawing driver." alt="" coords="239,5,432,31"/>
+<area shape="rect" id="Node000002" href="$agl_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25" title="Destroy platform&#45;dependent part of drawing driver." alt="" coords="239,5,432,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,15,225,15,225,21,191,21"/>
 </map>

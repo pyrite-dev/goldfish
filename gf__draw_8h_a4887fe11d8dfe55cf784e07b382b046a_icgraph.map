@@ -1,7 +1,5 @@
 <map id="gf_draw_frame" name="gf_draw_frame">
-<area shape="rect" id="Node000001" title="Draw frame (common part)" alt="" coords="383,5,503,31"/>
-<area shape="rect" id="Node000002" href="$gdi_2gf__draw_8c.html#af006e1dd0055cd824dd61122454d6192" title="Do platform&#45;dependent step." alt="" coords="163,5,335,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="369,21,335,21,335,15,369,15"/>
-<area shape="rect" id="Node000003" href="$gf__draw__common_8c.html#a47934a1eafd8426cc145a97e36867551" title="Do drawing single step." alt="" coords="5,5,115,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,21,115,21,115,15,149,15"/>
+<area shape="rect" id="Node000001" title="Draw frame (common part)" alt="" coords="225,5,345,31"/>
+<area shape="rect" id="Node000002" href="$gdi_2gf__draw_8c.html#af006e1dd0055cd824dd61122454d6192" title="Do platform&#45;dependent step." alt="" coords="5,5,177,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,21,177,21,177,15,212,15"/>
 </map>

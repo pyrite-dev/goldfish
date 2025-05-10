@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Destroy drawing interface." alt="" coords="5,55,136,80"/>
 <area shape="rect" id="Node000002" href="$gf__driver_8c.html#af8f5a8642f6e54ece2ab4b6389877b56" title="Destroy drawing driver." alt="" coords="193,5,368,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,52,212,31,213,36,126,57"/>
-<area shape="rect" id="Node000003" href="$gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25" title="Destroy platform&#45;dependent part of drawing driver." alt="" coords="184,55,377,80"/>
+<area shape="rect" id="Node000003" href="$agl_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25" title="Destroy platform&#45;dependent part of drawing driver." alt="" coords="184,55,377,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,65,170,65,170,70,136,70"/>
 <area shape="rect" id="Node000004" href="$gf__font_8c.html#a2777beb54b042206a6873accb1333522" title="Destroy font." alt="" coords="219,104,343,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="126,77,213,98,212,103,125,83"/>

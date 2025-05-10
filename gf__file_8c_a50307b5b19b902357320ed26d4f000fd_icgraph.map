@@ -1,6 +1,6 @@
 <map id="gf_file_read" name="gf_file_read">
 <area shape="rect" id="Node000001" title="Read file." alt="" coords="788,133,887,158"/>
-<area shape="rect" id="Node000002" href="$gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d" title="Load and play file." alt="" coords="599,22,739,47"/>
+<area shape="rect" id="Node000002" href="$audio_2gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d" title="Load and play file." alt="" coords="599,22,739,47"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="810,125,777,98,739,70,700,50,702,45,741,66,780,93,814,121"/>
 <area shape="rect" id="Node000009" href="$gf__font_8c.html#a2264f26f7f9fd11d30d56d86b415b381" title="Load font." alt="" coords="597,81,740,106"/>
 <area shape="poly" id="edge3_Node000001_Node000009" title=" " alt="" coords="781,131,710,109,712,104,783,126"/>

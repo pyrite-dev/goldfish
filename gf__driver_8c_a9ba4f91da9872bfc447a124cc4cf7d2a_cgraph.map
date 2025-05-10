@@ -1,5 +1,5 @@
 <map id="gf_draw_driver_has_extension" name="gf_draw_driver_has_extension">
 <area shape="rect" id="Node000001" title="Check if renderer has extension." alt="" coords="5,5,155,45"/>
-<area shape="rect" id="Node000002" href="$gdi_2gf__draw_8c.html#a368f0172138b75a37072d1ed357b1183" title="Check if renderer has extension." alt="" coords="203,5,369,45"/>
+<area shape="rect" id="Node000002" href="$agl_2gf__draw_8c.html#a368f0172138b75a37072d1ed357b1183" title="Check if renderer has extension." alt="" coords="203,5,369,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,23,189,23,189,28,155,28"/>
 </map>

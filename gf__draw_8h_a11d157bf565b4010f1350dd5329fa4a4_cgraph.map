@@ -1,5 +1,5 @@
 <map id="gf_draw_end" name="gf_draw_end">
 <area shape="rect" id="Node000001" title="Cleanup drawing stuffs." alt="" coords="5,5,111,31"/>
-<area shape="rect" id="Node000002" href="$gdi_2gf__draw_8c.html#ad6f83af1b5dec4457aea20dcab88c94f" title="Cleanup platform&#45;dependent part of drawing driver." alt="" coords="159,5,327,31"/>
+<area shape="rect" id="Node000002" href="$agl_2gf__draw_8c.html#ad6f83af1b5dec4457aea20dcab88c94f" title="Cleanup platform&#45;dependent part of drawing driver." alt="" coords="159,5,327,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,15,145,15,145,21,111,21"/>
 </map>

@@ -4,11 +4,11 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="448,69,378,48,379,43,449,63"/>
 <area shape="rect" id="Node000008" href="$gf__driver_8c.html#a5d2d7820e9dabe9f558d3f5a45b0ea60" title="Called before gf_draw_frame." alt="" coords="225,70,393,95"/>
 <area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="428,85,393,85,393,80,428,80"/>
-<area shape="rect" id="Node000013" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="249,119,369,145"/>
-<area shape="poly" id="edge5_Node000001_Node000013" title=" " alt="" coords="442,101,361,122,360,117,441,96"/>
+<area shape="rect" id="Node000010" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="249,119,369,145"/>
+<area shape="poly" id="edge5_Node000001_Node000010" title=" " alt="" coords="442,101,361,122,360,117,441,96"/>
 <area shape="rect" id="Node000003" href="$bindgen__graphic_8c.html#abfb75e0f66f674f2274523d43d7c1e3e" title=" " alt="" coords="13,13,170,38"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="221,28,170,28,170,23,221,23"/>
 <area shape="rect" id="Node000009" href="$gdi_2gf__draw_8c.html#af006e1dd0055cd824dd61122454d6192" title="Do platform&#45;dependent step." alt="" coords="5,94,177,119"/>
 <area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="211,96,178,100,177,95,211,91"/>
-<area shape="poly" id="edge6_Node000013_Node000009" title=" " alt="" coords="236,126,177,119,178,114,236,121"/>
+<area shape="poly" id="edge6_Node000010_Node000009" title=" " alt="" coords="236,126,177,119,178,114,236,121"/>
 </map>

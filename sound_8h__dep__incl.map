@@ -14,10 +14,10 @@
 <area shape="poly" id="edge11_Node000006_Node000002" title=" " alt="" coords="267,112,167,154,165,149,265,107"/>
 <area shape="rect" id="Node000007" href="$gf__audio_8h.html" title="Audio interface." alt="" coords="235,152,376,177"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="308,118,308,152,303,152,303,118"/>
-<area shape="rect" id="Node000013" href="$gf__lua_8h.html" title="Lua." alt="" coords="400,152,525,177"/>
-<area shape="poly" id="edge10_Node000006_Node000013" title=" " alt="" coords="344,107,438,149,436,154,342,112"/>
-<area shape="rect" id="Node000015" href="$client_8h.html" title="Type definitions related to client interface." alt="" coords="550,152,725,177"/>
-<area shape="poly" id="edge12_Node000006_Node000015" title=" " alt="" coords="372,104,584,149,583,154,371,109"/>
+<area shape="rect" id="Node000014" href="$gf__lua_8h.html" title="Lua." alt="" coords="400,152,525,177"/>
+<area shape="poly" id="edge10_Node000006_Node000014" title=" " alt="" coords="344,107,438,149,436,154,342,112"/>
+<area shape="rect" id="Node000016" href="$client_8h.html" title="Type definitions related to client interface." alt="" coords="550,152,725,177"/>
+<area shape="poly" id="edge12_Node000006_Node000016" title=" " alt="" coords="372,104,584,149,583,154,371,109"/>
 <area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="257,184,98,235,96,230,256,179"/>
 <area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="284,188,240,227,237,223,281,184"/>
 <area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="331,184,379,223,375,227,328,188"/>

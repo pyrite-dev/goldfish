@@ -3,7 +3,6 @@ var gf__macro_8h =
     [ "__FUNCTION_NAME__", "gf__macro_8h.html#a25e2d509981e06719691d7b1b4b25b12", null ],
     [ "GF_DECLARE_TYPE", "gf__macro_8h.html#a018031ff5fba22b9d5052a55f8c9a377", null ],
     [ "GF_EXPORT", "gf__macro_8h.html#a64ddd31b0795e397b5d944e6f1821357", null ],
-    [ "GF_EXPOSE_AUDIO", "gf__macro_8h.html#a0c037da6649bf5ca0c58c12ec3a422ff", null ],
     [ "GF_EXPOSE_CLIENT", "gf__macro_8h.html#a13d820c4f195f0f38ce7d791a9a4ddeb", null ],
     [ "GF_EXPOSE_CORE", "gf__macro_8h.html#a697eb08d834a4889d84940e79575779d", null ],
     [ "GF_EXPOSE_DRAW", "gf__macro_8h.html#a438e60b3ef2df2ad0a220523e95d6dca", null ],

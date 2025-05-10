@@ -1,0 +1,5 @@
+<map id="gf_audio_destroy" name="gf_audio_destroy">
+<area shape="rect" id="Node000001" title="Destroy audio interface." alt="" coords="5,5,140,31"/>
+<area shape="rect" id="Node000002" href="$audio_2gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="188,5,381,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,15,174,15,174,21,140,21"/>
+</map>

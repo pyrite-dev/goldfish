@@ -4,14 +4,14 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,63,411,48,413,43,468,58"/>
 <area shape="rect" id="Node000018" href="$gf__graphic_8c.html#a89384633901f33017ae2aaf3397efc94" title="Draw polygon." alt="" coords="236,70,433,95"/>
 <area shape="poly" id="edge3_Node000001_Node000018" title=" " alt="" coords="468,85,434,85,434,80,468,80"/>
-<area shape="rect" id="Node000030" href="$gf__graphic_8c.html#a996326c3cd9494d40efe7f4c34f9d62e" title="Draw points." alt="" coords="253,119,416,145"/>
-<area shape="poly" id="edge5_Node000001_Node000030" title=" " alt="" coords="468,105,392,122,391,117,467,99"/>
+<area shape="rect" id="Node000027" href="$gf__graphic_8c.html#a996326c3cd9494d40efe7f4c34f9d62e" title="Draw points." alt="" coords="253,119,416,145"/>
+<area shape="poly" id="edge5_Node000001_Node000027" title=" " alt="" coords="468,105,392,122,391,117,467,99"/>
 <area shape="rect" id="Node000003" href="$gf__graphic__common_8c.html#a4157822cc342fa294329ed2c436d53f2" title="Draw polygon with texture." alt="" coords="5,5,188,45"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,28,188,28,188,23,229,23"/>
 <area shape="rect" id="Node000019" href="$gf__graphic__common_8c.html#a8ff780a4bcadc008355699101d2a42cc" title="Draw polygon." alt="" coords="11,70,183,95"/>
 <area shape="poly" id="edge4_Node000018_Node000019" title=" " alt="" coords="222,85,183,85,183,80,222,80"/>
-<area shape="rect" id="Node000031" href="$gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569" title="Draw points." alt="" coords="28,119,165,145"/>
-<area shape="poly" id="edge6_Node000030_Node000031" title=" " alt="" coords="239,135,165,135,165,129,239,129"/>
-<area shape="rect" id="Node000032" href="$gf__lua_8c.html#a2e6fdc0f285f58339313e91b8558a49a" title=" " alt="" coords="23,169,170,209"/>
-<area shape="poly" id="edge7_Node000030_Node000032" title=" " alt="" coords="269,151,171,174,170,169,267,145"/>
+<area shape="rect" id="Node000028" href="$gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569" title="Draw points." alt="" coords="28,119,165,145"/>
+<area shape="poly" id="edge6_Node000027_Node000028" title=" " alt="" coords="239,135,165,135,165,129,239,129"/>
+<area shape="rect" id="Node000029" href="$gf__lua_8c.html#a2e6fdc0f285f58339313e91b8558a49a" title=" " alt="" coords="23,169,170,209"/>
+<area shape="poly" id="edge7_Node000027_Node000029" title=" " alt="" coords="269,151,171,174,170,169,267,145"/>
 </map>

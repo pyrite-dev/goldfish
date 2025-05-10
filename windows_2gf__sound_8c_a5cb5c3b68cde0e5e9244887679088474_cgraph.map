@@ -1,9 +1,5 @@
 <map id="gf_sound_winmm_thread" name="gf_sound_winmm_thread">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,192,56"/>
-<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="240,31,379,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,41,226,41,226,46,192,46"/>
-<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="435,5,601,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,32,420,27,421,32,379,38"/>
-<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="427,55,609,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="379,49,413,53,412,58,378,54"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,192,31"/>
+<area shape="rect" id="Node000002" href="$audio_2gf__audio_8c.html#a71564ab94762d2f58159e0666b84c788" title=" " alt="" coords="240,5,379,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,15,226,15,226,21,192,21"/>
 </map>

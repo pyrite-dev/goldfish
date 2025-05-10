@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title="Multiply vector by vector." alt="" coords="443,31,580,56"/>
 <area shape="rect" id="Node000002" href="$gf__graphic_8c.html#af8285b506b90125960bf01b427a9a883" title="Set camera." alt="" coords="221,5,395,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="429,36,394,31,395,26,429,30"/>
-<area shape="rect" id="Node000008" href="$gf__math_8c.html#a5438b2f7f1324cdd664f2b823faa1ba6" title="Calculate normal of triangle v0,v1,v2." alt="" coords="243,55,373,80"/>
-<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="429,56,373,62,372,57,429,50"/>
+<area shape="rect" id="Node000005" href="$gf__math_8c.html#a5438b2f7f1324cdd664f2b823faa1ba6" title="Calculate normal of triangle v0,v1,v2." alt="" coords="243,55,373,80"/>
+<area shape="poly" id="edge3_Node000001_Node000005" title=" " alt="" coords="429,56,373,62,372,57,429,50"/>
 <area shape="rect" id="Node000003" href="$gf__driver_8c.html#a5d2d7820e9dabe9f558d3f5a45b0ea60" title="Called before gf_draw_frame." alt="" coords="5,5,173,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="208,21,174,21,174,15,208,15"/>
 </map>
