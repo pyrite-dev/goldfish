@@ -25,7 +25,7 @@ int gf_assert_body(gf_engine_t* engine, const char* expr, const char* filename, 
 	sprintf(msg + strlen(msg), "File: %s:%d\n", filename, line);
 	sprintf(msg + strlen(msg), "Function Name: %s\n", funcname);
 	sprintf(msg + strlen(msg), "\n");
-	sprintf(msg + strlen(msg), "If you are the game developer, your code is probably doing something wrong.\n");
+	sprintf(msg + strlen(msg), "If you are the game developer, you fucked up something.\n");
 	sprintf(msg + strlen(msg), "If you are a player, simply report this to the game developer.\n");
 #ifdef _WIN32
 	MessageBox(NULL, msg, "GoldFish Assertion Error", MB_OK | MB_ICONERROR);
