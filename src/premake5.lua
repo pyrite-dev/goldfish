@@ -23,6 +23,10 @@ project("GoldFish")
 			"dNODEBUG"
 		})
 		optimize("On")
+	filter("options:audio_backend=miniaudio")
+		includedirs({
+			"../external/miniaudio"
+		})
 	gf_msvc_filters()
 	targetdir("../lib/%{cfg.buildcfg}/%{cfg.platform}")
 	objdir("../obj")
@@ -78,6 +82,17 @@ project("GoldFish")
 		files({
 			"thread/posix/gf_thread.c"
 		})
+	filter("platforms:not ClassicMacOS")
+		defines({
+			"_OU_NAMESPACE=odeou",
+			"_OU_FEATURE_SET=_OU_FEATURE_SET_TLS"
+		})
+	filter("platforms:ClassicMacOS")
+		defines({
+			"_OU_NAMESPACE=odeou",
+			"_OU_FEATURE_SET=_OU_FEATURE_SET_BASICS",
+			"__unix__=1"
+		})
 	filter({})
 
 	-- Begin ODE
@@ -113,8 +128,7 @@ project("GoldFish")
 		"../external/ode/ou/src/**.cpp"
 	})
 	defines({
-		"_OU_NAMESPACE=odeou",
-		"_OU_FEATURE_SET=_OU_FEATURE_SET_TLS"
+		"_OU_NAMESPACE=odeou"
 	})
 
 	files({

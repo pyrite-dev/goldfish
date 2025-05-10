@@ -1,0 +1,11 @@
+CompileFlags: # Tweak the parse settings, example directory given to show format
+  Add:
+    - "-I./include" 
+    - "-I./external/stb" 
+    - "-I./external/rgfw" 
+    - "-I./external/osmesa/include" 
+    - "-I./external/ode/include" 
+    - "-I./external/miniaudio" 
+    - "-I./external/OpernGLOnMacOS9" 
+    - "-I./external/lua" 
+    - "-I./external/jar" 
