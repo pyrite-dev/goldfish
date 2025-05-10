@@ -2,7 +2,7 @@ var searchData=
 [
   ['gf_5fassert_2ec_0',['gf_assert.c',['../gf__assert_8c.html',1,'']]],
   ['gf_5fassert_2eh_1',['gf_assert.h',['../gf__assert_8h.html',1,'']]],
-  ['gf_5faudio_2ec_2',['gf_audio.c',['../audio_2gf__audio_8c.html',1,'(Global Namespace)'],['../gf__audio_8c.html',1,'(Global Namespace)']]],
+  ['gf_5faudio_2ec_2',['gf_audio.c',['../gf__audio_8c.html',1,'']]],
   ['gf_5faudio_2eh_3',['gf_audio.h',['../gf__audio_8h.html',1,'']]],
   ['gf_5faudio_5fflac_2ec_4',['gf_audio_flac.c',['../gf__audio__flac_8c.html',1,'']]],
   ['gf_5faudio_5fmod_2ec_5',['gf_audio_mod.c',['../gf__audio__mod_8c.html',1,'']]],
@@ -46,7 +46,7 @@ var searchData=
   ['gf_5fmath_2eh_43',['gf_math.h',['../gf__math_8h.html',1,'']]],
   ['gf_5fmesh_2ec_44',['gf_mesh.c',['../gf__mesh_8c.html',1,'']]],
   ['gf_5fmesh_2eh_45',['gf_mesh.h',['../gf__mesh_8h.html',1,'']]],
-  ['gf_5fminiaudio_2ec_46',['gf_miniaudio.c',['../audio_2gf__miniaudio_8c.html',1,'(Global Namespace)'],['../sound_2miniaudio_2gf__miniaudio_8c.html',1,'(Global Namespace)']]],
+  ['gf_5fminiaudio_2ec_46',['gf_miniaudio.c',['../sound_2miniaudio_2gf__miniaudio_8c.html',1,'(Global Namespace)'],['../audio_2gf__miniaudio_8c.html',1,'(Global Namespace)']]],
   ['gf_5fmodel_2ec_47',['gf_model.c',['../gf__model_8c.html',1,'']]],
   ['gf_5fmodel_2eh_48',['gf_model.h',['../gf__model_8h.html',1,'']]],
   ['gf_5fopengl_2eh_49',['gf_opengl.h',['../gf__opengl_8h.html',1,'']]],

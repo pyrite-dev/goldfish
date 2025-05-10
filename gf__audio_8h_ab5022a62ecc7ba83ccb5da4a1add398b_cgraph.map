@@ -1,9 +1,13 @@
 <map id="gf_audio_destroy" name="gf_audio_destroy">
-<area shape="rect" id="Node000001" title="Destroy audio interface." alt="" coords="5,55,140,80"/>
-<area shape="rect" id="Node000002" href="$audio_2gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="188,5,381,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,52,215,31,217,36,129,57"/>
-<area shape="rect" id="Node000003" href="$miniaudio_2gf__sound_8c.html#a6ff4c4fc8baf37b30647debb3ef310dd" title="Destroy sound driver." alt="" coords="216,55,353,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,65,202,65,202,70,140,70"/>
-<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a9d92314a062ae41412438dde87060cc0" title="Destroy mutex." alt="" coords="190,104,379,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="129,77,217,98,215,103,127,83"/>
+<area shape="rect" id="Node000001" title="Destroy audio interface." alt="" coords="5,79,140,104"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="188,29,381,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,76,215,55,217,60,129,81"/>
+<area shape="rect" id="Node000005" href="$miniaudio_2gf__sound_8c.html#a6ff4c4fc8baf37b30647debb3ef310dd" title="Destroy sound driver." alt="" coords="216,79,353,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="140,89,202,89,202,94,140,94"/>
+<area shape="rect" id="Node000006" href="$posix_2gf__thread_8c.html#a9d92314a062ae41412438dde87060cc0" title="Destroy mutex." alt="" coords="190,128,379,153"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="129,101,217,122,215,127,127,107"/>
+<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="437,5,604,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,30,424,25,424,30,382,35"/>
+<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="429,55,612,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="382,50,416,53,416,59,381,55"/>
 </map>
