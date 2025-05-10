@@ -67,6 +67,9 @@ typedef struct gf_audio_decoder_t gf_audio_decoder_t;
  *
  * @var gf_audio_decoder_t::size
  * @brief Data size
+ *
+ * @var gf_audio_decoder_t::auto_destroy
+ * @brief Auto-destroy
  */
 GF_DECLARE_TYPE(audio_decoder, {
 	gf_audio_id_t	   key;
@@ -80,6 +83,7 @@ GF_DECLARE_TYPE(audio_decoder, {
 	int		   used;
 	unsigned char*	   data;
 	size_t		   size;
+	int auto_destroy;
 });
 
 /**

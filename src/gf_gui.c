@@ -30,9 +30,10 @@ gf_gui_call_t gf_gui_calls[GF_GUI_COMPONENTS];
 gf_gui_t* gf_gui_create(gf_engine_t* engine, gf_draw_t* draw) {
 	gf_gui_t* gui = malloc(sizeof(*gui));
 	memset(gui, 0, sizeof(*gui));
-	gui->engine = engine;
-	gui->draw   = draw;
-	gui->area   = NULL;
+	gui->engine	  = engine;
+	gui->draw	  = draw;
+	gui->area	  = NULL;
+	gui->button_sound = NULL;
 
 	gui->pressed = -1;
 
@@ -51,6 +52,13 @@ void gf_gui_destroy(gf_gui_t* gui) {
 	}
 	gf_log_function(gui->engine, "Destroyed GUI", "");
 	free(gui);
+}
+
+void gf_gui_set_button_sound(gf_gui_t* gui, const char* path) {
+	if(gui->button_sound != NULL) free(gui->button_sound);
+
+	gui->button_sound = malloc(strlen(path) + 1);
+	strcpy(gui->button_sound, path);
 }
 
 int gf_gui_get_index(gf_gui_t* gui, gf_gui_id_t id) {

@@ -21,7 +21,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
 void gf_draw_platform_begin(void) {}
 
 void gf_draw_platform_end(void) {}
@@ -77,24 +76,24 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 
 gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw) {
 	// gf_draw_platform_t* platform = malloc(sizeof(*platform));
-// 	memset(platform, 0, sizeof(*platform));
-// 	platform->engine = engine;
+	// 	memset(platform, 0, sizeof(*platform));
+	// 	platform->engine = engine;
 
-// 	platform->window = RGFW_createWindow(draw->title, RGFW_RECT(draw->x, draw->y, draw->width, draw->height), 0);
-// 	if(platform->window == NULL) {
-// 		gf_log_function(engine, "Failed to create window", "");
-// 		gf_draw_platform_destroy(platform);
-// 		return NULL;
-// 	}
-// 	if(engine->icon != NULL) {
-// 		RGFW_window_setIcon(platform->window, engine->icon, RGFW_AREA(engine->icon_width, engine->icon_height), 4);
-// 	}
-// 	platform->window->userPtr = draw;
+	// 	platform->window = RGFW_createWindow(draw->title, RGFW_RECT(draw->x, draw->y, draw->width, draw->height), 0);
+	// 	if(platform->window == NULL) {
+	// 		gf_log_function(engine, "Failed to create window", "");
+	// 		gf_draw_platform_destroy(platform);
+	// 		return NULL;
+	// 	}
+	// 	if(engine->icon != NULL) {
+	// 		RGFW_window_setIcon(platform->window, engine->icon, RGFW_AREA(engine->icon_width, engine->icon_height), 4);
+	// 	}
+	// 	platform->window->userPtr = draw;
 
-// 	RGFW_window_makeCurrent(platform->window);
-// #ifdef DO_SWAP_INTERVAL
-// 	RGFW_window_swapInterval(platform->window, 1);
-// #endif
+	// 	RGFW_window_makeCurrent(platform->window);
+	// #ifdef DO_SWAP_INTERVAL
+	// 	RGFW_window_swapInterval(platform->window, 1);
+	// #endif
 	// return platform;
 	return NULL;
 }

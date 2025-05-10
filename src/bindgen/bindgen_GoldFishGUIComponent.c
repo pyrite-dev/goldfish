@@ -314,4 +314,4 @@ void bindgen_GoldFishGUIComponent_init(gf_lua_t* lua) {
 	lua_setfield(LUA(lua), -2, "__index");
 }
 
-/*** Generated at Thu May 8 2025 ***/
+/*** Generated at Sat May 10 2025 ***/

@@ -115,6 +115,13 @@ void gf_audio_callback(gf_audio_t* audio, void* output, int frame) {
 	}
 	gf_thread_mutex_unlock(audio->mutex);
 
+	for(i = 0; i < hmlen(audio->decoder); i++) {
+		if(audio->decoder[i].auto_destroy && audio->decoder[i].used == -2) {
+			gf_audio_decoder_destroy(&audio->decoder[i]);
+			i = 0;
+		}
+	}
+
 	for(i = 0; i < frame; i++) {
 		out[2 * i + 0] = tmp[2 * i + 0] * audio->volume * 32768;
 		out[2 * i + 1] = tmp[2 * i + 1] * audio->volume * 32768;
@@ -130,15 +137,16 @@ gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size) {
 
 	gf_thread_mutex_lock(audio->mutex);
 
-	decoder.used  = 0;
-	decoder.audio = audio;
-	decoder.xm    = NULL;
-	decoder.mod   = NULL;
-	decoder.mp3   = NULL;
-	decoder.flac  = NULL;
-	decoder.wav   = NULL;
-	decoder.key   = 0;
-	decoder.data  = NULL;
+	decoder.used	     = 0;
+	decoder.audio	     = audio;
+	decoder.xm	     = NULL;
+	decoder.mod	     = NULL;
+	decoder.mp3	     = NULL;
+	decoder.flac	     = NULL;
+	decoder.wav	     = NULL;
+	decoder.key	     = 0;
+	decoder.data	     = NULL;
+	decoder.auto_destroy = 0;
 	do {
 		ind = hmgeti(audio->decoder, decoder.key);
 		if(ind != -1) {
@@ -363,6 +371,13 @@ void gf_audio_stop(gf_audio_t* audio, gf_audio_id_t id) {
 	if(ind == -1) return;
 
 	gf_audio_decoder_destroy(&audio->decoder[ind]);
+}
+
+void gf_audio_auto_destroy(gf_audio_t* audio, gf_audio_id_t id) {
+	int ind = hmgeti(audio->decoder, id);
+	if(ind == -1) return;
+
+	audio->decoder[ind].auto_destroy = 1;
 }
 
 void gf_audio_set_volume(gf_audio_t* audio, double volume) { audio->volume = volume; }

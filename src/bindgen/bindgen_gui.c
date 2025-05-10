@@ -27,6 +27,7 @@
 
 /**
  * Symbols:
+ *   gf_gui_set_button_sound
  *   gf_gui_sort_component
  *   gf_gui_create_common
  *   gf_gui_create_button
@@ -35,6 +36,25 @@
  *   gf_gui_create_text
  *   gf_gui_create_window
  */
+
+/**
+ * C: void gf_gui_set_button_sound(gf_gui_t*, const char*)
+ */
+int bindgen_gui_gf_gui_set_button_sound(lua_State* s) {
+	gf_gui_t*   param0;
+	const char* param1 = (const char*)luaL_checkstring(s, 1);
+	gf_lua_t*   wrap;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	gf_gui_set_button_sound(param0, param1);
+
+	return 0;
+}
 
 /**
  * C: void gf_gui_sort_component(gf_gui_t*)
@@ -233,6 +253,10 @@ void bindgen_gui_init(gf_lua_t* lua) {
 	lua_pushstring(LUA(lua), "gui");
 	lua_newtable(LUA(lua));
 
+	lua_pushstring(LUA(lua), "set_button_sound");
+	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_set_button_sound);
+	lua_settable(LUA(lua), -3);
+
 	lua_pushstring(LUA(lua), "sort");
 	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_sort_component);
 	lua_settable(LUA(lua), -3);
@@ -264,4 +288,4 @@ void bindgen_gui_init(gf_lua_t* lua) {
 	lua_settable(LUA(lua), -3);
 }
 
-/*** Generated at Thu May 8 2025 ***/
+/*** Generated at Sat May 10 2025 ***/

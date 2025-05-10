@@ -75,6 +75,14 @@ GF_EXPORT void gf_gui_destroy_id(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
+ * @brief Set default button sound
+ * @param gui GUI
+ * @param path Path to sound
+ */
+GF_EXPORT void gf_gui_set_button_sound(gf_gui_t* gui, const char* path);
+
+/**
+ * @~english
  * @brief Get index of GUI component
  * @param gui GUI
  * @param id Component ID

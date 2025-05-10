@@ -26,11 +26,31 @@
 
 /**
  * Symbols:
+ *   gf_audio_auto_destroy
  *   gf_audio_pause
  *   gf_audio_resume
  *   gf_audio_stop
  *   gf_audio_is_over
  */
+
+/**
+ * C: void gf_audio_auto_destroy(gf_audio_t*, gf_audio_id_t)
+ */
+int bindgen_GoldFishAudio_gf_audio_auto_destroy(lua_State* s) {
+	gf_audio_t*    param0;
+	gf_audio_id_t* param1 = luaL_checkudata(s, 1, "GoldFishAudio");
+	gf_lua_t*      wrap;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->audio;
+
+	gf_audio_auto_destroy(param0, *param1);
+
+	return 0;
+}
 
 /**
  * C: void gf_audio_pause(gf_audio_t*, gf_audio_id_t)
@@ -113,6 +133,10 @@ int bindgen_GoldFishAudio_gf_audio_is_over(lua_State* s) {
 void bindgen_GoldFishAudio_init(gf_lua_t* lua) {
 	luaL_newmetatable(LUA(lua), "GoldFishAudio");
 
+	lua_pushstring(LUA(lua), "auto_destroy");
+	lua_pushcfunction(LUA(lua), bindgen_GoldFishAudio_gf_audio_auto_destroy);
+	lua_settable(LUA(lua), -3);
+
 	lua_pushstring(LUA(lua), "pause");
 	lua_pushcfunction(LUA(lua), bindgen_GoldFishAudio_gf_audio_pause);
 	lua_settable(LUA(lua), -3);
@@ -133,4 +157,4 @@ void bindgen_GoldFishAudio_init(gf_lua_t* lua) {
 	lua_setfield(LUA(lua), -2, "__index");
 }
 
-/*** Generated at Thu May 8 2025 ***/
+/*** Generated at Sat May 10 2025 ***/

@@ -138,6 +138,9 @@ GF_DECLARE_TYPE(gui_component, {
  *
  * @var gf_gui_t::hover
  * @brief Hover
+ *
+ * @var gf_gui_t::button_sound
+ * @brief Button sound
  */
 GF_DECLARE_TYPE(gui, {
 	gf_engine_t*	    engine;
@@ -147,6 +150,7 @@ GF_DECLARE_TYPE(gui, {
 	gf_graphic_color_t  base;
 	gf_graphic_color_t  font;
 	gf_gui_id_t	    hover;
+	char* button_sound;
 });
 #else
 typedef void* gf_gui_callback_t;

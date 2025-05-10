@@ -82,6 +82,8 @@ gf_gui_id_t gf_gui_create_scrollbar(gf_gui_t* gui, double x, double y, double w,
 	gf_gui_set_prop_id(gui, up, "scrollbar", c->key);
 	gf_gui_set_prop_id(gui, dn, "scrollbar", c->key);
 
+	gf_prop_set_integer(gf_gui_get_prop(gui, gr), "no-sound", 1);
+
 	gf_gui_set_callback(gui, up, gf_gui_scrollbar_up);
 	gf_gui_set_callback(gui, dn, gf_gui_scrollbar_down);
 

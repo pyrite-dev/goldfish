@@ -35,4 +35,4 @@ void bindgen_init(gf_lua_t* lua) {
 	lua_setglobal(LUA(lua), "goldfish");
 }
 
-/*** Generated at Thu May 8 2025 ***/
+/*** Generated at Sat May 10 2025 ***/

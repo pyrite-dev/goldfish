@@ -1,6 +1,8 @@
 #define GF_EXPOSE_GUI
 #define GF_EXPOSE_DRAW
 #define GF_EXPOSE_INPUT
+#define GF_EXPOSE_CORE
+#define GF_EXPOSE_CLIENT
 
 #include <gf_pre.h>
 
@@ -15,6 +17,7 @@
 #include <gf_graphic.h>
 #include <gf_draw.h>
 #include <gf_log.h>
+#include <gf_audio.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -128,6 +131,14 @@ void gf_gui_button_click(gf_gui_t* gui, gf_gui_component_t* c) {
 		c->callback(gui->engine, gui->draw, gui->pressed, GF_GUI_PRESS_EVENT);
 	}
 	c->pressed = 1;
+
+	if(gui->button_sound != NULL && ((prop = gf_prop_get_integer(&c->prop, "no-sound")) == GF_PROP_NO_SUCH || !prop)) {
+		gf_audio_id_t id = gf_audio_load_file(gui->engine->client->audio, gui->button_sound);
+		if(id >= 0) {
+			gf_audio_auto_destroy(gui->engine->client->audio, id);
+			gf_audio_resume(gui->engine->client->audio, id);
+		}
+	}
 
 	if((prop = gf_prop_get_integer(&c->prop, "close-parent")) != GF_PROP_NO_SUCH && prop) {
 		gf_gui_destroy_id(gui, c->parent);
