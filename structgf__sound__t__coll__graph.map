@@ -3,7 +3,7 @@
 <area shape="rect" id="Node000002" href="$structgf__audio__t.html" title="Audio interface." alt="" coords="107,341,189,427"/>
 <area shape="poly" id="edge3_Node000002_Node000001" title=" " alt="" coords="184,241,163,270,147,303,143,325,138,324,141,302,158,267,180,237"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,345,206,316,213,286,215,255,220,256,218,287,210,318,192,348"/>
-<area shape="rect" id="Node000024" href="$structgf__audio__decoder__t.html" title="Audio decoder." alt="" coords="77,489,219,735"/>
+<area shape="rect" id="Node000024" href="$structgf__audio__decoder__t.html" title="Audio decoder." alt="" coords="77,489,219,755"/>
 <area shape="poly" id="edge5_Node000024_Node000002" title=" " alt="" coords="116,428,105,451,101,473,96,472,100,450,111,426"/>
 <area shape="rect" id="Node000003" href="$structgf__engine__t.html" title="Engine instance." alt="" coords="5,133,109,279"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="64,278,77,316,96,341,92,344,72,319,59,280"/>

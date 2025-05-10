@@ -1,9 +1,13 @@
 <map id="gf_sound_callback" name="gf_sound_callback">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,148,56"/>
-<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="196,31,335,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,41,182,41,182,46,148,46"/>
-<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="391,5,557,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="334,32,376,27,377,32,335,38"/>
-<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="383,55,565,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="335,49,369,53,368,58,334,54"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,148,55"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="196,29,335,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,39,182,39,182,45,148,45"/>
+<area shape="rect" id="Node000003" href="$gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="383,29,576,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="335,39,369,39,369,45,335,45"/>
+<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="632,5,799,31"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="313,27,382,14,505,7,618,9,618,15,505,13,383,19,314,32"/>
+<area shape="rect" id="Node000005" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="624,55,807,80"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="314,52,383,65,500,71,610,70,610,76,500,77,382,70,313,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="576,30,618,25,619,30,577,35"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="577,50,611,53,610,59,576,55"/>
 </map>

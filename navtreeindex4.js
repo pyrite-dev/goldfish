@@ -1,5 +1,15 @@
 var NAVTREEINDEX4 =
 {
+"structgf__gui__t.html#aa24e84a309f30d722e6615b7878b3854":[1,0,17,5],
+"structgf__gui__t.html#abdbeb3418072a3ba99d9ef9afcaa7442":[1,0,17,2],
+"structgf__gui__t.html#ae16b4a137aae55979cbc7e417498744f":[1,0,17,1],
+"structgf__input__t.html":[1,0,18],
+"structgf__input__t.html#a72fd9e5cdc44ca92b7846babcf2bfbb1":[1,0,18,1],
+"structgf__input__t.html#ac47540120552de68249a985e09d7bd9f":[1,0,18,3],
+"structgf__input__t.html#ad67369fac1e057907a6486d4619f2a4f":[1,0,18,0],
+"structgf__input__t.html#afbcc3c078ca608826acd824499a8b8b5":[1,0,18,2],
+"structgf__lua__t.html":[1,0,19],
+"structgf__lua__t.html#a734750b67414e51fe2773f85bd24a43e":[1,0,19,0],
 "structgf__lua__t.html#ada5d02626afb7aed00b557c210113ca1":[1,0,19,1],
 "structgf__lua__t.html#aefa150f145c079b9ab5d949c66c7d66d":[1,0,19,3],
 "structgf__lua__t.html#af64015f47bc1476afb5b4dd15d9bfc07":[1,0,19,2],

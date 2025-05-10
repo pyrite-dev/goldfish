@@ -1,6 +1,7 @@
 var structgf__audio__decoder__t =
 [
     [ "audio", "structgf__audio__decoder__t.html#ac4aa6a2898558edf21a109d8184cdd01", null ],
+    [ "auto_destroy", "structgf__audio__decoder__t.html#a4721da1038b5da8bef5ba8ce4a4101c5", null ],
     [ "data", "structgf__audio__decoder__t.html#a565da12991559ccc7896724716d84a19", null ],
     [ "flac", "structgf__audio__decoder__t.html#a60106e7631a8770ac48fb1c74123d581", null ],
     [ "internal", "structgf__audio__decoder__t.html#a00ede984ec3760dc561cf6ec94cb3b84", null ],

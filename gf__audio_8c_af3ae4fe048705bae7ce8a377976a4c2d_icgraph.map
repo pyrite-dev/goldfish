@@ -1,7 +1,9 @@
 <map id="gf_audio_load_file" name="gf_audio_load_file">
-<area shape="rect" id="Node000001" title="Load and play file." alt="" coords="427,13,567,38"/>
+<area shape="rect" id="Node000001" title="Load and play file." alt="" coords="427,42,567,67"/>
 <area shape="rect" id="Node000002" href="$bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c" title=" " alt="" coords="199,5,379,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,28,379,28,379,23,413,23"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,46,378,41,379,35,413,40"/>
+<area shape="rect" id="Node000008" href="$gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="215,70,363,95"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="413,69,363,75,363,70,412,63"/>
 <area shape="rect" id="Node000003" href="$bindgen__audio_8c.html#a732280a604cdb684da75ddac7515492a" title=" " alt="" coords="5,13,151,38"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,28,151,28,151,23,185,23"/>
 </map>

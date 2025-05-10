@@ -1,25 +1,27 @@
 <map id="gf_file_read" name="gf_file_read">
-<area shape="rect" id="Node000001" title="Read file." alt="" coords="788,133,887,158"/>
-<area shape="rect" id="Node000002" href="$gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d" title="Load and play file." alt="" coords="599,22,739,47"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="810,125,777,98,739,70,700,50,702,45,741,66,780,93,814,121"/>
-<area shape="rect" id="Node000009" href="$gf__font_8c.html#a2264f26f7f9fd11d30d56d86b415b381" title="Load font." alt="" coords="597,81,740,106"/>
-<area shape="poly" id="edge3_Node000001_Node000009" title=" " alt="" coords="781,131,710,109,712,104,783,126"/>
-<area shape="rect" id="Node000012" href="$gf__lua_8c.html#aaf13be3500330a841dbd258bbc430e7c" title=" " alt="" coords="605,133,733,158"/>
-<area shape="poly" id="edge5_Node000001_Node000012" title=" " alt="" coords="774,148,733,148,733,143,774,143"/>
-<area shape="rect" id="Node000014" href="$gf__lua_8c.html#adef2beb9b1da24406f51000a734cf02a" title=" " alt="" coords="387,183,532,209"/>
-<area shape="poly" id="edge9_Node000001_Node000014" title=" " alt="" coords="778,164,740,172,631,186,532,195,532,189,631,181,740,167,777,159"/>
-<area shape="rect" id="Node000015" href="$gf__lua_8c.html#ae70e8069b99f5b001c2e1a3bd4c287dd" title="Run Lua program." alt="" coords="221,233,311,258"/>
-<area shape="poly" id="edge11_Node000001_Node000015" title=" " alt="" coords="804,167,741,195,682,211,621,223,501,239,393,247,312,249,311,243,393,241,500,234,620,218,681,205,739,189,801,162"/>
+<area shape="rect" id="Node000001" title="Read file." alt="" coords="791,185,889,210"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d" title="Load and play file." alt="" coords="600,70,740,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="813,178,780,149,741,121,699,98,702,93,744,116,783,145,817,174"/>
+<area shape="rect" id="Node000010" href="$gf__font_8c.html#a2264f26f7f9fd11d30d56d86b415b381" title="Load font." alt="" coords="599,131,741,157"/>
+<area shape="poly" id="edge4_Node000001_Node000010" title=" " alt="" coords="785,183,710,159,712,154,786,178"/>
+<area shape="rect" id="Node000013" href="$gf__lua_8c.html#aaf13be3500330a841dbd258bbc430e7c" title=" " alt="" coords="606,185,734,210"/>
+<area shape="poly" id="edge6_Node000001_Node000013" title=" " alt="" coords="777,200,735,200,735,195,777,195"/>
+<area shape="rect" id="Node000015" href="$gf__lua_8c.html#adef2beb9b1da24406f51000a734cf02a" title=" " alt="" coords="597,234,743,259"/>
+<area shape="poly" id="edge10_Node000001_Node000015" title=" " alt="" coords="783,217,716,236,714,231,782,211"/>
+<area shape="rect" id="Node000016" href="$gf__lua_8c.html#ae70e8069b99f5b001c2e1a3bd4c287dd" title="Run Lua program." alt="" coords="221,285,311,310"/>
+<area shape="poly" id="edge12_Node000001_Node000016" title=" " alt="" coords="819,222,786,251,744,274,685,292,625,305,563,312,503,315,394,313,311,306,312,301,394,308,503,310,563,307,624,299,684,287,742,270,783,246,816,218"/>
 <area shape="rect" id="Node000003" href="$bindgen__audio_8c.html#ab35b12242c5e2e705d3e369320aa889c" title=" " alt="" coords="369,5,549,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="585,34,549,32,550,27,585,28"/>
-<area shape="rect" id="Node000010" href="$bindgen__font_8c.html#a665be7dabfde513f1f71c9e58b772cf6" title=" " alt="" coords="379,69,539,109"/>
-<area shape="poly" id="edge4_Node000009_Node000010" title=" " alt="" coords="583,94,539,94,539,88,583,89"/>
-<area shape="rect" id="Node000013" href="$gf__lua_8c.html#ac25650b30652d8cb8c65252229645360" title=" " alt="" coords="375,134,543,159"/>
-<area shape="poly" id="edge6_Node000012_Node000013" title=" " alt="" coords="590,148,544,149,544,143,590,143"/>
-<area shape="rect" id="Node000006" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="211,183,321,209"/>
-<area shape="poly" id="edge7_Node000013_Node000006" title=" " alt="" coords="397,165,318,186,316,181,395,160"/>
-<area shape="rect" id="Node000007" href="$gf__core_8c.html#aa40fbe8c435c2f84a4d2364e66439eda" title="Create engine instance." alt="" coords="5,209,163,234"/>
-<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="198,208,164,213,163,208,197,203"/>
-<area shape="poly" id="edge10_Node000014_Node000006" title=" " alt="" coords="373,199,321,199,321,193,373,193"/>
-<area shape="poly" id="edge12_Node000015_Node000007" title=" " alt="" coords="206,240,162,234,163,229,207,235"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="608,69,533,48,534,43,610,64"/>
+<area shape="rect" id="Node000009" href="$gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="385,70,533,95"/>
+<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="586,85,534,85,534,80,586,80"/>
+<area shape="rect" id="Node000011" href="$bindgen__font_8c.html#a665be7dabfde513f1f71c9e58b772cf6" title=" " alt="" coords="379,120,539,160"/>
+<area shape="poly" id="edge5_Node000010_Node000011" title=" " alt="" coords="585,145,540,144,540,139,585,140"/>
+<area shape="rect" id="Node000014" href="$gf__lua_8c.html#ac25650b30652d8cb8c65252229645360" title=" " alt="" coords="375,185,543,210"/>
+<area shape="poly" id="edge7_Node000013_Node000014" title=" " alt="" coords="592,200,543,200,543,195,592,195"/>
+<area shape="rect" id="Node000006" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="211,235,321,261"/>
+<area shape="poly" id="edge8_Node000014_Node000006" title=" " alt="" coords="398,216,316,238,315,233,396,211"/>
+<area shape="rect" id="Node000007" href="$gf__core_8c.html#aa40fbe8c435c2f84a4d2364e66439eda" title="Create engine instance." alt="" coords="5,261,163,286"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="198,260,164,265,163,260,197,255"/>
+<area shape="poly" id="edge11_Node000015_Node000006" title=" " alt="" coords="584,250,322,250,322,245,584,244"/>
+<area shape="poly" id="edge13_Node000016_Node000007" title=" " alt="" coords="206,292,162,286,163,281,207,287"/>
 </map>

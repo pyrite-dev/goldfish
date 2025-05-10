@@ -1,0 +1,9 @@
+<map id="gf_audio_auto_destroy" name="gf_audio_auto_destroy">
+<area shape="rect" id="Node000001" title="Enable auto&#45;destroy." alt="" coords="481,42,652,67"/>
+<area shape="rect" id="Node000002" href="$bindgen__GoldFishAudio_8c.html#aa2ed073978b2d40b719c8a3aa81035ad" title=" " alt="" coords="256,5,433,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="468,44,433,40,434,34,468,39"/>
+<area shape="rect" id="Node000008" href="$gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="271,70,419,95"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="468,70,419,76,419,71,467,65"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishAudio_8c.html#a8b24ea565098be398e626b26dfcc73bd" title=" " alt="" coords="5,13,208,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="242,28,208,28,208,23,242,23"/>
+</map>

@@ -1,5 +1,6 @@
 var gf__audio_8h =
 [
+    [ "gf_audio_auto_destroy", "gf__audio_8h.html#adfc806fea590437f837e6f315c553ed8", null ],
     [ "gf_audio_callback", "gf__audio_8h.html#aa69518f19d42d46f4d4d5aa4de1fbf77", null ],
     [ "gf_audio_create", "gf__audio_8h.html#a52e61cbf2518774a590141631e053330", null ],
     [ "gf_audio_decoder_destroy", "gf__audio_8h.html#ae34c8bd9d398a4335a1c6f9cc290ebdb", null ],

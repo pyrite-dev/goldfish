@@ -21,6 +21,7 @@ var gf__gui_8h =
     [ "gf_gui_get_xy", "gf__gui_8h.html#a54fe5c6529f3df844f5fb0a7d901a877", null ],
     [ "gf_gui_move_topmost", "gf__gui_8h.html#a610faea7ed19c9f97c1bcf8c117c2869", null ],
     [ "gf_gui_render", "gf__gui_8h.html#a41f221ae3b2221553f49678f9434976c", null ],
+    [ "gf_gui_set_button_sound", "gf__gui_8h.html#a9ebb2c6a640e7555e665fcf63a3a1e00", null ],
     [ "gf_gui_set_callback", "gf__gui_8h.html#ac4dbc67180bd8f83906b16fc268a8e78", null ],
     [ "gf_gui_set_font_color", "gf__gui_8h.html#a41d1ced83356598134828a415f342b68", null ],
     [ "gf_gui_set_hover_font_color", "gf__gui_8h.html#a5f8c745addde05b326ecc83899640ee3", null ],

@@ -1,9 +1,13 @@
 <map id="gf_sound_dsound_thread" name="gf_sound_dsound_thread">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,189,56"/>
-<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="237,31,376,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,41,223,41,223,46,190,46"/>
-<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="432,5,599,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="376,32,418,27,418,32,376,38"/>
-<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="424,55,607,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="376,49,410,53,410,58,376,54"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,189,55"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="237,29,376,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,39,223,39,223,45,190,45"/>
+<area shape="rect" id="Node000003" href="$gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="424,29,617,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="376,39,410,39,410,45,376,45"/>
+<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="673,5,840,31"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="355,27,424,14,547,7,660,9,660,15,547,13,424,19,356,32"/>
+<area shape="rect" id="Node000005" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="665,55,848,80"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="356,52,424,65,542,71,651,70,651,76,542,77,424,70,355,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="617,30,660,25,660,30,618,35"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="618,50,652,53,652,59,617,55"/>
 </map>

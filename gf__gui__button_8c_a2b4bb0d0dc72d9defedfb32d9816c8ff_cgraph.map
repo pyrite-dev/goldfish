@@ -1,15 +1,35 @@
 <map id="gf_gui_button_click" name="gf_gui_button_click">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,128,153,153"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="201,103,339,128"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,128,187,124,188,129,154,134"/>
-<area shape="rect" id="Node000005" href="$gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="387,153,539,179"/>
-<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="154,143,373,157,372,163,153,148"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="239,104,232,94,236,84,249,78,270,76,296,80,307,88,304,92,294,84,270,81,250,83,239,88,237,94,243,101"/>
-<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="396,5,529,31"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="287,100,331,70,385,40,401,33,404,38,388,44,333,75,290,105"/>
-<area shape="rect" id="Node000004" href="$gf__prop_8c.html#a7897e62a0d99f50c57ec71a75f6d7172" title="Destroy property container." alt="" coords="399,55,526,80"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="321,100,397,81,398,86,322,105"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="320,126,401,147,400,152,319,131"/>
-<area shape="rect" id="Node000007" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="387,104,538,129"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="339,113,373,113,373,119,339,118"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,153,153,179"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#adfc806fea590437f837e6f315c553ed8" title="Enable auto&#45;destroy." alt="" coords="201,52,372,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,151,145,124,200,94,234,80,237,85,202,99,147,128,102,156"/>
+<area shape="rect" id="Node000003" href="$gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d" title="Load and play file." alt="" coords="217,153,357,179"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,163,203,163,203,169,153,169"/>
+<area shape="rect" id="Node000011" href="$gf__audio_8c.html#a336ebd4c24f26fb744114f955292f58b" title="Resume audio." alt="" coords="429,5,563,31"/>
+<area shape="poly" id="edge9_Node000001_Node000011" title=" " alt="" coords="143,151,270,121,329,103,371,86,385,75,394,64,403,52,419,40,431,33,433,38,421,44,407,56,398,67,389,79,373,91,331,108,271,126,144,156"/>
+<area shape="rect" id="Node000012" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="218,301,355,327"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="100,177,258,291,255,295,97,181"/>
+<area shape="rect" id="Node000015" href="$gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="420,400,572,425"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="88,178,103,210,128,253,161,298,203,336,251,363,304,382,357,396,407,404,406,409,356,401,302,387,249,368,200,340,157,301,123,256,99,212,83,180"/>
+<area shape="rect" id="Node000004" href="$gf__audio_8c.html#a391139463501e0f9962974b208d9e4b2" title="Load and play data." alt="" coords="439,55,553,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="329,151,371,132,384,121,394,111,404,100,419,89,431,83,434,87,421,94,407,104,398,114,388,125,373,136,332,156"/>
+<area shape="rect" id="Node000007" href="$gf__file_8c.html#a21009a41c9139fba583fd9034cc5f58d" title="Close file." alt="" coords="445,203,547,228"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="342,176,432,198,431,203,341,181"/>
+<area shape="rect" id="Node000008" href="$gf__file_8c.html#a75171efe7e9e4fb445ce99766db046bb" title="Open file." alt="" coords="445,104,547,129"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="341,151,431,129,432,134,342,156"/>
+<area shape="rect" id="Node000010" href="$gf__file_8c.html#a50307b5b19b902357320ed26d4f000fd" title="Read file." alt="" coords="447,153,545,179"/>
+<area shape="poly" id="edge8_Node000003_Node000010" title=" " alt="" coords="357,163,433,163,433,169,357,169"/>
+<area shape="rect" id="Node000005" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="628,5,795,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="551,52,641,31,643,36,553,57"/>
+<area shape="rect" id="Node000006" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="620,55,803,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="553,65,607,65,607,70,553,70"/>
+<area shape="poly" id="edge10_Node000011_Node000005" title=" " alt="" coords="563,15,614,15,614,21,563,21"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="553,28,643,49,641,54,551,33"/>
+<area shape="poly" id="edge13_Node000012_Node000012" title=" " alt="" coords="253,303,246,293,249,283,263,277,287,275,315,278,327,287,323,292,313,283,287,280,265,282,253,287,251,292,257,300"/>
+<area shape="rect" id="Node000013" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="429,252,563,277"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="341,299,428,278,429,283,342,304"/>
+<area shape="rect" id="Node000014" href="$gf__prop_8c.html#a7897e62a0d99f50c57ec71a75f6d7172" title="Destroy property container." alt="" coords="433,301,559,327"/>
+<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="356,311,419,311,419,317,356,317"/>
+<area shape="poly" id="edge16_Node000012_Node000015" title=" " alt="" coords="309,324,359,355,421,386,438,393,436,398,419,391,356,359,306,329"/>
+<area shape="rect" id="Node000017" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="421,351,571,376"/>
+<area shape="poly" id="edge17_Node000012_Node000017" title=" " alt="" coords="342,324,429,345,428,350,341,329"/>
 </map>
