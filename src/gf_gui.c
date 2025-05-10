@@ -44,33 +44,43 @@ gf_gui_t* gf_gui_create(gf_engine_t* engine, gf_draw_t* draw) {
 
 void gf_gui_destroy(gf_gui_t* gui) {
 	if(gui->area != NULL) {
-		while(hmlen(gui->area) > 0) {
-			gf_gui_destroy_id(gui, gui->area[0].key);
+		while(arrlen(gui->area) > 0) {
+			gf_gui_destroy_id(gui, gui->area[0]->key);
 		}
-		hmfree(gui->area);
+		arrfree(gui->area);
 	}
 	gf_log_function(gui->engine, "Destroyed GUI", "");
 	free(gui);
 }
 
+int gf_gui_get_index(gf_gui_t* gui, gf_gui_id_t id) {
+	int i;
+	for(i = 0; i < arrlen(gui->area); i++) {
+		if(gui->area[i]->key == id) {
+			return i;
+		}
+	}
+	return -1;
+}
+
 void gf_gui_destroy_id(gf_gui_t* gui, gf_gui_id_t id) {
 	int		    i;
 	gf_prop_integer_t   prop;
-	int		    ind = hmgeti(gui->area, id);
+	int		    ind = gf_gui_get_index(gui, id);
 	gf_gui_component_t* c;
 	if(ind == -1) return;
 
-	c = &gui->area[ind];
-	for(i = 0; i < hmlen(gui->area); i++) {
-		if(gui->area[i].parent == id) {
-			gf_gui_destroy_id(gui, gui->area[i].key);
+	c = gui->area[ind];
+	for(i = 0; i < arrlen(gui->area); i++) {
+		if(gui->area[i]->parent == id) {
+			gf_gui_destroy_id(gui, gui->area[i]->key);
 			i = -1;
 		}
 	}
 
 	if((prop = gf_prop_get_integer(&c->prop, "active")) != GF_PROP_NO_SUCH && prop) {
-		for(i = hmlen(gui->area) - 1; i >= 0; i--) {
-			gf_gui_component_t* c = &gui->area[i];
+		for(i = arrlen(gui->area) - 1; i >= 0; i--) {
+			gf_gui_component_t* c = gui->area[i];
 			if(c->parent == -1 && c->key != id) {
 				gf_prop_set_integer(&c->prop, "active", 1);
 				break;
@@ -86,7 +96,7 @@ void gf_gui_destroy_id(gf_gui_t* gui, gf_gui_id_t id) {
 		gf_prop_destroy(&c->prop);
 	}
 
-	hmdel(gui->area, id);
+	arrdel(gui->area, ind);
 }
 
 /* note... left top should be the lightest in the border */
@@ -117,7 +127,14 @@ void gf_gui_create_component(gf_gui_t* gui, gf_gui_component_t* c, double x, dou
 
 	c->key = 0;
 	do {
-		ind = hmgeti(gui->area, c->key);
+		int i;
+		ind = -1;
+		for(i = 0; i < arrlen(gui->area); i++) {
+			if(gui->area[i]->key == c->key) {
+				ind = i;
+				break;
+			}
+		}
 		if(ind != -1) {
 			c->key++;
 		}
@@ -155,9 +172,9 @@ void gf_gui_calc_xywh_noset(gf_gui_t* gui, gf_gui_component_t* c, double* x, dou
 		double y2  = 0;
 		double w2  = 0;
 		double h2  = 0;
-		int    ind = hmgeti(gui->area, c->parent);
+		int    ind = gf_gui_get_index(gui, c->parent);
 		if(ind != -1) {
-			gf_gui_calc_xywh_noset(gui, &gui->area[ind], &x2, &y2, &w2, &h2);
+			gf_gui_calc_xywh_noset(gui, gui->area[ind], &x2, &y2, &w2, &h2);
 			gf_graphic_clip_pop(gui->draw);
 		}
 
@@ -230,8 +247,8 @@ void gf_gui_render(gf_gui_t* gui) {
 	double		  ch;
 	gf_prop_integer_t prop;
 	gui->hover = -1;
-	for(i = hmlen(gui->area) - 1; i >= 0; i--) {
-		gf_gui_component_t* c		 = &gui->area[i];
+	for(i = arrlen(gui->area) - 1; i >= 0; i--) {
+		gf_gui_component_t* c		 = gui->area[i];
 		int		    ignore_mouse = (prop = gf_prop_get_integer(&c->prop, "ignore-mouse")) != GF_PROP_NO_SUCH && prop;
 		gf_gui_calc_xywh(gui, c, &cx, &cy, &cw, &ch);
 		gf_graphic_clip_pop(gui->draw);
@@ -263,8 +280,8 @@ void gf_gui_render(gf_gui_t* gui) {
 		/* dummy value for "background" */
 		gui->pressed = -2;
 	}
-	for(i = 0; i < hmlen(gui->area); i++) {
-		gf_gui_component_t* c = &gui->area[i];
+	for(i = 0; i < arrlen(gui->area); i++) {
+		gf_gui_component_t* c = gui->area[i];
 		gf_gui_calc_xywh(gui, c, &cx, &cy, &cw, &ch);
 
 		gf_graphic_clip_push(gui->draw, cx, cy, cw, ch);
@@ -301,9 +318,9 @@ void gf_gui_render(gf_gui_t* gui) {
 	/* drag */
 	if(gui->pressed != -1 && (input->mouse_flag & GF_INPUT_MOUSE_LEFT_MASK)) {
 		int ind;
-		ind = hmgeti(gui->area, gui->pressed);
+		ind = gf_gui_get_index(gui, gui->pressed);
 		if(ind != -1) {
-			gf_gui_component_t* c	   = &gui->area[ind];
+			gf_gui_component_t* c	   = gui->area[ind];
 			int		    cancel = 0;
 			if((prop = gf_prop_get_integer(&c->prop, "resizable")) != GF_PROP_NO_SUCH && prop) {
 				double sp = 5;
@@ -345,9 +362,9 @@ void gf_gui_render(gf_gui_t* gui) {
 	/* click */
 	if((gui->pressed != -1) && !(input->mouse_flag & GF_INPUT_MOUSE_LEFT_MASK)) {
 		int ind;
-		ind = hmgeti(gui->area, gui->pressed);
+		ind = gf_gui_get_index(gui, gui->pressed);
 		if(ind != -1) {
-			gf_gui_component_t* c = &gui->area[ind];
+			gf_gui_component_t* c = gui->area[ind];
 
 			gf_gui_all_click(gui, c);
 		}
@@ -356,42 +373,42 @@ void gf_gui_render(gf_gui_t* gui) {
 }
 
 void gf_gui_set_callback(gf_gui_t* gui, gf_gui_id_t id, gf_gui_callback_t callback) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
 
-	gui->area[ind].callback = callback;
+	gui->area[ind]->callback = callback;
 }
 
 void gf_gui_set_parent(gf_gui_t* gui, gf_gui_id_t id, gf_gui_id_t parent) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
 
-	gui->area[ind].parent = parent;
+	gui->area[ind]->parent = parent;
 }
 
 gf_gui_id_t gf_gui_get_parent(gf_gui_t* gui, gf_gui_id_t id) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return -1;
 
-	return gui->area[ind].parent;
+	return gui->area[ind]->parent;
 }
 
 void gf_gui_set_text(gf_gui_t* gui, gf_gui_id_t id, const char* text) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
 
-	if(gui->area[ind].text != NULL) free(gui->area[ind].text);
-	gui->area[ind].text = malloc(strlen(text) + 1);
-	strcpy(gui->area[ind].text, text);
+	if(gui->area[ind]->text != NULL) free(gui->area[ind]->text);
+	gui->area[ind]->text = malloc(strlen(text) + 1);
+	strcpy(gui->area[ind]->text, text);
 }
 
-void gf_gui_add_recursive(gf_gui_t* gui, gf_gui_component_t** pnew, gf_gui_id_t parent) {
+void gf_gui_add_recursive(gf_gui_t* gui, gf_gui_component_t*** pnew, gf_gui_id_t parent) {
 	int i;
 
-	for(i = 0; i < hmlen(gui->area); i++) {
-		gf_gui_component_t* c = &gui->area[i];
+	for(i = 0; i < arrlen(gui->area); i++) {
+		gf_gui_component_t* c = gui->area[i];
 		if(c->parent == parent) {
-			hmputs(*pnew, *c);
+			arrput(*pnew, c);
 			gf_gui_add_recursive(gui, pnew, c->key);
 		}
 	}
@@ -399,32 +416,32 @@ void gf_gui_add_recursive(gf_gui_t* gui, gf_gui_component_t** pnew, gf_gui_id_t 
 
 void gf_gui_sort_component(gf_gui_t* gui) {
 	int i;
-	gf_gui_component_t* new = NULL;
+	gf_gui_component_t** new = NULL;
 
-	for(i = 0; i < hmlen(gui->area); i++) {
-		gf_gui_component_t* c = &gui->area[i];
+	for(i = 0; i < arrlen(gui->area); i++) {
+		gf_gui_component_t* c = gui->area[i];
 		if(c->parent == -1 && c->type != GF_GUI_WINDOW) {
 			gf_prop_set_integer(&c->prop, "active", 0);
-			hmputs(new, *c);
+			arrput(new, c);
 			gf_gui_add_recursive(gui, &new, c->key);
 		}
 	}
 
-	for(i = 0; i < hmlen(gui->area); i++) {
-		gf_gui_component_t* c = &gui->area[i];
+	for(i = 0; i < arrlen(gui->area); i++) {
+		gf_gui_component_t* c = gui->area[i];
 		if(c->parent == -1 && c->type == GF_GUI_WINDOW) {
 			gf_prop_set_integer(&c->prop, "active", 0);
-			hmputs(new, *c);
+			arrput(new, c);
 			gf_gui_add_recursive(gui, &new, c->key);
 		}
 	}
 
-	hmfree(gui->area);
+	arrfree(gui->area);
 	gui->area = new;
 	new	  = NULL;
 
-	for(i = hmlen(gui->area) - 1; i >= 0; i--) {
-		gf_gui_component_t* c = &gui->area[i];
+	for(i = arrlen(gui->area) - 1; i >= 0; i--) {
+		gf_gui_component_t* c = gui->area[i];
 		if(c->parent == -1) {
 			gf_prop_set_integer(&c->prop, "active", 1);
 			break;
@@ -435,41 +452,41 @@ void gf_gui_sort_component(gf_gui_t* gui) {
 void gf_gui_move_topmost(gf_gui_t* gui, gf_gui_id_t id) {
 	int i;
 	int ind;
-	gf_gui_component_t* new = NULL;
+	gf_gui_component_t** new = NULL;
 
-	for(i = 0; i < hmlen(gui->area); i++) {
-		gf_gui_component_t* c = &gui->area[i];
+	for(i = 0; i < arrlen(gui->area); i++) {
+		gf_gui_component_t* c = gui->area[i];
 		if(c->parent == -1 && c->key != id) {
 			gf_prop_set_integer(&c->prop, "active", 0);
-			hmputs(new, *c);
+			arrput(new, c);
 			gf_gui_add_recursive(gui, &new, c->key);
 		}
 	}
 
-	ind = hmgeti(gui->area, id);
+	ind = gf_gui_get_index(gui, id);
 	if(ind != -1) {
-		gf_gui_component_t* c = &gui->area[ind];
+		gf_gui_component_t* c = gui->area[ind];
 		if(c->parent == -1) {
 			gf_prop_set_integer(&c->prop, "active", 1);
-			hmputs(new, *c);
+			arrput(new, c);
 			gf_gui_add_recursive(gui, &new, c->key);
 		}
 	}
 
-	hmfree(gui->area);
+	arrfree(gui->area);
 	gui->area = new;
 
-	ind = hmgeti(gui->area, id);
+	ind = gf_gui_get_index(gui, id);
 	if(ind != -1) {
-		gf_gui_component_t* c = &gui->area[ind];
+		gf_gui_component_t* c = gui->area[ind];
 		gf_gui_id_t	    p;
 		if(c->parent == -1) return;
 		while(1) {
 			p = c->parent;
 
-			ind = hmgeti(gui->area, p);
+			ind = gf_gui_get_index(gui, p);
 			if(ind != -1) {
-				c = &gui->area[ind];
+				c = gui->area[ind];
 			}
 			if(c->parent == -1) break;
 		}
@@ -478,51 +495,51 @@ void gf_gui_move_topmost(gf_gui_t* gui, gf_gui_id_t id) {
 }
 
 void gf_gui_set_prop_id(gf_gui_t* gui, gf_gui_id_t id, const char* key, gf_gui_id_t id2) {
-	int   ind = hmgeti(gui->area, id);
+	int   ind = gf_gui_get_index(gui, id);
 	void* ptr;
 	if(ind == -1) return;
 	ptr = malloc(sizeof(id2));
 	memcpy(ptr, &id2, sizeof(id2));
-	gf_prop_set_ptr(&gui->area[ind].prop, key, ptr);
+	gf_prop_set_ptr(&gui->area[ind]->prop, key, ptr);
 }
 
 gf_gui_id_t gf_gui_get_prop_id(gf_gui_t* gui, gf_gui_id_t id, const char* key) {
-	int   ind = hmgeti(gui->area, id);
+	int   ind = gf_gui_get_index(gui, id);
 	void* ptr;
 	if(ind == -1) return GF_PROP_NO_SUCH;
-	ptr = gf_prop_get_ptr(&gui->area[ind].prop, key);
+	ptr = gf_prop_get_ptr(&gui->area[ind]->prop, key);
 	if(ptr == NULL) return GF_PROP_NO_SUCH;
 	return *(gf_gui_id_t*)ptr;
 }
 
 gf_prop_t** gf_gui_get_prop(gf_gui_t* gui, gf_gui_id_t id) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return NULL;
-	return &gui->area[ind].prop;
+	return &gui->area[ind]->prop;
 }
 
 void gf_gui_set_font_color(gf_gui_t* gui, gf_gui_id_t id, gf_graphic_color_t color) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
-	memcpy(&gui->area[ind].font, &color, sizeof(color));
+	memcpy(&gui->area[ind]->font, &color, sizeof(color));
 }
 
 gf_graphic_color_t gf_gui_get_font_color(gf_gui_t* gui, gf_gui_id_t id) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return gui->font;
-	return gui->area[ind].font;
+	return gui->area[ind]->font;
 }
 
 void gf_gui_set_hover_font_color(gf_gui_t* gui, gf_gui_id_t id, gf_graphic_color_t color) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
-	memcpy(&gui->area[ind].hover_font, &color, sizeof(color));
+	memcpy(&gui->area[ind]->hover_font, &color, sizeof(color));
 }
 
 gf_graphic_color_t gf_gui_get_hover_font_color(gf_gui_t* gui, gf_gui_id_t id) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return gui->font;
-	return gui->area[ind].hover_font;
+	return gui->area[ind]->hover_font;
 }
 
 gf_gui_id_t gf_gui_create_common(gf_gui_t* gui, const char* name, double x, double y, double w, double h) {
@@ -536,29 +553,29 @@ gf_gui_id_t gf_gui_create_common(gf_gui_t* gui, const char* name, double x, doub
 }
 
 void gf_gui_set_wh(gf_gui_t* gui, gf_gui_id_t id, double w, double h) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
-	gui->area[ind].width  = w;
-	gui->area[ind].height = h;
+	gui->area[ind]->width  = w;
+	gui->area[ind]->height = h;
 }
 
 void gf_gui_get_wh(gf_gui_t* gui, gf_gui_id_t id, double* w, double* h) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
-	*w = gui->area[ind].width;
-	*h = gui->area[ind].height;
+	*w = gui->area[ind]->width;
+	*h = gui->area[ind]->height;
 }
 
 void gf_gui_set_xy(gf_gui_t* gui, gf_gui_id_t id, double x, double y) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
-	gui->area[ind].x = x;
-	gui->area[ind].y = y;
+	gui->area[ind]->x = x;
+	gui->area[ind]->y = y;
 }
 
 void gf_gui_get_xy(gf_gui_t* gui, gf_gui_id_t id, double* x, double* y) {
-	int ind = hmgeti(gui->area, id);
+	int ind = gf_gui_get_index(gui, id);
 	if(ind == -1) return;
-	*x = gui->area[ind].x;
-	*y = gui->area[ind].y;
+	*x = gui->area[ind]->x;
+	*y = gui->area[ind]->y;
 }

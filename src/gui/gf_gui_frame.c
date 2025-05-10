@@ -14,17 +14,18 @@
 #include <gf_prop.h>
 
 /* Standard */
+#include <stdlib.h>
 
 gf_gui_id_t gf_gui_create_frame(gf_gui_t* gui, double x, double y, double w, double h) {
-	gf_gui_component_t c;
+	gf_gui_component_t* c = malloc(sizeof(*c));
 
-	gf_gui_create_component(gui, &c, x, y, w, h);
+	gf_gui_create_component(gui, c, x, y, w, h);
 
-	c.type = GF_GUI_FRAME;
+	c->type = GF_GUI_FRAME;
 
-	hmputs(gui->area, c);
+	arrput(gui->area, c);
 
-	return c.key;
+	return c->key;
 }
 
 void gf_gui_frame_render(gf_gui_t* gui, gf_gui_component_t* c) {

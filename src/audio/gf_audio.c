@@ -1,25 +1,19 @@
 #define GF_EXPOSE_AUDIO
-#define GF_EXPOSE_SOUND
 
 #include <gf_pre.h>
 
 /* External library */
+#include <miniaudio.h>
 #include <jar_xm.h>
 #include <jar_mod.h>
-#include <dr_mp3.h>
-#include <dr_flac.h>
-#include <dr_wav.h>
 #include <stb_ds.h>
 
 /* Interface */
 #include <gf_audio.h>
 
 /* Engine */
-#include <gf_sound.h>
 #include <gf_log.h>
 #include <gf_file.h>
-#include <gf_thread.h>
-#include <gf_type/compat.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -27,60 +21,30 @@
 
 const char* gf_audio_mod_sig[] = {"M!K!", "M.K.", "FLT4", "FLT8", "4CHN", "6CHN", "8CHN", "10CH", "12CH", "14CH", "16CH", "18CH", "20CH", "22CH", "24CH", "26CH", "28CH", "30CH", "32CH"};
 
-void gf_audio_callback(gf_audio_t* audio, void* output, int frame) {
-	int	    i;
-	gf_int16_t* out = (gf_int16_t*)output;
-	float*	    tmp = malloc(sizeof(*tmp) * frame * 2);
+void gf_audio_callback(ma_device* dev, void* output, const void* input, ma_uint32 frame) {
+	ma_uint32   i;
+	gf_audio_t* audio = dev->pUserData;
+	ma_int16*   out	  = (ma_int16*)output;
+	float*	    tmp	  = malloc(sizeof(*tmp) * frame * 2);
 
 	for(i = 0; i < frame; i++) {
 		tmp[2 * i + 0] = 0;
 		tmp[2 * i + 1] = 0;
 	}
 
-	gf_thread_mutex_lock(audio->mutex);
-	for(i = 0; i < hmlen(audio->decoder); i++) {
-		if(audio->decoder[i].used == 1 && (audio->decoder[i].mp3 != NULL || audio->decoder[i].flac != NULL || audio->decoder[i].wav != NULL)) {
-			int    j;
-			int    gotframe;
-			int    ch = 0;
-			double sr = (double)audio->device->sample_rate;
-			float* r;
-			int    want;
-			void*  ptr;
-			drwav_uint64 (*read_frame)(void*, drwav_uint64, void*);
-
-			if(audio->decoder[i].mp3 != NULL) {
-				read_frame = (void*)drmp3_read_pcm_frames_f32;
-				ptr	   = audio->decoder[i].mp3;
-				ch	   = audio->decoder[i].mp3->channels;
-				sr /= audio->decoder[i].mp3->sampleRate;
-			} else if(audio->decoder[i].flac != NULL) {
-				read_frame = (void*)drflac_read_pcm_frames_f32;
-				ptr	   = audio->decoder[i].flac;
-				ch	   = audio->decoder[i].flac->channels;
-				sr /= audio->decoder[i].flac->sampleRate;
-			} else if(audio->decoder[i].wav != NULL) {
-				read_frame = (void*)drwav_read_pcm_frames_f32;
-				ptr	   = audio->decoder[i].wav;
-				ch	   = audio->decoder[i].wav->channels;
-				sr /= audio->decoder[i].wav->sampleRate;
-			}
-
-			want	 = frame / sr;
-			r	 = malloc(sizeof(*r) * want * ch);
-			gotframe = read_frame(ptr, want, r);
-			for(j = 0; j < gotframe * sr; j++) {
-				int ind = j / sr;
-				if(ch == 1) {
-					tmp[2 * j + 0] += (double)r[ind + 0];
-					tmp[2 * j + 1] += (double)r[ind + 0];
-				} else {
-					tmp[2 * j + 0] += (double)r[ch * ind + 0];
-					tmp[2 * j + 1] += (double)r[ch * ind + 1];
-				}
+	ma_mutex_lock(audio->mutex);
+	for(i = 0; i < (ma_uint32)hmlen(audio->decoder); i++) {
+		if(audio->decoder[i].used == 1 && audio->decoder[i].decoder != NULL) {
+			ma_uint64 readframe;
+			int	  j;
+			ma_int16* r = malloc(sizeof(*r) * frame * 2);
+			ma_decoder_read_pcm_frames(audio->decoder[i].decoder, r, frame, &readframe);
+			for(j = 0; j < readframe; j++) {
+				tmp[2 * j + 0] += (double)r[2 * j + 0] / 32768.0;
+				tmp[2 * j + 1] += (double)r[2 * j + 1] / 32768.0;
 			}
 			free(r);
-			if(gotframe < want) {
+			if(frame > readframe) {
 				audio->decoder[i].used = -2;
 			}
 		} else if(audio->decoder[i].used == 1 && audio->decoder[i].xm != NULL) {
@@ -98,9 +62,9 @@ void gf_audio_callback(gf_audio_t* audio, void* output, int frame) {
 				audio->decoder[i].used = -2;
 			}
 		} else if(audio->decoder[i].used == 1 && audio->decoder[i].mod != NULL) {
-			int	    j;
-			int	    gotframe;
-			gf_int16_t* r = malloc(sizeof(*r) * frame * 2);
+			int	  j;
+			int	  gotframe;
+			ma_int16* r = malloc(sizeof(*r) * frame * 2);
 			jar_mod_fillbuffer(audio->decoder[i].mod, r, frame, NULL);
 			gotframe = audio->decoder[i].mod->last != -1 ? audio->decoder[i].mod->last : (int)frame;
 			for(j = 0; j < gotframe; j++) {
@@ -113,7 +77,7 @@ void gf_audio_callback(gf_audio_t* audio, void* output, int frame) {
 			}
 		}
 	}
-	gf_thread_mutex_unlock(audio->mutex);
+	ma_mutex_unlock(audio->mutex);
 
 	for(i = 0; i < frame; i++) {
 		out[2 * i + 0] = tmp[2 * i + 0] * audio->volume * 32768;
@@ -128,17 +92,16 @@ gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size) {
 	int		   mod_cond;
 	int		   ind;
 
-	gf_thread_mutex_lock(audio->mutex);
+	ma_mutex_lock(audio->mutex);
 
-	decoder.used  = 0;
-	decoder.audio = audio;
-	decoder.xm    = NULL;
-	decoder.mod   = NULL;
-	decoder.mp3   = NULL;
-	decoder.flac  = NULL;
-	decoder.wav   = NULL;
-	decoder.key   = 0;
-	decoder.data  = NULL;
+	decoder.used	       = 0;
+	decoder.audio	       = audio;
+	decoder.decoder	       = NULL;
+	decoder.xm	       = NULL;
+	decoder.mod	       = NULL;
+	decoder.decoder_config = ma_decoder_config_init(audio->device_config.playback.format, audio->device_config.playback.channels, audio->device_config.sampleRate);
+	decoder.key	       = 0;
+	decoder.data	       = NULL;
 	do {
 		ind = hmgeti(audio->decoder, decoder.key);
 		if(ind != -1) {
@@ -159,13 +122,13 @@ gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size) {
 	}
 
 	if(xm_cond) {
-		if(jar_xm_create_context_safe(&decoder.xm, data, size, audio->device->sample_rate) == 0) {
+		if(jar_xm_create_context_safe(&decoder.xm, data, size, audio->device_config.sampleRate) == 0) {
 			/* In XM loader .internal is used to store old loopcount */
 			decoder.internal = jar_xm_get_loop_count(decoder.xm);
 			decoder.used	 = -1;
 			jar_xm_set_max_loop_count(decoder.xm, 1);
 			hmputs(audio->decoder, decoder);
-			gf_thread_mutex_unlock(audio->mutex);
+			ma_mutex_unlock(audio->mutex);
 			return decoder.key;
 		}
 		decoder.xm = NULL;
@@ -175,54 +138,33 @@ gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size) {
 		decoder.mod->modfile	 = malloc(size);
 		decoder.mod->modfilesize = size;
 		memcpy(decoder.mod->modfile, data, size);
-		jar_mod_setcfg(decoder.mod, audio->device->sample_rate, 16, 1, 1, 0);
+		jar_mod_setcfg(decoder.mod, audio->device_config.sampleRate, 16, 1, 1, 0);
 		if(jar_mod_load(decoder.mod, (void*)decoder.mod->modfile, size)) {
 			/* In MOD loader .internal is used to store old loopcount */
 			decoder.internal = decoder.mod->loopcount;
 			decoder.used	 = -1;
 			hmputs(audio->decoder, decoder);
-			gf_thread_mutex_unlock(audio->mutex);
+			ma_mutex_unlock(audio->mutex);
 			return decoder.key;
 		}
 		free(decoder.mod->modfile);
 		free(decoder.mod);
 		decoder.mod = NULL;
 	}
-
-	decoder.data = malloc(size);
-	decoder.size = size;
+	decoder.decoder = malloc(sizeof(*decoder.decoder));
+	decoder.data	= malloc(size);
+	decoder.size	= size;
 	memcpy(decoder.data, data, size);
-
-	decoder.mp3 = malloc(sizeof(*decoder.mp3));
-	if((decoder.size > 2 && decoder.data[0] == 0xff && (decoder.data[1] == 0xfb || decoder.data[1] == 0xf3 || decoder.data[1] == 0xf2) || (decoder.size > 3 && memcmp(decoder.data, "ID3", 3) == 0)) && drmp3_init_memory(decoder.mp3, decoder.data, decoder.size, NULL)) {
+	if(ma_decoder_init_memory(decoder.data, decoder.size, &decoder.decoder_config, decoder.decoder) == MA_SUCCESS) {
 		decoder.used = -1;
 		hmputs(audio->decoder, decoder);
-		gf_thread_mutex_unlock(audio->mutex);
+		ma_mutex_unlock(audio->mutex);
 		return decoder.key;
 	}
-	free(decoder.mp3);
-	decoder.mp3 = NULL;
-
-	if((decoder.size > 4 && memcmp(decoder.data, "fLaC", 4) == 0) && (decoder.flac = drflac_open_memory(decoder.data, decoder.size, NULL)) != NULL) {
-		decoder.used = -1;
-		hmputs(audio->decoder, decoder);
-		gf_thread_mutex_unlock(audio->mutex);
-		return decoder.key;
-	}
-	decoder.flac = NULL;
-
-	decoder.wav = malloc(sizeof(*decoder.wav));
-	if(drwav_init_memory(decoder.wav, decoder.data, decoder.size, NULL)) {
-		decoder.used = -1;
-		hmputs(audio->decoder, decoder);
-		gf_thread_mutex_unlock(audio->mutex);
-		return decoder.key;
-	}
-	free(decoder.wav);
-	decoder.wav = NULL;
-
 	free(decoder.data);
-	gf_thread_mutex_unlock(audio->mutex);
+	free(decoder.decoder);
+	decoder.decoder = NULL;
+	ma_mutex_unlock(audio->mutex);
 	return -1;
 }
 
@@ -251,9 +193,16 @@ gf_audio_t* gf_audio_create(gf_engine_t* engine) {
 
 	audio->volume = 1;
 
-	audio->decoder = NULL;
+	audio->device_config		       = ma_device_config_init(ma_device_type_playback);
+	audio->device_config.playback.format   = ma_format_s16;
+	audio->device_config.playback.channels = 2;
+	audio->device_config.sampleRate	       = 44100;
+	audio->device_config.dataCallback      = gf_audio_callback;
+	audio->device_config.pUserData	       = audio;
+	audio->decoder			       = NULL;
 
-	if((audio->device = gf_sound_create(audio, 44100)) == NULL) {
+	audio->device = malloc(sizeof(*audio->device));
+	if(ma_device_init(NULL, &audio->device_config, audio->device) != MA_SUCCESS) {
 		gf_log_function(engine, "Failed to open playback device", "");
 		free(audio->device);
 		audio->device = NULL;
@@ -261,14 +210,16 @@ gf_audio_t* gf_audio_create(gf_engine_t* engine) {
 		return NULL;
 	}
 
-	if((audio->mutex = gf_thread_mutex_create()) == NULL) {
+	audio->mutex = malloc(sizeof(*audio->mutex));
+	if(ma_mutex_init(audio->mutex) != MA_SUCCESS) {
 		gf_log_function(engine, "Failed to create mutex", "");
+		free(audio->mutex);
 		audio->mutex = NULL;
 		gf_audio_destroy(audio);
 		return NULL;
 	}
 
-	if(gf_sound_start(audio->device) != 0) {
+	if(ma_device_start(audio->device) != MA_SUCCESS) {
 		gf_log_function(engine, "Failed to start playback device", "");
 		gf_audio_destroy(audio);
 		return NULL;
@@ -281,20 +232,11 @@ gf_audio_t* gf_audio_create(gf_engine_t* engine) {
 
 void gf_audio_decoder_destroy(gf_audio_decoder_t* decoder) {
 	gf_audio_t* audio = decoder->audio;
-	gf_thread_mutex_lock(audio->mutex);
-	if(decoder->mp3 != NULL) {
-		drmp3_uninit(decoder->mp3);
-		free(decoder->mp3);
-		decoder->mp3 = NULL;
-	}
-	if(decoder->flac != NULL) {
-		drflac_close(decoder->flac);
-		decoder->flac = NULL;
-	}
-	if(decoder->wav != NULL) {
-		drwav_uninit(decoder->wav);
-		free(decoder->wav);
-		decoder->wav = NULL;
+	ma_mutex_lock(audio->mutex);
+	if(decoder->decoder != NULL) {
+		ma_decoder_uninit(decoder->decoder);
+		free(decoder->decoder);
+		decoder->decoder = NULL;
 	}
 	if(decoder->xm != NULL) {
 		jar_xm_free_context(decoder->xm);
@@ -310,15 +252,17 @@ void gf_audio_decoder_destroy(gf_audio_decoder_t* decoder) {
 	}
 	decoder->used = 0;
 	hmdel(audio->decoder, decoder->key);
-	gf_thread_mutex_unlock(audio->mutex);
+	ma_mutex_unlock(audio->mutex);
 }
 
 void gf_audio_destroy(gf_audio_t* audio) {
 	if(audio->device != NULL) {
-		gf_sound_destroy(audio->device);
+		ma_device_uninit(audio->device);
+		free(audio->device);
 	}
 	if(audio->mutex != NULL) {
-		gf_thread_mutex_destroy(audio->mutex);
+		ma_mutex_uninit(audio->mutex);
+		free(audio->mutex);
 	}
 	if(audio->decoder != NULL) {
 		while(hmlen(audio->decoder) > 0) {
@@ -333,29 +277,29 @@ void gf_audio_destroy(gf_audio_t* audio) {
 void gf_audio_resume(gf_audio_t* audio, gf_audio_id_t id) {
 	int ind;
 
-	gf_thread_mutex_lock(audio->mutex);
+	ma_mutex_lock(audio->mutex);
 	ind = hmgeti(audio->decoder, id);
 	if(ind == -1) {
-		gf_thread_mutex_unlock(audio->mutex);
+		ma_mutex_unlock(audio->mutex);
 		return;
 	}
 
 	audio->decoder[ind].used = 1;
-	gf_thread_mutex_unlock(audio->mutex);
+	ma_mutex_unlock(audio->mutex);
 }
 
 void gf_audio_pause(gf_audio_t* audio, gf_audio_id_t id) {
 	int ind;
 
-	gf_thread_mutex_lock(audio->mutex);
+	ma_mutex_lock(audio->mutex);
 	ind = hmgeti(audio->decoder, id);
 	if(ind == -1) {
-		gf_thread_mutex_unlock(audio->mutex);
+		ma_mutex_unlock(audio->mutex);
 		return;
 	}
 
 	audio->decoder[ind].used = -1;
-	gf_thread_mutex_unlock(audio->mutex);
+	ma_mutex_unlock(audio->mutex);
 }
 
 void gf_audio_stop(gf_audio_t* audio, gf_audio_id_t id) {

@@ -15,25 +15,26 @@
 #include <gf_prop.h>
 
 /* Standard */
+#include <stdlib.h>
 
 extern const double gf_gui_border_width;
 
 gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, double h) {
-	gf_gui_component_t c;
-	gf_gui_id_t	   scroll;
+	gf_gui_component_t* c = malloc(sizeof(*c));
+	gf_gui_id_t	    scroll;
 
-	gf_gui_create_component(gui, &c, x, y, w, h);
+	gf_gui_create_component(gui, c, x, y, w, h);
 
-	c.type = GF_GUI_TEXT;
+	c->type = GF_GUI_TEXT;
 
-	hmputs(gui->area, c);
+	arrput(gui->area, c);
 
 	scroll = gf_gui_create_scrollbar(gui, gf_gui_border_width, gf_gui_border_width, 20 - gf_gui_border_width, h - gf_gui_border_width * 2);
 	gf_prop_set_integer(gf_gui_get_prop(gui, scroll), "x-base", 1);
-	gf_gui_set_parent(gui, scroll, c.key);
-	gf_gui_set_prop_id(gui, c.key, "scrollbar", scroll);
+	gf_gui_set_parent(gui, scroll, c->key);
+	gf_gui_set_prop_id(gui, c->key, "scrollbar", scroll);
 
-	return c.key;
+	return c->key;
 }
 
 void gf_gui_text_render(gf_gui_t* gui, gf_gui_component_t* c) {

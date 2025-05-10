@@ -25,6 +25,15 @@ extern "C" {
 
 /**
  * @~english
+ * @brief Audio callback
+ * @param audio Audio interface
+ * @param output Output buffer
+ * @param frame Frame sound driver wants
+ */
+GF_EXPORT void gf_audio_callback(gf_audio_t* audio, void* output, int frame);
+
+/**
+ * @~english
  * @brief Create audio interface
  * @param engine Engine instance
  * @return Audio interface

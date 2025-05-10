@@ -75,6 +75,15 @@ GF_EXPORT void gf_gui_destroy_id(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
+ * @brief Get index of GUI component
+ * @param gui GUI
+ * @param id Component ID
+ * @return Index
+ */
+GF_EXPORT int gf_gui_get_index(gf_gui_t* gui, gf_gui_id_t id);
+
+/**
+ * @~english
  * @brief Render GUI
  * @param gui GUI
  */

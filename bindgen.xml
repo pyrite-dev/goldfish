@@ -37,6 +37,9 @@
 			<Not>
 				<Name Pattern="^gf_gui_(set|get)_(wh|xy)$" />
 			</Not>
+			<Not>
+				<Name Pattern="^gf_gui_get_index$" />
+			</Not>
 		</Match>
 	</Metatable>
 	<Metatable C="gf_audio_id_t" Lua="GoldFishAudio" Valid="ret >= 0">
@@ -69,7 +72,7 @@
 				<Argument Index="1" Type="gf_audio_id_t" />
 			</Not>
 			<Not>
-				<Name Pattern="^gf_audio_(?:destroy|load|is_over)$" />
+				<Name Pattern="^gf_audio_(?:destroy|load|is_over|callback)$" />
 			</Not>
 		</Match>
 	</Group>

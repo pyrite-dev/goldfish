@@ -3,7 +3,7 @@
  * @~english
  * @brief GUI static stuff
  * @note User should not include this, this header is used internally
- * @warning This file is auto-generated using ./tool/gengui.sh at `Sun May  4 01:25:17 JST 2025`
+ * @warning This file is auto-generated using ./tool/gengui.sh at `Thu May  8 19:14:40 JST 2025`
  */
 
 #ifndef __GF_GUI_STATIC_H__

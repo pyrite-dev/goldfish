@@ -24,15 +24,15 @@ extern const double gf_gui_border_width;
 extern const int    gf_gui_border_color_diff;
 
 gf_gui_id_t gf_gui_create_button(gf_gui_t* gui, double x, double y, double w, double h) {
-	gf_gui_component_t c;
+	gf_gui_component_t* c = malloc(sizeof(*c));
 
-	gf_gui_create_component(gui, &c, x, y, w, h);
+	gf_gui_create_component(gui, c, x, y, w, h);
 
-	c.type = GF_GUI_BUTTON;
+	c->type = GF_GUI_BUTTON;
 
-	hmputs(gui->area, c);
+	arrput(gui->area, c);
 
-	return c.key;
+	return c->key;
 }
 
 void gf_gui_button_render(gf_gui_t* gui, gf_gui_component_t* c) {
@@ -128,6 +128,7 @@ void gf_gui_button_click(gf_gui_t* gui, gf_gui_component_t* c) {
 		c->callback(gui->engine, gui->draw, gui->pressed, GF_GUI_PRESS_EVENT);
 	}
 	c->pressed = 1;
+
 	if((prop = gf_prop_get_integer(&c->prop, "close-parent")) != GF_PROP_NO_SUCH && prop) {
 		gf_gui_destroy_id(gui, c->parent);
 	}

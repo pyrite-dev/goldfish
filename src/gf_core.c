@@ -34,7 +34,7 @@ void gf_engine_begin(void) {
 #ifdef _WIN32
 	WSADATA wsa;
 #endif
-	gf_log_default = stderr;
+	if(gf_log_default == NULL) gf_log_default = stderr;
 
 	gf_gui_init_calls();
 

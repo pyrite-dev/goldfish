@@ -24,30 +24,30 @@ extern const double gf_gui_border_width;
 extern const int    gf_gui_border_color_diff;
 
 gf_gui_id_t gf_gui_create_window(gf_gui_t* gui, double x, double y, double w, double h) {
-	gf_gui_component_t c;
-	gf_gui_id_t	   close_button;
-	gf_gui_id_t	   frame;
+	gf_gui_component_t* c = malloc(sizeof(*c));
+	gf_gui_id_t	    close_button;
+	gf_gui_id_t	    frame;
 
-	gf_gui_create_component(gui, &c, x, y, w, h);
+	gf_gui_create_component(gui, c, x, y, w, h);
 
-	c.type = GF_GUI_WINDOW;
+	c->type = GF_GUI_WINDOW;
 
-	hmputs(gui->area, c);
+	arrput(gui->area, c);
 
 	close_button = gf_gui_create_button(gui, 5, 5, 20, 20);
-	gf_gui_set_parent(gui, close_button, c.key);
+	gf_gui_set_parent(gui, close_button, c->key);
 	gf_prop_set_integer(gf_gui_get_prop(gui, close_button), "x-base", 1);
 	gf_prop_set_integer(gf_gui_get_prop(gui, close_button), "close-parent", 1);
 	gf_gui_set_text(gui, close_button, "X");
 
 	frame = gf_gui_create_frame(gui, 5, 10 + GF_GUI_SMALL_FONT_SIZE, w - 10, h - GF_GUI_SMALL_FONT_SIZE - 10 - 5);
 
-	gf_gui_set_parent(gui, frame, c.key);
+	gf_gui_set_parent(gui, frame, c->key);
 	gf_prop_set_integer(gf_gui_get_prop(gui, frame), "ignore-mouse", 1);
 
-	gf_gui_set_prop_id(gui, c.key, "frame", frame);
+	gf_gui_set_prop_id(gui, c->key, "frame", frame);
 
-	return c.key;
+	return c->key;
 }
 
 void gf_gui_window_render(gf_gui_t* gui, gf_gui_component_t* c) {
@@ -85,9 +85,9 @@ void gf_gui_window_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	}
 
 	fid   = gf_gui_get_prop_id(gui, c->key, "frame");
-	frame = hmgeti(gui->area, fid);
+	frame = gf_gui_get_index(gui, fid);
 	if(frame != -1) {
-		gf_gui_component_t* cf = &gui->area[frame];
+		gf_gui_component_t* cf = gui->area[frame];
 		cf->width	       = c->width - 10;
 		cf->height	       = c->height - GF_GUI_SMALL_FONT_SIZE - 10 - 5;
 		if((prop = gf_prop_get_integer(&c->prop, "resizable")) != GF_PROP_NO_SUCH && prop) {

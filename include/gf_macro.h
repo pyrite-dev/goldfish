@@ -155,6 +155,14 @@
 #define GF_EXPOSE_LUA
 #endif
 
+#ifndef GF_EXPOSE_SOUND
+/**
+ * @~english
+ * @brief Expose sound driver properties
+ */
+#define GF_EXPOSE_SOUND
+#endif
+
 #ifndef GF_EXPOSE_FILE
 /**
  * @~english
