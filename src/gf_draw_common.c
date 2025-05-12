@@ -113,13 +113,6 @@ double gf_draw_time_number(gf_draw_time_t* dtime) {
 
 int gf_draw_step(gf_draw_t* draw) {
 	int ret;
-	if(draw->fps != -1) {
-		gf_draw_time_t t;
-		gf_draw_time(&t);
-
-		draw->fps = 1.0 / (gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw));
-	}
-	gf_draw_time(&draw->last_draw);
 	ret = gf_draw_platform_step(draw);
 	if(ret != 0) return ret;
 	if(draw->close == 1 && draw->engine->lua != NULL) {
@@ -127,7 +120,8 @@ int gf_draw_step(gf_draw_t* draw) {
 		gf_lua_close(draw->engine->lua);
 	}
 	if(draw->fps == -1) {
-		draw->fps = 0;
+		draw->fps = 1;
+		gf_draw_time(&draw->last_draw);
 	} else {
 #ifdef _WIN32
 		double msec;
@@ -136,7 +130,7 @@ int gf_draw_step(gf_draw_t* draw) {
 		gf_draw_time_t t;
 
 #ifdef _WIN32
-#if 0
+#if 1
 		gf_draw_time(&t);
 		msec = (1000.0 / sfps) - (gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw)) * 1000.0;
 		if(msec > 0) Sleep((int)msec);
@@ -146,6 +140,10 @@ int gf_draw_step(gf_draw_t* draw) {
 			gf_draw_time(&t);
 		} while((gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw)) <= 1.0 / sfps);
 #endif
+		gf_draw_time(&t);
+		draw->fps = 1.0 / (gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw));
+
+		gf_draw_time(&draw->last_draw);
 	}
 
 	return draw->close;
