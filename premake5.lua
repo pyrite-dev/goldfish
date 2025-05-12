@@ -11,6 +11,10 @@ gf_sound_backends = {
 	miniaudio = {
 		name = "miniaudio"
 	},
+	alsa = {
+		name = "ALSA",
+		links = {"asound"}
+	},
 	windows = {
 		name = "DirectSound/WinMM",
 		links = {"winmm"}

@@ -190,6 +190,7 @@ int gf_sound_start(gf_sound_t* sound) {
 void gf_sound_destroy(gf_sound_t* sound) {
 	sound->context.quit = 1;
 	gf_thread_join(sound->context.thread);
+	gf_thread_destroy(sound->context.thread);
 	if(sound->context.dsound != NULL) {
 		sound->context.dsound->lpVtbl->Release(sound->context.dsound);
 		FreeLibrary(sound->context.dsound_dll);

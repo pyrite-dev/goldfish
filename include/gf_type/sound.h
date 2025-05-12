@@ -38,6 +38,13 @@ GF_DECLARE_TYPE(sound_context, {
 GF_DECLARE_TYPE(sound_context, {
 	ma_device device;
 });
+#elif defined(SND_ALSA)
+GF_DECLARE_TYPE(sound_context, {
+	snd_pcm_t* device;
+	snd_pcm_hw_params_t* params;
+	gf_thread_t* thread;
+	int quit;
+});
 #else
 /**
  * @struct gf_sound_context_t

@@ -13,6 +13,8 @@
 #include <dsound.h>
 #elif defined(SND_MINIAUDIO)
 #include <miniaudio.h>
+#elif defined(SND_ALSA)
+#include <alsa/asoundlib.h>
 #endif
 
 #endif
