@@ -192,27 +192,28 @@ $(document).ready(function(){initNavTree('rgfw_2gf__draw_8c_source.html',''); in
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <a class="code hl_function" href="agl_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(platform);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">if</span>(engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a2c26bcba071c5f43a35cd9c3c29ea909">icon</a> != NULL) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                RGFW_window_setIcon(platform-&gt;window, engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a2c26bcba071c5f43a35cd9c3c29ea909">icon</a>, RGFW_AREA(engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#ac19ae5c7f513b077cad52aabffe621e8">icon_width</a>, engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a5c20a8fde6095272d2a63929cd7016d4">icon_height</a>), 4);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        platform-&gt;window-&gt;userPtr = draw;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        RGFW_window_makeCurrent(platform-&gt;window);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#ifdef DO_SWAP_INTERVAL</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        RGFW_window_swapInterval(platform-&gt;window, 1);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> platform;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        platform-&gt;window-&gt;exitKey = RGFW_keyNULL;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">if</span>(engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a2c26bcba071c5f43a35cd9c3c29ea909">icon</a> != NULL) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                RGFW_window_setIcon(platform-&gt;window, engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a2c26bcba071c5f43a35cd9c3c29ea909">icon</a>, RGFW_AREA(engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#ac19ae5c7f513b077cad52aabffe621e8">icon_width</a>, engine-&gt;<a class="code hl_variable" href="structgf__engine__t.html#a5c20a8fde6095272d2a63929cd7016d4">icon_height</a>), 4);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        platform-&gt;window-&gt;userPtr = draw;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        RGFW_window_makeCurrent(platform-&gt;window);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#ifdef DO_SWAP_INTERVAL</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        RGFW_window_swapInterval(platform-&gt;window, 1);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">return</span> platform;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
 </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="rgfw_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="agl_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(<a class="code hl_struct" href="structgf__draw__platform__t.html">gf_draw_platform_t</a>* platform) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">if</span>(platform-&gt;window != NULL) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                RGFW_window_close(platform-&gt;window);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(platform-&gt;engine, <span class="stringliteral">&quot;Destroyed platform-dependent part of drawing driver&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        free(platform);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="rgfw_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">  102</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="agl_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a>(<a class="code hl_struct" href="structgf__draw__platform__t.html">gf_draw_platform_t</a>* platform) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span>(platform-&gt;window != NULL) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                RGFW_window_close(platform-&gt;window);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_define" href="gf__log_8h.html#a165a2d1cecbdd974b4a44450011bb84a">gf_log_function</a>(platform-&gt;engine, <span class="stringliteral">&quot;Destroyed platform-dependent part of drawing driver&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        free(platform);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
 </div>
 <div class="ttc" id="aagl_2gf__draw_8c_html_a24822bbf6cda6c2cbe336d70116dfb25"><div class="ttname"><a href="agl_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25">gf_draw_platform_destroy</a></div><div class="ttdeci">void gf_draw_platform_destroy(gf_draw_platform_t *platform)</div><div class="ttdoc">Destroy platform-dependent part of drawing driver.</div><div class="ttdef"><b>Definition</b> <a href="agl_2gf__draw_8c_source.html#l00101">gf_draw.c:101</a></div></div>
 <div class="ttc" id="aagl_2gf__draw_8c_html_a368f0172138b75a37072d1ed357b1183"><div class="ttname"><a href="agl_2gf__draw_8c.html#a368f0172138b75a37072d1ed357b1183">gf_draw_platform_has_extension</a></div><div class="ttdeci">int gf_draw_platform_has_extension(gf_draw_t *draw, const char *query)</div><div class="ttdoc">Check if renderer has extension.</div><div class="ttdef"><b>Definition</b> <a href="agl_2gf__draw_8c_source.html#l00028">gf_draw.c:28</a></div></div>
