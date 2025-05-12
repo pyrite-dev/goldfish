@@ -86,6 +86,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		gf_draw_platform_destroy(platform);
 		return NULL;
 	}
+	platform->window->exitKey = RGFW_keyNULL;
 	if(engine->icon != NULL) {
 		RGFW_window_setIcon(platform->window, engine->icon, RGFW_AREA(engine->icon_width, engine->icon_height), 4);
 	}
