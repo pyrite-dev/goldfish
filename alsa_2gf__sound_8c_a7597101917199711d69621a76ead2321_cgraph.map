@@ -1,0 +1,9 @@
+<map id="gf_sound_create" name="gf_sound_create">
+<area shape="rect" id="Node000001" title="Create sound driver." alt="" coords="5,31,135,56"/>
+<area shape="rect" id="Node000002" href="$alsa_2gf__sound_8c.html#a6ff4c4fc8baf37b30647debb3ef310dd" title="Destroy sound driver." alt="" coords="183,31,320,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,41,169,41,169,46,135,46"/>
+<area shape="rect" id="Node000003" href="$posix_2gf__thread_8c.html#ae75b99ee6c28e149e333512f46e8656a" title="Destroy thread." alt="" coords="368,5,508,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="320,31,354,27,355,32,321,37"/>
+<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a168bd57321daded0d1789442e5680dea" title="Join thread." alt="" coords="381,55,495,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="320,49,367,56,366,61,320,55"/>
+</map>

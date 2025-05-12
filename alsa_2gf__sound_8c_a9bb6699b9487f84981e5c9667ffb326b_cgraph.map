@@ -1,0 +1,11 @@
+<map id="gf_sound_start" name="gf_sound_start">
+<area shape="rect" id="Node000001" title="Start sound driver." alt="" coords="5,31,124,56"/>
+<area shape="rect" id="Node000002" href="$alsa_2gf__sound_8c.html#adbfa58a06aa1e702a74d8f89ee74e80e" title=" " alt="" coords="172,5,336,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,33,158,28,159,33,124,38"/>
+<area shape="rect" id="Node000007" href="$posix_2gf__thread_8c.html#ad2a42aa3c8b51ec7e22625e8932906a4" title="Create thread." alt="" coords="188,55,320,80"/>
+<area shape="poly" id="edge3_Node000001_Node000007" title=" " alt="" coords="124,48,175,55,174,60,124,53"/>
+<area shape="rect" id="Node000003" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="384,5,523,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="336,15,370,15,370,21,336,21"/>
+<area shape="rect" id="Node000008" href="$posix_2gf__thread_8c.html#ac94961f7a38e7732e9a4bfe25696450f" title=" " alt="" coords="392,55,515,80"/>
+<area shape="poly" id="edge4_Node000007_Node000008" title=" " alt="" coords="320,65,378,65,378,70,320,70"/>
+</map>

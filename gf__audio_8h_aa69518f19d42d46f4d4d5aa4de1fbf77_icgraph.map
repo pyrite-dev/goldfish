@@ -1,14 +1,18 @@
 <map id="gf_audio_callback" name="gf_audio_callback">
-<area shape="rect" id="Node000001" title="Audio callback." alt="" coords="417,55,556,80"/>
-<area shape="rect" id="Node000002" href="$miniaudio_2gf__sound_8c.html#ab277794a38db5e018eee29a1d0043b00" title=" " alt="" coords="205,5,347,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,54,330,33,332,28,419,49"/>
-<area shape="rect" id="Node000008" href="$windows_2gf__sound_8c.html#a2cd508e16c68916161e2b944b8034ddb" title=" " alt="" coords="184,55,368,80"/>
-<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="404,70,368,70,368,65,404,65"/>
-<area shape="rect" id="Node000010" href="$windows_2gf__sound_8c.html#a5cb5c3b68cde0e5e9244887679088474" title=" " alt="" coords="183,104,369,129"/>
-<area shape="poly" id="edge5_Node000001_Node000010" title=" " alt="" coords="419,86,332,107,330,101,418,81"/>
-<area shape="rect" id="Node000003" href="$miniaudio_2gf__sound_8c.html#a7597101917199711d69621a76ead2321" title="Create sound driver." alt="" coords="5,5,135,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,21,135,21,135,15,191,15"/>
-<area shape="rect" id="Node000009" href="$windows_2gf__sound_8c.html#a9bb6699b9487f84981e5c9667ffb326b" title="Start sound driver." alt="" coords="11,79,129,104"/>
-<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="171,82,130,87,129,82,170,77"/>
-<area shape="poly" id="edge6_Node000010_Node000009" title=" " alt="" coords="169,106,129,101,130,96,169,101"/>
+<area shape="rect" id="Node000001" title="Audio callback." alt="" coords="417,80,556,105"/>
+<area shape="rect" id="Node000002" href="$alsa_2gf__sound_8c.html#adbfa58a06aa1e702a74d8f89ee74e80e" title=" " alt="" coords="194,5,358,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="446,76,368,45,331,33,333,28,370,39,448,72"/>
+<area shape="rect" id="Node000008" href="$miniaudio_2gf__sound_8c.html#ab277794a38db5e018eee29a1d0043b00" title=" " alt="" coords="205,55,347,80"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="404,85,347,79,348,73,404,80"/>
+<area shape="rect" id="Node000010" href="$windows_2gf__sound_8c.html#a2cd508e16c68916161e2b944b8034ddb" title=" " alt="" coords="184,104,368,129"/>
+<area shape="poly" id="edge5_Node000001_Node000010" title=" " alt="" coords="404,105,369,109,368,104,403,99"/>
+<area shape="rect" id="Node000012" href="$windows_2gf__sound_8c.html#a5cb5c3b68cde0e5e9244887679088474" title=" " alt="" coords="183,153,369,179"/>
+<area shape="poly" id="edge7_Node000001_Node000012" title=" " alt="" coords="446,113,370,143,329,156,327,151,368,138,444,108"/>
+<area shape="rect" id="Node000003" href="$alsa_2gf__sound_8c.html#a9bb6699b9487f84981e5c9667ffb326b" title="Start sound driver." alt="" coords="11,5,129,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="180,21,129,21,129,15,180,15"/>
+<area shape="rect" id="Node000009" href="$miniaudio_2gf__sound_8c.html#a7597101917199711d69621a76ead2321" title="Create sound driver." alt="" coords="5,55,135,80"/>
+<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="191,70,135,70,135,65,191,65"/>
+<area shape="rect" id="Node000011" href="$windows_2gf__sound_8c.html#a9bb6699b9487f84981e5c9667ffb326b" title="Start sound driver." alt="" coords="11,128,129,153"/>
+<area shape="poly" id="edge6_Node000010_Node000011" title=" " alt="" coords="171,132,130,136,129,131,170,126"/>
+<area shape="poly" id="edge8_Node000012_Node000011" title=" " alt="" coords="169,155,129,151,130,145,169,150"/>
 </map>

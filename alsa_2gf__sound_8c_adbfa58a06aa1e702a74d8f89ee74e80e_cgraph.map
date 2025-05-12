@@ -1,0 +1,13 @@
+<map id="gf_sound_alsa_thread" name="gf_sound_alsa_thread">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,169,55"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="217,29,356,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,39,204,39,204,45,170,45"/>
+<area shape="rect" id="Node000003" href="$gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="404,29,597,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="356,39,390,39,390,45,356,45"/>
+<area shape="rect" id="Node000004" href="$posix_2gf__thread_8c.html#a8c939c8cb436d4240dcb04589be4a640" title="Lock mutex." alt="" coords="653,5,820,31"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="335,27,404,14,527,7,640,9,640,15,527,13,404,19,336,32"/>
+<area shape="rect" id="Node000005" href="$posix_2gf__thread_8c.html#a9767edcec0121728eb6746fb47266b51" title="Unlock mutex." alt="" coords="645,55,828,80"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="336,52,404,65,522,71,631,70,631,76,522,77,404,70,335,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="597,30,640,25,640,30,598,35"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="598,50,632,53,632,59,597,55"/>
+</map>
