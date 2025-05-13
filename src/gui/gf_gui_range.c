@@ -123,7 +123,7 @@ void gf_gui_range_render(gf_gui_t* gui, gf_gui_component_t* c) {
 		double d   = 0;
 		double old = gf_prop_get_floating(gf_gui_get_prop(gui, c->key), "value");
 
-		d = ((v / cw) * gf_math_abs(max - min)) + min;
+		d = ((v / (cw - gw)) * gf_math_abs(max - min)) + min;
 		if(step != GF_PROP_NO_SUCH) {
 			d = gf_math_round(d / step) * step;
 		}
