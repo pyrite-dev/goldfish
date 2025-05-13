@@ -133,6 +133,30 @@ void gf_graphic_points_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, i
 	if(dim == 2) gf_graphic_end_2d(draw);
 }
 
+void gf_graphic_lines_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr) {
+	int i;
+	int ind = 0;
+
+	if(dim == 2) gf_graphic_begin_2d(draw);
+
+	gf_draw_driver_set_color(draw, color);
+	glBegin(GL_LINES);
+
+	for(i = 0; i < npair * 2; i++) {
+		double x = arr[ind++];
+		double y = arr[ind++];
+		if(dim == GF_GRAPHIC_2D) {
+			glVertex2f(x, y);
+		} else if(dim == GF_GRAPHIC_3D) {
+			double z = arr[ind++];
+			glVertex3f(x, y, z);
+		}
+	}
+
+	glEnd();
+	if(dim == 2) gf_graphic_end_2d(draw);
+}
+
 void gf_graphic_perspective(gf_draw_t* draw, double fovy, double znear, double zfar) {
 	double	 aspect = (double)draw->width / (double)draw->height;
 	double	 f	= gf_math_cot(fovy / 180 * GF_MATH_PI / 2);
@@ -243,4 +267,20 @@ void gf_graphic_clip_pop(gf_draw_t* draw) {
 	w = draw->clip[arrlen(draw->clip) - 2];
 	h = draw->clip[arrlen(draw->clip) - 1];
 	glScissor(x, draw->height - y - h, w, h);
+}
+
+void gf_graphic_set_point_size(gf_draw_t* draw, double size) { glPointSize(size); }
+
+void gf_graphic_set_line_width(gf_draw_t* draw, double width) { glLineWidth(width); }
+
+double gf_graphic_get_point_size(gf_draw_t* draw) {
+	GLfloat n;
+	glGetFloatv(GL_POINT_SIZE, &n);
+	return n;
+}
+
+double gf_graphic_get_line_width(gf_draw_t* draw) {
+	GLfloat n;
+	glGetFloatv(GL_LINE_WIDTH, &n);
+	return n;
 }

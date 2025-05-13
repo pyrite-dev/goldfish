@@ -200,3 +200,22 @@ void gf_graphic_points(gf_draw_t* draw, gf_graphic_color_t color, int dim, int n
 	gf_graphic_points_arr(draw, color, dim, npair, arr);
 	free(arr);
 }
+
+void gf_graphic_lines(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...) {
+	int	i;
+	int	ind  = 0;
+	int	plen = (dim == GF_GRAPHIC_2D ? 2 : 3);
+	va_list va;
+	double* arr = malloc(sizeof(*arr) * plen * npair * 2);
+	va_start(va, npair);
+	for(i = 0; i < npair * 2; i++) {
+		int j;
+		for(j = 0; j < plen; j++) {
+			arr[ind * plen + j] = va_arg(va, double);
+		}
+		ind++;
+	}
+	va_end(va);
+	gf_graphic_lines_arr(draw, color, dim, npair, arr);
+	free(arr);
+}

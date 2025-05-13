@@ -36,6 +36,8 @@ void gf_gui_frame_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	double	   sx;
 	double	   sy;
 	gf_font_t* font;
+	double	   propf;
+	double	   fsz = GF_GUI_SMALL_FONT_SIZE;
 	if(c->type != GF_GUI_FRAME) return;
 	if(c->text == NULL) return;
 
@@ -46,11 +48,15 @@ void gf_gui_frame_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_gui_calc_xywh(gui, c, &cx, &cy, &cw, &ch);
 	gf_graphic_clip_pop(gui->draw);
 
-	sx = cw / 2 - gf_graphic_text_width(gui->draw, font, 24, c->text) / 2;
-	sy = ch / 2 - gf_graphic_text_height(gui->draw, font, 24, c->text) / 2;
+	if((propf = gf_prop_get_floating(&c->prop, "font-size")) != GF_PROP_NO_SUCH) {
+		fsz = propf;
+	}
+
+	sx = cw / 2 - gf_graphic_text_width(gui->draw, font, fsz, c->text) / 2;
+	sy = ch / 2 - gf_graphic_text_height(gui->draw, font, fsz, c->text) / 2;
 
 	gf_graphic_clip_push(gui->draw, cx, cy, cw, ch);
-	gf_graphic_text(gui->draw, font, cx + sx, cy + sy, 24, c->text, gui->font);
+	gf_graphic_text(gui->draw, font, cx + sx, cy + sy, fsz, c->text, gui->font);
 	gf_graphic_clip_pop(gui->draw);
 }
 

@@ -86,6 +86,12 @@ GF_EXPORT void gf_graphic_points_arr(gf_draw_t* draw, gf_graphic_color_t color, 
 
 /**
  * @~english
+ * @brief Draw lines
+ */
+GF_EXPORT void gf_graphic_lines_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr);
+
+/**
+ * @~english
  * @brief Set perspective
  * @param draw Drawing interface
  * @param fovy FOV
@@ -118,6 +124,38 @@ GF_EXPORT void gf_graphic_clip_push(gf_draw_t* draw, double x, double y, double 
  * @param draw Drawing interface
  */
 GF_EXPORT void gf_graphic_clip_pop(gf_draw_t* draw);
+
+/**
+ * @~english
+ * @brief Set point size
+ * @param draw Drawing interface
+ * @param size Point size
+ */
+GF_EXPORT void gf_graphic_set_point_size(gf_draw_t* draw, double size);
+
+/**
+ * @~english
+ * @brief Set line width
+ * @param draw Drawing interface
+ * @param width Line width
+ */
+GF_EXPORT void gf_graphic_set_line_width(gf_draw_t* draw, double width);
+
+/**
+ * @~english
+ * @brief Get point size
+ * @param draw Drawing interface
+ * @return Point size
+ */
+GF_EXPORT double gf_graphic_get_point_size(gf_draw_t* draw);
+
+/**
+ * @~english
+ * @brief Get line width
+ * @param draw Drawing interface
+ * @return Line width
+ */
+GF_EXPORT double gf_graphic_get_line_width(gf_draw_t* draw);
 
 /* Common */
 
@@ -177,6 +215,12 @@ GF_EXPORT void gf_graphic_fill_polygon(gf_draw_t* draw, gf_graphic_color_t color
  * @brief Draw points
  */
 GF_EXPORT void gf_graphic_points(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
+
+/**
+ * @~english
+ * @brief Draw points
+ */
+GF_EXPORT void gf_graphic_lines(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
 
 #ifdef __cplusplus
 }

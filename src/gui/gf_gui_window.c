@@ -38,7 +38,7 @@ gf_gui_id_t gf_gui_create_window(gf_gui_t* gui, double x, double y, double w, do
 	gf_gui_set_parent(gui, close_button, c->key);
 	gf_prop_set_integer(gf_gui_get_prop(gui, close_button), "x-base", 1);
 	gf_prop_set_integer(gf_gui_get_prop(gui, close_button), "close-parent", 1);
-	gf_gui_set_text(gui, close_button, "X");
+	gf_gui_set_text(gui, close_button, "#Cross");
 
 	frame = gf_gui_create_frame(gui, 5, 10 + GF_GUI_SMALL_FONT_SIZE, w - 10, h - GF_GUI_SMALL_FONT_SIZE - 10 - 5);
 

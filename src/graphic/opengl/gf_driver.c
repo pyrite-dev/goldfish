@@ -98,6 +98,7 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	glEnable(GL_CULL_FACE);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
+	glEnable(GL_LINE_SMOOTH);
 
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 
@@ -113,8 +114,6 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	glLightfv(GL_LIGHT0, GL_SPECULAR, lightwht);
 
 	glClearColor(0, 0, 0, 1);
-
-	glPointSize(5);
 
 	draw_driver->npot = 0;
 

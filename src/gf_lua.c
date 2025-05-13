@@ -462,6 +462,40 @@ int gf_lua_call_graphic_points(lua_State* s) {
 	return 0;
 }
 
+int gf_lua_call_graphic_point_size(lua_State* s) {
+	gf_lua_t* lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	if(lua_gettop(s) == 1) {
+		double psize = luaL_checknumber(s, 1);
+		gf_graphic_set_point_size(lua->engine->client->draw, psize);
+	} else {
+		lua_pushnumber(s, gf_graphic_get_point_size(lua->engine->client->draw));
+		return 1;
+	}
+	return 0;
+}
+
+int gf_lua_call_graphic_line_width(lua_State* s) {
+	gf_lua_t* lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	if(lua_gettop(s) == 1) {
+		double lwidth = luaL_checknumber(s, 1);
+		gf_graphic_set_line_width(lua->engine->client->draw, lwidth);
+	} else {
+		lua_pushnumber(s, gf_graphic_get_line_width(lua->engine->client->draw));
+		return 1;
+	}
+	return 0;
+}
+
 void gf_lua_create_goldfish(gf_lua_t* lua) {
 	gf_version_t ver;
 	gf_version_get(&ver);
@@ -617,6 +651,14 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 
 	lua_pushstring(lua->lua, "points");
 	lua_pushcfunction(lua->lua, gf_lua_call_graphic_points);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "point_size");
+	lua_pushcfunction(lua->lua, gf_lua_call_graphic_point_size);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "line_width");
+	lua_pushcfunction(lua->lua, gf_lua_call_graphic_line_width);
 	lua_settable(lua->lua, -3);
 
 	lua_pushstring(lua->lua, "rect");
