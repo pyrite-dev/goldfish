@@ -51,7 +51,7 @@ void gf_engine_begin(void) {
 #ifdef _WIN32
 	WSAStartup(MAKEWORD(1, 1), &wsa);
 	gf_log_function(NULL, "Winsock ready", "");
-	if (QueryPerformanceFrequency(&hpc_freq) <= 0) {
+	if(QueryPerformanceFrequency(&hpc_freq) <= 0) {
 		hpc_freq.QuadPart = 0;
 	}
 #endif

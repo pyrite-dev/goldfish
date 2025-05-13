@@ -28,6 +28,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define NO_SLEEP
 #define FPS 60
 
 void gf_draw_begin(void) { gf_draw_platform_begin(); }
@@ -93,13 +94,12 @@ void gf_draw_time(gf_draw_time_t* dtime) {
 #ifdef _WIN32
 	/* hpc_freq is set at gf_engine_begin */
 	extern LARGE_INTEGER hpc_freq;
-	if (hpc_freq.QuadPart > 0) {
+	if(hpc_freq.QuadPart > 0) {
 		LARGE_INTEGER tick;
 		QueryPerformanceCounter(&tick);
-		*dtime = tick.QuadPart / (hpc_freq.QuadPart / 1000); 
+		*dtime = tick.QuadPart / (hpc_freq.QuadPart / 1000);
 		/* divide by freq for seconds, by 1000 more for ms */
-	}
-	else {
+	} else {
 		/* system has no hpc hw support */
 		*dtime = timeGetTime();
 	}
@@ -125,20 +125,25 @@ double gf_draw_time_number(gf_draw_time_t* dtime) {
 }
 
 int gf_draw_step(gf_draw_t* draw) {
-	int	       ret = 0;
-	double	       delta;
+	int    ret = 0;
+	double delta;
+#ifdef NO_SLEEP
 	gf_draw_time_t tm;
 	if(draw->fps == -1) {
-		draw->fps = 0;
+		draw->fps = FPS;
 		gf_draw_time(&draw->last_draw);
 	}
 	gf_draw_time(&tm);
 	delta = gf_draw_time_number(&tm) - gf_draw_time_number(&draw->last_draw);
 	if(delta > 1000.0 / FPS) {
-		draw->fps	= 1000.0 / delta;
+		draw->fps += 1000.0 / delta;
+		draw->fps	= draw->fps / 2;
 		ret		= gf_draw_platform_step(draw);
 		draw->last_draw = tm;
 	}
+#else
+	/* TODO: Implement this */
+#endif
 	if(ret != 0) return ret;
 	if(draw->close == 1 && draw->engine->lua != NULL) {
 		draw->close = 0;
