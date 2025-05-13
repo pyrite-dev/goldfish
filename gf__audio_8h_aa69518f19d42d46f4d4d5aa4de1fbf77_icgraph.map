@@ -1,18 +1,22 @@
 <map id="gf_audio_callback" name="gf_audio_callback">
-<area shape="rect" id="Node000001" title="Audio callback." alt="" coords="417,80,556,105"/>
+<area shape="rect" id="Node000001" title="Audio callback." alt="" coords="417,104,556,129"/>
 <area shape="rect" id="Node000002" href="$alsa_2gf__sound_8c.html#adbfa58a06aa1e702a74d8f89ee74e80e" title=" " alt="" coords="194,5,358,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="446,76,368,45,331,33,333,28,370,39,448,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="457,98,416,70,368,44,337,33,339,28,370,40,419,66,460,93"/>
 <area shape="rect" id="Node000008" href="$miniaudio_2gf__sound_8c.html#ab277794a38db5e018eee29a1d0043b00" title=" " alt="" coords="205,55,347,80"/>
-<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="404,85,347,79,348,73,404,80"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="418,103,330,83,332,77,419,98"/>
 <area shape="rect" id="Node000010" href="$windows_2gf__sound_8c.html#a2cd508e16c68916161e2b944b8034ddb" title=" " alt="" coords="184,104,368,129"/>
-<area shape="poly" id="edge5_Node000001_Node000010" title=" " alt="" coords="404,105,369,109,368,104,403,99"/>
-<area shape="rect" id="Node000012" href="$windows_2gf__sound_8c.html#a5cb5c3b68cde0e5e9244887679088474" title=" " alt="" coords="183,153,369,179"/>
-<area shape="poly" id="edge7_Node000001_Node000012" title=" " alt="" coords="446,113,370,143,329,156,327,151,368,138,444,108"/>
+<area shape="poly" id="edge5_Node000001_Node000010" title=" " alt="" coords="404,119,368,119,368,114,404,114"/>
+<area shape="rect" id="Node000012" href="$sdl2_2gf__sound_8c.html#a489c03b92244928ee113dc9a44cb54dc" title=" " alt="" coords="188,203,364,228"/>
+<area shape="poly" id="edge7_Node000001_Node000012" title=" " alt="" coords="459,140,418,167,370,192,335,205,333,200,368,188,416,162,456,135"/>
+<area shape="rect" id="Node000014" href="$windows_2gf__sound_8c.html#a5cb5c3b68cde0e5e9244887679088474" title=" " alt="" coords="183,153,369,179"/>
+<area shape="poly" id="edge9_Node000001_Node000014" title=" " alt="" coords="419,135,332,156,330,151,418,130"/>
 <area shape="rect" id="Node000003" href="$alsa_2gf__sound_8c.html#a9bb6699b9487f84981e5c9667ffb326b" title="Start sound driver." alt="" coords="11,5,129,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="180,21,129,21,129,15,180,15"/>
 <area shape="rect" id="Node000009" href="$miniaudio_2gf__sound_8c.html#a7597101917199711d69621a76ead2321" title="Create sound driver." alt="" coords="5,55,135,80"/>
 <area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="191,70,135,70,135,65,191,65"/>
-<area shape="rect" id="Node000011" href="$windows_2gf__sound_8c.html#a9bb6699b9487f84981e5c9667ffb326b" title="Start sound driver." alt="" coords="11,128,129,153"/>
-<area shape="poly" id="edge6_Node000010_Node000011" title=" " alt="" coords="171,132,130,136,129,131,170,126"/>
-<area shape="poly" id="edge8_Node000012_Node000011" title=" " alt="" coords="169,155,129,151,130,145,169,150"/>
+<area shape="rect" id="Node000011" href="$windows_2gf__sound_8c.html#a9bb6699b9487f84981e5c9667ffb326b" title="Start sound driver." alt="" coords="11,129,129,155"/>
+<area shape="poly" id="edge6_Node000010_Node000011" title=" " alt="" coords="171,132,130,137,129,132,170,127"/>
+<area shape="rect" id="Node000013" href="$sdl2_2gf__sound_8c.html#a7597101917199711d69621a76ead2321" title="Create sound driver." alt="" coords="5,203,135,228"/>
+<area shape="poly" id="edge8_Node000012_Node000013" title=" " alt="" coords="174,218,135,218,135,213,174,213"/>
+<area shape="poly" id="edge10_Node000014_Node000011" title=" " alt="" coords="169,156,129,152,130,146,169,151"/>
 </map>

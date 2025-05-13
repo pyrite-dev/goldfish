@@ -26,6 +26,8 @@ var NAVTREE =
 [
   [ "GoldFish Engine", "index.html", [
     [ "Stack", "index.html#autotoc_md1", null ],
+    [ "OpenGL stack", "index.html#autotoc_md2", null ],
+    [ "Sound stack", "index.html#autotoc_md3", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -52,10 +54,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "agl_2gf__draw_8c.html",
-"gf__core_8h.html#a741291298ef02f3dceb1fdeaee2e27b4",
-"gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e",
-"gf__stb__image_8c.html#a18372412ad2fc3ce1e3240b3cf0efe78",
-"structgf__gui__component__t.html#ac6a6067145b869324f9464aeeae5839f"
+"gf__core_8h.html#a00e2e66703d1f28b2540fe731d8cd8e7",
+"gf__gui__frame_8c.html",
+"gf__stb__image_8c.html",
+"structgf__gui__component__t.html#a6029cc56d9b7feab844576661a55a865"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

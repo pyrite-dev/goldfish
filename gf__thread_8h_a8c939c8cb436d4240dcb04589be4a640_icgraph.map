@@ -1,35 +1,37 @@
 <map id="gf_thread_mutex_lock" name="gf_thread_mutex_lock">
-<area shape="rect" id="Node000001" title="Lock mutex." alt="" coords="704,227,871,252"/>
-<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="258,79,397,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="762,219,715,179,686,159,655,143,589,121,520,107,454,98,397,95,397,89,455,93,521,101,590,116,657,138,689,155,718,175,766,215"/>
-<area shape="rect" id="Node000014" href="$gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="463,153,656,179"/>
-<area shape="poly" id="edge6_Node000001_Node000014" title=" " alt="" coords="733,225,599,181,601,176,735,220"/>
-<area shape="rect" id="Node000023" href="$gf__audio_8c.html#a391139463501e0f9962974b208d9e4b2" title="Load and play data." alt="" coords="503,227,616,252"/>
-<area shape="poly" id="edge10_Node000001_Node000023" title=" " alt="" coords="690,242,616,242,616,237,690,237"/>
-<area shape="rect" id="Node000028" href="$gf__audio_8c.html#af319f87c14e6b784de694c065d147c80" title="Pause audio." alt="" coords="497,280,621,305"/>
-<area shape="poly" id="edge13_Node000001_Node000028" title=" " alt="" coords="719,258,615,283,614,277,718,253"/>
-<area shape="rect" id="Node000030" href="$gf__audio_8c.html#a336ebd4c24f26fb744114f955292f58b" title="Resume audio." alt="" coords="492,341,627,367"/>
-<area shape="poly" id="edge15_Node000001_Node000030" title=" " alt="" coords="757,262,657,319,599,344,596,339,655,314,754,257"/>
+<area shape="rect" id="Node000001" title="Lock mutex." alt="" coords="704,252,871,277"/>
+<area shape="rect" id="Node000002" href="$gf__audio_8c.html#aa69518f19d42d46f4d4d5aa4de1fbf77" title="Audio callback." alt="" coords="258,104,397,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="762,244,715,204,686,185,655,168,589,146,520,132,454,124,397,120,397,115,455,118,521,127,590,141,657,164,689,180,718,200,766,240"/>
+<area shape="rect" id="Node000016" href="$gf__audio_8c.html#ae34c8bd9d398a4335a1c6f9cc290ebdb" title="Destroy audio decoder." alt="" coords="463,179,656,204"/>
+<area shape="poly" id="edge7_Node000001_Node000016" title=" " alt="" coords="733,250,599,207,601,202,735,245"/>
+<area shape="rect" id="Node000025" href="$gf__audio_8c.html#a391139463501e0f9962974b208d9e4b2" title="Load and play data." alt="" coords="503,252,616,277"/>
+<area shape="poly" id="edge11_Node000001_Node000025" title=" " alt="" coords="690,267,616,267,616,262,690,262"/>
+<area shape="rect" id="Node000030" href="$gf__audio_8c.html#af319f87c14e6b784de694c065d147c80" title="Pause audio." alt="" coords="497,305,621,331"/>
+<area shape="poly" id="edge14_Node000001_Node000030" title=" " alt="" coords="719,283,615,308,614,303,718,278"/>
+<area shape="rect" id="Node000032" href="$gf__audio_8c.html#a336ebd4c24f26fb744114f955292f58b" title="Resume audio." alt="" coords="492,367,627,392"/>
+<area shape="poly" id="edge16_Node000001_Node000032" title=" " alt="" coords="757,287,657,344,599,369,596,364,655,340,754,282"/>
 <area shape="rect" id="Node000003" href="$alsa_2gf__sound_8c.html#adbfa58a06aa1e702a74d8f89ee74e80e" title=" " alt="" coords="17,5,181,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="280,76,191,45,152,33,153,28,193,39,282,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="294,99,246,71,191,44,157,33,159,28,193,40,249,66,297,94"/>
 <area shape="rect" id="Node000009" href="$miniaudio_2gf__sound_8c.html#ab277794a38db5e018eee29a1d0043b00" title=" " alt="" coords="27,55,170,80"/>
-<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="244,85,170,77,170,72,244,80"/>
+<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="254,104,158,83,159,77,255,98"/>
 <area shape="rect" id="Node000011" href="$windows_2gf__sound_8c.html#a2cd508e16c68916161e2b944b8034ddb" title=" " alt="" coords="7,104,191,129"/>
-<area shape="poly" id="edge4_Node000002_Node000011" title=" " alt="" coords="244,103,191,109,190,104,244,98"/>
-<area shape="rect" id="Node000013" href="$windows_2gf__sound_8c.html#a5cb5c3b68cde0e5e9244887679088474" title=" " alt="" coords="5,153,192,179"/>
-<area shape="poly" id="edge5_Node000002_Node000013" title=" " alt="" coords="261,111,241,118,193,143,155,156,153,151,191,138,239,113,259,106"/>
-<area shape="poly" id="edge7_Node000014_Node000002" title=" " alt="" coords="511,151,414,118,376,107,377,102,415,113,512,146"/>
-<area shape="rect" id="Node000015" href="$gf__audio_8c.html#ab5022a62ecc7ba83ccb5da4a1add398b" title="Destroy audio interface." alt="" coords="260,128,395,153"/>
-<area shape="poly" id="edge8_Node000014_Node000015" title=" " alt="" coords="448,157,395,151,395,145,449,151"/>
-<area shape="rect" id="Node000018" href="$gf__audio_8c.html#a270465ee43fdc71840bd1a5dbd0a1ec1" title="Stop audio." alt="" coords="271,177,384,203"/>
-<area shape="poly" id="edge9_Node000014_Node000018" title=" " alt="" coords="449,180,385,187,384,182,448,175"/>
-<area shape="rect" id="Node000024" href="$gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d" title="Load and play file." alt="" coords="257,227,397,252"/>
-<area shape="poly" id="edge11_Node000023_Node000024" title=" " alt="" coords="489,242,398,242,398,237,489,237"/>
-<area shape="rect" id="Node000027" href="$gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="25,284,173,309"/>
-<area shape="poly" id="edge12_Node000024_Node000027" title=" " alt="" coords="263,258,151,287,149,281,262,253"/>
-<area shape="rect" id="Node000029" href="$bindgen__GoldFishAudio_8c.html#a67b6ff0bc95707724d7f55f9ee556ec9" title=" " alt="" coords="240,277,415,317"/>
-<area shape="poly" id="edge14_Node000028_Node000029" title=" " alt="" coords="484,297,415,298,415,292,484,291"/>
-<area shape="poly" id="edge17_Node000030_Node000027" title=" " alt="" coords="478,354,365,346,240,331,147,312,148,307,240,326,366,341,479,348"/>
-<area shape="rect" id="Node000031" href="$bindgen__GoldFishAudio_8c.html#ab33bdcb38f7a7d2421dc41ddfdfaa37c" title=" " alt="" coords="240,391,415,431"/>
-<area shape="poly" id="edge16_Node000030_Node000031" title=" " alt="" coords="495,373,409,394,408,389,493,367"/>
+<area shape="poly" id="edge4_Node000002_Node000011" title=" " alt="" coords="244,119,191,119,191,114,244,114"/>
+<area shape="rect" id="Node000013" href="$sdl2_2gf__sound_8c.html#a489c03b92244928ee113dc9a44cb54dc" title=" " alt="" coords="11,153,187,179"/>
+<area shape="poly" id="edge5_Node000002_Node000013" title=" " alt="" coords="255,135,159,156,158,151,254,130"/>
+<area shape="rect" id="Node000015" href="$windows_2gf__sound_8c.html#a5cb5c3b68cde0e5e9244887679088474" title=" " alt="" coords="5,203,192,228"/>
+<area shape="poly" id="edge6_Node000002_Node000015" title=" " alt="" coords="253,137,241,143,227,155,218,167,209,180,193,192,165,205,163,200,191,188,205,176,214,164,223,151,239,138,251,132"/>
+<area shape="poly" id="edge8_Node000016_Node000002" title=" " alt="" coords="511,177,414,143,376,132,377,127,415,138,512,171"/>
+<area shape="rect" id="Node000017" href="$gf__audio_8c.html#ab5022a62ecc7ba83ccb5da4a1add398b" title="Destroy audio interface." alt="" coords="260,153,395,179"/>
+<area shape="poly" id="edge9_Node000016_Node000017" title=" " alt="" coords="448,182,395,176,395,171,449,177"/>
+<area shape="rect" id="Node000020" href="$gf__audio_8c.html#a270465ee43fdc71840bd1a5dbd0a1ec1" title="Stop audio." alt="" coords="271,203,384,228"/>
+<area shape="poly" id="edge10_Node000016_Node000020" title=" " alt="" coords="449,205,385,212,384,207,448,200"/>
+<area shape="rect" id="Node000026" href="$gf__audio_8c.html#af3ae4fe048705bae7ce8a377976a4c2d" title="Load and play file." alt="" coords="257,252,397,277"/>
+<area shape="poly" id="edge12_Node000025_Node000026" title=" " alt="" coords="489,267,398,267,398,262,489,262"/>
+<area shape="rect" id="Node000029" href="$gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="25,309,173,335"/>
+<area shape="poly" id="edge13_Node000026_Node000029" title=" " alt="" coords="263,283,151,312,149,307,262,278"/>
+<area shape="rect" id="Node000031" href="$bindgen__GoldFishAudio_8c.html#a67b6ff0bc95707724d7f55f9ee556ec9" title=" " alt="" coords="240,302,415,342"/>
+<area shape="poly" id="edge15_Node000030_Node000031" title=" " alt="" coords="484,322,415,323,415,318,484,317"/>
+<area shape="poly" id="edge18_Node000032_Node000029" title=" " alt="" coords="478,379,365,371,240,357,147,337,148,332,240,351,366,366,479,374"/>
+<area shape="rect" id="Node000033" href="$bindgen__GoldFishAudio_8c.html#ab33bdcb38f7a7d2421dc41ddfdfaa37c" title=" " alt="" coords="240,417,415,457"/>
+<area shape="poly" id="edge17_Node000032_Node000033" title=" " alt="" coords="495,398,409,419,408,414,493,393"/>
 </map>

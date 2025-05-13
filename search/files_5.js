@@ -60,7 +60,7 @@ var searchData=
   ['gf_5fserver_2ec_57',['gf_server.c',['../gf__server_8c.html',1,'']]],
   ['gf_5fserver_2eh_58',['gf_server.h',['../gf__server_8h.html',1,'']]],
   ['gf_5fsnddrv_2eh_59',['gf_snddrv.h',['../gf__snddrv_8h.html',1,'']]],
-  ['gf_5fsound_2ec_60',['gf_sound.c',['../windows_2gf__sound_8c.html',1,'(Global Namespace)'],['../miniaudio_2gf__sound_8c.html',1,'(Global Namespace)'],['../alsa_2gf__sound_8c.html',1,'(Global Namespace)']]],
+  ['gf_5fsound_2ec_60',['gf_sound.c',['../alsa_2gf__sound_8c.html',1,'(Global Namespace)'],['../miniaudio_2gf__sound_8c.html',1,'(Global Namespace)'],['../sdl2_2gf__sound_8c.html',1,'(Global Namespace)'],['../windows_2gf__sound_8c.html',1,'(Global Namespace)']]],
   ['gf_5fsound_2eh_61',['gf_sound.h',['../gf__sound_8h.html',1,'']]],
   ['gf_5fstb_5fds_2ec_62',['gf_stb_ds.c',['../gf__stb__ds_8c.html',1,'']]],
   ['gf_5fstb_5fimage_2ec_63',['gf_stb_image.c',['../gf__stb__image_8c.html',1,'']]],

@@ -1,27 +1,30 @@
 <map id="include/gf_type/sound.h" name="include/gf_type/sound.h">
-<area shape="rect" id="Node000001" title="Type definitions related to sound backend." alt="" coords="340,5,517,31"/>
-<area shape="rect" id="Node000002" href="$gf__sound_8h.html" title="Sound driver." alt="" coords="190,152,334,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="393,39,361,58,330,81,296,119,271,153,267,150,291,115,327,77,358,53,390,35"/>
-<area shape="rect" id="Node000007" href="$audio_8h.html" title="Type definitions related to audio interface." alt="" coords="341,79,516,104"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="423,44,424,78,419,79,417,45"/>
-<area shape="rect" id="Node000003" href="$gf__audio_8c.html" title=" " alt="" coords="370,233,482,258"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,181,403,230,401,235,297,186"/>
-<area shape="rect" id="Node000004" href="$alsa_2gf__sound_8c.html" title=" " alt="" coords="506,233,695,258"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="325,178,552,230,551,235,324,183"/>
-<area shape="rect" id="Node000005" href="$miniaudio_2gf__sound_8c.html" title=" " alt="" coords="5,225,159,265"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="224,185,126,228,124,223,222,180"/>
-<area shape="rect" id="Node000006" href="$windows_2gf__sound_8c.html" title=" " alt="" coords="183,225,346,265"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="266,191,267,225,261,225,260,191"/>
-<area shape="poly" id="edge15_Node000007_Node000001" title=" " alt="" coords="435,65,433,31,438,31,440,65"/>
-<area shape="poly" id="edge13_Node000007_Node000002" title=" " alt="" coords="390,112,290,154,288,149,388,107"/>
-<area shape="rect" id="Node000008" href="$gf__audio_8h.html" title="Audio interface." alt="" coords="358,152,499,177"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="431,118,431,152,426,152,426,118"/>
-<area shape="rect" id="Node000015" href="$gf__lua_8h.html" title="Lua." alt="" coords="523,152,649,177"/>
-<area shape="poly" id="edge12_Node000007_Node000015" title=" " alt="" coords="468,107,561,149,559,154,465,112"/>
-<area shape="rect" id="Node000017" href="$client_8h.html" title="Type definitions related to client interface." alt="" coords="673,152,848,177"/>
-<area shape="poly" id="edge14_Node000007_Node000017" title=" " alt="" coords="496,104,707,149,706,154,495,109"/>
-<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="430,191,429,233,424,232,425,191"/>
-<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="467,181,577,230,575,235,465,185"/>
-<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="366,183,159,229,158,224,365,178"/>
-<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="394,186,306,228,303,223,391,181"/>
+<area shape="rect" id="Node000001" title="Type definitions related to sound backend." alt="" coords="486,5,663,31"/>
+<area shape="rect" id="Node000002" href="$gf__sound_8h.html" title="Sound driver." alt="" coords="336,152,480,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="539,39,507,58,476,81,442,119,417,153,413,150,437,115,473,77,504,53,536,35"/>
+<area shape="rect" id="Node000008" href="$audio_8h.html" title="Type definitions related to audio interface." alt="" coords="487,79,662,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="569,44,570,78,565,79,563,45"/>
+<area shape="rect" id="Node000003" href="$gf__audio_8c.html" title=" " alt="" coords="797,233,909,258"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="494,176,655,200,786,223,815,230,814,235,785,228,654,205,493,181"/>
+<area shape="rect" id="Node000004" href="$alsa_2gf__sound_8c.html" title=" " alt="" coords="5,233,195,258"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="351,183,145,235,144,230,350,178"/>
+<area shape="rect" id="Node000005" href="$miniaudio_2gf__sound_8c.html" title=" " alt="" coords="219,225,373,265"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="382,187,325,227,321,223,379,183"/>
+<area shape="rect" id="Node000006" href="$sdl2_2gf__sound_8c.html" title=" " alt="" coords="397,233,587,258"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="432,185,481,230,478,234,429,189"/>
+<area shape="rect" id="Node000007" href="$windows_2gf__sound_8c.html" title=" " alt="" coords="611,225,773,265"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="463,178,624,223,623,228,462,183"/>
+<area shape="poly" id="edge17_Node000008_Node000001" title=" " alt="" coords="581,65,579,31,584,31,586,65"/>
+<area shape="poly" id="edge15_Node000008_Node000002" title=" " alt="" coords="536,112,436,154,434,149,534,107"/>
+<area shape="rect" id="Node000009" href="$gf__audio_8h.html" title="Audio interface." alt="" coords="504,152,645,177"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="577,118,577,152,572,152,572,118"/>
+<area shape="rect" id="Node000016" href="$gf__lua_8h.html" title="Lua." alt="" coords="669,152,795,177"/>
+<area shape="poly" id="edge14_Node000008_Node000016" title=" " alt="" coords="614,107,707,149,705,154,611,112"/>
+<area shape="rect" id="Node000018" href="$client_8h.html" title="Type definitions related to client interface." alt="" coords="819,152,994,177"/>
+<area shape="poly" id="edge16_Node000008_Node000018" title=" " alt="" coords="642,104,853,149,852,154,641,109"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="629,178,813,230,812,235,628,184"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="491,182,207,228,165,235,164,230,206,223,490,177"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="522,184,364,228,362,223,520,178"/>
+<area shape="poly" id="edge12_Node000009_Node000006" title=" " alt="" coords="554,189,506,234,502,231,551,185"/>
+<area shape="poly" id="edge13_Node000009_Node000007" title=" " alt="" coords="605,183,665,223,662,227,602,187"/>
 </map>
