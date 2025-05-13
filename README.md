@@ -12,12 +12,16 @@
 
 ## OpenGL stack
  - [RGFW](https://github.com/ColleagueRiley/RGFW) (default)
- - GDI (not default)
- - X11 (not default)
- - [My OSMesa patch](https://github.com/nishiowo/osmesa) for software rendering (not default; optional)
+
+These things are not default; optional
+ - GDI
+ - X11
+ - [My OSMesa patch](https://github.com/nishiowo/osmesa) for software rendering
 
 ## Sound stack
  - [miniaudio](https://github.com/mackron/miniaudio) (default)
- - [ALSALib](https://www.alsa-project.org) (not default; optional)
- - DSound/WinMM (not default; optional)
- - [SDL2](https://wiki.libsdl.org/SDL2) (not default; optional)
+
+These things are not default; optional
+ - [ALSALib](https://www.alsa-project.org)
+ - DSound/WinMM
+ - [SDL2](https://wiki.libsdl.org/SDL2)
