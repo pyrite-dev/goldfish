@@ -7,6 +7,7 @@ var gf__graphic__common_8c =
     [ "gf_graphic_draw_texture_polygon", "gf__graphic__common_8c.html#a4157822cc342fa294329ed2c436d53f2", null ],
     [ "gf_graphic_fill_polygon", "gf__graphic__common_8c.html#a8ff780a4bcadc008355699101d2a42cc", null ],
     [ "gf_graphic_fill_rect", "gf__graphic__common_8c.html#a4811198de205914602e5cdbafdcdd68d", null ],
+    [ "gf_graphic_lines", "gf__graphic__common_8c.html#a69cfc094b68c3f9b6b43b7c4a1d9331b", null ],
     [ "gf_graphic_points", "gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569", null ],
     [ "gf_graphic_text", "gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e", null ],
     [ "gf_graphic_text_height", "gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240", null ],

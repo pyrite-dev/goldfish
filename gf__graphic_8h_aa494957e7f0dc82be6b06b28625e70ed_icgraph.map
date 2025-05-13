@@ -1,0 +1,7 @@
+<map id="gf_graphic_get_point_size" name="gf_graphic_get_point_size">
+<area shape="rect" id="Node000001" title="Get point size." alt="" coords="359,13,549,38"/>
+<area shape="rect" id="Node000002" href="$gf__lua_8c.html#a72d71b7dd1767b780d1fa985a02fe7dd" title=" " alt="" coords="164,5,311,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="345,28,311,28,311,23,345,23"/>
+<area shape="rect" id="Node000003" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,13,116,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,28,116,28,116,23,150,23"/>
+</map>

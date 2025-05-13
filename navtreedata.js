@@ -82,9 +82,9 @@ var NAVTREEINDEX =
 [
 "agl_2gf__draw_8c.html",
 "gf__core_8c.html#abae48921e84f92d590608745536a9ffc",
-"gf__gui__component_8h.html#a0ac5e064cc4f520edd4bc72a4b2efe57",
-"gf__server_8c.html#a7bbb6e42ee5fdf2e1dbbb4678e46973a",
-"structgf__engine__t.html#a811104ab3dd8e668bcca485427a4070c"
+"gf__gui__button_8c.html#a1abfbae2b5cbd1b12df6ca65f8e01b85",
+"gf__resource_8c.html#a594392497cc148244da9ee36f3829295",
+"structgf__draw__t.html#a923e76b7eba5d6bca1c92bea6a716adb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

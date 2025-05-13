@@ -1,0 +1,9 @@
+<map id="gf_graphic_set_line_width" name="gf_graphic_set_line_width">
+<area shape="rect" id="Node000001" title="Set line width." alt="" coords="372,27,520,67"/>
+<area shape="rect" id="Node000002" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="164,5,324,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="358,37,324,32,325,27,359,32"/>
+<area shape="rect" id="Node000003" href="$gf__lua_8c.html#a467c95b8cebfe444b3a0c611f21fc255" title=" " alt="" coords="171,55,317,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="359,62,318,68,317,63,358,57"/>
+<area shape="rect" id="Node000004" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,63,116,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,78,116,78,116,73,157,73"/>
+</map>

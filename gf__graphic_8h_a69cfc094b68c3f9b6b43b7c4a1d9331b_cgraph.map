@@ -1,0 +1,11 @@
+<map id="gf_graphic_lines" name="gf_graphic_lines">
+<area shape="rect" id="Node000001" title="Draw points." alt="" coords="5,70,133,95"/>
+<area shape="rect" id="Node000002" href="$gf__graphic_8c.html#a6e1bdd065472779d31c9d7c272f979d8" title="Draw lines." alt="" coords="181,70,335,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,80,168,80,168,85,134,85"/>
+<area shape="rect" id="Node000003" href="$gf__driver_8c.html#a2740a2bb536d05c08ca019e66be4b6c6" title="Set color." alt="" coords="387,5,534,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="303,67,376,46,377,52,304,73"/>
+<area shape="rect" id="Node000004" href="$gf__graphic_8c.html#ad35db673e213edbadbfd938138c88a4c" title="Start 2D mode." alt="" coords="383,70,539,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="335,80,369,80,369,85,335,85"/>
+<area shape="rect" id="Node000005" href="$gf__graphic_8c.html#acd5d3047cf76b63b2d1161e4e880f446" title="End 2D mode." alt="" coords="389,119,533,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="311,93,395,113,394,119,310,98"/>
+</map>
