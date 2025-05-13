@@ -21,7 +21,6 @@ gf_sound_backends = {
 	},
 	windows = {
 		name = "DirectSound/WinMM",
-		links = {"winmm"}
 	}
 }
 
@@ -382,7 +381,8 @@ function gf_link_stuffs(cond)
 	})
 		links({
 			"user32",
-			"wsock32"
+			"wsock32",
+			"winmm"
 		})
 	filter({
 		"system:not windows",
