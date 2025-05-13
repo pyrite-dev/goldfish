@@ -49,6 +49,7 @@ gf_sound_t* gf_sound_create(gf_audio_t* audio, int rate) {
 int gf_sound_start(gf_sound_t* sound) { return ma_device_start(&sound->context.device) == MA_SUCCESS ? 0 : -1; }
 
 void gf_sound_destroy(gf_sound_t* sound) {
+	ma_device_stop(&sound->context.device);
 	ma_device_uninit(&sound->context.device);
 	free(sound);
 }

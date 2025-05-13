@@ -15,6 +15,10 @@ gf_sound_backends = {
 		name = "ALSA",
 		links = {"asound"}
 	},
+	sdl2 = {
+		name = "SDL2",
+		config = "sdl2"
+	},
 	windows = {
 		name = "DirectSound/WinMM",
 		links = {"winmm"}
@@ -316,6 +320,16 @@ function gf_link_stuffs(cond)
 		})
 			if v.links then
 				links(v.links)
+			end
+	end
+	for k,v in pairs(gf_sound_backends) do
+		filter({
+			"options:sound=" .. k,
+			"platforms:Native"
+		})
+			if v.config then
+				buildoptions("`" .. v.config .. "-config --cflags`")
+				linkoptions("`" .. v.config .. "-config --libs`")
 			end
 	end
 	for k,v in pairs(gf_backends) do

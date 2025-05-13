@@ -15,6 +15,9 @@
 #include <miniaudio.h>
 #elif defined(SND_ALSA)
 #include <alsa/asoundlib.h>
+#elif defined(SND_SDL2)
+#include <SDL.h>
+#include <SDL_audio.h>
 #endif
 
 #endif

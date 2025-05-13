@@ -45,6 +45,10 @@ GF_DECLARE_TYPE(sound_context, {
 	gf_thread_t* thread;
 	int quit;
 });
+#elif defined(SND_SDL2)
+GF_DECLARE_TYPE(sound_context, {
+	SDL_AudioDeviceID device;
+});
 #else
 /**
  * @struct gf_sound_context_t
