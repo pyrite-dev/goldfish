@@ -1,18 +1,20 @@
 <map id="gf_gui_calc_xywh_noset" name="gf_gui_calc_xywh_noset">
-<area shape="rect" id="Node000001" title=" " alt="" coords="413,129,593,155"/>
-<area shape="poly" id="edge8_Node000001_Node000001" title=" " alt="" coords="540,120,530,111,503,108,481,110,470,115,468,120,474,128,470,131,462,121,466,111,480,105,503,103,532,106,543,115"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="228,129,365,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="400,145,366,145,366,139,400,139"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="413,153,593,179"/>
+<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="540,144,530,135,503,132,481,134,470,139,468,144,474,152,470,155,462,145,466,135,480,129,503,127,532,130,543,139"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="228,153,365,179"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="400,169,366,169,366,163,400,163"/>
 <area shape="rect" id="Node000003" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="13,5,173,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="273,121,232,82,179,44,152,33,154,28,181,40,235,78,277,117"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="277,144,236,93,209,67,179,44,155,33,157,28,181,40,212,63,240,89,282,140"/>
 <area shape="rect" id="Node000004" href="$gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="14,55,171,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="256,126,179,94,144,83,145,78,181,89,258,121"/>
-<area shape="rect" id="Node000005" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="37,104,148,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="214,134,148,126,149,121,215,129"/>
-<area shape="rect" id="Node000008" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="5,153,180,179"/>
-<area shape="poly" id="edge5_Node000002_Node000008" title=" " alt="" coords="215,154,180,158,180,153,214,149"/>
-<area shape="rect" id="Node000009" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="21,203,165,228"/>
-<area shape="poly" id="edge6_Node000002_Node000009" title=" " alt="" coords="255,163,181,193,142,205,140,200,179,187,253,158"/>
-<area shape="rect" id="Node000010" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="9,252,177,277"/>
-<area shape="poly" id="edge7_Node000002_Node000010" title=" " alt="" coords="276,166,235,205,181,242,151,254,149,249,179,237,231,201,273,163"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="267,147,226,120,179,94,148,83,150,78,181,89,229,115,270,143"/>
+<area shape="rect" id="Node000005" href="$gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="15,104,170,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="230,153,145,132,147,127,231,148"/>
+<area shape="rect" id="Node000006" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="37,153,148,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="214,169,148,169,148,163,214,163"/>
+<area shape="rect" id="Node000009" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="5,203,180,228"/>
+<area shape="poly" id="edge6_Node000002_Node000009" title=" " alt="" coords="231,184,147,205,145,200,230,179"/>
+<area shape="rect" id="Node000010" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="21,252,165,277"/>
+<area shape="poly" id="edge7_Node000002_Node000010" title=" " alt="" coords="269,189,228,216,181,242,147,254,145,249,179,237,226,212,266,185"/>
+<area shape="rect" id="Node000011" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="9,301,177,327"/>
+<area shape="poly" id="edge8_Node000002_Node000011" title=" " alt="" coords="281,192,240,242,212,268,181,291,154,304,152,299,179,286,209,264,236,238,277,188"/>
 </map>

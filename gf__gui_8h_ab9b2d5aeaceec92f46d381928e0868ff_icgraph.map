@@ -1,7 +1,9 @@
 <map id="gf_gui_get_wh" name="gf_gui_get_wh">
-<area shape="rect" id="Node000001" title="Get width and height." alt="" coords="372,13,488,38"/>
-<area shape="rect" id="Node000002" href="$gf__lua_8c.html#a26ab37c4ca63cc701ed20492f9be66da" title=" " alt="" coords="164,5,324,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="358,28,324,28,324,23,358,23"/>
-<area shape="rect" id="Node000003" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,13,116,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,28,116,28,116,23,150,23"/>
+<area shape="rect" id="Node000001" title="Get width and height." alt="" coords="372,35,488,60"/>
+<area shape="rect" id="Node000002" href="$gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="167,5,321,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="358,39,321,33,322,28,359,33"/>
+<area shape="rect" id="Node000003" href="$gf__lua_8c.html#a26ab37c4ca63cc701ed20492f9be66da" title=" " alt="" coords="164,55,324,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="359,61,325,66,324,61,358,55"/>
+<area shape="rect" id="Node000004" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,63,116,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="150,78,116,78,116,73,150,73"/>
 </map>

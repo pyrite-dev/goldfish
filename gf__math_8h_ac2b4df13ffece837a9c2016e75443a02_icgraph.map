@@ -1,13 +1,15 @@
 <map id="gf_math_round" name="gf_math_round">
-<area shape="rect" id="Node000001" title="Calculate round(x)" alt="" coords="389,80,509,105"/>
-<area shape="rect" id="Node000002" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="224,80,341,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="376,95,342,95,342,90,376,90"/>
+<area shape="rect" id="Node000001" title="Calculate round(x)" alt="" coords="427,105,547,131"/>
+<area shape="rect" id="Node000002" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="243,80,360,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,111,360,103,360,98,414,105"/>
+<area shape="rect" id="Node000020" href="$gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="224,129,379,155"/>
+<area shape="poly" id="edge6_Node000001_Node000020" title=" " alt="" coords="413,130,379,135,378,129,413,125"/>
 <area shape="rect" id="Node000003" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="29,5,152,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="244,76,175,44,141,33,143,28,177,40,246,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="258,77,175,45,139,33,141,28,177,39,260,72"/>
 <area shape="rect" id="Node000013" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="5,55,176,80"/>
-<area shape="poly" id="edge3_Node000002_Node000013" title=" " alt="" coords="210,86,176,81,177,76,211,81"/>
+<area shape="poly" id="edge3_Node000002_Node000013" title=" " alt="" coords="229,87,176,80,176,75,230,81"/>
 <area shape="rect" id="Node000015" href="$gf__graphic__common_8c.html#a1ce50172aa1749c26af704601fc131ef" title="Calculate text width." alt="" coords="7,104,174,129"/>
-<area shape="poly" id="edge4_Node000002_Node000015" title=" " alt="" coords="210,104,175,109,174,104,210,99"/>
+<area shape="poly" id="edge4_Node000002_Node000015" title=" " alt="" coords="230,103,174,110,174,105,229,98"/>
 <area shape="rect" id="Node000017" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="9,153,172,179"/>
-<area shape="poly" id="edge5_Node000002_Node000017" title=" " alt="" coords="245,114,177,143,139,156,137,151,175,138,242,109"/>
+<area shape="poly" id="edge5_Node000002_Node000017" title=" " alt="" coords="244,112,225,119,177,143,140,156,138,151,175,138,223,114,242,107"/>
 </map>

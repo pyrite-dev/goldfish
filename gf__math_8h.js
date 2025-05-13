@@ -2,6 +2,7 @@ var gf__math_8h =
 [
     [ "GF_MATH_PI", "gf__math_8h.html#a8bf10c0638a206ac572807e90508b6b5", null ],
     [ "GF_MATH_VECTOR_COPY", "gf__math_8h.html#a545245d1e846e9c756e776eb6138536b", null ],
+    [ "gf_math_abs", "gf__math_8h.html#a2b0effc366a4821d63d8ee259f00af6f", null ],
     [ "gf_math_ceil", "gf__math_8h.html#aa874d840d7681c4ab1d3b84d3b4fa122", null ],
     [ "gf_math_cot", "gf__math_8h.html#aac8f6a22f2880f5b86b20a191a662333", null ],
     [ "gf_math_floor", "gf__math_8h.html#a011036c5742d54950ebecf62bc3d4581", null ],

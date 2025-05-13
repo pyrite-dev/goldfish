@@ -1,0 +1,23 @@
+<map id="bindgen_gui_gf_gui_create_range" name="bindgen_gui_gf_gui_create_range">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,174,153,214"/>
+<area shape="rect" id="Node000002" href="$gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="201,181,356,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,191,188,191,188,197,153,197"/>
+<area shape="rect" id="Node000003" href="$gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="412,5,571,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,179,330,117,364,80,402,48,429,33,432,38,406,52,368,84,335,121,290,182"/>
+<area shape="rect" id="Node000004" href="$gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="627,31,817,56"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="290,179,336,135,368,111,403,92,455,72,509,59,613,44,613,49,510,64,456,78,405,96,371,116,339,139,293,183"/>
+<area shape="rect" id="Node000006" href="$gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="428,107,555,132"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="308,179,403,141,427,133,428,138,405,146,310,184"/>
+<area shape="rect" id="Node000008" href="$gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="422,156,561,181"/>
+<area shape="poly" id="edge6_Node000002_Node000008" title=" " alt="" coords="356,182,408,176,409,181,357,187"/>
+<area shape="rect" id="Node000009" href="$gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="419,205,563,231"/>
+<area shape="poly" id="edge7_Node000002_Node000009" title=" " alt="" coords="357,200,406,206,405,211,356,205"/>
+<area shape="rect" id="Node000012" href="$gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="404,255,579,280"/>
+<area shape="poly" id="edge8_Node000002_Node000012" title=" " alt="" coords="312,204,405,239,432,248,430,253,403,245,310,209"/>
+<area shape="rect" id="Node000014" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="647,280,797,305"/>
+<area shape="poly" id="edge11_Node000002_Node000014" title=" " alt="" coords="293,205,338,250,370,273,405,290,464,305,526,310,585,309,639,304,639,310,585,315,525,316,463,310,403,295,367,277,334,254,289,209"/>
+<area shape="rect" id="Node000015" href="$gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="414,356,569,381"/>
+<area shape="poly" id="edge10_Node000002_Node000015" title=" " alt="" coords="290,205,335,267,368,303,405,334,432,349,429,353,403,339,364,307,331,270,286,209"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="571,24,613,29,613,34,571,29"/>
+<area shape="poly" id="edge9_Node000012_Node000014" title=" " alt="" coords="579,274,634,280,633,286,579,280"/>
+</map>

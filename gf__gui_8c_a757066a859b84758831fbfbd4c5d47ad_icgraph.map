@@ -1,21 +1,24 @@
 <map id="gf_gui_create_component" name="gf_gui_create_component">
-<area shape="rect" id="Node000001" title="Initialize component." alt="" coords="624,87,815,112"/>
-<area shape="rect" id="Node000002" href="$gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="417,87,576,112"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="610,102,576,102,576,97,610,97"/>
-<area shape="rect" id="Node000009" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,31,369,56"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="639,87,576,77,370,53,370,48,576,71,640,82"/>
-<area shape="rect" id="Node000011" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,5,148,31"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="676,84,628,65,575,49,460,27,343,17,235,14,148,16,148,11,235,9,343,12,460,22,577,43,630,60,678,79"/>
-<area shape="rect" id="Node000013" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="199,145,366,171"/>
-<area shape="poly" id="edge11_Node000001_Node000013" title=" " alt="" coords="634,117,576,126,367,152,366,147,576,121,633,112"/>
-<area shape="rect" id="Node000015" href="$gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e" title="Create frame component." alt="" coords="419,188,575,213"/>
-<area shape="poly" id="edge6_Node000001_Node000015" title=" " alt="" coords="682,121,577,171,531,190,529,185,575,166,680,116"/>
-<area shape="rect" id="Node000003" href="$bindgen__gui_8c.html#a160dd5dcf2ce56b61dc84ae7ed1aa0bf" title=" " alt="" coords="209,81,357,121"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,103,357,103,357,98,404,97"/>
-<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="434,86,331,59,333,54,435,81"/>
-<area shape="poly" id="edge5_Node000002_Node000013" title=" " alt="" coords="437,118,330,148,329,143,436,113"/>
-<area shape="poly" id="edge4_Node000009_Node000011" title=" " alt="" coords="182,34,148,29,148,24,183,28"/>
-<area shape="poly" id="edge8_Node000015_Node000013" title=" " alt="" coords="418,188,346,173,347,168,419,183"/>
-<area shape="rect" id="Node000016" href="$bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4" title=" " alt="" coords="209,195,357,235"/>
-<area shape="poly" id="edge7_Node000015_Node000016" title=" " alt="" coords="405,210,357,213,357,208,405,204"/>
+<area shape="rect" id="Node000001" title="Initialize component." alt="" coords="624,125,815,151"/>
+<area shape="rect" id="Node000002" href="$gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="417,100,576,125"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="610,128,576,124,577,119,610,123"/>
+<area shape="rect" id="Node000009" href="$gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="205,40,360,65"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="675,123,627,105,575,90,463,70,360,60,361,54,464,65,577,85,629,100,677,118"/>
+<area shape="rect" id="Node000011" href="$gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,155,369,180"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="610,148,370,164,369,159,610,143"/>
+<area shape="rect" id="Node000013" href="$gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,72,148,97"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="688,120,637,88,575,59,472,26,388,10,347,8,303,11,197,30,142,50,99,74,96,70,140,45,195,25,302,6,347,3,388,5,473,21,577,54,639,83,691,115"/>
+<area shape="rect" id="Node000015" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="199,204,366,229"/>
+<area shape="poly" id="edge13_Node000001_Node000015" title=" " alt="" coords="635,156,355,207,354,201,634,151"/>
+<area shape="rect" id="Node000017" href="$gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e" title="Create frame component." alt="" coords="419,252,575,277"/>
+<area shape="poly" id="edge7_Node000001_Node000017" title=" " alt="" coords="692,161,640,197,577,235,534,254,532,250,575,230,637,193,689,157"/>
+<area shape="rect" id="Node000003" href="$bindgen__gui_8c.html#a160dd5dcf2ce56b61dc84ae7ed1aa0bf" title=" " alt="" coords="209,90,357,130"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,114,357,114,357,108,404,109"/>
+<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="437,99,328,68,329,63,438,94"/>
+<area shape="poly" id="edge4_Node000002_Node000011" title=" " alt="" coords="434,131,334,157,332,152,432,126"/>
+<area shape="poly" id="edge6_Node000002_Node000015" title=" " alt="" coords="469,136,424,165,370,194,336,206,334,201,368,189,421,161,466,131"/>
+<area shape="poly" id="edge5_Node000011_Node000013" title=" " alt="" coords="220,153,195,145,100,100,103,95,197,140,221,148"/>
+<area shape="poly" id="edge9_Node000017_Node000015" title=" " alt="" coords="425,252,339,232,341,227,427,246"/>
+<area shape="rect" id="Node000018" href="$bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4" title=" " alt="" coords="209,254,357,294"/>
+<area shape="poly" id="edge8_Node000017_Node000018" title=" " alt="" coords="405,271,357,274,357,268,405,266"/>
 </map>

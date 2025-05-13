@@ -179,6 +179,8 @@ Functions</h2></td></tr>
 <tr class="separator:a160dd5dcf2ce56b61dc84ae7ed1aa0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4ef977dbeb261ede2849f3d4e5fccd4" id="r_ad4ef977dbeb261ede2849f3d4e5fccd4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4">bindgen_gui_gf_gui_create_frame</a> (lua_State *s)</td></tr>
 <tr class="separator:ad4ef977dbeb261ede2849f3d4e5fccd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7c744e318db8392492dd3855899e53e" id="r_ab7c744e318db8392492dd3855899e53e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindgen__gui_8c.html#ab7c744e318db8392492dd3855899e53e">bindgen_gui_gf_gui_create_range</a> (lua_State *s)</td></tr>
+<tr class="separator:ab7c744e318db8392492dd3855899e53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4e68c9e6812540fdc0aa005acfda0ad" id="r_af4e68c9e6812540fdc0aa005acfda0ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad">bindgen_gui_gf_gui_create_scrollbar</a> (lua_State *s)</td></tr>
 <tr class="separator:af4e68c9e6812540fdc0aa005acfda0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28909a4b4bdd3dbdc27bc8e7e25d2986" id="r_a28909a4b4bdd3dbdc27bc8e7e25d2986"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindgen__gui_8c.html#a28909a4b4bdd3dbdc27bc8e7e25d2986">bindgen_gui_gf_gui_create_text</a> (lua_State *s)</td></tr>
@@ -228,7 +230,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>C: gf_gui_id_t <a class="el" href="gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component.">gf_gui_create_button(gf_gui_t*, double, double, double, double)</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00110">110</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00111">111</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -273,7 +275,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>C: gf_gui_id_t <a class="el" href="gf__gui_8c.html#a889a54075cbe3114cd51eae892774541" title="Create component specified by name.">gf_gui_create_common(gf_gui_t*, const char*, double, double, double, double)</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00080">80</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00081">81</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -316,7 +318,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>C: gf_gui_id_t <a class="el" href="gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e" title="Create frame component.">gf_gui_create_frame(gf_gui_t*, double, double, double, double)</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00139">139</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00140">140</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -344,6 +346,67 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="ab7c744e318db8392492dd3855899e53e" name="ab7c744e318db8392492dd3855899e53e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7c744e318db8392492dd3855899e53e">&#9670;&#160;</a></span>bindgen_gui_gf_gui_create_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bindgen_gui_gf_gui_create_range </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>C: gf_gui_id_t <a class="el" href="gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component.">gf_gui_create_range(gf_gui_t*, double, double, double, double)</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00169">169</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="bindgen__gui_8c_ab7c744e318db8392492dd3855899e53e_cgraph.png" border="0" usemap="#abindgen__gui_8c_ab7c744e318db8392492dd3855899e53e_cgraph" alt=""/></div>
+<map name="abindgen__gui_8c_ab7c744e318db8392492dd3855899e53e_cgraph" id="abindgen__gui_8c_ab7c744e318db8392492dd3855899e53e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,174,153,214"/>
+<area shape="rect" href="gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="201,181,356,207"/>
+<area shape="poly" title=" " alt="" coords="153,191,188,191,188,197,153,197"/>
+<area shape="rect" href="gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="412,5,571,31"/>
+<area shape="poly" title=" " alt="" coords="286,179,330,117,364,80,402,48,429,33,432,38,406,52,368,84,335,121,290,182"/>
+<area shape="rect" href="gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="627,31,817,56"/>
+<area shape="poly" title=" " alt="" coords="290,179,336,135,368,111,403,92,455,72,509,59,613,44,613,49,510,64,456,78,405,96,371,116,339,139,293,183"/>
+<area shape="rect" href="gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="428,107,555,132"/>
+<area shape="poly" title=" " alt="" coords="308,179,403,141,427,133,428,138,405,146,310,184"/>
+<area shape="rect" href="gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="422,156,561,181"/>
+<area shape="poly" title=" " alt="" coords="356,182,408,176,409,181,357,187"/>
+<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="419,205,563,231"/>
+<area shape="poly" title=" " alt="" coords="357,200,406,206,405,211,356,205"/>
+<area shape="rect" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="404,255,579,280"/>
+<area shape="poly" title=" " alt="" coords="312,204,405,239,432,248,430,253,403,245,310,209"/>
+<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="647,280,797,305"/>
+<area shape="poly" title=" " alt="" coords="293,205,338,250,370,273,405,290,464,305,526,310,585,309,639,304,639,310,585,315,525,316,463,310,403,295,367,277,334,254,289,209"/>
+<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="414,356,569,381"/>
+<area shape="poly" title=" " alt="" coords="290,205,335,267,368,303,405,334,432,349,429,353,403,339,364,307,331,270,286,209"/>
+<area shape="poly" title=" " alt="" coords="571,24,613,29,613,34,571,29"/>
+<area shape="poly" title=" " alt="" coords="579,274,634,280,633,286,579,280"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="bindgen__gui_8c_ab7c744e318db8392492dd3855899e53e_icgraph.png" border="0" usemap="#abindgen__gui_8c_ab7c744e318db8392492dd3855899e53e_icgraph" alt=""/></div>
+<map name="abindgen__gui_8c_ab7c744e318db8392492dd3855899e53e_icgraph" id="abindgen__gui_8c_ab7c744e318db8392492dd3855899e53e_icgraph">
+<area shape="rect" title=" " alt="" coords="333,5,481,45"/>
+<area shape="rect" href="bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8" title=" " alt="" coords="156,13,285,38"/>
+<area shape="poly" title=" " alt="" coords="320,28,286,28,286,23,320,23"/>
+<area shape="rect" href="bindgen_8c.html#a2b87a92483f8fce3503268bb05dc7098" title=" " alt="" coords="5,13,108,38"/>
+<area shape="poly" title=" " alt="" coords="142,28,108,28,108,23,142,23"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="af4e68c9e6812540fdc0aa005acfda0ad" name="af4e68c9e6812540fdc0aa005acfda0ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4e68c9e6812540fdc0aa005acfda0ad">&#9670;&#160;</a></span>bindgen_gui_gf_gui_create_scrollbar()</h2>
 
@@ -361,7 +424,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>C: gf_gui_id_t <a class="el" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component.">gf_gui_create_scrollbar(gf_gui_t*, double, double, double, double)</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00168">168</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00198">198</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -431,32 +494,35 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>C: gf_gui_id_t <a class="el" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component.">gf_gui_create_text(gf_gui_t*, double, double, double, double)</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00197">197</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00227">227</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="bindgen__gui_8c_a28909a4b4bdd3dbdc27bc8e7e25d2986_cgraph.png" border="0" usemap="#abindgen__gui_8c_a28909a4b4bdd3dbdc27bc8e7e25d2986_cgraph" alt=""/></div>
 <map name="abindgen__gui_8c_a28909a4b4bdd3dbdc27bc8e7e25d2986_cgraph" id="abindgen__gui_8c_a28909a4b4bdd3dbdc27bc8e7e25d2986_cgraph">
-<area shape="rect" title=" " alt="" coords="5,111,153,151"/>
-<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="201,119,344,144"/>
-<area shape="poly" title=" " alt="" coords="154,129,188,129,188,134,154,134"/>
-<area shape="rect" href="gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="613,5,804,31"/>
-<area shape="poly" title=" " alt="" coords="288,116,333,85,391,56,443,40,497,29,599,18,600,23,498,34,444,45,393,60,335,89,291,121"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="392,93,565,119"/>
-<area shape="poly" title=" " alt="" coords="344,120,378,116,379,121,345,125"/>
-<area shape="rect" href="gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="645,80,772,105"/>
-<area shape="poly" title=" " alt="" coords="295,116,339,95,391,78,454,70,518,68,632,77,632,82,518,73,455,75,393,83,341,100,297,121"/>
-<area shape="rect" href="gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="639,137,778,163"/>
-<area shape="poly" title=" " alt="" coords="344,132,626,144,625,149,344,137"/>
-<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="637,195,781,220"/>
-<area shape="poly" title=" " alt="" coords="345,141,624,190,623,195,344,146"/>
-<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="633,244,784,269"/>
-<area shape="poly" title=" " alt="" coords="299,142,342,163,393,183,511,217,620,240,619,245,509,222,391,189,340,168,297,147"/>
-<area shape="poly" title=" " alt="" coords="512,91,661,33,663,38,514,96"/>
-<area shape="poly" title=" " alt="" coords="566,98,631,94,632,100,566,104"/>
-<area shape="poly" title=" " alt="" coords="546,116,629,132,628,137,545,121"/>
-<area shape="poly" title=" " alt="" coords="504,116,614,172,656,188,654,193,612,176,501,121"/>
-<area shape="poly" title=" " alt="" coords="492,117,541,172,576,204,615,230,628,237,626,242,612,235,572,208,537,176,488,121"/>
+<area shape="rect" title=" " alt="" coords="5,142,153,182"/>
+<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="201,149,344,175"/>
+<area shape="poly" title=" " alt="" coords="154,159,188,159,188,165,154,165"/>
+<area shape="rect" href="gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="615,5,805,31"/>
+<area shape="poly" title=" " alt="" coords="288,147,332,114,391,82,443,63,497,48,600,28,601,33,499,53,445,68,393,87,335,119,291,151"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="393,149,566,175"/>
+<area shape="poly" title=" " alt="" coords="344,159,379,159,379,165,344,165"/>
+<area shape="rect" href="gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="647,68,773,93"/>
+<area shape="poly" title=" " alt="" coords="300,147,343,129,391,114,454,101,518,92,633,81,633,87,519,97,455,106,393,119,344,134,303,152"/>
+<area shape="rect" href="gf__gui_8c.html#aee257055873dfe2a9ec29c293095886b" title="Set parent component." alt="" coords="641,143,779,168"/>
+<area shape="poly" title=" " alt="" coords="321,147,392,134,479,129,567,134,627,140,627,145,566,139,479,134,392,139,322,152"/>
+<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="638,196,782,221"/>
+<area shape="poly" title=" " alt="" coords="329,172,392,183,514,196,624,203,624,208,513,201,392,189,329,177"/>
+<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="635,251,785,276"/>
+<area shape="poly" title=" " alt="" coords="283,173,299,199,324,231,355,263,393,286,427,298,463,304,537,304,605,293,662,278,663,283,606,298,537,309,463,309,426,303,391,291,352,267,320,235,295,202,279,176"/>
+<area shape="rect" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="392,251,567,276"/>
+<area shape="poly" title=" " alt="" coords="295,173,339,200,393,229,428,243,426,248,391,234,336,205,292,177"/>
+<area shape="poly" title=" " alt="" coords="492,147,543,102,613,53,655,33,658,38,616,58,547,107,496,151"/>
+<area shape="poly" title=" " alt="" coords="515,147,659,95,661,100,517,152"/>
+<area shape="poly" title=" " alt="" coords="566,157,627,155,627,160,566,162"/>
+<area shape="poly" title=" " alt="" coords="544,172,634,191,633,196,542,177"/>
+<area shape="poly" title=" " alt="" coords="503,172,553,201,616,232,650,244,648,249,614,236,551,206,500,177"/>
+<area shape="poly" title=" " alt="" coords="567,261,621,261,621,266,567,266"/>
 </map>
 </div>
 <div class="dynheader">
@@ -491,7 +557,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>C: gf_gui_id_t <a class="el" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component.">gf_gui_create_window(gf_gui_t*, double, double, double, double)</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00226">226</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00256">256</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -550,9 +616,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Symbols: gf_gui_set_button_sound gf_gui_sort_component gf_gui_create_common gf_gui_create_button gf_gui_create_frame gf_gui_create_scrollbar gf_gui_create_text gf_gui_create_window C: void <a class="el" href="gf__gui_8c.html#a9ebb2c6a640e7555e665fcf63a3a1e00" title="Set default button sound.">gf_gui_set_button_sound(gf_gui_t*, const char*)</a> </p>
+<p>Symbols: gf_gui_set_button_sound gf_gui_sort_component gf_gui_create_common gf_gui_create_button gf_gui_create_frame gf_gui_create_range gf_gui_create_scrollbar gf_gui_create_text gf_gui_create_window C: void <a class="el" href="gf__gui_8c.html#a9ebb2c6a640e7555e665fcf63a3a1e00" title="Set default button sound.">gf_gui_set_button_sound(gf_gui_t*, const char*)</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00043">43</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00044">44</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -595,7 +661,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>C: void <a class="el" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components.">gf_gui_sort_component(gf_gui_t*)</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00062">62</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00063">63</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -642,49 +708,56 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00252">252</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bindgen__gui_8c_source.html#l00282">282</a> of file <a class="el" href="bindgen__gui_8c_source.html">bindgen_gui.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="bindgen__gui_8c_a32d401eacc24910702820ffa1711bdb8_cgraph.png" border="0" usemap="#abindgen__gui_8c_a32d401eacc24910702820ffa1711bdb8_cgraph" alt=""/></div>
 <map name="abindgen__gui_8c_a32d401eacc24910702820ffa1711bdb8_cgraph" id="abindgen__gui_8c_a32d401eacc24910702820ffa1711bdb8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,227,135,253"/>
-<area shape="rect" href="bindgen__gui_8c.html#a160dd5dcf2ce56b61dc84ae7ed1aa0bf" title=" " alt="" coords="623,191,771,231"/>
-<area shape="poly" title=" " alt="" coords="135,234,609,212,610,217,135,240"/>
-<area shape="rect" href="bindgen__gui_8c.html#a486808d300abbd2a75969a064ad711e5" title=" " alt="" coords="183,69,331,109"/>
-<area shape="poly" title=" " alt="" coords="79,225,120,175,149,146,181,119,189,114,192,118,184,123,152,150,124,179,83,229"/>
-<area shape="rect" href="bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4" title=" " alt="" coords="183,133,331,173"/>
-<area shape="poly" title=" " alt="" coords="97,225,199,177,201,182,100,230"/>
-<area shape="rect" href="bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad" title=" " alt="" coords="397,305,545,345"/>
-<area shape="poly" title=" " alt="" coords="91,251,132,275,184,297,234,310,286,318,383,324,383,329,285,323,233,315,182,303,130,280,88,255"/>
-<area shape="rect" href="bindgen__gui_8c.html#a28909a4b4bdd3dbdc27bc8e7e25d2986" title=" " alt="" coords="183,248,331,288"/>
-<area shape="poly" title=" " alt="" coords="136,247,169,252,168,257,135,252"/>
-<area shape="rect" href="bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="183,5,331,45"/>
-<area shape="poly" title=" " alt="" coords="74,226,87,193,110,147,141,99,181,55,186,51,190,55,184,59,146,102,115,150,92,195,78,228"/>
-<area shape="rect" href="bindgen__gui_8c.html#a133e6cd4180b0c7a3c99299080ffe51d" title=" " alt="" coords="183,363,331,403"/>
-<area shape="poly" title=" " alt="" coords="85,251,127,294,184,342,203,354,200,358,181,346,124,298,82,255"/>
-<area shape="rect" href="bindgen__gui_8c.html#aeefeecd0ff17aa1db4d8540bf1123ae5" title=" " alt="" coords="183,427,331,467"/>
-<area shape="poly" title=" " alt="" coords="79,252,116,326,146,372,184,413,190,417,187,421,181,417,142,375,111,329,74,254"/>
-<area shape="rect" href="gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="832,198,991,223"/>
-<area shape="poly" title=" " alt="" coords="771,208,818,208,818,213,771,213"/>
-<area shape="rect" href="gf__gui_8c.html#a889a54075cbe3114cd51eae892774541" title="Create component specified by name." alt="" coords="383,81,558,106"/>
-<area shape="poly" title=" " alt="" coords="331,88,370,89,369,94,331,93"/>
-<area shape="rect" href="gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e" title="Create frame component." alt="" coords="619,113,775,138"/>
-<area shape="poly" title=" " alt="" coords="331,146,605,128,606,134,331,151"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="611,255,784,281"/>
-<area shape="poly" title=" " alt="" coords="544,304,633,281,634,287,545,309"/>
-<area shape="poly" title=" " alt="" coords="745,253,849,224,851,230,746,258"/>
-<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="399,255,542,281"/>
-<area shape="poly" title=" " alt="" coords="331,265,386,265,386,271,331,271"/>
-<area shape="poly" title=" " alt="" coords="542,265,597,265,597,271,542,271"/>
-<area shape="rect" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="387,31,554,57"/>
-<area shape="poly" title=" " alt="" coords="331,29,374,33,373,38,330,34"/>
-<area shape="poly" title=" " alt="" coords="555,44,608,50,667,60,727,75,785,98,818,117,847,140,893,186,889,189,844,144,815,121,783,102,726,80,666,65,607,55,554,49"/>
-<area shape="poly" title=" " alt="" coords="526,54,564,65,658,104,656,109,562,71,525,59"/>
-<area shape="rect" href="gf__gui_8c.html#a9ebb2c6a640e7555e665fcf63a3a1e00" title="Set default button sound." alt="" coords="379,370,563,395"/>
-<area shape="poly" title=" " alt="" coords="331,380,365,380,365,385,331,385"/>
-<area shape="rect" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="383,434,558,459"/>
-<area shape="poly" title=" " alt="" coords="331,444,369,444,369,449,331,449"/>
+<area shape="rect" title=" " alt="" coords="5,239,135,265"/>
+<area shape="rect" href="bindgen__gui_8c.html#a160dd5dcf2ce56b61dc84ae7ed1aa0bf" title=" " alt="" coords="624,177,772,217"/>
+<area shape="poly" title=" " alt="" coords="107,237,182,217,298,203,414,195,610,192,610,198,414,201,298,208,183,223,108,242"/>
+<area shape="rect" href="bindgen__gui_8c.html#a486808d300abbd2a75969a064ad711e5" title=" " alt="" coords="183,424,331,464"/>
+<area shape="poly" title=" " alt="" coords="80,264,118,332,148,373,184,410,191,415,187,419,181,414,144,377,113,335,75,266"/>
+<area shape="rect" href="bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4" title=" " alt="" coords="183,296,331,336"/>
+<area shape="poly" title=" " alt="" coords="109,262,186,289,184,294,107,267"/>
+<area shape="rect" href="bindgen__gui_8c.html#ab7c744e318db8392492dd3855899e53e" title=" " alt="" coords="183,232,331,272"/>
+<area shape="poly" title=" " alt="" coords="135,249,169,249,169,255,135,255"/>
+<area shape="rect" href="bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad" title=" " alt="" coords="397,5,545,45"/>
+<area shape="poly" title=" " alt="" coords="71,239,82,200,103,147,135,93,156,68,181,48,229,25,282,13,334,9,383,10,383,15,334,14,282,18,231,31,184,53,160,72,139,96,108,150,87,202,77,240"/>
+<area shape="rect" href="bindgen__gui_8c.html#a28909a4b4bdd3dbdc27bc8e7e25d2986" title=" " alt="" coords="183,63,331,103"/>
+<area shape="poly" title=" " alt="" coords="78,238,119,184,148,151,181,121,200,107,203,112,184,125,152,155,123,187,82,241"/>
+<area shape="rect" href="bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="183,360,331,400"/>
+<area shape="poly" title=" " alt="" coords="86,263,128,303,184,346,194,351,191,356,181,350,124,307,82,267"/>
+<area shape="rect" href="bindgen__gui_8c.html#a133e6cd4180b0c7a3c99299080ffe51d" title=" " alt="" coords="183,488,331,528"/>
+<area shape="poly" title=" " alt="" coords="77,264,89,304,110,360,142,420,162,449,185,474,189,478,186,482,181,478,157,452,137,423,105,362,84,306,72,266"/>
+<area shape="rect" href="bindgen__gui_8c.html#aeefeecd0ff17aa1db4d8540bf1123ae5" title=" " alt="" coords="397,120,545,160"/>
+<area shape="poly" title=" " alt="" coords="84,237,125,204,153,187,182,174,232,158,285,147,383,138,383,143,285,153,234,163,184,178,155,192,128,209,87,241"/>
+<area shape="rect" href="gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="833,214,992,239"/>
+<area shape="poly" title=" " alt="" coords="773,205,820,211,820,217,772,210"/>
+<area shape="rect" href="gf__gui_8c.html#a889a54075cbe3114cd51eae892774541" title="Create component specified by name." alt="" coords="383,431,558,457"/>
+<area shape="poly" title=" " alt="" coords="331,441,369,441,369,447,331,447"/>
+<area shape="rect" href="gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e" title="Create frame component." alt="" coords="620,303,776,329"/>
+<area shape="poly" title=" " alt="" coords="331,313,606,313,606,319,331,319"/>
+<area shape="rect" href="gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="393,239,548,265"/>
+<area shape="poly" title=" " alt="" coords="331,249,380,249,380,255,331,255"/>
+<area shape="poly" title=" " alt="" coords="548,245,820,229,820,235,548,250"/>
+<area shape="rect" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="611,127,785,153"/>
+<area shape="poly" title=" " alt="" coords="488,237,541,201,610,163,631,155,633,159,612,168,543,205,491,241"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="611,70,785,95"/>
+<area shape="poly" title=" " alt="" coords="546,41,634,64,633,69,544,47"/>
+<area shape="poly" title=" " alt="" coords="744,93,787,112,847,157,893,202,889,206,843,161,784,117,742,98"/>
+<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="399,70,542,95"/>
+<area shape="poly" title=" " alt="" coords="331,80,386,80,386,85,331,85"/>
+<area shape="poly" title=" " alt="" coords="523,93,634,121,633,127,521,98"/>
+<area shape="poly" title=" " alt="" coords="542,80,598,80,598,85,542,85"/>
+<area shape="rect" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="387,354,554,379"/>
+<area shape="poly" title=" " alt="" coords="331,373,373,370,374,375,331,378"/>
+<area shape="poly" title=" " alt="" coords="554,371,608,371,666,367,727,356,784,338,817,319,846,296,891,248,895,252,850,300,820,324,786,342,728,362,667,372,608,376,554,376"/>
+<area shape="poly" title=" " alt="" coords="528,351,627,329,628,334,529,356"/>
+<area shape="rect" href="gf__gui_8c.html#a9ebb2c6a640e7555e665fcf63a3a1e00" title="Set default button sound." alt="" coords="379,495,563,521"/>
+<area shape="poly" title=" " alt="" coords="331,505,365,505,365,511,331,511"/>
+<area shape="poly" title=" " alt="" coords="545,137,597,137,597,143,545,143"/>
 </map>
 </div>
 <div class="dynheader">

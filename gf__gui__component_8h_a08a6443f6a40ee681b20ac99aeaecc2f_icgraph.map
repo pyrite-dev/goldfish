@@ -1,0 +1,7 @@
+<map id="gf_gui_create_range" name="gf_gui_create_range">
+<area shape="rect" id="Node000001" title="Create range component." alt="" coords="379,13,533,38"/>
+<area shape="rect" id="Node000002" href="$bindgen__gui_8c.html#ab7c744e318db8392492dd3855899e53e" title=" " alt="" coords="183,5,331,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="365,28,331,28,331,23,365,23"/>
+<area shape="rect" id="Node000003" href="$bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8" title=" " alt="" coords="5,13,135,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="169,28,135,28,135,23,169,23"/>
+</map>

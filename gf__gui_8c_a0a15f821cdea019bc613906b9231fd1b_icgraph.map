@@ -1,9 +1,11 @@
 <map id="gf_gui_set_xy" name="gf_gui_set_xy">
-<area shape="rect" id="Node000001" title="Set X coord and Y coord." alt="" coords="387,35,499,60"/>
-<area shape="rect" id="Node000002" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="164,5,339,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="373,39,334,33,335,28,373,34"/>
-<area shape="rect" id="Node000003" href="$gf__lua_8c.html#ac8ada75c50e0c19a9fb54361995fea9f" title=" " alt="" coords="171,55,331,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="373,60,332,66,331,61,372,55"/>
-<area shape="rect" id="Node000004" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,63,116,88"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,78,116,78,116,73,157,73"/>
+<area shape="rect" id="Node000001" title="Set X coord and Y coord." alt="" coords="387,55,499,80"/>
+<area shape="rect" id="Node000002" href="$gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="174,5,329,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="379,54,301,33,302,28,380,49"/>
+<area shape="rect" id="Node000003" href="$gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="164,55,339,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="373,70,339,70,339,65,373,65"/>
+<area shape="rect" id="Node000004" href="$gf__lua_8c.html#ac8ada75c50e0c19a9fb54361995fea9f" title=" " alt="" coords="171,105,331,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="387,86,319,107,318,102,386,81"/>
+<area shape="rect" id="Node000005" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,112,116,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="157,127,116,127,116,122,157,122"/>
 </map>

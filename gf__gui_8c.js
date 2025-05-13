@@ -34,5 +34,5 @@ var gf__gui_8c =
     [ "gf_gui_sort_component", "gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252", null ],
     [ "gf_gui_border_color_diff", "gf__gui_8c.html#a1abfbae2b5cbd1b12df6ca65f8e01b85", null ],
     [ "gf_gui_border_width", "gf__gui_8c.html#a85e7ca37da7e918d8acc72e5651b9d82", null ],
-    [ "gf_gui_calls", "gf__gui_8c.html#a80c6a1966819fe6571b8711c29562114", null ]
+    [ "gf_gui_calls", "gf__gui_8c.html#af8477ba35b95f95f823b12a1d66b2d9c", null ]
 ];
