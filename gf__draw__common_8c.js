@@ -4,6 +4,7 @@ var gf__draw__common_8c =
     [ "GF_EXPOSE_CLIENT", "gf__draw__common_8c.html#a13d820c4f195f0f38ce7d791a9a4ddeb", null ],
     [ "GF_EXPOSE_CORE", "gf__draw__common_8c.html#a697eb08d834a4889d84940e79575779d", null ],
     [ "GF_EXPOSE_DRAW", "gf__draw__common_8c.html#a438e60b3ef2df2ad0a220523e95d6dca", null ],
+    [ "NO_SLEEP", "gf__draw__common_8c.html#a1fb92bd214d8ce7b256133e6af6afea8", null ],
     [ "gf_draw_begin", "gf__draw__common_8c.html#a4575368fee8a93966d657874a0906aaf", null ],
     [ "gf_draw_create", "gf__draw__common_8c.html#af65b9048f8e8b33c560f374a945d1dec", null ],
     [ "gf_draw_destroy", "gf__draw__common_8c.html#aa7c19917300ff10b22de455323f01d83", null ],
