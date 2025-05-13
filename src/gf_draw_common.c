@@ -99,7 +99,8 @@ void gf_draw_time(gf_draw_time_t* dtime) {
 	}
 	else {
 		/* system has no hpc hw support */
-		*dtime = GetTickCount();
+		// *dtime = GetTickCount();
+		*dtime = timeGetTime();
 	}
 #else
 	gettimeofday(dtime, NULL);
