@@ -67,10 +67,10 @@ foreach my $key (sort keys(%list)){
 		my $filename = $list{$key}{"filename"};
 
 		print("## $key\n");
-		print("Type: \`$type\` \\\n");
+		print("Type: \`$type\` \n\n");
 
 		if($flag & $FLAG_GUI){
-			print("Context: GUI\n");
+			print("Context: GUI\n\n");
 		}
 		print("\n");
 		print("$doc{$key}\n");
