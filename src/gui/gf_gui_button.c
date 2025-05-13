@@ -113,7 +113,8 @@ void gf_gui_button_render(gf_gui_t* gui, gf_gui_component_t* c) {
 			double h      = ch / 5 * 3;
 			double lwidth = gf_graphic_get_line_width(gui->draw);
 			gf_graphic_set_line_width(gui->draw, 2);
-			gf_graphic_lines(gui->draw, col, GF_GRAPHIC_2D, 2, cx + sp + cw / 2 - w / 2, cy + sp + ch / 2 - h / 2, cx + w + sp + cw / 2 - w / 2, cy + h + sp + ch / 2 - h / 2, cx + sp + cw / 2 - w / 2, cy + h + sp + ch / 2 - h / 2, cx + w + sp + cw / 2 - w / 2, cy + sp + ch / 2 - h / 2);
+			gf_graphic_lines(gui->draw, col, GF_GRAPHIC_2D, 1, cx + sp + cw / 2 - w / 2, cy + sp + ch / 2 - h / 2, cx + w + sp + cw / 2 - w / 2, cy + h + sp + ch / 2 - h / 2);
+			gf_graphic_lines(gui->draw, col, GF_GRAPHIC_2D, 1, cx + sp + cw / 2 - w / 2, cy + h + sp + ch / 2 - h / 2, cx + w + sp + cw / 2 - w / 2, cy + sp + ch / 2 - h / 2);
 			gf_graphic_set_line_width(gui->draw, lwidth);
 		} else {
 			if((prop = gf_prop_get_integer(&c->prop, "no-border")) != GF_PROP_NO_SUCH && prop) {
