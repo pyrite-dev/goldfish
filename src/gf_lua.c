@@ -583,6 +583,10 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 	lua_pushinteger(lua->lua, GF_GUI_PRESS_EVENT);
 	lua_settable(lua->lua, -3);
 
+	lua_pushstring(lua->lua, "CHANGE_EVENT");
+	lua_pushinteger(lua->lua, GF_GUI_CHANGE_EVENT);
+	lua_settable(lua->lua, -3);
+
 	lua_pop(lua->lua, 2);
 
 	/* goldfish.audio */

@@ -119,8 +119,9 @@ void gf_gui_range_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_gui_set_xy(gui, gr, (cw - gw) * gf_math_abs((val - min) / (max - min)), 0);
 
 	if(gui->pressed == gr) {
-		double v = input->mouse_x - gf_prop_get_integer(gf_gui_get_prop(gui, gr), "diff-x") - cx;
-		double d = 0;
+		double v   = input->mouse_x - gf_prop_get_integer(gf_gui_get_prop(gui, gr), "diff-x") - cx;
+		double d   = 0;
+		double old = gf_prop_get_floating(gf_gui_get_prop(gui, c->key), "value");
 
 		d = ((v / cw) * gf_math_abs(max - min)) + min;
 		if(step != GF_PROP_NO_SUCH) {
@@ -131,6 +132,9 @@ void gf_gui_range_render(gf_gui_t* gui, gf_gui_component_t* c) {
 		if(d > max) d = max;
 
 		gf_prop_set_floating(&c->prop, "value", d);
+		if(old != d && c->callback != NULL) {
+			c->callback(gui->engine, gui->draw, c->key, GF_GUI_CHANGE_EVENT);
+		}
 	}
 }
 

@@ -382,6 +382,8 @@ void gf_audio_auto_destroy(gf_audio_t* audio, gf_audio_id_t id) {
 
 void gf_audio_set_volume(gf_audio_t* audio, double volume) { audio->volume = volume; }
 
+double gf_audio_get_volume(gf_audio_t* audio) { return audio->volume; }
+
 int gf_audio_is_over(gf_audio_t* audio, gf_audio_id_t id) {
 	int ind = hmgeti(audio->decoder, id);
 	if(ind == -1) return 0;

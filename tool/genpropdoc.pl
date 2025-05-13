@@ -70,7 +70,7 @@ foreach my $key (sort keys(%list)){
 		print("Type: \`$type\` \\\n");
 
 		if($flag & $FLAG_GUI){
-			print("Context: GUI \\\n");
+			print("Context: GUI\n");
 		}
 		print("\n");
 		print("$doc{$key}\n");

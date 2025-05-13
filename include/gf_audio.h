@@ -116,6 +116,14 @@ GF_EXPORT void gf_audio_set_volume(gf_audio_t* audio, double volume);
 
 /**
  * @~english
+ * @brief Get volume
+ * @param audio Audio interface
+ * @return Volume
+ */
+GF_EXPORT double gf_audio_get_volume(gf_audio_t* audio);
+
+/**
+ * @~english
  * @brief Check if audio is over
  * @param audio Audio interface
  * @param id Audio ID
