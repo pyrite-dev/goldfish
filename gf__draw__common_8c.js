@@ -1,5 +1,6 @@
 var gf__draw__common_8c =
 [
+    [ "FPS", "gf__draw__common_8c.html#ac92ca5ab87034a348decad7ee8d4bd1b", null ],
     [ "GF_EXPOSE_CLIENT", "gf__draw__common_8c.html#a13d820c4f195f0f38ce7d791a9a4ddeb", null ],
     [ "GF_EXPOSE_CORE", "gf__draw__common_8c.html#a697eb08d834a4889d84940e79575779d", null ],
     [ "GF_EXPOSE_DRAW", "gf__draw__common_8c.html#a438e60b3ef2df2ad0a220523e95d6dca", null ],
