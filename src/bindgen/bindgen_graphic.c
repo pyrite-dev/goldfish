@@ -301,4 +301,4 @@ void bindgen_graphic_init(gf_lua_t* lua) {
 	lua_settable(LUA(lua), -3);
 }
 
-/*** Generated at Sat May 10 2025 ***/
+/*** Generated at Tue May 13 2025 ***/

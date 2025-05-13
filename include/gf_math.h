@@ -48,6 +48,14 @@ GF_EXPORT double gf_math_log2(double x);
 
 /**
  * @~english
+ * @brief Calculate abs(x)
+ * @param x Input
+ * @return abs(x)
+ */
+GF_EXPORT double gf_math_abs(double x);
+
+/**
+ * @~english
  * @brief Calculate round(x)
  * @param x Input
  * @return round(x)

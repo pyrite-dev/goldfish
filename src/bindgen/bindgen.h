@@ -38,5 +38,5 @@ void bindgen_init(gf_lua_t* lua);
 }
 #endif
 
-/*** Generated at Sat May 10 2025 ***/
+/*** Generated at Tue May 13 2025 ***/
 #endif

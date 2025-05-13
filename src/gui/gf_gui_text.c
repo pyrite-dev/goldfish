@@ -8,10 +8,10 @@
 
 /* Interface */
 #include <gf_gui.h>
-#include <gf_graphic.h>
-#include <gf_font.h>
 
 /* Engine */
+#include <gf_graphic.h>
+#include <gf_font.h>
 #include <gf_prop.h>
 
 /* Standard */
@@ -33,6 +33,8 @@ gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, doub
 	gf_prop_set_integer(gf_gui_get_prop(gui, scroll), "x-base", 1);
 	gf_gui_set_parent(gui, scroll, c->key);
 	gf_gui_set_prop_id(gui, c->key, "scrollbar", scroll);
+
+	gf_gui_sort_component(gui);
 
 	return c->key;
 }

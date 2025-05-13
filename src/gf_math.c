@@ -12,6 +12,11 @@
 
 double gf_math_log2(double x) { return log(x) / log(2); }
 
+double gf_math_abs(double x) {
+	if(x < 0) return -x;
+	return x;
+}
+
 double gf_math_round(double x) {
 	if((x - (int)x) >= 0.5) {
 		return 1 + (int)x;

@@ -8,9 +8,9 @@
 
 /* Interface */
 #include <gf_gui.h>
-#include <gf_graphic.h>
 
 /* Engine */
+#include <gf_graphic.h>
 #include <gf_prop.h>
 
 /* Standard */
