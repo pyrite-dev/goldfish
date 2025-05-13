@@ -14,6 +14,7 @@ var gui_8h =
       [ "GF_GUI_RANGE", "gui_8h.html#a29f22c7359d8c3b586f0d4eb82213d03ab726cf517cf3d999c382c1b813f3555f", null ]
     ] ],
     [ "GF_GUI_EVENTS", "gui_8h.html#a7a5228e21a2d5c98d2b88d5e7bc97d82", [
-      [ "GF_GUI_PRESS_EVENT", "gui_8h.html#a7a5228e21a2d5c98d2b88d5e7bc97d82a21188806826e921fc25c340a451c31a8", null ]
+      [ "GF_GUI_PRESS_EVENT", "gui_8h.html#a7a5228e21a2d5c98d2b88d5e7bc97d82a21188806826e921fc25c340a451c31a8", null ],
+      [ "GF_GUI_CHANGE_EVENT", "gui_8h.html#a7a5228e21a2d5c98d2b88d5e7bc97d82aab4d9d115a4b32fa9d59d46a30ca72e8", null ]
     ] ]
 ];

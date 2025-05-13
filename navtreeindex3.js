@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"gf__server_8c.html#a9f44e37cb5becfe321b352f8801fe22e":[4,0,1,24,4],
+"gf__server_8c.html#afedff111b1691c5973e264ce4f6a3787":[4,0,1,24,3],
+"gf__server_8c_source.html":[4,0,1,24],
 "gf__server_8h.html":[4,0,0,26],
 "gf__server_8h.html#a57e10ab1ec7f3353f7fd1247edd5bd0d":[4,0,0,26,4],
 "gf__server_8h.html#a656e41de75a97731bffa1653fc2c8d4a":[4,0,0,26,0],
@@ -88,6 +91,7 @@ var NAVTREEINDEX3 =
 "gui_8h.html#a29f22c7359d8c3b586f0d4eb82213d03aff7f9ceb6119cee8ce915b14efda107a":[4,0,0,0,10,5,2],
 "gui_8h.html#a7a5228e21a2d5c98d2b88d5e7bc97d82":[4,0,0,0,10,6],
 "gui_8h.html#a7a5228e21a2d5c98d2b88d5e7bc97d82a21188806826e921fc25c340a451c31a8":[4,0,0,0,10,6,0],
+"gui_8h.html#a7a5228e21a2d5c98d2b88d5e7bc97d82aab4d9d115a4b32fa9d59d46a30ca72e8":[4,0,0,0,10,6,1],
 "gui_8h_source.html":[4,0,0,0,10],
 "index.html":[],
 "index.html#autotoc_md1":[0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "structgf__font__glyph__t.html#a9171039b0372c9015bb350b080e1bf76":[3,0,11,0],
 "structgf__font__glyph__t.html#a91dd3ea1f159fcd432b2a0853bac462a":[3,0,11,4],
 "structgf__font__glyph__t.html#afc5f183e4ec96688eaa5273e058b06f9":[3,0,11,1],
-"structgf__font__store__t.html":[3,0,12],
-"structgf__font__store__t.html#a3fb7b9dda717b2b8452a3d8d48c8cc6c":[3,0,12,1],
-"structgf__font__store__t.html#ac61fb240806ebda67494ac162d20964c":[3,0,12,2],
-"structgf__font__store__t.html#ae05d63dafdae1b5af0074e21ca58f520":[3,0,12,0],
-"structgf__font__t.html":[3,0,13]
+"structgf__font__store__t.html":[3,0,12]
 };

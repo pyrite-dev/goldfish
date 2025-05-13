@@ -5,6 +5,7 @@ var gf__audio_8h =
     [ "gf_audio_create", "gf__audio_8h.html#a52e61cbf2518774a590141631e053330", null ],
     [ "gf_audio_decoder_destroy", "gf__audio_8h.html#ae34c8bd9d398a4335a1c6f9cc290ebdb", null ],
     [ "gf_audio_destroy", "gf__audio_8h.html#ab5022a62ecc7ba83ccb5da4a1add398b", null ],
+    [ "gf_audio_get_volume", "gf__audio_8h.html#af0bbc8f9a78f6f28e2d0636c5a2ee60b", null ],
     [ "gf_audio_is_over", "gf__audio_8h.html#a3ab762f252d24e3afcc66f5685052f0c", null ],
     [ "gf_audio_load", "gf__audio_8h.html#a391139463501e0f9962974b208d9e4b2", null ],
     [ "gf_audio_load_file", "gf__audio_8h.html#af3ae4fe048705bae7ce8a377976a4c2d", null ],

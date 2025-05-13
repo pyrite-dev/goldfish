@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"structgf__font__store__t.html#a3fb7b9dda717b2b8452a3d8d48c8cc6c":[3,0,12,1],
+"structgf__font__store__t.html#ac61fb240806ebda67494ac162d20964c":[3,0,12,2],
+"structgf__font__store__t.html#ae05d63dafdae1b5af0074e21ca58f520":[3,0,12,0],
+"structgf__font__t.html":[3,0,13],
 "structgf__font__t.html#a1264a95b11cec574d66cda5f57de1808":[3,0,13,5],
 "structgf__font__t.html#a64429d9770b427e15220d58d8234c73e":[3,0,13,3],
 "structgf__font__t.html#a6aa582459bd77a6ad903d5ad287babe1":[3,0,13,1],

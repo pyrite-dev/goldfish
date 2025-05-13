@@ -1,18 +1,19 @@
 <map id="gf_gui_scrollbar_down" name="gf_gui_scrollbar_down">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,172,105"/>
-<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a8064cd04ef3d766f9502f6070e526d6e" title="Get parent component." alt="" coords="228,5,367,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,77,219,39,240,32,242,37,221,45,122,82"/>
-<area shape="rect" id="Node000004" href="$gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="234,55,361,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,80,220,74,221,79,172,85"/>
-<area shape="rect" id="Node000005" href="$gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd" title="Get floating number from property." alt="" coords="220,104,375,129"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="172,100,207,104,206,109,172,105"/>
-<area shape="rect" id="Node000007" href="$gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="220,153,375,179"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="124,103,221,138,245,146,243,151,219,143,123,108"/>
-<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="423,31,556,56"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,25,409,30,408,35,367,30"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="361,57,409,51,409,56,362,62"/>
-<area shape="rect" id="Node000006" href="$gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="427,104,551,129"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="375,114,414,114,414,119,375,119"/>
-<area shape="rect" id="Node000008" href="$gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="428,153,551,179"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="375,163,414,163,414,169,375,169"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,77,172,102"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="423,28,556,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,75,154,41,185,25,219,12,276,4,334,5,388,12,434,22,433,27,387,17,333,10,276,9,221,18,188,30,156,46,107,79"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a8064cd04ef3d766f9502f6070e526d6e" title="Get parent component." alt="" coords="228,28,367,53"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,74,229,54,230,59,144,80"/>
+<area shape="rect" id="Node000004" href="$gf__gui_8c.html#a3e1d6b234e2a3c3f54a58ec461203d3c" title="Get property container." alt="" coords="234,77,361,102"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="172,87,220,87,220,92,172,92"/>
+<area shape="rect" id="Node000005" href="$gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd" title="Get floating number from property." alt="" coords="220,126,375,152"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="144,100,230,121,229,126,142,105"/>
+<area shape="rect" id="Node000007" href="$gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="220,176,375,201"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="111,100,160,130,221,162,238,169,236,174,219,167,157,135,108,105"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="367,38,409,38,409,43,367,43"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="347,74,425,54,426,59,348,80"/>
+<area shape="rect" id="Node000006" href="$gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="427,126,551,152"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="375,136,414,136,414,142,375,142"/>
+<area shape="rect" id="Node000008" href="$gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="428,176,551,201"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="375,186,414,186,414,191,375,191"/>
 </map>
