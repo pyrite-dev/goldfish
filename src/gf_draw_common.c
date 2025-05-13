@@ -89,7 +89,18 @@ void gf_draw_time(gf_draw_time_t* dtime) {
 	*dtime = clock();
 #else
 #ifdef _WIN32
-	*dtime = GetTickCount();
+	/* hpc_freq is set at gf_engine_begin */
+	extern LARGE_INTEGER hpc_freq;
+	if (hpc_freq.QuadPart > 0) {
+		LARGE_INTEGER tick;
+		QueryPerformanceCounter(&tick);
+		*dtime = tick.QuadPart / (hpc_freq.QuadPart / 1000); 
+		/* divide by freq for seconds, by 1000 more for ms */
+	}
+	else {
+		/* system has no hpc hw support */
+		*dtime = GetTickCount();
+	}
 #else
 	gettimeofday(dtime, NULL);
 #endif
