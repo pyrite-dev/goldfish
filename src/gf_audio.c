@@ -325,14 +325,14 @@ void gf_audio_destroy(gf_audio_t* audio) {
 	if(audio->device != NULL) {
 		gf_sound_destroy(audio->device);
 	}
-	if(audio->mutex != NULL) {
-		gf_thread_mutex_destroy(audio->mutex);
-	}
 	if(audio->decoder != NULL) {
 		while(hmlen(audio->decoder) > 0) {
 			gf_audio_decoder_destroy(&audio->decoder[0]);
 		}
 		hmfree(audio->decoder);
+	}
+	if(audio->mutex != NULL) {
+		gf_thread_mutex_destroy(audio->mutex);
 	}
 	gf_log_function(audio->engine, "Destroyed audio interface", "");
 	free(audio);

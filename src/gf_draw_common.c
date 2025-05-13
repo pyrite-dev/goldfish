@@ -28,6 +28,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define FPS 60
+
 void gf_draw_begin(void) { gf_draw_platform_begin(); }
 
 void gf_draw_end(void) { gf_draw_platform_end(); }
@@ -110,53 +112,38 @@ void gf_draw_time(gf_draw_time_t* dtime) {
 double gf_draw_time_number(gf_draw_time_t* dtime) {
 	double r = 0;
 #ifdef GF_DRAW_USE_CLOCK
-	r += (double)(*dtime) / CLOCKS_PER_SEC;
+	r += (double)(*dtime) / (CLOCKS_PER_SEC / 1000);
 #else
 #ifdef _WIN32
-	r += (double)(*dtime) / 1000.0;
+	r += (double)(*dtime);
 #else
-	r += (double)dtime->tv_sec;
-	r += (double)dtime->tv_usec / 1000000.0;
+	r += (double)dtime->tv_sec * 1000.0;
+	r += (double)dtime->tv_usec / 1000.0;
 #endif
 #endif
 	return r;
 }
 
 int gf_draw_step(gf_draw_t* draw) {
-	int ret;
-	ret = gf_draw_platform_step(draw);
+	int	       ret = 0;
+	double	       delta;
+	gf_draw_time_t tm;
+	if(draw->fps == -1) {
+		draw->fps = 0;
+		gf_draw_time(&draw->last_draw);
+	}
+	gf_draw_time(&tm);
+	delta = gf_draw_time_number(&tm) - gf_draw_time_number(&draw->last_draw);
+	if(delta > 1000.0 / FPS) {
+		draw->fps	= 1000.0 / delta;
+		ret		= gf_draw_platform_step(draw);
+		draw->last_draw = tm;
+	}
 	if(ret != 0) return ret;
 	if(draw->close == 1 && draw->engine->lua != NULL) {
 		draw->close = 0;
 		gf_lua_close(draw->engine->lua);
 	}
-	if(draw->fps == -1) {
-		draw->fps = 1;
-		gf_draw_time(&draw->last_draw);
-	} else {
-#ifdef _WIN32
-		double msec;
-#endif
-		double	       sfps = 60;
-		gf_draw_time_t t;
-
-#ifdef _WIN32
-#if 1
-		gf_draw_time(&t);
-		msec = (1000.0 / sfps) - (gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw)) * 1000.0;
-		if(msec > 0) Sleep((int)msec);
-#endif
-#else
-		do {
-			gf_draw_time(&t);
-		} while((gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw)) <= 1.0 / sfps);
-#endif
-		gf_draw_time(&t);
-		draw->fps = 1.0 / (gf_draw_time_number(&t) - gf_draw_time_number(&draw->last_draw));
-
-		gf_draw_time(&draw->last_draw);
-	}
-
 	return draw->close;
 }
 
