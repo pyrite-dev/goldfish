@@ -28,6 +28,33 @@ var NAVTREE =
     [ "Stack", "index.html#autotoc_md1", null ],
     [ "OpenGL stack", "index.html#autotoc_md2", null ],
     [ "Sound stack", "index.html#autotoc_md3", null ],
+    [ "Contributors", "md_CONTRIBUTORS.html", [
+      [ "Staff/collaborators", "md_CONTRIBUTORS.html#autotoc_md5", null ]
+    ] ],
+    [ "Property cheatsheet", "md_PROPERTY.html", [
+      [ "active", "md_PROPERTY.html#autotoc_md7", null ],
+      [ "cancel-drag", "md_PROPERTY.html#autotoc_md8", null ],
+      [ "clicked-x", "md_PROPERTY.html#autotoc_md9", null ],
+      [ "clicked-y", "md_PROPERTY.html#autotoc_md10", null ],
+      [ "close-parent", "md_PROPERTY.html#autotoc_md11", null ],
+      [ "diff-x", "md_PROPERTY.html#autotoc_md12", null ],
+      [ "diff-y", "md_PROPERTY.html#autotoc_md13", null ],
+      [ "frame", "md_PROPERTY.html#autotoc_md14", null ],
+      [ "grab", "md_PROPERTY.html#autotoc_md15", null ],
+      [ "ignore-mouse", "md_PROPERTY.html#autotoc_md16", null ],
+      [ "max-value", "md_PROPERTY.html#autotoc_md17", null ],
+      [ "min-height", "md_PROPERTY.html#autotoc_md18", null ],
+      [ "min-value", "md_PROPERTY.html#autotoc_md19", null ],
+      [ "min-width", "md_PROPERTY.html#autotoc_md20", null ],
+      [ "no-sound", "md_PROPERTY.html#autotoc_md21", null ],
+      [ "old-height", "md_PROPERTY.html#autotoc_md22", null ],
+      [ "old-width", "md_PROPERTY.html#autotoc_md23", null ],
+      [ "scrollbar", "md_PROPERTY.html#autotoc_md24", null ],
+      [ "step", "md_PROPERTY.html#autotoc_md25", null ],
+      [ "value", "md_PROPERTY.html#autotoc_md26", null ],
+      [ "x-base", "md_PROPERTY.html#autotoc_md27", null ],
+      [ "y-base", "md_PROPERTY.html#autotoc_md28", null ]
+    ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -57,7 +84,7 @@ var NAVTREEINDEX =
 "gf__core_8c.html#abae48921e84f92d590608745536a9ffc",
 "gf__gui__component_8h.html#a42a1bf0e5c4d23fedbd785f7e6c6896e",
 "gf__server_8c.html#a9f44e37cb5becfe321b352f8801fe22e",
-"structgf__font__store__t.html#a3fb7b9dda717b2b8452a3d8d48c8cc6c"
+"structgf__file__t.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
