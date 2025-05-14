@@ -8,5 +8,6 @@
 #define __GF_PRE_H__
 
 #include <gf_config.h>
+#define DO_SWAP_INTERVAL
 
 #endif

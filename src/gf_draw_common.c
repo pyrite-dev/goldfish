@@ -127,6 +127,15 @@ double gf_draw_time_number(gf_draw_time_t* dtime) {
 int gf_draw_step(gf_draw_t* draw) {
 	int    ret = 0;
 	double delta;
+#ifdef DO_SWAP_INTERVAL
+	gf_draw_time_t tm;
+	gf_draw_time(&tm);
+	ret = gf_draw_platform_step(draw);
+	gf_draw_time(&draw->last_draw);
+	delta = gf_draw_time_number(&draw->last_draw) - gf_draw_time_number(&tm);
+	draw->fps += 1000.0 / delta;
+	draw->fps = draw->fps / 2;
+#else
 #ifdef NO_SLEEP
 	gf_draw_time_t tm;
 	if(draw->fps == -1) {
@@ -143,6 +152,7 @@ int gf_draw_step(gf_draw_t* draw) {
 	}
 #else
 	/* TODO: Implement this */
+#endif
 #endif
 	if(ret != 0) return ret;
 	if(draw->close == 1 && draw->engine->lua != NULL) {
