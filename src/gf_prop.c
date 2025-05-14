@@ -14,6 +14,14 @@
 #include <stdlib.h>
 #include <string.h>
 
+void gf_prop_set_text(gf_prop_t** prop, const char* key, const char* value) {
+	void* ptr = malloc(strlen(value) + 1);
+	strcpy(ptr, value);
+	gf_prop_set_ptr(prop, key, ptr);
+}
+
+const char* gf_prop_get_text(gf_prop_t** prop, const char* key) { return (const char*)gf_prop_get_ptr(prop, key); }
+
 void gf_prop_set_integer(gf_prop_t** prop, const char* key, gf_prop_integer_t value) {
 	void* ptr = malloc(sizeof(value));
 	memcpy(ptr, &value, sizeof(value));

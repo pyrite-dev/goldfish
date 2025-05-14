@@ -246,6 +246,18 @@ void gf_gui_calc_xywh(gf_gui_t* gui, gf_gui_component_t* c, double* x, double* y
 	gf_gui_calc_xywh_noset(gui, c, x, y, w, h);
 }
 
+int gf_gui_hidden(gf_gui_t* gui, gf_gui_id_t id) {
+	int ind = gf_gui_get_index(gui, id);
+	while(ind != -1) {
+		int prop;
+		if((prop = gf_prop_get_integer(&gui->area[ind]->prop, "hide")) != GF_PROP_NO_SUCH && prop) {
+			return 1;
+		}
+		ind = gf_gui_get_index(gui, gui->area[ind]->parent);
+	}
+	return 0;
+}
+
 void gf_gui_render(gf_gui_t* gui) {
 	int		  i;
 	gf_input_t*	  input = gui->draw->input;
@@ -260,6 +272,9 @@ void gf_gui_render(gf_gui_t* gui) {
 		int		    ignore_mouse = (prop = gf_prop_get_integer(&c->prop, "ignore-mouse")) != GF_PROP_NO_SUCH && prop;
 		gf_gui_calc_xywh(gui, c, &cx, &cy, &cw, &ch);
 		gf_graphic_clip_pop(gui->draw);
+
+		ignore_mouse = ignore_mouse || gf_gui_hidden(gui, c->key);
+
 		if(!ignore_mouse && input->mouse_x != -1 && input->mouse_y != -1 && gui->pressed == -1 && (input->mouse_flag & GF_INPUT_MOUSE_LEFT_MASK) && (cx <= input->mouse_x && input->mouse_x <= cx + cw) && (cy <= input->mouse_y && input->mouse_y <= cy + ch)) {
 			gui->pressed = c->key;
 			gui->hover   = c->key;
@@ -290,6 +305,8 @@ void gf_gui_render(gf_gui_t* gui) {
 	}
 	for(i = 0; i < arrlen(gui->area); i++) {
 		gf_gui_component_t* c = gui->area[i];
+		if(gf_gui_hidden(gui, c->key)) continue;
+
 		gf_gui_calc_xywh(gui, c, &cx, &cy, &cw, &ch);
 
 		gf_graphic_clip_push(gui->draw, cx, cy, cw, ch);

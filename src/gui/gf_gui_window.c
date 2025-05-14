@@ -43,7 +43,6 @@ gf_gui_id_t gf_gui_create_window(gf_gui_t* gui, double x, double y, double w, do
 	frame = gf_gui_create_frame(gui, 5, 10 + GF_GUI_SMALL_FONT_SIZE, w - 10, h - GF_GUI_SMALL_FONT_SIZE - 10 - 5);
 
 	gf_gui_set_parent(gui, frame, c->key);
-	gf_prop_set_integer(gf_gui_get_prop(gui, frame), "ignore-mouse", 1);
 
 	gf_gui_set_prop_id(gui, c->key, "frame", frame);
 

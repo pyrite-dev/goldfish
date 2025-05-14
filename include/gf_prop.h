@@ -29,6 +29,24 @@ extern "C" {
 
 /**
  * @~english
+ * @brief Set text to property
+ * @param prop Property
+ * @param key Key
+ * @param value Value
+ */
+GF_EXPORT void gf_prop_set_text(gf_prop_t** prop, const char* key, const char* value);
+
+/**
+ * @~english
+ * @brief Get text from property
+ * @param prop Property
+ * @param key Key
+ * @return Value
+ */
+GF_EXPORT const char* gf_prop_get_text(gf_prop_t** prop, const char* key);
+
+/**
+ * @~english
  * @brief Set integer to property
  * @param prop Property
  * @param key Key

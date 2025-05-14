@@ -72,13 +72,13 @@ Context: GUI
 
 Set non-zero to force outset border.
 
-## ignore-mouse
+## hide
 Type: `integer` 
 
 Context: GUI
 
 
-Set to ignore mouse on component.
+Set non-zero to hide component and its child components.
 
 ## max-value
 Type: `floating` 
@@ -143,6 +143,14 @@ Context: GUI
 
 
 Scrollbar of component.
+
+## selected
+Type: `integer` 
+
+Context: GUI
+
+
+Selected component. (internal property)
 
 ## step
 Type: `floating` 

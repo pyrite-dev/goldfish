@@ -217,6 +217,9 @@ int gf_lua_meta_call_gui_component_prop(lua_State* s) {
 		} else if(strcmp(type, "floating") == 0) {
 			lua_Number t = luaL_checknumber(s, 4);
 			gf_prop_set_floating(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str, t);
+		} else if(strcmp(type, "text") == 0) {
+			const char* t = (const char*)luaL_checkstring(s, 4);
+			gf_prop_set_text(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str, t);
 		}
 		return 0;
 	} else {
@@ -229,6 +232,8 @@ int gf_lua_meta_call_gui_component_prop(lua_State* s) {
 			lua_pushinteger(s, gf_prop_get_integer(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str));
 		} else if(strcmp(type, "floating") == 0) {
 			lua_pushnumber(s, gf_prop_get_floating(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str));
+		} else if(strcmp(type, "text") == 0) {
+			lua_pushstring(s, (char*)gf_prop_get_text(gf_gui_get_prop(lua->engine->client->draw->gui, *id), str));
 		}
 	}
 	return 1;
