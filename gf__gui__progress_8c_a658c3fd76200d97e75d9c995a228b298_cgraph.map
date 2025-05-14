@@ -1,0 +1,14 @@
+<map id="gf_gui_create_progress" name="gf_gui_create_progress">
+<area shape="rect" id="Node000001" title="Create progress component." alt="" coords="5,55,179,80"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="227,5,417,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,52,248,31,249,36,152,57"/>
+<area shape="rect" id="Node000004" href="$gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="245,55,399,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,65,231,65,231,70,179,70"/>
+<area shape="rect" id="Node000007" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="247,104,397,129"/>
+<area shape="poly" id="edge5_Node000001_Node000007" title=" " alt="" coords="152,77,249,98,248,104,151,83"/>
+<area shape="rect" id="Node000003" href="$gf__prop_8c.html#a06e57f947a7719725d1af7ad7b19c79a" title="Create property container." alt="" coords="467,5,586,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="418,15,454,15,454,21,418,21"/>
+<area shape="rect" id="Node000005" href="$gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="465,79,588,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="400,74,452,80,452,85,399,79"/>
+<area shape="poly" id="edge6_Node000007_Node000005" title=" " alt="" coords="397,105,452,98,452,103,398,110"/>
+</map>

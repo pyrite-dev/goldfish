@@ -51,10 +51,11 @@ var NAVTREE =
       [ "old-width", "md_PROPERTY.html#autotoc_md23", null ],
       [ "scrollbar", "md_PROPERTY.html#autotoc_md24", null ],
       [ "selected", "md_PROPERTY.html#autotoc_md25", null ],
-      [ "step", "md_PROPERTY.html#autotoc_md26", null ],
-      [ "value", "md_PROPERTY.html#autotoc_md27", null ],
-      [ "x-base", "md_PROPERTY.html#autotoc_md28", null ],
-      [ "y-base", "md_PROPERTY.html#autotoc_md29", null ]
+      [ "split", "md_PROPERTY.html#autotoc_md26", null ],
+      [ "step", "md_PROPERTY.html#autotoc_md27", null ],
+      [ "value", "md_PROPERTY.html#autotoc_md28", null ],
+      [ "x-base", "md_PROPERTY.html#autotoc_md29", null ],
+      [ "y-base", "md_PROPERTY.html#autotoc_md30", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -82,10 +83,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "agl_2gf__draw_8c.html",
-"gf__core_8c.html#aa9a229aa7c06d1a02ae89f93b8029fea",
-"gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670",
-"gf__prop_8h.html#a0092bce45e2a446484ae743b5ca1975d",
-"structgf__audio__t.html#ae4476e64ccaedf684d801590330b1c37"
+"gf__core_8c.html#aa40fbe8c435c2f84a4d2364e66439eda",
+"gf__gui__button_8c.html",
+"gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd",
+"structgf__audio__decoder__t.html#a5487df2d6d689df282a41a5d7f6af06e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

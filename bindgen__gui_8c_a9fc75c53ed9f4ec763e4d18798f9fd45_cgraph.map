@@ -1,0 +1,11 @@
+<map id="bindgen_gui_gf_gui_create_progress" name="bindgen_gui_gf_gui_create_progress">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,153,87"/>
+<area shape="rect" id="Node000002" href="$gf__gui__progress_8c.html#a658c3fd76200d97e75d9c995a228b298" title="Create progress component." alt="" coords="201,55,375,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,65,187,65,187,70,154,70"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="423,5,613,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,52,444,31,445,36,348,57"/>
+<area shape="rect" id="Node000005" href="$gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="441,55,595,80"/>
+<area shape="poly" id="edge3_Node000002_Node000005" title=" " alt="" coords="375,65,427,65,427,70,375,70"/>
+<area shape="rect" id="Node000008" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="443,104,593,129"/>
+<area shape="poly" id="edge4_Node000002_Node000008" title=" " alt="" coords="348,77,445,98,444,104,347,83"/>
+</map>

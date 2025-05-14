@@ -6,8 +6,8 @@
 <area shape="poly" id="edge3_Node000001_Node000005" title=" " alt="" coords="739,185,495,235,494,230,738,179"/>
 <area shape="rect" id="Node000009" href="$gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="562,131,685,156"/>
 <area shape="poly" id="edge5_Node000001_Node000009" title=" " alt="" coords="738,161,685,154,685,149,739,155"/>
-<area shape="rect" id="Node000043" href="$gf__prop_8c.html#a0092bce45e2a446484ae743b5ca1975d" title="Set void pointer to property." alt="" coords="543,236,704,261"/>
-<area shape="poly" id="edge12_Node000001_Node000043" title=" " alt="" coords="770,188,705,216,655,238,653,233,703,212,768,183"/>
+<area shape="rect" id="Node000045" href="$gf__prop_8c.html#a0092bce45e2a446484ae743b5ca1975d" title="Set void pointer to property." alt="" coords="543,236,704,261"/>
+<area shape="poly" id="edge12_Node000001_Node000045" title=" " alt="" coords="770,188,705,216,655,238,653,233,703,212,768,183"/>
 <area shape="rect" id="Node000003" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="5,5,125,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="159,21,125,21,125,15,159,15"/>
 <area shape="rect" id="Node000006" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="173,268,284,293"/>
@@ -17,13 +17,13 @@
 <area shape="poly" id="edge6_Node000009_Node000010" title=" " alt="" coords="548,146,485,145,486,140,548,140"/>
 <area shape="rect" id="Node000024" href="$gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="336,179,491,204"/>
 <area shape="poly" id="edge8_Node000009_Node000024" title=" " alt="" coords="555,162,470,181,469,176,553,157"/>
-<area shape="rect" id="Node000030" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="338,31,489,56"/>
-<area shape="poly" id="edge9_Node000009_Node000030" title=" " alt="" coords="591,125,546,97,494,70,463,59,465,54,496,65,549,92,594,121"/>
-<area shape="rect" id="Node000042" href="$gf__prop_8c.html#a34763b752747bc4b0151b949e3c943b7" title="Set text to property." alt="" coords="348,80,479,105"/>
-<area shape="poly" id="edge11_Node000009_Node000042" title=" " alt="" coords="556,130,466,108,467,103,557,125"/>
-<area shape="poly" id="edge10_Node000030_Node000002" title=" " alt="" coords="324,34,284,28,285,23,325,29"/>
-<area shape="poly" id="edge13_Node000043_Node000005" title=" " alt="" coords="529,251,495,251,495,246,529,246"/>
-<area shape="rect" id="Node000044" href="$gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="333,293,493,333"/>
-<area shape="poly" id="edge14_Node000043_Node000044" title=" " alt="" coords="568,268,481,295,479,290,567,263"/>
-<area shape="poly" id="edge15_Node000044_Node000006" title=" " alt="" coords="320,299,284,293,285,288,320,294"/>
+<area shape="rect" id="Node000032" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="338,31,489,56"/>
+<area shape="poly" id="edge9_Node000009_Node000032" title=" " alt="" coords="591,125,546,97,494,70,463,59,465,54,496,65,549,92,594,121"/>
+<area shape="rect" id="Node000044" href="$gf__prop_8c.html#a34763b752747bc4b0151b949e3c943b7" title="Set text to property." alt="" coords="348,80,479,105"/>
+<area shape="poly" id="edge11_Node000009_Node000044" title=" " alt="" coords="556,130,466,108,467,103,557,125"/>
+<area shape="poly" id="edge10_Node000032_Node000002" title=" " alt="" coords="324,34,284,28,285,23,325,29"/>
+<area shape="poly" id="edge13_Node000045_Node000005" title=" " alt="" coords="529,251,495,251,495,246,529,246"/>
+<area shape="rect" id="Node000046" href="$gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="333,293,493,333"/>
+<area shape="poly" id="edge14_Node000045_Node000046" title=" " alt="" coords="568,268,481,295,479,290,567,263"/>
+<area shape="poly" id="edge15_Node000046_Node000006" title=" " alt="" coords="320,299,284,293,285,288,320,294"/>
 </map>

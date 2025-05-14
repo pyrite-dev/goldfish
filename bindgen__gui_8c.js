@@ -4,6 +4,7 @@ var bindgen__gui_8c =
     [ "bindgen_gui_gf_gui_create_button", "bindgen__gui_8c.html#a160dd5dcf2ce56b61dc84ae7ed1aa0bf", null ],
     [ "bindgen_gui_gf_gui_create_common", "bindgen__gui_8c.html#a486808d300abbd2a75969a064ad711e5", null ],
     [ "bindgen_gui_gf_gui_create_frame", "bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4", null ],
+    [ "bindgen_gui_gf_gui_create_progress", "bindgen__gui_8c.html#a9fc75c53ed9f4ec763e4d18798f9fd45", null ],
     [ "bindgen_gui_gf_gui_create_range", "bindgen__gui_8c.html#ab7c744e318db8392492dd3855899e53e", null ],
     [ "bindgen_gui_gf_gui_create_scrollbar", "bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad", null ],
     [ "bindgen_gui_gf_gui_create_tab", "bindgen__gui_8c.html#a5990960e56555a05704d86d9fd99c507", null ],

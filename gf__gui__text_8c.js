@@ -6,5 +6,6 @@ var gf__gui__text_8c =
     [ "gf_gui_text_click", "gf__gui__text_8c.html#a55d8d1db66cb304fb095f5cf86ab18fe", null ],
     [ "gf_gui_text_drag", "gf__gui__text_8c.html#a568f5ee28f23c00e1de7fccbe7952119", null ],
     [ "gf_gui_text_render", "gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa", null ],
+    [ "gf_gui_border_color_diff", "gf__gui__text_8c.html#a1abfbae2b5cbd1b12df6ca65f8e01b85", null ],
     [ "gf_gui_border_width", "gf__gui__text_8c.html#a85e7ca37da7e918d8acc72e5651b9d82", null ]
 ];
