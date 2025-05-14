@@ -183,14 +183,44 @@ newoption({
 	category = "Engine",
 	default = "static"
 })
+
+newoption({
+	trigger = "ode",
+	value = "type",
+	description = "Choose ODE to be used",
+	allowed = {
+		{"compile", "Compiled and integrated"},
+		{"system", "System"}
+	},
+	category = "Engine",
+	default = "compile"
+})
+
+newoption({
+	trigger = "zlib",
+	value = "type",
+	description = "Choose zlib to be used",
+	allowed = {
+		{"compile", "Compiled and integrated"},
+		{"system", "System"}
+	},
+	category = "Engine",
+	default = "compile"
+})
 	
 function gf_default_stuffs()
 	filter({})
+if not(_OPTIONS["ode"] == "system") then
 	defines({
 		"HAVE_STDARG_H=1",
 		"dIDEDOUBLE",
 		"CCD_IDEDOUBLE"
 	})
+else
+	defines({
+		"HAVE_STDARG_H=1"
+	})
+end
 	filter("toolset:not msc")
 		defines({
 			"HAVE_UNISTD_H=1"
@@ -384,6 +414,22 @@ function gf_link_stuffs(cond)
 			"wsock32",
 			"winmm"
 		})
+	if _OPTIONS["ode"] == "system" then
+		filter({
+			cond
+		})
+			links({
+				"ode"
+			})
+	end
+	if _OPTIONS["zlib"] == "system" then
+		filter({
+			cond
+		})
+			links({
+				"z"
+			})
+	end
 	filter({
 		"system:not windows",
 		cond
@@ -453,7 +499,7 @@ if _OPTIONS["opengl"] ~= "agl" then
 end
 include("src")
 
-if _ACTION and _ACTION ~= "clean" then
+if _ACTION and (_ACTION ~= "clean") and not(_OPTIONS["ode"] == "system") then
 	local text = ""
 	text = text .. "#ifndef _ODE_CONFIG_H_\n"
 	text = text .. "#define _ODE_CONFIG_H_\n"
@@ -483,16 +529,16 @@ if _ACTION and _ACTION ~= "clean" then
 	gf_generateheader("external/ode/include/ode/precision.h", "@ODE_PRECISION@", "dDOUBLE")
 	gf_generateheader("external/ode/libccd/src/ccd/precision.h", "@CCD_PRECISION@", "CCD_DOUBLE")
 	gf_generateheader("external/ode/include/ode/version.h", "@ODE_VERSION@", "Custom-ODE")
-
-	local outfile = io.open("include/gf_config.h", "w")
-	outfile:write("#ifndef __GF_CONFIG_H__\n")
-	outfile:write("#define __GF_CONFIG_H__\n")
-	if _OPTIONS["engine"] == "dynamic" then
-	outfile:write("#define GF_BUILT_AS_DLL 1\n")
-	end
-	outfile:write("#endif\n")
-	outfile:close()
 end
+
+local outfile = io.open("include/gf_config.h", "w")
+outfile:write("#ifndef __GF_CONFIG_H__\n")
+outfile:write("#define __GF_CONFIG_H__\n")
+if _OPTIONS["engine"] == "dynamic" then
+	outfile:write("#define GF_BUILT_AS_DLL 1\n")
+end
+outfile:write("#endif\n")
+outfile:close()
 
 if (_OPTIONS and _OPTIONS["opengl"] == "rgfw-wayland") and (_ACTION and _ACTION ~= "clean") then
         os.execute("wayland-scanner client-header /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml external/rgfw/xdg-shell.h")

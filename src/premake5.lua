@@ -1,16 +1,28 @@
 project("GoldFish")
 	filter("options:engine=static")
 		kind("StaticLib")
+if not(_OPTIONS["ode"] == "system") then
 		defines({
 			"ODE_LIB",
 			"GF_LIB"
 		})
+else
+		defines({
+			"GF_LIB"
+		})
+end
 	filter("options:engine=dynamic")
 		kind("SharedLib")
+if not(_OPTIONS["ode"] == "system") then
 		defines({
 			"ODE_DLL",
 			"GF_DLL"
 		})
+else
+		defines({
+			"GF_DLL"
+		})
+end
 	filter("configurations:Debug")
 		defines({
 			"DEBUG",
@@ -18,10 +30,16 @@ project("GoldFish")
 		})
 		symbols("On")
 	filter("configurations:Release")
+if not(_OPTIONS["ode"] == "system") then
 		defines({
 			"NDEBUG",
 			"dNODEBUG"
 		})
+else
+		defines({
+			"NDEBUG"
+		})
+end
 		optimize("On")
 	filter("options:audio_backend=miniaudio")
 		includedirs({
@@ -34,7 +52,6 @@ project("GoldFish")
 	includedirs({
 		"../include",
 		"../external/lua",
-		"../external/zlib",
 		"../external/dr_libs",
 		"../external/miniaudio",
 		"../external/stb",
@@ -44,13 +61,18 @@ project("GoldFish")
 	files({
 		"../include/**.h",
 		"*.c",
-		"../external/zlib/*.h",
-		"../external/zlib/*.c",
 		"../external/lua/l*.h",
 		"../external/lua/l*.c",
 		"bindgen/*.c",
 		"bindgen/*.h"
 	})
+	if not(_OPTIONS["zlib"] == "system") then
+		includedirs("../external/zlib")
+		files({
+			"../external/zlib/*.h",
+			"../external/zlib/*.c"
+		})
+	end
 	files({
 		"audio/*.c",
 		"../external/jar/jar_*.h"
@@ -82,78 +104,79 @@ project("GoldFish")
 		files({
 			"thread/posix/gf_thread.c"
 		})
-	filter("platforms:not ClassicMacOS")
-		defines({
-			"_OU_NAMESPACE=odeou",
-			"_OU_FEATURE_SET=_OU_FEATURE_SET_TLS"
-		})
-	filter("platforms:ClassicMacOS")
-		defines({
-			"_OU_NAMESPACE=odeou",
-			"_OU_FEATURE_SET=_OU_FEATURE_SET_BASICS",
-			"__unix__=1"
-		})
-	filter({})
-
 	-- Begin ODE
-	includedirs({
-		"../external/ode/include",
-		"../external/ode/ode/src",
-		"../external/ode/ode/src/joints",
-		"../external/ode/OPCODE",
-		"../external/ode/GIMPACT/include",
-		"../external/ode/libccd/src/custom",
-		"../external/ode/libccd/src"
-	})
-	files({
-		"../external/ode/include/ode/*.h",
-		"../external/ode/ode/src/joints/*.h",
-		"../external/ode/ode/src/joints/*.cpp",
-		"../external/ode/ode/src/*.h",
-		"../external/ode/ode/src/*.c",
-		"../external/ode/ode/src/*.cpp"
-	})
-	removefiles({
-		"../external/ode/ode/src/collision_trimesh_trimesh_old.cpp",
-		"../external/ode/ode/src/collision_trimesh_opcode.cpp",
-		"../external/ode/ode/src/collision_trimesh_disabled.cpp"
-	})
-
-	includedirs({
-		"../external/ode/ou/include"
-	})
-	files({
-		"../external/ode/ou/include/**.h",
-		"../external/ode/ou/src/**.h",
-		"../external/ode/ou/src/**.cpp"
-	})
-	defines({
-		"_OU_NAMESPACE=odeou"
-	})
-
-	files({
-		"../external/ode/GIMPACT/**.h",
-		"../external/ode/GIMPACT/**.cpp"
-	})
-
-	files({
-		"../external/ode/libccd/src/custom/ccdcustom/*.h",
-		"../external/ode/libccd/src/ccd/*.h",
-		"../external/ode/libccd/src/*.c"
-	})
-
-	defines({
-		"dLIBCCD_ENABLED",
-		"dLIBCCD_INTERNAL",
-		"dLIBCCD_BOX_CYL",
-		"dLIBCCD_CYL_CYL",
-		"dLIBCCD_CAP_CYL",
-		"dLIBCCD_CONVEX_BOX",
-		"dLIBCCD_CONVEX_CAP",
-		"dLIBCCD_CONVEX_CYL",
-		"dLIBCCD_CONVEX_SPHERE",
-		"dLIBCCD_CONVEX_CONVEX"
-	})
+	if not(_OPTIONS["ode"] == "system") then
+		filter("platforms:not ClassicMacOS")
+			defines({
+				"_OU_NAMESPACE=odeou",
+				"_OU_FEATURE_SET=_OU_FEATURE_SET_TLS"
+			})
+		filter("platforms:ClassicMacOS")
+			defines({
+				"_OU_NAMESPACE=odeou",
+				"_OU_FEATURE_SET=_OU_FEATURE_SET_BASICS",
+				"__unix__=1"
+			})
+		filter({})
+		includedirs({
+			"../external/ode/include",
+			"../external/ode/ode/src",
+			"../external/ode/ode/src/joints",
+			"../external/ode/OPCODE",
+			"../external/ode/GIMPACT/include",
+			"../external/ode/libccd/src/custom",
+			"../external/ode/libccd/src"
+		})
+		files({
+			"../external/ode/include/ode/*.h",
+			"../external/ode/ode/src/joints/*.h",
+			"../external/ode/ode/src/joints/*.cpp",
+			"../external/ode/ode/src/*.h",
+			"../external/ode/ode/src/*.c",
+			"../external/ode/ode/src/*.cpp"
+		})
+		removefiles({
+			"../external/ode/ode/src/collision_trimesh_trimesh_old.cpp",
+			"../external/ode/ode/src/collision_trimesh_opcode.cpp",
+			"../external/ode/ode/src/collision_trimesh_disabled.cpp"
+		})
+	
+		includedirs({
+			"../external/ode/ou/include"
+		})
+		files({
+			"../external/ode/ou/include/**.h",
+			"../external/ode/ou/src/**.h",
+			"../external/ode/ou/src/**.cpp"
+		})
+		defines({
+			"_OU_NAMESPACE=odeou"
+		})
+	
+		files({
+			"../external/ode/GIMPACT/**.h",
+			"../external/ode/GIMPACT/**.cpp"
+		})
+	
+		files({
+			"../external/ode/libccd/src/custom/ccdcustom/*.h",
+			"../external/ode/libccd/src/ccd/*.h",
+			"../external/ode/libccd/src/*.c"
+		})
+	
+		defines({
+			"dLIBCCD_ENABLED",
+			"dLIBCCD_INTERNAL",
+			"dLIBCCD_BOX_CYL",
+			"dLIBCCD_CYL_CYL",
+			"dLIBCCD_CAP_CYL",
+			"dLIBCCD_CONVEX_BOX",
+			"dLIBCCD_CONVEX_CAP",
+			"dLIBCCD_CONVEX_CYL",
+			"dLIBCCD_CONVEX_SPHERE",
+			"dLIBCCD_CONVEX_CONVEX"
+		})
+	end
 	-- End ODE
 
 	for k,v in pairs(gf_sound_backends) do
