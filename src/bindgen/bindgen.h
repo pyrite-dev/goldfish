@@ -27,6 +27,7 @@ extern "C" {
 
 void bindgen_GoldFishGUIComponent_init(gf_lua_t* lua);
 void bindgen_GoldFishAudio_init(gf_lua_t* lua);
+void bindgen_GoldFishTexture_init(gf_lua_t* lua);
 void bindgen_GoldFishFont_init(gf_lua_t* lua);
 void bindgen_gui_init(gf_lua_t* lua);
 void bindgen_audio_init(gf_lua_t* lua);

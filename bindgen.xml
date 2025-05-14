@@ -48,6 +48,11 @@
 			<Argument Index="1" Type="gf_audio_id_t" />
 		</Match>
 	</Metatable>
+	<Metatable C="gf_texture_t*" Lua="GoldFishTexture" Valid="ret != NULL">
+		<Match Name="^gf_texture_(.+)$">
+			<Argument Index="0" Type="gf_texture_t*" />
+		</Match>
+	</Metatable>
 	<Metatable C="gf_font_t*" Lua="GoldFishFont" Valid="ret != NULL" />
 	<Group Name="gui">
 		<Match Name="^gf_gui_(.+)_common$|^gf_gui_(.+)_component$|^gf_gui_(.+)$">

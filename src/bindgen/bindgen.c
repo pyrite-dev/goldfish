@@ -25,6 +25,7 @@ void bindgen_init(gf_lua_t* lua) {
 	lua_setglobal(LUA(lua), "_LUA_WRAP");
 	bindgen_GoldFishGUIComponent_init(lua);
 	bindgen_GoldFishAudio_init(lua);
+	bindgen_GoldFishTexture_init(lua);
 	bindgen_GoldFishFont_init(lua);
 
 	lua_newtable(LUA(lua));

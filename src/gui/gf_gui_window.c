@@ -1,11 +1,13 @@
 #define GF_EXPOSE_GUI
 #define GF_EXPOSE_DRAW
 #define GF_EXPOSE_INPUT
+#define GF_EXPOSE_TEXTURE
 
 #include <gf_pre.h>
 
 /* External library */
 #include <stb_ds.h>
+#include <stb_image.h>
 
 /* Interface */
 #include <gf_gui.h>
@@ -15,6 +17,8 @@
 #include <gf_graphic.h>
 #include <gf_draw.h>
 #include <gf_log.h>
+#include <gf_file.h>
+#include <gf_texture.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -34,13 +38,15 @@ gf_gui_id_t gf_gui_create_window(gf_gui_t* gui, double x, double y, double w, do
 
 	arrput(gui->area, c);
 
+	gf_prop_set_text(gf_gui_get_prop(gui, c->key), "icon", "base:/winicon.png");
+
 	close_button = gf_gui_create_button(gui, 5, 5, 20, 20);
 	gf_gui_set_parent(gui, close_button, c->key);
 	gf_prop_set_integer(gf_gui_get_prop(gui, close_button), "x-base", 1);
 	gf_prop_set_integer(gf_gui_get_prop(gui, close_button), "close-parent", 1);
 	gf_gui_set_text(gui, close_button, "#Cross");
 
-	frame = gf_gui_create_frame(gui, 5, 10 + GF_GUI_SMALL_FONT_SIZE, w - 10, h - GF_GUI_SMALL_FONT_SIZE - 10 - 5);
+	frame = gf_gui_create_frame(gui, 5, 10 + 20, w - 10, h - 20 - 10 - 5);
 
 	gf_gui_set_parent(gui, frame, c->key);
 
@@ -60,6 +66,8 @@ void gf_gui_window_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_gui_id_t	   fid;
 	int		   frame;
 	gf_font_t*	   font;
+	double		   shift = 0;
+	const char*	   icon;
 	if(c->type != GF_GUI_WINDOW) return;
 
 	font = gf_prop_get_ptr_keep(&c->prop, "font");
@@ -69,6 +77,31 @@ void gf_gui_window_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_gui_calc_xywh(gui, c, &cx, &cy, &cw, &ch);
 	gf_graphic_clip_pop(gui->draw);
 
+	if((icon = gf_prop_get_text(&c->prop, "icon")) != NULL && c->texture == NULL) {
+		int	   w, h, ch;
+		gf_file_t* f = gf_file_open(gui->engine, icon, "r");
+		if(f != NULL) {
+			unsigned char* fbuf;
+			unsigned char* buf;
+
+			fbuf = malloc(f->size);
+			gf_file_read(f, fbuf, f->size);
+
+			buf = stbi_load_from_memory(fbuf, f->size, &w, &h, &ch, 4);
+			if(buf != NULL) {
+				c->texture = gf_texture_create(gui->draw, w, h, buf);
+				stbi_image_free(buf);
+			} else {
+				gf_prop_delete(&c->prop, "icon");
+			}
+
+			free(fbuf);
+			gf_file_close(f);
+		} else {
+			gf_prop_delete(&c->prop, "icon");
+		}
+	}
+
 	if((prop = gf_prop_get_integer(&c->prop, "active")) == GF_PROP_NO_SUCH || !prop) {
 		col.r -= (double)gf_gui_border_color_diff * 3 / 2;
 		col.g -= (double)gf_gui_border_color_diff * 3 / 2;
@@ -77,9 +110,22 @@ void gf_gui_window_render(gf_gui_t* gui, gf_gui_component_t* c) {
 
 	gf_gui_draw_box(gui, GF_GUI_NORMAL, cx, cy, cw, ch);
 
+	if(c->texture != NULL) {
+		gf_graphic_color_t col;
+		col.r = 255;
+		col.g = 255;
+		col.b = 255;
+		col.a = 255;
+
+		shift = (double)20 / c->texture->height;
+		shift = c->texture->width * shift;
+		gf_graphic_draw_texture_2d(gui->draw, cx + 10, cy + 10 - (double)20 / 4, shift, 20, c->texture, col);
+		shift += 5;
+	}
+
 	if(c->text != NULL) {
-		gf_graphic_clip_push(gui->draw, cx, cy, cw - GF_GUI_SMALL_FONT_SIZE - 10, GF_GUI_SMALL_FONT_SIZE + 10);
-		gf_graphic_text(gui->draw, font, cx + 10, cy + 10 - (double)GF_GUI_SMALL_FONT_SIZE / 4, GF_GUI_SMALL_FONT_SIZE, c->text, col);
+		gf_graphic_clip_push(gui->draw, cx, cy, cw - 20 - 10, 20 + 10);
+		gf_graphic_text(gui->draw, font, cx + 10 + shift, cy + 10 - (double)GF_GUI_SMALL_FONT_SIZE / 4, GF_GUI_SMALL_FONT_SIZE, c->text, col);
 		gf_graphic_clip_pop(gui->draw);
 	}
 
@@ -88,9 +134,9 @@ void gf_gui_window_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	if(frame != -1) {
 		gf_gui_component_t* cf = gui->area[frame];
 		cf->width	       = c->width - 10;
-		cf->height	       = c->height - GF_GUI_SMALL_FONT_SIZE - 10 - 5;
+		cf->height	       = c->height - 20 - 10 - 5;
 		if((prop = gf_prop_get_integer(&c->prop, "resizable")) != GF_PROP_NO_SUCH && prop) {
-			cf->height -= GF_GUI_SMALL_FONT_SIZE;
+			cf->height -= 20;
 		}
 	}
 }

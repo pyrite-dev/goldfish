@@ -17,6 +17,7 @@
 #include <gf_graphic.h>
 #include <gf_draw.h>
 #include <gf_log.h>
+#include <gf_texture.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -96,6 +97,10 @@ void gf_gui_destroy_id(gf_gui_t* gui, gf_gui_id_t id) {
 		}
 	}
 
+	if(c->texture != NULL) {
+		gf_texture_destroy(c->texture);
+	}
+
 	if(c->text != NULL) {
 		free(c->text);
 	}
@@ -156,6 +161,7 @@ void gf_gui_create_component(gf_gui_t* gui, gf_gui_component_t* c, double x, dou
 	c->prop	    = NULL;
 	c->callback = NULL;
 	c->text	    = NULL;
+	c->texture  = NULL;
 	gf_prop_create(&c->prop);
 
 	memcpy(&c->font, &gui->font, sizeof(gui->font));
@@ -319,7 +325,7 @@ void gf_gui_render(gf_gui_t* gui) {
 			for(j = 0; j < 3; j++) {
 				double		   sp  = 5;
 				double		   bw  = gf_gui_border_width * 2;
-				double		   aln = (double)GF_GUI_SMALL_FONT_SIZE / 3 - bw;
+				double		   aln = (double)18 / 3 - bw;
 				double		   rx  = cx + cw - sp - j * bw - j * aln;
 				double		   ry  = cy + ch - sp - j * bw - j * aln;
 				gf_graphic_color_t col = gui->base;
@@ -349,7 +355,7 @@ void gf_gui_render(gf_gui_t* gui) {
 			int		    cancel = 0;
 			if((prop = gf_prop_get_integer(&c->prop, "resizable")) != GF_PROP_NO_SUCH && prop) {
 				double sp = 5;
-				double sz = GF_GUI_SMALL_FONT_SIZE;
+				double sz = 18;
 				c->width  = gf_prop_get_integer(&c->prop, "old-width");
 				c->height = gf_prop_get_integer(&c->prop, "old-height");
 				gf_gui_calc_xywh(gui, c, &cx, &cy, &cw, &ch);
@@ -367,11 +373,11 @@ void gf_gui_render(gf_gui_t* gui) {
 				if(cancel) {
 					c->width  = input->mouse_x - gf_prop_get_integer(&c->prop, "clicked-x") + gf_prop_get_integer(&c->prop, "old-width");
 					c->height = input->mouse_y - gf_prop_get_integer(&c->prop, "clicked-y") + gf_prop_get_integer(&c->prop, "old-height");
-					if((prop = gf_prop_get_integer(&c->prop, "min-width")) != GF_PROP_NO_SUCH && c->width < GF_GUI_SMALL_FONT_SIZE + 10 + sz + prop) {
-						c->width = GF_GUI_SMALL_FONT_SIZE + 10 + sz + prop;
+					if((prop = gf_prop_get_integer(&c->prop, "min-width")) != GF_PROP_NO_SUCH && c->width < 20 + 10 + sz + prop) {
+						c->width = 20 + 10 + sz + prop;
 					}
-					if((prop = gf_prop_get_integer(&c->prop, "min-height")) != GF_PROP_NO_SUCH && c->height < GF_GUI_SMALL_FONT_SIZE + 10 + sz + prop) {
-						c->height = GF_GUI_SMALL_FONT_SIZE + 10 + sz + prop;
+					if((prop = gf_prop_get_integer(&c->prop, "min-height")) != GF_PROP_NO_SUCH && c->height < 20 + 10 + sz + prop) {
+						c->height = 20 + 10 + sz + prop;
 					}
 				}
 			}

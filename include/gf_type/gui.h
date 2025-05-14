@@ -36,6 +36,7 @@ typedef struct gf_gui_component_t gf_gui_component_t;
 #include <gf_type/core.h>
 #include <gf_type/prop.h>
 #include <gf_type/graphic.h>
+#include <gf_type/texture.h>
 
 /* Standard */
 
@@ -100,6 +101,9 @@ enum GF_GUI_COMPONENT_TYPES {
  *
  * @var gf_gui_component_t::hover_font
  * @brief Hover font color
+ *
+ * @var gf_gui_component_t::texture
+ * @brief Texture
  */
 GF_DECLARE_TYPE(gui_component, {
 	gf_gui_id_t	   key;
@@ -115,6 +119,7 @@ GF_DECLARE_TYPE(gui_component, {
 	char*		   text;
 	gf_graphic_color_t font;
 	gf_graphic_color_t hover_font;
+	gf_texture_t* texture;
 });
 
 /**
