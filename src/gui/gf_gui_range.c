@@ -85,9 +85,9 @@ void gf_gui_range_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_gui_get_wh(gui, gr, &gw, &gh);
 
 	col = gui->base;
-	col.r -= gf_gui_border_color_diff * 2;
-	col.g -= gf_gui_border_color_diff * 2;
-	col.b -= gf_gui_border_color_diff * 2;
+	col.r -= gf_gui_border_color_diff / 2;
+	col.g -= gf_gui_border_color_diff / 2;
+	col.b -= gf_gui_border_color_diff / 2;
 
 	bw = cw;
 	bh = 4;
@@ -102,7 +102,7 @@ void gf_gui_range_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_graphic_fill_rect(gui->draw, bx + gf_gui_border_width, by + gf_gui_border_width, bw - gf_gui_border_width * 2, bh - gf_gui_border_width * 2, col);
 	if((step = gf_prop_get_floating(&c->prop, "step")) != GF_PROP_NO_SUCH && step > 0) {
 		double lw = cw - gw;
-		double sw = (step / gf_math_abs(min - max)) * lw;
+		double sw = (step / (max - min)) * lw;
 		if(sw >= 1) {
 			col = gui->base;
 			col.r += gf_gui_border_color_diff;
@@ -116,14 +116,14 @@ void gf_gui_range_render(gf_gui_t* gui, gf_gui_component_t* c) {
 			}
 		}
 	}
-	gf_gui_set_xy(gui, gr, (cw - gw) * gf_math_abs((val - min) / (max - min)), 0);
+	gf_gui_set_xy(gui, gr, (cw - gw) * ((val - min) / (max - min)), 0);
 
 	if(gui->pressed == gr) {
 		double v   = input->mouse_x - gf_prop_get_integer(gf_gui_get_prop(gui, gr), "diff-x") - cx;
 		double d   = 0;
 		double old = gf_prop_get_floating(gf_gui_get_prop(gui, c->key), "value");
 
-		d = ((v / (cw - gw)) * gf_math_abs(max - min)) + min;
+		d = ((v / (cw - gw)) * (max - min)) + min;
 		if(step != GF_PROP_NO_SUCH) {
 			d = gf_math_round(d / step) * step;
 		}

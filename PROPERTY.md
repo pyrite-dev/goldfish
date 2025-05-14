@@ -152,6 +152,14 @@ Context: GUI
 
 Selected component. (internal property)
 
+## split
+Type: `integer` 
+
+Context: GUI
+
+
+How many boxes should be shown in progress bar.
+
 ## step
 Type: `floating` 
 

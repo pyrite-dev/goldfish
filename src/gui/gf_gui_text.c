@@ -18,6 +18,7 @@
 #include <stdlib.h>
 
 extern const double gf_gui_border_width;
+extern const int    gf_gui_border_color_diff;
 
 gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, double h) {
 	gf_gui_component_t* c = malloc(sizeof(*c));
@@ -40,12 +41,13 @@ gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, doub
 }
 
 void gf_gui_text_render(gf_gui_t* gui, gf_gui_component_t* c) {
-	double	    cx;
-	double	    cy;
-	double	    cw;
-	double	    ch;
-	gf_font_t*  font;
-	gf_gui_id_t scroll;
+	double		   cx;
+	double		   cy;
+	double		   cw;
+	double		   ch;
+	gf_font_t*	   font;
+	gf_gui_id_t	   scroll;
+	gf_graphic_color_t col;
 	if(c->type != GF_GUI_TEXT) return;
 
 	font = gf_prop_get_ptr_keep(&c->prop, "font");
@@ -56,6 +58,12 @@ void gf_gui_text_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_graphic_clip_pop(gui->draw);
 
 	gf_gui_draw_box(gui, GF_GUI_INVERT, cx, cy, cw, ch);
+
+	col = gui->base;
+	col.r -= gf_gui_border_color_diff / 2;
+	col.g -= gf_gui_border_color_diff / 2;
+	col.b -= gf_gui_border_color_diff / 2;
+	gf_graphic_fill_rect(gui->draw, cx + gf_gui_border_width, cy + gf_gui_border_width, cw - gf_gui_border_width * 2, ch - gf_gui_border_width * 2, col);
 
 	scroll = gf_gui_get_prop_id(gui, c->key, "scrollbar");
 	gf_gui_set_wh(gui, scroll, 20 - gf_gui_border_width, c->height - gf_gui_border_width * 2);

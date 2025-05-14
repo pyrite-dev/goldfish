@@ -18,9 +18,6 @@
 /* Standard */
 #include <stdlib.h>
 
-#define TAB_GRAB_HEIGHT 20
-#define LINE_HEIGHT 8
-
 extern const double gf_gui_border_width;
 extern const int    gf_gui_border_color_diff;
 

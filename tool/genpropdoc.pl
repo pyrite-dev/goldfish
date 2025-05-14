@@ -24,6 +24,7 @@ $doc{"old-height"} = "Old height of component before resize.";
 $doc{"old-width"} = "Old width of component before resize.";
 $doc{"scrollbar"} = "Scrollbar of component.";
 $doc{"selected"} = "Selected component. (internal property)";
+$doc{"split"} = "How many boxes should be shown in progress bar.";
 $doc{"step"} = "Granularity that value must adhere to.";
 $doc{"value"} = "Value.";
 $doc{"x-base"} = "Set \`1\` to make X coord base right of screen.\n\nDefault is \`-1\`, which makes X coord base left of screen.";
