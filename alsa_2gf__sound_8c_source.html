@@ -172,9 +172,9 @@ $(document).ready(function(){initNavTree('alsa_2gf__sound_8c_source.html',''); i
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="alsa_2gf__sound_8c.html#adbfa58a06aa1e702a74d8f89ee74e80e">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="alsa_2gf__sound_8c.html#adbfa58a06aa1e702a74d8f89ee74e80e">gf_sound_alsa_thread</a>(<span class="keywordtype">void</span>* ptr) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_struct" href="structgf__sound__t.html">gf_sound_t</a>*    sound = (<a class="code hl_struct" href="structgf__sound__t.html">gf_sound_t</a>*)ptr;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordtype">int</span>            frame;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_struct" href="structgf__sound__t.html">gf_sound_t</a>*       sound = (<a class="code hl_struct" href="structgf__sound__t.html">gf_sound_t</a>*)ptr;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        snd_pcm_uframes_t frame;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*    data;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        snd_pcm_hw_params_get_period_size(sound-&gt;<a class="code hl_variable" href="structgf__sound__t.html#a34c7cce0976e3a5c3dfd699a08e91a0e">context</a>.params, &amp;frame, 0);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
