@@ -1,9 +1,12 @@
 <map id="gf_graphic_draw_texture_polygon" name="gf_graphic_draw_texture_polygon">
-<area shape="rect" id="Node000001" title="Draw polygon with texture." alt="" coords="471,23,653,63"/>
-<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#a3285370a495233cc7db4f25317cd5fb0" title="Draw rectangle with texture." alt="" coords="216,31,423,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="457,46,423,46,423,41,457,41"/>
-<area shape="rect" id="Node000003" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="25,5,148,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="202,33,148,27,149,22,203,28"/>
-<area shape="rect" id="Node000014" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="5,55,168,80"/>
-<area shape="poly" id="edge3_Node000002_Node000014" title=" " alt="" coords="203,58,168,62,168,56,202,53"/>
+<area shape="rect" id="Node000001" title="Draw polygon with texture." alt="" coords="687,49,869,89"/>
+<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#a3285370a495233cc7db4f25317cd5fb0" title="Draw rectangle with texture." alt="" coords="432,56,639,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="673,71,639,71,639,66,673,66"/>
+<area shape="rect" id="Node000003" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="241,5,364,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,56,361,33,362,28,463,50"/>
+<area shape="rect" id="Node000013" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="5,31,173,56"/>
+<area shape="poly" id="edge5_Node000002_Node000013" title=" " alt="" coords="418,65,173,51,174,45,418,59"/>
+<area shape="rect" id="Node000014" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="221,107,384,132"/>
+<area shape="poly" id="edge4_Node000002_Node000014" title=" " alt="" coords="463,87,362,109,361,104,462,82"/>
+<area shape="poly" id="edge3_Node000003_Node000013" title=" " alt="" coords="228,30,174,36,173,31,227,24"/>
 </map>

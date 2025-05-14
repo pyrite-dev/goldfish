@@ -1,7 +1,11 @@
 <map id="gf_prop_set_text" name="gf_prop_set_text">
-<area shape="rect" id="Node000001" title="Set text to property." alt="" coords="372,13,503,38"/>
-<area shape="rect" id="Node000002" href="$gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="164,5,324,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="358,28,324,28,324,23,358,23"/>
-<area shape="rect" id="Node000003" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,13,116,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,28,116,28,116,23,150,23"/>
+<area shape="rect" id="Node000001" title="Set text to property." alt="" coords="416,42,547,67"/>
+<area shape="rect" id="Node000002" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="201,13,368,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="402,46,368,40,369,35,403,40"/>
+<area shape="rect" id="Node000009" href="$gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="205,63,365,103"/>
+<area shape="poly" id="edge3_Node000001_Node000009" title=" " alt="" coords="403,68,365,74,364,69,402,63"/>
+<area shape="rect" id="Node000003" href="$bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="5,5,153,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="187,28,154,28,154,23,187,23"/>
+<area shape="rect" id="Node000006" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="24,70,135,95"/>
+<area shape="poly" id="edge4_Node000009_Node000006" title=" " alt="" coords="191,85,135,85,135,80,191,80"/>
 </map>

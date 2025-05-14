@@ -1,0 +1,7 @@
+<map id="gf_texture_keep_aspect" name="gf_texture_keep_aspect">
+<area shape="rect" id="Node000001" title="Keep aspect or not." alt="" coords="500,13,677,38"/>
+<area shape="rect" id="Node000002" href="$bindgen__GoldFishTexture_8c.html#a81bf0b6bd6d300d737ee4fb0d96f5efc" title=" " alt="" coords="267,5,452,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="486,28,452,28,452,23,486,23"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishTexture_8c.html#a763b131bd4a52429f90be0cf5b73864c" title=" " alt="" coords="5,13,219,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,28,219,28,219,23,253,23"/>
+</map>

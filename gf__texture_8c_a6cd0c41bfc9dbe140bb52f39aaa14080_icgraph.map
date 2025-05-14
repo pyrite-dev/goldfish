@@ -1,17 +1,20 @@
 <map id="gf_texture_create" name="gf_texture_create">
-<area shape="rect" id="Node000001" title="Create texture." alt="" coords="415,80,552,105"/>
-<area shape="rect" id="Node000002" href="$gf__font_8c.html#aa179aebf715af02be254760427e70abf" title=" " alt="" coords="224,31,367,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,79,344,59,346,54,422,74"/>
-<area shape="rect" id="Node000011" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="237,104,354,129"/>
-<area shape="poly" id="edge3_Node000001_Node000011" title=" " alt="" coords="401,106,355,112,354,107,401,101"/>
-<area shape="rect" id="Node000003" href="$gf__font_8c.html#ac0048135a16cab856891b9686a17809d" title="Load font." alt="" coords="33,5,149,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,36,149,28,150,23,211,30"/>
-<area shape="rect" id="Node000012" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="29,55,152,80"/>
-<area shape="poly" id="edge4_Node000011_Node000012" title=" " alt="" coords="228,103,144,83,145,77,230,98"/>
-<area shape="rect" id="Node000019" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="5,104,176,129"/>
-<area shape="poly" id="edge5_Node000011_Node000019" title=" " alt="" coords="223,119,176,119,176,114,223,114"/>
-<area shape="rect" id="Node000021" href="$gf__graphic__common_8c.html#a1ce50172aa1749c26af704601fc131ef" title="Calculate text width." alt="" coords="7,153,174,179"/>
-<area shape="poly" id="edge6_Node000011_Node000021" title=" " alt="" coords="230,135,145,156,144,151,228,130"/>
-<area shape="rect" id="Node000024" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="9,203,172,228"/>
-<area shape="poly" id="edge7_Node000011_Node000024" title=" " alt="" coords="267,139,226,166,177,192,143,205,141,200,175,188,223,162,264,135"/>
+<area shape="rect" id="Node000001" title="Create texture." alt="" coords="631,129,768,155"/>
+<area shape="rect" id="Node000002" href="$gf__font_8c.html#aa179aebf715af02be254760427e70abf" title=" " alt="" coords="440,31,583,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="661,125,536,59,538,54,663,120"/>
+<area shape="rect" id="Node000011" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="453,129,570,155"/>
+<area shape="poly" id="edge3_Node000001_Node000011" title=" " alt="" coords="617,145,571,145,571,139,617,139"/>
+<area shape="rect" id="Node000018" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="5,155,173,180"/>
+<area shape="poly" id="edge9_Node000001_Node000018" title=" " alt="" coords="663,163,583,198,473,234,411,247,348,254,283,254,221,243,187,231,155,215,105,182,108,178,157,210,189,226,222,238,284,248,347,249,411,242,472,229,581,193,661,158"/>
+<area shape="rect" id="Node000003" href="$gf__font_8c.html#ac0048135a16cab856891b9686a17809d" title="Load font." alt="" coords="249,5,365,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,36,365,28,366,23,427,30"/>
+<area shape="rect" id="Node000012" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="245,55,368,80"/>
+<area shape="poly" id="edge4_Node000011_Node000012" title=" " alt="" coords="469,126,391,94,356,83,358,78,393,89,471,121"/>
+<area shape="rect" id="Node000019" href="$gf__graphic__common_8c.html#a742683887f1ce914faeb942885186240" title="Calculate text height." alt="" coords="221,104,392,129"/>
+<area shape="poly" id="edge6_Node000011_Node000019" title=" " alt="" coords="439,136,392,130,393,125,439,130"/>
+<area shape="rect" id="Node000021" href="$gf__graphic__common_8c.html#a1ce50172aa1749c26af704601fc131ef" title="Calculate text width." alt="" coords="223,153,390,179"/>
+<area shape="poly" id="edge7_Node000011_Node000021" title=" " alt="" coords="439,153,391,159,390,154,439,148"/>
+<area shape="rect" id="Node000024" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="225,203,388,228"/>
+<area shape="poly" id="edge8_Node000011_Node000024" title=" " alt="" coords="469,163,393,193,354,205,352,200,391,187,467,158"/>
+<area shape="poly" id="edge5_Node000012_Node000018" title=" " alt="" coords="241,87,222,94,160,126,111,157,108,152,158,121,220,89,239,82"/>
 </map>

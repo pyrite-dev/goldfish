@@ -1,13 +1,15 @@
 <map id="include/gf_type/file.h" name="include/gf_type/file.h">
-<area shape="rect" id="Node000001" title="Type definitions related to file I/O." alt="" coords="171,5,330,31"/>
-<area shape="rect" id="Node000002" href="$gf__file_8h.html" title="File I/O." alt="" coords="188,79,313,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,44,253,79,248,79,248,44"/>
+<area shape="rect" id="Node000001" title="Type definitions related to file I/O." alt="" coords="234,5,393,31"/>
+<area shape="rect" id="Node000002" href="$gf__file_8h.html" title="File I/O." alt="" coords="251,79,376,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="316,44,316,79,311,79,311,44"/>
 <area shape="rect" id="Node000003" href="$gf__audio_8c.html" title=" " alt="" coords="5,152,117,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="208,111,93,154,91,149,207,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="260,110,103,154,101,149,259,105"/>
 <area shape="rect" id="Node000004" href="$gf__file_8c.html" title=" " alt="" coords="141,152,237,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="234,116,201,154,197,150,230,113"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="283,113,211,154,208,149,280,108"/>
 <area shape="rect" id="Node000005" href="$gf__font_8c.html" title=" " alt="" coords="262,152,365,177"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="272,113,305,150,301,154,268,116"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="316,118,316,152,311,152,311,118"/>
 <area shape="rect" id="Node000006" href="$gf__lua_8c.html" title=" " alt="" coords="389,152,485,177"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="294,106,408,149,406,154,292,111"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="346,108,418,149,416,154,344,113"/>
+<area shape="rect" id="Node000007" href="$gf__gui__window_8c.html" title=" " alt="" coords="509,152,685,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="373,105,552,149,551,154,371,110"/>
 </map>

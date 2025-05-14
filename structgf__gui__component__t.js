@@ -9,6 +9,7 @@ var structgf__gui__component__t =
     [ "pressed", "structgf__gui__component__t.html#a51325b6f792b76b9bb6ced0e75dc3144", null ],
     [ "prop", "structgf__gui__component__t.html#aa0334087c1c988b87f2703ada59698d7", null ],
     [ "text", "structgf__gui__component__t.html#a8110f1375f92df5c47970342fabc3dc7", null ],
+    [ "texture", "structgf__gui__component__t.html#a88dc1485ffe8f5eb388263e07b4fc90b", null ],
     [ "type", "structgf__gui__component__t.html#ac6a6067145b869324f9464aeeae5839f", null ],
     [ "width", "structgf__gui__component__t.html#a6083ffb3cc61006522da912641bc4b1d", null ],
     [ "x", "structgf__gui__component__t.html#ace277498b9f1c269f928784fda1baceb", null ],

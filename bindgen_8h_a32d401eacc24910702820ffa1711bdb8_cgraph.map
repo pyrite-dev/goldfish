@@ -18,10 +18,10 @@
 <area shape="poly" id="edge20_Node000001_Node000035" title=" " alt="" coords="111,317,177,296,179,301,113,322"/>
 <area shape="rect" id="Node000037" href="$bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="183,127,331,167"/>
 <area shape="poly" id="edge24_Node000001_Node000037" title=" " alt="" coords="75,318,114,252,145,212,181,177,188,172,191,176,184,181,149,216,119,255,80,320"/>
-<area shape="rect" id="Node000039" href="$bindgen__gui_8c.html#a133e6cd4180b0c7a3c99299080ffe51d" title=" " alt="" coords="183,561,331,601"/>
-<area shape="poly" id="edge28_Node000001_Node000039" title=" " alt="" coords="77,344,89,383,111,437,142,496,162,523,185,547,189,551,186,555,181,551,158,526,138,498,106,439,84,385,72,346"/>
-<area shape="rect" id="Node000041" href="$bindgen__gui_8c.html#aeefeecd0ff17aa1db4d8540bf1123ae5" title=" " alt="" coords="183,433,331,473"/>
-<area shape="poly" id="edge30_Node000001_Node000041" title=" " alt="" coords="87,343,129,379,184,419,194,425,192,430,181,424,125,383,83,347"/>
+<area shape="rect" id="Node000040" href="$bindgen__gui_8c.html#a133e6cd4180b0c7a3c99299080ffe51d" title=" " alt="" coords="183,561,331,601"/>
+<area shape="poly" id="edge28_Node000001_Node000040" title=" " alt="" coords="77,344,89,383,111,437,142,496,162,523,185,547,189,551,186,555,181,551,158,526,138,498,106,439,84,385,72,346"/>
+<area shape="rect" id="Node000042" href="$bindgen__gui_8c.html#aeefeecd0ff17aa1db4d8540bf1123ae5" title=" " alt="" coords="183,433,331,473"/>
+<area shape="poly" id="edge30_Node000001_Node000042" title=" " alt="" coords="87,343,129,379,184,419,194,425,192,430,181,424,125,383,83,347"/>
 <area shape="rect" id="Node000003" href="$gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="833,345,992,370"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="718,546,783,482,887,378,891,382,787,486,722,550"/>
 <area shape="rect" id="Node000007" href="$gf__gui_8c.html#a889a54075cbe3114cd51eae892774541" title="Create component specified by name." alt="" coords="383,70,558,95"/>
@@ -50,7 +50,7 @@
 <area shape="poly" id="edge25_Node000037_Node000038" title=" " alt="" coords="331,151,374,156,373,161,330,157"/>
 <area shape="poly" id="edge26_Node000038_Node000003" title=" " alt="" coords="555,176,668,201,728,221,787,247,818,266,847,289,893,333,889,337,844,293,815,271,784,252,727,226,666,206,554,181"/>
 <area shape="poly" id="edge27_Node000038_Node000009" title=" " alt="" coords="546,179,564,190,577,203,584,217,590,245,595,272,601,285,612,298,632,311,629,316,609,302,597,288,590,274,585,246,579,219,572,206,561,194,543,183"/>
-<area shape="rect" id="Node000040" href="$gf__gui_8c.html#a9ebb2c6a640e7555e665fcf63a3a1e00" title="Set default button sound." alt="" coords="379,569,563,594"/>
-<area shape="poly" id="edge29_Node000039_Node000040" title=" " alt="" coords="331,579,365,579,365,584,331,584"/>
-<area shape="poly" id="edge31_Node000041_Node000022" title=" " alt="" coords="331,442,596,411,597,416,331,447"/>
+<area shape="rect" id="Node000041" href="$gf__gui_8c.html#a9ebb2c6a640e7555e665fcf63a3a1e00" title="Set default button sound." alt="" coords="379,569,563,594"/>
+<area shape="poly" id="edge29_Node000040_Node000041" title=" " alt="" coords="331,579,365,579,365,584,331,584"/>
+<area shape="poly" id="edge31_Node000042_Node000022" title=" " alt="" coords="331,442,596,411,597,416,331,447"/>
 </map>

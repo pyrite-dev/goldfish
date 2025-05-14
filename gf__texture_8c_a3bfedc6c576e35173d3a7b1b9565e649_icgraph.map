@@ -1,7 +1,20 @@
 <map id="gf_texture_destroy" name="gf_texture_destroy">
-<area shape="rect" id="Node000001" title="Destroy texture." alt="" coords="356,5,501,31"/>
-<area shape="rect" id="Node000002" href="$gf__font_8c.html#a2777beb54b042206a6873accb1333522" title="Destroy font." alt="" coords="184,5,308,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="342,21,308,21,308,15,342,15"/>
-<area shape="rect" id="Node000003" href="$gf__draw__common_8c.html#aa7c19917300ff10b22de455323f01d83" title="Destroy drawing interface." alt="" coords="5,5,136,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,21,136,21,136,15,170,15"/>
+<area shape="rect" id="Node000001" title="Destroy texture." alt="" coords="523,70,668,95"/>
+<area shape="rect" id="Node000002" href="$bindgen__GoldFishTexture_8c.html#a32067a2d339157968556fa53ad9ed835" title=" " alt="" coords="289,5,475,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="534,69,456,48,458,43,535,64"/>
+<area shape="rect" id="Node000008" href="$gf__font_8c.html#a2777beb54b042206a6873accb1333522" title="Destroy font." alt="" coords="320,70,444,95"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="508,85,444,85,444,80,508,80"/>
+<area shape="rect" id="Node000014" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="313,159,451,185"/>
+<area shape="poly" id="edge5_Node000001_Node000014" title=" " alt="" coords="552,103,415,162,412,157,550,98"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishTexture_8c.html#a763b131bd4a52429f90be0cf5b73864c" title=" " alt="" coords="17,13,230,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="276,28,230,28,230,23,276,23"/>
+<area shape="rect" id="Node000009" href="$gf__draw__common_8c.html#aa7c19917300ff10b22de455323f01d83" title="Destroy drawing interface." alt="" coords="58,66,189,91"/>
+<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="307,84,189,82,189,77,307,79"/>
+<area shape="poly" id="edge9_Node000014_Node000014" title=" " alt="" coords="420,150,410,141,382,138,359,140,347,145,345,150,351,158,347,161,340,151,343,141,358,135,382,133,412,136,423,145"/>
+<area shape="rect" id="Node000015" href="$bindgen__GoldFishGUIComponent_8c.html#ac9ee38e5442042dfd34828f37b999737" title=" " alt="" coords="5,116,241,156"/>
+<area shape="poly" id="edge6_Node000014_Node000015" title=" " alt="" coords="299,163,241,155,242,150,300,158"/>
+<area shape="rect" id="Node000017" href="$gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="49,181,197,206"/>
+<area shape="poly" id="edge7_Node000014_Node000017" title=" " alt="" coords="300,181,198,190,197,185,299,176"/>
+<area shape="rect" id="Node000018" href="$gf__gui_8c.html#ab8c8f2db437bffd27987005978c9a766" title="Destroy GUI." alt="" coords="64,230,183,255"/>
+<area shape="poly" id="edge8_Node000014_Node000018" title=" " alt="" coords="335,192,242,221,184,235,183,229,241,216,333,187"/>
 </map>

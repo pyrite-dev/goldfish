@@ -1,9 +1,11 @@
 <map id="gf_draw_driver_register_texture" name="gf_draw_driver_register_texture">
-<area shape="rect" id="Node000001" title="Register driver&#45;dependent texture." alt="" coords="381,23,557,63"/>
-<area shape="rect" id="Node000002" href="$gf__texture_8c.html#a6cd0c41bfc9dbe140bb52f39aaa14080" title="Create texture." alt="" coords="196,31,333,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,46,334,46,334,41,368,41"/>
-<area shape="rect" id="Node000003" href="$gf__font_8c.html#aa179aebf715af02be254760427e70abf" title=" " alt="" coords="5,5,148,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,35,148,30,149,25,183,30"/>
-<area shape="rect" id="Node000012" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="18,55,135,80"/>
-<area shape="poly" id="edge3_Node000002_Node000012" title=" " alt="" coords="183,56,136,62,136,57,182,51"/>
+<area shape="rect" id="Node000001" title="Register driver&#45;dependent texture." alt="" coords="407,47,583,87"/>
+<area shape="rect" id="Node000002" href="$gf__texture_8c.html#a6cd0c41bfc9dbe140bb52f39aaa14080" title="Create texture." alt="" coords="221,55,359,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="393,70,359,70,359,65,393,65"/>
+<area shape="rect" id="Node000003" href="$gf__font_8c.html#aa179aebf715af02be254760427e70abf" title=" " alt="" coords="18,5,161,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,54,141,33,142,28,225,49"/>
+<area shape="rect" id="Node000012" href="$gf__font_8c.html#a92b3a7c671b15a15f831b189077bba2e" title="Render text." alt="" coords="31,55,148,80"/>
+<area shape="poly" id="edge3_Node000002_Node000012" title=" " alt="" coords="207,70,148,70,148,65,207,65"/>
+<area shape="rect" id="Node000019" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="5,104,173,129"/>
+<area shape="poly" id="edge4_Node000002_Node000019" title=" " alt="" coords="225,86,142,107,141,101,224,81"/>
 </map>

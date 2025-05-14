@@ -1,7 +1,12 @@
 <map id="gf_draw_driver_destroy_texture" name="gf_draw_driver_destroy_texture">
-<area shape="rect" id="Node000001" title="Destroy driver&#45;dependent texture." alt="" coords="371,5,545,45"/>
-<area shape="rect" id="Node000002" href="$gf__texture_8c.html#a3bfedc6c576e35173d3a7b1b9565e649" title="Destroy texture." alt="" coords="177,13,323,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="357,28,323,28,323,23,357,23"/>
-<area shape="rect" id="Node000003" href="$gf__font_8c.html#a2777beb54b042206a6873accb1333522" title="Destroy font." alt="" coords="5,13,129,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="164,28,130,28,130,23,164,23"/>
+<area shape="rect" id="Node000001" title="Destroy driver&#45;dependent texture." alt="" coords="432,63,607,103"/>
+<area shape="rect" id="Node000002" href="$gf__texture_8c.html#a3bfedc6c576e35173d3a7b1b9565e649" title="Destroy texture." alt="" coords="239,70,384,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,85,384,85,384,80,418,80"/>
+<area shape="rect" id="Node000003" href="$bindgen__GoldFishTexture_8c.html#a32067a2d339157968556fa53ad9ed835" title=" " alt="" coords="5,5,191,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="250,69,172,48,174,43,251,64"/>
+<area shape="rect" id="Node000009" href="$gf__font_8c.html#a2777beb54b042206a6873accb1333522" title="Destroy font." alt="" coords="36,70,160,95"/>
+<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="224,85,160,85,160,80,224,80"/>
+<area shape="rect" id="Node000015" href="$gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="29,143,167,169"/>
+<area shape="poly" id="edge4_Node000002_Node000015" title=" " alt="" coords="261,102,137,146,135,141,260,97"/>
+<area shape="poly" id="edge5_Node000015_Node000015" title=" " alt="" coords="136,134,126,125,98,122,75,124,63,129,61,134,67,142,63,145,56,135,59,125,74,119,98,117,128,120,139,129"/>
 </map>
