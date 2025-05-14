@@ -1,19 +1,21 @@
 <map id="gf_graphic_draw_texture_2d" name="gf_graphic_draw_texture_2d">
-<area shape="rect" id="Node000001" title="Draw rectangle with texture." alt="" coords="432,173,639,198"/>
-<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="241,119,364,145"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="465,172,358,147,359,142,466,167"/>
-<area shape="rect" id="Node000012" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="221,226,384,251"/>
-<area shape="poly" id="edge6_Node000001_Node000012" title=" " alt="" coords="466,204,359,229,358,223,465,199"/>
+<area shape="rect" id="Node000001" title="Draw rectangle with texture." alt="" coords="432,222,639,247"/>
+<area shape="rect" id="Node000002" href="$gf__graphic__common_8c.html#aa9d5d5bfbadc5412807ff95adfe70a1e" title="Draw text." alt="" coords="241,145,364,170"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="482,220,341,173,343,168,484,215"/>
+<area shape="rect" id="Node000013" href="$gf__graphic__common_8c.html#a6ba5106cf323b2ceb3d5415d70abd522" title="Draw text with wrapping." alt="" coords="221,275,384,301"/>
+<area shape="poly" id="edge7_Node000001_Node000013" title=" " alt="" coords="466,253,359,278,358,273,465,248"/>
 <area shape="rect" id="Node000003" href="$bindgen__graphic_8c.html#a8894fc4e08d45d9fb885e1ffc889ca4e" title=" " alt="" coords="15,5,164,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,114,172,60,145,48,147,43,175,55,271,110"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="276,137,229,99,172,60,148,48,150,43,175,55,233,94,279,133"/>
 <area shape="rect" id="Node000009" href="$gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="9,70,169,95"/>
-<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="233,119,144,98,146,93,234,114"/>
+<area shape="poly" id="edge3_Node000002_Node000009" title=" " alt="" coords="258,142,172,109,136,98,138,93,174,104,260,137"/>
 <area shape="rect" id="Node000010" href="$gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="11,119,168,145"/>
-<area shape="poly" id="edge4_Node000002_Node000010" title=" " alt="" coords="227,135,168,135,168,129,227,129"/>
-<area shape="rect" id="Node000011" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="5,169,173,194"/>
-<area shape="poly" id="edge5_Node000002_Node000011" title=" " alt="" coords="234,150,146,171,144,166,233,145"/>
-<area shape="rect" id="Node000013" href="$bindgen__graphic_8c.html#a9476ee01c3ff84e78a5ddaca7d2b371b" title=" " alt="" coords="15,219,164,259"/>
-<area shape="poly" id="edge7_Node000012_Node000013" title=" " alt="" coords="207,241,164,241,164,236,207,236"/>
-<area shape="rect" id="Node000014" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="17,283,161,309"/>
-<area shape="poly" id="edge8_Node000012_Node000014" title=" " alt="" coords="242,258,138,286,137,281,241,252"/>
+<area shape="poly" id="edge4_Node000002_Node000010" title=" " alt="" coords="227,151,168,144,169,139,228,146"/>
+<area shape="rect" id="Node000011" href="$gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="20,169,159,194"/>
+<area shape="poly" id="edge5_Node000002_Node000011" title=" " alt="" coords="228,168,159,176,159,171,227,163"/>
+<area shape="rect" id="Node000012" href="$gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="5,218,173,243"/>
+<area shape="poly" id="edge6_Node000002_Node000012" title=" " alt="" coords="257,177,174,208,135,220,133,215,172,203,255,172"/>
+<area shape="rect" id="Node000014" href="$bindgen__graphic_8c.html#a9476ee01c3ff84e78a5ddaca7d2b371b" title=" " alt="" coords="15,268,164,308"/>
+<area shape="poly" id="edge8_Node000013_Node000014" title=" " alt="" coords="207,291,164,291,164,285,207,285"/>
+<area shape="rect" id="Node000015" href="$gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="17,333,161,358"/>
+<area shape="poly" id="edge9_Node000013_Node000015" title=" " alt="" coords="242,307,138,335,137,330,241,302"/>
 </map>

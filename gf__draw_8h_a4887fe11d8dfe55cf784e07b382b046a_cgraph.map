@@ -1,30 +1,34 @@
 <map id="gf_draw_frame" name="gf_draw_frame">
-<area shape="rect" id="Node000001" title="Draw frame (common part)" alt="" coords="5,204,125,229"/>
-<area shape="rect" id="Node000002" href="$gf__graphic_8c.html#a74f8bf7e2fc346f7d85ecfcea061f3fb" title="Clear the screen." alt="" coords="173,155,303,180"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,201,179,181,180,186,111,207"/>
-<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="183,204,293,229"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="126,214,169,214,169,219,126,219"/>
-<area shape="rect" id="Node000021" href="$gf__lua_8c.html#a9aead1287d2426883127d256b6b649d7" title="Run a single step for Lua interface." alt="" coords="189,253,287,279"/>
-<area shape="poly" id="edge15_Node000001_Node000021" title=" " alt="" coords="111,227,180,247,179,252,110,232"/>
+<area shape="rect" id="Node000001" title="Draw frame (common part)" alt="" coords="5,229,125,255"/>
+<area shape="rect" id="Node000002" href="$gf__graphic_8c.html#a74f8bf7e2fc346f7d85ecfcea061f3fb" title="Clear the screen." alt="" coords="173,180,303,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,227,179,207,180,212,111,232"/>
+<area shape="rect" id="Node000003" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="183,229,293,255"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="126,239,169,239,169,245,126,245"/>
+<area shape="rect" id="Node000022" href="$gf__lua_8c.html#a9aead1287d2426883127d256b6b649d7" title="Run a single step for Lua interface." alt="" coords="189,279,287,304"/>
+<area shape="poly" id="edge18_Node000001_Node000022" title=" " alt="" coords="111,252,180,272,179,277,110,257"/>
 <area shape="rect" id="Node000004" href="$gf__graphic_8c.html#a63ff697af8cf405a5fab29b0bd893954" title="Pop clipping region." alt="" coords="361,5,512,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="284,202,301,189,314,171,321,153,323,116,326,78,334,59,349,40,354,36,357,40,353,44,338,62,331,79,328,116,326,154,319,174,305,193,287,206"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="285,227,301,215,315,193,322,172,323,128,324,84,332,62,349,40,353,36,356,40,353,44,337,65,329,85,328,128,327,173,320,195,305,219,288,231"/>
 <area shape="rect" id="Node000005" href="$gf__graphic_8c.html#ac4482ad3b1baa754820a496f84d66c3a" title="Push clipping region." alt="" coords="357,55,516,80"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="283,201,301,189,318,165,323,140,330,115,337,102,349,89,355,84,359,89,352,93,341,105,335,117,329,141,322,167,305,193,286,206"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="284,227,301,215,313,199,319,184,323,153,328,121,335,105,349,89,354,85,358,89,353,93,340,108,333,123,328,154,324,186,317,202,305,219,287,231"/>
 <area shape="rect" id="Node000006" href="$gf__graphic__common_8c.html#a8ff780a4bcadc008355699101d2a42cc" title="Draw polygon." alt="" coords="351,104,523,129"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="278,202,301,189,315,177,324,164,334,151,349,138,361,132,364,137,352,143,338,155,329,167,319,180,304,194,280,206"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="281,227,301,215,316,196,324,177,332,158,349,139,357,133,360,138,352,143,336,160,329,179,321,199,304,219,284,231"/>
 <area shape="rect" id="Node000011" href="$gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="368,153,505,179"/>
-<area shape="poly" id="edge6_Node000003_Node000011" title=" " alt="" coords="288,201,373,179,374,185,289,206"/>
-<area shape="rect" id="Node000013" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="579,255,713,280"/>
-<area shape="poly" id="edge7_Node000003_Node000013" title=" " alt="" coords="294,217,400,225,523,239,578,249,577,254,522,245,399,230,293,222"/>
-<area shape="rect" id="Node000016" href="$gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="353,279,520,304"/>
-<area shape="poly" id="edge8_Node000003_Node000016" title=" " alt="" coords="274,227,304,238,390,271,388,276,302,243,272,232"/>
-<area shape="rect" id="Node000018" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="571,304,721,329"/>
-<area shape="poly" id="edge14_Node000003_Node000018" title=" " alt="" coords="286,227,304,239,321,259,328,280,335,299,352,314,380,327,410,335,473,342,533,339,586,330,587,335,534,344,473,347,409,341,378,332,349,319,331,302,323,282,316,262,301,243,283,232"/>
-<area shape="rect" id="Node000020" href="$gf__prop_8c.html#a17c37ff36ee533fcd95a11a4e4974f08" title="Delete property." alt="" coords="377,380,496,405"/>
-<area shape="poly" id="edge12_Node000003_Node000020" title=" " alt="" coords="288,227,304,239,317,254,324,270,329,300,334,330,341,344,353,359,371,372,367,376,349,363,336,347,329,331,324,301,319,272,313,257,301,243,285,232"/>
-<area shape="rect" id="Node000014" href="$gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="361,429,513,455"/>
-<area shape="poly" id="edge13_Node000003_Node000014" title=" " alt="" coords="290,227,305,239,321,262,328,285,328,330,329,374,337,395,353,416,356,420,353,424,349,420,332,397,324,375,323,330,323,286,316,264,301,243,286,232"/>
-<area shape="poly" id="edge9_Node000016_Node000013" title=" " alt="" coords="520,279,565,274,566,279,521,284"/>
-<area shape="poly" id="edge10_Node000016_Node000016" title=" " alt="" coords="404,280,397,270,401,260,414,254,437,252,464,256,475,264,472,269,462,260,437,257,416,259,405,264,402,270,408,277"/>
-<area shape="poly" id="edge11_Node000016_Node000018" title=" " alt="" coords="521,299,557,303,556,309,520,304"/>
+<area shape="poly" id="edge6_Node000003_Node000011" title=" " alt="" coords="270,227,350,196,387,181,389,186,352,200,272,232"/>
+<area shape="rect" id="Node000013" href="$gf__gui_8c.html#a88ad797024acf7857ccb768243c1a0a8" title="Get index of GUI component." alt="" coords="580,255,713,280"/>
+<area shape="poly" id="edge7_Node000003_Node000013" title=" " alt="" coords="294,236,400,234,523,239,583,249,582,254,522,245,400,239,294,241"/>
+<area shape="rect" id="Node000016" href="$gf__gui_8c.html#a90656b3268a89f8e414147df928aa8ac" title=" " alt="" coords="380,255,493,280"/>
+<area shape="poly" id="edge8_Node000003_Node000016" title=" " alt="" coords="294,246,367,256,366,261,293,252"/>
+<area shape="rect" id="Node000014" href="$gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="571,341,723,367"/>
+<area shape="poly" id="edge16_Node000003_Node000014" title=" " alt="" coords="287,253,304,264,316,277,322,291,327,318,333,343,340,354,352,364,382,378,413,387,447,391,480,391,544,383,598,368,600,374,545,388,480,396,446,396,412,392,380,383,349,368,336,357,328,345,322,319,317,293,311,280,301,268,285,257"/>
+<area shape="rect" id="Node000017" href="$gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="353,328,520,353"/>
+<area shape="poly" id="edge11_Node000003_Node000017" title=" " alt="" coords="277,252,304,264,403,319,400,323,302,268,275,257"/>
+<area shape="rect" id="Node000019" href="$gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="571,391,722,416"/>
+<area shape="poly" id="edge17_Node000003_Node000019" title=" " alt="" coords="289,253,305,264,318,282,324,300,327,336,330,369,338,383,352,397,380,413,410,423,442,429,474,431,537,427,591,417,592,422,538,433,474,437,441,435,409,429,378,418,349,401,334,387,325,370,321,336,319,301,313,284,301,268,286,257"/>
+<area shape="rect" id="Node000021" href="$gf__prop_8c.html#a17c37ff36ee533fcd95a11a4e4974f08" title="Delete property." alt="" coords="377,480,496,505"/>
+<area shape="poly" id="edge15_Node000003_Node000021" title=" " alt="" coords="290,253,305,264,322,290,329,315,331,339,329,364,328,387,329,411,336,435,353,459,368,472,365,476,349,462,332,437,324,412,322,387,324,363,326,339,324,316,317,292,301,268,287,257"/>
+<area shape="poly" id="edge9_Node000016_Node000013" title=" " alt="" coords="494,265,566,265,566,270,494,270"/>
+<area shape="poly" id="edge10_Node000016_Node000014" title=" " alt="" coords="490,278,524,289,613,332,610,337,522,294,488,283"/>
+<area shape="poly" id="edge12_Node000017_Node000013" title=" " alt="" coords="473,325,596,282,598,287,475,330"/>
+<area shape="poly" id="edge13_Node000017_Node000017" title=" " alt="" coords="404,329,397,320,401,310,414,304,437,301,464,305,475,314,472,318,462,310,437,307,416,309,405,313,402,319,408,326"/>
+<area shape="poly" id="edge14_Node000017_Node000019" title=" " alt="" coords="481,351,591,384,589,389,479,356"/>
 </map>

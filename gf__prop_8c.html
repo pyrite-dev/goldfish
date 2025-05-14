@@ -140,6 +140,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a34763b752747bc4b0151b949e3c943b7" id="r_a34763b752747bc4b0151b949e3c943b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gf__prop_8c.html#a34763b752747bc4b0151b949e3c943b7">gf_prop_set_text</a> (<a class="el" href="structgf__prop__t.html">gf_prop_t</a> **prop, const char *key, const char *value)</td></tr>
+<tr class="memdesc:a34763b752747bc4b0151b949e3c943b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set text to property.  <br /></td></tr>
+<tr class="separator:a34763b752747bc4b0151b949e3c943b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e529185316214c212b1bdffb4480038" id="r_a9e529185316214c212b1bdffb4480038"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gf__prop_8c.html#a9e529185316214c212b1bdffb4480038">gf_prop_get_text</a> (<a class="el" href="structgf__prop__t.html">gf_prop_t</a> **prop, const char *key)</td></tr>
+<tr class="memdesc:a9e529185316214c212b1bdffb4480038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get text from property.  <br /></td></tr>
+<tr class="separator:a9e529185316214c212b1bdffb4480038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa33e8db4e55a67b53465789f1bb6ba" id="r_acfa33e8db4e55a67b53465789f1bb6ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba">gf_prop_set_integer</a> (<a class="el" href="structgf__prop__t.html">gf_prop_t</a> **prop, const char *key, <a class="el" href="prop_8h.html#a1d0d8961a53d0825444dde661fd9690a">gf_prop_integer_t</a> value)</td></tr>
 <tr class="memdesc:acfa33e8db4e55a67b53465789f1bb6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set integer to property.  <br /></td></tr>
 <tr class="separator:acfa33e8db4e55a67b53465789f1bb6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,32 +222,35 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00093">93</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00101">101</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__prop_8c_a06e57f947a7719725d1af7ad7b19c79a_icgraph.png" border="0" usemap="#agf__prop_8c_a06e57f947a7719725d1af7ad7b19c79a_icgraph" alt=""/></div>
 <map name="agf__prop_8c_a06e57f947a7719725d1af7ad7b19c79a_icgraph" id="agf__prop_8c_a06e57f947a7719725d1af7ad7b19c79a_icgraph">
-<area shape="rect" title="Create property container." alt="" coords="863,109,981,135"/>
-<area shape="rect" href="gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="624,109,815,135"/>
-<area shape="poly" title=" " alt="" coords="849,125,815,125,815,119,849,119"/>
-<area shape="rect" href="gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="417,84,576,109"/>
-<area shape="poly" title=" " alt="" coords="610,112,576,108,577,103,610,107"/>
-<area shape="rect" href="gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="205,33,360,59"/>
-<area shape="poly" title=" " alt="" coords="676,107,628,89,575,74,463,57,360,50,361,45,464,52,577,69,630,84,678,102"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,84,369,109"/>
-<area shape="poly" title=" " alt="" coords="610,129,516,129,417,123,342,112,343,107,418,118,516,123,610,123"/>
-<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,33,148,59"/>
-<area shape="poly" title=" " alt="" coords="688,104,637,73,575,46,472,18,389,9,304,12,196,23,126,36,125,31,196,18,303,7,389,3,473,13,577,41,639,68,690,99"/>
-<area shape="rect" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="199,185,366,211"/>
-<area shape="poly" title=" " alt="" coords="632,140,357,188,356,183,631,134"/>
-<area shape="rect" href="gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e" title="Create frame component." alt="" coords="419,236,575,261"/>
-<area shape="poly" title=" " alt="" coords="692,145,640,181,577,219,534,238,532,233,575,214,637,177,689,141"/>
-<area shape="poly" title=" " alt="" coords="428,83,336,61,338,56,429,78"/>
-<area shape="poly" title=" " alt="" coords="404,99,370,99,370,94,404,94"/>
-<area shape="poly" title=" " alt="" coords="457,118,312,188,309,183,455,113"/>
-<area shape="poly" title=" " alt="" coords="216,83,128,61,130,56,218,78"/>
-<area shape="poly" title=" " alt="" coords="428,235,336,213,338,208,429,230"/>
+<area shape="rect" title="Create property container." alt="" coords="863,139,981,164"/>
+<area shape="rect" href="gf__gui_8c.html#a757066a859b84758831fbfbd4c5d47ad" title="Initialize component." alt="" coords="624,139,815,164"/>
+<area shape="poly" title=" " alt="" coords="849,154,815,154,815,149,849,149"/>
+<area shape="rect" href="gf__gui__button_8c.html#a5690903ff5e1b10c4096f4af36b03938" title="Create button component." alt="" coords="417,88,576,114"/>
+<area shape="poly" title=" " alt="" coords="649,138,553,116,554,111,650,133"/>
+<area shape="rect" href="gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="205,38,360,63"/>
+<area shape="poly" title=" " alt="" coords="687,134,636,104,575,78,520,65,464,57,360,51,361,46,464,52,521,60,577,73,639,99,690,129"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,88,369,114"/>
+<area shape="poly" title=" " alt="" coords="610,147,417,128,347,116,348,111,418,122,611,142"/>
+<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,38,148,63"/>
+<area shape="poly" title=" " alt="" coords="695,131,643,87,610,65,575,48,521,28,473,16,431,10,390,8,304,15,196,28,126,40,125,35,196,22,304,9,390,3,431,4,474,11,522,23,577,43,613,60,646,83,698,127"/>
+<area shape="rect" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="199,190,366,215"/>
+<area shape="poly" title=" " alt="" coords="611,167,367,195,366,190,610,162"/>
+<area shape="rect" href="gf__gui__frame_8c.html#a42a1bf0e5c4d23fedbd785f7e6c6896e" title="Create frame component." alt="" coords="419,240,575,266"/>
+<area shape="poly" title=" " alt="" coords="682,173,577,224,531,243,529,238,575,219,680,168"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a263238b9e43b81057da8d8336dfaccdc" title="Create tab component." alt="" coords="213,266,352,291"/>
+<area shape="poly" title=" " alt="" coords="702,178,651,233,616,260,577,281,518,296,457,302,399,300,348,294,348,288,399,294,457,296,517,291,575,276,613,256,648,229,699,174"/>
+<area shape="poly" title=" " alt="" coords="428,88,336,66,338,61,429,83"/>
+<area shape="poly" title=" " alt="" coords="404,104,370,104,370,98,404,98"/>
+<area shape="poly" title=" " alt="" coords="457,122,312,192,309,187,455,117"/>
+<area shape="poly" title=" " alt="" coords="216,88,128,66,130,61,218,82"/>
+<area shape="poly" title=" " alt="" coords="428,240,336,218,338,213,429,235"/>
+<area shape="poly" title=" " alt="" coords="405,267,352,273,352,268,405,261"/>
 </map>
 </div>
 
@@ -282,37 +291,39 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00071">71</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00079">79</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__prop_8c_a17c37ff36ee533fcd95a11a4e4974f08_icgraph.png" border="0" usemap="#agf__prop_8c_a17c37ff36ee533fcd95a11a4e4974f08_icgraph" alt=""/></div>
 <map name="agf__prop_8c_a17c37ff36ee533fcd95a11a4e4974f08_icgraph" id="agf__prop_8c_a17c37ff36ee533fcd95a11a4e4974f08_icgraph">
-<area shape="rect" title="Delete property." alt="" coords="752,129,871,154"/>
-<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="173,26,284,52"/>
-<area shape="poly" title=" " alt="" coords="775,125,722,97,654,66,575,37,494,16,449,10,414,8,332,16,272,29,271,24,332,11,413,3,450,4,495,11,577,32,656,61,725,93,777,120"/>
-<area shape="rect" href="gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="332,175,495,215"/>
-<area shape="poly" title=" " alt="" coords="739,154,495,187,494,182,738,149"/>
-<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="562,104,685,129"/>
-<area shape="poly" title=" " alt="" coords="738,135,685,127,686,122,739,129"/>
-<area shape="rect" href="gf__prop_8c.html#a0092bce45e2a446484ae743b5ca1975d" title="Set void pointer to property." alt="" coords="543,205,704,230"/>
-<area shape="poly" title=" " alt="" coords="768,162,705,188,657,207,655,202,703,183,766,157"/>
-<area shape="rect" href="gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="5,26,125,52"/>
-<area shape="poly" title=" " alt="" coords="159,42,125,42,125,36,159,36"/>
-<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="173,214,284,240"/>
-<area shape="poly" title=" " alt="" coords="319,214,285,220,284,215,318,209"/>
-<area shape="poly" title=" " alt="" coords="577,136,468,177,467,172,575,131"/>
-<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="341,125,485,150"/>
-<area shape="poly" title=" " alt="" coords="548,127,486,133,485,128,547,121"/>
-<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="336,26,491,52"/>
-<area shape="poly" title=" " alt="" coords="581,101,494,65,459,54,461,49,496,60,583,96"/>
-<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="338,76,489,101"/>
-<area shape="poly" title=" " alt="" coords="547,109,489,101,489,96,548,104"/>
-<area shape="poly" title=" " alt="" coords="351,75,277,54,278,49,353,69"/>
-<area shape="poly" title=" " alt="" coords="529,210,494,206,495,201,529,205"/>
-<area shape="rect" href="gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="333,239,493,279"/>
-<area shape="poly" title=" " alt="" coords="545,236,494,246,493,241,544,230"/>
-<area shape="poly" title=" " alt="" coords="320,245,284,239,285,234,320,240"/>
+<area shape="rect" title="Delete property." alt="" coords="752,155,871,180"/>
+<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="173,5,284,31"/>
+<area shape="poly" title=" " alt="" coords="778,149,726,118,657,81,578,46,494,21,439,12,383,9,285,14,284,8,383,4,440,7,495,15,579,41,660,77,729,113,781,145"/>
+<area shape="rect" href="gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="332,229,495,269"/>
+<area shape="poly" title=" " alt="" coords="739,185,495,235,494,230,738,179"/>
+<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="562,131,685,156"/>
+<area shape="poly" title=" " alt="" coords="738,161,685,154,685,149,739,155"/>
+<area shape="rect" href="gf__prop_8c.html#a0092bce45e2a446484ae743b5ca1975d" title="Set void pointer to property." alt="" coords="543,236,704,261"/>
+<area shape="poly" title=" " alt="" coords="770,188,705,216,655,238,653,233,703,212,768,183"/>
+<area shape="rect" href="gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="5,5,125,31"/>
+<area shape="poly" title=" " alt="" coords="159,21,125,21,125,15,159,15"/>
+<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="173,268,284,293"/>
+<area shape="poly" title=" " alt="" coords="319,268,285,274,284,268,318,262"/>
+<area shape="poly" title=" " alt="" coords="575,164,544,179,520,198,496,218,470,231,467,226,493,213,517,194,541,174,572,159"/>
+<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="341,129,485,155"/>
+<area shape="poly" title=" " alt="" coords="548,146,485,145,486,140,548,140"/>
+<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="336,179,491,204"/>
+<area shape="poly" title=" " alt="" coords="555,162,470,181,469,176,553,157"/>
+<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="338,31,489,56"/>
+<area shape="poly" title=" " alt="" coords="591,125,546,97,494,70,463,59,465,54,496,65,549,92,594,121"/>
+<area shape="rect" href="gf__prop_8c.html#a34763b752747bc4b0151b949e3c943b7" title="Set text to property." alt="" coords="348,80,479,105"/>
+<area shape="poly" title=" " alt="" coords="556,130,466,108,467,103,557,125"/>
+<area shape="poly" title=" " alt="" coords="324,34,284,28,285,23,325,29"/>
+<area shape="poly" title=" " alt="" coords="529,251,495,251,495,246,529,246"/>
+<area shape="rect" href="gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="333,293,493,333"/>
+<area shape="poly" title=" " alt="" coords="568,268,481,295,479,290,567,263"/>
+<area shape="poly" title=" " alt="" coords="320,299,284,293,285,288,320,294"/>
 </map>
 </div>
 
@@ -342,7 +353,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00083">83</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00091">91</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -399,7 +410,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00035">35</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00043">43</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -415,28 +426,32 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__prop_8c_a26846805c1957f47586d3833a5780ecd_icgraph.png" border="0" usemap="#agf__prop_8c_a26846805c1957f47586d3833a5780ecd_icgraph" alt=""/></div>
 <map name="agf__prop_8c_a26846805c1957f47586d3833a5780ecd_icgraph" id="agf__prop_8c_a26846805c1957f47586d3833a5780ecd_icgraph">
-<area shape="rect" title="Get floating number from property." alt="" coords="449,179,604,204"/>
+<area shape="rect" title="Get floating number from property." alt="" coords="449,228,604,253"/>
 <area shape="rect" href="gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="234,5,394,31"/>
-<area shape="poly" title=" " alt="" coords="509,168,465,106,435,72,400,44,377,33,380,28,403,40,439,68,470,102,514,165"/>
+<area shape="poly" title=" " alt="" coords="514,216,498,178,473,131,441,84,400,44,380,33,382,28,403,40,445,81,478,128,503,175,519,214"/>
 <area shape="rect" href="gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="235,55,393,80"/>
-<area shape="poly" title=" " alt="" coords="502,171,457,132,400,94,372,83,374,78,403,89,460,127,505,167"/>
+<area shape="poly" title=" " alt="" coords="509,217,465,155,435,122,400,94,377,82,380,78,403,89,439,118,470,152,514,214"/>
 <area shape="rect" href="gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="237,104,391,129"/>
-<area shape="poly" title=" " alt="" coords="483,176,400,143,364,132,366,127,402,138,485,171"/>
+<area shape="poly" title=" " alt="" coords="502,220,457,181,400,143,372,132,374,127,403,138,460,177,505,216"/>
 <area shape="rect" href="gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="231,153,397,179"/>
-<area shape="poly" title=" " alt="" coords="435,183,397,179,398,173,436,178"/>
+<area shape="poly" title=" " alt="" coords="483,225,400,193,364,181,366,176,402,187,485,220"/>
 <area shape="rect" href="gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="227,203,401,228"/>
-<area shape="poly" title=" " alt="" coords="436,204,402,208,401,203,435,199"/>
+<area shape="poly" title=" " alt="" coords="435,232,401,228,402,223,436,227"/>
 <area shape="rect" href="gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="240,252,388,277"/>
-<area shape="poly" title=" " alt="" coords="483,212,402,242,362,254,360,249,400,237,481,207"/>
-<area shape="rect" href="gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="242,301,386,327"/>
-<area shape="poly" title=" " alt="" coords="504,216,459,254,403,291,371,304,369,299,400,286,456,250,501,211"/>
-<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="234,351,394,391"/>
-<area shape="poly" title=" " alt="" coords="513,217,468,279,438,312,403,342,382,354,379,349,400,337,434,308,464,275,508,214"/>
+<area shape="poly" title=" " alt="" coords="436,254,388,259,388,254,435,248"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a069178ded754c04d1304bc54a5d90361" title=" " alt="" coords="251,301,377,327"/>
+<area shape="poly" title=" " alt="" coords="483,261,402,291,362,304,360,299,400,286,481,256"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="245,351,383,376"/>
+<area shape="poly" title=" " alt="" coords="504,265,459,303,403,340,371,353,369,348,400,336,456,299,501,261"/>
+<area shape="rect" href="gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="242,400,386,425"/>
+<area shape="poly" title=" " alt="" coords="513,267,469,328,438,361,403,390,376,402,374,398,400,385,435,357,465,325,509,263"/>
+<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="234,450,394,490"/>
+<area shape="poly" title=" " alt="" coords="518,267,501,305,476,351,443,399,403,440,384,452,382,448,400,436,439,395,472,349,496,303,513,265"/>
 <area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="5,203,179,228"/>
 <area shape="poly" title=" " alt="" coords="243,184,151,205,149,200,242,179"/>
 <area shape="poly" title=" " alt="" coords="242,252,149,231,151,225,243,246"/>
-<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="37,359,147,384"/>
-<area shape="poly" title=" " alt="" coords="220,374,148,374,148,369,220,369"/>
+<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="37,457,147,483"/>
+<area shape="poly" title=" " alt="" coords="220,473,148,473,148,467,220,467"/>
 </map>
 </div>
 
@@ -478,7 +493,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00023">23</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00031">31</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -494,43 +509,49 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__prop_8c_aa37db41ede3bca25146697beb55ce290_icgraph.png" border="0" usemap="#agf__prop_8c_aa37db41ede3bca25146697beb55ce290_icgraph" alt=""/></div>
 <map name="agf__prop_8c_aa37db41ede3bca25146697beb55ce290_icgraph" id="agf__prop_8c_aa37db41ede3bca25146697beb55ce290_icgraph">
-<area shape="rect" title="Get integer from property." alt="" coords="740,321,892,347"/>
-<area shape="rect" href="gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="272,5,420,31"/>
-<area shape="poly" title=" " alt="" coords="808,308,796,257,775,193,759,160,740,128,717,99,690,75,660,55,626,40,554,21,483,13,420,14,420,8,484,8,555,16,628,35,662,51,694,71,721,96,745,125,764,158,780,191,802,256,813,307"/>
-<area shape="rect" href="gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="13,191,173,216"/>
-<area shape="poly" title=" " alt="" coords="794,313,750,269,722,247,691,231,624,209,553,194,482,185,411,181,279,183,173,193,173,188,279,178,411,175,482,180,554,189,625,204,693,226,725,243,754,265,798,309"/>
-<area shape="rect" href="gf__gui_8c.html#a2afb67331b3c6b3405299c2b55625e0c" title=" " alt="" coords="512,296,692,321"/>
-<area shape="poly" title=" " alt="" coords="726,326,692,322,693,317,726,321"/>
-<area shape="rect" href="gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="15,277,170,303"/>
-<area shape="poly" title=" " alt="" coords="787,314,744,285,718,272,691,262,615,246,537,238,459,237,382,241,245,259,143,280,142,275,244,253,382,235,458,231,537,233,616,241,693,257,720,267,747,281,790,310"/>
-<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="37,337,148,363"/>
-<area shape="poly" title=" " alt="" coords="726,339,148,351,148,346,726,333"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="5,392,180,417"/>
-<area shape="poly" title=" " alt="" coords="727,345,180,399,180,394,726,340"/>
-<area shape="rect" href="gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="9,441,177,467"/>
-<area shape="poly" title=" " alt="" coords="762,353,693,371,551,398,410,420,177,448,177,443,409,414,551,393,691,366,761,348"/>
-<area shape="rect" href="gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="533,109,671,135"/>
-<area shape="poly" title=" " alt="" coords="800,311,756,241,726,202,690,167,665,150,639,137,641,132,668,145,694,163,730,198,761,238,804,308"/>
-<area shape="rect" href="gf__gui__window_8c.html#a75e7807811b2c3380d8e20b853f9302f" title=" " alt="" coords="525,499,679,524"/>
-<area shape="poly" title=" " alt="" coords="802,360,758,420,728,453,693,482,654,501,652,496,691,477,724,449,754,417,798,357"/>
-<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="522,549,682,589"/>
-<area shape="poly" title=" " alt="" coords="808,361,792,400,767,447,735,496,694,539,675,551,672,546,690,535,730,493,763,445,787,397,803,359"/>
-<area shape="poly" title=" " alt="" coords="640,286,630,278,602,275,579,277,567,282,565,287,571,294,567,298,560,288,563,278,578,272,602,269,632,273,643,282"/>
-<area shape="rect" href="gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="277,296,415,321"/>
-<area shape="poly" title=" " alt="" coords="498,311,415,311,415,306,498,306"/>
-<area shape="poly" title=" " alt="" coords="301,293,123,219,125,214,303,288"/>
-<area shape="poly" title=" " alt="" coords="263,305,170,298,170,293,264,300"/>
-<area shape="poly" title=" " alt="" coords="264,325,149,344,148,338,263,319"/>
-<area shape="poly" title=" " alt="" coords="303,329,181,378,134,394,132,389,179,373,301,324"/>
-<area shape="poly" title=" " alt="" coords="322,333,261,383,222,409,181,432,152,444,150,439,179,428,219,405,258,378,319,329"/>
-<area shape="poly" title=" " alt="" coords="570,104,521,74,463,46,420,33,421,28,465,41,524,69,573,99"/>
-<area shape="poly" title=" " alt="" coords="640,100,630,91,602,88,579,90,567,95,565,100,571,108,567,111,560,101,563,91,578,85,602,83,632,86,643,95"/>
-<area shape="rect" href="bindgen__GoldFishGUIComponent_8c.html#ac9ee38e5442042dfd34828f37b999737" title=" " alt="" coords="228,55,464,95"/>
-<area shape="poly" title=" " alt="" coords="519,110,456,98,457,93,520,104"/>
-<area shape="rect" href="gf__gui_8c.html#ab8c8f2db437bffd27987005978c9a766" title="Destroy GUI." alt="" coords="287,120,405,145"/>
-<area shape="poly" title=" " alt="" coords="520,128,406,133,405,128,519,123"/>
-<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="291,556,401,581"/>
-<area shape="poly" title=" " alt="" coords="508,571,402,571,402,566,508,566"/>
+<area shape="rect" title="Get integer from property." alt="" coords="740,332,892,358"/>
+<area shape="rect" href="gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="272,408,420,434"/>
+<area shape="poly" title=" " alt="" coords="779,366,738,384,693,398,621,411,548,420,420,425,420,420,548,414,620,406,691,393,736,379,777,361"/>
+<area shape="rect" href="gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="13,40,173,66"/>
+<area shape="poly" title=" " alt="" coords="808,319,797,267,776,202,760,169,741,137,718,108,690,84,657,64,622,47,548,23,470,11,391,8,316,12,247,21,140,43,139,38,246,16,316,7,391,3,470,6,549,18,624,42,660,59,694,80,722,105,746,134,765,166,781,200,802,266,814,318"/>
+<area shape="rect" href="gf__gui_8c.html#a2afb67331b3c6b3405299c2b55625e0c" title=" " alt="" coords="512,206,692,231"/>
+<area shape="poly" title=" " alt="" coords="789,325,745,288,691,253,646,233,648,228,693,248,748,284,792,321"/>
+<area shape="rect" href="gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="15,110,170,135"/>
+<area shape="poly" title=" " alt="" coords="806,319,793,276,770,223,736,171,715,149,691,131,656,113,619,98,542,79,463,70,384,70,309,77,241,88,136,112,135,107,240,82,309,72,384,65,463,65,543,73,621,93,658,108,693,127,719,145,740,168,775,220,798,274,811,318"/>
+<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="37,358,148,383"/>
+<area shape="poly" title=" " alt="" coords="807,372,790,407,766,448,733,489,694,523,663,541,635,552,584,561,531,561,464,564,397,574,342,585,316,587,289,585,260,578,227,563,200,546,176,524,138,472,111,422,96,384,101,382,116,420,142,470,180,520,203,541,229,559,261,573,290,580,316,582,341,580,396,569,464,558,531,556,584,556,633,547,660,536,690,519,730,486,761,445,786,404,802,369"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="5,196,180,222"/>
+<area shape="poly" title=" " alt="" coords="803,320,788,284,764,242,731,202,712,185,691,171,654,155,615,142,534,128,452,126,370,134,294,148,226,165,126,199,124,194,224,160,293,142,370,128,451,121,535,123,616,137,656,150,693,167,715,181,735,198,768,239,792,282,808,318"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="23,251,162,276"/>
+<area shape="poly" title=" " alt="" coords="749,332,692,321,544,301,397,287,162,270,162,264,397,281,545,296,692,316,750,327"/>
+<area shape="rect" href="gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="9,307,177,332"/>
+<area shape="poly" title=" " alt="" coords="726,344,177,325,177,320,726,339"/>
+<area shape="rect" href="gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="533,483,671,508"/>
+<area shape="poly" title=" " alt="" coords="790,369,694,442,626,485,623,481,690,437,787,364"/>
+<area shape="rect" href="gf__gui_8c.html#a90656b3268a89f8e414147df928aa8ac" title=" " alt="" coords="545,358,659,383"/>
+<area shape="poly" title=" " alt="" coords="727,358,659,366,659,361,726,353"/>
+<area shape="rect" href="gf__gui__window_8c.html#a75e7807811b2c3380d8e20b853f9302f" title=" " alt="" coords="525,624,679,650"/>
+<area shape="poly" title=" " alt="" coords="812,372,799,421,776,484,741,549,719,580,694,607,661,626,658,622,690,603,715,576,737,547,771,482,794,420,807,370"/>
+<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="522,674,682,714"/>
+<area shape="poly" title=" " alt="" coords="814,372,804,431,783,509,768,551,748,592,723,630,694,664,678,676,675,672,690,660,719,627,743,589,763,549,778,508,799,430,809,371"/>
+<area shape="poly" title=" " alt="" coords="640,196,630,188,602,184,579,186,567,191,565,196,571,204,567,207,560,197,563,187,578,181,602,179,632,183,643,192"/>
+<area shape="rect" href="gf__gui_8c.html#a12905d9750d06d3440efc96eab4574e9" title="Calculate component X/Y/width/height." alt="" coords="277,206,415,231"/>
+<area shape="poly" title=" " alt="" coords="498,221,415,221,415,216,498,216"/>
+<area shape="poly" title=" " alt="" coords="317,199,255,151,179,99,120,68,123,63,181,95,258,147,320,195"/>
+<area shape="poly" title=" " alt="" coords="298,203,126,138,128,133,300,198"/>
+<area shape="poly" title=" " alt="" coords="324,242,262,295,223,323,181,347,149,360,147,355,179,342,220,318,259,290,320,238"/>
+<area shape="poly" title=" " alt="" coords="263,218,180,215,180,209,263,213"/>
+<area shape="poly" title=" " alt="" coords="264,235,163,254,162,249,263,230"/>
+<area shape="poly" title=" " alt="" coords="305,239,181,291,132,309,131,304,179,286,303,234"/>
+<area shape="poly" title=" " alt="" coords="555,480,463,449,412,436,414,431,465,444,557,475"/>
+<area shape="poly" title=" " alt="" coords="640,473,630,465,602,462,579,464,567,468,565,474,571,481,567,484,560,475,563,465,578,458,602,456,632,460,643,469"/>
+<area shape="rect" href="bindgen__GoldFishGUIComponent_8c.html#ac9ee38e5442042dfd34828f37b999737" title=" " alt="" coords="228,458,464,498"/>
+<area shape="poly" title=" " alt="" coords="519,493,464,489,464,484,519,487"/>
+<area shape="rect" href="gf__gui_8c.html#ab8c8f2db437bffd27987005978c9a766" title="Destroy GUI." alt="" coords="287,523,405,548"/>
+<area shape="poly" title=" " alt="" coords="520,511,406,529,405,524,519,506"/>
+<area shape="poly" title=" " alt="" coords="531,373,148,373,148,368,531,368"/>
+<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="291,682,401,707"/>
+<area shape="poly" title=" " alt="" coords="508,697,402,697,402,692,508,692"/>
 </map>
 </div>
 
@@ -572,63 +593,78 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00050">50</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00058">58</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__prop_8c_a3e16de8f8029afb04a6eff81efb6c2fa_icgraph.png" border="0" usemap="#agf__prop_8c_a3e16de8f8029afb04a6eff81efb6c2fa_icgraph" alt=""/></div>
 <map name="agf__prop_8c_a3e16de8f8029afb04a6eff81efb6c2fa_icgraph" id="agf__prop_8c_a3e16de8f8029afb04a6eff81efb6c2fa_icgraph">
-<area shape="rect" title="Get void pointer from property." alt="" coords="632,488,756,513"/>
-<area shape="rect" href="gf__gui_8c.html#a05004186493f4e7b02b67baf5e8c97b7" title="Get component ID from property." alt="" coords="434,431,579,456"/>
-<area shape="poly" title=" " alt="" coords="638,486,548,459,550,453,639,481"/>
-<area shape="rect" href="gf__lua_8c.html#ab960ca567773e92a408774598a3047ba" title=" " alt="" coords="431,668,582,693"/>
-<area shape="poly" title=" " alt="" coords="671,525,523,670,519,666,668,521"/>
-<area shape="rect" href="gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd" title="Get floating number from property." alt="" coords="429,516,584,541"/>
-<area shape="poly" title=" " alt="" coords="619,515,585,520,584,514,618,509"/>
-<area shape="rect" href="gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="431,303,583,328"/>
-<area shape="poly" title=" " alt="" coords="668,480,519,330,523,326,672,476"/>
-<area shape="rect" href="gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="214,352,369,377"/>
-<area shape="poly" title=" " alt="" coords="465,427,380,393,341,380,342,375,382,387,467,422"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="204,401,379,427"/>
-<area shape="poly" title=" " alt="" coords="420,434,379,429,379,423,421,429"/>
-<area shape="rect" href="gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="219,565,363,591"/>
-<area shape="poly" title=" " alt="" coords="479,467,431,507,409,533,399,545,383,556,357,568,355,563,380,552,395,541,405,530,427,503,475,463"/>
-<area shape="rect" href="gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="207,303,375,328"/>
-<area shape="poly" title=" " alt="" coords="482,423,437,382,380,343,349,331,351,326,383,338,441,378,486,419"/>
-<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="211,451,371,491"/>
-<area shape="poly" title=" " alt="" coords="421,457,372,464,371,458,420,452"/>
-<area shape="rect" href="gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="210,763,373,803"/>
-<area shape="poly" title=" " alt="" coords="475,703,382,754,354,766,352,761,380,749,473,698"/>
-<area shape="poly" title=" " alt="" coords="472,510,427,470,413,448,405,428,397,410,380,392,357,380,360,375,383,388,401,407,410,426,417,446,431,467,476,506"/>
-<area shape="poly" title=" " alt="" coords="477,510,425,471,380,442,348,429,350,424,383,437,428,466,480,505"/>
-<area shape="poly" title=" " alt="" coords="438,547,348,568,347,563,437,542"/>
-<area shape="poly" title=" " alt="" coords="444,515,366,494,368,489,446,510"/>
-<area shape="rect" href="gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="211,516,371,541"/>
-<area shape="poly" title=" " alt="" coords="416,531,372,531,372,526,416,526"/>
-<area shape="rect" href="gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="213,615,370,640"/>
-<area shape="poly" title=" " alt="" coords="478,551,434,579,382,606,350,617,348,612,380,601,431,575,475,547"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="208,664,375,689"/>
-<area shape="poly" title=" " alt="" coords="490,554,445,605,416,632,383,655,357,666,355,662,380,650,412,628,442,601,486,550"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="217,713,365,739"/>
-<area shape="poly" title=" " alt="" coords="493,555,439,638,409,678,383,704,361,716,359,711,380,700,405,675,435,635,488,552"/>
-<area shape="poly" title=" " alt="" coords="438,334,348,355,347,349,437,328"/>
-<area shape="poly" title=" " alt="" coords="478,338,434,366,382,392,350,404,348,399,380,388,431,361,475,334"/>
-<area shape="poly" title=" " alt="" coords="417,318,376,318,376,313,417,313"/>
-<area shape="poly" title=" " alt="" coords="489,340,444,391,415,418,383,442,360,454,357,449,380,437,411,414,441,387,485,337"/>
-<area shape="poly" title=" " alt="" coords="489,341,432,421,419,445,412,466,402,486,383,505,361,518,358,514,380,501,398,483,407,464,414,443,427,418,484,338"/>
-<area shape="rect" href="gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="5,55,153,80"/>
-<area shape="poly" title=" " alt="" coords="494,290,479,252,454,205,422,159,402,139,380,122,340,105,282,92,153,76,154,70,283,87,342,100,383,117,405,135,426,156,459,202,483,249,499,288"/>
-<area shape="rect" href="gf__gui_8c.html#a2afb67331b3c6b3405299c2b55625e0c" title=" " alt="" coords="201,155,381,180"/>
-<area shape="poly" title=" " alt="" coords="486,294,441,243,412,217,380,195,352,183,354,178,383,190,415,213,445,240,490,290"/>
-<area shape="rect" href="gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="223,29,360,55"/>
-<area shape="poly" title=" " alt="" coords="496,290,482,244,458,187,424,127,403,100,380,76,346,57,349,52,383,72,407,97,429,124,463,184,487,242,501,288"/>
-<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="236,204,347,229"/>
-<area shape="poly" title=" " alt="" coords="474,297,431,270,380,244,345,232,346,227,382,240,434,266,477,293"/>
-<area shape="rect" href="gf__gui__window_8c.html#a75e7807811b2c3380d8e20b853f9302f" title=" " alt="" coords="214,253,369,279"/>
-<area shape="poly" title=" " alt="" coords="437,302,347,281,348,276,438,297"/>
-<area shape="poly" title=" " alt="" coords="329,145,319,137,291,133,269,135,257,140,255,146,261,153,257,156,249,146,253,136,268,130,291,128,321,132,332,141"/>
-<area shape="poly" title=" " alt="" coords="209,54,154,61,153,56,209,49"/>
-<area shape="poly" title=" " alt="" coords="329,20,319,11,291,8,269,10,257,15,255,20,261,28,257,31,249,21,253,11,268,5,291,3,321,6,332,15"/>
+<area shape="rect" title="Get void pointer from property." alt="" coords="632,267,756,292"/>
+<area shape="rect" href="gf__gui_8c.html#a05004186493f4e7b02b67baf5e8c97b7" title="Get component ID from property." alt="" coords="434,215,579,240"/>
+<area shape="poly" title=" " alt="" coords="634,266,553,243,554,238,635,260"/>
+<area shape="rect" href="gf__lua_8c.html#ab960ca567773e92a408774598a3047ba" title=" " alt="" coords="431,743,582,768"/>
+<area shape="poly" title=" " alt="" coords="685,306,516,743,511,741,680,304"/>
+<area shape="rect" href="gf__prop_8c.html#a26846805c1957f47586d3833a5780ecd" title="Get floating number from property." alt="" coords="429,267,584,292"/>
+<area shape="poly" title=" " alt="" coords="618,282,584,282,584,277,618,277"/>
+<area shape="rect" href="gf__prop_8c.html#aa37db41ede3bca25146697beb55ce290" title="Get integer from property." alt="" coords="431,515,583,540"/>
+<area shape="poly" title=" " alt="" coords="677,305,520,516,515,513,673,302"/>
+<area shape="rect" href="gf__prop_8c.html#a9e529185316214c212b1bdffb4480038" title="Get text from property." alt="" coords="441,108,573,133"/>
+<area shape="poly" title=" " alt="" coords="665,259,521,135,525,131,669,255"/>
+<area shape="rect" href="gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="214,219,369,244"/>
+<area shape="poly" title=" " alt="" coords="421,232,369,233,369,227,420,226"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="204,268,379,293"/>
+<area shape="poly" title=" " alt="" coords="442,246,344,271,343,265,441,241"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a069178ded754c04d1304bc54a5d90361" title=" " alt="" coords="228,5,355,31"/>
+<area shape="poly" title=" " alt="" coords="479,207,453,179,427,146,413,116,407,91,399,67,380,44,353,30,356,25,383,40,403,65,412,89,418,115,432,143,457,176,483,203"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="222,55,361,80"/>
+<area shape="poly" title=" " alt="" coords="482,206,427,146,405,117,395,105,380,94,356,83,359,78,383,89,399,101,410,114,431,143,486,203"/>
+<area shape="rect" href="gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="219,104,363,129"/>
+<area shape="poly" title=" " alt="" coords="478,208,434,175,380,144,347,132,349,127,382,140,437,171,481,204"/>
+<area shape="rect" href="gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="207,317,375,343"/>
+<area shape="poly" title=" " alt="" coords="447,248,431,256,417,269,408,281,398,294,383,307,355,320,353,315,380,302,394,291,403,278,413,265,428,252,444,243"/>
+<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="211,154,371,194"/>
+<area shape="poly" title=" " alt="" coords="440,214,371,196,372,191,442,209"/>
+<area shape="rect" href="gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="210,914,373,954"/>
+<area shape="poly" title=" " alt="" coords="493,781,448,842,418,875,383,904,362,916,359,912,380,900,414,871,444,839,488,778"/>
+<area shape="poly" title=" " alt="" coords="435,266,348,247,350,241,436,261"/>
+<area shape="poly" title=" " alt="" coords="416,283,379,283,379,277,416,277"/>
+<area shape="poly" title=" " alt="" coords="436,261,427,253,409,226,402,198,401,172,404,145,406,120,405,94,397,69,380,44,354,28,356,23,383,40,402,67,411,93,412,120,409,146,407,172,407,198,414,223,431,250,440,257"/>
+<area shape="poly" title=" " alt="" coords="438,262,427,253,412,232,405,211,404,171,402,131,394,112,380,93,360,80,362,76,383,89,399,110,407,130,409,170,410,210,417,230,431,250,441,258"/>
+<area shape="poly" title=" " alt="" coords="440,263,427,253,416,239,409,225,403,197,398,170,391,157,380,144,360,132,363,127,383,140,395,154,403,168,408,196,414,223,420,236,431,249,443,258"/>
+<area shape="poly" title=" " alt="" coords="447,264,428,254,413,242,403,230,394,219,380,208,357,196,359,192,383,204,398,215,407,227,417,238,431,249,450,259"/>
+<area shape="rect" href="gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="211,515,371,540"/>
+<area shape="poly" title=" " alt="" coords="501,306,486,349,461,403,428,457,407,482,383,504,361,517,358,512,380,500,403,479,423,454,457,400,481,347,496,305"/>
+<area shape="rect" href="gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="213,367,370,392"/>
+<area shape="poly" title=" " alt="" coords="478,302,434,330,382,356,347,369,345,364,380,352,431,325,475,298"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="208,416,375,441"/>
+<area shape="poly" title=" " alt="" coords="490,305,445,356,415,383,383,406,354,418,352,413,380,401,412,378,441,352,486,301"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="217,465,365,491"/>
+<area shape="poly" title=" " alt="" coords="497,306,479,339,454,380,422,420,383,455,358,468,356,463,380,450,418,417,449,377,474,337,492,303"/>
+<area shape="poly" title=" " alt="" coords="498,501,486,449,464,383,429,315,406,284,380,257,362,246,365,242,383,253,410,281,434,312,469,381,491,448,504,500"/>
+<area shape="poly" title=" " alt="" coords="496,502,481,459,457,406,423,352,403,328,380,307,361,296,363,291,383,303,407,324,428,349,462,404,486,457,501,500"/>
+<area shape="poly" title=" " alt="" coords="493,502,462,415,427,304,420,271,418,241,418,189,416,165,411,142,399,118,380,93,359,80,362,75,383,89,404,115,416,140,422,164,423,189,423,241,425,270,432,303,467,413,498,501"/>
+<area shape="poly" title=" " alt="" coords="492,503,475,470,450,430,418,390,380,356,359,345,361,340,383,352,422,386,454,427,479,467,497,501"/>
+<area shape="poly" title=" " alt="" coords="494,502,436,336,403,252,379,208,364,196,367,192,383,204,408,250,441,334,499,501"/>
+<area shape="poly" title=" " alt="" coords="417,530,372,530,372,525,417,525"/>
+<area shape="rect" href="gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="5,603,153,628"/>
+<area shape="poly" title=" " alt="" coords="431,545,142,605,141,600,430,540"/>
+<area shape="rect" href="gf__gui_8c.html#a2afb67331b3c6b3405299c2b55625e0c" title=" " alt="" coords="201,713,381,739"/>
+<area shape="poly" title=" " alt="" coords="492,553,446,614,416,648,383,679,353,699,323,715,321,711,350,695,380,675,412,644,442,610,487,550"/>
+<area shape="rect" href="gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="223,640,360,665"/>
+<area shape="poly" title=" " alt="" coords="474,549,316,642,313,638,471,545"/>
+<area shape="rect" href="gf__gui_8c.html#a90656b3268a89f8e414147df928aa8ac" title=" " alt="" coords="235,815,348,840"/>
+<area shape="poly" title=" " alt="" coords="499,554,448,684,415,752,399,779,383,797,349,817,347,813,380,793,394,776,410,750,443,682,494,552"/>
+<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="24,789,135,815"/>
+<area shape="poly" title=" " alt="" coords="501,554,487,598,463,652,429,707,408,731,383,752,338,771,272,785,135,801,134,796,271,779,336,766,380,748,404,728,425,704,459,650,482,596,496,553"/>
+<area shape="rect" href="gf__gui__window_8c.html#a75e7807811b2c3380d8e20b853f9302f" title=" " alt="" coords="214,864,369,889"/>
+<area shape="poly" title=" " alt="" coords="498,554,383,854,366,866,363,862,379,851,493,552"/>
+<area shape="poly" title=" " alt="" coords="329,704,319,695,291,692,269,694,257,699,255,704,261,712,257,715,249,705,253,695,268,689,291,687,321,690,332,699"/>
+<area shape="poly" title=" " alt="" coords="209,641,151,631,152,625,210,636"/>
+<area shape="poly" title=" " alt="" coords="329,630,319,622,291,619,269,621,257,625,255,631,261,638,257,642,249,632,253,622,268,616,291,613,321,617,332,626"/>
+<area shape="poly" title=" " alt="" coords="221,822,135,811,135,806,221,816"/>
+<area shape="poly" title=" " alt="" coords="476,102,432,72,380,44,349,33,351,28,382,40,435,68,479,98"/>
+<area shape="poly" title=" " alt="" coords="441,107,343,83,344,77,442,102"/>
+<area shape="poly" title=" " alt="" coords="442,139,372,157,371,152,440,134"/>
 </map>
 </div>
 
@@ -670,30 +706,100 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00065">65</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00073">73</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__prop_8c_aaa1dbc560946c6015231b6d78927a8a7_icgraph.png" border="0" usemap="#agf__prop_8c_aaa1dbc560946c6015231b6d78927a8a7_icgraph" alt=""/></div>
 <map name="agf__prop_8c_aaa1dbc560946c6015231b6d78927a8a7_icgraph" id="agf__prop_8c_aaa1dbc560946c6015231b6d78927a8a7_icgraph">
-<area shape="rect" title="Get void pointer from property." alt="" coords="591,129,753,155"/>
+<area shape="rect" title="Get void pointer from property." alt="" coords="591,179,753,204"/>
 <area shape="rect" href="gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670" title=" " alt="" coords="379,5,539,31"/>
-<area shape="poly" title=" " alt="" coords="646,122,600,82,541,44,514,33,516,28,544,40,603,78,649,118"/>
+<area shape="poly" title=" " alt="" coords="654,168,608,106,577,73,541,44,518,33,521,28,544,40,581,69,613,102,658,165"/>
 <area shape="rect" href="gf__gui__frame_8c.html#a91d3f85387d400e08658e9b0f9bf0abb" title=" " alt="" coords="380,55,537,80"/>
-<area shape="poly" title=" " alt="" coords="627,127,542,94,506,83,507,77,544,89,629,122"/>
-<area shape="rect" href="gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="387,104,531,129"/>
-<area shape="poly" title=" " alt="" coords="577,133,530,128,531,123,577,128"/>
-<area shape="rect" href="gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="375,153,543,179"/>
-<area shape="poly" title=" " alt="" coords="577,155,543,159,543,154,577,150"/>
-<area shape="rect" href="gf__lua_8c.html#ab960ca567773e92a408774598a3047ba" title=" " alt="" coords="383,203,534,228"/>
-<area shape="poly" title=" " alt="" coords="627,162,544,193,504,205,503,200,542,187,625,157"/>
-<area shape="rect" href="gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="165,255,325,295"/>
-<area shape="poly" title=" " alt="" coords="651,167,604,207,575,227,544,243,489,261,431,272,326,280,325,275,431,267,487,256,542,238,572,223,601,203,647,163"/>
-<area shape="rect" href="gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="164,191,327,231"/>
-<area shape="poly" title=" " alt="" coords="370,216,327,216,327,210,370,211"/>
-<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,231,116,256"/>
-<area shape="poly" title=" " alt="" coords="151,230,117,236,116,231,150,225"/>
-<area shape="poly" title=" " alt="" coords="152,262,116,255,117,250,152,257"/>
+<area shape="poly" title=" " alt="" coords="646,171,600,132,541,94,514,83,516,78,544,89,603,127,649,167"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a069178ded754c04d1304bc54a5d90361" title=" " alt="" coords="395,104,522,129"/>
+<area shape="poly" title=" " alt="" coords="627,176,542,143,506,132,507,127,544,138,629,171"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="389,153,528,179"/>
+<area shape="poly" title=" " alt="" coords="576,183,528,177,528,172,577,177"/>
+<area shape="rect" href="gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="387,203,531,228"/>
+<area shape="poly" title=" " alt="" coords="577,205,531,210,530,205,577,199"/>
+<area shape="rect" href="gf__gui__window_8c.html#a5f3d8d400fb67a9840d8d94a5869bb3c" title=" " alt="" coords="375,252,543,277"/>
+<area shape="poly" title=" " alt="" coords="627,211,544,242,504,254,503,249,542,237,625,206"/>
+<area shape="rect" href="gf__lua_8c.html#ab960ca567773e92a408774598a3047ba" title=" " alt="" coords="383,301,534,327"/>
+<area shape="poly" title=" " alt="" coords="649,215,602,254,544,291,513,304,511,299,541,286,599,249,645,211"/>
+<area shape="rect" href="gf__lua_8c.html#a59db0b85f023f24bda567439aa3eb044" title=" " alt="" coords="165,354,325,394"/>
+<area shape="poly" title=" " alt="" coords="660,217,641,247,615,281,582,315,544,342,490,363,433,376,376,382,325,383,325,377,376,376,432,371,488,358,541,337,579,311,611,278,637,244,655,214"/>
+<area shape="rect" href="gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="164,290,327,330"/>
+<area shape="poly" title=" " alt="" coords="370,315,327,314,327,309,370,310"/>
+<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,329,116,355"/>
+<area shape="poly" title=" " alt="" coords="151,329,117,335,116,330,150,324"/>
+<area shape="poly" title=" " alt="" coords="152,360,116,354,117,349,152,355"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9e529185316214c212b1bdffb4480038" name="a9e529185316214c212b1bdffb4480038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e529185316214c212b1bdffb4480038">&#9670;&#160;</a></span>gf_prop_get_text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * gf_prop_get_text </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgf__prop__t.html">gf_prop_t</a> **&#160;</td>
+          <td class="paramname"><em>prop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get text from property. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prop</td><td>Property </td></tr>
+    <tr><td class="paramname">key</td><td>Key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Value </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00023">23</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__prop_8c_a9e529185316214c212b1bdffb4480038_cgraph.png" border="0" usemap="#agf__prop_8c_a9e529185316214c212b1bdffb4480038_cgraph" alt=""/></div>
+<map name="agf__prop_8c_a9e529185316214c212b1bdffb4480038_cgraph" id="agf__prop_8c_a9e529185316214c212b1bdffb4480038_cgraph">
+<area shape="rect" title="Get text from property." alt="" coords="5,5,137,31"/>
+<area shape="rect" href="gf__prop_8c.html#a3e16de8f8029afb04a6eff81efb6c2fa" title="Get void pointer from property." alt="" coords="185,5,309,31"/>
+<area shape="poly" title=" " alt="" coords="138,15,172,15,172,21,138,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__prop_8c_a9e529185316214c212b1bdffb4480038_icgraph.png" border="0" usemap="#agf__prop_8c_a9e529185316214c212b1bdffb4480038_icgraph" alt=""/></div>
+<map name="agf__prop_8c_a9e529185316214c212b1bdffb4480038_icgraph" id="agf__prop_8c_a9e529185316214c212b1bdffb4480038_icgraph">
+<area shape="rect" title="Get text from property." alt="" coords="372,55,504,80"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a069178ded754c04d1304bc54a5d90361" title=" " alt="" coords="181,5,307,31"/>
+<area shape="poly" title=" " alt="" coords="374,54,294,33,296,28,375,49"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="175,55,313,80"/>
+<area shape="poly" title=" " alt="" coords="359,70,314,70,314,65,359,65"/>
+<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="164,105,324,145"/>
+<area shape="poly" title=" " alt="" coords="382,86,313,107,311,102,380,81"/>
+<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,112,116,137"/>
+<area shape="poly" title=" " alt="" coords="150,127,116,127,116,122,150,122"/>
 </map>
 </div>
 
@@ -741,7 +847,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00029">29</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00037">37</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -833,7 +939,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00017">17</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00025">25</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -851,49 +957,58 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__prop_8c_acfa33e8db4e55a67b53465789f1bb6ba_icgraph.png" border="0" usemap="#agf__prop_8c_acfa33e8db4e55a67b53465789f1bb6ba_icgraph" alt=""/></div>
 <map name="agf__prop_8c_acfa33e8db4e55a67b53465789f1bb6ba_icgraph" id="agf__prop_8c_acfa33e8db4e55a67b53465789f1bb6ba_icgraph">
-<area shape="rect" title="Set integer to property." alt="" coords="708,249,859,274"/>
+<area shape="rect" title="Set integer to property." alt="" coords="708,330,859,355"/>
 <area shape="rect" href="gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="242,13,397,38"/>
-<area shape="poly" title=" " alt="" coords="772,236,757,196,734,149,701,102,681,82,659,65,628,48,595,36,526,21,458,16,397,18,397,13,458,11,527,16,597,31,630,44,661,60,685,78,705,99,738,146,762,194,777,234"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="486,185,659,210"/>
-<area shape="poly" title=" " alt="" coords="727,247,615,213,616,208,728,242"/>
-<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="248,127,391,153"/>
-<area shape="poly" title=" " alt="" coords="757,241,714,205,687,188,659,174,590,155,518,143,450,139,391,139,391,133,450,133,519,138,591,149,661,170,690,183,717,201,761,237"/>
-<area shape="rect" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="489,249,656,274"/>
-<area shape="poly" title=" " alt="" coords="694,264,656,264,656,259,694,259"/>
-<area shape="rect" href="gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="504,346,641,371"/>
-<area shape="poly" title=" " alt="" coords="743,282,602,348,600,344,741,278"/>
-<area shape="rect" href="gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="489,475,656,501"/>
-<area shape="poly" title=" " alt="" coords="763,286,588,477,584,474,759,283"/>
-<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="264,534,375,559"/>
-<area shape="poly" title=" " alt="" coords="780,288,769,338,747,400,731,432,712,463,689,491,662,514,627,534,590,548,552,557,513,563,438,564,375,559,375,554,438,559,512,557,551,552,589,543,625,529,658,510,685,487,707,460,726,430,742,398,763,337,775,287"/>
-<area shape="rect" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="485,75,660,101"/>
-<area shape="poly" title=" " alt="" coords="764,239,719,184,690,154,659,128,611,103,614,98,661,123,694,150,723,180,768,236"/>
-<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="493,576,653,616"/>
-<area shape="poly" title=" " alt="" coords="780,288,769,343,746,415,712,491,689,527,662,559,636,578,633,574,658,555,685,524,707,488,741,413,763,342,775,287"/>
+<area shape="poly" title=" " alt="" coords="776,317,765,264,744,197,729,163,710,130,686,100,658,74,629,55,596,41,527,24,459,17,397,19,397,13,459,12,528,18,598,36,631,51,662,70,690,96,714,127,734,160,749,196,771,263,781,316"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="486,237,659,262"/>
+<area shape="poly" title=" " alt="" coords="747,326,659,282,612,264,614,260,661,278,749,321"/>
+<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="248,177,391,202"/>
+<area shape="poly" title=" " alt="" coords="764,321,720,271,691,246,659,226,591,203,520,190,451,185,391,186,391,181,451,180,520,185,592,198,661,222,694,242,724,267,768,317"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a263238b9e43b81057da8d8336dfaccdc" title="Create tab component." alt="" coords="250,127,389,153"/>
+<area shape="poly" title=" " alt="" coords="768,319,751,288,726,252,696,217,659,189,626,173,592,160,520,144,450,138,389,138,389,132,450,133,521,139,593,155,628,168,661,184,699,213,731,249,755,285,773,316"/>
+<area shape="rect" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="489,293,656,318"/>
+<area shape="poly" title=" " alt="" coords="697,330,644,321,645,315,698,325"/>
+<area shape="rect" href="gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="504,366,641,391"/>
+<area shape="poly" title=" " alt="" coords="696,360,642,370,641,364,695,355"/>
+<area shape="rect" href="gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="489,439,656,465"/>
+<area shape="poly" title=" " alt="" coords="747,364,599,442,597,437,744,360"/>
+<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="264,583,375,609"/>
+<area shape="poly" title=" " alt="" coords="768,368,725,423,695,453,661,478,637,491,614,499,574,506,533,512,511,519,487,530,473,541,464,551,454,562,439,573,407,585,376,593,374,588,406,580,436,568,450,559,460,548,469,537,484,526,509,514,532,507,573,501,613,494,635,487,659,474,691,449,721,420,764,365"/>
+<area shape="rect" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="485,85,660,110"/>
+<area shape="poly" title=" " alt="" coords="771,318,756,277,732,227,699,176,658,131,625,112,627,108,662,127,704,173,737,225,761,275,776,316"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a069178ded754c04d1304bc54a5d90361" title=" " alt="" coords="509,541,636,566"/>
+<area shape="poly" title=" " alt="" coords="773,369,731,445,700,487,662,523,625,543,623,538,658,519,696,483,727,442,769,367"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="503,590,642,615"/>
+<area shape="poly" title=" " alt="" coords="778,370,764,415,741,471,707,529,686,556,662,579,640,592,638,588,658,575,682,552,703,526,736,469,759,413,773,368"/>
+<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="493,640,653,680"/>
+<area shape="poly" title=" " alt="" coords="781,369,769,423,747,493,712,566,689,600,662,630,645,642,642,638,658,626,685,596,707,563,742,491,764,422,775,368"/>
 <area shape="rect" href="bindgen__gui_8c.html#ab7c744e318db8392492dd3855899e53e" title=" " alt="" coords="5,5,153,45"/>
 <area shape="poly" title=" " alt="" coords="228,28,154,28,154,23,228,23"/>
-<area shape="rect" href="bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad" title=" " alt="" coords="245,177,393,217"/>
-<area shape="poly" title=" " alt="" coords="472,200,394,200,394,195,472,195"/>
-<area shape="poly" title=" " alt="" coords="505,184,437,168,380,155,381,150,438,163,507,179"/>
-<area shape="rect" href="bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="245,241,393,281"/>
-<area shape="poly" title=" " alt="" coords="476,264,394,264,394,259,476,259"/>
-<area shape="poly" title=" " alt="" coords="610,336,600,328,573,325,550,327,538,331,536,337,542,344,538,348,531,338,535,328,549,322,573,319,602,323,614,332"/>
-<area shape="rect" href="bindgen__GoldFishGUIComponent_8c.html#ac9ee38e5442042dfd34828f37b999737" title=" " alt="" coords="201,305,437,345"/>
-<area shape="poly" title=" " alt="" coords="490,351,437,343,438,338,491,345"/>
-<area shape="rect" href="gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="245,370,393,395"/>
-<area shape="poly" title=" " alt="" coords="490,369,394,378,393,373,490,364"/>
-<area shape="rect" href="gf__gui_8c.html#ab8c8f2db437bffd27987005978c9a766" title="Destroy GUI." alt="" coords="260,419,379,445"/>
-<area shape="poly" title=" " alt="" coords="527,379,438,409,380,423,379,418,437,404,526,374"/>
-<area shape="poly" title=" " alt="" coords="610,466,600,457,573,454,550,456,538,461,536,466,542,474,538,477,531,467,535,457,549,451,573,449,602,452,614,461"/>
-<area shape="rect" href="bindgen__GoldFishGUIComponent_8c.html#aeb48b5a46d3ffea75114d05216d0bce3" title=" " alt="" coords="201,469,437,509"/>
-<area shape="poly" title=" " alt="" coords="476,491,438,491,437,486,476,486"/>
-<area shape="poly" title=" " alt="" coords="509,507,438,524,375,538,374,533,437,519,508,502"/>
-<area shape="poly" title=" " alt="" coords="514,74,437,53,382,41,383,35,438,48,516,69"/>
-<area shape="poly" title=" " alt="" coords="497,106,382,130,381,125,496,101"/>
+<area shape="rect" href="bindgen__gui_8c.html#af4e68c9e6812540fdc0aa005acfda0ad" title=" " alt="" coords="245,227,393,267"/>
+<area shape="poly" title=" " alt="" coords="472,251,394,250,394,245,472,246"/>
+<area shape="poly" title=" " alt="" coords="510,236,437,217,381,205,382,199,438,212,511,231"/>
+<area shape="rect" href="bindgen__gui_8c.html#a5990960e56555a05704d86d9fd99c507" title=" " alt="" coords="5,120,153,160"/>
+<area shape="poly" title=" " alt="" coords="237,143,154,143,154,137,237,137"/>
+<area shape="rect" href="bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="245,291,393,331"/>
+<area shape="poly" title=" " alt="" coords="476,310,394,312,394,306,476,305"/>
+<area shape="poly" title=" " alt="" coords="610,356,600,348,573,345,550,347,538,351,536,357,542,364,538,368,531,358,535,348,549,342,573,339,602,343,614,352"/>
+<area shape="rect" href="bindgen__GoldFishGUIComponent_8c.html#ac9ee38e5442042dfd34828f37b999737" title=" " alt="" coords="201,355,437,395"/>
+<area shape="poly" title=" " alt="" coords="490,380,437,379,437,374,490,375"/>
+<area shape="rect" href="gf__gui__button_8c.html#a2b4bb0d0dc72d9defedfb32d9816c8ff" title=" " alt="" coords="245,419,393,445"/>
+<area shape="poly" title=" " alt="" coords="498,397,381,422,380,417,497,392"/>
+<area shape="rect" href="gf__gui_8c.html#ab8c8f2db437bffd27987005978c9a766" title="Destroy GUI." alt="" coords="260,469,379,494"/>
+<area shape="poly" title=" " alt="" coords="498,399,487,405,472,418,464,431,455,445,439,458,410,471,380,479,378,473,408,466,436,454,451,442,459,428,468,414,484,400,496,394"/>
+<area shape="poly" title=" " alt="" coords="610,430,600,421,573,418,550,420,538,425,536,430,542,438,538,441,531,431,535,421,549,415,573,413,602,416,614,425"/>
+<area shape="rect" href="bindgen__GoldFishGUIComponent_8c.html#aeb48b5a46d3ffea75114d05216d0bce3" title=" " alt="" coords="201,519,437,559"/>
+<area shape="poly" title=" " alt="" coords="524,472,486,486,438,508,398,521,396,516,436,503,484,482,522,467"/>
+<area shape="poly" title=" " alt="" coords="508,472,487,486,471,507,465,529,457,551,439,573,408,588,376,596,375,591,407,583,436,569,453,549,460,527,466,505,484,482,505,468"/>
+<area shape="poly" title=" " alt="" coords="525,82,437,53,385,41,386,35,438,48,526,77"/>
+<area shape="poly" title=" " alt="" coords="539,119,492,144,438,167,392,180,390,174,436,161,490,139,537,114"/>
+<area shape="poly" title=" " alt="" coords="484,115,389,131,388,126,483,110"/>
 <area shape="rect" href="bindgen__gui_8c.html#aeefeecd0ff17aa1db4d8540bf1123ae5" title=" " alt="" coords="245,63,393,103"/>
-<area shape="poly" title=" " alt="" coords="472,89,393,87,393,82,472,83"/>
-<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="264,583,375,609"/>
-<area shape="poly" title=" " alt="" coords="479,599,375,599,375,593,479,593"/>
+<area shape="poly" title=" " alt="" coords="471,94,393,90,393,84,472,89"/>
+<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="264,647,375,673"/>
+<area shape="poly" title=" " alt="" coords="479,663,375,663,375,657,479,657"/>
 </map>
 </div>
 
@@ -941,7 +1056,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00041">41</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00049">49</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -957,62 +1072,73 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gf__prop_8c_a0342e90764e9485cb83aa9bc6600d881_icgraph.png" border="0" usemap="#agf__prop_8c_a0342e90764e9485cb83aa9bc6600d881_icgraph" alt=""/></div>
 <map name="agf__prop_8c_a0342e90764e9485cb83aa9bc6600d881_icgraph" id="agf__prop_8c_a0342e90764e9485cb83aa9bc6600d881_icgraph">
-<area shape="rect" title="Set void pointer to property." alt="" coords="851,411,973,436"/>
-<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="649,493,793,519"/>
-<area shape="poly" title=" " alt="" coords="870,444,753,496,751,491,868,439"/>
-<area shape="rect" href="gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="640,375,803,415"/>
-<area shape="poly" title=" " alt="" coords="837,415,802,410,803,405,838,410"/>
-<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="644,205,799,231"/>
-<area shape="poly" title=" " alt="" coords="888,402,732,233,736,229,892,399"/>
-<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="646,749,797,775"/>
-<area shape="poly" title=" " alt="" coords="899,449,732,750,727,748,895,447"/>
-<area shape="rect" href="gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="205,648,360,673"/>
-<area shape="poly" title=" " alt="" coords="674,526,593,555,418,614,319,650,317,645,416,609,591,550,672,521"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,331,369,356"/>
-<area shape="poly" title=" " alt="" coords="683,490,591,447,448,396,328,359,329,353,449,391,593,442,685,485"/>
-<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,611,148,636"/>
-<area shape="poly" title=" " alt="" coords="638,524,148,613,147,608,637,519"/>
-<area shape="rect" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="421,623,588,648"/>
-<area shape="poly" title=" " alt="" coords="697,530,651,568,593,606,549,625,547,620,591,601,648,563,694,526"/>
-<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="425,457,585,497"/>
-<area shape="poly" title=" " alt="" coords="635,497,584,490,585,485,636,492"/>
-<area shape="poly" title=" " alt="" coords="264,368,198,450,134,542,88,612,84,609,130,539,194,447,260,365"/>
-<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="227,460,338,485"/>
-<area shape="poly" title=" " alt="" coords="411,478,338,476,338,471,411,472"/>
-<area shape="poly" title=" " alt="" coords="627,412,418,447,339,463,338,458,417,442,626,407"/>
-<area shape="poly" title=" " alt="" coords="687,240,632,274,562,322,488,381,419,446,376,502,339,560,292,649,287,647,334,557,371,498,415,443,484,377,559,318,629,270,684,235"/>
-<area shape="poly" title=" " alt="" coords="702,196,657,142,626,116,591,96,543,79,503,71,463,76,419,96,388,120,362,149,341,183,323,217,300,284,289,331,284,330,295,282,318,215,336,180,358,146,384,116,416,92,462,71,503,65,544,74,593,92,629,112,661,139,706,192"/>
-<area shape="poly" title=" " alt="" coords="703,243,525,458,521,455,698,240"/>
-<area shape="rect" href="gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="427,205,582,231"/>
-<area shape="poly" title=" " alt="" coords="631,221,582,221,582,215,631,215"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="421,255,588,280"/>
-<area shape="poly" title=" " alt="" coords="652,236,562,257,561,252,651,231"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="417,107,592,132"/>
-<area shape="poly" title=" " alt="" coords="689,200,644,172,591,146,559,135,561,130,593,141,646,168,692,195"/>
-<area shape="rect" href="gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="431,5,579,31"/>
-<area shape="poly" title=" " alt="" coords="705,195,660,124,628,86,590,52,554,33,556,28,594,48,632,82,664,121,709,192"/>
-<area shape="rect" href="gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="433,156,577,181"/>
-<area shape="poly" title=" " alt="" coords="651,205,561,184,562,179,652,200"/>
-<area shape="poly" title=" " alt="" coords="454,287,322,333,320,328,453,282"/>
-<area shape="poly" title=" " alt="" coords="438,39,419,52,389,85,363,123,342,164,324,205,300,279,289,331,284,330,295,278,319,203,337,162,358,121,385,82,416,48,435,34"/>
-<area shape="poly" title=" " alt="" coords="632,751,528,732,417,707,318,676,320,671,418,702,529,727,632,746"/>
-<area shape="poly" title=" " alt="" coords="682,746,591,707,565,700,540,697,497,697,457,691,436,680,415,663,395,637,385,611,381,586,381,561,382,509,378,481,367,450,351,422,332,397,296,358,300,354,336,394,355,419,372,448,383,479,388,509,387,561,386,586,390,610,400,634,419,659,439,676,458,685,497,692,541,692,566,695,593,702,684,741"/>
-<area shape="poly" title=" " alt="" coords="685,783,641,801,593,815,544,823,505,825,417,815,301,800,252,785,195,755,158,727,126,694,84,638,88,635,130,691,162,723,197,750,254,780,302,795,418,810,505,819,543,818,591,810,640,796,683,778"/>
-<area shape="poly" title=" " alt="" coords="694,743,647,706,591,670,546,650,548,646,593,665,650,702,697,738"/>
-<area shape="poly" title=" " alt="" coords="700,740,519,499,523,495,704,737"/>
-<area shape="rect" href="gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="436,900,573,925"/>
-<area shape="poly" title=" " alt="" coords="694,785,594,859,528,902,525,898,590,854,691,781"/>
-<area shape="rect" href="gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="421,973,588,999"/>
-<area shape="poly" title=" " alt="" coords="709,788,663,861,631,902,594,940,566,960,537,976,535,971,563,956,590,936,627,899,659,858,704,785"/>
-<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="227,999,338,1024"/>
-<area shape="poly" title=" " alt="" coords="718,789,706,840,683,902,666,934,646,965,622,992,593,1014,560,1030,525,1040,488,1045,451,1046,382,1039,325,1027,326,1021,382,1034,451,1040,488,1039,524,1034,558,1025,591,1009,618,988,642,961,662,932,678,900,701,838,713,788"/>
-<area shape="rect" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="417,775,592,800"/>
-<area shape="poly" title=" " alt="" coords="632,775,593,780,592,774,632,770"/>
-<area shape="poly" title=" " alt="" coords="543,890,533,882,505,879,482,881,469,886,467,891,473,898,469,902,462,892,466,882,480,876,505,873,535,877,547,886"/>
-<area shape="poly" title=" " alt="" coords="543,964,533,955,505,952,482,954,469,959,467,964,473,972,469,975,462,965,466,955,480,949,505,947,535,950,547,959"/>
-<area shape="poly" title=" " alt="" coords="408,1000,338,1008,338,1002,407,994"/>
-<area shape="poly" title=" " alt="" coords="449,772,416,758,348,715,298,676,301,671,351,710,419,753,451,767"/>
-<area shape="poly" title=" " alt="" coords="443,773,327,738,195,688,142,663,98,638,101,634,144,658,197,684,328,733,444,768"/>
+<area shape="rect" title="Set void pointer to property." alt="" coords="851,767,973,793"/>
+<area shape="rect" href="gf__gui_8c.html#a2a2a1005ba3085ca46385c4938daff9a" title="Set component ID to property." alt="" coords="649,109,793,134"/>
+<area shape="poly" title=" " alt="" coords="901,755,724,135,729,134,906,753"/>
+<area shape="rect" href="gf__lua_8c.html#ad97847c3c966858ebbdef53e4c9f0297" title=" " alt="" coords="640,1071,803,1111"/>
+<area shape="poly" title=" " alt="" coords="899,806,805,964,738,1072,733,1069,800,961,894,804"/>
+<area shape="rect" href="gf__prop_8c.html#a467f871c48b3bd426609ca5b5baae9a1" title="Set floating number to property." alt="" coords="644,926,799,951"/>
+<area shape="poly" title=" " alt="" coords="887,804,739,928,736,924,883,800"/>
+<area shape="rect" href="gf__prop_8c.html#acfa33e8db4e55a67b53465789f1bb6ba" title="Set integer to property." alt="" coords="646,483,797,509"/>
+<area shape="poly" title=" " alt="" coords="892,757,729,511,734,508,897,754"/>
+<area shape="rect" href="gf__prop_8c.html#a34763b752747bc4b0151b949e3c943b7" title="Set text to property." alt="" coords="656,767,787,793"/>
+<area shape="poly" title=" " alt="" coords="837,783,787,783,787,777,837,777"/>
+<area shape="rect" href="gf__gui__range_8c.html#a08a6443f6a40ee681b20ac99aeaecc2f" title="Create range component." alt="" coords="205,398,360,423"/>
+<area shape="poly" title=" " alt="" coords="678,106,622,88,553,76,518,75,483,79,449,88,419,105,403,120,393,134,385,167,383,204,372,248,330,335,294,399,289,397,325,333,367,246,378,203,380,166,388,132,399,116,416,101,447,83,482,73,518,70,554,71,623,83,680,101"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a5c6fd66df1974525588d57c03bc0195b" title="Create scrollbar component." alt="" coords="196,793,369,818"/>
+<area shape="poly" title=" " alt="" coords="636,120,573,119,509,123,454,132,433,139,419,149,407,165,397,185,385,238,379,302,378,373,381,514,379,574,372,621,354,673,332,722,294,794,289,791,328,720,349,671,367,620,374,573,375,514,373,373,374,302,379,237,392,183,402,162,416,145,431,135,452,127,508,117,573,114,636,114"/>
+<area shape="rect" href="gf__gui__text_8c.html#a137ca29f8fbef246b65ef94045c8769d" title="Create text component." alt="" coords="5,461,148,486"/>
+<area shape="poly" title=" " alt="" coords="698,101,652,60,623,41,591,27,543,13,505,8,466,13,418,27,345,57,293,91,248,136,198,199,174,234,153,271,119,348,96,415,84,461,78,460,91,414,114,346,148,269,170,231,194,196,244,133,289,87,342,52,416,22,465,7,505,3,545,8,593,22,625,36,655,56,701,97"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a263238b9e43b81057da8d8336dfaccdc" title="Create tab component." alt="" coords="213,210,352,235"/>
+<area shape="poly" title=" " alt="" coords="690,103,645,76,591,55,542,42,502,35,464,38,418,55,394,69,372,88,335,133,308,177,292,211,287,209,303,174,330,129,368,84,391,65,416,50,463,33,503,30,543,37,593,50,648,71,693,99"/>
+<area shape="rect" href="gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="421,159,588,185"/>
+<area shape="poly" title=" " alt="" coords="654,140,560,162,559,157,652,135"/>
+<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="425,760,585,800"/>
+<area shape="poly" title=" " alt="" coords="717,148,673,336,637,466,594,596,555,689,519,761,514,759,550,687,590,594,632,464,668,335,712,147"/>
+<area shape="poly" title=" " alt="" coords="260,783,194,692,126,575,82,488,87,485,131,572,198,689,264,780"/>
+<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="227,970,338,995"/>
+<area shape="poly" title=" " alt="" coords="473,812,300,972,296,968,469,808"/>
+<area shape="poly" title=" " alt="" coords="683,1121,641,1145,593,1164,543,1177,503,1184,463,1181,416,1164,390,1148,367,1127,329,1079,302,1032,286,997,291,994,307,1030,333,1076,371,1123,393,1143,419,1159,464,1176,502,1179,542,1172,591,1159,639,1140,681,1116"/>
+<area shape="poly" title=" " alt="" coords="689,921,644,892,591,865,565,856,541,852,497,850,456,843,436,832,415,814,393,784,381,756,377,728,377,700,379,641,376,608,367,572,349,528,327,487,290,425,295,422,332,484,353,526,372,570,382,607,385,641,382,700,382,727,386,754,398,782,419,810,439,828,458,838,498,845,541,847,566,851,593,860,646,888,692,916"/>
+<area shape="poly" title=" " alt="" coords="654,925,542,896,416,859,314,821,316,816,418,854,544,891,655,920"/>
+<area shape="poly" title=" " alt="" coords="698,918,651,870,591,821,557,803,559,798,593,817,655,866,702,914"/>
+<area shape="rect" href="gf__gui__range_8c.html#aab7819dc72cd8663a2e9e41f1d43675f" title=" " alt="" coords="427,975,582,1001"/>
+<area shape="poly" title=" " alt="" coords="652,957,562,978,561,973,651,952"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a795ebee186ebcbe504e48763596ebcfa" title=" " alt="" coords="421,1074,588,1099"/>
+<area shape="poly" title=" " alt="" coords="704,964,657,1015,627,1042,593,1065,567,1077,565,1072,591,1060,624,1038,654,1012,700,961"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#aef7872e7d1690010388a64e253af955b" title=" " alt="" coords="417,1123,592,1149"/>
+<area shape="poly" title=" " alt="" coords="707,965,651,1048,620,1088,594,1114,571,1126,569,1121,590,1110,616,1085,647,1045,703,962"/>
+<area shape="rect" href="gf__gui__scrollbar_8c.html#a4a010f0e12708ff0a322585f61cfef9e" title=" " alt="" coords="431,1025,579,1050"/>
+<area shape="poly" title=" " alt="" coords="691,961,646,988,593,1015,558,1027,556,1022,591,1010,643,984,688,957"/>
+<area shape="rect" href="gf__gui__text_8c.html#a3f4de7b840eb2420021dfcdc827eb1aa" title=" " alt="" coords="433,926,577,951"/>
+<area shape="poly" title=" " alt="" coords="630,941,577,941,577,936,630,936"/>
+<area shape="poly" title=" " alt="" coords="421,1069,416,1065,394,1040,385,1016,379,989,367,959,289,820,294,817,372,956,384,988,390,1014,399,1037,419,1061,425,1065"/>
+<area shape="poly" title=" " alt="" coords="427,1021,416,1014,383,978,346,922,289,820,293,817,351,919,387,975,419,1010,430,1017"/>
+<area shape="poly" title=" " alt="" coords="632,499,528,491,472,484,417,472,355,450,306,426,308,421,358,445,418,467,473,478,529,486,632,493"/>
+<area shape="poly" title=" " alt="" coords="712,523,695,560,669,606,635,653,594,693,549,719,510,730,468,737,418,751,313,795,311,790,416,746,467,731,508,725,547,714,590,689,631,649,664,603,690,558,708,520"/>
+<area shape="poly" title=" " alt="" coords="706,522,661,576,629,603,593,624,524,629,393,630,263,628,195,623,173,610,153,593,121,555,96,517,81,488,86,485,101,515,125,552,157,590,176,605,197,618,263,623,393,625,523,624,591,619,626,599,657,573,702,518"/>
+<area shape="poly" title=" " alt="" coords="713,470,700,421,676,360,660,329,641,299,618,273,591,250,563,235,533,224,470,211,408,209,353,213,352,208,408,204,471,206,535,219,565,230,593,246,621,269,645,296,665,326,681,358,705,420,718,469"/>
+<area shape="poly" title=" " alt="" coords="713,470,700,416,677,345,641,271,618,237,590,206,559,187,562,183,594,202,622,233,646,268,682,343,705,414,718,469"/>
+<area shape="poly" title=" " alt="" coords="715,523,699,570,674,628,639,689,618,718,594,744,566,762,563,758,590,739,614,714,635,686,669,626,694,568,710,522"/>
+<area shape="rect" href="gf__gui_8c.html#afca0bddbe4a2ffefa86cf963cf0cc925" title="Destroy GUI component by ID." alt="" coords="436,433,573,458"/>
+<area shape="poly" title=" " alt="" coords="652,483,559,461,560,456,654,478"/>
+<area shape="rect" href="gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869" title="Move component topmost." alt="" coords="421,558,588,583"/>
+<area shape="poly" title=" " alt="" coords="671,516,543,561,541,556,670,511"/>
+<area shape="rect" href="gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="227,583,338,609"/>
+<area shape="poly" title=" " alt="" coords="701,521,655,563,625,582,593,597,526,613,457,618,392,615,338,609,338,603,393,610,457,612,525,608,591,592,623,578,652,558,698,517"/>
+<area shape="rect" href="gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252" title="Sort components." alt="" coords="417,261,592,286"/>
+<area shape="poly" title=" " alt="" coords="708,472,691,433,666,387,632,339,590,300,570,289,573,284,594,295,636,336,670,384,696,431,713,469"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a069178ded754c04d1304bc54a5d90361" title=" " alt="" coords="441,310,568,335"/>
+<area shape="poly" title=" " alt="" coords="703,473,658,410,626,377,591,349,567,338,569,333,593,345,630,373,662,407,708,470"/>
+<area shape="rect" href="gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="435,359,574,385"/>
+<area shape="poly" title=" " alt="" coords="696,476,649,436,591,399,563,387,565,382,593,394,653,432,699,472"/>
+<area shape="poly" title=" " alt="" coords="543,423,533,415,505,411,482,414,469,418,467,424,473,431,469,434,462,424,466,415,480,408,505,406,535,410,547,419"/>
+<area shape="poly" title=" " alt="" coords="543,549,533,540,505,537,482,539,469,544,467,549,473,556,469,560,462,550,466,540,480,534,505,531,535,535,547,544"/>
+<area shape="poly" title=" " alt="" coords="408,585,338,593,338,587,407,579"/>
+<area shape="poly" title=" " alt="" coords="433,293,419,300,366,342,300,400,297,396,363,338,416,295,431,288"/>
+<area shape="poly" title=" " alt="" coords="442,292,325,330,260,357,197,388,139,427,94,463,91,459,136,422,195,383,258,352,323,325,440,287"/>
+<area shape="poly" title=" " alt="" coords="434,260,338,238,340,233,435,255"/>
+<area shape="poly" title=" " alt="" coords="642,783,585,783,585,777,642,777"/>
 </map>
 </div>
 
@@ -1060,7 +1186,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00056">56</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00064">64</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1084,6 +1210,76 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,45,116,70"/>
 <area shape="poly" title=" " alt="" coords="151,44,117,50,116,45,150,39"/>
 <area shape="poly" title=" " alt="" coords="152,76,116,69,117,64,152,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a34763b752747bc4b0151b949e3c943b7" name="a34763b752747bc4b0151b949e3c943b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34763b752747bc4b0151b949e3c943b7">&#9670;&#160;</a></span>gf_prop_set_text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gf_prop_set_text </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgf__prop__t.html">gf_prop_t</a> **&#160;</td>
+          <td class="paramname"><em>prop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set text to property. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prop</td><td>Property </td></tr>
+    <tr><td class="paramname">key</td><td>Key </td></tr>
+    <tr><td class="paramname">value</td><td>Value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="gf__prop_8c_source.html#l00017">17</a> of file <a class="el" href="gf__prop_8c_source.html">gf_prop.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__prop_8c_a34763b752747bc4b0151b949e3c943b7_cgraph.png" border="0" usemap="#agf__prop_8c_a34763b752747bc4b0151b949e3c943b7_cgraph" alt=""/></div>
+<map name="agf__prop_8c_a34763b752747bc4b0151b949e3c943b7_cgraph" id="agf__prop_8c_a34763b752747bc4b0151b949e3c943b7_cgraph">
+<area shape="rect" title="Set text to property." alt="" coords="5,5,136,31"/>
+<area shape="rect" href="gf__prop_8c.html#a0342e90764e9485cb83aa9bc6600d881" title="Set void pointer to property." alt="" coords="184,5,307,31"/>
+<area shape="poly" title=" " alt="" coords="136,15,170,15,170,21,136,21"/>
+<area shape="rect" href="gf__prop_8c.html#a17c37ff36ee533fcd95a11a4e4974f08" title="Delete property." alt="" coords="355,5,473,31"/>
+<area shape="poly" title=" " alt="" coords="307,15,341,15,341,21,307,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gf__prop_8c_a34763b752747bc4b0151b949e3c943b7_icgraph.png" border="0" usemap="#agf__prop_8c_a34763b752747bc4b0151b949e3c943b7_icgraph" alt=""/></div>
+<map name="agf__prop_8c_a34763b752747bc4b0151b949e3c943b7_icgraph" id="agf__prop_8c_a34763b752747bc4b0151b949e3c943b7_icgraph">
+<area shape="rect" title="Set text to property." alt="" coords="372,13,503,38"/>
+<area shape="rect" href="gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="164,5,324,45"/>
+<area shape="poly" title=" " alt="" coords="358,28,324,28,324,23,358,23"/>
+<area shape="rect" href="gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,13,116,38"/>
+<area shape="poly" title=" " alt="" coords="150,28,116,28,116,23,150,23"/>
 </map>
 </div>
 

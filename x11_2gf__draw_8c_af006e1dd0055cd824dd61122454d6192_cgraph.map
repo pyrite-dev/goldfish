@@ -6,8 +6,8 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,100,212,103,212,109,177,105"/>
 <area shape="rect" id="Node000011" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="249,177,369,203"/>
 <area shape="poly" id="edge6_Node000001_Node000011" title=" " alt="" coords="122,103,268,169,266,174,120,108"/>
-<area shape="rect" id="Node000031" href="$gf__draw__common_8c.html#af1d6ba858a1cee357f8626501540e8bf" title="Do stuffs required on resizing window." alt="" coords="243,55,376,80"/>
-<area shape="poly" id="edge10_Node000001_Node000031" title=" " alt="" coords="177,80,228,74,229,79,178,85"/>
+<area shape="rect" id="Node000032" href="$gf__draw__common_8c.html#af1d6ba858a1cee357f8626501540e8bf" title="Do stuffs required on resizing window." alt="" coords="243,55,376,80"/>
+<area shape="poly" id="edge10_Node000001_Node000032" title=" " alt="" coords="177,80,228,74,229,79,178,85"/>
 <area shape="rect" id="Node000004" href="$gf__driver_8c.html#af0a260e2df4036c09bebe329c821fc19" title="Do stuffs required on resizing window." alt="" coords="441,55,620,80"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="366,101,459,80,460,86,368,107"/>
 <area shape="rect" id="Node000007" href="$gf__graphic_8c.html#a74f8bf7e2fc346f7d85ecfcea061f3fb" title="Clear the screen." alt="" coords="466,153,595,179"/>
@@ -17,7 +17,7 @@
 <area shape="poly" id="edge7_Node000011_Node000007" title=" " alt="" coords="370,181,452,172,453,177,370,186"/>
 <area shape="rect" id="Node000012" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="475,203,586,228"/>
 <area shape="poly" id="edge8_Node000011_Node000012" title=" " alt="" coords="370,194,462,205,461,210,370,200"/>
-<area shape="rect" id="Node000030" href="$gf__lua_8c.html#a9aead1287d2426883127d256b6b649d7" title="Run a single step for Lua interface." alt="" coords="482,252,579,277"/>
-<area shape="poly" id="edge9_Node000011_Node000030" title=" " alt="" coords="343,200,442,237,471,246,469,251,440,242,341,205"/>
-<area shape="poly" id="edge11_Node000031_Node000004" title=" " alt="" coords="376,65,427,65,427,70,376,70"/>
+<area shape="rect" id="Node000031" href="$gf__lua_8c.html#a9aead1287d2426883127d256b6b649d7" title="Run a single step for Lua interface." alt="" coords="482,252,579,277"/>
+<area shape="poly" id="edge9_Node000011_Node000031" title=" " alt="" coords="343,200,442,237,471,246,469,251,440,242,341,205"/>
+<area shape="poly" id="edge11_Node000032_Node000004" title=" " alt="" coords="376,65,427,65,427,70,376,70"/>
 </map>

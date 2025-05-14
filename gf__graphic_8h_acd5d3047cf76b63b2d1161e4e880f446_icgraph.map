@@ -2,20 +2,20 @@
 <area shape="rect" id="Node000001" title="End 2D mode." alt="" coords="481,95,625,121"/>
 <area shape="rect" id="Node000002" href="$gf__graphic_8c.html#a64ddaf78adb23038799395de04b9f2f0" title="Draw polygon with texture." alt="" coords="243,5,426,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,92,432,60,399,48,401,43,434,55,512,87"/>
-<area shape="rect" id="Node000018" href="$gf__graphic_8c.html#a89384633901f33017ae2aaf3397efc94" title="Draw polygon." alt="" coords="236,70,433,95"/>
-<area shape="poly" id="edge3_Node000001_Node000018" title=" " alt="" coords="467,101,433,97,434,91,468,95"/>
-<area shape="rect" id="Node000028" href="$gf__graphic_8c.html#a6e1bdd065472779d31c9d7c272f979d8" title="Draw lines." alt="" coords="258,119,411,145"/>
-<area shape="poly" id="edge5_Node000001_Node000028" title=" " alt="" coords="468,120,412,126,411,121,468,115"/>
-<area shape="rect" id="Node000030" href="$gf__graphic_8c.html#a996326c3cd9494d40efe7f4c34f9d62e" title="Draw points." alt="" coords="253,169,416,194"/>
-<area shape="poly" id="edge7_Node000001_Node000030" title=" " alt="" coords="512,129,434,159,391,171,389,166,432,153,510,124"/>
+<area shape="rect" id="Node000019" href="$gf__graphic_8c.html#a89384633901f33017ae2aaf3397efc94" title="Draw polygon." alt="" coords="236,70,433,95"/>
+<area shape="poly" id="edge3_Node000001_Node000019" title=" " alt="" coords="467,101,433,97,434,91,468,95"/>
+<area shape="rect" id="Node000029" href="$gf__graphic_8c.html#a6e1bdd065472779d31c9d7c272f979d8" title="Draw lines." alt="" coords="258,119,411,145"/>
+<area shape="poly" id="edge5_Node000001_Node000029" title=" " alt="" coords="468,120,412,126,411,121,468,115"/>
+<area shape="rect" id="Node000031" href="$gf__graphic_8c.html#a996326c3cd9494d40efe7f4c34f9d62e" title="Draw points." alt="" coords="253,169,416,194"/>
+<area shape="poly" id="edge7_Node000001_Node000031" title=" " alt="" coords="512,129,434,159,391,171,389,166,432,153,510,124"/>
 <area shape="rect" id="Node000003" href="$gf__graphic__common_8c.html#a4157822cc342fa294329ed2c436d53f2" title="Draw polygon with texture." alt="" coords="5,5,188,45"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,28,188,28,188,23,229,23"/>
-<area shape="rect" id="Node000019" href="$gf__graphic__common_8c.html#a8ff780a4bcadc008355699101d2a42cc" title="Draw polygon." alt="" coords="11,70,183,95"/>
-<area shape="poly" id="edge4_Node000018_Node000019" title=" " alt="" coords="222,85,183,85,183,80,222,80"/>
-<area shape="rect" id="Node000029" href="$gf__graphic__common_8c.html#a69cfc094b68c3f9b6b43b7c4a1d9331b" title="Draw points." alt="" coords="33,119,161,145"/>
-<area shape="poly" id="edge6_Node000028_Node000029" title=" " alt="" coords="244,135,161,135,161,129,244,129"/>
-<area shape="rect" id="Node000031" href="$gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569" title="Draw points." alt="" coords="28,169,165,194"/>
-<area shape="poly" id="edge8_Node000030_Node000031" title=" " alt="" coords="239,184,165,184,165,179,239,179"/>
-<area shape="rect" id="Node000032" href="$gf__lua_8c.html#a2e6fdc0f285f58339313e91b8558a49a" title=" " alt="" coords="23,219,170,259"/>
-<area shape="poly" id="edge9_Node000030_Node000032" title=" " alt="" coords="269,200,171,224,170,218,267,195"/>
+<area shape="rect" id="Node000020" href="$gf__graphic__common_8c.html#a8ff780a4bcadc008355699101d2a42cc" title="Draw polygon." alt="" coords="11,70,183,95"/>
+<area shape="poly" id="edge4_Node000019_Node000020" title=" " alt="" coords="222,85,183,85,183,80,222,80"/>
+<area shape="rect" id="Node000030" href="$gf__graphic__common_8c.html#a69cfc094b68c3f9b6b43b7c4a1d9331b" title="Draw points." alt="" coords="33,119,161,145"/>
+<area shape="poly" id="edge6_Node000029_Node000030" title=" " alt="" coords="244,135,161,135,161,129,244,129"/>
+<area shape="rect" id="Node000032" href="$gf__graphic__common_8c.html#af98ff53c05d6324aaa301c80186fd569" title="Draw points." alt="" coords="28,169,165,194"/>
+<area shape="poly" id="edge8_Node000031_Node000032" title=" " alt="" coords="239,184,165,184,165,179,239,179"/>
+<area shape="rect" id="Node000033" href="$gf__lua_8c.html#a2e6fdc0f285f58339313e91b8558a49a" title=" " alt="" coords="23,219,170,259"/>
+<area shape="poly" id="edge9_Node000031_Node000033" title=" " alt="" coords="269,200,171,224,170,218,267,195"/>
 </map>

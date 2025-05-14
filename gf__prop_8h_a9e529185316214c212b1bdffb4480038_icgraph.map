@@ -1,0 +1,11 @@
+<map id="gf_prop_get_text" name="gf_prop_get_text">
+<area shape="rect" id="Node000001" title="Get text from property." alt="" coords="372,55,504,80"/>
+<area shape="rect" id="Node000002" href="$gf__gui__tab_8c.html#a069178ded754c04d1304bc54a5d90361" title=" " alt="" coords="181,5,307,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="374,54,294,33,296,28,375,49"/>
+<area shape="rect" id="Node000003" href="$gf__gui__tab_8c.html#a5118550690e8e03778bb08ab4ddb16d0" title=" " alt="" coords="175,55,313,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="359,70,314,70,314,65,359,65"/>
+<area shape="rect" id="Node000004" href="$gf__lua_8c.html#aaddd2fbf4a1cfe789bf7743d6cded871" title=" " alt="" coords="164,105,324,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="382,86,313,107,311,102,380,81"/>
+<area shape="rect" id="Node000005" href="$gf__lua_8c.html#aae36f3b1be49f403a38b58e4199ec243" title="Create Lua interface." alt="" coords="5,112,116,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="150,127,116,127,116,122,150,122"/>
+</map>

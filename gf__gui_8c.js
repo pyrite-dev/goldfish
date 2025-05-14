@@ -20,6 +20,7 @@ var gf__gui_8c =
     [ "gf_gui_get_prop_id", "gf__gui_8c.html#a05004186493f4e7b02b67baf5e8c97b7", null ],
     [ "gf_gui_get_wh", "gf__gui_8c.html#ab9b2d5aeaceec92f46d381928e0868ff", null ],
     [ "gf_gui_get_xy", "gf__gui_8c.html#a54fe5c6529f3df844f5fb0a7d901a877", null ],
+    [ "gf_gui_hidden", "gf__gui_8c.html#a90656b3268a89f8e414147df928aa8ac", null ],
     [ "gf_gui_move_topmost", "gf__gui_8c.html#a610faea7ed19c9f97c1bcf8c117c2869", null ],
     [ "gf_gui_render", "gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c", null ],
     [ "gf_gui_set_button_sound", "gf__gui_8c.html#a9ebb2c6a640e7555e665fcf63a3a1e00", null ],
@@ -34,5 +35,5 @@ var gf__gui_8c =
     [ "gf_gui_sort_component", "gf__gui_8c.html#a00d49fc0d988734ce014629b13cc1252", null ],
     [ "gf_gui_border_color_diff", "gf__gui_8c.html#a1abfbae2b5cbd1b12df6ca65f8e01b85", null ],
     [ "gf_gui_border_width", "gf__gui_8c.html#a85e7ca37da7e918d8acc72e5651b9d82", null ],
-    [ "gf_gui_calls", "gf__gui_8c.html#af8477ba35b95f95f823b12a1d66b2d9c", null ]
+    [ "gf_gui_calls", "gf__gui_8c.html#a3098ebd863f30a5b85d120da7295c249", null ]
 ];

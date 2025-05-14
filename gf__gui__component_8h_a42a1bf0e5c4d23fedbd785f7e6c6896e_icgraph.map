@@ -1,12 +1,17 @@
 <map id="gf_gui_create_frame" name="gf_gui_create_frame">
-<area shape="rect" id="Node000001" title="Create frame component." alt="" coords="593,45,749,70"/>
+<area shape="rect" id="Node000001" title="Create frame component." alt="" coords="593,77,749,102"/>
 <area shape="rect" id="Node000002" href="$bindgen__gui_8c.html#ad4ef977dbeb261ede2849f3d4e5fccd4" title=" " alt="" coords="183,5,331,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="579,53,331,34,331,28,580,48"/>
-<area shape="rect" id="Node000008" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="379,70,545,95"/>
-<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="580,71,546,75,545,70,579,66"/>
-<area shape="rect" id="Node000003" href="$bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8" title=" " alt="" coords="5,45,135,70"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,43,136,49,135,44,169,38"/>
-<area shape="rect" id="Node000009" href="$bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="183,69,331,109"/>
-<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="365,88,331,90,331,84,365,83"/>
-<area shape="poly" id="edge5_Node000009_Node000003" title=" " alt="" coords="169,77,135,71,136,66,170,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="597,76,545,67,330,36,331,31,546,61,598,71"/>
+<area shape="rect" id="Node000008" href="$gf__gui__tab_8c.html#a263238b9e43b81057da8d8336dfaccdc" title="Create tab component." alt="" coords="393,77,531,102"/>
+<area shape="poly" id="edge3_Node000001_Node000008" title=" " alt="" coords="580,92,532,92,532,87,580,87"/>
+<area shape="rect" id="Node000010" href="$gf__gui__window_8c.html#a0ac5e064cc4f520edd4bc72a4b2efe57" title="Create window component." alt="" coords="379,133,545,158"/>
+<area shape="poly" id="edge6_Node000001_Node000010" title=" " alt="" coords="611,108,511,135,510,130,609,103"/>
+<area shape="rect" id="Node000003" href="$bindgen__gui_8c.html#a32d401eacc24910702820ffa1711bdb8" title=" " alt="" coords="5,77,135,102"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,52,109,79,107,74,184,47"/>
+<area shape="rect" id="Node000009" href="$bindgen__gui_8c.html#a5990960e56555a05704d86d9fd99c507" title=" " alt="" coords="183,69,331,109"/>
+<area shape="poly" id="edge4_Node000008_Node000009" title=" " alt="" coords="379,92,331,92,331,87,379,87"/>
+<area shape="poly" id="edge5_Node000009_Node000003" title=" " alt="" coords="169,92,135,92,135,87,169,87"/>
+<area shape="rect" id="Node000011" href="$bindgen__gui_8c.html#ac25138c687bbe7adbbfbdf692951fec2" title=" " alt="" coords="183,133,331,173"/>
+<area shape="poly" id="edge7_Node000010_Node000011" title=" " alt="" coords="365,152,331,153,331,148,365,146"/>
+<area shape="poly" id="edge8_Node000011_Node000003" title=" " alt="" coords="184,131,107,105,109,100,186,126"/>
 </map>

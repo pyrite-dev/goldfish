@@ -41,7 +41,7 @@ var NAVTREE =
       [ "diff-y", "md_PROPERTY.html#autotoc_md13", null ],
       [ "frame", "md_PROPERTY.html#autotoc_md14", null ],
       [ "grab", "md_PROPERTY.html#autotoc_md15", null ],
-      [ "ignore-mouse", "md_PROPERTY.html#autotoc_md16", null ],
+      [ "hide", "md_PROPERTY.html#autotoc_md16", null ],
       [ "max-value", "md_PROPERTY.html#autotoc_md17", null ],
       [ "min-height", "md_PROPERTY.html#autotoc_md18", null ],
       [ "min-value", "md_PROPERTY.html#autotoc_md19", null ],
@@ -50,10 +50,11 @@ var NAVTREE =
       [ "old-height", "md_PROPERTY.html#autotoc_md22", null ],
       [ "old-width", "md_PROPERTY.html#autotoc_md23", null ],
       [ "scrollbar", "md_PROPERTY.html#autotoc_md24", null ],
-      [ "step", "md_PROPERTY.html#autotoc_md25", null ],
-      [ "value", "md_PROPERTY.html#autotoc_md26", null ],
-      [ "x-base", "md_PROPERTY.html#autotoc_md27", null ],
-      [ "y-base", "md_PROPERTY.html#autotoc_md28", null ]
+      [ "selected", "md_PROPERTY.html#autotoc_md25", null ],
+      [ "step", "md_PROPERTY.html#autotoc_md26", null ],
+      [ "value", "md_PROPERTY.html#autotoc_md27", null ],
+      [ "x-base", "md_PROPERTY.html#autotoc_md28", null ],
+      [ "y-base", "md_PROPERTY.html#autotoc_md29", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -81,10 +82,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "agl_2gf__draw_8c.html",
-"gf__core_8c.html#abae48921e84f92d590608745536a9ffc",
-"gf__gui__button_8c.html#a1abfbae2b5cbd1b12df6ca65f8e01b85",
-"gf__resource_8c.html#a594392497cc148244da9ee36f3829295",
-"structgf__draw__t.html#a923e76b7eba5d6bca1c92bea6a716adb"
+"gf__core_8c.html#aa9a229aa7c06d1a02ae89f93b8029fea",
+"gf__gui__button_8c.html#a0ccdea48225257886285941d53feb670",
+"gf__prop_8h.html#a0092bce45e2a446484ae743b5ca1975d",
+"structgf__audio__t.html#ae4476e64ccaedf684d801590330b1c37"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

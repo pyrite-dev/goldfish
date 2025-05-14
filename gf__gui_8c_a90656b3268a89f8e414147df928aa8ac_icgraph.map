@@ -1,0 +1,7 @@
+<map id="gf_gui_hidden" name="gf_gui_hidden">
+<area shape="rect" id="Node000001" title=" " alt="" coords="332,5,445,31"/>
+<area shape="rect" id="Node000002" href="$gf__gui_8c.html#a41f221ae3b2221553f49678f9434976c" title="Render GUI." alt="" coords="173,5,284,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="318,21,284,21,284,15,318,15"/>
+<area shape="rect" id="Node000003" href="$gf__draw__common_8c.html#a4887fe11d8dfe55cf784e07b382b046a" title="Draw frame (common part)" alt="" coords="5,5,125,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="159,21,125,21,125,15,159,15"/>
+</map>
