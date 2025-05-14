@@ -68,9 +68,9 @@ gf_sound_t* gf_sound_create(gf_audio_t* audio, int rate) {
 }
 
 void gf_sound_alsa_thread(void* ptr) {
-	gf_sound_t*    sound = (gf_sound_t*)ptr;
-	int	       frame;
-	unsigned char* data;
+	gf_sound_t*	  sound = (gf_sound_t*)ptr;
+	snd_pcm_uframes_t frame;
+	unsigned char*	  data;
 
 	snd_pcm_hw_params_get_period_size(sound->context.params, &frame, 0);
 
