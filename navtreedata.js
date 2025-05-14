@@ -83,10 +83,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "agl_2gf__draw_8c.html",
-"gf__core_8c.html",
-"gf__gui_8h.html#ab8c8f2db437bffd27987005978c9a766",
-"gf__physics_8h_source.html",
-"server_8h_source.html"
+"gf__client_8h_source.html",
+"gf__gui_8h.html#ab326a60e61e3e014ff6700cae5e35108",
+"gf__physics_8h.html#ad9f65aa74657b4558c67f809c590fad3",
+"sdl2_2gf__sound_8c_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

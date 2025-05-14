@@ -5,6 +5,7 @@ var gdi_2gf__draw_8c =
     [ "GF_EXPOSE_DRAW_PLATFORM", "gdi_2gf__draw_8c.html#a5a117ced8c73165c3cc6144a49bf5af0", null ],
     [ "GF_EXPOSE_INPUT", "gdi_2gf__draw_8c.html#a8412a96f3ebbf985b342603585944166", null ],
     [ "PFNWGLGETEXTENSIONSSTRINGARB", "gdi_2gf__draw_8c.html#a3dcccef85cc05ab9be42f6527c992461", null ],
+    [ "PFNWGLSWAPINTERVALPROC", "gdi_2gf__draw_8c.html#a7f2c44bbbecbb0cafa549cb91a249e03", null ],
     [ "gf_draw_platform_begin", "gdi_2gf__draw_8c.html#aa3106f20d1a654acf65f5e4ddb7a0fdd", null ],
     [ "gf_draw_platform_create", "gdi_2gf__draw_8c.html#ae0d81adf1fa83413f5052dab1fc4793f", null ],
     [ "gf_draw_platform_destroy", "gdi_2gf__draw_8c.html#a24822bbf6cda6c2cbe336d70116dfb25", null ],
