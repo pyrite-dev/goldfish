@@ -1,4 +1,5 @@
 #define GF_EXPOSE_SOUND
+#define GF_EXPOSE_AUDIO
 
 #include <gf_pre.h>
 
@@ -10,6 +11,7 @@
 
 /* Engine */
 #include <gf_audio.h>
+#include <gf_log.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -42,6 +44,8 @@ gf_sound_t* gf_sound_create(gf_audio_t* audio, int rate) {
 		free(sound);
 		return NULL;
 	}
+
+	gf_log_function(audio->engine, "miniaudio available", "");
 
 	return sound;
 }

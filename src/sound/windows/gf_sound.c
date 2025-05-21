@@ -1,4 +1,5 @@
 #define GF_EXPOSE_SOUND
+#define GF_EXPOSE_AUDIO
 
 #include <gf_pre.h>
 
@@ -11,6 +12,7 @@
 /* Engine */
 #include <gf_audio.h>
 #include <gf_thread.h>
+#include <gf_log.h>
 #include <gf_type/compat.h>
 
 /* Standard */
@@ -56,6 +58,9 @@ gf_sound_t* gf_sound_create(gf_audio_t* audio, int rate) {
 				sound->context.dsound = NULL;
 				break;
 			}
+
+			gf_log_function(audio->engine, "DirectSound available", "");
+
 			return sound;
 		}
 	} while(0);
@@ -65,6 +70,8 @@ gf_sound_t* gf_sound_create(gf_audio_t* audio, int rate) {
 		free(sound);
 		return NULL;
 	}
+
+	gf_log_function(audio->engine, "WinMM available", "");
 	return sound;
 }
 

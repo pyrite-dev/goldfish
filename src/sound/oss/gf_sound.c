@@ -1,4 +1,5 @@
 #define GF_EXPOSE_SOUND
+#define GF_EXPOSE_AUDIO
 
 #include <gf_pre.h>
 
@@ -11,6 +12,7 @@
 /* Engine */
 #include <gf_audio.h>
 #include <gf_thread.h>
+#include <gf_log.h>
 #include <gf_type/compat.h>
 
 /* Standard */
@@ -105,6 +107,8 @@ void gf_sound_oss_thread(void* ptr) {
 
 		if(sound->context.quit) break;
 	}
+
+	gf_log_function(audio->engine, "OSS available", "");
 
 	free(data);
 }
