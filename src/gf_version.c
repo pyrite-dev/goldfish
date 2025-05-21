@@ -24,6 +24,12 @@ void gf_version_get(gf_version_t* version) {
 	strcpy(version->date, __DATE__);
 
 	strcpy(version->full, GF_VERSION);
+#ifdef DEBUG
+	strcat(version->full, "-debug");
+#else
+	strcat(version->full, " -release");
+#endif
+
 	strcpy(version->zlib, ZLIB_VERSION);
 
 	strcpy(cpstr, LUA_RELEASE);
