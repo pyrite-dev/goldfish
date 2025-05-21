@@ -22,6 +22,10 @@ These things are not default; optional:
  - [miniaudio](https://github.com/mackron/miniaudio) (default)
 
 These things are not default; optional:
- - [ALSALib](https://www.alsa-project.org)
+ - [ALSA](https://www.alsa-project.org)
  - DSound/WinMM
  - [SDL2](https://wiki.libsdl.org/SDL2)
+ - [OSS](http://www.4front-tech.com/oss.html)
+ - Sun/audio(4)
+
+   NOTE: Currently only supports audio(4) on NetBSD since 9.0
