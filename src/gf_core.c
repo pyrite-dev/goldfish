@@ -6,9 +6,6 @@
 
 /* External library */
 #include <stb_image.h>
-#ifdef _WIN32
-#include <winsock.h>
-#endif
 
 /* Interface */
 #include <gf_core.h>
@@ -23,6 +20,7 @@
 #include <gf_version.h>
 #include <gf_resource.h>
 #include <gf_font.h>
+#include <gf_network.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -34,9 +32,6 @@ LARGE_INTEGER hpc_freq;
 #endif
 void gf_engine_begin(void) {
 	gf_version_t ver;
-#ifdef _WIN32
-	WSADATA wsa;
-#endif
 	if(gf_log_default == NULL) gf_log_default = stderr;
 
 	gf_gui_init_calls();
@@ -49,12 +44,11 @@ void gf_engine_begin(void) {
 	gf_log_function(NULL, "Thread model: %s", ver.thread);
 	gf_log_function(NULL, "Renderer: %s on %s", ver.driver, ver.backend);
 #ifdef _WIN32
-	WSAStartup(MAKEWORD(1, 1), &wsa);
-	gf_log_function(NULL, "Winsock ready", "");
 	if(QueryPerformanceFrequency(&hpc_freq) <= 0) {
 		hpc_freq.QuadPart = 0;
 	}
 #endif
+	gf_network_begin();
 	gf_client_begin();
 	gf_server_begin();
 }
@@ -62,6 +56,7 @@ void gf_engine_begin(void) {
 void gf_engine_end(void) {
 	gf_server_end();
 	gf_client_end();
+	gf_network_end();
 }
 
 gf_engine_t* gf_engine_create(const char* title, int nogui) { return gf_engine_create_ex(title, nogui, "base.pak"); }

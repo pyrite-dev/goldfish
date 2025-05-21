@@ -110,11 +110,11 @@ const double outline_mouse_offsets[CURSOR_MOUSE_OFFSETS_NUM][2] = {
 void gf_draw_cursor(gf_draw_t* draw) {
 	/* TODO: draw cursor here */
 	if(draw->cursor) {
-		gf_graphic_color_t col	       = draw->gui->font;
+		gf_graphic_color_t col = draw->gui->font;
 		gf_graphic_color_t outline_col;
 		double		   coords[2 * MOUSE_OFFSETS_NUM];
 		double		   outline_coords[2 * CURSOR_MOUSE_OFFSETS_NUM];
-		int i;
+		int		   i;
 
 		outline_col.r = 0;
 		outline_col.g = 0;

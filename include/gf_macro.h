@@ -163,6 +163,14 @@
 #define GF_EXPOSE_SOUND
 #endif
 
+#ifndef GF_EXPOSE_NETWORK
+/**
+ * @~english
+ * @brief Expose network interface properties
+ */
+#define GF_EXPOSE_NETWORK
+#endif
+
 #ifndef GF_EXPOSE_FILE
 /**
  * @~english
