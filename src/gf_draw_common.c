@@ -125,7 +125,7 @@ void gf_draw_cursor(gf_draw_t* draw) {
 			coords[2 * i + 0] = draw->input->mouse_x + mouse_offsets[i][0];
 			coords[2 * i + 1] = draw->input->mouse_y + mouse_offsets[i][1] + 8;
 		}
-		for(int i = 0; i < CURSOR_MOUSE_OFFSETS_NUM; i++) {
+		for(i = 0; i < CURSOR_MOUSE_OFFSETS_NUM; i++) {
 			outline_coords[2 * i + 0] = draw->input->mouse_x + outline_mouse_offsets[i][0] + 1.5;
 			outline_coords[2 * i + 1] = draw->input->mouse_y + outline_mouse_offsets[i][1] + 9;
 		}
