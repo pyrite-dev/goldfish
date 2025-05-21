@@ -3,9 +3,7 @@
 #include <gf_pre.h>
 
 /* External library */
-#ifdef _WIN32
-#include <winsock.h>
-#endif
+#include <gf_netdrv.h>
 
 /* Interface */
 #include <gf_network.h>
@@ -14,14 +12,6 @@
 
 /* Standard */
 #include <string.h>
-#ifndef _WIN32
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netinet/in.h>
-#include <netinet/tcp.h>
-#include <netinet/udp.h>
-#include <unistd.h>
-#endif
 
 int gf_network_socket(const char* type) {
 	int sock = -1;
