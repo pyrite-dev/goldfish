@@ -1,6 +1,8 @@
 #define GF_EXPOSE_DRAW
 #define GF_EXPOSE_CORE
 #define GF_EXPOSE_CLIENT
+#define GF_EXPOSE_INPUT
+#define GF_EXPOSE_GUI
 
 #include <gf_pre.h>
 
@@ -50,6 +52,7 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	draw->font	   = NULL;
 	draw->fps	   = -1;
 	draw->loaded_fonts = NULL;
+	draw->cursor	   = 1;
 	strcpy(draw->title, title);
 	draw->platform = gf_draw_platform_create(engine, draw);
 	if(draw->platform != NULL) {
@@ -80,11 +83,31 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 
 void gf_draw_reshape(gf_draw_t* draw) { gf_draw_driver_reshape(draw); }
 
+void gf_draw_cursor(gf_draw_t* draw) {
+	/* TODO: draw cursor here */
+	if(draw->cursor) {
+		gf_graphic_color_t col = draw->gui->font;
+		double		   coords[2 * 3];
+
+		coords[2 * 0 + 0] = draw->input->mouse_x;
+		coords[2 * 0 + 1] = draw->input->mouse_y;
+
+		coords[2 * 1 + 0] = draw->input->mouse_x;
+		coords[2 * 1 + 1] = draw->input->mouse_y + 20.0;
+
+		coords[2 * 2 + 0] = draw->input->mouse_x + 10.0;
+		coords[2 * 2 + 1] = draw->input->mouse_y + 20.0 / 4 * 3;
+
+		gf_graphic_fill_polygon_arr(draw, col, GF_GRAPHIC_2D, sizeof(coords) / sizeof(coords[0]) / 2, &coords[0]);
+	}
+}
+
 /* Runs every frame */
 void gf_draw_frame(gf_draw_t* draw) {
 	gf_graphic_clear(draw);
 	gf_lua_step(draw->engine->lua);
 	gf_gui_render(draw->gui);
+	gf_draw_cursor(draw);
 }
 
 void gf_draw_time(gf_draw_time_t* dtime) {
@@ -159,6 +182,7 @@ int gf_draw_step(gf_draw_t* draw) {
 		draw->close = 0;
 		gf_lua_close(draw->engine->lua);
 	}
+
 	return draw->close;
 }
 
