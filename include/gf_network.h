@@ -25,13 +25,28 @@ extern "C" {
  * @~english
  * @brief Initialize network interface
  */
-void gf_network_begin(void);
+GF_EXPORT void gf_network_begin(void);
 
 /**
  * @~english
  * @brief Cleanup network interface
  */
-void gf_network_end(void);
+GF_EXPORT void gf_network_end(void);
+
+/**
+ * @~english
+ * @brief Create socket
+ * @param type Socket type, `udp` or `tcp`
+ * @return Socket
+ */
+GF_EXPORT int gf_network_socket(const char* type);
+
+/**
+ * @~english
+ * @brief Close socket
+ * @param sock Socket
+ */
+GF_EXPORT void gf_network_close(int sock);
 
 #ifdef __cplusplus
 }
