@@ -128,14 +128,8 @@ double gf_graphic_text_height(gf_draw_t* draw, gf_font_t* userfont, double size,
 			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
 			return height;
 		}
-		zoom = size / font->bbox.height;
-		for(i = 0; text[i] != 0; i++) {
-			if((glyph = gf_font_get(font, text[i])) != NULL) {
-				if((zoom * glyph->bbox.height) > my) {
-					my = zoom * glyph->bbox.height;
-				}
-			}
-		}
+
+		return size;
 	}
 	return my;
 }
