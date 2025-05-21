@@ -230,7 +230,6 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		unsigned char* target = NULL;
 		ICONINFO       ii;
 		HICON	       handle;
-		int	       i;
 		HDC	       dc = GetDC(NULL);
 
 		memset(&bi, 0, sizeof(bi));

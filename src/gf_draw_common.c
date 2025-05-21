@@ -111,11 +111,17 @@ void gf_draw_cursor(gf_draw_t* draw) {
 	/* TODO: draw cursor here */
 	if(draw->cursor) {
 		gf_graphic_color_t col	       = draw->gui->font;
-		gf_graphic_color_t outline_col = (gf_graphic_color_t){0, 0, 0, 255};
+		gf_graphic_color_t outline_col;
 		double		   coords[2 * MOUSE_OFFSETS_NUM];
 		double		   outline_coords[2 * CURSOR_MOUSE_OFFSETS_NUM];
+		int i;
 
-		for(int i = 0; i < MOUSE_OFFSETS_NUM; i++) {
+		outline_col.r = 0;
+		outline_col.g = 0;
+		outline_col.b = 0;
+		outline_col.a = 255;
+
+		for(i = 0; i < MOUSE_OFFSETS_NUM; i++) {
 			coords[2 * i + 0] = draw->input->mouse_x + mouse_offsets[i][0];
 			coords[2 * i + 1] = draw->input->mouse_y + mouse_offsets[i][1] + 8;
 		}
