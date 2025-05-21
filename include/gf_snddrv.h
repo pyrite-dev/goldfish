@@ -18,6 +18,10 @@
 #elif defined(SND_SDL2)
 #include <SDL.h>
 #include <SDL_audio.h>
+#elif defined(SND_OSS)
+#include <soundcard.h>
+#elif defined(SND_SUN)
+#include <sys/audioio.h>
 #endif
 
 #endif

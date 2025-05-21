@@ -15,6 +15,14 @@ gf_sound_backends = {
 		name = "ALSA",
 		links = {"asound"}
 	},
+	oss = {
+		name = "OSS",
+		links = {"ossaudio"}
+		-- I don't know how this works on non-NetBSD systems, I am sorry
+	},
+	sun = {
+		name = "Sun/audio(4)"
+	},
 	sdl2 = {
 		name = "SDL2",
 		config = "sdl2"
