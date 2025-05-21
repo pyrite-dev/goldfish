@@ -80,6 +80,8 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	memset(platform, 0, sizeof(*platform));
 	platform->engine = engine;
 
+	draw->platform = platform;
+
 	platform->window = RGFW_createWindow(draw->title, RGFW_RECT(draw->x, draw->y, draw->width, draw->height), RGFW_windowHideMouse);
 	if(platform->window == NULL) {
 		gf_log_function(engine, "Failed to create window", "");

@@ -34,6 +34,7 @@ GF_DECLARE_TYPE(draw_platform, {
 	Window	     window;
 	GLXContext   context;
 	Atom	     wm_delete_window;
+	Pixmap cursor;
 });
 #elif defined(TYPE_OSMESA)
 GF_DECLARE_TYPE(draw_platform, {
@@ -46,6 +47,7 @@ GF_DECLARE_TYPE(draw_platform, {
 	XImage*	       image;
 	XVisualInfo    visual;
 	GC	       gc;
+	Pixmap cursor;
 });
 #endif
 #elif defined(USE_GDI)
@@ -56,6 +58,7 @@ GF_DECLARE_TYPE(draw_platform, {
 	HWND	     window;
 	HDC	     dc;
 	HGLRC	     glrc;
+	HCURSOR cursor;
 });
 #elif defined(TYPE_OSMESA)
 GF_DECLARE_TYPE(draw_platform, {
@@ -68,6 +71,7 @@ GF_DECLARE_TYPE(draw_platform, {
 	HBITMAP	       bitmap;
 	BITMAPV5HEADER header;
 	HDC	       bitmapdc;
+	HCURSOR cursor;
 });
 #endif
 #elif defined(USE_RGFW)

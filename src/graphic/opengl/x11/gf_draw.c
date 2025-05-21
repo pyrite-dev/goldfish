@@ -70,12 +70,17 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	int	     attribs[64];
 	XVisualInfo* visual;
 #endif
+	Pixmap		     blank;
+	XColor		     dummy;
 	XSetWindowAttributes attr;
 	XSizeHints	     hints;
+	unsigned char	     b;
 	int		     interval = 0;
 	gf_draw_platform_t*  platform = malloc(sizeof(*platform));
 	memset(platform, 0, sizeof(*platform));
 	platform->engine = engine;
+
+	draw->platform = platform;
 
 #if defined(TYPE_OSMESA)
 	platform->buffer = NULL;
@@ -126,6 +131,13 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	attr.colormap	 = XCreateColormap(platform->display, root, platform->visual.visual, AllocNone);
 	platform->window = XCreateWindow(platform->display, root, draw->width, draw->height, draw->width, draw->height, 0, platform->visual.depth, InputOutput, platform->visual.visual, CWColormap | CWEventMask, &attr);
 #endif
+
+	b		 = 0;
+	blank		 = XCreateBitmapFromData(platform->display, platform->window, &b, 1, 1);
+	platform->cursor = XCreatePixmapCursor(platform->display, blank, blank, &dummy, &dummy, 0, 0);
+	XFreePixmap(platform->display, blank);
+
+	XDefineCursor(platform->display, platform->window, platform->cursor);
 
 	if(engine->icon != NULL) {
 		unsigned long* icon	 = malloc((2 + engine->icon_width * engine->icon_height) * sizeof(*icon));
@@ -315,6 +327,7 @@ void gf_draw_platform_destroy(gf_draw_platform_t* platform) {
 		free(platform->buffer);
 	}
 #endif
+	/* TODO: How do I even free cursor? Do I even have to? */
 	gf_log_function(platform->engine, "Destroyed platform-dependent part of drawing driver", "");
 	free(platform);
 }

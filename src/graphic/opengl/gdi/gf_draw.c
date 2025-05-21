@@ -189,6 +189,8 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	memset(platform, 0, sizeof(*platform));
 	platform->engine = engine;
 
+	draw->platform = platform;
+
 	platform->instance = (HINSTANCE)GetModuleHandle(NULL);
 	if(platform->instance == NULL) {
 		gf_log_function(engine, "Failed to get instance", "");
@@ -219,6 +221,52 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		gf_log_function(engine, "Failed to create window", "");
 		gf_draw_platform_destroy(platform);
 		return NULL;
+	}
+
+	{
+		BITMAPV5HEADER bi;
+		HBITMAP	       color;
+		HBITMAP	       mask;
+		unsigned char* target = NULL;
+		ICONINFO       ii;
+		HICON	       handle;
+		int	       i;
+		HDC	       dc = GetDC(NULL);
+
+		memset(&bi, 0, sizeof(bi));
+		bi.bV5Size	  = sizeof(bi);
+		bi.bV5Width	  = 1;
+		bi.bV5Height	  = -((LONG)1);
+		bi.bV5Planes	  = 1;
+		bi.bV5BitCount	  = 32;
+		bi.bV5Compression = BI_RGB;
+		bi.bV5RedMask	  = 0xff << 16;
+		bi.bV5GreenMask	  = 0xff << 8;
+		bi.bV5BlueMask	  = 0xff << 0;
+		bi.bV5AlphaMask	  = 0xff << 24;
+
+		color = CreateDIBSection(dc, (BITMAPINFO*)&bi, DIB_RGB_COLORS, (void**)&target, NULL, (DWORD)0);
+		ReleaseDC(NULL, dc);
+
+		mask = CreateBitmap(1, 1, 1, 1, NULL);
+
+		memset(&target[0], 0, 4);
+
+		memset(&ii, 0, sizeof(ii));
+		ii.fIcon    = TRUE;
+		ii.xHotspot = 0;
+		ii.yHotspot = 0;
+		ii.hbmMask  = mask;
+		ii.hbmColor = color;
+
+		handle = CreateIconIndirect(&ii);
+
+		DeleteObject(color);
+		DeleteObject(mask);
+
+		SetClassLongPtr(platform->window, GCLP_HCURSOR, (LPARAM)handle);
+		SetCursor((HCURSOR)handle);
+		platform->cursor = (HCURSOR)handle;
 	}
 
 	if(engine->icon != NULL) {
@@ -365,6 +413,9 @@ void gf_draw_platform_destroy(gf_draw_platform_t* platform) {
 #endif
 	if(platform->window != NULL) {
 		DestroyWindow(platform->window);
+	}
+	if(platform->cursor != NULL) {
+		DestroyCursor((HCURSOR)platform->cursor);
 	}
 	gf_log_function(platform->engine, "Destroyed platform-dependent part of drawing driver", "");
 	free(platform);
