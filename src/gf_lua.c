@@ -34,6 +34,20 @@
 #include <string.h>
 #include <stdio.h>
 
+int gf_lua_call_log(lua_State* s) {
+	const char* fac = luaL_checkstring(s, 1);
+	const char* str = luaL_checkstring(s, 2);
+	gf_lua_t*   lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	gf_log(lua->engine, "%24s: %s\n", fac, str);
+
+	return 0;
+}
+
 int gf_lua_call_loop(lua_State* s) {
 	int	  call = luaL_ref(s, LUA_REGISTRYINDEX);
 	gf_lua_t* lua;
@@ -506,6 +520,10 @@ void gf_lua_create_goldfish(gf_lua_t* lua) {
 	gf_version_get(&ver);
 
 	lua_getglobal(lua->lua, "goldfish");
+
+	lua_pushstring(lua->lua, "log");
+	lua_pushcfunction(lua->lua, gf_lua_call_log);
+	lua_settable(lua->lua, -3);
 
 	lua_pushstring(lua->lua, "loop");
 	lua_pushcfunction(lua->lua, gf_lua_call_loop);
