@@ -26,6 +26,8 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 		int    dq   = 0;
 		strcpy(str, list[i]);
 
+		gf_log_function(engine, "Command: %s", str);
+
 		for(j = 0;; j++) {
 			if(str[j] == '"') {
 				dq = dq ? 0 : 1;

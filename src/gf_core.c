@@ -24,6 +24,7 @@
 #include <gf_network.h>
 #include <gf_command.h>
 #include <gf_prop.h>
+#include <gf_file.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -66,7 +67,8 @@ gf_engine_t* gf_engine_create(const char* title, int nogui) { return gf_engine_c
 
 gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packpath, char** argv, int argc) {
 	int	     st;
-	char**	     list   = NULL;
+	char**	     list = NULL;
+	gf_file_t*   f;
 	gf_engine_t* engine = malloc(sizeof(*engine));
 	memset(engine, 0, sizeof(*engine));
 	engine->log   = stderr;
@@ -89,6 +91,40 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 		if(gf_resource_get(engine->base, "icon.png", (void**)&png, &pngsize) == 0) {
 			engine->icon = stbi_load_from_memory(png, pngsize, &engine->icon_width, &engine->icon_height, &ch, 4);
 		}
+	}
+
+	if((f = gf_file_open(engine, "base:/autoexec.cfg", "r")) != NULL) {
+		char*  buf    = malloc(f->size + 1);
+		int    incr   = 0;
+		int    i      = 0;
+		char** aelist = NULL;
+		buf[f->size]  = 0;
+		gf_file_read(f, buf, f->size);
+
+		for(i = 0;; i++) {
+			if(buf[i] == 0 || buf[i] == '\n') {
+				char  oldc = buf[i];
+				char* line = buf + incr;
+				buf[i]	   = 0;
+
+				if(strlen(line) > 0) {
+					arrput(aelist, line);
+				}
+
+				incr = i + 1;
+				if(oldc == 0) break;
+			} else if(buf[i] == '\r') {
+				buf[i] = 0;
+			}
+		}
+
+		if(aelist != NULL) {
+			gf_command_run(engine, aelist, arrlen(aelist));
+			arrfree(aelist);
+		}
+
+		free(buf);
+		gf_file_close(f);
 	}
 
 	if(argv != NULL) {
