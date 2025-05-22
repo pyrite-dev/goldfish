@@ -6,6 +6,7 @@
 
 /* External library */
 #include <stb_image.h>
+#include <stb_ds.h>
 
 /* Interface */
 #include <gf_core.h>
@@ -21,6 +22,7 @@
 #include <gf_resource.h>
 #include <gf_font.h>
 #include <gf_network.h>
+#include <gf_command.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -59,10 +61,11 @@ void gf_engine_end(void) {
 	gf_network_end();
 }
 
-gf_engine_t* gf_engine_create(const char* title, int nogui) { return gf_engine_create_ex(title, nogui, "base.pak"); }
+gf_engine_t* gf_engine_create(const char* title, int nogui) { return gf_engine_create_ex(title, nogui, "base.pak", NULL, 0); }
 
-gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packpath) {
+gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packpath, char** argv, int argc) {
 	int	     st;
+	char**	     list   = NULL;
 	gf_engine_t* engine = malloc(sizeof(*engine));
 	memset(engine, 0, sizeof(*engine));
 	engine->log   = stderr;
@@ -81,6 +84,41 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 		if(gf_resource_get(engine->base, "icon.png", (void**)&png, &pngsize) == 0) {
 			engine->icon = stbi_load_from_memory(png, pngsize, &engine->icon_width, &engine->icon_height, &ch, 4);
 		}
+	}
+
+	if(argv != NULL) {
+		int   i;
+		char* buf = NULL;
+		for(i = 1; i < argc; i++) {
+			char* arg = argv[i];
+			if(arg[0] == '-') {
+				if(buf != NULL) {
+					arrput(list, buf);
+				}
+				buf = malloc(strlen(arg)); /* strlen(arg) - 1 + 1 */
+				strcpy(buf, arg + 1);
+			} else if(buf != NULL) {
+				char* old = buf;
+				buf	  = malloc(strlen(old) + 1 + +strlen(arg) + 2 + 1);
+				strcpy(buf, old);
+				strcat(buf, " ");
+				strcat(buf, "\"");
+				strcat(buf, arg);
+				strcat(buf, "\"");
+				free(old);
+			}
+		}
+		if(buf != NULL) {
+			arrput(list, buf);
+		}
+	}
+	if(list != NULL) {
+		int i;
+		gf_command_run(engine, list, arrlen(list));
+		for(i = 0; i < arrlen(list); i++) {
+			free(list[i]);
+		}
+		arrfree(list);
 	}
 
 	if(nogui) {

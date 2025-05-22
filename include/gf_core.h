@@ -49,9 +49,11 @@ GF_EXPORT gf_engine_t* gf_engine_create(const char* title, int nogui);
  * @param title Title to be shown on the window
  * @param nogui `0` to enable client-part, otherwise disable client-part
  * @param packpath Path to the base resource pack
+ * @param argv Command line argument list
+ * @param argc Command line argument count
  * @return Engine instance
  */
-GF_EXPORT gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packpath);
+GF_EXPORT gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packpath, char** argv, int argc);
 
 /**
  * @~english
