@@ -43,8 +43,8 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	draw->engine	   = engine;
 	draw->x		   = 0;
 	draw->y		   = 0;
-	draw->width	   = 800;
-	draw->height	   = 600;
+	draw->width	   = engine->width;
+	draw->height	   = engine->height;
 	draw->running	   = 0;
 	draw->draw_3d	   = 0;
 	draw->input	   = NULL;

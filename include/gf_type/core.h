@@ -58,6 +58,12 @@ typedef struct gf_engine_t gf_engine_t;
  *
  * @var gf_engine_t::icon_height
  * @brief Icon height
+ *
+ * @var gf_engine_t::width
+ * @brief Initial screen width
+ *
+ * @var gf_engine_t::height
+ * @brief Initial screen height
  */
 GF_DECLARE_TYPE(engine, {
 	gf_server_t*   server;
@@ -69,6 +75,8 @@ GF_DECLARE_TYPE(engine, {
 	unsigned char* icon;
 	int icon_width;
 	int icon_height;
+	int width;
+	int height;
 });
 #else
 typedef void gf_engine_t;
