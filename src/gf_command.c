@@ -24,6 +24,8 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 		char** arg  = NULL;
 		int    incr = 0;
 		int    dq   = 0;
+		if(list[i][0] == '#') continue;
+
 		strcpy(str, list[i]);
 
 		gf_log_function(engine, "Command: %s", str);
