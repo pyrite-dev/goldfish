@@ -25,6 +25,7 @@
 #include <gf_gui.h>
 #include <gf_audio.h>
 #include <gf_lua.h>
+#include <gf_prop.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -43,8 +44,8 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	draw->engine	   = engine;
 	draw->x		   = 0;
 	draw->y		   = 0;
-	draw->width	   = engine->width;
-	draw->height	   = engine->height;
+	draw->width	   = gf_prop_get_integer(&engine->config, "width");
+	draw->height	   = gf_prop_get_integer(&engine->config, "height");
 	draw->running	   = 0;
 	draw->draw_3d	   = 0;
 	draw->input	   = NULL;
@@ -87,28 +88,27 @@ void gf_draw_reshape(gf_draw_t* draw) { gf_draw_driver_reshape(draw); }
 #define MOUSE_OFFSETS_NUM 8
 #define CURSOR_MOUSE_OFFSETS_NUM 8
 const double mouse_offsets[MOUSE_OFFSETS_NUM][2] = {
-    {0, 0},    //
-    {0, 16},   //
-    {2, 12},   //
-    {4, 8.5},  //
-    {6.5, 6},  //
-    {9, 3.5},  //
-    {12, 1.5}, //
-    {16, 0},   //
+    {0, 0},    /**/
+    {0, 16},   /**/
+    {2, 12},   /**/
+    {4, 8.5},  /**/
+    {6.5, 6},  /**/
+    {9, 3.5},  /**/
+    {12, 1.5}, /**/
+    {16, 0},   /**/
 };
 const double outline_mouse_offsets[CURSOR_MOUSE_OFFSETS_NUM][2] = {
-    {-2, -2}, //
-    {-2, 18}, //
-    {1, 13},  //
-    {3, 9},   //
-    {7, 5},   //
-    {10, 2},  //
-    {14, 1},  //
-    {18, -2}, //
+    {-2, -2}, /**/
+    {-2, 18}, /**/
+    {1, 13},  /**/
+    {3, 9},   /**/
+    {7, 5},   /**/
+    {10, 2},  /**/
+    {14, 1},  /**/
+    {18, -2}, /**/
 };
 
 void gf_draw_cursor(gf_draw_t* draw) {
-	/* TODO: draw cursor here */
 	if(draw->cursor) {
 		gf_graphic_color_t col = draw->gui->font;
 		gf_graphic_color_t outline_col;
@@ -133,7 +133,7 @@ void gf_draw_cursor(gf_draw_t* draw) {
 		gf_graphic_fill_polygon_arr(draw, outline_col, GF_GRAPHIC_2D, sizeof(outline_coords) / sizeof(outline_coords[0]) / 2, &outline_coords[0]);
 		gf_graphic_fill_polygon_arr(draw, col, GF_GRAPHIC_2D, sizeof(coords) / sizeof(coords[0]) / 2, &coords[0]);
 
-		// gf_graphic_lines_arr(draw, colInv, GF_GRAPHIC_2D, sizeof(coords) / sizeof(coords[0]) / 2, &coords[0]);
+		/* gf_graphic_lines_arr(draw, colInv, GF_GRAPHIC_2D, sizeof(coords) / sizeof(coords[0]) / 2, &coords[0]); */
 	}
 }
 

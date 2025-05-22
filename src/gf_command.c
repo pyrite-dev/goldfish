@@ -10,6 +10,7 @@
 
 /* Engine */
 #include <gf_log.h>
+#include <gf_prop.h>
 
 /* Standard */
 #include <string.h>
@@ -53,13 +54,21 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 				if(arrlen(arg) < 2) {
 					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
 				} else {
-					engine->width = atoi(arg[1]);
+					gf_prop_set_integer(&engine->config, "width", atoi(arg[1]));
 				}
 			} else if(strcmp(arg[0], "height") == 0) {
 				if(arrlen(arg) < 2) {
 					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
 				} else {
-					engine->height = atoi(arg[1]);
+					gf_prop_set_integer(&engine->config, "height", atoi(arg[1]));
+				}
+			} else if(strcmp(arg[0], "texture") == 0) {
+				if(arrlen(arg) < 2) {
+					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+				} else if(strcmp(arg[1], "nearest") != 0 && strcmp(arg[1], "linear") != 0) {
+					gf_log_function(engine, "%s: %s: Bad argument", arg[0], arg[1]);
+				} else {
+					gf_prop_set_text(&engine->config, "texture", arg[1]);
 				}
 			} else {
 				gf_log_function(engine, "%s: Unknown command", arg[0]);

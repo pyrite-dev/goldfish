@@ -23,6 +23,7 @@
 #include <gf_font.h>
 #include <gf_network.h>
 #include <gf_command.h>
+#include <gf_prop.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -72,8 +73,9 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	engine->error = 0;
 	engine->lua   = NULL;
 
-	engine->width  = 800;
-	engine->height = 600;
+	gf_prop_set_integer(&engine->config, "width", 800);
+	gf_prop_set_integer(&engine->config, "height", 600);
+	gf_prop_set_text(&engine->config, "texture-filter", "linear");
 
 	engine->base = gf_resource_create(engine, packpath != NULL ? packpath : "base.pak");
 	if(engine->base == NULL) {

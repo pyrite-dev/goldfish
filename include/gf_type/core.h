@@ -20,6 +20,7 @@ typedef struct gf_engine_t gf_engine_t;
 #include <gf_type/client.h>
 #include <gf_type/resource.h>
 #include <gf_type/lua.h>
+#include <gf_type/prop.h>
 
 /* Standard */
 #include <stdio.h>
@@ -59,11 +60,8 @@ typedef struct gf_engine_t gf_engine_t;
  * @var gf_engine_t::icon_height
  * @brief Icon height
  *
- * @var gf_engine_t::width
- * @brief Initial screen width
- *
- * @var gf_engine_t::height
- * @brief Initial screen height
+ * @var gf_engine_t::config
+ * @brief Config
  */
 GF_DECLARE_TYPE(engine, {
 	gf_server_t*   server;
@@ -75,8 +73,7 @@ GF_DECLARE_TYPE(engine, {
 	unsigned char* icon;
 	int icon_width;
 	int icon_height;
-	int width;
-	int height;
+	gf_prop_t* config;
 });
 #else
 typedef void gf_engine_t;

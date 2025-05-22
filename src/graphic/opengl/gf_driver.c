@@ -1,6 +1,7 @@
 #define GF_EXPOSE_DRAW_DRIVER
 #define GF_EXPOSE_DRAW
 #define GF_EXPOSE_TEXTURE
+#define GF_EXPOSE_CORE
 
 #include <gf_pre.h>
 
@@ -17,6 +18,7 @@
 #include <gf_log.h>
 #include <gf_math.h>
 #include <gf_graphic.h>
+#include <gf_prop.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -66,8 +68,13 @@ gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int w
 	glBindTexture(GL_TEXTURE_2D, r->id);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, d);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	if(strcmp(gf_prop_get_text(&draw->engine->config, "texture"), "linear") == 0) {
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	} else if(strcmp(gf_prop_get_text(&draw->engine->config, "texture"), "nearest") == 0) {
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	}
 #if 0
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
