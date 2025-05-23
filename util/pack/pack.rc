@@ -4,4 +4,4 @@
 
 GAME ICON "../images/goldfish.ico"
 
-#include "../../common.rc"
+#include "../../src/common.rc"

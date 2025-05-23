@@ -2,4 +2,4 @@
 
 #define FILE_DESCRIPTION "GoldFish Engine"
 
-#include "../common.rc"
+#include "common.rc"

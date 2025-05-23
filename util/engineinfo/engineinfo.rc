@@ -5,4 +5,4 @@
 GAME ICON "../images/goldfish.ico"
 GOLDFISH_BMP BITMAP "../images/goldfish.bmp"
 
-#include "../../common.rc"
+#include "../../src/common.rc"
