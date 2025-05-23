@@ -56,6 +56,7 @@ end
 		"../external/miniaudio",
 		"../external/stb",
 		"../external/jar",
+		"../external/nanosvg",
 		"bindgen"
 	})
 	files({
@@ -79,6 +80,9 @@ end
 	})
 	files({
 		"gui/*.c"
+	})
+	files({
+		"image/*.c"
 	})
 	filter({
 		"system:windows",
