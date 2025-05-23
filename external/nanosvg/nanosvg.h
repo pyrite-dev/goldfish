@@ -192,6 +192,8 @@ void nsvgDelete(NSVGimage* image);
 #include <stdio.h>
 #include <math.h>
 
+#include <gf_math.h>
+
 #define NSVG_PI (3.14159265358979323846264338327f)
 #define NSVG_KAPPA90 (0.5522847493f)	// Length proportional to radius of a cubic bezier handle for 90deg arcs.
 
@@ -1270,9 +1272,9 @@ static unsigned int nsvg__parseColorRGB(const char* str)
 			else break;
 		}
 		if (i == 3) {
-			rgbi[0] = round(rgbf[0] * 2.55f);
-			rgbi[1] = round(rgbf[1] * 2.55f);
-			rgbi[2] = round(rgbf[2] * 2.55f);
+			rgbi[0] = gf_math_round(rgbf[0] * 2.55f);
+			rgbi[1] = gf_math_round(rgbf[1] * 2.55f);
+			rgbi[2] = gf_math_round(rgbf[2] * 2.55f);
 		} else {
 			rgbi[0] = rgbi[1] = rgbi[2] = 128;
 		}
