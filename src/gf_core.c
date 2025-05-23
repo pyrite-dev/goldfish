@@ -5,7 +5,6 @@
 #include <gf_pre.h>
 
 /* External library */
-#include <stb_image.h>
 #include <stb_ds.h>
 
 /* Interface */
@@ -25,6 +24,7 @@
 #include <gf_command.h>
 #include <gf_prop.h>
 #include <gf_file.h>
+#include <gf_image.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -85,12 +85,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 		engine = NULL;
 		return engine;
 	} else {
-		unsigned char* png;
-		size_t	       pngsize;
-		int	       ch;
-		if(gf_resource_get(engine->base, "icon.png", (void**)&png, &pngsize) == 0) {
-			engine->icon = stbi_load_from_memory(png, pngsize, &engine->icon_width, &engine->icon_height, &ch, 4);
-		}
+		engine->icon = gf_image_load(engine, "base:/icon.png", &engine->icon_width, &engine->icon_height);
 	}
 
 	if((f = gf_file_open(engine, "base:/autoexec.cfg", "r")) != NULL) {

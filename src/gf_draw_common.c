@@ -8,7 +8,6 @@
 
 /* External library */
 #include <stb_ds.h>
-#include <stb_image.h>
 
 /* Interface */
 #include <gf_draw.h>
@@ -26,6 +25,7 @@
 #include <gf_audio.h>
 #include <gf_lua.h>
 #include <gf_prop.h>
+#include <gf_image.h>
 
 /* Standard */
 #include <stdlib.h>

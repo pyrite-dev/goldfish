@@ -7,7 +7,6 @@
 
 /* External library */
 #include <stb_ds.h>
-#include <stb_image.h>
 
 /* Interface */
 #include <gf_gui.h>
@@ -19,6 +18,7 @@
 #include <gf_log.h>
 #include <gf_file.h>
 #include <gf_texture.h>
+#include <gf_image.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -78,25 +78,12 @@ void gf_gui_window_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_graphic_clip_pop(gui->draw);
 
 	if((icon = gf_prop_get_text(&c->prop, "icon")) != NULL && c->texture == NULL) {
-		int	   w, h, ch;
-		gf_file_t* f = gf_file_open(gui->engine, icon, "r");
-		if(f != NULL) {
-			unsigned char* fbuf;
-			unsigned char* buf;
-
-			fbuf = malloc(f->size);
-			gf_file_read(f, fbuf, f->size);
-
-			buf = stbi_load_from_memory(fbuf, f->size, &w, &h, &ch, 4);
-			if(buf != NULL) {
-				c->texture = gf_texture_create(gui->draw, w, h, buf);
-				stbi_image_free(buf);
-			} else {
-				gf_prop_delete(&c->prop, "icon");
-			}
-
-			free(fbuf);
-			gf_file_close(f);
+		int	       w;
+		int	       h;
+		unsigned char* buf = gf_image_load(gui->engine, icon, &w, &h);
+		if(buf != NULL) {
+			c->texture = gf_texture_create(gui->draw, w, h, buf);
+			free(buf);
 		} else {
 			gf_prop_delete(&c->prop, "icon");
 		}

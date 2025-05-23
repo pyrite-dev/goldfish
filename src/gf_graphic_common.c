@@ -116,9 +116,9 @@ double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, 
 }
 
 double gf_graphic_text_height(gf_draw_t* draw, gf_font_t* userfont, double size, const char* text) {
-	double		 my = 0;
-	double		 zoom = 0;
-	gf_font_t*	 font = userfont;
+	double	   my	= 0;
+	double	   zoom = 0;
+	gf_font_t* font = userfont;
 	if(font != NULL) {
 		if(!font->use_glyph) {
 			double	      width   = -1;
