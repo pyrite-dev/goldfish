@@ -481,20 +481,20 @@ static void nsvg__xformSetScale(float* t, float sx, float sy)
 static void nsvg__xformSetSkewX(float* t, float a)
 {
 	t[0] = 1.0f; t[1] = 0.0f;
-	t[2] = tanf(a); t[3] = 1.0f;
+	t[2] = tan(a); t[3] = 1.0f;
 	t[4] = 0.0f; t[5] = 0.0f;
 }
 
 static void nsvg__xformSetSkewY(float* t, float a)
 {
-	t[0] = 1.0f; t[1] = tanf(a);
+	t[0] = 1.0f; t[1] = tan(a);
 	t[2] = 0.0f; t[3] = 1.0f;
 	t[4] = 0.0f; t[5] = 0.0f;
 }
 
 static void nsvg__xformSetRotation(float* t, float a)
 {
-	float cs = cosf(a), sn = sinf(a);
+	float cs = cos(a), sn = sin(a);
 	t[0] = cs; t[1] = sn;
 	t[2] = -sn; t[3] = cs;
 	t[4] = 0.0f; t[5] = 0.0f;
@@ -1092,7 +1092,7 @@ static double nsvg__atof(const char* s)
 	char* cur = (char*)s;
 	char* end = NULL;
 	double res = 0.0, sign = 1.0;
-	long long intPart = 0, fracPart = 0;
+	long intPart = 0, fracPart = 0;
 	char hasIntPart = 0, hasFracPart = 0;
 
 	// Parse optional sign
@@ -1106,7 +1106,7 @@ static double nsvg__atof(const char* s)
 	// Parse integer part
 	if (nsvg__isdigit(*cur)) {
 		// Parse digit sequence
-		intPart = strtoll(cur, &end, 10);
+		intPart = strtol(cur, &end, 10);
 		if (cur != end) {
 			res = (double)intPart;
 			hasIntPart = 1;
@@ -1119,7 +1119,7 @@ static double nsvg__atof(const char* s)
 		cur++; // Skip '.'
 		if (nsvg__isdigit(*cur)) {
 			// Parse digit sequence
-			fracPart = strtoll(cur, &end, 10);
+			fracPart = strtol(cur, &end, 10);
 			if (cur != end) {
 				res += (double)fracPart / pow(10.0, (double)(end - cur));
 				hasFracPart = 1;
@@ -1270,9 +1270,9 @@ static unsigned int nsvg__parseColorRGB(const char* str)
 			else break;
 		}
 		if (i == 3) {
-			rgbi[0] = roundf(rgbf[0] * 2.55f);
-			rgbi[1] = roundf(rgbf[1] * 2.55f);
-			rgbi[2] = roundf(rgbf[2] * 2.55f);
+			rgbi[0] = round(rgbf[0] * 2.55f);
+			rgbi[1] = round(rgbf[1] * 2.55f);
+			rgbi[2] = round(rgbf[2] * 2.55f);
 		} else {
 			rgbi[0] = rgbi[1] = rgbi[2] = 128;
 		}
@@ -2128,7 +2128,7 @@ static float nsvg__vecang(float ux, float uy, float vx, float vy)
 	float r = nsvg__vecrat(ux,uy, vx,vy);
 	if (r < -1.0f) r = -1.0f;
 	if (r > 1.0f) r = 1.0f;
-	return ((ux*vy < uy*vx) ? -1.0f : 1.0f) * acosf(r);
+	return ((ux*vy < uy*vx) ? -1.0f : 1.0f) * acos(r);
 }
 
 static void nsvg__pathArcTo(NSVGparser* p, float* cpx, float* cpy, float* args, int rel)
@@ -2170,8 +2170,8 @@ static void nsvg__pathArcTo(NSVGparser* p, float* cpx, float* cpy, float* args, 
 		return;
 	}
 
-	sinrx = sinf(rotx);
-	cosrx = cosf(rotx);
+	sinrx = sin(rotx);
+	cosrx = cos(rotx);
 
 	// Convert to center point parameterization.
 	// http://www.w3.org/TR/SVG11/implnote.html#ArcImplementationNotes
@@ -2229,15 +2229,15 @@ static void nsvg__pathArcTo(NSVGparser* p, float* cpx, float* cpy, float* args, 
 	if ((hda < 1e-3f) && (hda > -1e-3f))
 		hda *= 0.5f;
 	else
-		hda = (1.0f - cosf(hda)) / sinf(hda);
+		hda = (1.0f - cos(hda)) / sin(hda);
 	kappa = fabsf(4.0f / 3.0f * hda);
 	if (da < 0.0f)
 		kappa = -kappa;
 
 	for (i = 0; i <= ndivs; i++) {
 		a = a1 + da * ((float)i/(float)ndivs);
-		dx = cosf(a);
-		dy = sinf(a);
+		dx = cos(a);
+		dy = sin(a);
 		nsvg__xformPoint(&x, &y, dx*rx, dy*ry, t); // position
 		nsvg__xformVec(&tanx, &tany, -dy*rx * kappa, dx*ry * kappa, t); // tangent
 		if (i > 0)
