@@ -55,6 +55,11 @@ GF_DECLARE_TYPE(sound_context, {
 	gf_thread_t* thread;
 	int quit;
 });
+#elif defined(SND_NULL)
+GF_DECLARE_TYPE(sound_context, {
+	gf_thread_t* thread;
+	int quit;
+});
 #else
 /**
  * @struct gf_sound_context_t

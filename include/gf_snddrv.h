@@ -22,6 +22,7 @@
 #include <soundcard.h>
 #elif defined(SND_SUN)
 #include <sys/audioio.h>
+#elif defined(SND_NULL)
 #endif
 
 #endif

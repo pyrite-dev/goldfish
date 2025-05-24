@@ -27,6 +27,9 @@ gf_sound_backends = {
 		name = "SDL2",
 		config = "sdl2"
 	},
+	null = {
+		name = "Null"
+	},
 	windows = {
 		name = "DirectSound/WinMM",
 	}
