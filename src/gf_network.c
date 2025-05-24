@@ -9,9 +9,15 @@
 #include <gf_network.h>
 
 /* Engine */
+#include <gf_type/compat.h>
 
 /* Standard */
 #include <string.h>
+
+gf_uint32_t gf_network_id(const char* str){
+	gf_uint32_t id = *(gf_uint32_t*)&str[0];
+	return htonl(id);
+}
 
 int gf_network_socket(const char* type) {
 	int sock = -1;
