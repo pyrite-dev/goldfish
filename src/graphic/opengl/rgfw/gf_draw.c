@@ -27,13 +27,9 @@ void gf_draw_platform_begin(void) {}
 void gf_draw_platform_end(void) {}
 
 int gf_draw_platform_has_extension(gf_draw_t* draw, const char* query) {
-	const char* ext = NULL;
-	const char* ptr;
-	const int   len = strlen(query);
-
 	RGFW_window_makeCurrent(draw->platform->window);
 
-	return 0;
+	return RGFW_extensionSupported(query, strlen(query)) ? 1 : 0;
 }
 
 int gf_draw_platform_step(gf_draw_t* draw) {
