@@ -62,6 +62,9 @@ typedef struct gf_engine_t gf_engine_t;
  *
  * @var gf_engine_t::config
  * @brief Config
+ *
+ * @var gf_engine_t::force_down
+ * @brief Force engine shutdown
  */
 GF_DECLARE_TYPE(engine, {
 	gf_server_t*   server;
@@ -74,6 +77,7 @@ GF_DECLARE_TYPE(engine, {
 	int icon_width;
 	int icon_height;
 	gf_prop_t* config;
+	int force_down;
 });
 #else
 typedef void gf_engine_t;

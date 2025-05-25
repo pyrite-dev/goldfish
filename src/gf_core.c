@@ -71,9 +71,10 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	gf_file_t*   f;
 	gf_engine_t* engine = malloc(sizeof(*engine));
 	memset(engine, 0, sizeof(*engine));
-	engine->log   = stderr;
-	engine->error = 0;
-	engine->lua   = NULL;
+	engine->log	   = stderr;
+	engine->error	   = 0;
+	engine->lua	   = NULL;
+	engine->force_down = 0;
 
 	gf_prop_set_integer(&engine->config, "width", 800);
 	gf_prop_set_integer(&engine->config, "height", 600);
@@ -197,7 +198,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
  * 10. Comes back here
  */
 void gf_engine_loop(gf_engine_t* engine) {
-	while(!engine->error) {
+	while(!engine->error && !engine->force_down) {
 		if(engine->client != NULL) {
 			if(gf_client_step(engine->client) != 0) break;
 		}
@@ -226,4 +227,7 @@ void gf_engine_shutdown(gf_engine_t* engine) {
 		gf_client_shutdown(engine->client);
 	}
 	gf_log_function(NULL, "Engine shutdown complete", "");
+	if(engine->client == NULL) {
+		engine->force_down = 1;
+	}
 }

@@ -14,7 +14,7 @@
 /* Standard */
 #include <string.h>
 
-gf_uint32_t gf_network_id(const char* str){
+gf_uint32_t gf_network_id(const char* str) {
 	gf_uint32_t id = *(gf_uint32_t*)&str[0];
 	return htonl(id);
 }
