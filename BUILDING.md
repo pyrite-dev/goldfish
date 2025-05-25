@@ -4,6 +4,8 @@ Requirements:
  - [gmake](https://www.gnu.org/software/make/manual/make.html) (Not required for MSVC build.)
  - [GCC](https://gcc.gnu.org/), [MSVC](https://visualstudio.microsoft.com/ja/vs/features/cplusplus/) or [MinGW](https://www.mingw-w64.org/).
 
+## Steps
+
 1. Clone the repository
 
    `git clone https://github.com/pyrite-dev/goldfish --recursive`
