@@ -18,8 +18,8 @@ pipeline {
 		stage("Deploy document") {
 			steps {
 				sh "doxygen"
-				sh "rm -rf /var/www/pyrite.goldfish/*"
-				sh "cp -rf doc/html/* /var/www/pyrite.goldfish/"
+				sh "rm -rf /var/www/pyrite.goldfish-doc/*"
+				sh "cp -rf doc/html/* /var/www/pyrite.goldfish-doc/"
 			}
 			post {
 				always {
