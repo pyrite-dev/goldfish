@@ -27,7 +27,7 @@ void gf_version_get(gf_version_t* version) {
 #ifdef DEBUG
 	strcat(version->full, "-debug");
 #else
-	strcat(version->full, " -release");
+	strcat(version->full, "-release");
 #endif
 
 	strcpy(version->zlib, ZLIB_VERSION);
