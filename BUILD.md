@@ -15,5 +15,5 @@ Usage: - [premake5](https://premake.github.io/download/)
     `make -j4`
   - msvc
     1. Open the generated `EntireGoldFish.sln`
-    2. ![]()
-    3. ![]()
+    2. ![](images/Build1.png)
+    3. ![](images/Build2.png)
