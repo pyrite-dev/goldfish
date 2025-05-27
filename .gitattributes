@@ -5,3 +5,4 @@ compile linguist-generated
 depcomp linguist-generated
 install-sh linguist-generated
 missing linguist-generated
+/css/* linguist-generated
