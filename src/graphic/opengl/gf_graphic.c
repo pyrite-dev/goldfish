@@ -59,10 +59,10 @@ void gf_graphic_draw_texture_polygon_arr(gf_draw_t* draw, gf_texture_t* texture,
 		}
 	}
 
-	if(dim == 2) gf_graphic_begin_2d(draw);
-	gf_draw_driver_begin_texture_2d(draw, texture);
+	if(dim == GF_GRAPHIC_2D) gf_graphic_begin_2d(draw);
 
 	gf_draw_driver_set_color(draw, color);
+	gf_draw_driver_begin_texture_2d(draw, texture);
 	glBegin(GL_TRIANGLE_FAN);
 
 	for(i = 0; i < npair; i++) {
@@ -82,14 +82,14 @@ void gf_graphic_draw_texture_polygon_arr(gf_draw_t* draw, gf_texture_t* texture,
 	glEnd();
 
 	gf_draw_driver_end_texture_2d(draw);
-	if(dim == 2) gf_graphic_end_2d(draw);
+	if(dim == GF_GRAPHIC_2D) gf_graphic_end_2d(draw);
 }
 
 void gf_graphic_fill_polygon_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr) {
 	int i;
 	int ind = 0;
 
-	if(dim == 2) gf_graphic_begin_2d(draw);
+	if(dim == GF_GRAPHIC_2D) gf_graphic_begin_2d(draw);
 
 	gf_draw_driver_set_color(draw, color);
 	glBegin(GL_TRIANGLE_FAN);
@@ -106,14 +106,14 @@ void gf_graphic_fill_polygon_arr(gf_draw_t* draw, gf_graphic_color_t color, int 
 	}
 
 	glEnd();
-	if(dim == 2) gf_graphic_end_2d(draw);
+	if(dim == GF_GRAPHIC_2D) gf_graphic_end_2d(draw);
 }
 
 void gf_graphic_points_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr) {
 	int i;
 	int ind = 0;
 
-	if(dim == 2) gf_graphic_begin_2d(draw);
+	if(dim == GF_GRAPHIC_2D) gf_graphic_begin_2d(draw);
 
 	gf_draw_driver_set_color(draw, color);
 	glBegin(GL_POINTS);
@@ -130,14 +130,14 @@ void gf_graphic_points_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, i
 	}
 
 	glEnd();
-	if(dim == 2) gf_graphic_end_2d(draw);
+	if(dim == GF_GRAPHIC_2D) gf_graphic_end_2d(draw);
 }
 
 void gf_graphic_lines_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr) {
 	int i;
 	int ind = 0;
 
-	if(dim == 2) gf_graphic_begin_2d(draw);
+	if(dim == GF_GRAPHIC_2D) gf_graphic_begin_2d(draw);
 
 	gf_draw_driver_set_color(draw, color);
 	glBegin(GL_LINES);
@@ -154,7 +154,7 @@ void gf_graphic_lines_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, in
 	}
 
 	glEnd();
-	if(dim == 2) gf_graphic_end_2d(draw);
+	if(dim == GF_GRAPHIC_2D) gf_graphic_end_2d(draw);
 }
 
 void gf_graphic_perspective(gf_draw_t* draw, double fovy, double znear, double zfar) {

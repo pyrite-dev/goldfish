@@ -167,7 +167,7 @@ int gf_draw_driver_has_extension(gf_draw_t* draw, const char* query) {
 void gf_draw_driver_reshape(gf_draw_t* draw) {
 	glViewport(0, 0, (GLint)draw->width, (GLint)draw->height);
 	glMatrixMode(GL_PROJECTION);
-	gf_graphic_perspective(draw, 30, 1.0, 1000.0);
+	gf_graphic_perspective(draw, 70, 0.1, 1000.0);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -190,6 +190,36 @@ void gf_draw_driver_destroy(gf_draw_driver_t* driver) {
 	free(driver);
 }
 
+gf_texture_t* t = NULL;
+#include <gf_image.h>
+
+static void assign_seq(gf_draw_t* draw, int s, double* seq) {
+	int    i;
+	double sz = 100;
+
+	seq[0 * 5 + 0] = i / 6.0;
+	seq[0 * 5 + 1] = 0;
+
+	seq[1 * 5 + 0] = i / 6.0;
+	seq[1 * 5 + 1] = 1;
+
+	seq[2 * 5 + 0] = (i + 1) / 6.0;
+	seq[2 * 5 + 1] = 1;
+
+	seq[3 * 5 + 0] = (i + 1) / 6.0;
+	seq[3 * 5 + 1] = 0;
+
+	for(i = 0; i < 4; i++) {
+		int j;
+		for(j = 2; j < 5; j++) {
+			seq[i * 5 + j] *= sz;
+			seq[i * 5 + j] += draw->camera[j - 2];
+		}
+	}
+}
+
+const double skybox_offsets[24][3] = {{-1, 1, 1}, {-1, 1, -1}, {1, 1, -1}, {1, 1, 1}, {-1, -1, 1}, {-1, -1, -1}, {1, -1, -1}, {1, -1, 1}};
+
 void gf_draw_driver_before(gf_draw_t* draw) {
 	GLfloat lightpos[4];
 	GF_MATH_VECTOR_COPY(draw->light, lightpos);
@@ -201,6 +231,41 @@ void gf_draw_driver_before(gf_draw_t* draw) {
 
 	glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
 	gf_graphic_clear(draw);
+
+	/* TODO: maybe move this skybox routine */
+	if(draw->draw_3d && 0) {
+		gf_graphic_color_t col;
+		double		   seq[5 * 4 * 6];
+		int		   i;
+		col.r = 255;
+		col.g = 255;
+		col.b = 255;
+		col.a = 255;
+
+		if(t == NULL) {
+			int	       w, h;
+			unsigned char* d = gf_image_load(draw->engine, "base:/texture/skybox.png", &w, &h);
+			t		 = gf_texture_create(draw, 50 * 6, 50, d);
+		}
+
+		glDisable(GL_DEPTH_TEST);
+		glDisable(GL_LIGHTING);
+
+		for(i = 0; i < 24; i++) {
+			int j;
+			for(j = 0; j < 3; j++) {
+				seq[5 * i + 2 + j] = skybox_offsets[i][j];
+			}
+		}
+
+		for(i = 0; i < 6; i++) {
+			assign_seq(draw, i, &seq[5 * 4 * i]);
+			gf_graphic_draw_texture_polygon_arr(draw, t, col, GF_GRAPHIC_3D, 4, &seq[5 * 4 * i]);
+		}
+
+		glEnable(GL_LIGHTING);
+		glEnable(GL_DEPTH_TEST);
+	}
 }
 
 void gf_draw_driver_after(gf_draw_t* draw) { glFlush(); }

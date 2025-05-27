@@ -68,11 +68,11 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 
 		draw->camera[0] = 0;
 		draw->camera[1] = 0;
-		draw->camera[2] = 1;
+		draw->camera[2] = 0;
 
 		draw->lookat[0] = 0;
-		draw->lookat[1] = 0;
-		draw->lookat[2] = 0;
+		draw->lookat[1] = 1;
+		draw->lookat[2] = 1;
 
 		draw->gui = gf_gui_create(engine, draw);
 	} else {
@@ -123,11 +123,11 @@ void gf_draw_cursor(gf_draw_t* draw) {
 
 		for(i = 0; i < MOUSE_OFFSETS_NUM; i++) {
 			coords[2 * i + 0] = draw->input->mouse_x + mouse_offsets[i][0];
-			coords[2 * i + 1] = draw->input->mouse_y + mouse_offsets[i][1] + 8;
+			coords[2 * i + 1] = draw->input->mouse_y + mouse_offsets[i][1];
 		}
 		for(i = 0; i < CURSOR_MOUSE_OFFSETS_NUM; i++) {
 			outline_coords[2 * i + 0] = draw->input->mouse_x + outline_mouse_offsets[i][0] + 1.5;
-			outline_coords[2 * i + 1] = draw->input->mouse_y + outline_mouse_offsets[i][1] + 9;
+			outline_coords[2 * i + 1] = draw->input->mouse_y + outline_mouse_offsets[i][1] + 1.5;
 		}
 
 		gf_graphic_fill_polygon_arr(draw, outline_col, GF_GRAPHIC_2D, sizeof(outline_coords) / sizeof(outline_coords[0]) / 2, &outline_coords[0]);
@@ -139,7 +139,13 @@ void gf_draw_cursor(gf_draw_t* draw) {
 
 /* Runs every frame */
 void gf_draw_frame(gf_draw_t* draw) {
-	gf_graphic_clear(draw);
+	gf_graphic_color_t col;
+	col.r = 0;
+	col.g = 0x11;
+	col.b = 0x11;
+	col.a = 0xff;
+	//	gf_graphic_clear(draw);
+	//	gf_graphic_fill_rect(draw, 0, 0, draw->width, draw->height, col);
 	gf_lua_step(draw->engine->lua);
 	gf_gui_render(draw->gui);
 	gf_draw_cursor(draw);
