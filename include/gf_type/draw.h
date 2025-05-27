@@ -40,6 +40,7 @@ typedef struct gf_draw_t gf_draw_t;
 #include <gf_type/gui.h>
 #include <gf_type/font.h>
 #include <gf_type/input.h>
+#include <gf_type/graphic.h>
 
 /* Standard */
 #include <time.h>
@@ -121,6 +122,9 @@ typedef struct gf_draw_t gf_draw_t;
  *
  * @var gf_draw_t::skybox
  * @brief Skybox
+ *
+ * @var gf_draw_t::background
+ * @brief Background color
  */
 GF_DECLARE_TYPE(draw, {
 	gf_engine_t*	    engine;
@@ -145,6 +149,7 @@ GF_DECLARE_TYPE(draw, {
 	double		    fps;
 	gf_font_t** loaded_fonts;
 	gf_texture_t* skybox;
+	gf_graphic_color_t background;
 	int cursor;
 });
 #else

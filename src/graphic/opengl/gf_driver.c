@@ -201,6 +201,7 @@ void gf_draw_driver_before(gf_draw_t* draw) {
 
 	glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
 	gf_graphic_clear(draw);
+	gf_graphic_fill_rect(draw, 0, 0, draw->width, draw->height, draw->background);
 
 	/* TODO: maybe move this skybox routine */
 	if(draw->draw_3d && draw->skybox != NULL) {

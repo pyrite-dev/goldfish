@@ -55,6 +55,12 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	draw->loaded_fonts = NULL;
 	draw->cursor	   = 1;
 	draw->skybox	   = NULL;
+
+	draw->background.r = 0x00;
+	draw->background.g = 0x11;
+	draw->background.b = 0x11;
+	draw->background.a = 0xff;
+
 	strcpy(draw->title, title);
 	draw->platform = gf_draw_platform_create(engine, draw);
 	if(draw->platform != NULL) {
@@ -140,13 +146,6 @@ void gf_draw_cursor(gf_draw_t* draw) {
 
 /* Runs every frame */
 void gf_draw_frame(gf_draw_t* draw) {
-	gf_graphic_color_t col;
-	col.r = 0;
-	col.g = 0x11;
-	col.b = 0x11;
-	col.a = 0xff;
-	//	gf_graphic_clear(draw);
-	//	gf_graphic_fill_rect(draw, 0, 0, draw->width, draw->height, col);
 	gf_lua_step(draw->engine->lua);
 	gf_gui_render(draw->gui);
 	gf_draw_cursor(draw);
