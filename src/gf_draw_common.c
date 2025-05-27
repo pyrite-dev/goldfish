@@ -54,6 +54,7 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	draw->fps	   = -1;
 	draw->loaded_fonts = NULL;
 	draw->cursor	   = 1;
+	draw->skybox	   = NULL;
 	strcpy(draw->title, title);
 	draw->platform = gf_draw_platform_create(engine, draw);
 	if(draw->platform != NULL) {
@@ -71,7 +72,7 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 		draw->camera[2] = 0;
 
 		draw->lookat[0] = 0;
-		draw->lookat[1] = 1;
+		draw->lookat[1] = 0;
 		draw->lookat[2] = 1;
 
 		draw->gui = gf_gui_create(engine, draw);

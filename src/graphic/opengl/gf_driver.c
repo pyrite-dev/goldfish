@@ -190,36 +190,6 @@ void gf_draw_driver_destroy(gf_draw_driver_t* driver) {
 	free(driver);
 }
 
-gf_texture_t* t = NULL;
-#include <gf_image.h>
-
-static void assign_seq(gf_draw_t* draw, int s, double* seq) {
-	int    i;
-	double sz = 100;
-
-	seq[0 * 5 + 0] = i / 6.0;
-	seq[0 * 5 + 1] = 0;
-
-	seq[1 * 5 + 0] = i / 6.0;
-	seq[1 * 5 + 1] = 1;
-
-	seq[2 * 5 + 0] = (i + 1) / 6.0;
-	seq[2 * 5 + 1] = 1;
-
-	seq[3 * 5 + 0] = (i + 1) / 6.0;
-	seq[3 * 5 + 1] = 0;
-
-	for(i = 0; i < 4; i++) {
-		int j;
-		for(j = 2; j < 5; j++) {
-			seq[i * 5 + j] *= sz;
-			seq[i * 5 + j] += draw->camera[j - 2];
-		}
-	}
-}
-
-const double skybox_offsets[24][3] = {{-1, 1, 1}, {-1, 1, -1}, {1, 1, -1}, {1, 1, 1}, {-1, -1, 1}, {-1, -1, -1}, {1, -1, -1}, {1, -1, 1}};
-
 void gf_draw_driver_before(gf_draw_t* draw) {
 	GLfloat lightpos[4];
 	GF_MATH_VECTOR_COPY(draw->light, lightpos);
@@ -233,38 +203,188 @@ void gf_draw_driver_before(gf_draw_t* draw) {
 	gf_graphic_clear(draw);
 
 	/* TODO: maybe move this skybox routine */
-	if(draw->draw_3d && 0) {
+	if(draw->draw_3d && draw->skybox != NULL) {
 		gf_graphic_color_t col;
-		double		   seq[5 * 4 * 6];
 		int		   i;
 		col.r = 255;
 		col.g = 255;
 		col.b = 255;
 		col.a = 255;
 
-		if(t == NULL) {
-			int	       w, h;
-			unsigned char* d = gf_image_load(draw->engine, "base:/texture/skybox.png", &w, &h);
-			t		 = gf_texture_create(draw, 50 * 6, 50, d);
-		}
-
-		glDisable(GL_DEPTH_TEST);
 		glDisable(GL_LIGHTING);
-
-		for(i = 0; i < 24; i++) {
-			int j;
-			for(j = 0; j < 3; j++) {
-				seq[5 * i + 2 + j] = skybox_offsets[i][j];
-			}
-		}
+		glDisable(GL_CULL_FACE);
 
 		for(i = 0; i < 6; i++) {
-			assign_seq(draw, i, &seq[5 * 4 * i]);
-			gf_graphic_draw_texture_polygon_arr(draw, t, col, GF_GRAPHIC_3D, 4, &seq[5 * 4 * i]);
+			double seq[4 * 5];
+			int    j;
+			double sz = 500;
+			double d  = 0.0025;
+
+			if(i == 0) {
+				/* up */
+				seq[5 * 0 + 0] = 1.0 / 4.0;
+				seq[5 * 0 + 1] = 0.0 / 4.0;
+				seq[5 * 0 + 2] = -1;
+				seq[5 * 0 + 3] = 1 - d;
+				seq[5 * 0 + 4] = 1;
+
+				seq[5 * 1 + 0] = 1.0 / 4.0;
+				seq[5 * 1 + 1] = 1.0 / 3.0;
+				seq[5 * 1 + 2] = -1;
+				seq[5 * 1 + 3] = 1 - d;
+				seq[5 * 1 + 4] = -1;
+
+				seq[5 * 2 + 0] = 2.0 / 4.0;
+				seq[5 * 2 + 1] = 1.0 / 3.0;
+				seq[5 * 2 + 2] = 1;
+				seq[5 * 2 + 3] = 1 - d;
+				seq[5 * 2 + 4] = -1;
+
+				seq[5 * 3 + 0] = 2.0 / 4.0;
+				seq[5 * 3 + 1] = 0.0 / 4.0;
+				seq[5 * 3 + 2] = 1;
+				seq[5 * 3 + 3] = 1 - d;
+				seq[5 * 3 + 4] = 1;
+			} else if(i == 1) {
+				/* left */
+				seq[5 * 0 + 0] = 1.0 / 4.0;
+				seq[5 * 0 + 1] = 1.0 / 3.0;
+				seq[5 * 0 + 2] = -1;
+				seq[5 * 0 + 3] = 1;
+				seq[5 * 0 + 4] = -1 + d;
+
+				seq[5 * 1 + 0] = 1.0 / 4.0;
+				seq[5 * 1 + 1] = 2.0 / 3.0;
+				seq[5 * 1 + 2] = -1;
+				seq[5 * 1 + 3] = -1;
+				seq[5 * 1 + 4] = -1 + d;
+
+				seq[5 * 2 + 0] = 2.0 / 4.0;
+				seq[5 * 2 + 1] = 2.0 / 3.0;
+				seq[5 * 2 + 2] = 1;
+				seq[5 * 2 + 3] = -1;
+				seq[5 * 2 + 4] = -1 + d;
+
+				seq[5 * 3 + 0] = 2.0 / 4.0;
+				seq[5 * 3 + 1] = 1.0 / 3.0;
+				seq[5 * 3 + 2] = 1;
+				seq[5 * 3 + 3] = 1;
+				seq[5 * 3 + 4] = -1 + d;
+			} else if(i == 2) {
+				/* down */
+				seq[5 * 0 + 0] = 1.0 / 4.0;
+				seq[5 * 0 + 1] = 2.0 / 3.0;
+				seq[5 * 0 + 2] = -1;
+				seq[5 * 0 + 3] = -1 + d;
+				seq[5 * 0 + 4] = -1;
+
+				seq[5 * 1 + 0] = 1.0 / 4.0;
+				seq[5 * 1 + 1] = 3.0 / 3.0;
+				seq[5 * 1 + 2] = -1;
+				seq[5 * 1 + 3] = -1 + d;
+				seq[5 * 1 + 4] = 1;
+
+				seq[5 * 2 + 0] = 2.0 / 4.0;
+				seq[5 * 2 + 1] = 3.0 / 3.0;
+				seq[5 * 2 + 2] = 1;
+				seq[5 * 2 + 3] = -1 + d;
+				seq[5 * 2 + 4] = 1;
+
+				seq[5 * 3 + 0] = 2.0 / 4.0;
+				seq[5 * 3 + 1] = 2.0 / 3.0;
+				seq[5 * 3 + 2] = 1;
+				seq[5 * 3 + 3] = -1 + d;
+				seq[5 * 3 + 4] = -1;
+			} else if(i == 3) {
+				/* back */
+				seq[5 * 0 + 0] = 0.0 / 4.0;
+				seq[5 * 0 + 1] = 1.0 / 3.0;
+				seq[5 * 0 + 2] = -1 + d;
+				seq[5 * 0 + 3] = 1;
+				seq[5 * 0 + 4] = 1;
+
+				seq[5 * 1 + 0] = 1.0 / 4.0;
+				seq[5 * 1 + 1] = 1.0 / 3.0;
+				seq[5 * 1 + 2] = -1 + d;
+				seq[5 * 1 + 3] = 1;
+				seq[5 * 1 + 4] = -1;
+
+				seq[5 * 2 + 0] = 1.0 / 4.0;
+				seq[5 * 2 + 1] = 2.0 / 3.0;
+				seq[5 * 2 + 2] = -1 + d;
+				seq[5 * 2 + 3] = -1;
+				seq[5 * 2 + 4] = -1;
+
+				seq[5 * 3 + 0] = 0.0 / 4.0;
+				seq[5 * 3 + 1] = 2.0 / 3.0;
+				seq[5 * 3 + 2] = -1 + d;
+				seq[5 * 3 + 3] = -1;
+				seq[5 * 3 + 4] = 1;
+			} else if(i == 4) {
+				/* front */
+				seq[5 * 0 + 0] = 2.0 / 4.0;
+				seq[5 * 0 + 1] = 1.0 / 3.0;
+				seq[5 * 0 + 2] = 1 - d;
+				seq[5 * 0 + 3] = 1;
+				seq[5 * 0 + 4] = -1;
+
+				seq[5 * 1 + 0] = 3.0 / 4.0;
+				seq[5 * 1 + 1] = 1.0 / 3.0;
+				seq[5 * 1 + 2] = 1 - d;
+				seq[5 * 1 + 3] = 1;
+				seq[5 * 1 + 4] = 1;
+
+				seq[5 * 2 + 0] = 3.0 / 4.0;
+				seq[5 * 2 + 1] = 2.0 / 3.0;
+				seq[5 * 2 + 2] = 1 - d;
+				seq[5 * 2 + 3] = -1;
+				seq[5 * 2 + 4] = 1;
+
+				seq[5 * 3 + 0] = 2.0 / 4.0;
+				seq[5 * 3 + 1] = 2.0 / 3.0;
+				seq[5 * 3 + 2] = 1 - d;
+				seq[5 * 3 + 3] = -1;
+				seq[5 * 3 + 4] = -1;
+			} else if(i == 5) {
+				/* right */
+				seq[5 * 0 + 0] = 3.0 / 4.0;
+				seq[5 * 0 + 1] = 1.0 / 3.0;
+				seq[5 * 0 + 2] = 1;
+				seq[5 * 0 + 3] = 1;
+				seq[5 * 0 + 4] = 1 - d;
+
+				seq[5 * 1 + 0] = 4.0 / 4.0;
+				seq[5 * 1 + 1] = 1.0 / 3.0;
+				seq[5 * 1 + 2] = -1;
+				seq[5 * 1 + 3] = 1;
+				seq[5 * 1 + 4] = 1 - d;
+
+				seq[5 * 2 + 0] = 4.0 / 4.0;
+				seq[5 * 2 + 1] = 2.0 / 3.0;
+				seq[5 * 2 + 2] = -1;
+				seq[5 * 2 + 3] = -1;
+				seq[5 * 2 + 4] = 1 - d;
+
+				seq[5 * 3 + 0] = 3.0 / 4.0;
+				seq[5 * 3 + 1] = 2.0 / 3.0;
+				seq[5 * 3 + 2] = 1;
+				seq[5 * 3 + 3] = -1;
+				seq[5 * 3 + 4] = 1 - d;
+			}
+
+			for(j = 0; j < 4; j++) {
+				int k;
+				for(k = 2; k < 5; k++) {
+					seq[5 * j + k] *= sz;
+					seq[5 * j + k] += draw->camera[k - 2];
+				}
+			}
+			gf_graphic_draw_texture_polygon_arr(draw, draw->skybox, col, GF_GRAPHIC_3D, 4, seq);
 		}
 
+		glEnable(GL_CULL_FACE);
 		glEnable(GL_LIGHTING);
-		glEnable(GL_DEPTH_TEST);
+		glClear(GL_DEPTH_BUFFER_BIT);
 	}
 }
 

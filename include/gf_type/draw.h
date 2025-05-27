@@ -118,6 +118,9 @@ typedef struct gf_draw_t gf_draw_t;
  *
  * @var gf_draw_t::cursor
  * @brief Draw cursor or not
+ *
+ * @var gf_draw_t::skybox
+ * @brief Skybox
  */
 GF_DECLARE_TYPE(draw, {
 	gf_engine_t*	    engine;
@@ -141,6 +144,7 @@ GF_DECLARE_TYPE(draw, {
 	gf_draw_time_t	    last_draw;
 	double		    fps;
 	gf_font_t** loaded_fonts;
+	gf_texture_t* skybox;
 	int cursor;
 });
 #else
