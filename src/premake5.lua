@@ -1,7 +1,7 @@
 project("GoldFish")
 	filter("options:engine=static")
 		kind("StaticLib")
-if not(_OPTIONS["ode"] == "system") then
+if not(_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
 		defines({
 			"ODE_LIB",
 			"GF_LIB"
@@ -13,7 +13,7 @@ else
 end
 	filter("options:engine=dynamic")
 		kind("SharedLib")
-if not(_OPTIONS["ode"] == "system") then
+if not(_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
 		defines({
 			"ODE_DLL",
 			"GF_DLL"
@@ -30,7 +30,7 @@ end
 		})
 		symbols("On")
 	filter("configurations:Release")
-if not(_OPTIONS["ode"] == "system") then
+if not(_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
 		defines({
 			"NDEBUG",
 			"dNODEBUG"
@@ -109,7 +109,7 @@ end
 			"thread/posix/gf_thread.c"
 		})
 	-- Begin ODE
-	if not(_OPTIONS["ode"] == "system") then
+	if not(_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
 		filter("platforms:not ClassicMacOS")
 			defines({
 				"_OU_NAMESPACE=odeou",
@@ -181,6 +181,16 @@ end
 			"dLIBCCD_CONVEX_CONVEX"
 		})
 	end
+	
+	filter({"options:server=no"})
+		defines({
+			"GF_NO_SERVER"
+		})
+		removefiles({
+			"gf_physics.c",
+			"gf_server.c"
+		})
+	filter({})
 	-- End ODE
 
 	for k,v in pairs(gf_sound_backends) do

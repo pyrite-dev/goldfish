@@ -54,11 +54,15 @@ void gf_engine_begin(void) {
 #endif
 	gf_network_begin();
 	gf_client_begin();
+#ifndef GF_NO_SERVER
 	gf_server_begin();
+#endif
 }
 
 void gf_engine_end(void) {
+#ifndef GF_NO_SERVER
 	gf_server_end();
+#endif
 	gf_client_end();
 	gf_network_end();
 }
@@ -171,7 +175,9 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 		}
 		gf_log_function(engine, "Switching to graphical console", "");
 	}
+#ifndef GF_NO_SERVER
 	engine->server = gf_server_create(engine);
+#endif
 
 	engine->lua = gf_lua_create(engine);
 	if((st = gf_lua_run(engine->lua, "base:/scripts/init.lua")) != 0) {
@@ -209,7 +215,9 @@ void gf_engine_destroy(gf_engine_t* engine) {
 	if(engine->lua != NULL) {
 		gf_lua_destroy(engine->lua);
 	}
+#ifndef GF_NO_SERVER
 	if(engine->server != NULL) gf_server_destroy(engine->server);
+#endif
 	if(engine->client != NULL) gf_client_destroy(engine->client);
 	if(engine->base != NULL) gf_resource_destroy(engine->base);
 	if(engine->icon != NULL) {
@@ -220,9 +228,11 @@ void gf_engine_destroy(gf_engine_t* engine) {
 }
 
 void gf_engine_shutdown(gf_engine_t* engine) {
+#ifndef GF_NO_SERVER
 	if(engine->server != NULL) {
 		gf_server_shutdown(engine->server);
 	}
+#endif
 	if(engine->client != NULL) {
 		gf_client_shutdown(engine->client);
 	}

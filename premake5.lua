@@ -218,6 +218,18 @@ newoption({
 	category = "Engine",
 	default = "compile"
 })
+
+newoption({
+	trigger = "server",
+	value = "toggle",
+	description = "Compile server",
+	allowed = {
+		{"yes", "Enable"},
+		{"no", "Disable"}
+	},
+	category = "Engine",
+	default = "yes"
+})
 	
 function gf_default_stuffs()
 	filter({})
@@ -425,7 +437,7 @@ function gf_link_stuffs(cond)
 			"wsock32",
 			"winmm"
 		})
-	if _OPTIONS["ode"] == "system" then
+	if (_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
 		filter({
 			cond
 		})
@@ -510,7 +522,7 @@ if _OPTIONS["opengl"] ~= "agl" then
 end
 include("src")
 
-if _ACTION and (_ACTION ~= "clean") and not(_OPTIONS["ode"] == "system") then
+if _ACTION and (_ACTION ~= "clean") and not(_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
 	local text = ""
 	text = text .. "#ifndef _ODE_CONFIG_H_\n"
 	text = text .. "#define _ODE_CONFIG_H_\n"
