@@ -10,12 +10,19 @@
 
 #ifdef _WIN32
 #include <winsock.h>
+
+#ifndef EINPROGRESS
+#define EINPROGRESS WSAEINPROGRESS
+#endif
 #else
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 #include <netinet/udp.h>
+#include <netdb.h>
+
+#include <sys/ioctl.h>
 #include <unistd.h>
 #endif
 

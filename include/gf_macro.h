@@ -231,6 +231,14 @@
 #define GF_DECLARE_TYPE(n, b) typedef struct gf_##n##_t b gf_##n##_t;
 
 /**
+ * @~english
+ * @brief Macro to define engine union shorter
+ * @param n Name
+ * @param b Body
+ */
+#define GF_DECLARE_UNION(n, b) typedef union gf_##n##_t b gf_##n##_t;
+
+/**
  * @def GF_EXPORT
  * @~english
  * @brief Macro for platform-dependent symbol export/import

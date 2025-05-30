@@ -15,6 +15,7 @@
 
 /* Engine */
 #include <gf_type/compat.h>
+#include <gf_type/core.h>
 
 /* Standard */
 
@@ -49,6 +50,37 @@ GF_EXPORT void gf_network_end(void);
  * @return Socket
  */
 GF_EXPORT int gf_network_socket(const char* type);
+
+/**
+ * @~english
+ * @brief Get last network error
+ * @return Network error code
+ */
+GF_EXPORT int gf_network_get_error(void);
+
+/**
+ * @~english
+ * @brief Make socket non-blocking
+ * @param sock Socket
+ */
+GF_EXPORT void gf_network_non_block(int sock);
+
+/**
+ * @~english
+ * @brief Make socket blocking
+ * @param sock Socket
+ */
+GF_EXPORT void gf_network_block(int sock);
+
+/**
+ * @~english
+ * @brief Connect to host using TCP/IP
+ * @param engine Engine instance
+ * @param host Host name
+ * @param port Port
+ * @return Network interface
+ */
+GF_EXPORT gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, int port);
 
 /**
  * @~english

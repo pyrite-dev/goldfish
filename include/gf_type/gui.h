@@ -25,6 +25,21 @@ enum GF_GUI_EVENTS {
 	GF_GUI_CHANGE_EVENT
 };
 
+/**
+ * @~english
+ * @brief GUI component types
+ */
+enum GF_GUI_COMPONENT_TYPES {
+	GF_GUI_BUTTON = 0,
+	GF_GUI_WINDOW,
+	GF_GUI_FRAME,
+	GF_GUI_TEXT,
+	GF_GUI_SCROLLBAR,
+	GF_GUI_RANGE,
+	GF_GUI_TAB,
+	GF_GUI_PROGRESS
+};
+
 #ifdef GF_EXPOSE_GUI
 typedef struct gf_gui_t		  gf_gui_t;
 typedef struct gf_gui_component_t gf_gui_component_t;
@@ -41,21 +56,6 @@ typedef struct gf_gui_component_t gf_gui_component_t;
 /* Standard */
 
 typedef void (*gf_gui_callback_t)(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type);
-
-/**
- * @~english
- * @brief GUI component types
- */
-enum GF_GUI_COMPONENT_TYPES {
-	GF_GUI_BUTTON = 0,
-	GF_GUI_WINDOW,
-	GF_GUI_FRAME,
-	GF_GUI_TEXT,
-	GF_GUI_SCROLLBAR,
-	GF_GUI_RANGE,
-	GF_GUI_TAB,
-	GF_GUI_PROGRESS
-};
 
 /**
  * @struct gf_gui_component_t
