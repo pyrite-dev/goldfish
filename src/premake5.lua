@@ -183,9 +183,6 @@ end
 	end
 	
 	filter({"options:server=no"})
-		defines({
-			"GF_NO_SERVER"
-		})
 		removefiles({
 			"gf_physics.c",
 			"gf_server.c"

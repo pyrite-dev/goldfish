@@ -560,6 +560,9 @@ outfile:write("#define __GF_CONFIG_H__\n")
 if _OPTIONS["engine"] == "dynamic" then
 	outfile:write("#define GF_BUILT_AS_DLL 1\n")
 end
+if _OPTIONS["server"] == "no" then
+	outfile:write("#define GF_NO_SERVER 1\n")
+end
 outfile:write("#endif\n")
 outfile:close()
 
