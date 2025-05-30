@@ -15,9 +15,9 @@ typedef struct gf_thread_context_t gf_thread_context_t;
 typedef struct gf_thread_t	   gf_thread_t;
 
 /* External library */
-#if defined(THREAD_POSIX)
+#if defined(GF_THREAD_POSIX)
 #include <pthread.h>
-#elif defined(THREAD_WIN32)
+#elif defined(GF_THREAD_WIN32)
 #include <windows.h>
 #endif
 
@@ -41,7 +41,7 @@ GF_DECLARE_TYPE(thread_context, {
 	void* data;
 });
 
-#if defined(THREAD_POSIX)
+#if defined(GF_THREAD_POSIX)
 GF_DECLARE_TYPE(thread, {
 	gf_thread_context_t context;
 	pthread_t	    thread;
@@ -55,7 +55,7 @@ GF_DECLARE_TYPE(thread_event, {
 	pthread_cond_t event;
 	pthread_mutex_t mutex;
 });
-#elif defined(THREAD_WIN32)
+#elif defined(GF_THREAD_WIN32)
 GF_DECLARE_TYPE(thread, {
 	gf_thread_context_t context;
 	HANDLE		    thread;

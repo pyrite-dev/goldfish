@@ -14,7 +14,7 @@
 typedef struct gf_draw_driver_t gf_draw_driver_t;
 
 /* External library */
-#if defined(DRV_OPENGL)
+#if defined(GF_DRV_OPENGL)
 #include <gf_opengl.h>
 #endif
 
@@ -23,7 +23,7 @@ typedef struct gf_draw_driver_t gf_draw_driver_t;
 
 /* Standard */
 
-#if defined(DRV_OPENGL)
+#if defined(GF_DRV_OPENGL)
 GF_DECLARE_TYPE(draw_driver, { gf_engine_t* engine; int npot; });
 GF_DECLARE_TYPE(draw_driver_texture, {
 	gf_engine_t* engine;

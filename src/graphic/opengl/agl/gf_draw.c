@@ -91,7 +91,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	// 	platform->window->userPtr = draw;
 
 	// 	RGFW_window_makeCurrent(platform->window);
-	// #ifdef DO_SWAP_INTERVAL
+	// #ifdef GF_DO_SWAP_INTERVAL
 	// 	RGFW_window_swapInterval(platform->window, 1);
 	// #endif
 	// return platform;

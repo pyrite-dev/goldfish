@@ -14,10 +14,8 @@
 typedef struct gf_draw_platform_t gf_draw_platform_t;
 
 /* External library */
-#if defined(DRV_OPENGL)
+#if defined(GF_DRV_OPENGL)
 #include <gf_opengl.h>
-#elif defined(DRV_DIRECTX)
-#include <gf_directx.h>
 #endif
 
 /* Engine */
@@ -25,9 +23,9 @@ typedef struct gf_draw_platform_t gf_draw_platform_t;
 
 /* Standard */
 
-#if defined(DRV_OPENGL)
-#if defined(USE_X11)
-#if defined(TYPE_NATIVE)
+#if defined(GF_DRV_OPENGL)
+#if defined(GF_USE_X11)
+#if defined(GF_TYPE_NATIVE)
 GF_DECLARE_TYPE(draw_platform, {
 	gf_engine_t* engine;
 	Display*     display;
@@ -36,7 +34,7 @@ GF_DECLARE_TYPE(draw_platform, {
 	Atom	     wm_delete_window;
 	Pixmap cursor;
 });
-#elif defined(TYPE_OSMESA)
+#elif defined(GF_TYPE_OSMESA)
 GF_DECLARE_TYPE(draw_platform, {
 	gf_engine_t*   engine;
 	Display*       display;
@@ -50,8 +48,8 @@ GF_DECLARE_TYPE(draw_platform, {
 	Pixmap cursor;
 });
 #endif
-#elif defined(USE_GDI)
-#if defined(TYPE_NATIVE)
+#elif defined(GF_USE_GDI)
+#if defined(GF_TYPE_NATIVE)
 GF_DECLARE_TYPE(draw_platform, {
 	gf_engine_t* engine;
 	HINSTANCE    instance;
@@ -60,7 +58,7 @@ GF_DECLARE_TYPE(draw_platform, {
 	HGLRC	     glrc;
 	HCURSOR cursor;
 });
-#elif defined(TYPE_OSMESA)
+#elif defined(GF_TYPE_OSMESA)
 GF_DECLARE_TYPE(draw_platform, {
 	gf_engine_t*   engine;
 	HINSTANCE      instance;
@@ -74,7 +72,7 @@ GF_DECLARE_TYPE(draw_platform, {
 	HCURSOR cursor;
 });
 #endif
-#elif defined(USE_RGFW)
+#elif defined(GF_USE_RGFW)
 GF_DECLARE_TYPE(draw_platform, {
 	gf_engine_t* engine;
 	RGFW_window* window;

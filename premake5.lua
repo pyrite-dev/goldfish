@@ -230,8 +230,17 @@ newoption({
 	category = "Engine",
 	default = "yes"
 })
+
+
+gf_defs = {}
+function gf_adddef(x)
+	for _,v in ipairs(x) do
+		table.insert(gf_defs, v)
+	end
+end
 	
 function gf_default_stuffs()
+	local brk = false
 	filter({})
 if not(_OPTIONS["ode"] == "system") then
 	defines({
@@ -250,35 +259,37 @@ end
 		})
 	filter("system:windows")
 		defines({
-			"THREAD_WIN32",
 			"WIN32"
 		})
-	filter("system:not windows")
-		defines({
-			"THREAD_POSIX"
-		})
 	for k,v in pairs(gf_sound_backends) do
-		filter({
-			"options:sound=" .. k
-		})
-			defines({
-				"SND_" .. string.upper(k)
+		if _OPTIONS["sound"] == k then
+			gf_adddef({
+				"GF_SND_" .. string.upper(k)
 			})
+			break
+		end
 	end
+
+	brk = false
 	for k,v in pairs(gf_backends) do
 		for k2,v2 in pairs(v["backends"]) do
 			for k3,v3 in pairs(v["types"]) do
-				filter({
-					"options:backend=" .. k,
-					"options:" .. k .. "=" .. k2,
-					"options:" .. k .. "-type=" .. k3
-				})
-					defines({
-						"DRV_" .. string.upper(k),
-						"USE_" .. string.upper(v2.alias or k2),
-						"TYPE_" .. string.upper(k3)
+				if (_OPTIONS["backend"] == k) and (_OPTIONS[k] == k2) and (_OPTIONS[k .. "-type"] == k3) then
+					gf_adddef({
+						"GF_DRV_" .. string.upper(k),
+						"GF_USE_" .. string.upper(v2.alias or k2),
+						"GF_TYPE_" .. string.upper(k3)
 					})
+					brk = true
+					break
+				end
 			end
+			if brk then
+				break
+			end
+		end
+		if brk then
+			break
 		end
 	end
 
@@ -562,6 +573,14 @@ if _OPTIONS["engine"] == "dynamic" then
 end
 if _OPTIONS["server"] == "no" then
 	outfile:write("#define GF_NO_SERVER 1\n")
+end
+if _TARGET_OS == "windows" then
+	outfile:write("#define GF_THREAD_WIN32 1\n")
+else
+	outfile:write("#define GF_THREAD_POSIX 1\n")
+end
+for _,v in ipairs(gf_defs) do
+	outfile:write("#define " .. v .. " 1\n")
 end
 outfile:write("#endif\n")
 outfile:close()

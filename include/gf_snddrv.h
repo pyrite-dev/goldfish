@@ -8,21 +8,21 @@
 #ifndef __GF_SNDDRV_H__
 #define __GF_SNDDRV_H__
 
-#if defined(SND_WINDOWS)
+#if defined(GF_SND_WINDOWS)
 #include <windows.h>
 #include <dsound.h>
-#elif defined(SND_MINIAUDIO)
+#elif defined(GF_SND_MINIAUDIO)
 #include <miniaudio.h>
-#elif defined(SND_ALSA)
+#elif defined(GF_SND_ALSA)
 #include <alsa/asoundlib.h>
-#elif defined(SND_SDL2)
+#elif defined(GF_SND_SDL2)
 #include <SDL.h>
 #include <SDL_audio.h>
-#elif defined(SND_OSS)
+#elif defined(GF_SND_OSS)
 #include <soundcard.h>
-#elif defined(SND_SUN)
+#elif defined(GF_SND_SUN)
 #include <sys/audioio.h>
-#elif defined(SND_NULL)
+#elif defined(GF_SND_NULL)
 #endif
 
 #endif

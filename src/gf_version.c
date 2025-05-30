@@ -35,28 +35,28 @@ void gf_version_get(gf_version_t* version) {
 	strcpy(cpstr, LUA_RELEASE);
 	strcpy(version->lua, cpstr + 4);
 
-#if defined(DRV_OPENGL)
+#if defined(GF_DRV_OPENGL)
 	strcpy(version->driver, "OpenGL");
-#if defined(TYPE_OSMESA)
+#if defined(GF_TYPE_OSMESA)
 	strcat(version->driver, " (OSMesa)");
-#elif defined(TYPE_NATIVE)
+#elif defined(GF_TYPE_NATIVE)
 	strcat(version->driver, " (Native)");
 #else
 	strcat(version->driver, " (Unknown)");
 #endif
 
-#if defined(USE_X11)
+#if defined(GF_USE_X11)
 	strcpy(version->backend, "X11");
-#elif defined(USE_GDI)
+#elif defined(GF_USE_GDI)
 	strcpy(version->backend, "GDI");
-#elif defined(USE_RGFW)
+#elif defined(GF_USE_RGFW)
 	strcpy(version->backend, "RGFW");
 #endif
 #endif
 
-#if defined(THREAD_WIN32)
+#if defined(GF_THREAD_WIN32)
 	strcpy(version->thread, "Win32");
-#elif defined(THREAD_POSIX)
+#elif defined(GF_THREAD_POSIX)
 	strcpy(version->thread, "POSIX");
 #endif
 

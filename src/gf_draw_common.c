@@ -191,7 +191,7 @@ double gf_draw_time_number(gf_draw_time_t* dtime) {
 int gf_draw_step(gf_draw_t* draw) {
 	int    ret = 0;
 	double delta;
-#ifdef DO_SWAP_INTERVAL
+#ifdef GF_DO_SWAP_INTERVAL
 	gf_draw_time_t tm;
 	gf_draw_time(&tm);
 	ret = gf_draw_platform_step(draw);
