@@ -11,7 +11,7 @@
 /* Standard */
 
 #define CAST_I32(x) ((gf_int32_t)(x))
-/* maybe should use gf_uint8_t but no one uses a computer where sizeof(unsigned char) is 8... */
+/* maybe should use gf_uint8_t but no one uses a computer where sizeof(unsigned char) is not 8... */
 static int gf_utf8_count(unsigned char c) {
 	if(0 <= c && c < 0x80) {
 		return 1;
