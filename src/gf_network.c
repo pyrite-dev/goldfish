@@ -192,6 +192,7 @@ int gf_network_step(gf_network_t* net) {
 			net->u.connect.last = time(NULL);
 		}
 	} else if(net->state == GF_NETWORK_STATE_CONNECT) {
+		/* HACK: unreadable */
 		time_t	       t = time(NULL);
 		fd_set	       fds;
 		struct timeval tv;
