@@ -19,6 +19,13 @@
 #include <errno.h>
 #include <time.h>
 
+/**
+ * 3 seconds should be enough
+ * i mean - if your ping is over 3000ms
+ * it would be unplayable...
+ */
+#define NET_TIMEOUT 3
+
 gf_uint32_t gf_network_id(const char* str) {
 	gf_uint32_t id = *(gf_uint32_t*)&str[0];
 	return htonl(id);
@@ -97,6 +104,29 @@ void gf_network_block(int sock) {
 #endif
 }
 
+char* gf_network_error(int code) {
+	char* r;
+#ifdef _WIN32
+	void* msg;
+	int   i;
+	FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, 0, code, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (char*)&msg, 0, 0);
+	r = malloc(strlen((char*)msg) + 1);
+	strcpy(r, (char*)msg);
+	LocalFree(msg);
+
+	for(i = strlen(r) - 1; i >= 0; i--) {
+		char old = r[i];
+		r[i]	 = 0;
+		if(old == '.') break;
+	}
+#else
+	char* str = (char*)strerror(code);
+	r	  = malloc(strlen(str) + 1);
+	strcpy(r, str);
+#endif
+	return r;
+}
+
 gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, int port) {
 	struct hostent* h;
 	int		i;
@@ -111,12 +141,7 @@ gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, int port) {
 		return NULL;
 	}
 
-	r->sock = gf_network_socket("tcp");
-	if(r->sock == -1) {
-		free(r);
-		return NULL;
-	}
-	gf_network_non_block(r->sock);
+	r->sock = -1;
 
 	r->state	   = GF_NETWORK_STATE_PRE_CONNECT;
 	r->port		   = port;
@@ -134,20 +159,75 @@ int gf_network_step(gf_network_t* net) {
 
 	if(net->state == GF_NETWORK_STATE_PRE_CONNECT) {
 		struct sockaddr_in addr;
+		int		   st;
+		int		   r;
+		if(net->sock != -1) {
+			gf_network_close(net->sock);
+			net->sock = -1;
+		}
+
 		if(arrlen(net->u.connect.address) <= net->u.connect.index) {
 			net->state = GF_NETWORK_STATE_FAILED_CONNECT;
 			arrfree(net->u.connect.address);
 			return 1;
 		}
+
+		net->sock = gf_network_socket("tcp");
+		if(net->sock == -1) {
+			net->state = GF_NETWORK_STATE_FAILED_SOCKET;
+			arrfree(net->u.connect.address);
+			return 1;
+		}
+		gf_network_non_block(net->sock);
+
 		memset(&addr, 0, sizeof(addr));
 		addr.sin_family	     = AF_INET;
-		addr.sin_port	     = net->port;
+		addr.sin_port	     = htons(net->port);
 		addr.sin_addr.s_addr = net->u.connect.address[net->u.connect.index++];
-		if(connect(net->sock, (struct sockaddr*)&addr, sizeof(addr)) >= 0 || (gf_network_get_error() == EINPROGRESS || gf_network_get_error() == EINTR)) {
+
+		st = connect(net->sock, (struct sockaddr*)&addr, sizeof(addr));
+		r  = gf_network_get_error();
+		if(st >= 0 || (r == _EINPROGRESS || r == _EWOULDBLOCK || r == _EINTR)) {
 			net->state	    = GF_NETWORK_STATE_CONNECT;
 			net->u.connect.last = time(NULL);
 		}
 	} else if(net->state == GF_NETWORK_STATE_CONNECT) {
+		time_t	       t = time(NULL);
+		fd_set	       fds;
+		struct timeval tv;
+		int	       st;
+		int	       conn = 0;
+		int	       r;
+		int	       len = sizeof(r);
+		tv.tv_sec	   = 0;
+		tv.tv_usec	   = 0;
+		FD_ZERO(&fds);
+		FD_SET(net->sock, &fds);
+
+		st = getsockopt(net->sock, SOL_SOCKET, SO_ERROR, (void*)&r, &len);
+		if(r != 0 && (r != _EINPROGRESS && r != _EWOULDBLOCK)) {
+			char* err = gf_network_error(r);
+			gf_log_function(net->engine, "%s", err);
+			free(err);
+			net->state = GF_NETWORK_STATE_PRE_CONNECT;
+		} else {
+			st = select(FD_SETSIZE, NULL, &fds, NULL, &tv);
+
+			if(st > 0) {
+				conn = r == 0 ? 1 : 0;
+			}
+			if(!conn) {
+				if((t - net->u.connect.last) >= NET_TIMEOUT) {
+					gf_log_function(net->engine, "Timeout", "");
+					net->state = GF_NETWORK_STATE_PRE_CONNECT;
+				}
+			}
+		}
+		if(conn) {
+			net->state = GF_NETWORK_STATE_CONNECTED;
+			gf_log_function(net->engine, "Connected", "");
+		}
+	} else if(net->state == GF_NETWORK_STATE_CONNECTED) {
 	}
 	return 0;
 }

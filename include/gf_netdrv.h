@@ -11,9 +11,10 @@
 #ifdef _WIN32
 #include <winsock.h>
 
-#ifndef EINPROGRESS
-#define EINPROGRESS WSAEINPROGRESS
-#endif
+#define _EINPROGRESS WSAEINPROGRESS
+#define _EINTR WSAEINTR
+#define _EWOULDBLOCK WSAEWOULDBLOCK
+#define _ENOTCONN WSAENOTCONN
 #else
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -24,6 +25,12 @@
 
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <errno.h>
+
+#define _EINPROGRESS EINPROGRESS
+#define _EINTR EINTR
+#define _EWOULDBLOCK EWOULDBLOCK
+#define _ENOTCONN ENOTCONN
 #endif
 
 #endif

@@ -60,6 +60,21 @@ GF_EXPORT int gf_network_get_error(void);
 
 /**
  * @~english
+ * @brief Get network error string
+ * @return Network error string
+ */
+GF_EXPORT char* gf_network_error(int code);
+
+/**
+ * @~english
+ * @brief Do network single step
+ * @param net Network interface
+ * @return `0` if successful
+ */
+GF_EXPORT int gf_network_step(gf_network_t* net);
+
+/**
+ * @~english
  * @brief Make socket non-blocking
  * @param sock Socket
  */

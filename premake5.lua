@@ -574,11 +574,11 @@ end
 if _OPTIONS["server"] == "no" then
 	outfile:write("#define GF_NO_SERVER 1\n")
 end
-if _TARGET_OS == "windows" then
-	outfile:write("#define GF_THREAD_WIN32 1\n")
-else
-	outfile:write("#define GF_THREAD_POSIX 1\n")
-end
+outfile:write("#ifdef _WIN32\n")
+outfile:write("#define GF_THREAD_WIN32 1\n")
+outfile:write("#else\n")
+outfile:write("#define GF_THREAD_POSIX 1\n")
+outfile:write("#endif\n")
 for _,v in ipairs(gf_defs) do
 	outfile:write("#define " .. v .. " 1\n")
 end
