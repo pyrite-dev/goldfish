@@ -93,10 +93,11 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	gf_draw_driver_t* draw_driver = malloc(sizeof(*draw_driver));
 	int		  i;
 	const char*	  str;
+	char* renderer = (char*)glGetString(GL_RENDERER);
 	memset(draw_driver, 0, sizeof(*draw_driver));
 	draw_driver->engine = engine;
 
-	gf_log_function(engine, "OpenGL renderer: %s", (char*)glGetString(GL_RENDERER));
+	gf_log_function(engine, "OpenGL renderer: %s", renderer == NULL ? "(what is wrong with your renderer?)" : renderer);
 
 	glEnable(GL_BLEND);
 	glEnable(GL_NORMALIZE);
