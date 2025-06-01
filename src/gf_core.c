@@ -45,6 +45,7 @@ void gf_engine_begin(void) {
 	gf_log_function(NULL, "Build date: %s", ver.date);
 	gf_log_function(NULL, "Lua %s", ver.lua);
 	gf_log_function(NULL, "zlib %s", ver.zlib);
+	gf_log_function(NULL, "PCRE %s", ver.pcre);
 	gf_log_function(NULL, "Thread model: %s", ver.thread);
 	gf_log_function(NULL, "Renderer: %s on %s", ver.driver, ver.backend);
 #ifdef _WIN32

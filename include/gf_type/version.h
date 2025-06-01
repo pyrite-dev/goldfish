@@ -51,6 +51,9 @@ typedef struct gf_version_t gf_version_t;
  * @var gf_version_t::zlib
  * @brief zlib version
  *
+ * @var gf_version_t::pcre
+ * @brief PCRE version
+ *
  * @var gf_version_t::thread
  * @brief Name of the thread model used
  */
@@ -64,6 +67,7 @@ GF_DECLARE_TYPE(version, {
 	char driver[32];
 	char lua[32];
 	char zlib[32];
+	char pcre[32];
 	char thread[32];
 });
 #else

@@ -3,6 +3,7 @@
 /* External library */
 #include <lua.h>
 #include <zlib.h>
+#include <pcre.h>
 
 /* Interface */
 #include <gf_version.h>
@@ -34,6 +35,8 @@ void gf_version_get(gf_version_t* version) {
 
 	strcpy(cpstr, LUA_RELEASE);
 	strcpy(version->lua, cpstr + 4);
+
+	strcpy(version->pcre, pcre_version());
 
 #if defined(GF_DRV_OPENGL)
 	strcpy(version->driver, "OpenGL");
