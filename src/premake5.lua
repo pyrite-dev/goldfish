@@ -81,6 +81,7 @@ end
 			"../external/pcre/include/*.h",
 			"../external/pcre/src/*.c"
 		})
+		defines("PCRE_STATIC")
 	end
 	files({
 		"audio/*.c",
