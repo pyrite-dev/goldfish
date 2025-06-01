@@ -9,6 +9,7 @@
  - [dr\_libs](https://github.com/mackron/dr_libs)
  - [jar](https://github.com/kd7tck/jar)
  - [Premake5](https://premake.github.io)
+ - [PCRE](https://pcre.org)
 
 ## OpenGL stack
  - [RGFW](https://github.com/ColleagueRiley/RGFW) (default)
