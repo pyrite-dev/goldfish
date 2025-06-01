@@ -46,6 +46,7 @@ end
 			"../external/miniaudio"
 		})
 	gf_msvc_filters()
+	defines("HAVE_CONFIG_H")
 	targetdir("../lib/%{cfg.buildcfg}/%{cfg.platform}")
 	objdir("../obj")
 	targetname("goldfish")
@@ -72,6 +73,13 @@ end
 		files({
 			"../external/zlib/*.h",
 			"../external/zlib/*.c"
+		})
+	end
+	if not(_OPTIONS["pcre"] == "system") then
+		includedirs("../external/pcre/incude")
+		files({
+			"../external/pcre/include/*.h",
+			"../external/pcre/src/*.c"
 		})
 	end
 	files({

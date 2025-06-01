@@ -220,6 +220,18 @@ newoption({
 })
 
 newoption({
+	trigger = "pcre",
+	value = "type",
+	description = "Choose PCRE to be used",
+	allowed = {
+		{"compile", "Compiled and integrated"},
+		{"system", "System"}
+	},
+	category = "Engine",
+	default = "compile"
+})
+
+newoption({
 	trigger = "server",
 	value = "toggle",
 	description = "Compile server",
@@ -462,6 +474,14 @@ function gf_link_stuffs(cond)
 		})
 			links({
 				"z"
+			})
+	end
+	if _OPTIONS["pcre"] == "system" then
+		filter({
+			cond
+		})
+			links({
+				"pcre"
 			})
 	end
 	filter({
