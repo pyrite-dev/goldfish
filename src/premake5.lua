@@ -83,6 +83,11 @@ end
 		})
 		defines("PCRE_STATIC")
 	end
+	includedirs("../external/ed25519/include")
+	files({
+		"../external/ed25519/include/*.h",
+		"../external/ed25519/src/*.c"
+	})
 	files({
 		"audio/*.c",
 		"../external/jar/jar_*.h"

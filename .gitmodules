@@ -23,3 +23,6 @@
 [submodule "external/pcre"]
 	path = external/pcre
 	url = http://github.com/pyrite-dev/pcre
+[submodule "external/ed25519"]
+	path = external/ed25519
+	url = https://github.com/pyrite-dev/ed25519
