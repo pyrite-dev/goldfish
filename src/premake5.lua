@@ -76,7 +76,7 @@ end
 		})
 	end
 	if not(_OPTIONS["pcre"] == "system") then
-		includedirs("../external/pcre/incude")
+		includedirs("../external/pcre/include")
 		files({
 			"../external/pcre/include/*.h",
 			"../external/pcre/src/*.c"
