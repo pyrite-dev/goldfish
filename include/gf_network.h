@@ -89,6 +89,34 @@ GF_EXPORT void gf_network_block(int sock);
 
 /**
  * @~english
+ * @brief Create new write buffer
+ * @param net Network interface
+ * @param size Size
+ * @return Network buffer
+ */
+GF_EXPORT gf_network_buffer_t* gf_network_wbuffer(gf_network_t* net, size_t size);
+
+/**
+ * @~english
+ * @brief Create new read buffer
+ * @param net Network interface
+ * @param size Size
+ * @return Network buffer
+ */
+GF_EXPORT gf_network_buffer_t* gf_network_rbuffer(gf_network_t* net, size_t size);
+
+/**
+ * @~english
+ * @brief Create plain network interface
+ * @param engine Engine instance
+ * @param host Host name
+ * @param port Port
+ * @return Network interface
+ */
+GF_EXPORT gf_network_t* gf_network_init(gf_engine_t* engine, const char* host, int port);
+
+/**
+ * @~english
  * @brief Connect to host using TCP/IP
  * @param engine Engine instance
  * @param host Host name

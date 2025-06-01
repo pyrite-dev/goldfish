@@ -127,7 +127,31 @@ char* gf_network_error(int code) {
 	return r;
 }
 
-gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, int port) {
+gf_network_buffer_t* gf_network_wbuffer(gf_network_t* net, size_t size) {
+	gf_network_buffer_t* r = malloc(sizeof(*r));
+	r->data		       = malloc(size);
+	r->size		       = size;
+	r->_size	       = size;
+	r->seek		       = 0;
+
+	arrput(net->wqueue, r);
+
+	return r;
+}
+
+gf_network_buffer_t* gf_network_rbuffer(gf_network_t* net, size_t size) {
+	gf_network_buffer_t* r = malloc(sizeof(*r));
+	r->data		       = malloc(size);
+	r->size		       = size;
+	r->_size	       = size;
+	r->seek		       = 0;
+
+	arrput(net->rqueue, r);
+
+	return r;
+}
+
+gf_network_t* gf_network_init(gf_engine_t* engine, const char* host, int port) {
 	struct hostent* h;
 	int		i;
 	gf_network_t*	r = malloc(sizeof(*r));
@@ -151,8 +175,16 @@ gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, int port) {
 		arrput(r->u.connect.address, addr);
 	}
 
+	r->wqueue = NULL;
+	r->rqueue = NULL;
+}
+
+gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, int port) {
+	gf_network_t* r = gf_network_init(engine, host, port);
 	return r;
 }
+
+#define ISFINEERR(x) ((x) == _EWOULDBLOCK || (x) == _EINPROGRESS)
 
 int gf_network_step(gf_network_t* net) {
 	if(net->state >= GF_NETWORK_STATE_FAILED) return 1;
@@ -187,7 +219,7 @@ int gf_network_step(gf_network_t* net) {
 
 		st = connect(net->sock, (struct sockaddr*)&addr, sizeof(addr));
 		r  = gf_network_get_error();
-		if(st >= 0 || (r == _EINPROGRESS || r == _EWOULDBLOCK || r == _EINTR)) {
+		if(st >= 0 || (ISFINEERR(r) || r == _EINTR)) {
 			net->state	    = GF_NETWORK_STATE_CONNECT;
 			net->u.connect.last = time(NULL);
 		}
@@ -206,7 +238,7 @@ int gf_network_step(gf_network_t* net) {
 		FD_SET(net->sock, &fds);
 
 		st = getsockopt(net->sock, SOL_SOCKET, SO_ERROR, (void*)&r, &len);
-		if(r != 0 && (r != _EINPROGRESS && r != _EWOULDBLOCK)) {
+		if(r != 0 && !ISFINEERR(r)) {
 			char* err = gf_network_error(r);
 			gf_log_function(net->engine, "%s", err);
 			free(err);
@@ -229,6 +261,57 @@ int gf_network_step(gf_network_t* net) {
 			gf_log_function(net->engine, "Connected", "");
 		}
 	} else if(net->state == GF_NETWORK_STATE_CONNECTED) {
+		if(arrlen(net->wqueue) > 0) {
+			net->state = GF_NETWORK_STATE_WRITE;
+		} else if(arrlen(net->rqueue) > 0) {
+			net->state = GF_NETWORK_STATE_READ;
+		}
+	} else if(net->state == GF_NETWORK_STATE_WRITE) {
+		gf_network_buffer_t* buf = net->wqueue[0];
+		int		     s	 = send(net->sock, (unsigned char*)buf->data + buf->seek, buf->_size - buf->seek, 0);
+		int		     r	 = 0;
+		if(s < 0) r = gf_network_get_error();
+		if((s < 0 && !ISFINEERR(r)) || s == 0) {
+			buf->size  = buf->seek;
+			net->state = GF_NETWORK_STATE_WRITE_PART;
+			gf_log_function(net->engine, "Could only write %lu bytes, buffer was %lu bytes", (unsigned long)buf->size, (unsigned long)buf->_size);
+		} else if(s > 0) {
+			buf->seek += s;
+			if(buf->seek >= buf->_size) net->state = GF_NETWORK_STATE_WRITE_COMPLETE;
+		}
+	} else if(net->state == GF_NETWORK_STATE_WRITE_COMPLETE || net->state == GF_NETWORK_STATE_WRITE_PART) {
+		net->state = GF_NETWORK_STATE_AFTER_WRITE;
+	} else if(net->state == GF_NETWORK_STATE_AFTER_WRITE) {
+		int st = net->wqueue[0]->seek != net->wqueue[0]->_size ? GF_NETWORK_STATE_FAILED_WRITE : GF_NETWORK_STATE_CONNECTED;
+
+		free(net->wqueue[0]->data);
+		free(net->wqueue[0]);
+
+		arrdel(net->wqueue, 0);
+		net->state = st;
+	} else if(net->state == GF_NETWORK_STATE_READ) {
+		gf_network_buffer_t* buf = net->rqueue[0];
+		int		     s	 = recv(net->sock, (unsigned char*)buf->data + buf->seek, buf->_size - buf->seek, 0);
+		int		     r	 = 0;
+		if(s < 0) r = gf_network_get_error();
+		if((s < 0 && !ISFINEERR(r)) || s == 0) {
+			buf->size  = buf->seek;
+			net->state = GF_NETWORK_STATE_READ_PART;
+			gf_log_function(net->engine, "Could only read %lu bytes, buffer was %lu bytes", (unsigned long)buf->size, (unsigned long)buf->_size);
+		} else if(s > 0) {
+			buf->seek += s;
+			if(buf->seek >= buf->_size) net->state = GF_NETWORK_STATE_READ_COMPLETE;
+		}
+	} else if(net->state == GF_NETWORK_STATE_READ_COMPLETE || net->state == GF_NETWORK_STATE_READ_PART) {
+		net->state = GF_NETWORK_STATE_AFTER_READ;
+	} else if(net->state == GF_NETWORK_STATE_AFTER_READ) {
+		int st = net->rqueue[0]->seek != net->rqueue[0]->_size ? GF_NETWORK_STATE_FAILED_READ : GF_NETWORK_STATE_CONNECTED;
+
+		free(net->rqueue[0]->data);
+		free(net->rqueue[0]);
+
+		arrdel(net->rqueue, 0);
+		net->state = st;
 	}
 	return 0;
 }
