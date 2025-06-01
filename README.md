@@ -10,6 +10,7 @@
  - [jar](https://github.com/kd7tck/jar)
  - [Premake5](https://premake.github.io)
  - [PCRE](https://pcre.org)
+ - [ed25519](https://github.com/orlp/ed25519)
 
 ## OpenGL stack
  - [RGFW](https://github.com/ColleagueRiley/RGFW) (default)
