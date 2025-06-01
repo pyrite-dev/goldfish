@@ -100,9 +100,9 @@ void gf_gui_tab_render(gf_gui_t* gui, gf_gui_component_t* c) {
 			if(incr == gf_prop_get_integer(&c->prop, "selected")) {
 				gf_graphic_fill_rect(gui->draw, x + gf_gui_border_width, cy + fsz + gf_gui_border_width, bw - gf_gui_border_width * 2, gf_gui_border_width, gui->base);
 				gf_prop_set_integer(&gui->area[i]->prop, "hide", 0);
-				col.r -= gf_gui_border_color_diff * 2;
-				col.g += gf_gui_border_color_diff * 2;
-				col.b -= gf_gui_border_color_diff * 2;
+				col.r -= gf_gui_border_color_diff * 4;
+				col.g += gf_gui_border_color_diff * 4;
+				col.b -= gf_gui_border_color_diff * 4;
 			} else {
 				gf_prop_set_integer(&gui->area[i]->prop, "hide", 1);
 			}
