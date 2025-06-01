@@ -124,6 +124,9 @@ GF_DECLARE_UNION(network_state, {
  * @var gf_network_t::state
  * @brief State
  *
+ * @var gf_network_t::tcp
+ * @brief `0` if UDP, otherwise TCP.
+ *
  * @var gf_network_t::wqueue
  * @brief Write buffer queue
  *
@@ -138,6 +141,7 @@ GF_DECLARE_TYPE(network, {
 	int port;
 	int sock;
 	int state;
+	int tcp;
 	gf_network_buffer_t** wqueue;
 	gf_network_buffer_t** rqueue;
 	gf_network_state_t u;

@@ -181,6 +181,9 @@ gf_network_t* gf_network_init(gf_engine_t* engine, const char* host, int port) {
 
 gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, int port) {
 	gf_network_t* r = gf_network_init(engine, host, port);
+
+	r->tcp = 1;
+
 	return r;
 }
 
@@ -204,7 +207,7 @@ int gf_network_step(gf_network_t* net) {
 			return 1;
 		}
 
-		net->sock = gf_network_socket("tcp");
+		net->sock = gf_network_socket(net->tcp ? "tcp" : "udp");
 		if(net->sock == -1) {
 			net->state = GF_NETWORK_STATE_FAILED_SOCKET;
 			arrfree(net->u.connect.address);
