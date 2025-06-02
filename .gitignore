@@ -10,9 +10,9 @@ ext_*
 *.pak
 compile_flags.txt
 Makefile
-/obj
-/lib
-/bin
+obj
+lib
+bin
 /doc
 /include/gf_config.h
 /external/rgfw/relative-pointer-unstable-v1-client-protocol.c
