@@ -32,7 +32,7 @@ function call_me(name)
 		kind("ConsoleApp")
 		language("C")
 		targetdir("bin/%{cfg.buildcfg}/%{cfg.platform}")
-		objdir("obj/%{cfg.buildcfg}/%{cfg.platform}")
+		objdir("obj")
 		targetname(name)
 		includedirs({
 			"../include"
@@ -55,6 +55,7 @@ function call_me(name)
 				"NDEBUG"
 			})
 			optimize("On")
+		filter({})
 end
 
 call_me("audio")
