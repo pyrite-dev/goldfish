@@ -36,6 +36,13 @@ GF_EXPORT char* gf_util_strdup(const char* str);
  */
 GF_EXPORT char* gf_util_get_search(gf_engine_t* engine);
 
+/**
+ * @~english
+ * @brief Get search path
+ * @return Path
+ */
+GF_EXPORT char** gf_util_get_search_list(gf_engine_t* engine);
+
 #ifdef __cplusplus
 }
 #endif

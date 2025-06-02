@@ -37,7 +37,7 @@ GF_EXPORT void gf_engine_end(void);
 /**
  * @~english
  * @brief Create engine instance, with default resource pack path (base.pak)
- * @param title Title to be shown on the window
+ * @param title Title to be shown on the window, can be used to specify game title too in the format: `Game title|Window title`
  * @param nogui `0` to enable client-part, otherwise disable client-part
  * @return Engine instance
  */

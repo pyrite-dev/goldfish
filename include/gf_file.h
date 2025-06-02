@@ -25,6 +25,30 @@ extern "C" {
 
 /**
  * @~english
+ * @brief Pick file path
+ * @param path Path
+ * @return Path
+ */
+GF_EXPORT char* gf_file_pick(gf_engine_t* engine, const char* path);
+
+/**
+ * @~english
+ * @brief Pick file path
+ * @param path Path
+ * @return Path
+ */
+GF_EXPORT char* gf_file_pick_reverse(gf_engine_t* engine, const char* path);
+
+/**
+ * @~english
+ * @brief Pick file path
+ * @param path Path
+ * @return `0` if file/directory does not exist, `1` if it exists
+ */
+GF_EXPORT int gf_file_exists(gf_engine_t* engine, const char* path);
+
+/**
+ * @~english
  * @brief Open file
  * @param engine Engine instance
  * @param path Path

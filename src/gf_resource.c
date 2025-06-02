@@ -12,6 +12,7 @@
 /* Engine */
 #include <gf_core.h>
 #include <gf_log.h>
+#include <gf_file.h>
 
 /* Standard */
 #include <string.h>
@@ -28,6 +29,7 @@ gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 	FILE*	       f;
 	gf_resource_t* resource = malloc(sizeof(*resource));
 	int	       is_dir	= 0;
+	char*	       p	= path == NULL ? NULL : gf_file_pick(engine, path);
 #ifdef _WIN32
 	DWORD dw;
 #else
@@ -46,15 +48,17 @@ gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 
 	is_dir = 0;
 #ifdef _WIN32
-	dw = GetFileAttributes(path);
+	dw = GetFileAttributes(p);
 	if(dw == INVALID_FILE_ATTRIBUTES) {
+		free(p);
 		gf_log_function(engine, "Failed to create resource", "");
 		gf_resource_destroy(resource);
 		return NULL;
 	}
 	is_dir = (dw & FILE_ATTRIBUTE_DIRECTORY) ? 1 : 0;
 #else
-	if(stat(path, &s) != 0) {
+	if(stat(p, &s) != 0) {
+		free(p);
 		gf_log_function(engine, "Failed to create resource", "");
 		gf_resource_destroy(resource);
 		return NULL;
@@ -63,12 +67,13 @@ gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 #endif
 	if(is_dir) {
 		gf_log_function(engine, "Created resource", "");
-		resource->path = malloc(strlen(path) + 1);
-		strcpy(resource->path, path);
+		resource->path = malloc(strlen(p) + 1);
+		strcpy(resource->path, p);
+		free(p);
 		return resource;
 	}
 
-	f = fopen(path, "rb");
+	f = fopen(p, "rb");
 
 	if(f == NULL) {
 		gf_log_function(engine, "Failed to create resource", "");
@@ -105,6 +110,7 @@ gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 		gf_log_function(engine, "%s: Compressed to %lu bytes", filename, (unsigned long)sz);
 	}
 	fclose(f);
+	free(p);
 
 	return resource;
 }

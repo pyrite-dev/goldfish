@@ -61,8 +61,9 @@ char* gf_util_get_search(gf_engine_t* engine) {
 	int    i;
 	int    sz = 0;
 
+	add_search(&arr, ".");
 	add_search(&arr, "./dist");
-	add_user_search(&arr, (engine == NULL || engine->name == NULL) ? "" : engine->name);
+	add_user_search(&arr, (engine == NULL || engine->name == NULL) ? "game_name_here" : engine->name);
 
 	for(i = 0; i < arrlen(arr); i++) {
 		if(i > 0) sz += 1;
@@ -82,4 +83,28 @@ char* gf_util_get_search(gf_engine_t* engine) {
 	arrfree(arr);
 
 	return r;
+}
+
+char** gf_util_get_search_list(gf_engine_t* engine) {
+	char** l = NULL;
+	char*  r = gf_util_get_search(engine);
+	int    i;
+	int    incr = 0;
+	for(i = 0;; i++) {
+		if(r[i] == ';' || r[i] == 0) {
+			char  oldc = r[i];
+			char* s;
+			r[i] = 0;
+
+			s = gf_util_strdup(r + incr);
+
+			arrput(l, s);
+
+			incr = i + 1;
+			if(oldc == 0) break;
+		}
+	}
+	free(r);
+
+	return l;
 }

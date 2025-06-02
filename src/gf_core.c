@@ -77,13 +77,23 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	int	     st;
 	char**	     list = NULL;
 	gf_file_t*   f;
+	int	     i;
+	int	     titlei = 0;
 	gf_engine_t* engine = malloc(sizeof(*engine));
 	memset(engine, 0, sizeof(*engine));
 	engine->log	   = stderr;
 	engine->error	   = 0;
 	engine->lua	   = NULL;
-	engine->name	   = NULL;
+	engine->name	   = gf_util_strdup(title);
 	engine->force_down = 0;
+
+	for(i = 0; title[i] != 0; i++) {
+		if(title[i] == '|') {
+			engine->name[i] = 0;
+			titlei		= i + 1;
+			break;
+		}
+	}
 
 	gf_prop_set_integer(&engine->config, "width", 800);
 	gf_prop_set_integer(&engine->config, "height", 600);
@@ -101,7 +111,6 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	if((f = gf_file_open(engine, "base:/autoexec.cfg", "r")) != NULL) {
 		char*  buf    = malloc(f->size + 1);
 		int    incr   = 0;
-		int    i      = 0;
 		char** aelist = NULL;
 		buf[f->size]  = 0;
 		gf_file_read(f, buf, f->size);
@@ -133,7 +142,6 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	}
 
 	if(argv != NULL) {
-		int   i;
 		char* buf = NULL;
 		for(i = 1; i < argc; i++) {
 			char* arg = argv[i];
@@ -159,7 +167,6 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 		}
 	}
 	if(list != NULL) {
-		int i;
 		gf_command_run(engine, list, arrlen(list));
 		for(i = 0; i < arrlen(list); i++) {
 			free(list[i]);
@@ -172,7 +179,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 		engine->client = NULL;
 	} else {
 		gf_log_function(engine, "GUI mode", "");
-		engine->client = gf_client_create(engine, title);
+		engine->client = gf_client_create(engine, title + titlei);
 		if(engine->client == NULL) {
 			gf_log_function(engine, "Failed to create client interface", "");
 			gf_engine_destroy(engine);
