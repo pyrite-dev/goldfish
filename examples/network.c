@@ -1,5 +1,3 @@
-#define GF_EXPOSE_NETWORK
-
 #include <gf_core.h>
 #include <gf_network.h>
 
@@ -33,9 +31,10 @@ int main(int argc, char** argv) {
 			memcpy(buf->data, req, buf->size);
 
 			while(gf_network_step(net) == 0) {
-				if(net->state == GF_NETWORK_STATE_AFTER_WRITE || net->state == GF_NETWORK_STATE_AFTER_READ) {
+				int state = gf_network_state(net);
+				if(state == GF_NETWORK_STATE_AFTER_WRITE || state == GF_NETWORK_STATE_AFTER_READ) {
 					buf = gf_network_rbuffer(net, 512);
-				} else if(net->state == GF_NETWORK_STATE_READ_COMPLETE || net->state == GF_NETWORK_STATE_READ_PART) {
+				} else if(state == GF_NETWORK_STATE_READ_COMPLETE || state == GF_NETWORK_STATE_READ_PART) {
 					char* old = buffer;
 					buffer	  = malloc(sz + buf->size + 1);
 					memcpy(buffer, old, sz);

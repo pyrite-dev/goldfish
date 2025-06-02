@@ -344,6 +344,8 @@ void gf_network_destroy(gf_network_t* net) {
 	free(net);
 }
 
+int gf_network_state(gf_network_t* net) { return net->state; }
+
 void gf_network_end(void) {
 #ifdef _WIN32
 	WSACleanup();

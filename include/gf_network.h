@@ -134,6 +134,14 @@ GF_EXPORT void gf_network_destroy(gf_network_t* net);
 
 /**
  * @~english
+ * @brief Get state of network interface
+ * @param net Network interface
+ * @return State
+ */
+GF_EXPORT int gf_network_state(gf_network_t* net);
+
+/**
+ * @~english
  * @brief Close socket
  * @param sock Socket
  */
