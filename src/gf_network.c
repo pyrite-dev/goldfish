@@ -181,8 +181,7 @@ gf_network_t* gf_network_init(gf_engine_t* engine, const char* host, int port) {
 
 gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, int port) {
 	gf_network_t* r = gf_network_init(engine, host, port);
-
-	r->tcp = 1;
+	if(r != NULL) r->tcp = 1;
 
 	return r;
 }
