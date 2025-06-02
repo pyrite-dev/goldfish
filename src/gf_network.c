@@ -319,6 +319,31 @@ int gf_network_step(gf_network_t* net) {
 	return 0;
 }
 
+void gf_network_destroy(gf_network_t* net) {
+	if(net->rqueue != NULL) {
+		while(arrlen(net->rqueue) > 0) {
+			free(net->rqueue[0]->data);
+			free(net->rqueue[0]);
+			arrdel(net->rqueue, 0);
+		}
+		arrfree(net->rqueue);
+	}
+
+	if(net->wqueue != NULL) {
+		while(arrlen(net->wqueue) > 0) {
+			free(net->wqueue[0]->data);
+			free(net->wqueue[0]);
+			arrdel(net->wqueue, 0);
+		}
+		arrfree(net->wqueue);
+	}
+
+	gf_network_close(net->sock);
+
+	gf_log_function(net->engine, "Destroyed network interface", "");
+	free(net);
+}
+
 void gf_network_end(void) {
 #ifdef _WIN32
 	WSACleanup();

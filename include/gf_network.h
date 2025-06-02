@@ -127,6 +127,13 @@ GF_EXPORT gf_network_t* gf_network_tcp(gf_engine_t* engine, const char* host, in
 
 /**
  * @~english
+ * @brief Destroy network interface
+ * @param net Network interface
+ */
+GF_EXPORT void gf_network_destroy(gf_network_t* net);
+
+/**
+ * @~english
  * @brief Close socket
  * @param sock Socket
  */
