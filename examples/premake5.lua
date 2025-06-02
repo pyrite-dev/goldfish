@@ -38,7 +38,7 @@ function call_me(name)
 			"../include"
 		})
 		files({
-			name .. ".c"
+			"src/" .. name .. ".c"
 		})
 		links({
 			"GoldFish"
