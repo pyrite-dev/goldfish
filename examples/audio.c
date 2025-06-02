@@ -26,20 +26,22 @@ int main(int argc, char** argv){
 	engine = gf_engine_create_ex("unused", 1, "data", argv, argc);
 	if(engine != NULL){
 		gf_audio_t* audio = gf_audio_create(engine);
-		gf_audio_id_t id = gf_audio_load_file(audio, argv[1]);
+		if(audio != NULL){
+			gf_audio_id_t id = gf_audio_load_file(audio, argv[1]);
 
-		if(id != -1){
-			gf_audio_resume(audio, id);
-			while(run && !gf_audio_is_over(audio, id)){
+			if(id != -1){
+				gf_audio_resume(audio, id);
+				while(run && !gf_audio_is_over(audio, id)){
 #ifdef _WIN32
-				Sleep(10);
+					Sleep(10);
 #else
-				usleep(10 * 1000);
+					usleep(10 * 1000);
 #endif
+				}
 			}
-		}
 
-		gf_audio_destroy(audio);
+			gf_audio_destroy(audio);
+		}
 		gf_engine_destroy(engine);
 	}
 	gf_engine_end();

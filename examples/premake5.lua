@@ -58,3 +58,4 @@ function call_me(name)
 end
 
 call_me("audio")
+call_me("network")
