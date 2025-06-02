@@ -202,8 +202,12 @@ int main() {
 	#define RGFW_ASSERT assert
 #endif
 
-#if !defined(RGFW_MEMCPY) || !defined(RGFW_STRNCMP) || !defined(RGFW_STRNCPY)
-    #include <string.h>
+#if !defined(RGFW_MEMCPY) || !defined(RGFW_STRNCMP) || !defined(RGFW_STRNCPY) || !defined(RGFW_MEMSET)
+	#include <string.h>
+#endif
+
+#ifndef RGFW_MEMSET
+	#define RGFW_MEMSET(ptr, value, num) memset(ptr, value, num)
 #endif
 
 #ifndef RGFW_MEMCPY
@@ -225,7 +229,7 @@ int main() {
 #ifndef RGFW_STRTOL
 	/* required for X11 XDnD and X11 Monitor DPI */
 	#include <stdlib.h>
-    #define RGFW_STRTOL(str, endptr, base) strtol(str, endptr, base)
+	#define RGFW_STRTOL(str, endptr, base) strtol(str, endptr, base)
 	#define RGFW_ATOF(num) atof(num)
 #endif
 
@@ -250,14 +254,17 @@ int main() {
 			#define RGFWDEF __attribute__((visibility("default")))
 		#endif
 	#endif
+    #ifndef RGFWDEF
+        #define RGFWDEF
+    #endif
 #endif
 
 #ifndef RGFWDEF
-    #ifdef RGFW_C89
-        #define RGFWDEF __inline
-    #else
-    	#define RGFWDEF inline
-    #endif
+	#ifdef RGFW_C89
+		#define RGFWDEF __inline
+	#else
+		#define RGFWDEF inline
+	#endif
 #endif
 
 #ifndef RGFW_ENUM
@@ -277,15 +284,15 @@ int main() {
 #include <stddef.h>
 #ifndef RGFW_INT_DEFINED
 	#ifdef RGFW_USE_INT /* optional for any system that might not have stdint.h */
-		typedef unsigned char 	u8;
-		typedef signed char		i8;
-		typedef unsigned short  u16;
-		typedef signed short 	i16;
-		typedef unsigned long int 	u32;
-		typedef signed long int		i32;
-		typedef unsigned long long	u64;
-		typedef signed long long		i64;
-	#else /* use stdint standard types instead of c ""standard"" types */
+		typedef unsigned char       u8;
+		typedef signed char         i8;
+		typedef unsigned short     u16;
+		typedef signed short 	   i16;
+		typedef unsigned long int  u32;
+		typedef signed long int    i32;
+		typedef unsigned long long u64;
+		typedef signed long long   i64;
+	#else /* use stdint standard types instead of c "standard" types */
 		#include <stdint.h>
 
 		typedef uint8_t     u8;
@@ -297,7 +304,7 @@ int main() {
 		typedef uint64_t   u64;
 		typedef int64_t    i64;
 	#endif
-    #define RGFW_INT_DEFINED
+	#define RGFW_INT_DEFINED
 #endif
 
 #ifndef RGFW_BOOL_DEFINED
@@ -706,6 +713,7 @@ typedef struct RGFW_window_src {
         i64 counter_value;
         XID counter;
     #endif
+    RGFW_rect r;
 #endif /* RGFW_X11 */
 #if defined(RGFW_WAYLAND)
 	struct wl_display* wl_display;
@@ -1725,7 +1733,7 @@ void RGFW_init_keys(void) {
 	RGFW_MAP [RGFW_OS_BASED_VALUE(133, 0x15B, 55, DOM_VK_WIN)] = RGFW_superL,
 	#if !defined(RGFW_MACOS) && !defined(RGFW_WASM)
 	RGFW_MAP [RGFW_OS_BASED_VALUE(105, 0x11D, 59, 0)] = RGFW_controlR               RGFW_NEXT
-	RGFW_MAP [RGFW_OS_BASED_VALUE(135, 0x15C, 55, 0)] = RGFW_superR,
+	RGFW_MAP [RGFW_OS_BASED_VALUE(134, 0x15C, 55, 0)] = RGFW_superR,
 	RGFW_MAP [RGFW_OS_BASED_VALUE(62, 0x036, 56, 0)] = RGFW_shiftR              RGFW_NEXT
 	RGFW_MAP [RGFW_OS_BASED_VALUE(108, 0x138, 58, 0)] = RGFW_altR,
 	#endif
@@ -1789,7 +1797,7 @@ void RGFW_resetKeyPrev(void) {
     for (i = 0; i < RGFW_keyLast; i++) RGFW_keyboard[i].prev = 0;
 }
 RGFWDEF void RGFW_resetKey(void);
-void RGFW_resetKey(void) { memset(RGFW_keyboard, 0, sizeof(RGFW_keyboard)); }
+void RGFW_resetKey(void) { RGFW_MEMSET(RGFW_keyboard, 0, sizeof(RGFW_keyboard)); }
 /*
 	this is the end of keycode data
 */
@@ -4017,7 +4025,7 @@ i32 RGFW_init(void) {
 	XInitThreads(); /*!< init X11 threading */
     _RGFW.display = XOpenDisplay(0);
     XSetWindowAttributes wa;
-    memset(&wa, 0, sizeof(wa));
+    RGFW_MEMSET(&wa, 0, sizeof(wa));
     wa.event_mask = PropertyChangeMask;
     _RGFW.helperWindow = XCreateWindow(_RGFW.display, XDefaultRootWindow(_RGFW.display), 0, 0, 1, 1, 0, 0,
                                         InputOnly, DefaultVisual(_RGFW.display, DefaultScreen(_RGFW.display)), CWEventMask, &wa);
@@ -4034,7 +4042,7 @@ i32 RGFW_init(void) {
 
     XkbGetNames(_RGFW.display, XkbKeyNamesMask, desc);
 
-    memset(&rec, 0, sizeof(rec));
+    RGFW_MEMSET(&rec, 0, sizeof(rec));
     rec.keycodes = (char*)"evdev";
     evdesc = XkbGetKeyboardByName(_RGFW.display, XkbUseCoreKbd, &rec, XkbGBN_KeyNamesMask, XkbGBN_KeyNamesMask, False);
     /* memo: RGFW_keycodes[x11 keycode] = rgfw keycode */
@@ -4080,7 +4088,7 @@ RGFW_window* RGFW_createWindowPtr(const char* name, RGFW_rect rect, RGFW_windowF
 
     /* make X window attrubutes */
 	XSetWindowAttributes swa;
-    memset(&swa, 0, sizeof(swa));
+    RGFW_MEMSET(&swa, 0, sizeof(swa));
 
 	Colormap cmap;
 	swa.colormap = cmap = XCreateColormap(win->src.display,
@@ -4163,9 +4171,11 @@ RGFW_window* RGFW_createWindowPtr(const char* name, RGFW_rect rect, RGFW_windowF
     RGFW_sendDebugInfo(RGFW_typeInfo, RGFW_infoWindow, RGFW_DEBUG_CTX(win, 0), "a new window was created");
 	RGFW_window_setMouseDefault(win);
 	RGFW_window_setFlags(win, flags);
+    
+    win->src.r = win->r;
 
 	RGFW_window_show(win);
-	return win; /*return newly created window */
+    return win; /*return newly created window */
 #endif
 #ifdef RGFW_WAYLAND
 	wayland:
@@ -4851,17 +4861,17 @@ RGFW_event* RGFW_window_checkEvent(RGFW_window* win) {
 	case ConfigureNotify: {
 		/* detect resize */
 		RGFW_window_checkMode(win);
-		if (E.xconfigure.width != win->r.w || E.xconfigure.height != win->r.h) {
+		if (E.xconfigure.width != win->src.r.w || E.xconfigure.height != win->src.r.h) {
 			win->event.type = RGFW_windowResized;
-			win->r = RGFW_RECT(win->r.x, win->r.y, E.xconfigure.width, E.xconfigure.height);
+			win->src.r = win->r = RGFW_RECT(win->src.r.x, win->src.r.y, E.xconfigure.width, E.xconfigure.height);
 			RGFW_windowResizedCallback(win, win->r);
 			break;
 		}
 
 		/* detect move */
-		if (E.xconfigure.x != win->r.x || E.xconfigure.y != win->r.y) {
+		if (E.xconfigure.x != win->src.r.x || E.xconfigure.y != win->src.r.y) {
 			win->event.type = RGFW_windowMoved;
-			win->r = RGFW_RECT(E.xconfigure.x, E.xconfigure.y, win->r.w, win->r.h);
+            win->src.r = win->r = RGFW_RECT(E.xconfigure.x, E.xconfigure.y, win->src.r.w, win->src.r.h);
 			RGFW_windowMovedCallback(win, win->r);
 			break;
 		}
@@ -4960,7 +4970,7 @@ void RGFW_window_setMinSize(RGFW_window* win, RGFW_area a) {
 
     long flags;
 	XSizeHints hints;
-    memset(&hints, 0, sizeof(XSizeHints));
+    RGFW_MEMSET(&hints, 0, sizeof(XSizeHints));
 
 	XGetWMNormalHints(win->src.display, win->src.window, &hints, &flags);
 
@@ -4977,7 +4987,7 @@ void RGFW_window_setMaxSize(RGFW_window* win, RGFW_area a) {
 
     long flags;
 	XSizeHints hints;
-    memset(&hints, 0, sizeof(XSizeHints));
+    RGFW_MEMSET(&hints, 0, sizeof(XSizeHints));
 
 	XGetWMNormalHints(win->src.display, win->src.window, &hints, &flags);
 
@@ -5136,13 +5146,14 @@ void RGFW_window_setName(RGFW_window* win, const char* name) {
 	XStoreName(win->src.display, win->src.window, name);
 
 	RGFW_LOAD_ATOM(_NET_WM_NAME);
-    
-    int len;
-    for (len = 0; name[len]; len++);
+
+    char buf[256];
+    RGFW_MEMSET(buf, 0, sizeof(buf));
+    RGFW_STRNCPY(buf, name, sizeof(buf) - 1);
 
     XChangeProperty(
 		win->src.display, win->src.window, _NET_WM_NAME, RGFW_XUTF8_STRING,
-		8, PropModeReplace, (u8*)name, len
+		8, PropModeReplace, (u8*)buf, sizeof(buf)
 	);
 	#endif
 	#ifdef RGFW_WAYLAND
@@ -5392,12 +5403,13 @@ void RGFW_window_show(RGFW_window* win) {
 
 RGFW_ssize_t RGFW_readClipboardPtr(char* str, size_t strCapacity) {
 	RGFW_GOTO_WAYLAND(1);
-	#ifdef RGFW_X11
+#ifdef RGFW_X11
 	RGFW_init();
-    if (XGetSelectionOwner(_RGFW.display, RGFW_XCLIPBOARD) == _RGFW.helperWindow) {
-        if (str != NULL)
-			RGFW_STRNCPY(str, _RGFW.clipboard, _RGFW.clipboard_len);
-		return (RGFW_ssize_t)_RGFW.clipboard_len;
+	if (XGetSelectionOwner(_RGFW.display, RGFW_XCLIPBOARD) == _RGFW.helperWindow) {
+		if (str != NULL)
+			RGFW_STRNCPY(str, _RGFW.clipboard, _RGFW.clipboard_len - 1);
+		_RGFW.clipboard[_RGFW.clipboard_len - 1] = '\0';
+		return (RGFW_ssize_t)_RGFW.clipboard_len - 1;
 	}
 
 	XEvent event;
@@ -5410,25 +5422,25 @@ RGFW_ssize_t RGFW_readClipboardPtr(char* str, size_t strCapacity) {
 
 	XConvertSelection(_RGFW.display, RGFW_XCLIPBOARD, RGFW_XUTF8_STRING, XSEL_DATA, _RGFW.helperWindow, CurrentTime);
 	XSync(_RGFW.display, 0);
-    while (1) {
-        XNextEvent(_RGFW.display, &event);
-        if (event.type != SelectionNotify) continue;
+	while (1) {
+		XNextEvent(_RGFW.display, &event);
+		if (event.type != SelectionNotify) continue;
 
-        if (event.xselection.selection != RGFW_XCLIPBOARD || event.xselection.property == 0)
-	    	return -1;
-        break;
+		if (event.xselection.selection != RGFW_XCLIPBOARD || event.xselection.property == 0)
+			return -1;
+		break;
 	}
 
 	XGetWindowProperty(event.xselection.display, event.xselection.requestor,
-		event.xselection.property, 0L, (~0L), 0, AnyPropertyType, &target,
-		&format, &sizeN, &N, (u8**) &data);
+			event.xselection.property, 0L, (~0L), 0, AnyPropertyType, &target,
+			&format, &sizeN, &N, (u8**) &data);
 
 	RGFW_ssize_t size;
 	if (sizeN > strCapacity && str != NULL)
 		size = -1;
 
 	if ((target == RGFW_XUTF8_STRING || target == XA_STRING) && str != NULL) {
-        RGFW_MEMCPY(str, data, sizeN);
+		RGFW_MEMCPY(str, data, sizeN);
 		str[sizeN] = '\0';
 		XFree(data);
 	} else if (str != NULL) size = -1;
@@ -5436,11 +5448,11 @@ RGFW_ssize_t RGFW_readClipboardPtr(char* str, size_t strCapacity) {
 	XDeleteProperty(event.xselection.display, event.xselection.requestor, event.xselection.property);
 	size = (RGFW_ssize_t)sizeN;
 
-    return size;
-	#endif
-	#if defined(RGFW_WAYLAND)
-	wayland: return 0;
-	#endif
+	return size;
+#endif
+#if defined(RGFW_WAYLAND)
+wayland: return 0;
+#endif
 }
 
 i32 RGFW_XHandleClipboardSelectionHelper(void) {
@@ -5489,9 +5501,10 @@ void RGFW_writeClipboard(const char* text, u32 textLen) {
 		RGFW_FREE(_RGFW.clipboard);
 
 	_RGFW.clipboard = (char*)RGFW_ALLOC(textLen);
-    RGFW_ASSERT(_RGFW.clipboard != NULL);
+	RGFW_ASSERT(_RGFW.clipboard != NULL);
 
-    RGFW_STRNCPY(_RGFW.clipboard, text, textLen);
+	RGFW_STRNCPY(_RGFW.clipboard, text, textLen - 1);
+	_RGFW.clipboard[textLen - 1] = '\0';
 	_RGFW.clipboard_len = textLen;
 	#endif
 	#ifdef RGFW_WAYLAND
@@ -5625,7 +5638,8 @@ RGFW_monitor RGFW_XCreateMonitor(i32 screen) {
 	RGFW_splitBPP((u32)DefaultDepth(display, DefaultScreen(display)), &monitor.mode);
 
 	char* name = XDisplayName((const char*)display);
-	RGFW_MEMCPY(monitor.name, name, 128);
+	RGFW_STRNCPY(monitor.name, name, sizeof(monitor.name) - 1);
+	monitor.name[sizeof(monitor.name) - 1] = '\0';
 
 	float dpi = XGetSystemContentDPI(display, screen);
 	monitor.pixelRatio = dpi >= 192.0f ? 2 : 1;
@@ -5657,7 +5671,8 @@ RGFW_monitor RGFW_XCreateMonitor(i32 screen) {
 		float physW = (float)info->mm_width / 25.4f;
 		float physH = (float)info->mm_height / 25.4f;
 
-		RGFW_MEMCPY(monitor.name, info->name, 128);
+		RGFW_STRNCPY(monitor.name, info->name, sizeof(monitor.name) - 1);
+		monitor.name[sizeof(monitor.name) - 1] = '\0';
 
 	if ((u8)physW && (u8)physH) {
 		monitor.physW = physW;
@@ -5773,7 +5788,7 @@ wayland:
 
 RGFW_monitor RGFW_window_getMonitor(RGFW_window* win) {
     RGFW_monitor mon;
-    memset(&mon, 0, sizeof(mon));
+    RGFW_MEMSET(&mon, 0, sizeof(mon));
 
     RGFW_ASSERT(win != NULL);
 	RGFW_GOTO_WAYLAND(1);
@@ -7352,7 +7367,8 @@ RGFW_monitor win32CreateMonitor(HMONITOR src) {
 		mdd.cb = sizeof(mdd);
 
 		if (EnumDisplayDevicesA(dd.DeviceName, (DWORD)deviceNum, &mdd, 0)) {
-			RGFW_MEMCPY(monitor.name, mdd.DeviceString, 128);
+			RGFW_STRNCPY(monitor.name, mdd.DeviceString, sizeof(monitor.name) - 1);
+			monitor.name[sizeof(monitor.name) - 1] = '\0';
 			break;
 		}
 	}
@@ -8282,7 +8298,7 @@ bool performDragOperation(id self, SEL sel, id sender) {
     for (i = 0; i < count; i++) {
 		id fileURL = objc_msgSend_arr(fileURLs, sel_registerName("objectAtIndex:"), i);
 		const char *filePath = ((const char* (*)(id, SEL))objc_msgSend)(fileURL, sel_registerName("UTF8String"));
-		RGFW_MEMCPY(win->event.droppedFiles[i], filePath, RGFW_MAX_PATH);
+		RGFW_STRNCPY(win->event.droppedFiles[i], filePath, RGFW_MAX_PATH - 1);
 		win->event.droppedFiles[i][RGFW_MAX_PATH - 1] = '\0';
 	}
 	NSPoint p = ((NSPoint(*)(id, SEL)) objc_msgSend)(sender, sel_registerName("draggingLocation"));
@@ -10050,7 +10066,8 @@ EM_BOOL Emscripten_on_gamepad(int eventType, const EmscriptenGamepadEvent *gamep
 
 	size_t i = gamepadEvent->index;
 	if (gamepadEvent->connected) {
-		RGFW_MEMCPY(RGFW_gamepads_name[gamepadEvent->index], gamepadEvent->id, sizeof(RGFW_gamepads_name[gamepadEvent->index]));
+		RGFW_STRNCPY(RGFW_gamepads_name[gamepadEvent->index], gamepadEvent->id, sizeof(RGFW_gamepads_name[gamepadEvent->index]) - 1);
+		RGFW_gamepads_name[gamepadEvent->index][sizeof(RGFW_gamepads_name[gamepadEvent->index]) - 1] = '\0';
 		RGFW_gamepads_type[i] = RGFW_gamepadUnknown;
 		if (RGFW_STRSTR(RGFW_gamepads_name[i], "Microsoft") || RGFW_STRSTR(RGFW_gamepads_name[i], "X-Box"))
 			RGFW_gamepads_type[i] = RGFW_gamepadMicrosoft;
@@ -10255,7 +10272,8 @@ void EMSCRIPTEN_KEEPALIVE RGFW_makeSetValue(size_t index, char* file) {
 	/* This seems like a terrible idea, don't replicate this unless you hate yourself or the OS */
 	/* TODO: find a better way to do this
 	*/
-	RGFW_MEMCPY((char*)_RGFW.root->event.droppedFiles[index], file, RGFW_MAX_PATH);
+	RGFW_STRNCPY((char*)_RGFW.root->event.droppedFiles[index], file, RGFW_MAX_PATH - 1);
+	_RGFW.root->event.droppedFiles[index][RGFW_MAX_PATH - 1] = '\0';
 }
 
 #include <sys/stat.h>
