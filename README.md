@@ -12,6 +12,7 @@
  - [PCRE](https://pcre.org)
  - [ed25519](https://github.com/orlp/ed25519)
  - [SQLite](https://www.sqlite.org)
+ - [minisocket](https://github.com/pyrite-dev/minisocket)
 
 ## OpenGL stack
  - [RGFW](https://github.com/ColleagueRiley/RGFW) (default)

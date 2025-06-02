@@ -58,6 +58,7 @@ end
 		"../external/stb",
 		"../external/jar",
 		"../external/nanosvg",
+		"../external/minisocket",
 		"bindgen"
 	})
 	files({

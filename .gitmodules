@@ -26,3 +26,6 @@
 [submodule "external/ed25519"]
 	path = external/ed25519
 	url = https://github.com/pyrite-dev/ed25519
+[submodule "external/minisocket"]
+	path = external/minisocket
+	url = https://github.com/pyrite-dev/minisocket

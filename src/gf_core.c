@@ -53,7 +53,6 @@ void gf_engine_begin(void) {
 		hpc_freq.QuadPart = 0;
 	}
 #endif
-	gf_network_begin();
 	gf_client_begin();
 #ifndef GF_NO_SERVER
 	gf_server_begin();
@@ -65,7 +64,6 @@ void gf_engine_end(void) {
 	gf_server_end();
 #endif
 	gf_client_end();
-	gf_network_end();
 }
 
 gf_engine_t* gf_engine_create(const char* title, int nogui) { return gf_engine_create_ex(title, nogui, "base.pak", NULL, 0); }
