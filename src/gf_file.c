@@ -4,6 +4,9 @@
 #include <gf_pre.h>
 
 /* External library */
+#ifdef _WIN32
+#include <windows.h>
+#endif
 #include <stb_ds.h>
 
 /* Interface */
