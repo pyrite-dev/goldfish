@@ -458,7 +458,8 @@ function gf_link_stuffs(cond)
 		links({
 			"user32",
 			"wsock32",
-			"winmm"
+			"winmm",
+			"userenv"
 		})
 	if (_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
 		filter({

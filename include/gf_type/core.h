@@ -65,6 +65,9 @@ typedef struct gf_engine_t gf_engine_t;
  *
  * @var gf_engine_t::force_down
  * @brief Force engine shutdown
+ *
+ * @var gf_engine_t::name
+ * @brief Game name
  */
 GF_DECLARE_TYPE(engine, {
 	gf_server_t*   server;
@@ -78,6 +81,7 @@ GF_DECLARE_TYPE(engine, {
 	int icon_height;
 	gf_prop_t* config;
 	int force_down;
+	char* name;
 });
 #else
 typedef void gf_engine_t;

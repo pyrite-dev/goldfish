@@ -25,6 +25,7 @@
 #include <gf_prop.h>
 #include <gf_file.h>
 #include <gf_image.h>
+#include <gf_util.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -36,11 +37,13 @@ LARGE_INTEGER hpc_freq;
 #endif
 void gf_engine_begin(void) {
 	gf_version_t ver;
+	char*	     search;
 	if(gf_log_default == NULL) gf_log_default = stderr;
 
 	gf_gui_init_calls();
 
 	gf_version_get(&ver);
+	search = gf_util_get_search(NULL);
 	gf_log_function(NULL, "GoldFish Engine %s", ver.full);
 	gf_log_function(NULL, "Build date: %s", ver.date);
 	gf_log_function(NULL, "Lua %s", ver.lua);
@@ -48,6 +51,8 @@ void gf_engine_begin(void) {
 	gf_log_function(NULL, "PCRE %s", ver.pcre);
 	gf_log_function(NULL, "Thread model: %s", ver.thread);
 	gf_log_function(NULL, "Renderer: %s on %s", ver.driver, ver.backend);
+	gf_log_function(NULL, "Search path: %s", search);
+	free(search);
 #ifdef _WIN32
 	if(QueryPerformanceFrequency(&hpc_freq) <= 0) {
 		hpc_freq.QuadPart = 0;
@@ -77,6 +82,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packp
 	engine->log	   = stderr;
 	engine->error	   = 0;
 	engine->lua	   = NULL;
+	engine->name	   = NULL;
 	engine->force_down = 0;
 
 	gf_prop_set_integer(&engine->config, "width", 800);
@@ -239,4 +245,9 @@ void gf_engine_shutdown(gf_engine_t* engine) {
 	if(engine->client == NULL) {
 		engine->force_down = 1;
 	}
+}
+
+void gf_engine_name(gf_engine_t* engine, const char* name) {
+	if(engine->name != NULL) free(engine->name);
+	engine->name = gf_util_strdup(name);
 }
