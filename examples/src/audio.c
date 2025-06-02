@@ -20,6 +20,9 @@ int main(int argc, char** argv) {
 		fprintf(stderr, "Usage: %s path\n", argv[0]);
 		return 1;
 	}
+#ifndef _WIN32
+	signal(SIGINT, handler);
+#endif
 	gf_engine_begin();
 	engine = gf_engine_create_ex("unused", 1, "data", argv, argc);
 	if(engine != NULL) {
