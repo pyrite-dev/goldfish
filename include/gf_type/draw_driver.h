@@ -11,7 +11,7 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_DRAW_DRIVER
-typedef struct gf_draw_driver_t gf_draw_driver_t;
+typedef struct gf_draw_driver gf_draw_driver_t;
 
 /* External library */
 #if defined(GF_DRV_OPENGL)

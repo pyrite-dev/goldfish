@@ -228,7 +228,7 @@
  * @param n Name
  * @param b Body
  */
-#define GF_DECLARE_TYPE(n, b) typedef struct gf_##n##_t b gf_##n##_t;
+#define GF_DECLARE_TYPE(n, b) typedef struct gf_##n b gf_##n##_t;
 
 /**
  * @~english
@@ -236,7 +236,7 @@
  * @param n Name
  * @param b Body
  */
-#define GF_DECLARE_UNION(n, b) typedef union gf_##n##_t b gf_##n##_t;
+#define GF_DECLARE_UNION(n, b) typedef union gf_##n b gf_##n##_t;
 
 /**
  * @def GF_EXPORT

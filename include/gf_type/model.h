@@ -11,7 +11,7 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_MODEL
-typedef struct gf_model_t gf_model_t;
+typedef struct gf_model gf_model_t;
 
 /* External library */
 

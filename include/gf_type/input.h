@@ -11,7 +11,7 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_INPUT
-typedef struct gf_input_t gf_input_t;
+typedef struct gf_input gf_input_t;
 
 /* External library */
 

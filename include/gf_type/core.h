@@ -11,7 +11,7 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_CORE
-typedef struct gf_engine_t gf_engine_t;
+typedef struct gf_engine gf_engine_t;
 
 /* External library */
 

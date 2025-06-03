@@ -11,7 +11,7 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_RESOURCE
-typedef struct gf_resource_t gf_resource_t;
+typedef struct gf_resource gf_resource_t;
 
 /* External library */
 

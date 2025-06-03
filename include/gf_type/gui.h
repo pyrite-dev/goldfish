@@ -41,8 +41,8 @@ enum GF_GUI_COMPONENT_TYPES {
 };
 
 #ifdef GF_EXPOSE_GUI
-typedef struct gf_gui_t		  gf_gui_t;
-typedef struct gf_gui_component_t gf_gui_component_t;
+typedef struct gf_gui		  gf_gui_t;
+typedef struct gf_gui_component gf_gui_component_t;
 
 /* External library */
 

@@ -27,7 +27,7 @@ typedef struct timeval gf_draw_time_t;
 #endif
 
 #ifdef GF_EXPOSE_DRAW
-typedef struct gf_draw_t gf_draw_t;
+typedef struct gf_draw gf_draw_t;
 
 /* External library */
 

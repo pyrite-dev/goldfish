@@ -11,7 +11,7 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_GRAPHIC
-typedef struct gf_graphic_color_t gf_graphic_color_t;
+typedef struct gf_graphic_color gf_graphic_color_t;
 
 /* External library */
 

@@ -23,7 +23,7 @@ typedef long gf_prop_integer_t;
 typedef double gf_prop_floating_t;
 
 #ifdef GF_EXPOSE_PROP
-typedef struct gf_prop_t gf_prop_t;
+typedef struct gf_prop gf_prop_t;
 
 /* External library */
 

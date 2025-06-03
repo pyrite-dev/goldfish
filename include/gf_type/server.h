@@ -11,7 +11,7 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_SERVER
-typedef struct gf_server_t gf_server_t;
+typedef struct gf_server gf_server_t;
 
 /* External library */
 
