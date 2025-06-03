@@ -223,6 +223,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		return NULL;
 	}
 
+#if WINVER >= 0x0500
 	{
 		BITMAPV5HEADER bi;
 		HBITMAP	       color;
@@ -318,6 +319,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		SetClassLongPtr(platform->window, GCLP_HICONSM, (LPARAM)handle);
 		DestroyIcon(handle);
 	}
+#endif
 
 	SetWindowLongPtr(platform->window, GWLP_USERDATA, (LONG_PTR)draw);
 
@@ -413,9 +415,11 @@ void gf_draw_platform_destroy(gf_draw_platform_t* platform) {
 	if(platform->window != NULL) {
 		DestroyWindow(platform->window);
 	}
+#if WINVER >= 0x0500
 	if(platform->cursor != NULL) {
 		DestroyCursor((HCURSOR)platform->cursor);
 	}
+#endif
 	gf_log_function(platform->engine, "Destroyed platform-dependent part of drawing driver", "");
 	free(platform);
 }
