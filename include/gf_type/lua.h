@@ -11,7 +11,9 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_LUA
-typedef struct gf_lua gf_lua_t;
+#define gf_lua_t struct gf_lua
+
+gf_lua_t;
 
 /* External library */
 #include <lua.h>

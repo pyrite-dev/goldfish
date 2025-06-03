@@ -11,7 +11,9 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_VERSION
-typedef struct gf_version gf_version_t;
+#define gf_version_t struct gf_version
+
+gf_version_t;
 
 /* External library */
 

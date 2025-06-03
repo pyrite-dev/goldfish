@@ -11,9 +11,17 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_FONT
-typedef struct gf_font_bbox  gf_font_bbox_t;
-typedef struct gf_font_glyph gf_font_glyph_t;
-typedef struct gf_font       gf_font_t;
+#define gf_font_store_t struct gf_font_store
+#define gf_font_bbox_t struct gf_font_bbox
+#define gf_font_glyph_t struct gf_font_glyph
+#define gf_font_cache_t struct gf_font_cache
+#define gf_font_t struct gf_font
+
+gf_font_store_t;
+gf_font_bbox_t;
+gf_font_glyph_t;
+gf_font_cache_t;
+gf_font_t;
 
 /* External library */
 #include <stb_truetype.h>

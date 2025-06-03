@@ -11,7 +11,9 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_PHYSICS
-typedef struct gf_physics gf_physics_t;
+#define gf_physics_t struct gf_physics
+
+gf_physics_t;
 
 /* External library */
 #include <ode/ode.h>

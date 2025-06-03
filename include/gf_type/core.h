@@ -11,7 +11,9 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_CORE
-typedef struct gf_engine gf_engine_t;
+#define gf_engine_t struct gf_engine
+
+gf_engine_t;
 
 /* External library */
 
@@ -40,7 +42,7 @@ typedef struct gf_engine gf_engine_t;
  * @brief Log output
  * @note Default is `stderr`
  * @warning This is `NULL` when logger is using graphical console
- * @warning Destroying engien instance **does not** `fclose` this
+ * @warning Destroying engine instance **does not** `fclose` this
  *
  * @var gf_engine_t::base
  * @brief Base resource

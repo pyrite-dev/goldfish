@@ -11,8 +11,11 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_SOUND
-typedef struct gf_sound	  gf_sound_t;
-typedef struct gf_sound_context gf_sound_context_t;
+#define gf_sound_context_t struct gf_sound_context
+#define gf_sound_t struct gf_sound
+
+gf_sound_context_t;
+gf_sound_t;
 
 /* External library */
 #include <gf_snddrv.h>

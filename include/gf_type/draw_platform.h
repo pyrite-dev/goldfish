@@ -11,7 +11,9 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_DRAW_PLATFORM
-typedef struct gf_draw_platform gf_draw_platform_t;
+#define gf_draw_platform_t struct gf_draw_platform
+
+gf_draw_platform_t;
 
 /* External library */
 #if defined(GF_DRV_OPENGL)

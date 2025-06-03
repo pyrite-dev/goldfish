@@ -13,8 +13,11 @@
 typedef int gf_audio_id_t;
 
 #ifdef GF_EXPOSE_AUDIO
-typedef struct gf_audio	  gf_audio_t;
-typedef struct gf_audio_decoder gf_audio_decoder_t;
+#define gf_audio_decoder_t struct gf_audio_decoder
+#define gf_audio_t struct gf_audio
+
+gf_audio_decoder_t;
+gf_audio_t;
 
 /* External library */
 #include <jar_xm.h>

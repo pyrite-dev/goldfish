@@ -11,8 +11,11 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_MESH
-typedef struct gf_mesh_triangle gf_mesh_triangle_t;
-typedef struct gf_mesh	  gf_mesh_t;
+#define gf_mesh_triangle_t struct gf_mesh_triangle
+#define gf_mesh_t struct gf_mesh
+
+gf_mesh_triangle_t;
+gf_mesh_t;
 
 /* External library */
 

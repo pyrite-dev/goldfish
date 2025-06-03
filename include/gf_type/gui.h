@@ -40,9 +40,16 @@ enum GF_GUI_COMPONENT_TYPES {
 	GF_GUI_PROGRESS
 };
 
+#define gf_gui_call_t struct gf_gui_call
+
+gf_gui_call_t;
+
 #ifdef GF_EXPOSE_GUI
-typedef struct gf_gui		  gf_gui_t;
-typedef struct gf_gui_component gf_gui_component_t;
+#define gf_gui_component_t struct gf_gui_component
+#define gf_gui_t struct gf_gui
+
+gf_gui_component_t;
+gf_gui_t;
 
 /* External library */
 

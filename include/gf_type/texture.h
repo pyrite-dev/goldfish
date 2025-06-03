@@ -11,7 +11,9 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_TEXTURE
-typedef struct gf_texture gf_texture_t;
+#define gf_texture_t struct gf_texture
+
+gf_texture_t;
 
 /* External library */
 

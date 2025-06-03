@@ -11,7 +11,9 @@
 #include <gf_macro.h>
 
 #ifdef GF_EXPOSE_CLIENT
-typedef struct gf_client gf_client_t;
+#define gf_client_t struct gf_client
+
+gf_client_t;
 
 /* External library */
 
