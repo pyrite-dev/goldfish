@@ -273,7 +273,7 @@ void gf_resource_write_worker(void* args) {
 		size_t		     sz2  = 0;
 		char*		     data = NULL;
 		gf_resource_entry_t* e;
-		// Skipped worked-on threads
+		/* Skipped worked-on threads */
 		gf_thread_mutex_lock(wargs->processed_lock);
 		if(wargs->processed[i]) {
 			gf_thread_mutex_unlock(wargs->processed_lock);
@@ -369,7 +369,7 @@ void gf_resource_write(gf_resource_t* resource, const char* path, int progress) 
 	int				       j;
 	FILE*				       f;
 	unsigned char			       fn[128];
-	char*				       processed; // array of each entry representing whether it is/has been worked on or not yet
+	char*				       processed; /* array of each entry representing whether it is/has been worked on or not yet */
 	gf_thread_mutex_t*		       processed_lock;
 	gf_thread_mutex_t*		       f_lock;
 	gf_thread_event_t*		       workers_finished;
