@@ -13,6 +13,8 @@
 #include <gf_core.h>
 #include <gf_log.h>
 #include <gf_file.h>
+#include <gf_thread.h>
+#include <gf_type/thread.h>
 
 /* Standard */
 #include <string.h>
@@ -24,6 +26,7 @@
 #endif
 
 #define CHUNK 32767
+#define NUM_THREADS 8
 
 gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 	FILE*	       f;
@@ -247,30 +250,38 @@ void gf_resource_add(gf_resource_t* resource, const char* name, void* data, size
 	shputs(resource->entries, e);
 }
 
-void gf_resource_write(gf_resource_t* resource, const char* path, int progress) {
+struct gf_resource_write_worker_args_t {
+	gf_resource_t*		   resource;
+	int			   progress;
+	int			   finish_count;
+	FILE*			   f;
+	char*			   processed;
+	struct gf_thread_mutext_t* processed_lock;
+	struct gf_thread_mutext_t* f_lock;
+	struct gf_thread_event_t*  workers_finished;
+};
+
+void gf_resource_write_worker(void* args) {
+	struct gf_resource_write_worker_args_t* wargs = (struct gf_resource_write_worker_args_t*)args;
+
 	int	      i;
-	FILE*	      f;
 	unsigned char fn[128];
-	if(resource->path != NULL) return;
 
-	f = fopen(path, "wb");
-	if(f == NULL) return;
+	for(i = 0; i < shlen(wargs->resource->entries); i++) {
+		// Skipped worked-on threads
+		gf_thread_mutex_lock(wargs->processed_lock);
+		if(wargs->processed[i]) {
+			gf_thread_mutex_unlock(wargs->processed_lock);
+			continue;
+		}
+		wargs->processed[i] = 1;
+		gf_thread_mutex_unlock(wargs->processed_lock);
 
-	for(i = 0; i < shlen(resource->entries); i++) {
-		gf_resource_entry_t* e = &resource->entries[i];
+		gf_resource_entry_t* e = &wargs->resource->entries[i];
 		int		     j;
 		size_t		     sz	  = 0;
 		size_t		     sz2  = 0;
 		char*		     data = NULL;
-
-		if(progress && e->size == 0) {
-			printf("%s", e->key);
-			fflush(stdout);
-		}
-
-		memset(fn, 0, 128);
-		strcpy(fn, e->key);
-		fwrite(fn, 128, 1, f);
 
 		if(e->size != 0) {
 			sz = e->size;
@@ -310,11 +321,6 @@ void gf_resource_write(gf_resource_t* resource, const char* path, int progress) 
 					}
 
 					sz += have;
-
-					if(progress) {
-						printf(".");
-						fflush(stdout);
-					}
 				} while(stream.avail_out == 0);
 				ptr += wts;
 				dsz -= wts;
@@ -322,28 +328,75 @@ void gf_resource_write(gf_resource_t* resource, const char* path, int progress) 
 			deflateEnd(&stream);
 		}
 
+		gf_thread_mutex_lock(wargs->f_lock);
+		memset(fn, 0, 128);
+		strcpy(fn, e->key);
+		fwrite(fn, 128, 1, wargs->f);
+
 		sz2 = sz;
 		for(j = 0; j < 4; j++) {
 			unsigned char c = 0;
 			c		= ((sz >> 24) & 0xff);
-			fwrite(&c, 1, 1, f);
+			fwrite(&c, 1, 1, wargs->f);
 
 			sz = sz << 8;
 		}
 		sz = sz2;
 
 		if(e->size != 0) {
-			fwrite(e->compressed, sz, 1, f);
+			fwrite(e->compressed, sz, 1, wargs->f);
 		} else if(data != NULL) {
-			fwrite(data, sz, 1, f);
+			fwrite(data, sz, 1, wargs->f);
 			e->compressed = data;
 			e->size	      = sz;
 		}
 
-		if(progress && data != NULL) {
-			printf(" %.2f%%\n", (double)e->ogsize / e->size * 100);
+		if(wargs->progress && data != NULL) {
+			printf("%s ... %.2f%%\n", e->key, (double)e->ogsize / e->size * 100);
 		}
+
+		gf_thread_mutex_unlock(wargs->f_lock);
 	}
+
+	wargs->finish_count++;
+	if(wargs->finish_count >= NUM_THREADS) {
+		gf_thread_event_signal(wargs->workers_finished);
+	}
+}
+
+void gf_resource_write(gf_resource_t* resource, const char* path, int progress) {
+	int		   j;
+	FILE*		   f;
+	unsigned char	   fn[128];
+	char*		   processed; // array of each entry representing whether it is/has been worked on or not yet
+	gf_thread_mutex_t* processed_lock;
+	gf_thread_mutex_t* f_lock;
+	gf_thread_event_t* workers_finished;
+	if(resource->path != NULL) return;
+
+	f = fopen(path, "wb");
+	if(f == NULL) return;
+
+	processed_lock	 = gf_thread_mutex_create();
+	f_lock		 = gf_thread_mutex_create();
+	workers_finished = gf_thread_event_create();
+
+	j	  = sizeof(char) * shlen(resource->entries);
+	processed = malloc(j);
+	memset(processed, 0, j);
+
+	struct gf_resource_write_worker_args_t wargs = {resource, progress, 0, f, processed, processed_lock, f_lock, workers_finished};
+
+	for(j = 0; j < NUM_THREADS; j++) {
+		gf_thread_create(gf_resource_write_worker, &wargs);
+	}
+
+	gf_thread_event_wait(workers_finished);
+
+	gf_thread_mutex_destroy(processed_lock);
+	gf_thread_mutex_destroy(f_lock);
+	gf_thread_event_destroy(workers_finished);
+	free(processed);
 
 	memset(fn, 0, 128);
 	fwrite(fn, 128, 1, f);
