@@ -268,6 +268,11 @@ void gf_resource_write_worker(void* args) {
 	unsigned char fn[128];
 
 	for(i = 0; i < shlen(wargs->resource->entries); i++) {
+		int		     j;
+		size_t		     sz	  = 0;
+		size_t		     sz2  = 0;
+		char*		     data = NULL;
+		gf_resource_entry_t* e;
 		// Skipped worked-on threads
 		gf_thread_mutex_lock(wargs->processed_lock);
 		if(wargs->processed[i]) {
@@ -277,11 +282,7 @@ void gf_resource_write_worker(void* args) {
 		wargs->processed[i] = 1;
 		gf_thread_mutex_unlock(wargs->processed_lock);
 
-		gf_resource_entry_t* e = &wargs->resource->entries[i];
-		int		     j;
-		size_t		     sz	  = 0;
-		size_t		     sz2  = 0;
-		char*		     data = NULL;
+		e = &wargs->resource->entries[i];
 
 		if(e->size != 0) {
 			sz = e->size;
@@ -365,13 +366,14 @@ void gf_resource_write_worker(void* args) {
 }
 
 void gf_resource_write(gf_resource_t* resource, const char* path, int progress) {
-	int		   j;
-	FILE*		   f;
-	unsigned char	   fn[128];
-	char*		   processed; // array of each entry representing whether it is/has been worked on or not yet
-	gf_thread_mutex_t* processed_lock;
-	gf_thread_mutex_t* f_lock;
-	gf_thread_event_t* workers_finished;
+	int				       j;
+	FILE*				       f;
+	unsigned char			       fn[128];
+	char*				       processed; // array of each entry representing whether it is/has been worked on or not yet
+	gf_thread_mutex_t*		       processed_lock;
+	gf_thread_mutex_t*		       f_lock;
+	gf_thread_event_t*		       workers_finished;
+	struct gf_resource_write_worker_args_t wargs;
 	if(resource->path != NULL) return;
 
 	f = fopen(path, "wb");
@@ -385,7 +387,14 @@ void gf_resource_write(gf_resource_t* resource, const char* path, int progress) 
 	processed = malloc(j);
 	memset(processed, 0, j);
 
-	struct gf_resource_write_worker_args_t wargs = {resource, progress, 0, f, processed, processed_lock, f_lock, workers_finished};
+	wargs.resource	       = resource;
+	wargs.progress	       = progress;
+	wargs.finish_count     = 0;
+	wargs.f		       = f;
+	wargs.processed	       = processed;
+	wargs.processed_lock   = processed_lock;
+	wargs.f_lock	       = f_lock;
+	wargs.workers_finished = workers_finished;
 
 	for(j = 0; j < NUM_THREADS; j++) {
 		gf_thread_create(gf_resource_write_worker, &wargs);
