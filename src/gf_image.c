@@ -1,9 +1,17 @@
+#ifdef __GNUC__
+#if __GNUC__ <= 3
+#define NO_SVG
+#endif
+#endif
+
 #include <gf_pre.h>
 
 /* External library */
 #include <stb_image.h>
+#ifndef NO_SVG
 #include <nanosvg.h>
 #include <nanosvgrast.h>
+#endif
 
 /* Interface */
 #include <gf_image.h>
@@ -26,6 +34,7 @@ unsigned char* gf_image_load(gf_engine_t* engine, const char* path, int* width, 
 		b[f->size] = 0;
 
 		r = stbi_load_from_memory(b, f->size, width, height, &ch, 4);
+#ifndef NO_SVG
 		if(r == NULL) {
 			NSVGimage* img = nsvgParse(b, "px", 128);
 			if(img != NULL) {
@@ -40,6 +49,7 @@ unsigned char* gf_image_load(gf_engine_t* engine, const char* path, int* width, 
 				nsvgDelete(img);
 			}
 		}
+#endif
 	}
 
 	/* TODO: should we have state to control this behavior? */
