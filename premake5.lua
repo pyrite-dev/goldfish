@@ -32,6 +32,9 @@ gf_sound_backends = {
 	},
 	windows = {
 		name = "DirectSound/WinMM",
+	},
+	winmm = {
+		name = "WinMM",
 	}
 }
 

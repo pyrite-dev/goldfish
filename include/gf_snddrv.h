@@ -11,6 +11,8 @@
 #if defined(GF_SND_WINDOWS)
 #include <windows.h>
 #include <dsound.h>
+#elif defined(GF_SND_WINMM)
+#include <windows.h>
 #elif defined(GF_SND_MINIAUDIO)
 #include <miniaudio.h>
 #elif defined(GF_SND_ALSA)

@@ -34,6 +34,13 @@ GF_DECLARE_TYPE(sound_context, {
 	gf_thread_t* thread;
 	int quit;
 });
+#elif defined(GF_SND_WINMM)
+GF_DECLARE_TYPE(sound_context, {
+	HWAVEOUT waveout;
+	WAVEFORMATEX wavefmt;
+	gf_thread_t* thread;
+	int quit;
+});
 #elif defined(GF_SND_MINIAUDIO)
 GF_DECLARE_TYPE(sound_context, {
 	ma_device device;
