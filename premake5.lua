@@ -265,7 +265,7 @@ else
 		"HAVE_STDARG_H=1"
 	})
 end
-	filter("toolset:not msc")
+	filter("system:not windows")
 		defines({
 			"HAVE_UNISTD_H=1"
 		})
