@@ -3,6 +3,7 @@ pipeline {
 	environment {
 		WEBHOOK_NISHBOX = credentials("webhook-nishbox")
 		WEBHOOK_ORIN = credentials("webhook-orin")
+		WEBHOOK_PRIVATE1 = credentials("webhook-private1")
 	}
 	stages {
 		stage("Get submodules") {
@@ -31,7 +32,7 @@ pipeline {
 }
 
 def post_always(cmt,art){
-	def list = [env.WEBHOOK_NISHBOX, env.WEBHOOK_ORIN]
+	def list = [env.WEBHOOK_NISHBOX, env.WEBHOOK_ORIN, env.WEBHOOK_PRIVATE1]
 	for(int i = 0; i < list.size(); i++){
 		discordSend(
 			webhookURL: list[i],
