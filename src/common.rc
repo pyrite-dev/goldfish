@@ -7,7 +7,7 @@ BEGIN
                 BEGIN
                         VALUE "CompanyName", "Pyrite Development Team\0"
                         VALUE "FileDescription", FILE_DESCRIPTION
-                        VALUE "LegalCopyright", "3-clause BSD\0"
+                        VALUE "LegalCopyright", "4-clause BSD\0"
                         VALUE "FileVersion", "0.0.0.0\0"
                         VALUE "ProductName", "GoldFish Engine\0"
                 END
