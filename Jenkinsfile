@@ -24,24 +24,26 @@ pipeline {
 			}
 			post {
 				always {
-					post_always(true, true)
+					post_always(true, true, true)
 				}
 			}
 		}
 	}
 }
 
-def post_always(cmt,art){
+def post_always(cmt,art,alw=false){
 	def list = [env.WEBHOOK_NISHBOX, env.WEBHOOK_ORIN, env.WEBHOOK_PRIVATE1]
 	for(int i = 0; i < list.size(); i++){
-		discordSend(
-			webhookURL: list[i],
-			link: env.BUILD_URL,
-			result: currentBuild.currentResult,
-			title: "${env.JOB_NAME} - ${env.STAGE_NAME}",
-			showChangeset: cmt,
-			enableArtifactsList: art,
-			description: "**Build:** ${env.BUILD_NUMBER}\n**Status:** ${currentBuild.currentResult}"
-		)
+		if(alw || currentBuild.currentResult != "SUCCESS"){
+			discordSend(
+				webhookURL: list[i],
+				link: env.BUILD_URL,
+				result: currentBuild.currentResult,
+				title: "${env.JOB_NAME} - ${env.STAGE_NAME}",
+				showChangeset: cmt,
+				enableArtifactsList: art,
+				description: "**Build:** ${env.BUILD_NUMBER}\n**Status:** ${currentBuild.currentResult}"
+			)
+		}
 	}
 }
