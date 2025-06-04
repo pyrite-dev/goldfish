@@ -69,7 +69,7 @@ GF_DECLARE_TYPE(draw_platform, {
 	OSMesaContext  context;
 	unsigned char* buffer;
 	HBITMAP	       bitmap;
-	BITMAPV5HEADER header;
+	BITMAPV4HEADER header;
 	HDC	       bitmapdc;
 	HCURSOR cursor;
 });
