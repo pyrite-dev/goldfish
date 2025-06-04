@@ -13,7 +13,9 @@
 /* Standard */
 #include <string.h>
 #include <stdlib.h>
-#ifndef _WIN32
+#ifdef _WIN32
+#include <shlobj.h>
+#else
 #include <pwd.h>
 #include <unistd.h>
 #endif
@@ -33,15 +35,34 @@ static void add_search(char*** l, char* p) {
 static void add_user_search(char*** l, char* n) {
 #ifdef _WIN32
 	/* not good way */
+	char  shp[MAX_PATH];
 	char* u = getenv("USERPROFILE");
-	if(u != NULL) {
-		char* p = malloc(strlen(u) + 1 + strlen(n) + 1);
-		strcpy(p, u);
-		strcat(p, "/");
+	if(SHGetSpecialFolderPath(NULL, shp, CSIDL_APPDATA, 0)) {
+		char* p = malloc(strlen(shp) + 1 + strlen(n) + 1);
+		strcpy(p, shp);
+		strcat(p, "\\");
 		strcat(p, n);
 		add_search(l, p);
 		free(p);
 	}
+	if(u != NULL) {
+		char* p = malloc(strlen(u) + 1 + strlen(n) + 1);
+		strcpy(p, u);
+		strcat(p, "\\");
+		strcat(p, n);
+		add_search(l, p);
+		free(p);
+	}
+#if WINVER >= 0x0500
+	if(SHGetSpecialFolderPath(NULL, shp, CSIDL_PROFILE, 0)) {
+		char* p = malloc(strlen(shp) + 1 + strlen(n) + 1);
+		strcpy(p, shp);
+		strcat(p, "\\");
+		strcat(p, n);
+		add_search(l, p);
+		free(p);
+	}
+#endif
 #else
 	struct passwd* pwd = getpwuid(getuid());
 	if(pwd != NULL) {
