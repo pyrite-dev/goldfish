@@ -54,6 +54,7 @@ void gf_engine_begin(void) {
 	gf_log_function(NULL, "Search path: %s", search);
 	free(search);
 #ifdef _WIN32
+	gf_log_function(NULL, "Compile-time WINVER: 0x%04x", WINVER);
 	if(QueryPerformanceFrequency(&hpc_freq) <= 0) {
 		hpc_freq.QuadPart = 0;
 	}

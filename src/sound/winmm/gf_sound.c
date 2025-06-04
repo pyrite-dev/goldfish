@@ -51,17 +51,11 @@ void gf_sound_winmm_thread(void* ptr) {
 	int	       interval = 60;
 	int	       len	= sound->context.wavefmt.nAvgBytesPerSec * interval / 1000;
 	unsigned char* data	= malloc(len);
-	int	       diff	= 0;
+	int	       dw	= GetTickCount();
 	while(1) {
-		int dw = GetTickCount();
 		int dw2;
-		if(diff >= len) {
-			Sleep(interval);
-			diff -= len;
-			continue;
-		}
 		hdr.lpData	    = data;
-		hdr.dwBufferLength  = len - diff;
+		hdr.dwBufferLength  = len;
 		hdr.dwBytesRecorded = 0;
 		hdr.dwUser	    = 0;
 		hdr.dwFlags	    = 0;
@@ -73,14 +67,11 @@ void gf_sound_winmm_thread(void* ptr) {
 		waveOutPrepareHeader(sound->context.waveout, &hdr, sizeof(hdr));
 		waveOutWrite(sound->context.waveout, &hdr, sizeof(hdr));
 		waveOutUnprepareHeader(sound->context.waveout, &hdr, sizeof(hdr));
-		diff = 0;
-		dw2  = GetTickCount();
+		dw2 = GetTickCount();
 		if((dw2 - dw) < interval) {
 			Sleep(interval - (dw2 - dw));
-		} else {
-			diff = ((dw2 - dw) - interval) * sound->sample_rate / 1000;
 		}
-		diff *= 4;
+		dw = GetTickCount();
 		if(sound->context.quit) break;
 	}
 
