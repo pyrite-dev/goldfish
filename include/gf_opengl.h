@@ -15,13 +15,26 @@
 
 #define RGFW_USE_XDL
 #define RGFWDEF extern
+#ifdef GF_USE_GLOAD
+#define RGFW_NO_GL_HEADER
+#include <gf_gload.h>
+#endif
 
 #include <RGFW.h>
 #else
 #ifdef _WIN32
 #include <windows.h>
 #endif
+
+#if defined(GF_USE_GLOAD) && defined(GF_TYPE_NATIVE)
+#ifdef _WIN32
+#undef APIENTRY
+#endif
+#include <gf_gload.h>
+#else
 #include <GL/gl.h>
+#endif
+
 #if defined(GF_TYPE_OSMESA)
 #include <GL/osmesa.h>
 #endif

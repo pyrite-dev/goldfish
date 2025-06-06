@@ -8,6 +8,10 @@
 
 /* External library */
 #include <stb_ds.h>
+#ifdef GF_USE_GLOAD
+#define GLOAD_IMPLEMENTATION
+#include <gf_gload.h>
+#endif
 
 /* Interface */
 #include <gf_draw.h>
@@ -60,6 +64,10 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	draw->background.g = 0x11;
 	draw->background.b = 0x11;
 	draw->background.a = 0xff;
+
+#ifdef GF_USE_GLOAD
+	gload_init();
+#endif
 
 	strcpy(draw->title, title);
 	draw->platform = gf_draw_platform_create(engine, draw);
