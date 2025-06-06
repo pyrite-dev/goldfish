@@ -42,6 +42,57 @@ gf_input_t;
 #define GF_INPUT_MOUSE_RIGHT_MASK (1 << 2)
 
 /**
+ * @~english
+ * @brief Key list
+ */
+enum GF_INPUT_KEYS {
+	GF_INPUT_KEY_ESCAPE = 0,
+
+	GF_INPUT_KEY_ENTER,
+
+	GF_INPUT_KEY_BACKSPACE,
+	GF_INPUT_KEY_SPACE,
+
+	GF_INPUT_KEY_0,
+	GF_INPUT_KEY_1,
+	GF_INPUT_KEY_2,
+	GF_INPUT_KEY_3,
+	GF_INPUT_KEY_4,
+	GF_INPUT_KEY_5,
+	GF_INPUT_KEY_6,
+	GF_INPUT_KEY_7,
+	GF_INPUT_KEY_8,
+	GF_INPUT_KEY_9,
+
+	GF_INPUT_KEY_A,
+	GF_INPUT_KEY_B,
+	GF_INPUT_KEY_C,
+	GF_INPUT_KEY_D,
+	GF_INPUT_KEY_E,
+	GF_INPUT_KEY_F,
+	GF_INPUT_KEY_G,
+	GF_INPUT_KEY_H,
+	GF_INPUT_KEY_I,
+	GF_INPUT_KEY_J,
+	GF_INPUT_KEY_K,
+	GF_INPUT_KEY_L,
+	GF_INPUT_KEY_M,
+	GF_INPUT_KEY_N,
+	GF_INPUT_KEY_O,
+	GF_INPUT_KEY_P,
+	GF_INPUT_KEY_Q,
+	GF_INPUT_KEY_R,
+	GF_INPUT_KEY_S,
+	GF_INPUT_KEY_T,
+	GF_INPUT_KEY_U,
+	GF_INPUT_KEY_V,
+	GF_INPUT_KEY_W,
+	GF_INPUT_KEY_X,
+	GF_INPUT_KEY_Y,
+	GF_INPUT_KEY_Z
+};
+
+/**
  * @struct gf_input_t
  * @~english
  * @brief Input interface
@@ -57,12 +108,20 @@ gf_input_t;
  *
  * @var gf_input_t::mouse_flag
  * @brief Mouse flag
+ *
+ * @var gf_input_t::key_queue
+ * @brief Key queue
+ *
+ * @var gf_input_t::key_state
+ * @brief Key state
  */
 GF_DECLARE_TYPE(input, {
 	gf_engine_t* engine;
 	int	     mouse_x;
 	int	     mouse_y;
 	int	     mouse_flag;
+	int* key_queue;
+	int* key_state;
 });
 #else
 typedef void gf_input_t;

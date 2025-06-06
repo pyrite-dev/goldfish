@@ -8,6 +8,7 @@
 /* External library */
 #define RGFW_IMPLEMENTATION
 #include <gf_opengl.h>
+#include <stb_ds.h>
 
 /* Interface */
 #include <gf_draw_platform.h>
@@ -22,9 +23,33 @@
 #include <string.h>
 #include <stdlib.h>
 
-void gf_draw_platform_begin(void) {}
+typedef struct keymap {
+	int key;
+	int value;
+} keymap_t;
 
-void gf_draw_platform_end(void) {}
+static keymap_t* keymaps = NULL;
+
+void gf_draw_platform_begin(void) {
+	int i;
+
+	hmdefault(keymaps, -1);
+	hmput(keymaps, RGFW_escape, GF_INPUT_KEY_ESCAPE);
+
+	hmput(keymaps, RGFW_return, GF_INPUT_KEY_ENTER);
+
+	hmput(keymaps, RGFW_backSpace, GF_INPUT_KEY_BACKSPACE);
+	hmput(keymaps, RGFW_space, GF_INPUT_KEY_SPACE);
+
+	for(i = 0; i < 10; i++) hmput(keymaps, RGFW_0 + i, GF_INPUT_KEY_0 + i);
+
+	for(i = 0; i < 26; i++) hmput(keymaps, RGFW_a + i, GF_INPUT_KEY_A + i);
+}
+
+void gf_draw_platform_end(void) {
+	hmfree(keymaps);
+	keymaps = NULL;
+}
 
 int gf_draw_platform_has_extension(gf_draw_t* draw, const char* query) {
 	RGFW_window_makeCurrent(draw->platform->window);
@@ -59,6 +84,12 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 			if(draw->platform->window->event.button == RGFW_mouseLeft) draw->input->mouse_flag ^= GF_INPUT_MOUSE_LEFT_MASK;
 			if(draw->platform->window->event.button == RGFW_mouseMiddle) draw->input->mouse_flag ^= GF_INPUT_MOUSE_MIDDLE_MASK;
 			if(draw->platform->window->event.button == RGFW_mouseRight) draw->input->mouse_flag ^= GF_INPUT_MOUSE_RIGHT_MASK;
+		} else if(draw->platform->window->event.type == RGFW_keyPressed) {
+			int key = hmget(keymaps, draw->platform->window->event.key);
+			gf_input_key_press(draw->input, key);
+		} else if(draw->platform->window->event.type == RGFW_keyReleased) {
+			int key = hmget(keymaps, draw->platform->window->event.key);
+			gf_input_key_release(draw->input, key);
 		}
 	}
 	if(ret == 0) {

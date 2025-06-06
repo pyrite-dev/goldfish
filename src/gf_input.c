@@ -3,6 +3,7 @@
 #include <gf_pre.h>
 
 /* External library */
+#include <stb_ds.h>
 
 /* Interface */
 #include <gf_input.h>
@@ -23,10 +24,49 @@ gf_input_t* gf_input_create(gf_engine_t* engine) {
 	input->mouse_y	  = -1;
 	input->mouse_flag = 0;
 
+	input->key_state = NULL;
+	input->key_queue = NULL;
+
 	return input;
 }
 
 void gf_input_destroy(gf_input_t* input) {
 	gf_log_function(input->engine, "Destroyed input interface", "");
 	free(input);
+}
+
+int gf_input_key_down(gf_input_t* input, int key) {
+	int i;
+	int has = 0;
+	for(i = 0; i < arrlen(input->key_state); i++) {
+		if(input->key_state[i] == key) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+void gf_input_key_press(gf_input_t* input, int key) {
+	int i;
+	int has = 0;
+	for(i = 0; i < arrlen(input->key_state); i++) {
+		if(input->key_state[i] == key) {
+			has = 1;
+			break;
+		}
+	}
+	if(!has) {
+		arrput(input->key_state, key);
+	}
+	arrput(input->key_queue, key);
+}
+
+void gf_input_key_release(gf_input_t* input, int key) {
+	int i;
+	for(i = 0; i < arrlen(input->key_state); i++) {
+		if(input->key_state[i] == key) {
+			arrdel(input->key_state, i);
+			break;
+		}
+	}
 }

@@ -37,6 +37,31 @@ GF_EXPORT gf_input_t* gf_input_create(gf_engine_t* engine);
  */
 GF_EXPORT void gf_input_destroy(gf_input_t* input);
 
+/**
+ * @~english
+ * @brief Handle key press event
+ * @param input Input interface
+ * @param key Key
+ */
+GF_EXPORT void gf_input_key_press(gf_input_t* input, int key);
+
+/**
+ * @~english
+ * @brief Handle key release event
+ * @param input Input interface
+ * @param key Key
+ */
+GF_EXPORT void gf_input_key_release(gf_input_t* input, int key);
+
+/**
+ * @~english
+ * @brief Check if key is down
+ * @param input Input interface
+ * @param key Key
+ * @return `1` if key is down, `0` otherwise
+ */
+GF_EXPORT int gf_input_key_down(gf_input_t* input, int key);
+
 #ifdef __cplusplus
 }
 #endif
