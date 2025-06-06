@@ -157,6 +157,9 @@ void gf_draw_frame(gf_draw_t* draw) {
 	gf_lua_step(draw->engine->lua);
 	gf_gui_render(draw->gui);
 	gf_draw_cursor(draw);
+	if(arrlen(draw->input->key_queue) > 0) {
+		arrdel(draw->input->key_queue, 0);
+	}
 }
 
 void gf_draw_time(gf_draw_time_t* dtime) {
@@ -226,6 +229,7 @@ int gf_draw_step(gf_draw_t* draw) {
 	/* TODO: Implement this */
 #endif
 #endif
+
 	if(ret != 0) return ret;
 	if(draw->close == 1 && draw->engine->lua != NULL) {
 		draw->close = 0;
