@@ -52,6 +52,20 @@ int gf_input_key_pressed(gf_input_t* input, int key) {
 	return input->key_queue[0] == key ? 1 : 0;
 }
 
+char gf_input_key_name(gf_input_t* input, int key) {
+	if(GF_INPUT_KEY_A <= key && key <= GF_INPUT_KEY_Z) {
+		return 'a' + (key - GF_INPUT_KEY_A);
+	}
+
+	return 0;
+}
+
+char gf_input_key_char(gf_input_t* input) {
+	if(arrlen(input->key_queue) < 1) return 0;
+
+	return gf_input_key_name(input, input->key_queue[0]);
+}
+
 void gf_input_key_press(gf_input_t* input, int key) {
 	int i;
 	int has = 0;

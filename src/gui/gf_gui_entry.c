@@ -34,6 +34,9 @@ gf_gui_id_t gf_gui_create_entry(gf_gui_t* gui, double x, double y, double w, dou
 
 	arrput(gui->area, c);
 
+	c->text	   = malloc(1);
+	c->text[0] = 0;
+
 	return c->key;
 }
 
@@ -51,6 +54,7 @@ void gf_gui_entry_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	int	    cr;
 	double	    shift   = 0;
 	int	    focused = 0;
+	int	    changed = 0;
 	if(c->type != GF_GUI_ENTRY) return;
 
 	font = gf_prop_get_ptr_keep(&c->prop, "font");
@@ -112,17 +116,31 @@ void gf_gui_entry_render(gf_gui_t* gui, gf_gui_component_t* c) {
 				gf_prop_set_integer(&c->prop, "cursor", cr - 1);
 			} else if(gf_input_key_pressed(input, GF_INPUT_KEY_RIGHT) && cr < strlen(c->text)) {
 				gf_prop_set_integer(&c->prop, "cursor", cr + 1);
+			} else if(gf_input_key_pressed(input, GF_INPUT_KEY_HOME) && cr > 0) {
+				gf_prop_set_integer(&c->prop, "cursor", 0);
+			} else if(gf_input_key_pressed(input, GF_INPUT_KEY_END) && cr < strlen(c->text)) {
+				gf_prop_set_integer(&c->prop, "cursor", strlen(c->text));
 			} else if(gf_input_key_pressed(input, GF_INPUT_KEY_BACKSPACE) && strlen(c->text) > 0) {
 				char* t;
-				c->text[strlen(c->text) - 1] = 0;
-				t			     = gf_util_strdup(c->text);
+				int   i;
+				if(cr > 0) {
+					for(i = cr - 1; i < strlen(c->text); i++) {
+						c->text[i] = c->text[i + 1];
+					}
+					gf_prop_set_integer(&c->prop, "cursor", cr - 1);
+					changed = 1;
+				}
+				t = gf_util_strdup(c->text);
 				free(c->text);
 				c->text = t;
 			} else if(gf_input_key_pressed(input, GF_INPUT_KEY_DELETE) && strlen(c->text) > 0) {
 				char* t;
 				int   i;
-				for(i = cr; i < strlen(c->text); i++) {
-					c->text[i] = c->text[i + 1];
+				if(cr < strlen(c->text)) {
+					for(i = cr; i < strlen(c->text); i++) {
+						c->text[i] = c->text[i + 1];
+					}
+					changed = 1;
 				}
 				t = gf_util_strdup(c->text);
 				free(c->text);
@@ -130,7 +148,38 @@ void gf_gui_entry_render(gf_gui_t* gui, gf_gui_component_t* c) {
 			}
 		}
 	}
-	if(focused) gf_graphic_fill_rect(gui->draw, cx + loc + gf_gui_border_width * 2 - shift, cy + gf_gui_border_width * 2, 1, ch - gf_gui_border_width * 4, c->font);
+	if(focused) {
+		char kc;
+		gf_graphic_fill_rect(gui->draw, cx + loc + gf_gui_border_width * 2 - shift, cy + gf_gui_border_width * 2, 1, ch - gf_gui_border_width * 4, c->font);
+		if((kc = gf_input_key_char(input)) != 0) {
+			if(c->text == NULL) {
+				c->text	   = malloc(2);
+				c->text[0] = kc;
+				c->text[1] = 0;
+			} else {
+				char* t = malloc(strlen(c->text) + 2);
+				int   i;
+				for(i = 0; i < cr; i++) {
+					t[i] = c->text[i];
+				}
+				t[cr] = kc;
+				for(i = cr; i < strlen(c->text); i++) {
+					t[i + 1] = c->text[i];
+				}
+				t[strlen(c->text) + 1] = 0;
+				free(c->text);
+				c->text = t;
+			}
+			gf_prop_set_integer(&c->prop, "cursor", cr + 1);
+			changed = 1;
+		}
+	}
+	if(changed && c->callback != NULL) {
+		c->callback(gui->engine, gui->draw, gui->pressed, GF_GUI_CHANGE_EVENT);
+	}
+	if(gf_input_key_pressed(input, GF_INPUT_KEY_ENTER) && c->callback != NULL) {
+		c->callback(gui->engine, gui->draw, gui->pressed, GF_GUI_ACTIVATE_EVENT);
+	}
 	gf_graphic_clip_pop(gui->draw);
 }
 

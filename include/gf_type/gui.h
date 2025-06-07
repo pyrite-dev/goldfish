@@ -22,7 +22,8 @@ typedef int gf_gui_id_t;
  */
 enum GF_GUI_EVENTS {
 	GF_GUI_PRESS_EVENT = 0,
-	GF_GUI_CHANGE_EVENT
+	GF_GUI_CHANGE_EVENT,
+	GF_GUI_ACTIVATE_EVENT
 };
 
 /**

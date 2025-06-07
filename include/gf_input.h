@@ -71,6 +71,23 @@ GF_EXPORT int gf_input_key_down(gf_input_t* input, int key);
  */
 GF_EXPORT int gf_input_key_pressed(gf_input_t* input, int key);
 
+/**
+ * @~english
+ * @brief Convert key to char
+ * @param input Input interface
+ * @return Non-`0` if key can be converted to ASCII and got pressed, `0` otherwise
+ */
+GF_EXPORT char gf_input_key_char(gf_input_t* input);
+
+/**
+ * @~english
+ * @brief Convert key to char
+ * @param input Input interface
+ * @param key Key
+ * @return Non-`0` if key can be converted to ASCII, `0` otherwise
+ */
+GF_EXPORT char gf_input_key_name(gf_input_t* input, int key);
+
 #ifdef __cplusplus
 }
 #endif
