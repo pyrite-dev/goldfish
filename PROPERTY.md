@@ -70,7 +70,7 @@ Type: `integer`
 Context: GUI
 
 
-
+Non-zero if component is focused.
 
 ## frame
 Type: `id` 
