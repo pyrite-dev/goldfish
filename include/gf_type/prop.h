@@ -34,7 +34,7 @@ gf_prop_t;
 /* Standard */
 
 /**
- * @struct gf_prop_t
+ * @struct gf_prop
  * @~english
  * @brief Property container
  */

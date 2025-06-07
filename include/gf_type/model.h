@@ -24,14 +24,14 @@ gf_model_t;
 /* Standard */
 
 /**
- * @struct gf_model_t
+ * @struct gf_model
  * @~english
  * @brief Model
  *
- * @var gf_model_t::mesh
+ * @var gf_model::mesh
  * @brief Mesh
  *
- * @var gf_model_t::texture
+ * @var gf_model::texture
  * @brief Texture
  */
 GF_DECLARE_TYPE(model, {

@@ -24,20 +24,20 @@ gf_file_t;
 #include <stdio.h>
 
 /**
- * @struct gf_file_t
+ * @struct gf_file
  * @~english
  * @brief File
  *
- * @var gf_file_t::fp
+ * @var gf_file::fp
  * @brief File pointer
  *
- * @var gf_file_t::buffer
+ * @var gf_file::buffer
  * @brief Buffer
  *
- * @var gf_file_t::pos
+ * @var gf_file::pos
  * @brief File position
  *
- * @var gf_file_t::size
+ * @var gf_file::size
  * @brief File size
  */
 GF_DECLARE_TYPE(file, {

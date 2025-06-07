@@ -33,17 +33,17 @@ gf_font_t;
 /* Standard */
 
 /**
- * @struct gf_font_store_t
+ * @struct gf_font_store
  * @~english
  * @brief Internal struct used for parsing
  *
- * @var gf_font_store_t::glyph_index
+ * @var gf_font_store::glyph_index
  * @brief Current glyph index
  *
- * @var gf_font_store_t::glyph_index
+ * @var gf_font_store::glyph_index
  * @brief Current line index of glyph
  *
- * @var gf_font_store_t::buffer
+ * @var gf_font_store::buffer
  * @brief Glyph buffer
  */
 GF_DECLARE_TYPE(font_store, {
@@ -53,20 +53,20 @@ GF_DECLARE_TYPE(font_store, {
 });
 
 /**
- * @struct gf_font_bbox_t
+ * @struct gf_font_bbox
  * @~english
  * @brief Bounding box
  *
- * @var gf_font_bbox_t::width
+ * @var gf_font_bbox::width
  * @brief Width
  *
- * @var gf_font_bbox_t::height
+ * @var gf_font_bbox::height
  * @brief Height
  *
- * @var gf_font_bbox_t::x
+ * @var gf_font_bbox::x
  * @brief X coord
  *
- * @var gf_font_bbox_t::y
+ * @var gf_font_bbox::y
  * @brief Y coord
  */
 GF_DECLARE_TYPE(font_bbox, {
@@ -77,23 +77,23 @@ GF_DECLARE_TYPE(font_bbox, {
 });
 
 /**
- * @struct gf_font_glyph_t
+ * @struct gf_font_glyph
  * @~english
  * @brief Glyph
  *
- * @var gf_font_glyph_t::code
+ * @var gf_font_glyph::code
  * @brief Character code
  *
- * @var gf_font_glyph_t::texture
+ * @var gf_font_glyph::texture
  * @brief Texture
  *
- * @var gf_font_glyph_t::bpl
+ * @var gf_font_glyph::bpl
  * @brief Bytes per line
  *
- * @var gf_font_glyph_t::bbox
+ * @var gf_font_glyph::bbox
  * @brief Bounding box
  *
- * @var gf_font_glyph_t::dwidth
+ * @var gf_font_glyph::dwidth
  * @brief Device width
  */
 GF_DECLARE_TYPE(font_glyph, {
@@ -105,29 +105,29 @@ GF_DECLARE_TYPE(font_glyph, {
 });
 
 /**
- * @struct gf_font_cache_t
+ * @struct gf_font_cache
  * @~english
  * @brief Font cache
  *
- * @var gf_font_cache_t::text
+ * @var gf_font_cache::text
  * @brief Text
  *
- * @var gf_font_cache_t::size
+ * @var gf_font_cache::size
  * @brief Size
  *
- * @var gf_font_cache_t::width
+ * @var gf_font_cache::width
  * @brief Width
  *
- * @var gf_font_cache_t::height
+ * @var gf_font_cache::height
  * @brief Height
  *
- * @var gf_font_cache_t::texture
+ * @var gf_font_cache::texture
  * @brief Texture
  *
- * @var gf_font_cache_t::lw
+ * @var gf_font_cache::lw
  * @brief Limit width
  *
- * @var gf_font_cache_t::lh
+ * @var gf_font_cache::lh
  * @brief Limit height
  */
 GF_DECLARE_TYPE(font_cache, {
@@ -141,29 +141,29 @@ GF_DECLARE_TYPE(font_cache, {
 });
 
 /**
- * @struct gf_font_t
+ * @struct gf_font
  * @~english
  * @brief Font
  *
- * @var gf_font_t::draw
+ * @var gf_font::draw
  * @brief Drawing interface
  *
- * @var gf_font_t::glyph
+ * @var gf_font::glyph
  * @brief Glyph data
  *
- * @var gf_font_t::count
+ * @var gf_font::count
  * @brief Glyph count
  *
- * @var gf_font_t::bbox
+ * @var gf_font::bbox
  * @brief Bounding box
  *
- * @var gf_font_t::ttf
+ * @var gf_font::ttf
  * @brief TTF information
  *
- * @var gf_font_t::use_glyph
- * @brief `1` if you should use texture inside gf_font_t::glyph, `0` otherwise
+ * @var gf_font::use_glyph
+ * @brief `1` if you should use texture inside gf_font::glyph, `0` otherwise
  * 
- * @var gf_font_t::cache
+ * @var gf_font::cache
  * @brief Cache
  */
 GF_DECLARE_TYPE(font, {

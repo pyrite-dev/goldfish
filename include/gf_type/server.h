@@ -24,14 +24,14 @@ gf_server_t;
 /* Standard */
 
 /**
- * @struct gf_server_t
+ * @struct gf_server
  * @~english
  * @brief Server interface
  *
- * @var gf_server_t::engine
+ * @var gf_server::engine
  * @brief Engine instance
  *
- * @var gf_server_t::physics
+ * @var gf_server::physics
  * @brief Physics interface
  */
 GF_DECLARE_TYPE(server, {

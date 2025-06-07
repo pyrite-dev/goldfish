@@ -23,26 +23,26 @@ gf_texture_t;
 /* Standard */
 
 /**
- * @struct gf_texture_t
+ * @struct gf_texture
  * @~english
  * @brief Texture
  *
- * @var gf_texture_t::draw_driver_texture
+ * @var gf_texture::draw_driver_texture
  * @brief Driver-dependent texture
  *
- * @var gf_texture_t::width
+ * @var gf_texture::width
  * @brief Width of texture
  *
- * @var gf_texture_t::height
+ * @var gf_texture::height
  * @brief Height of texture
  *
- * @var gf_texture_t::internal_width
+ * @var gf_texture::internal_width
  * @brief Internal width of texture
  *
- * @var gf_texture_t::internal_height
+ * @var gf_texture::internal_height
  * @brief Internal height of texture
  *
- * @var gf_texture_t::keep_aspect
+ * @var gf_texture::keep_aspect
  * @brief Keep aspect or not
  */
 GF_DECLARE_TYPE(texture, {

@@ -37,13 +37,11 @@ LARGE_INTEGER hpc_freq;
 #endif
 void gf_engine_begin(void) {
 	gf_version_t ver;
-	char*	     search;
 	if(gf_log_default == NULL) gf_log_default = stderr;
 
 	gf_gui_init_calls();
 
 	gf_version_get(&ver);
-	search = gf_util_get_search(NULL);
 	gf_log_function(NULL, "GoldFish Engine %s", ver.full);
 	gf_log_function(NULL, "Build date: %s", ver.date);
 	gf_log_function(NULL, "Lua %s", ver.lua);
@@ -51,8 +49,6 @@ void gf_engine_begin(void) {
 	gf_log_function(NULL, "PCRE %s", ver.pcre);
 	gf_log_function(NULL, "Thread model: %s", ver.thread);
 	gf_log_function(NULL, "Renderer: %s on %s", ver.driver, ver.backend);
-	gf_log_function(NULL, "Search path: %s", search);
-	free(search);
 #ifdef _WIN32
 	gf_log_function(NULL, "Compile-time WINVER: 0x%04x", WINVER);
 	if(QueryPerformanceFrequency(&hpc_freq) <= 0) {
@@ -72,35 +68,37 @@ void gf_engine_end(void) {
 	gf_client_end();
 }
 
-gf_engine_t* gf_engine_create(const char* title, int nogui) { return gf_engine_create_ex(title, nogui, "base.pak", NULL, 0); }
+gf_engine_t* gf_engine_create(const char* title, int nogui) {
+	gf_engine_param_t param;
+	memset(&param, 0, sizeof(param));
+	return gf_engine_create_ex(title, nogui, param, NULL, 0);
+}
 
-gf_engine_t* gf_engine_create_ex(const char* title, int nogui, const char* packpath, char** argv, int argc) {
+gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t param, char** argv, int argc) {
 	int	     st;
 	char**	     list = NULL;
 	gf_file_t*   f;
 	int	     i;
 	int	     titlei = 0;
+	char*	     search;
 	gf_engine_t* engine = malloc(sizeof(*engine));
 	memset(engine, 0, sizeof(*engine));
 	engine->log	   = stderr;
 	engine->error	   = 0;
 	engine->lua	   = NULL;
-	engine->name	   = gf_util_strdup(title);
+	engine->name	   = gf_util_strdup(param.game != NULL ? param.game : title);
 	engine->force_down = 0;
-
-	for(i = 0; title[i] != 0; i++) {
-		if(title[i] == '|') {
-			engine->name[i] = 0;
-			titlei		= i + 1;
-			break;
-		}
-	}
 
 	gf_prop_set_integer(&engine->config, "width", 800);
 	gf_prop_set_integer(&engine->config, "height", 600);
 	gf_prop_set_text(&engine->config, "texture-filter", "linear");
+	if(param.prefix != NULL) gf_prop_set_text(&engine->config, "prefix", param.prefix);
 
-	engine->base = gf_resource_create(engine, packpath != NULL ? packpath : "base.pak");
+	search = gf_util_get_search(engine);
+	gf_log_function(NULL, "Search path: %s", search);
+	free(search);
+
+	engine->base = gf_resource_create(engine, param.base != NULL ? param.base : "base.pak");
 	if(engine->base == NULL) {
 		gf_engine_destroy(engine);
 		engine = NULL;

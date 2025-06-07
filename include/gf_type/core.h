@@ -10,6 +10,10 @@
 #include <gf_pre.h>
 #include <gf_macro.h>
 
+#define gf_engine_param_t struct gf_engine_param
+
+gf_engine_param_t;
+
 #ifdef GF_EXPOSE_CORE
 #define gf_engine_t struct gf_engine
 
@@ -28,47 +32,47 @@ gf_engine_t;
 #include <stdio.h>
 
 /**
- * @struct gf_engine_t
+ * @struct gf_engine
  * @~english
  * @brief Engine instance
  *
- * @var gf_engine_t::server
+ * @var gf_engine::server
  * @brief Server interface
  *
- * @var gf_engine_t::client
+ * @var gf_engine::client
  * @brief Client interface
  *
- * @var gf_engine_t::log
+ * @var gf_engine::log
  * @brief Log output
  * @note Default is `stderr`
  * @warning This is `NULL` when logger is using graphical console
  * @warning Destroying engine instance **does not** `fclose` this
  *
- * @var gf_engine_t::base
+ * @var gf_engine::base
  * @brief Base resource
  *
- * @var gf_engine_t::lua
+ * @var gf_engine::lua
  * @brief Lua interface
  *
- * @var gf_engine_t::error
+ * @var gf_engine::error
  * @brief Set on error
  *
- * @var gf_engine_t::icon
+ * @var gf_engine::icon
  * @brief Icon data
  *
- * @var gf_engine_t::icon_width
+ * @var gf_engine::icon_width
  * @brief Icon width
  *
- * @var gf_engine_t::icon_height
+ * @var gf_engine::icon_height
  * @brief Icon height
  *
- * @var gf_engine_t::config
+ * @var gf_engine::config
  * @brief Config
  *
- * @var gf_engine_t::force_down
+ * @var gf_engine::force_down
  * @brief Force engine shutdown
  *
- * @var gf_engine_t::name
+ * @var gf_engine::name
  * @brief Game name
  */
 GF_DECLARE_TYPE(engine, {
@@ -88,5 +92,11 @@ GF_DECLARE_TYPE(engine, {
 #else
 typedef void gf_engine_t;
 #endif
+
+GF_DECLARE_TYPE(engine_param, {
+	char* game;
+	char* base;
+	char* prefix;
+});
 
 #endif

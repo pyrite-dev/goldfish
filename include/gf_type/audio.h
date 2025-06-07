@@ -34,44 +34,44 @@ gf_audio_t;
 /* Standard */
 
 /**
- * @struct gf_audio_decoder_t
+ * @struct gf_audio_decoder
  * @~english
  * @brief Audio decoder
  *
- * @var gf_audio_decoder_t::audio
+ * @var gf_audio_decoder::audio
  * @brief Audio interface
  *
- * @var gf_audio_decoder_t::key
+ * @var gf_audio_decoder::key
  * @brief Decoder ID
  *
- * @var gf_audio_decoder_t::xm
+ * @var gf_audio_decoder::xm
  * @brief XM context
  *
- * @var gf_audio_decoder_t::mod
+ * @var gf_audio_decoder::mod
  * @brief MOD context
  *
- * @var gf_audio_decoder_t::mp3
+ * @var gf_audio_decoder::mp3
  * @brief MP3 context
  *
- * @var gf_audio_decoder_t::flac
+ * @var gf_audio_decoder::flac
  * @brief FLAC context
  *
- * @var gf_audio_decoder_t::wav
+ * @var gf_audio_decoder::wav
  * @brief WAV context
  *
- * @var gf_audio_decoder_t::internal
+ * @var gf_audio_decoder::internal
  * @brief Used internally
  *
- * @var gf_audio_decoder_t::used
+ * @var gf_audio_decoder::used
  * @brief `1` if used, `-1` if used but paused, `-2` if used but drain, otherwise `0`
  *
- * @var gf_audio_decoder_t::data
+ * @var gf_audio_decoder::data
  * @brief Copy of data
  *
- * @var gf_audio_decoder_t::size
+ * @var gf_audio_decoder::size
  * @brief Data size
  *
- * @var gf_audio_decoder_t::auto_destroy
+ * @var gf_audio_decoder::auto_destroy
  * @brief Auto-destroy
  */
 GF_DECLARE_TYPE(audio_decoder, {
@@ -90,26 +90,26 @@ GF_DECLARE_TYPE(audio_decoder, {
 });
 
 /**
- * @struct gf_audio_t
+ * @struct gf_audio
  * @~english
  * @brief Audio interface
  *
- * @var gf_audio_t::engine
+ * @var gf_audio::engine
  * @brief Engine instance
  *
- * @var gf_audio_t::device_config
+ * @var gf_audio::device_config
  * @brief miniaudio device config
  *
- * @var gf_audio_t::device
+ * @var gf_audio::device
  * @brief miniaudio device
  *
- * @var gf_audio_t::decoder
+ * @var gf_audio::decoder
  * @brief Decoder
  *
- * @var gf_audio_t::mutex
+ * @var gf_audio::mutex
  * @brief Mutex
  *
- * @var gf_audio_t::volume
+ * @var gf_audio::volume
  * @brief Global volume
  */
 GF_DECLARE_TYPE(audio, {

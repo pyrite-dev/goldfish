@@ -37,7 +37,7 @@ GF_DECLARE_TYPE(draw_driver_texture, {
 });
 #else
 /**
- * @struct gf_draw_driver_t
+ * @struct gf_draw_driver
  * @~english
  * @brief Drawing driver
  * @note Definition depends on the drawing driver, read the header file for definition
@@ -45,7 +45,7 @@ GF_DECLARE_TYPE(draw_driver_texture, {
 GF_DECLARE_TYPE(draw_driver, {});
 
 /**
- * @struct gf_draw_driver_texture_t
+ * @struct gf_draw_driver_texture
  * @~english
  * @brief Driver-dependent texture
  * @note Definition depends on the drawing driver, read the header file for definition

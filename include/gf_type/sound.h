@@ -72,7 +72,7 @@ GF_DECLARE_TYPE(sound_context, {
 });
 #else
 /**
- * @struct gf_sound_context_t
+ * @struct gf_sound_context
  * @~english
  * @brief Platform-dependent sound driver context
  * @note Definition depends on the platform, read the header file for definition
@@ -82,17 +82,17 @@ GF_DECLARE_TYPE(sound_context, {
 #endif
 
 /**
- * @struct gf_sound_t
+ * @struct gf_sound
  * @~english
  * @brief Sound driver
  *
- * @var gf_sound_t::audio
+ * @var gf_sound::audio
  * @brief Audio interface
  *
- * @var gf_sound_t::sample_rate
+ * @var gf_sound::sample_rate
  * @brief Sample rate
  *
- * @var gf_sound_t::context
+ * @var gf_sound::context
  * @brief Platform-dependent sound driver context
  */
 GF_DECLARE_TYPE(sound, {

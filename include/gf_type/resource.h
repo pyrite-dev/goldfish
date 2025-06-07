@@ -26,23 +26,23 @@ gf_resource_t;
 #include <stdio.h>
 
 /**
- * @struct gf_resource_entry_t
+ * @struct gf_resource_entry
  * @~english
  * @brief Resource entry
  *
- * @var gf_resource_entry_t::key
+ * @var gf_resource_entry::key
  * @brief Entry name
  *
- * @var gf_resource_entry_t::size
+ * @var gf_resource_entry::size
  * @brief Size
  *
- * @var gf_resource_entry_t::ogsize
+ * @var gf_resource_entry::ogsize
  * @brief Size after decompressing
  *
- * @var gf_resource_entry_t::compressed
+ * @var gf_resource_entry::compressed
  * @brief Compressed data
  *
- * @var gf_resource_entry_t::cache
+ * @var gf_resource_entry::cache
  * @brief Cache
  */
 GF_DECLARE_TYPE(resource_entry, {
@@ -54,17 +54,17 @@ GF_DECLARE_TYPE(resource_entry, {
 });
 
 /**
- * @struct gf_resource_t
+ * @struct gf_resource
  * @~english
  * @brief Resource
  *
- * @var gf_resource_t::engine
+ * @var gf_resource::engine
  * @brief Engine instance
  *
- * @var gf_resource_t::entries
+ * @var gf_resource::entries
  * @brief Resource entries
  *
- * @var gf_resource_t::path
+ * @var gf_resource::path
  * @brief If non-`NULL`, the resource is "Type2"
  */
 GF_DECLARE_TYPE(resource, {

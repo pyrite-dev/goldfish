@@ -67,51 +67,51 @@ gf_gui_t;
 typedef void (*gf_gui_callback_t)(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type);
 
 /**
- * @struct gf_gui_component_t
+ * @struct gf_gui_component
  * @~english
  * @brief Component
  *
- * @var gf_gui_component_t::key
+ * @var gf_gui_component::key
  * @brief Component ID
  *
- * @var gf_gui_component_t::type
+ * @var gf_gui_component::type
  * @brief Component type
  * @see GF_GUI_COMPONENT_TYPES
  *
- * @var gf_gui_component_t::x
+ * @var gf_gui_component::x
  * @brief X coord of component
  *
- * @var gf_gui_component_t::y
+ * @var gf_gui_component::y
  * @brief X coord of component
  *
- * @var gf_gui_component_t::width
+ * @var gf_gui_component::width
  * @brief Width of component
  *
- * @var gf_gui_component_t::height
+ * @var gf_gui_component::height
  * @brief Height of component
  *
- * @var gf_gui_component_t::pressed
+ * @var gf_gui_component::pressed
  * @brief `1` if pressed, otherwise `0`
  *
- * @var gf_gui_component_t::callback
+ * @var gf_gui_component::callback
  * @brief Event callback
  *
- * @var gf_gui_component_t::parent
+ * @var gf_gui_component::parent
  * @brief Parent GUI component
  *
- * @var gf_gui_component_t::prop
+ * @var gf_gui_component::prop
  * @brief Property
  *
- * @var gf_gui_component_t::text
+ * @var gf_gui_component::text
  * @brief Text
  *
- * @var gf_gui_component_t::font
+ * @var gf_gui_component::font
  * @brief Font color
  *
- * @var gf_gui_component_t::hover_font
+ * @var gf_gui_component::hover_font
  * @brief Hover font color
  *
- * @var gf_gui_component_t::texture
+ * @var gf_gui_component::texture
  * @brief Texture
  */
 GF_DECLARE_TYPE(gui_component, {
@@ -132,32 +132,32 @@ GF_DECLARE_TYPE(gui_component, {
 });
 
 /**
- * @struct gf_gui_t
+ * @struct gf_gui
  * @~english
  * @brief GUI
  *
- * @var gf_gui_t::engine
+ * @var gf_gui::engine
  * @brief Engine instance
  *
- * @var gf_gui_t::draw
+ * @var gf_gui::draw
  * @brief Drawing interface
  *
- * @var gf_gui_t::pressed
+ * @var gf_gui::pressed
  * @brief `1` if something is being pressed, otherwise `0`
  *
- * @var gf_gui_t::area
+ * @var gf_gui::area
  * @brief Created components
  *
- * @var gf_gui_t::base
+ * @var gf_gui::base
  * @brief Base color
  *
- * @var gf_gui_t::font
+ * @var gf_gui::font
  * @brief Font color
  *
- * @var gf_gui_t::hover
+ * @var gf_gui::hover
  * @brief Hover
  *
- * @var gf_gui_t::button_sound
+ * @var gf_gui::button_sound
  * @brief Button sound
  */
 GF_DECLARE_TYPE(gui, {

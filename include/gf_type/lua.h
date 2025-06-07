@@ -25,20 +25,20 @@ gf_lua_t;
 /* Standard */
 
 /**
- * @struct gf_lua_t
+ * @struct gf_lua
  * @~english
  * @brief Lua interface
  *
- * @var gf_lua_t::engine
+ * @var gf_lua::engine
  * @brief Engine instance
  *
- * @var gf_lua_t::lua
+ * @var gf_lua::lua
  * @brief Lua
  *
- * @var gf_lua_t::loop
+ * @var gf_lua::loop
  * @brief Loop call
  *
- * @var gf_lua_t::close
+ * @var gf_lua::close
  * @brief Close call
  */
 GF_DECLARE_TYPE(lua, {

@@ -167,26 +167,26 @@ enum GF_INPUT_KEYS {
 };
 
 /**
- * @struct gf_input_t
+ * @struct gf_input
  * @~english
  * @brief Input interface
  *
- * @var gf_input_t::engine
+ * @var gf_input::engine
  * @brief Engine instance
  *
- * @var gf_input_t::mouse_x
+ * @var gf_input::mouse_x
  * @brief X coord of mouse
  *
- * @var gf_input_t::mouse_y
+ * @var gf_input::mouse_y
  * @brief Y coord of mouse
  *
- * @var gf_input_t::mouse_flag
+ * @var gf_input::mouse_flag
  * @brief Mouse flag
  *
- * @var gf_input_t::key_queue
+ * @var gf_input::key_queue
  * @brief Key queue
  *
- * @var gf_input_t::key_state
+ * @var gf_input::key_state
  * @brief Key state
  */
 GF_DECLARE_TYPE(input, {

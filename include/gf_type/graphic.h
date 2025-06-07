@@ -22,20 +22,20 @@ gf_graphic_color_t;
 /* Standard */
 
 /**
- * @struct gf_graphic_color_t
+ * @struct gf_graphic_color
  * @~english
  * @brief Color
  *
- * @var gf_graphic_color_t::r
+ * @var gf_graphic_color::r
  * @brief Red
  *
- * @var gf_graphic_color_t::g
+ * @var gf_graphic_color::g
  * @brief Green
  *
- * @var gf_graphic_color_t::b
+ * @var gf_graphic_color::b
  * @brief Blue
  *
- * @var gf_graphic_color_t::a
+ * @var gf_graphic_color::a
  * @brief Alpha
  */
 GF_DECLARE_TYPE(graphic_color, {

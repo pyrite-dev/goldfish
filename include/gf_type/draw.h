@@ -48,84 +48,84 @@ gf_draw_t;
 #include <time.h>
 
 /**
- * @struct gf_draw_t
+ * @struct gf_draw
  * @~english
  * @brief Drawing interface
  *
- * @var gf_draw_t::engine
+ * @var gf_draw::engine
  * @brief Engine instance
  *
- * @var gf_draw_t::input
+ * @var gf_draw::input
  * @brief Input interface
  *
- * @var gf_draw_t::platform
+ * @var gf_draw::platform
  * @brief Platform-dependent part of drawing driver
  *
- * @var gf_draw_t::driver
+ * @var gf_draw::driver
  * @brief Drawing driver
  *
- * @var gf_draw_t::gui
+ * @var gf_draw::gui
  * @brief GUI
  *
- * @var gf_draw_t::close
+ * @var gf_draw::close
  * @brief `1` if it was requested to be closed, otherwise `0`
  *
- * @var gf_draw_t::x
+ * @var gf_draw::x
  * @brief X coord of window
  *
- * @var gf_draw_t::y
+ * @var gf_draw::y
  * @brief Y coord of window
  *
- * @var gf_draw_t::width
+ * @var gf_draw::width
  * @brief Width of window
  *
- * @var gf_draw_t::height
+ * @var gf_draw::height
  * @brief Height of window
  *
- * @var gf_draw_t::running
+ * @var gf_draw::running
  * @brief `1` if running, otherwise `0`
  *
- * @var gf_draw_t::draw_3d
+ * @var gf_draw::draw_3d
  * @brief `1` if engine should start rendering 3D stuffs, otherwise `0`
  *
- * @var gf_draw_t::title
+ * @var gf_draw::title
  * @brief Window title
  *
- * @var gf_draw_t::light
+ * @var gf_draw::light
  * @brief Light location
- * @note gf_draw_t::light[3] should be 1
+ * @note gf_draw::light[3] should be 1
  *
- * @var gf_draw_t::lookat
+ * @var gf_draw::lookat
  * @brief Where to look at
  *
- * @var gf_draw_t::camera
+ * @var gf_draw::camera
  * @brief Camera location
  *
- * @var gf_draw_t::camera
+ * @var gf_draw::camera
  * @brief Camera location
  *
- * @var gf_draw_t::clip
+ * @var gf_draw::clip
  * @brief Clip region stack
  *
- * @var gf_draw_t::font
+ * @var gf_draw::font
  * @brief Default font
  *
- * @var gf_draw_t::last_draw
+ * @var gf_draw::last_draw
  * @brief Last time when frame was drawn
  *
- * @var gf_draw_t::fps
+ * @var gf_draw::fps
  * @brief FPS
  *
- * @var gf_draw_t::loaded_fonts
+ * @var gf_draw::loaded_fonts
  * @brief Loaded fonts
  *
- * @var gf_draw_t::cursor
+ * @var gf_draw::cursor
  * @brief Draw cursor or not
  *
- * @var gf_draw_t::skybox
+ * @var gf_draw::skybox
  * @brief Skybox
  *
- * @var gf_draw_t::background
+ * @var gf_draw::background
  * @brief Background color
  */
 GF_DECLARE_TYPE(draw, {

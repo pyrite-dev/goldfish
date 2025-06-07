@@ -24,14 +24,14 @@ gf_physics_t;
 /* Standard */
 
 /**
- * @struct gf_physics_t
+ * @struct gf_physics
  * @~english
  * @brief Physics interface
  *
- * @var gf_physics_t::engine
+ * @var gf_physics::engine
  * @brief Engine instance
  *
- * @var gf_physics_t::id
+ * @var gf_physics::id
  * @brief ODE's world ID
  */
 GF_DECLARE_TYPE(physics, {

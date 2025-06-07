@@ -26,14 +26,14 @@ gf_mesh_t;
 /* Standard */
 
 /**
- * @struct gf_mesh_triangle_t
+ * @struct gf_mesh_triangle
  * @~english
  * @brief Triangle
  *
- * @var gf_mesh_triangle_t::points
+ * @var gf_mesh_triangle::points
  * @brief Triangle points
  *
- * @var gf_mesh_triangle_t::color
+ * @var gf_mesh_triangle::color
  * @brief Triangle color
  */
 GF_DECLARE_TYPE(mesh_triangle, {
@@ -42,14 +42,14 @@ GF_DECLARE_TYPE(mesh_triangle, {
 });
 
 /**
- * @struct gf_mesh_t
+ * @struct gf_mesh
  * @~english
  * @brief Mesh
  *
- * @var gf_mesh_t::triangles
+ * @var gf_mesh::triangles
  * @brief Triangles
  *
- * @var gf_mesh_t::triangle_count
+ * @var gf_mesh::triangle_count
  * @brief Triangle count
  */
 GF_DECLARE_TYPE(mesh, {

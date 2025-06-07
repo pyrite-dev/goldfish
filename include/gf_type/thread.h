@@ -33,14 +33,14 @@ gf_thread_event_t;
 /* Standard */
 
 /**
- * @struct gf_thread_context_t
+ * @struct gf_thread_context
  * @~english
  * @brief Thread context
  *
- * @var gf_thread_context_t::func
+ * @var gf_thread_context::func
  * @brief Function to be called for thread
  *
- * @var gf_thread_context_t::data
+ * @var gf_thread_context::data
  * @brief Data to be passed to thread
  */
 GF_DECLARE_TYPE(thread_context, {
@@ -83,7 +83,7 @@ GF_DECLARE_TYPE(thread_event, {
 });
 #else
 /**
- * @struct gf_thread_t
+ * @struct gf_thread
  * @~english
  * @brief Platform-dependent thread
  * @note Definition depends on the platform, read the header file for definition
@@ -91,12 +91,20 @@ GF_DECLARE_TYPE(thread_event, {
 GF_DECLARE_TYPE(thread, {});
 
 /**
- * @struct gf_thread_t
+ * @struct gf_thread_mutex
  * @~english
  * @brief Platform-dependent mutex
  * @note Definition depends on the platform, read the header file for definition
  */
-GF_DECLARE_TYPE(thread, {});
+GF_DECLARE_TYPE(thread_mutex, {});
+
+/**
+ * @struct gf_thread_event
+ * @~english
+ * @brief Platform-dependent event
+ * @note Definition depends on the platform, read the header file for definition
+ */
+GF_DECLARE_TYPE(thread_event, {});
 #endif
 #else
 typedef void gf_thread_mutex_t;

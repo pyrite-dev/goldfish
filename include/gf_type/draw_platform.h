@@ -82,7 +82,7 @@ GF_DECLARE_TYPE(draw_platform, {
 #endif
 #else
 /**
- * @struct gf_draw_platform_t
+ * @struct gf_draw_platform
  * @~english
  * @brief Platform-dependent part of drawing driver
  * @note Definition depends on the drawing driver and the platform, read the header file for definition

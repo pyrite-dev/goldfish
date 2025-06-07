@@ -26,20 +26,20 @@ gf_client_t;
 /* Standard */
 
 /**
- * @struct gf_client_t
+ * @struct gf_client
  * @~english
  * @brief Client interface
  *
- * @var gf_client_t::engine
+ * @var gf_client::engine
  * @brief Engine instance
  *
- * @var gf_client_t::draw
+ * @var gf_client::draw
  * @brief Drawing interface
  *
- * @var gf_client_t::input
+ * @var gf_client::input
  * @brief Input interface
  *
- * @var gf_client_t::audio
+ * @var gf_client::audio
  * @brief Audio interface
  */
 GF_DECLARE_TYPE(client, {
