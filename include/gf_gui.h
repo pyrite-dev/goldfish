@@ -147,6 +147,15 @@ GF_EXPORT void gf_gui_set_text(gf_gui_t* gui, gf_gui_id_t id, const char* text);
 
 /**
  * @~english
+ * @brief Get text
+ * @param gui GUI
+ * @param id Component ID
+ * @return Text
+ */
+GF_EXPORT const char* gf_gui_get_text(gf_gui_t* gui, gf_gui_id_t id);
+
+/**
+ * @~english
  * @brief Set font color
  * @param gui GUI
  * @param id Component ID

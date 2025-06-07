@@ -34,4 +34,4 @@ void bindgen_GoldFishFont_init(gf_lua_t* lua) {
 	lua_setfield(LUA(lua), -2, "__index");
 }
 
-/*** Generated at Wed May 14 2025 ***/
+/*** Generated at Sat Jun 7 2025 ***/

@@ -433,6 +433,13 @@ void gf_gui_set_text(gf_gui_t* gui, gf_gui_id_t id, const char* text) {
 	strcpy(gui->area[ind]->text, text);
 }
 
+const char* gf_gui_get_text(gf_gui_t* gui, gf_gui_id_t id) {
+	int ind = gf_gui_get_index(gui, id);
+	if(ind == -1) return NULL;
+
+	return gui->area[ind]->text;
+}
+
 void gf_gui_add_recursive(gf_gui_t* gui, gf_gui_component_t*** pnew, gf_gui_id_t parent) {
 	int i;
 

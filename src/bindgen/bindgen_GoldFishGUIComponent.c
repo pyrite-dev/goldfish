@@ -30,6 +30,7 @@
  *   gf_gui_set_parent
  *   gf_gui_get_parent
  *   gf_gui_set_text
+ *   gf_gui_get_text
  *   gf_gui_set_font_color
  *   gf_gui_get_font_color
  *   gf_gui_set_hover_font_color
@@ -120,6 +121,27 @@ int bindgen_GoldFishGUIComponent_gf_gui_set_text(lua_State* s) {
 	gf_gui_set_text(param0, *param1, param2);
 
 	return 0;
+}
+
+/**
+ * C: char* gf_gui_get_text(gf_gui_t*, gf_gui_id_t)
+ */
+int bindgen_GoldFishGUIComponent_gf_gui_get_text(lua_State* s) {
+	gf_gui_t*    param0;
+	gf_gui_id_t* param1 = luaL_checkudata(s, 1, "GoldFishGUIComponent");
+	gf_lua_t*    wrap;
+	char*	     ret;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	ret = gf_gui_get_text(param0, *param1);
+	lua_pushstring(s, ret);
+
+	return 1;
 }
 
 /**
@@ -290,6 +312,10 @@ void bindgen_GoldFishGUIComponent_init(gf_lua_t* lua) {
 	lua_pushcfunction(LUA(lua), bindgen_GoldFishGUIComponent_gf_gui_set_text);
 	lua_settable(LUA(lua), -3);
 
+	lua_pushstring(LUA(lua), "get_text");
+	lua_pushcfunction(LUA(lua), bindgen_GoldFishGUIComponent_gf_gui_get_text);
+	lua_settable(LUA(lua), -3);
+
 	lua_pushstring(LUA(lua), "set_font_color");
 	lua_pushcfunction(LUA(lua), bindgen_GoldFishGUIComponent_gf_gui_set_font_color);
 	lua_settable(LUA(lua), -3);
@@ -314,4 +340,4 @@ void bindgen_GoldFishGUIComponent_init(gf_lua_t* lua) {
 	lua_setfield(LUA(lua), -2, "__index");
 }
 
-/*** Generated at Wed May 14 2025 ***/
+/*** Generated at Sat Jun 7 2025 ***/

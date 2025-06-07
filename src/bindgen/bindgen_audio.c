@@ -115,4 +115,4 @@ void bindgen_audio_init(gf_lua_t* lua) {
 	lua_settable(LUA(lua), -3);
 }
 
-/*** Generated at Wed May 14 2025 ***/
+/*** Generated at Sat Jun 7 2025 ***/

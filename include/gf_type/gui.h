@@ -37,7 +37,8 @@ enum GF_GUI_COMPONENT_TYPES {
 	GF_GUI_SCROLLBAR,
 	GF_GUI_RANGE,
 	GF_GUI_TAB,
-	GF_GUI_PROGRESS
+	GF_GUI_PROGRESS,
+	GF_GUI_ENTRY
 };
 
 #define gf_gui_call_t struct gf_gui_call
