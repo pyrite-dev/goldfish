@@ -31,7 +31,7 @@ typedef struct keymap {
 static keymap_t* keymaps = NULL;
 
 /**
- * printscreen, [, ], and pause are missing
+ * printscreen and pause are missing
  */
 void gf_draw_platform_begin(void) {
 	int i;
@@ -75,6 +75,8 @@ void gf_draw_platform_begin(void) {
 	hmput(keymaps, RGFW_backtick, GF_INPUT_KEY_GRAVE);
 	hmput(keymaps, RGFW_minus, GF_INPUT_KEY_MINUS);
 	hmput(keymaps, RGFW_equals, GF_INPUT_KEY_EQUALS);
+	hmput(keymaps, RGFW_bracket, GF_INPUT_KEY_LEFT_BRACKET);
+	hmput(keymaps, RGFW_closeBracket, GF_INPUT_KEY_RIGHT_BRACKET);
 
 	hmput(keymaps, RGFW_backSlash, GF_INPUT_KEY_BACKSLASH);
 	hmput(keymaps, RGFW_semicolon, GF_INPUT_KEY_SEMICOLON);
