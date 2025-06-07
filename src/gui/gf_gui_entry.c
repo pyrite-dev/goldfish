@@ -14,6 +14,7 @@
 #include <gf_graphic.h>
 #include <gf_prop.h>
 #include <gf_math.h>
+#include <gf_input.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -43,6 +44,7 @@ void gf_gui_entry_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	double	    ch;
 	double	    loc = 0;
 	gf_font_t*  font;
+	int	    prop;
 	double	    propf;
 	double	    fsz;
 	int	    cr;
@@ -85,14 +87,22 @@ void gf_gui_entry_render(gf_gui_t* gui, gf_gui_component_t* c) {
 		memcpy(after, c->text + cr, strlen(c->text) - cr);
 		after[strlen(c->text) - cr] = 0;
 
+		gf_graphic_text(gui->draw, font, x, y, fsz, c->text, c->font);
+
 		tw = gf_graphic_text_width(gui->draw, font, fsz, before);
-		gf_graphic_text(gui->draw, font, x, y, fsz, before, c->font);
 		x += tw;
 		loc = tw;
-		gf_graphic_text(gui->draw, font, x, y, fsz, after, c->font);
 
 		free(before);
 		free(after);
+
+		if((prop = gf_prop_get_integer(&c->prop, "focus")) != GF_PROP_NO_SUCH && prop) {
+			if(gf_input_key_pressed(input, GF_INPUT_KEY_LEFT) && cr > 0) {
+				gf_prop_set_integer(&c->prop, "cursor", cr - 1);
+			} else if(gf_input_key_pressed(input, GF_INPUT_KEY_RIGHT) && cr < strlen(c->text)) {
+				gf_prop_set_integer(&c->prop, "cursor", cr + 1);
+			}
+		}
 	}
 	gf_graphic_fill_rect(gui->draw, cx + loc + gf_gui_border_width * 2, cy + gf_gui_border_width * 2, 1, ch - gf_gui_border_width * 4, c->font);
 	gf_graphic_clip_pop(gui->draw);

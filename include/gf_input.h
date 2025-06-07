@@ -62,6 +62,15 @@ GF_EXPORT void gf_input_key_release(gf_input_t* input, int key);
  */
 GF_EXPORT int gf_input_key_down(gf_input_t* input, int key);
 
+/**
+ * @~english
+ * @brief Check if key got pressed
+ * @param input Input interface
+ * @param key Key
+ * @return `1` if key got pressed, `0` otherwise
+ */
+GF_EXPORT int gf_input_key_pressed(gf_input_t* input, int key);
+
 #ifdef __cplusplus
 }
 #endif

@@ -11,6 +11,7 @@ $doc{"clicked-y"} = "Y coord of mouse on click, relative to screen.";
 $doc{"close-parent"} = "Set non-zero to close parent component.";
 $doc{"diff-x"} = "X coord of mouse on click, relative to component.";
 $doc{"diff-y"} = "Y coord of mouse on click, relative to component.";
+$doc{"active"} = "Non-zero if component is focused.";
 $doc{"frame"} = "Frame of component.";
 $doc{"grab"} = "Set non-zero to force outset border.";
 $doc{"hide"} = "Set non-zero to hide component and its child components.";

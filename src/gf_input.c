@@ -46,6 +46,12 @@ int gf_input_key_down(gf_input_t* input, int key) {
 	return 0;
 }
 
+int gf_input_key_pressed(gf_input_t* input, int key) {
+	if(arrlen(input->key_queue) < 1) return 0;
+
+	return input->key_queue[0] == key ? 1 : 0;
+}
+
 void gf_input_key_press(gf_input_t* input, int key) {
 	int i;
 	int has = 0;
