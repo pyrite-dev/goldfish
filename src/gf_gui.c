@@ -351,8 +351,10 @@ void gf_gui_render(gf_gui_t* gui) {
 		int ind;
 		ind = gf_gui_get_index(gui, gui->pressed);
 		if(ind != -1) {
-			gf_gui_component_t* c	   = gui->area[ind];
+			gf_gui_component_t* c = gui->area[ind];
+			gf_gui_id_t	    id;
 			int		    cancel = 0;
+			int		    spc;
 			if((prop = gf_prop_get_integer(&c->prop, "resizable")) != GF_PROP_NO_SUCH && prop) {
 				double sp = 5;
 				double sz = 18;
@@ -386,6 +388,13 @@ void gf_gui_render(gf_gui_t* gui) {
 			}
 			if(c->parent != -1 || c->type == GF_GUI_WINDOW) {
 				gf_gui_move_topmost(gui, c->key);
+			}
+			id  = c->key;
+			spc = (c->parent == -1 && c->type == GF_GUI_ENTRY) ? 1 : 0;
+			for(i = 0; i < arrlen(gui->area); i++) {
+				c = gui->area[i];
+				gf_prop_set_integer(&c->prop, "focus", id == c->key ? 1 : 0);
+				if(spc) gf_prop_set_integer(&c->prop, "active", id == c->key ? 1 : 0);
 			}
 		}
 	}

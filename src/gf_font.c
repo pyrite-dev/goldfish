@@ -63,8 +63,9 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 		}
 	}
 
-	wc   = malloc(strlen(text) * sizeof(*wc) * 5 + 1);
-	incr = 0;
+	wc    = malloc(strlen(text) * sizeof(*wc) * 5 + 1);
+	wc[0] = 0;
+	incr  = 0;
 	while(texts[0] != 0) {
 		int sz = gf_unicode_8_to_32(texts, wc + incr);
 		if(sz == 0) {
