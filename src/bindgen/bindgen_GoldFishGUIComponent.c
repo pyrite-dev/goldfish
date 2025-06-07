@@ -93,7 +93,7 @@ int bindgen_GoldFishGUIComponent_gf_gui_get_parent(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	ret = gf_gui_get_parent(param0, *param1);
+	ret = (gf_gui_id_t)gf_gui_get_parent(param0, *param1);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -138,7 +138,7 @@ int bindgen_GoldFishGUIComponent_gf_gui_get_text(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	ret = gf_gui_get_text(param0, *param1);
+	ret = (char*)gf_gui_get_text(param0, *param1);
 	lua_pushstring(s, ret);
 
 	return 1;
@@ -195,7 +195,7 @@ int bindgen_GoldFishGUIComponent_gf_gui_get_font_color(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	ret = gf_gui_get_font_color(param0, *param1);
+	ret = (gf_graphic_color_t)gf_gui_get_font_color(param0, *param1);
 	lua_newtable(s);
 	lua_pushnumber(s, ret.r);
 	lua_rawseti(s, -2, 1);
@@ -260,7 +260,7 @@ int bindgen_GoldFishGUIComponent_gf_gui_get_hover_font_color(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	ret = gf_gui_get_hover_font_color(param0, *param1);
+	ret = (gf_graphic_color_t)gf_gui_get_hover_font_color(param0, *param1);
 	lua_newtable(s);
 	lua_pushnumber(s, ret.r);
 	lua_rawseti(s, -2, 1);

@@ -124,7 +124,7 @@ int bindgen_GoldFishAudio_gf_audio_is_over(lua_State* s) {
 
 	param0 = wrap->engine->client->audio;
 
-	ret = gf_audio_is_over(param0, *param1);
+	ret = (int)gf_audio_is_over(param0, *param1);
 	lua_pushinteger(s, ret);
 
 	return 1;
