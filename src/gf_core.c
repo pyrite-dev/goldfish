@@ -107,38 +107,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 		engine->icon = gf_image_load(engine, "base:/icon.png", &engine->icon_width, &engine->icon_height);
 	}
 
-	if((f = gf_file_open(engine, "base:/autoexec.cfg", "r")) != NULL) {
-		char*  buf    = malloc(f->size + 1);
-		int    incr   = 0;
-		char** aelist = NULL;
-		buf[f->size]  = 0;
-		gf_file_read(f, buf, f->size);
-
-		for(i = 0;; i++) {
-			if(buf[i] == 0 || buf[i] == '\n') {
-				char  oldc = buf[i];
-				char* line = buf + incr;
-				buf[i]	   = 0;
-
-				if(strlen(line) > 0) {
-					arrput(aelist, line);
-				}
-
-				incr = i + 1;
-				if(oldc == 0) break;
-			} else if(buf[i] == '\r') {
-				buf[i] = 0;
-			}
-		}
-
-		if(aelist != NULL) {
-			gf_command_run(engine, aelist, arrlen(aelist));
-			arrfree(aelist);
-		}
-
-		free(buf);
-		gf_file_close(f);
-	}
+	gf_command_file(engine, "base:/autoexec.cfg");
 
 	if(argv != NULL) {
 		char* buf = NULL;

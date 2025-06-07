@@ -25,6 +25,14 @@ extern "C" {
  * @~english
  * @brief Run command
  * @param engine Engine instance
+ * @param path Path
+ */
+GF_EXPORT void gf_command_file(gf_engine_t* engine, const char* path);
+
+/**
+ * @~english
+ * @brief Run command
+ * @param engine Engine instance
  * @param list Command list
  * @param listc Command list length
  */
