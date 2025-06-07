@@ -89,7 +89,7 @@ void gf_draw_platform_begin(void) {
 	hmput(keymaps, XK_Tab, GF_INPUT_KEY_TAB);
 	hmput(keymaps, XK_Caps_Lock, GF_INPUT_KEY_CAPSLOCK);
 
-	hmput(keymaps, XK_grave, GF_INPUT_KEY_TILDE);
+	hmput(keymaps, XK_grave, GF_INPUT_KEY_GRAVE);
 	hmput(keymaps, XK_minus, GF_INPUT_KEY_MINUS);
 	hmput(keymaps, XK_equal, GF_INPUT_KEY_EQUALS);
 	hmput(keymaps, XK_bracketleft, GF_INPUT_KEY_LEFT_BRACKET);
