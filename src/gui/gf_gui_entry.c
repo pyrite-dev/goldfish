@@ -118,6 +118,15 @@ void gf_gui_entry_render(gf_gui_t* gui, gf_gui_component_t* c) {
 				t			     = gf_util_strdup(c->text);
 				free(c->text);
 				c->text = t;
+			} else if(gf_input_key_pressed(input, GF_INPUT_KEY_DELETE) && strlen(c->text) > 0) {
+				char* t;
+				int   i;
+				for(i = cr; i < strlen(c->text); i++) {
+					c->text[i] = c->text[i + 1];
+				}
+				t = gf_util_strdup(c->text);
+				free(c->text);
+				c->text = t;
 			}
 		}
 	}

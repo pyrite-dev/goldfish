@@ -46,7 +46,7 @@ Type: `integer`
 Context: GUI
 
 
-
+Cursor position.
 
 ## diff-x
 Type: `integer` 

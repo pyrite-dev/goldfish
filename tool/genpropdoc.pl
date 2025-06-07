@@ -9,6 +9,7 @@ $doc{"cancel-drag"} = "Set non-zero to ignore dragging. (internal property)";
 $doc{"clicked-x"} = "X coord of mouse on click, relative to screen.";
 $doc{"clicked-y"} = "Y coord of mouse on click, relative to screen.";
 $doc{"close-parent"} = "Set non-zero to close parent component.";
+$doc{"cursor"} = "Cursor position.";
 $doc{"diff-x"} = "X coord of mouse on click, relative to component.";
 $doc{"diff-y"} = "Y coord of mouse on click, relative to component.";
 $doc{"active"} = "Non-zero if component is focused.";
