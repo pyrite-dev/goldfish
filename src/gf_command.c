@@ -11,6 +11,7 @@
 /* Engine */
 #include <gf_log.h>
 #include <gf_prop.h>
+#include <gf_file.h>
 
 /* Standard */
 #include <string.h>
@@ -73,6 +74,47 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 					gf_log_function(engine, "%s: %s: Bad argument", arg[0], arg[1]);
 				} else {
 					gf_prop_set_text(&engine->config, "texture", arg[1]);
+				}
+			} else if(strcmp(arg[0], "exec") == 0) {
+				if(arrlen(arg) < 2) {
+					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+				} else {
+					gf_file_t* f;
+					if((f = gf_file_open(engine, arg[1], "r")) != NULL) {
+						char*  buf    = malloc(f->size + 1);
+						int    incr   = 0;
+						char** aelist = NULL;
+						buf[f->size]  = 0;
+						gf_file_read(f, buf, f->size);
+
+						for(i = 0;; i++) {
+							if(buf[i] == 0 || buf[i] == '\n') {
+								char  oldc = buf[i];
+								char* line = buf + incr;
+								buf[i]	   = 0;
+
+								if(strlen(line) > 0) {
+									arrput(aelist, line);
+								}
+
+								incr = i + 1;
+								if(oldc == 0) break;
+							} else if(buf[i] == '\r') {
+								buf[i] = 0;
+							}
+						}
+
+						if(aelist != NULL) {
+							gf_log_function(engine, "%s: %s: Executing", arg[0], arg[1]);
+							gf_command_run(engine, aelist, arrlen(aelist));
+							arrfree(aelist);
+						}
+
+						free(buf);
+						gf_file_close(f);
+					} else {
+						gf_log_function(engine, "%s: %s: Not found", arg[0], arg[1]);
+					}
 				}
 			} else {
 				gf_log_function(engine, "%s: Unknown command", arg[0]);

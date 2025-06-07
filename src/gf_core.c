@@ -256,6 +256,20 @@ void gf_engine_shutdown(gf_engine_t* engine) {
 }
 
 void gf_engine_name(gf_engine_t* engine, const char* name) {
+	char* search;
 	if(engine->name != NULL) free(engine->name);
 	engine->name = gf_util_strdup(name);
+
+	search = gf_util_get_search(engine);
+	gf_log_function(NULL, "Search path: %s", search);
+	free(search);
+}
+
+void gf_engine_prefix(gf_engine_t* engine, const char* prefix) {
+	char* search;
+	gf_prop_set_text(&engine->config, "prefix", prefix);
+
+	search = gf_util_get_search(engine);
+	gf_log_function(NULL, "Search path: %s", search);
+	free(search);
 }

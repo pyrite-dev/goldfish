@@ -9,6 +9,7 @@
 #include <gf_util.h>
 
 /* Engine */
+#include <gf_prop.h>
 
 /* Standard */
 #include <string.h>
@@ -77,14 +78,29 @@ static void add_user_search(char*** l, char* n) {
 }
 
 char* gf_util_get_search(gf_engine_t* engine) {
-	char** arr = NULL;
-	char*  r;
-	int    i;
-	int    sz = 0;
+	char**	    arr = NULL;
+	char*	    r;
+	int	    i;
+	int	    sz	= 0;
+	char*	    nam = (engine == NULL || engine->name == NULL) ? "game_name_here" : engine->name;
+	char*	    n;
+	const char* pref;
+
+	if(engine != NULL && (pref = gf_prop_get_text(&engine->config, "prefix")) != NULL) {
+		n = malloc(strlen(pref) + 1 + strlen(nam) + 1);
+
+		strcpy(n, pref);
+		strcat(n, "/");
+		strcat(n, nam);
+
+		add_search(&arr, n);
+
+		free(n);
+	}
 
 	add_search(&arr, ".");
 	add_search(&arr, "./dist");
-	add_user_search(&arr, (engine == NULL || engine->name == NULL) ? "game_name_here" : engine->name);
+	add_user_search(&arr, nam);
 
 	for(i = 0; i < arrlen(arr); i++) {
 		if(i > 0) sz += 1;

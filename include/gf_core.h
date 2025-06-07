@@ -85,6 +85,14 @@ GF_EXPORT void gf_engine_shutdown(gf_engine_t* engine);
  */
 GF_EXPORT void gf_engine_name(gf_engine_t* engine, const char* name);
 
+/**
+ * @~english
+ * @brief Set game prefix
+ * @param engine Engine instance
+ * @param prefix Prefix
+ */
+GF_EXPORT void gf_engine_prefix(gf_engine_t* engine, const char* prefix);
+
 #ifdef __cplusplus
 }
 #endif
