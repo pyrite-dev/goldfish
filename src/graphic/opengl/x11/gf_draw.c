@@ -6,6 +6,7 @@
 #include <gf_pre.h>
 
 /* External library */
+#include <stb_ds.h>
 #include <gf_opengl.h>
 
 /* Interface */
@@ -39,8 +40,36 @@ typedef void (*PFNGLXSWAPINTERVALSGIPROC)(int);
 #endif
 #endif
 
-void gf_draw_platform_begin(void) {}
-void gf_draw_platform_end(void) {}
+typedef struct keymap {
+	KeySym key;
+	int    value;
+} keymap_t;
+
+static keymap_t* keymaps = NULL;
+
+void gf_draw_platform_begin(void) {
+	int i;
+
+	hmdefault(keymaps, -1);
+	hmput(keymaps, XK_Escape, GF_INPUT_KEY_ESCAPE);
+
+	hmput(keymaps, XK_Return, GF_INPUT_KEY_ENTER);
+
+	hmput(keymaps, XK_BackSpace, GF_INPUT_KEY_BACKSPACE);
+	hmput(keymaps, XK_space, GF_INPUT_KEY_SPACE);
+
+	for(i = 0; i < 10; i++) hmput(keymaps, XK_0 + i, GF_INPUT_KEY_0 + i);
+
+	for(i = 0; i < 26; i++) {
+		hmput(keymaps, XK_A + i, GF_INPUT_KEY_A + i);
+		hmput(keymaps, XK_a + i, GF_INPUT_KEY_A + i);
+	}
+}
+
+void gf_draw_platform_end(void) {
+	hmfree(keymaps);
+	keymaps = NULL;
+}
 
 int gf_draw_platform_has_extension(gf_draw_t* draw, const char* query) {
 	const char* ext = NULL;
@@ -123,7 +152,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	platform->visual.depth	= DefaultDepth(platform->display, screen);
 #endif
 
-	attr.event_mask = StructureNotifyMask | ExposureMask | PointerMotionMask | ButtonPressMask | ButtonReleaseMask;
+	attr.event_mask = StructureNotifyMask | ExposureMask | PointerMotionMask | ButtonPressMask | ButtonReleaseMask | KeyPressMask | KeyReleaseMask;
 #if defined(GF_TYPE_NATIVE)
 	attr.colormap	 = XCreateColormap(platform->display, root, visual->visual, AllocNone);
 	platform->window = XCreateWindow(platform->display, root, draw->width, draw->height, draw->width, draw->height, 0, visual->depth, InputOutput, visual->visual, CWColormap | CWEventMask, &attr);
@@ -285,6 +314,14 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 				draw->close = 1;
 				break;
 			}
+		} else if(event.type == KeyPress) {
+			KeySym ks  = XLookupKeysym(&event.xkey, 0);
+			int    key = hmget(keymaps, ks);
+			gf_input_key_press(draw->input, key);
+		} else if(event.type == KeyRelease) {
+			KeySym ks  = XLookupKeysym(&event.xkey, 0);
+			int    key = hmget(keymaps, ks);
+			gf_input_key_release(draw->input, key);
 		}
 	}
 	if(ret == 0) {

@@ -158,6 +158,7 @@ void gf_draw_frame(gf_draw_t* draw) {
 	gf_gui_render(draw->gui);
 	gf_draw_cursor(draw);
 	if(arrlen(draw->input->key_queue) > 0) {
+		printf("%d\n", draw->input->key_queue[0]);
 		arrdel(draw->input->key_queue, 0);
 	}
 }
