@@ -99,7 +99,6 @@ char* gf_util_get_search(gf_engine_t* engine) {
 	}
 
 	add_search(&arr, ".");
-	add_search(&arr, "./dist");
 	add_user_search(&arr, nam);
 
 	for(i = 0; i < arrlen(arr); i++) {

@@ -44,8 +44,8 @@ void gf_command_file(gf_engine_t* engine, const char* path) {
 			}
 		}
 
+		gf_log_function(engine, "%s: Executing", path);
 		if(aelist != NULL) {
-			gf_log_function(engine, "%s: Executing", path);
 			gf_command_run(engine, aelist, arrlen(aelist));
 			arrfree(aelist);
 		}
