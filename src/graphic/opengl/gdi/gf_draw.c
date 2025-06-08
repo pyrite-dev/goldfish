@@ -23,6 +23,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/* why is this missing in msys 1.0? */
+#ifndef MAPVK_VK_TO_VSC
+#define MAPVK_VK_TO_VSC 0x00
+#endif
+
 typedef const char*(APIENTRY* PFNWGLGETEXTENSIONSSTRINGARB)(HDC);
 #ifdef GF_DO_SWAP_INTERVAL
 typedef BOOL(APIENTRY* PFNWGLSWAPINTERVALPROC)(int);
