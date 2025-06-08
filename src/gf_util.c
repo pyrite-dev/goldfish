@@ -39,7 +39,7 @@ static void add_user_search(char*** l, char* n) {
 	char	     shp[MAX_PATH];
 	LPITEMIDLIST pidl;
 	char*	     u = getenv("USERPROFILE");
-	if(SHGetSpecialFolderLocation(NULL, CSIDL_APPDATA, &pidl)) {
+	if(SHGetSpecialFolderLocation(NULL, CSIDL_APPDATA, &pidl) == S_OK) {
 		char* p;
 		SHGetPathFromIDList(pidl, shp);
 		CoTaskMemFree(pidl);
@@ -59,7 +59,7 @@ static void add_user_search(char*** l, char* n) {
 		free(p);
 	}
 #if WINVER >= 0x0500
-	if(SHGetSpecialFolderLocation(NULL, CSIDL_PROFILE, &pidl)) {
+	if(SHGetSpecialFolderLocation(NULL, CSIDL_PROFILE, &pidl) == S_OK) {
 		char* p;
 		SHGetPathFromIDList(pidl, shp);
 		CoTaskMemFree(pidl);
