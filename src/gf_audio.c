@@ -123,8 +123,8 @@ void gf_audio_callback(gf_audio_t* audio, void* output, int frame) {
 	}
 
 	for(i = 0; i < frame; i++) {
-		out[2 * i + 0] = tmp[2 * i + 0] * audio->volume * 32768;
-		out[2 * i + 1] = tmp[2 * i + 1] * audio->volume * 32768;
+		out[2 * i + 0] = tmp[2 * i + 0] * audio->volume * 32767;
+		out[2 * i + 1] = tmp[2 * i + 1] * audio->volume * 32767;
 	}
 	free(tmp);
 }

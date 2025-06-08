@@ -18,6 +18,7 @@
 #include <gf_draw.h>
 
 /* Engine */
+#include <gf_assert.h>
 #include <gf_prop.h>
 #include <gf_core.h>
 #include <gf_log.h>
@@ -35,6 +36,7 @@
 /* Standard */
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #define NO_SLEEP
 #define FPS 60
@@ -65,6 +67,9 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	draw->background.g = 0x11;
 	draw->background.b = 0x11;
 	draw->background.a = 0xff;
+
+	draw->intro.finished = 0;
+	draw->intro.frame    = 0;
 
 #ifdef GF_USE_GLOAD
 	gload_init();
@@ -181,11 +186,72 @@ void gf_draw_cursor(gf_draw_t* draw) {
 
 /* Runs every frame */
 void gf_draw_frame(gf_draw_t* draw) {
-	gf_lua_step(draw->engine->lua);
-	gf_gui_render(draw->gui);
-	gf_draw_cursor(draw);
-	if(arrlen(draw->input->key_queue) > 0) {
-		arrdel(draw->input->key_queue, 0);
+	if(draw->intro.finished == 0) {
+		if(draw->intro.powered != NULL) {
+			const char*	   lines[] = {"(C) 2025 Pyrite Development Team. All rights reserved.", "This product includes software developed by the Pyrite Development Team."};
+			int		   i;
+			double		   mw = 0;
+			double		   mh = 0;
+			double		   y;
+			double		   sec = draw->intro.frame;
+			gf_graphic_color_t col;
+
+			sec = sec / gf_draw_get_fps(draw);
+
+			col.r = 0;
+			col.g = 0;
+			col.b = 0;
+			col.a = 255;
+			gf_graphic_fill_rect(draw, 0, 0, draw->width, draw->height, col);
+
+			col.r = 255;
+			col.g = 255;
+			col.b = 255;
+			col.a = 0;
+			if(sec <= 0.2) {
+				col.a = sqrt(sec * (1.0 / 0.2)) * 255;
+			} else if(sec > 0.2 && sec <= 0.2 + 1) {
+				col.a = 255;
+			} else if(sec > 0.2 + 1 && sec <= 0.2 + 1 + 0.2) {
+				double v = 0.2 - (sec - 0.2 - 1);
+				col.a	 = sqrt(v * (1.0 / 0.2)) * 255;
+			} else if(sec > 0.2 + 1 + 0.2 && sec <= 0.2 + 1 + 0.3) {
+			} else {
+				draw->intro.finished = 1;
+			}
+			gf_graphic_draw_texture_2d(draw, draw->width / 2 - draw->intro.powered->width / 2, draw->height / 2 - draw->intro.powered->height / 2, draw->intro.powered->width, draw->intro.powered->height, draw->intro.powered, col);
+
+			col.r = 192;
+			col.g = 192;
+			col.b = 192;
+
+			for(i = 0; i < sizeof(lines) / sizeof(lines[0]); i++) {
+				double tw = gf_graphic_text_width(draw, draw->font, 20, lines[i]);
+				mh += gf_graphic_text_height(draw, draw->font, 20, lines[i]);
+				if(tw > mw) mw = tw;
+			}
+
+			y = draw->height / 2 + draw->intro.powered->height / 2 + (draw->height / 2 - draw->intro.powered->height / 2) / 2 - mh / 2;
+			for(i = 0; i < sizeof(lines) / sizeof(lines[0]); i++) {
+				gf_graphic_text(draw, draw->font, draw->width / 2 - mw / 2, y, 20, lines[i], col);
+				y += gf_graphic_text_height(draw, draw->font, 20, lines[i]);
+			}
+
+			draw->intro.frame++;
+		} else {
+			int	       w;
+			int	       h;
+			unsigned char* d = gf_image_load_memory(draw->engine, gf_powered, gf_powered_len, &w, &h);
+			gf_assert(draw->engine, d != NULL);
+			draw->intro.powered = gf_texture_create(draw, w, h, d);
+		}
+	} else {
+		gf_lua_step(draw->engine->lua);
+		gf_gui_render(draw->gui);
+		gf_draw_cursor(draw);
+		if(arrlen(draw->input->key_queue) > 0) {
+			arrdel(draw->input->key_queue, 0);
+		}
 	}
 }
 
@@ -267,6 +333,9 @@ int gf_draw_step(gf_draw_t* draw) {
 }
 
 void gf_draw_destroy(gf_draw_t* draw) {
+	if(draw->intro.powered != NULL) {
+		gf_texture_destroy(draw->intro.powered);
+	}
 	while(arrlen(draw->loaded_fonts) > 0) {
 		gf_font_destroy(draw->loaded_fonts[0]);
 	}

@@ -17,7 +17,11 @@
 
 void gf_server_begin(void) { gf_physics_begin(); }
 
-void gf_server_end(void) { gf_physics_end(); }
+void gf_server_end(void) {
+#if !defined(GF_NO_SERVER)
+	gf_physics_end();
+#endif
+}
 
 gf_server_t* gf_server_create(gf_engine_t* engine) {
 	gf_server_t* server = malloc(sizeof(*server));

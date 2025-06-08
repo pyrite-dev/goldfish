@@ -10,7 +10,7 @@
 #include <gf_pre.h>
 #include <gf_macro.h>
 
-#ifdef GF_EXPOSE_PHYSICS
+#if defined(GF_EXPOSE_PHYSICS) && !defined(GF_NO_SERVER)
 #define gf_physics_t struct gf_physics
 
 gf_physics_t;

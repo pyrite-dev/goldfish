@@ -28,8 +28,10 @@ typedef struct timeval gf_draw_time_t;
 
 #ifdef GF_EXPOSE_DRAW
 #define gf_draw_t struct gf_draw
+#define gf_draw_intro_t struct gf_draw_intro
 
 gf_draw_t;
+gf_draw_intro_t;
 
 /* External library */
 
@@ -46,6 +48,13 @@ gf_draw_t;
 
 /* Standard */
 #include <time.h>
+
+
+GF_DECLARE_TYPE(draw_intro, {
+	int finished;
+	int frame;
+	gf_texture_t* powered;
+});
 
 /**
  * @struct gf_draw
@@ -157,6 +166,7 @@ GF_DECLARE_TYPE(draw, {
 	gf_graphic_color_t background;
 	int cursor;
 	gf_texture_t* cursor_texture;
+	gf_draw_intro_t intro;
 });
 #else
 typedef void gf_draw_t;
