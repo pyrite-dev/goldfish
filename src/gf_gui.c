@@ -18,6 +18,7 @@
 #include <gf_draw.h>
 #include <gf_log.h>
 #include <gf_texture.h>
+#include <gf_math.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -152,8 +153,8 @@ void gf_gui_create_component(gf_gui_t* gui, gf_gui_component_t* c, double x, dou
 			c->key++;
 		}
 	} while(ind != -1);
-	c->x	    = x;
-	c->y	    = y;
+	c->x	    = gf_math_round(x);
+	c->y	    = gf_math_round(y);
 	c->width    = w;
 	c->height   = h;
 	c->parent   = -1;
