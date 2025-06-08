@@ -36,9 +36,9 @@ static void add_search(char*** l, char* p) {
 static void add_user_search(char*** l, char* n) {
 #ifdef _WIN32
 	/* not good way */
-	char		 shp[MAX_PATH];
-	PIDLIST_ABSOLUTE pidl;
-	char*		 u = getenv("USERPROFILE");
+	char	     shp[MAX_PATH];
+	LPITEMIDLIST pidl;
+	char*	     u = getenv("USERPROFILE");
 	if(SHGetSpecialFolderLocation(NULL, CSIDL_APPDATA, &pidl)) {
 		char* p;
 		SHGetPathFromIDList(pidl, shp);

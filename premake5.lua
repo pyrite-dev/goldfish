@@ -461,6 +461,7 @@ function gf_link_stuffs(cond)
 		links({
 			"user32",
 			"wsock32",
+			"ole32",
 			"winmm",
 			"userenv"
 		})
