@@ -23,34 +23,33 @@
 #include <stdlib.h>
 #include <string.h>
 
-unsigned char* gf_image_load(gf_engine_t* engine, const char* path, int* width, int* height) {
-	gf_file_t*     f = gf_file_open(engine, path, "r");
-	unsigned char* r = NULL;
-	unsigned char* b = NULL;
+unsigned char* gf_image_load_memory(gf_engine_t* engine, unsigned char* data, size_t size, int* width, int* height) {
+	unsigned char* b;
+	unsigned char* r;
 	int	       ch;
-	if(f != NULL) {
-		b = malloc(f->size + 1);
-		gf_file_read(f, b, f->size);
-		b[f->size] = 0;
 
-		r = stbi_load_from_memory(b, f->size, width, height, &ch, 4);
+	b = malloc(size + 1);
+	memcpy(b, data, size);
+	b[size] = 0;
+
+	r = stbi_load_from_memory(b, size, width, height, &ch, 4);
 #ifndef NO_SVG
-		if(r == NULL) {
-			NSVGimage* img = nsvgParse(b, "px", 128);
-			if(img != NULL) {
-				NSVGrasterizer* rast = nsvgCreateRasterizer();
+	if(r == NULL) {
+		NSVGimage* img = nsvgParse(b, "px", 128);
+		if(img != NULL) {
+			NSVGrasterizer* rast = nsvgCreateRasterizer();
 
-				*width	= img->width;
-				*height = img->height;
+			*width	= img->width;
+			*height = img->height;
 
-				r = malloc((*width) * (*height) * 4);
-				nsvgRasterize(rast, img, 0, 0, 1, r, (*width), (*height), (*width) * 4);
-				nsvgDeleteRasterizer(rast);
-				nsvgDelete(img);
-			}
+			r = malloc((*width) * (*height) * 4);
+			nsvgRasterize(rast, img, 0, 0, 1, r, (*width), (*height), (*width) * 4);
+			nsvgDeleteRasterizer(rast);
+			nsvgDelete(img);
 		}
-#endif
 	}
+#endif
+	free(b);
 
 	/* TODO: should we have state to control this behavior? */
 	if(r == NULL) {
@@ -71,6 +70,21 @@ unsigned char* gf_image_load(gf_engine_t* engine, const char* path, int* width, 
 				r[ind + 3] = 255;
 			}
 		}
+	}
+
+	return r;
+}
+
+unsigned char* gf_image_load(gf_engine_t* engine, const char* path, int* width, int* height) {
+	gf_file_t*     f = gf_file_open(engine, path, "r");
+	unsigned char* r = NULL;
+	unsigned char* b = NULL;
+	int	       ch;
+	if(f != NULL) {
+		b = malloc(f->size);
+		gf_file_read(f, b, f->size);
+
+		r = gf_image_load_memory(engine, b, f->size, width, height);
 	}
 
 	if(f != NULL) gf_file_close(f);

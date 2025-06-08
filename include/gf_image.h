@@ -23,6 +23,18 @@ extern "C" {
 
 /**
  * @~english
+ * @brief Load image from memory
+ * @param engine Engine instance
+ * @param data Data
+ * @param size Size
+ * @param width Width
+ * @param height Height
+ * @return Data
+ */
+GF_EXPORT unsigned char* gf_image_load_memory(gf_engine_t* engine, unsigned char* data, size_t size, int* width, int* height);
+
+/**
+ * @~english
  * @brief Load image
  * @param engine Engine instance
  * @param path Path
