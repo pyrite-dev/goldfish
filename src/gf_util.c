@@ -36,10 +36,14 @@ static void add_search(char*** l, char* p) {
 static void add_user_search(char*** l, char* n) {
 #ifdef _WIN32
 	/* not good way */
-	char  shp[MAX_PATH];
-	char* u = getenv("USERPROFILE");
-	if(SHGetSpecialFolderPath(NULL, shp, CSIDL_APPDATA, 0)) {
-		char* p = malloc(strlen(shp) + 1 + strlen(n) + 1);
+	char		 shp[MAX_PATH];
+	PIDLIST_ABSOLUTE pidl;
+	char*		 u = getenv("USERPROFILE");
+	if(SHGetSpecialFolderLocation(NULL, CSIDL_APPDATA, &pidl)) {
+		char* p;
+		SHGetPathFromIDList(pidl, shp);
+		CoTaskMemFree(pidl);
+		p = malloc(strlen(shp) + 1 + strlen(n) + 1);
 		strcpy(p, shp);
 		strcat(p, "\\");
 		strcat(p, n);
@@ -55,8 +59,11 @@ static void add_user_search(char*** l, char* n) {
 		free(p);
 	}
 #if WINVER >= 0x0500
-	if(SHGetSpecialFolderPath(NULL, shp, CSIDL_PROFILE, 0)) {
-		char* p = malloc(strlen(shp) + 1 + strlen(n) + 1);
+	if(SHGetSpecialFolderLocation(NULL, CSIDL_PROFILE, &pidl)) {
+		char* p;
+		SHGetPathFromIDList(pidl, shp);
+		CoTaskMemFree(pidl);
+		p = malloc(strlen(shp) + 1 + strlen(n) + 1);
 		strcpy(p, shp);
 		strcat(p, "\\");
 		strcat(p, n);
