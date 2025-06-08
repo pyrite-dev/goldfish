@@ -24,6 +24,18 @@ extern "C" {
 
 /**
  * @~english
+ * @brief "Powered by GoldFish" image
+ */
+GF_EXPORT unsigned char gf_powered[];
+
+/**
+ * @~english
+ * @brief Size of "Powered by GoldFish" image
+ */
+GF_EXPORT unsigned int gf_powered_len;
+
+/**
+ * @~english
  * @brief Initialize engine
  */
 GF_EXPORT void gf_engine_begin(void);
