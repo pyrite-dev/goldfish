@@ -122,6 +122,9 @@ gf_draw_t;
  * @var gf_draw::cursor
  * @brief Draw cursor or not
  *
+ * @var gf_draw::cursor_texture
+ * @brief Cursor texture
+ *
  * @var gf_draw::skybox
  * @brief Skybox
  *
@@ -153,6 +156,7 @@ GF_DECLARE_TYPE(draw, {
 	gf_texture_t* skybox;
 	gf_graphic_color_t background;
 	int cursor;
+	gf_texture_t* cursor_texture;
 });
 #else
 typedef void gf_draw_t;

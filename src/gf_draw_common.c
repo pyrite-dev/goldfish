@@ -3,6 +3,7 @@
 #define GF_EXPOSE_CLIENT
 #define GF_EXPOSE_INPUT
 #define GF_EXPOSE_GUI
+#define GF_EXPOSE_TEXTURE
 
 #include <gf_pre.h>
 
@@ -72,6 +73,11 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	strcpy(draw->title, title);
 	draw->platform = gf_draw_platform_create(engine, draw);
 	if(draw->platform != NULL) {
+#ifndef OLD_CURSOR
+		unsigned char* d;
+		int	       w;
+		int	       h;
+#endif
 		draw->driver = gf_draw_driver_create(engine, draw);
 		gf_draw_reshape(draw);
 		draw->running = 1;
@@ -90,15 +96,27 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 		draw->lookat[2] = 1;
 
 		draw->gui = gf_gui_create(engine, draw);
+
+#ifndef OLD_CURSOR
+		draw->cursor_texture = NULL;
+		d		     = gf_image_load(engine, "base:/cursor.svg", &w, &h);
+		if(d == NULL) d = gf_image_load(engine, "base:/cursor.png", &w, &h);
+		if(d != NULL) {
+			draw->cursor_texture = gf_texture_create(draw, w, h, d);
+			free(d);
+		}
+#endif
 	} else {
 		gf_draw_destroy(draw);
 		draw = NULL;
 	}
+
 	return draw;
 }
 
 void gf_draw_reshape(gf_draw_t* draw) { gf_draw_driver_reshape(draw); }
 
+#ifdef OLD_CURSOR
 /* offsets to use when calculating the mouse cursor shape */
 #define MOUSE_OFFSETS_NUM 8
 #define CURSOR_MOUSE_OFFSETS_NUM 8
@@ -122,10 +140,12 @@ const double outline_mouse_offsets[CURSOR_MOUSE_OFFSETS_NUM][2] = {
     {14, 1},  /**/
     {18, -2}, /**/
 };
+#endif
 
 void gf_draw_cursor(gf_draw_t* draw) {
 	if(draw->cursor) {
 		gf_graphic_color_t col = draw->gui->font;
+#ifdef OLD_CURSOR
 		gf_graphic_color_t outline_col;
 		double		   coords[2 * MOUSE_OFFSETS_NUM];
 		double		   outline_coords[2 * CURSOR_MOUSE_OFFSETS_NUM];
@@ -149,6 +169,13 @@ void gf_draw_cursor(gf_draw_t* draw) {
 		gf_graphic_fill_polygon_arr(draw, col, GF_GRAPHIC_2D, sizeof(coords) / sizeof(coords[0]) / 2, &coords[0]);
 
 		/* gf_graphic_lines_arr(draw, colInv, GF_GRAPHIC_2D, sizeof(coords) / sizeof(coords[0]) / 2, &coords[0]); */
+#else
+		if(draw->cursor_texture != NULL) {
+			double z = draw->cursor_texture->height;
+			z	 = 20 / z;
+			gf_graphic_draw_texture_2d(draw, draw->input->mouse_x, draw->input->mouse_y, (double)draw->cursor_texture->width * z, (double)draw->cursor_texture->height * z, draw->cursor_texture, col);
+		}
+#endif
 	}
 }
 
