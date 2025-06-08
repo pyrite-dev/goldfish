@@ -35,111 +35,113 @@ typedef struct keymap {
 
 static keymap_t* keymaps = NULL;
 
+static void whmput(DWORD key, int value) { hmput(keymaps, key, value); }
+
 void gf_draw_platform_begin(void) {
 	int i;
 
 	hmdefault(keymaps, -1);
-	hmput(keymaps, 0x0001, GF_INPUT_KEY_ESCAPE);
+	whmput(0x0001, GF_INPUT_KEY_ESCAPE);
 
-	hmput(keymaps, 0x001c, GF_INPUT_KEY_ENTER);
+	whmput(0x001c, GF_INPUT_KEY_ENTER);
 
-	hmput(keymaps, 0x000e, GF_INPUT_KEY_BACKSPACE);
-	hmput(keymaps, 0x0039, GF_INPUT_KEY_SPACE);
+	whmput(0x000e, GF_INPUT_KEY_BACKSPACE);
+	whmput(0x0039, GF_INPUT_KEY_SPACE);
 
-	hmput(keymaps, 0x000b, GF_INPUT_KEY_0);
-	hmput(keymaps, 0x0002, GF_INPUT_KEY_1);
-	hmput(keymaps, 0x0003, GF_INPUT_KEY_2);
-	hmput(keymaps, 0x0004, GF_INPUT_KEY_3);
-	hmput(keymaps, 0x0005, GF_INPUT_KEY_4);
-	hmput(keymaps, 0x0006, GF_INPUT_KEY_5);
-	hmput(keymaps, 0x0007, GF_INPUT_KEY_6);
-	hmput(keymaps, 0x0008, GF_INPUT_KEY_7);
-	hmput(keymaps, 0x0009, GF_INPUT_KEY_8);
-	hmput(keymaps, 0x000a, GF_INPUT_KEY_9);
+	whmput(0x000b, GF_INPUT_KEY_0);
+	whmput(0x0002, GF_INPUT_KEY_1);
+	whmput(0x0003, GF_INPUT_KEY_2);
+	whmput(0x0004, GF_INPUT_KEY_3);
+	whmput(0x0005, GF_INPUT_KEY_4);
+	whmput(0x0006, GF_INPUT_KEY_5);
+	whmput(0x0007, GF_INPUT_KEY_6);
+	whmput(0x0008, GF_INPUT_KEY_7);
+	whmput(0x0009, GF_INPUT_KEY_8);
+	whmput(0x000a, GF_INPUT_KEY_9);
 
-	hmput(keymaps, 0x001e, GF_INPUT_KEY_A);
-	hmput(keymaps, 0x0030, GF_INPUT_KEY_B);
-	hmput(keymaps, 0x002e, GF_INPUT_KEY_C);
-	hmput(keymaps, 0x0020, GF_INPUT_KEY_D);
-	hmput(keymaps, 0x0012, GF_INPUT_KEY_E);
-	hmput(keymaps, 0x0021, GF_INPUT_KEY_F);
-	hmput(keymaps, 0x0022, GF_INPUT_KEY_G);
-	hmput(keymaps, 0x0023, GF_INPUT_KEY_H);
-	hmput(keymaps, 0x0017, GF_INPUT_KEY_I);
-	hmput(keymaps, 0x0024, GF_INPUT_KEY_J);
-	hmput(keymaps, 0x0025, GF_INPUT_KEY_K);
-	hmput(keymaps, 0x0026, GF_INPUT_KEY_L);
-	hmput(keymaps, 0x0032, GF_INPUT_KEY_M);
-	hmput(keymaps, 0x0031, GF_INPUT_KEY_N);
-	hmput(keymaps, 0x0018, GF_INPUT_KEY_O);
-	hmput(keymaps, 0x0019, GF_INPUT_KEY_P);
-	hmput(keymaps, 0x0010, GF_INPUT_KEY_Q);
-	hmput(keymaps, 0x0013, GF_INPUT_KEY_R);
-	hmput(keymaps, 0x001f, GF_INPUT_KEY_S);
-	hmput(keymaps, 0x0014, GF_INPUT_KEY_T);
-	hmput(keymaps, 0x0016, GF_INPUT_KEY_U);
-	hmput(keymaps, 0x002f, GF_INPUT_KEY_V);
-	hmput(keymaps, 0x0011, GF_INPUT_KEY_W);
-	hmput(keymaps, 0x002d, GF_INPUT_KEY_X);
-	hmput(keymaps, 0x0015, GF_INPUT_KEY_Y);
-	hmput(keymaps, 0x002c, GF_INPUT_KEY_Z);
+	whmput(0x001e, GF_INPUT_KEY_A);
+	whmput(0x0030, GF_INPUT_KEY_B);
+	whmput(0x002e, GF_INPUT_KEY_C);
+	whmput(0x0020, GF_INPUT_KEY_D);
+	whmput(0x0012, GF_INPUT_KEY_E);
+	whmput(0x0021, GF_INPUT_KEY_F);
+	whmput(0x0022, GF_INPUT_KEY_G);
+	whmput(0x0023, GF_INPUT_KEY_H);
+	whmput(0x0017, GF_INPUT_KEY_I);
+	whmput(0x0024, GF_INPUT_KEY_J);
+	whmput(0x0025, GF_INPUT_KEY_K);
+	whmput(0x0026, GF_INPUT_KEY_L);
+	whmput(0x0032, GF_INPUT_KEY_M);
+	whmput(0x0031, GF_INPUT_KEY_N);
+	whmput(0x0018, GF_INPUT_KEY_O);
+	whmput(0x0019, GF_INPUT_KEY_P);
+	whmput(0x0010, GF_INPUT_KEY_Q);
+	whmput(0x0013, GF_INPUT_KEY_R);
+	whmput(0x001f, GF_INPUT_KEY_S);
+	whmput(0x0014, GF_INPUT_KEY_T);
+	whmput(0x0016, GF_INPUT_KEY_U);
+	whmput(0x002f, GF_INPUT_KEY_V);
+	whmput(0x0011, GF_INPUT_KEY_W);
+	whmput(0x002d, GF_INPUT_KEY_X);
+	whmput(0x0015, GF_INPUT_KEY_Y);
+	whmput(0x002c, GF_INPUT_KEY_Z);
 
-	hmput(keymaps, 0x003b, GF_INPUT_KEY_F1);
-	hmput(keymaps, 0x003c, GF_INPUT_KEY_F2);
-	hmput(keymaps, 0x003d, GF_INPUT_KEY_F3);
-	hmput(keymaps, 0x003e, GF_INPUT_KEY_F4);
-	hmput(keymaps, 0x003f, GF_INPUT_KEY_F5);
-	hmput(keymaps, 0x0040, GF_INPUT_KEY_F6);
-	hmput(keymaps, 0x0041, GF_INPUT_KEY_F7);
-	hmput(keymaps, 0x0042, GF_INPUT_KEY_F8);
-	hmput(keymaps, 0x0043, GF_INPUT_KEY_F9);
-	hmput(keymaps, 0x0044, GF_INPUT_KEY_F10);
-	hmput(keymaps, 0x0057, GF_INPUT_KEY_F11);
-	hmput(keymaps, 0x0058, GF_INPUT_KEY_F12);
+	whmput(0x003b, GF_INPUT_KEY_F1);
+	whmput(0x003c, GF_INPUT_KEY_F2);
+	whmput(0x003d, GF_INPUT_KEY_F3);
+	whmput(0x003e, GF_INPUT_KEY_F4);
+	whmput(0x003f, GF_INPUT_KEY_F5);
+	whmput(0x0040, GF_INPUT_KEY_F6);
+	whmput(0x0041, GF_INPUT_KEY_F7);
+	whmput(0x0042, GF_INPUT_KEY_F8);
+	whmput(0x0043, GF_INPUT_KEY_F9);
+	whmput(0x0044, GF_INPUT_KEY_F10);
+	whmput(0x0057, GF_INPUT_KEY_F11);
+	whmput(0x0058, GF_INPUT_KEY_F12);
 
-	hmput(keymaps, 0xe048, GF_INPUT_KEY_UP);
-	hmput(keymaps, 0xe050, GF_INPUT_KEY_DOWN);
-	hmput(keymaps, 0xe04b, GF_INPUT_KEY_LEFT);
-	hmput(keymaps, 0xe04d, GF_INPUT_KEY_RIGHT);
+	whmput(0xe048, GF_INPUT_KEY_UP);
+	whmput(0xe050, GF_INPUT_KEY_DOWN);
+	whmput(0xe04b, GF_INPUT_KEY_LEFT);
+	whmput(0xe04d, GF_INPUT_KEY_RIGHT);
 
-	hmput(keymaps, 0x002a, GF_INPUT_KEY_LEFT_SHIFT);
-	hmput(keymaps, 0x0036, GF_INPUT_KEY_RIGHT_SHIFT);
+	whmput(0x002a, GF_INPUT_KEY_LEFT_SHIFT);
+	whmput(0x0036, GF_INPUT_KEY_RIGHT_SHIFT);
 
-	hmput(keymaps, 0x0038, GF_INPUT_KEY_LEFT_ALT);
-	hmput(keymaps, 0xe038, GF_INPUT_KEY_RIGHT_ALT);
+	whmput(0x0038, GF_INPUT_KEY_LEFT_ALT);
+	whmput(0xe038, GF_INPUT_KEY_RIGHT_ALT);
 
-	hmput(keymaps, 0x001d, GF_INPUT_KEY_LEFT_CONTROL);
-	hmput(keymaps, 0xe01d, GF_INPUT_KEY_RIGHT_CONTROL);
+	whmput(0x001d, GF_INPUT_KEY_LEFT_CONTROL);
+	whmput(0xe01d, GF_INPUT_KEY_RIGHT_CONTROL);
 
-	hmput(keymaps, 0xe05b, GF_INPUT_KEY_LEFT_SUPER);
-	hmput(keymaps, 0xe05c, GF_INPUT_KEY_RIGHT_SUPER);
+	whmput(0xe05b, GF_INPUT_KEY_LEFT_SUPER);
+	whmput(0xe05c, GF_INPUT_KEY_RIGHT_SUPER);
 
-	hmput(keymaps, 0x000f, GF_INPUT_KEY_TAB);
-	hmput(keymaps, 0x003a, GF_INPUT_KEY_CAPSLOCK);
+	whmput(0x000f, GF_INPUT_KEY_TAB);
+	whmput(0x003a, GF_INPUT_KEY_CAPSLOCK);
 
-	hmput(keymaps, 0x0029, GF_INPUT_KEY_GRAVE);
-	hmput(keymaps, 0x000c, GF_INPUT_KEY_MINUS);
-	hmput(keymaps, 0x000d, GF_INPUT_KEY_EQUALS);
-	hmput(keymaps, 0x001a, GF_INPUT_KEY_LEFT_BRACKET);
-	hmput(keymaps, 0x001b, GF_INPUT_KEY_RIGHT_BRACKET);
-	hmput(keymaps, 0x002b, GF_INPUT_KEY_BACKSLASH);
-	hmput(keymaps, 0x0027, GF_INPUT_KEY_SEMICOLON);
-	hmput(keymaps, 0x0028, GF_INPUT_KEY_QUOTE);
-	hmput(keymaps, 0x0033, GF_INPUT_KEY_COMMA);
-	hmput(keymaps, 0x0034, GF_INPUT_KEY_PERIOD);
-	hmput(keymaps, 0x0035, GF_INPUT_KEY_SLASH);
+	whmput(0x0029, GF_INPUT_KEY_GRAVE);
+	whmput(0x000c, GF_INPUT_KEY_MINUS);
+	whmput(0x000d, GF_INPUT_KEY_EQUALS);
+	whmput(0x001a, GF_INPUT_KEY_LEFT_BRACKET);
+	whmput(0x001b, GF_INPUT_KEY_RIGHT_BRACKET);
+	whmput(0x002b, GF_INPUT_KEY_BACKSLASH);
+	whmput(0x0027, GF_INPUT_KEY_SEMICOLON);
+	whmput(0x0028, GF_INPUT_KEY_QUOTE);
+	whmput(0x0033, GF_INPUT_KEY_COMMA);
+	whmput(0x0034, GF_INPUT_KEY_PERIOD);
+	whmput(0x0035, GF_INPUT_KEY_SLASH);
 
-	hmput(keymaps, 0xe052, GF_INPUT_KEY_INSERT);
-	hmput(keymaps, 0xe053, GF_INPUT_KEY_DELETE);
-	hmput(keymaps, 0xe047, GF_INPUT_KEY_HOME);
-	hmput(keymaps, 0xe04f, GF_INPUT_KEY_END);
-	hmput(keymaps, 0xe049, GF_INPUT_KEY_PAGE_UP);
-	hmput(keymaps, 0xe051, GF_INPUT_KEY_PAGE_DOWN);
+	whmput(0xe052, GF_INPUT_KEY_INSERT);
+	whmput(0xe053, GF_INPUT_KEY_DELETE);
+	whmput(0xe047, GF_INPUT_KEY_HOME);
+	whmput(0xe04f, GF_INPUT_KEY_END);
+	whmput(0xe049, GF_INPUT_KEY_PAGE_UP);
+	whmput(0xe051, GF_INPUT_KEY_PAGE_DOWN);
 
-	hmput(keymaps, 0x0054, GF_INPUT_KEY_PRINT_SCREEN);
-	hmput(keymaps, 0xe046, GF_INPUT_KEY_SCROLL_LOCK);
-	hmput(keymaps, 0x0045, GF_INPUT_KEY_PAUSE_BREAK);
-	hmput(keymaps, 0xe045, GF_INPUT_KEY_NUM_LOCK);
+	whmput(0x0054, GF_INPUT_KEY_PRINT_SCREEN);
+	whmput(0xe046, GF_INPUT_KEY_SCROLL_LOCK);
+	whmput(0x0045, GF_INPUT_KEY_PAUSE_BREAK);
+	whmput(0xe045, GF_INPUT_KEY_NUM_LOCK);
 }
 
 void gf_draw_platform_end(void) {
