@@ -33,7 +33,16 @@ void gf_command_file(gf_engine_t* engine, const char* path) {
 			if(buf[i] == 0 || buf[i] == '\n') {
 				char  oldc = buf[i];
 				char* line = buf + incr;
-				buf[i]	   = 0;
+				int   j;
+
+				buf[i] = 0;
+
+				for(j = 0; line[j] != 0; j++) {
+					if(line[j] == '\r') {
+						line[j] = 0;
+						break;
+					}
+				}
 
 				if(strlen(line) > 0) {
 					arrput(aelist, line);
@@ -41,8 +50,6 @@ void gf_command_file(gf_engine_t* engine, const char* path) {
 
 				incr = i + 1;
 				if(oldc == 0) break;
-			} else if(buf[i] == '\r') {
-				buf[i] = 0;
 			}
 		}
 
