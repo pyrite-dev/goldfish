@@ -58,7 +58,6 @@ unsigned char* gf_image_load(gf_engine_t* engine, const char* path, int* width, 
 	gf_file_t*     f = gf_file_open(engine, path, "r");
 	unsigned char* r = NULL;
 	unsigned char* b = NULL;
-	int	       ch;
 	if(f != NULL) {
 		b = malloc(f->size);
 		gf_file_read(f, b, f->size);

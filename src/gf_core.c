@@ -77,7 +77,6 @@ gf_engine_t* gf_engine_create(const char* title, int nogui) {
 gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t param, char** argv, int argc) {
 	int	     st;
 	char**	     list = NULL;
-	gf_file_t*   f;
 	int	     i;
 	int	     titlei = 0;
 	char*	     search;

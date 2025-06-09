@@ -43,8 +43,6 @@ static keymap_t* keymaps = NULL;
 static void whmput(DWORD key, int value) { hmput(keymaps, key, value); }
 
 void gf_draw_platform_begin(void) {
-	int i;
-
 	hmdefault(keymaps, -1);
 	whmput(0x0001, GF_INPUT_KEY_ESCAPE);
 
@@ -193,24 +191,26 @@ LRESULT CALLBACK gf_draw_platform_proc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp
 	case WM_KEYDOWN:
 		if(draw->input != NULL) {
 			DWORD sc = HIWORD(lp) & 0xff;
+			int   key;
 			if(sc == 0) {
 				sc = MapVirtualKey(wp, MAPVK_VK_TO_VSC);
 			} else if((HIWORD(lp) & KF_EXTENDED) == KF_EXTENDED) {
 				sc = MAKEWORD(sc, 0xe0);
 			}
-			int key = hmget(keymaps, sc);
+			key = hmget(keymaps, sc);
 			gf_input_key_press(draw->input, key);
 		}
 		break;
 	case WM_KEYUP:
 		if(draw->input != NULL) {
 			DWORD sc = HIWORD(lp) & 0xff;
+			int   key;
 			if(sc == 0) {
 				sc = MapVirtualKey(wp, MAPVK_VK_TO_VSC);
 			} else if((HIWORD(lp) & KF_EXTENDED) == KF_EXTENDED) {
 				sc = MAKEWORD(sc, 0xe0);
 			}
-			int key = hmget(keymaps, sc);
+			key = hmget(keymaps, sc);
 			gf_input_key_release(draw->input, key);
 		}
 		break;

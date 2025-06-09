@@ -47,7 +47,7 @@ int bindgen_audio_gf_audio_load_file(lua_State* s) {
 
 	param0 = wrap->engine->client->audio;
 
-	ret = (gf_audio_id_t)gf_audio_load_file(param0, param1);
+	gf_audio_load_file(param0, param1);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishAudio");
@@ -90,7 +90,7 @@ int bindgen_audio_gf_audio_get_volume(lua_State* s) {
 
 	param0 = wrap->engine->client->audio;
 
-	ret = (double)gf_audio_get_volume(param0);
+	gf_audio_get_volume(param0);
 	lua_pushnumber(s, ret);
 
 	return 1;
@@ -115,4 +115,4 @@ void bindgen_audio_init(gf_lua_t* lua) {
 	lua_settable(LUA(lua), -3);
 }
 
-/*** Generated at Sat Jun 7 2025 ***/
+/*** Generated at Mon Jun 9 2025 ***/

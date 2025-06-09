@@ -111,7 +111,7 @@ int bindgen_graphic_gf_graphic_text_width(lua_State* s) {
 
 	param0 = wrap->engine->client->draw;
 
-	ret = (double)gf_graphic_text_width(param0, *param1, param2, param3);
+	gf_graphic_text_width(param0, *param1, param2, param3);
 	lua_pushnumber(s, ret);
 
 	return 1;
@@ -134,7 +134,7 @@ int bindgen_graphic_gf_graphic_text_height(lua_State* s) {
 
 	param0 = wrap->engine->client->draw;
 
-	ret = (double)gf_graphic_text_height(param0, *param1, param2, param3);
+	gf_graphic_text_height(param0, *param1, param2, param3);
 	lua_pushnumber(s, ret);
 
 	return 1;
@@ -217,7 +217,7 @@ int bindgen_graphic_gf_graphic_text_wrap(lua_State* s) {
 		param7 = wrap->engine->client->draw->gui->font;
 	}
 
-	ret = (double)gf_graphic_text_wrap(param0, *param1, param2, param3, param4, param5, param6, param7);
+	gf_graphic_text_wrap(param0, *param1, param2, param3, param4, param5, param6, param7);
 	lua_pushnumber(s, ret);
 
 	return 1;
@@ -301,4 +301,4 @@ void bindgen_graphic_init(gf_lua_t* lua) {
 	lua_settable(LUA(lua), -3);
 }
 
-/*** Generated at Sat Jun 7 2025 ***/
+/*** Generated at Mon Jun 9 2025 ***/
