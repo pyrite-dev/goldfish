@@ -1,4 +1,6 @@
 #define GF_EXPOSE_CORE
+#define GF_EXPOSE_DRAW
+#define GF_EXPOSE_CLIENT
 
 #include <gf_pre.h>
 
@@ -120,6 +122,11 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
 				} else {
 					gf_command_file(engine, arg[1]);
+				}
+			} else if(strcmp(arg[0], "intro") == 0) {
+				if(engine != NULL && engine->client != NULL && engine->client->draw != NULL) {
+					engine->client->draw->intro.finished = 0;
+					engine->client->draw->intro.frame    = 0;
 				}
 			} else {
 				gf_log_function(engine, "%s: Unknown command", arg[0]);

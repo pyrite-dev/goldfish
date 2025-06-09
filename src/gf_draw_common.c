@@ -188,9 +188,6 @@ void gf_draw_cursor(gf_draw_t* draw) {
 /* Runs every frame */
 void gf_draw_frame(gf_draw_t* draw) {
 	if(draw->intro.finished == 0) {
-#ifdef DEBUG
-		draw->intro.finished = 1;
-#else
 		if(draw->intro.powered != NULL) {
 			const char*	   lines[] = {"(C) 2025 Pyrite Development Team. All rights reserved.", "This product includes software developed by the Pyrite Development Team."};
 			int		   i;
@@ -252,7 +249,6 @@ void gf_draw_frame(gf_draw_t* draw) {
 		if(gf_input_key_pressed(draw->input, GF_INPUT_KEY_ESCAPE)) {
 			draw->intro.finished = 1;
 		}
-#endif
 	} else {
 		gf_lua_step(draw->engine->lua);
 		gf_gui_render(draw->gui);
