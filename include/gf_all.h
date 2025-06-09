@@ -4,6 +4,7 @@
  * @brief Include all GoldFish headers
  */
 
+#include <gf_action.h>
 #include <gf_assert.h>
 #include <gf_audio.h>
 #include <gf_checksum.h>
@@ -15,6 +16,7 @@
 #include <gf_draw_platform.h>
 #include <gf_file.h>
 #include <gf_font.h>
+#include <gf_gload.h>
 #include <gf_graphic.h>
 #include <gf_gui.h>
 #include <gf_gui_component.h>

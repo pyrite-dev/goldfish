@@ -33,6 +33,7 @@
 #include <gf_prop.h>
 #include <gf_image.h>
 #include <gf_input.h>
+#include <gf_action.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -255,6 +256,7 @@ void gf_draw_frame(gf_draw_t* draw) {
 		gf_gui_render(draw->gui);
 		gf_draw_cursor(draw);
 	}
+	gf_action_process(draw->engine);
 	if(arrlen(draw->input->key_queue) > 0) {
 		arrdel(draw->input->key_queue, 0);
 	}
