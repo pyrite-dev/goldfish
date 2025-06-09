@@ -69,7 +69,7 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	draw->background.b = 0x11;
 	draw->background.a = 0xff;
 
-	draw->intro.finished = 0;
+	draw->intro.finished = 1;
 	draw->intro.frame    = 0;
 
 #ifdef GF_USE_GLOAD

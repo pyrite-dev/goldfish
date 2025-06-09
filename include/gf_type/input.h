@@ -10,19 +10,6 @@
 #include <gf_pre.h>
 #include <gf_macro.h>
 
-#ifdef GF_EXPOSE_INPUT
-#define gf_input_t struct gf_input
-
-gf_input_t;
-
-/* External library */
-
-/* Engine */
-#include <gf_type/draw.h>
-#include <gf_type/core.h>
-
-/* Standard */
-
 /**
  * @~english
  * @brief Mask for left mouse button
@@ -165,6 +152,19 @@ enum GF_INPUT_KEYS {
 	GF_INPUT_KEY_NUMPAD_8,
 	GF_INPUT_KEY_NUMPAD_9,
 };
+
+#ifdef GF_EXPOSE_INPUT
+#define gf_input_t struct gf_input
+
+gf_input_t;
+
+/* External library */
+
+/* Engine */
+#include <gf_type/draw.h>
+#include <gf_type/core.h>
+
+/* Standard */
 
 /**
  * @struct gf_input
