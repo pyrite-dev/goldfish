@@ -98,7 +98,7 @@ int bindgen_gui_gf_gui_create_common(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_common(param0, param1, param2, param3, param4, param5);
+	ret = gf_gui_create_common(param0, param1, param2, param3, param4, param5);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -127,7 +127,7 @@ int bindgen_gui_gf_gui_create_button(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_button(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_button(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -156,7 +156,7 @@ int bindgen_gui_gf_gui_create_entry(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_entry(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_entry(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -185,7 +185,7 @@ int bindgen_gui_gf_gui_create_frame(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_frame(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_frame(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -214,7 +214,7 @@ int bindgen_gui_gf_gui_create_progress(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_progress(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_progress(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -243,7 +243,7 @@ int bindgen_gui_gf_gui_create_range(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_range(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_range(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -272,7 +272,7 @@ int bindgen_gui_gf_gui_create_scrollbar(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_scrollbar(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_scrollbar(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -301,7 +301,7 @@ int bindgen_gui_gf_gui_create_tab(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_tab(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_tab(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -330,7 +330,7 @@ int bindgen_gui_gf_gui_create_text(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_text(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_text(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -359,7 +359,7 @@ int bindgen_gui_gf_gui_create_window(lua_State* s) {
 
 	param0 = wrap->engine->client->draw->gui;
 
-	gf_gui_create_window(param0, param1, param2, param3, param4);
+	ret = gf_gui_create_window(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");

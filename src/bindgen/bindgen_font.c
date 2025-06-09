@@ -45,7 +45,7 @@ int bindgen_font_gf_font_create_file(lua_State* s) {
 
 	param0 = wrap->engine->client->draw;
 
-	gf_font_create_file(param0, param1);
+	ret = gf_font_create_file(param0, param1);
 	if(!(ret != NULL)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishFont");
