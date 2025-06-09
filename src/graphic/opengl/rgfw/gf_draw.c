@@ -30,70 +30,71 @@ typedef struct keymap {
 
 static keymap_t* keymaps = NULL;
 
-/**
- * printscreen and pause are missing
- */
+static void whmput(int key, int value) { hmput(keymaps, key, value); }
+
 void gf_draw_platform_begin(void) {
 	int i;
 
 	hmdefault(keymaps, -1);
-	hmput(keymaps, RGFW_escape, GF_INPUT_KEY_ESCAPE);
+	whmput(RGFW_escape, GF_INPUT_KEY_ESCAPE);
 
-	hmput(keymaps, RGFW_return, GF_INPUT_KEY_ENTER);
+	whmput(RGFW_return, GF_INPUT_KEY_ENTER);
 
-	hmput(keymaps, RGFW_backSpace, GF_INPUT_KEY_BACKSPACE);
-	hmput(keymaps, RGFW_space, GF_INPUT_KEY_SPACE);
+	whmput(RGFW_backSpace, GF_INPUT_KEY_BACKSPACE);
+	whmput(RGFW_space, GF_INPUT_KEY_SPACE);
 
-	for(i = 0; i < 10; i++) hmput(keymaps, RGFW_0 + i, GF_INPUT_KEY_0 + i);
+	for(i = 0; i < 10; i++) whmput(RGFW_0 + i, GF_INPUT_KEY_0 + i);
 
-	for(i = 0; i < 26; i++) hmput(keymaps, RGFW_a + i, GF_INPUT_KEY_A + i);
+	for(i = 0; i < 26; i++) whmput(RGFW_a + i, GF_INPUT_KEY_A + i);
 
 	for(i = 0; i < 12; i++) {
-		hmput(keymaps, RGFW_F1 + i, GF_INPUT_KEY_F1 + i);
+		whmput(RGFW_F1 + i, GF_INPUT_KEY_F1 + i);
 	}
 
-	hmput(keymaps, RGFW_up, GF_INPUT_KEY_UP);
-	hmput(keymaps, RGFW_down, GF_INPUT_KEY_DOWN);
-	hmput(keymaps, RGFW_left, GF_INPUT_KEY_LEFT);
-	hmput(keymaps, RGFW_right, GF_INPUT_KEY_RIGHT);
+	whmput(RGFW_up, GF_INPUT_KEY_UP);
+	whmput(RGFW_down, GF_INPUT_KEY_DOWN);
+	whmput(RGFW_left, GF_INPUT_KEY_LEFT);
+	whmput(RGFW_right, GF_INPUT_KEY_RIGHT);
 
-	hmput(keymaps, RGFW_shiftL, GF_INPUT_KEY_LEFT_SHIFT);
-	hmput(keymaps, RGFW_shiftR, GF_INPUT_KEY_RIGHT_SHIFT);
+	whmput(RGFW_shiftL, GF_INPUT_KEY_LEFT_SHIFT);
+	whmput(RGFW_shiftR, GF_INPUT_KEY_RIGHT_SHIFT);
 
-	hmput(keymaps, RGFW_altL, GF_INPUT_KEY_LEFT_ALT);
-	hmput(keymaps, RGFW_altR, GF_INPUT_KEY_RIGHT_ALT);
+	whmput(RGFW_altL, GF_INPUT_KEY_LEFT_ALT);
+	whmput(RGFW_altR, GF_INPUT_KEY_RIGHT_ALT);
 
-	hmput(keymaps, RGFW_controlL, GF_INPUT_KEY_LEFT_CONTROL);
-	hmput(keymaps, RGFW_controlR, GF_INPUT_KEY_RIGHT_CONTROL);
+	whmput(RGFW_controlL, GF_INPUT_KEY_LEFT_CONTROL);
+	whmput(RGFW_controlR, GF_INPUT_KEY_RIGHT_CONTROL);
 
-	hmput(keymaps, RGFW_superL, GF_INPUT_KEY_LEFT_SUPER);
-	hmput(keymaps, RGFW_superR, GF_INPUT_KEY_RIGHT_SUPER);
+	whmput(RGFW_superL, GF_INPUT_KEY_LEFT_SUPER);
+	whmput(RGFW_superR, GF_INPUT_KEY_RIGHT_SUPER);
 
-	hmput(keymaps, RGFW_tab, GF_INPUT_KEY_TAB);
-	hmput(keymaps, RGFW_capsLock, GF_INPUT_KEY_CAPSLOCK);
+	whmput(RGFW_tab, GF_INPUT_KEY_TAB);
+	whmput(RGFW_capsLock, GF_INPUT_KEY_CAPSLOCK);
 
-	hmput(keymaps, RGFW_backtick, GF_INPUT_KEY_GRAVE);
-	hmput(keymaps, RGFW_minus, GF_INPUT_KEY_MINUS);
-	hmput(keymaps, RGFW_equals, GF_INPUT_KEY_EQUALS);
-	hmput(keymaps, RGFW_bracket, GF_INPUT_KEY_LEFT_BRACKET);
-	hmput(keymaps, RGFW_closeBracket, GF_INPUT_KEY_RIGHT_BRACKET);
+	whmput(RGFW_backtick, GF_INPUT_KEY_GRAVE);
+	whmput(RGFW_minus, GF_INPUT_KEY_MINUS);
+	whmput(RGFW_equals, GF_INPUT_KEY_EQUALS);
+	whmput(RGFW_bracket, GF_INPUT_KEY_LEFT_BRACKET);
+	whmput(RGFW_closeBracket, GF_INPUT_KEY_RIGHT_BRACKET);
 
-	hmput(keymaps, RGFW_backSlash, GF_INPUT_KEY_BACKSLASH);
-	hmput(keymaps, RGFW_semicolon, GF_INPUT_KEY_SEMICOLON);
-	hmput(keymaps, RGFW_apostrophe, GF_INPUT_KEY_QUOTE);
-	hmput(keymaps, RGFW_comma, GF_INPUT_KEY_COMMA);
-	hmput(keymaps, RGFW_period, GF_INPUT_KEY_PERIOD);
-	hmput(keymaps, RGFW_slash, GF_INPUT_KEY_SLASH);
+	whmput(RGFW_backSlash, GF_INPUT_KEY_BACKSLASH);
+	whmput(RGFW_semicolon, GF_INPUT_KEY_SEMICOLON);
+	whmput(RGFW_apostrophe, GF_INPUT_KEY_QUOTE);
+	whmput(RGFW_comma, GF_INPUT_KEY_COMMA);
+	whmput(RGFW_period, GF_INPUT_KEY_PERIOD);
+	whmput(RGFW_slash, GF_INPUT_KEY_SLASH);
 
-	hmput(keymaps, RGFW_insert, GF_INPUT_KEY_INSERT);
-	hmput(keymaps, RGFW_delete, GF_INPUT_KEY_DELETE);
-	hmput(keymaps, RGFW_home, GF_INPUT_KEY_HOME);
-	hmput(keymaps, RGFW_end, GF_INPUT_KEY_END);
-	hmput(keymaps, RGFW_pageUp, GF_INPUT_KEY_PAGE_UP);
-	hmput(keymaps, RGFW_pageDown, GF_INPUT_KEY_PAGE_DOWN);
+	whmput(RGFW_insert, GF_INPUT_KEY_INSERT);
+	whmput(RGFW_delete, GF_INPUT_KEY_DELETE);
+	whmput(RGFW_home, GF_INPUT_KEY_HOME);
+	whmput(RGFW_end, GF_INPUT_KEY_END);
+	whmput(RGFW_pageUp, GF_INPUT_KEY_PAGE_UP);
+	whmput(RGFW_pageDown, GF_INPUT_KEY_PAGE_DOWN);
 
-	hmput(keymaps, RGFW_scrollLock, GF_INPUT_KEY_SCROLL_LOCK);
-	hmput(keymaps, RGFW_numLock, GF_INPUT_KEY_NUM_LOCK);
+	whmput(RGFW_printScreen, GF_INPUT_KEY_PRINT_SCREEN);
+	whmput(RGFW_scrollLock, GF_INPUT_KEY_SCROLL_LOCK);
+	whmput(RGFW_pause, GF_INPUT_KEY_PAUSE_BREAK);
+	whmput(RGFW_numLock, GF_INPUT_KEY_NUM_LOCK);
 }
 
 void gf_draw_platform_end(void) {
