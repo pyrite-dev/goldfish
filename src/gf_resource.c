@@ -14,6 +14,7 @@
 #include <gf_log.h>
 #include <gf_file.h>
 #include <gf_thread.h>
+#include <gf_util.h>
 #include <gf_type/thread.h>
 
 /* Standard */
@@ -131,15 +132,13 @@ int gf_resource_get(gf_resource_t* resource, const char* name, void** data, size
 		strcpy(path + strlen(path), "/");
 		strcpy(path + strlen(path), name);
 
-		f = fopen(path, "r");
+		f = fopen(path, "rb");
 		if(f == NULL) {
 			free(path);
 			return -1;
 		}
 
-		fseek(f, 0, SEEK_END);
-		*size = ftell(f);
-		fseek(f, 0, SEEK_SET);
+		*size = gf_util_file_size(f);
 
 		*data = malloc(*size);
 		fread(*data, *size, 1, f);

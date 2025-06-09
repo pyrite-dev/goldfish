@@ -26,8 +26,8 @@ void gf_command_file(gf_engine_t* engine, const char* path) {
 		int    incr   = 0;
 		char** aelist = NULL;
 		int    i;
-		buf[f->size] = 0;
 		gf_file_read(f, buf, f->size);
+		buf[f->size] = 0;
 
 		for(i = 0;; i++) {
 			if(buf[i] == 0 || buf[i] == '\n') {

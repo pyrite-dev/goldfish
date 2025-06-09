@@ -16,6 +16,7 @@
 #include <gf_type/core.h>
 
 /* Standard */
+#include <stdio.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,6 +43,14 @@ GF_EXPORT char* gf_util_get_search(gf_engine_t* engine);
  * @return Path
  */
 GF_EXPORT char** gf_util_get_search_list(gf_engine_t* engine);
+
+/**
+ * @~english
+ * @brief Get file size
+ * @param f File pointer
+ * @return Size
+ */
+GF_EXPORT int gf_util_file_size(FILE* f);
 
 #ifdef __cplusplus
 }

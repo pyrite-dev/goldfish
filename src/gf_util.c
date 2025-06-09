@@ -14,6 +14,7 @@
 /* Standard */
 #include <string.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 #ifdef _WIN32
 #include <shlobj.h>
 #else
@@ -150,4 +151,18 @@ char** gf_util_get_search_list(gf_engine_t* engine) {
 	free(r);
 
 	return l;
+}
+
+int gf_util_file_size(FILE* f){
+#ifdef _WIN32
+	int fd = _fileno(f);
+	struct _stat s;
+	_fstat(fd, &s);
+	return s.st_size;
+#else
+	int fd = fileno(f);
+	struct stat s;
+	fstat(fd, &s);
+	return s.st_size;
+#endif
 }
