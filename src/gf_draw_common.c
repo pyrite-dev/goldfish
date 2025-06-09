@@ -32,6 +32,7 @@
 #include <gf_lua.h>
 #include <gf_prop.h>
 #include <gf_image.h>
+#include <gf_input.h>
 
 /* Standard */
 #include <stdlib.h>
