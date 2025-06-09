@@ -251,14 +251,14 @@ void gf_resource_add(gf_resource_t* resource, const char* name, void* data, size
 }
 
 struct gf_resource_write_worker_args_t {
-	gf_resource_t*		   resource;
-	int			   progress;
-	int			   finish_count;
-	FILE*			   f;
-	char*			   processed;
-	struct gf_thread_mutext_t* processed_lock;
-	struct gf_thread_mutext_t* f_lock;
-	struct gf_thread_event_t*  workers_finished;
+	gf_resource_t*	   resource;
+	int		   progress;
+	int		   finish_count;
+	FILE*		   f;
+	char*		   processed;
+	gf_thread_mutex_t* processed_lock;
+	gf_thread_mutex_t* f_lock;
+	gf_thread_event_t* workers_finished;
 };
 
 void gf_resource_write_worker(void* args) {

@@ -6,6 +6,7 @@
 #include <gf_action.h>
 
 /* Engine */
+#include <gf_input.h>
 
 /* Standard */
 
