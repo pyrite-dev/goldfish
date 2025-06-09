@@ -196,6 +196,7 @@ void gf_draw_frame(gf_draw_t* draw) {
 			double		   y;
 			double		   sec = draw->intro.frame;
 			gf_graphic_color_t col;
+			double		   fsz = 21;
 
 			sec = sec / gf_draw_get_fps(draw);
 
@@ -227,15 +228,15 @@ void gf_draw_frame(gf_draw_t* draw) {
 			col.b = 192;
 
 			for(i = 0; i < sizeof(lines) / sizeof(lines[0]); i++) {
-				double tw = gf_graphic_text_width(draw, draw->font, 20, lines[i]);
-				mh += gf_graphic_text_height(draw, draw->font, 20, lines[i]);
+				double tw = gf_graphic_text_width(draw, draw->font, fsz, lines[i]);
+				mh += gf_graphic_text_height(draw, draw->font, fsz, lines[i]);
 				if(tw > mw) mw = tw;
 			}
 
 			y = draw->height / 2 + draw->intro.powered->height / 2 + (draw->height / 2 - draw->intro.powered->height / 2) / 2 - mh / 2;
 			for(i = 0; i < sizeof(lines) / sizeof(lines[0]); i++) {
-				gf_graphic_text(draw, draw->font, draw->width / 2 - mw / 2, y, 20, lines[i], col);
-				y += gf_graphic_text_height(draw, draw->font, 20, lines[i]);
+				gf_graphic_text(draw, draw->font, draw->width / 2 - mw / 2, y, fsz, lines[i], col);
+				y += gf_graphic_text_height(draw, draw->font, fsz, lines[i]);
 			}
 
 			draw->intro.frame++;

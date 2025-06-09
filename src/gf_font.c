@@ -42,10 +42,10 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	unsigned char*	buffer;
 	int		ix;
 	int		iy;
-	int		last = 0;
 	gf_int32_t*	wc;
 	int		incr  = 0;
 	const char*	texts = text;
+	int		last  = 0;
 
 	double lw = *width;
 	double lh = *height;
@@ -125,9 +125,9 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 
 			stbtt_GetCodepointHMetrics(&font->ttf, wc[i], &ax, &lsb);
 			kern = 0;
+			last = gf_math_round(lsb * scale);
 			if(wc[i + 1] != 0) kern = stbtt_GetCodepointKernAdvance(&font->ttf, wc[i], wc[i + 1]);
-			fx   = gf_math_round(ax * scale) + gf_math_round(kern * scale);
-			last = lsb;
+			fx = gf_math_round(ax * scale) + gf_math_round(kern * scale);
 
 			if(lw >= 0 && (cache.width + fx) >= lw) {
 				int gh	    = ascent - descent + linegap;
@@ -147,7 +147,7 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	if(lw >= 0) {
 		cache.width = lw;
 	} else {
-		cache.width += gf_math_round(last * scale);
+		cache.width += last;
 	}
 
 	buffer = malloc(cache.width * cache.height * 4);
@@ -173,13 +173,15 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 			ix = 0;
 			iy += ascent - descent + linegap;
 		} else {
+			int addt = 0;
 			stbtt_GetCodepointHMetrics(&font->ttf, wc[i], &ax, &lsb);
 			stbtt_GetCodepointBitmapBox(&font->ttf, wc[i], scale, scale, &x1, &y1, &x2, &y2);
+
+			addt = gf_math_round(lsb * scale);
 
 			kern = 0;
 			if(wc[i + 1] != 0) kern = stbtt_GetCodepointKernAdvance(&font->ttf, wc[i], wc[i + 1]);
 			fx = gf_math_round(ax * scale) + gf_math_round(kern * scale);
-
 			if(lw >= 0 && (ix + fx) >= lw) {
 				ix = 0;
 				iy += ascent - descent + linegap;
@@ -195,8 +197,8 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 				}
 				for(gx = 0; gx < (x2 - x1); gx++) {
 					int c	= gbuf[gy * (x2 - x1) + gx];
-					int ind = (ix + gx) + gf_math_round(lsb * scale) + ((gy + y) * cache.width);
-					if((ix + gx) + gf_math_round(lsb * scale) >= cache.width) {
+					int ind = (addt + ix + gx) + ((gy + y) * cache.width);
+					if((addt + ix + gx) >= cache.width) {
 						break;
 					}
 					ind *= 4;
