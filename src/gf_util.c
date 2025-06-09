@@ -154,6 +154,13 @@ char** gf_util_get_search_list(gf_engine_t* engine) {
 }
 
 int gf_util_file_size(FILE* f){
+#if 1
+	int r;
+	fseek(f, 0, SEEK_END);
+	r = ftell(f);
+	fseek(f, 0, SEEK_SET);
+	return r;
+#else
 #ifdef _WIN32
 	int fd = _fileno(f);
 	struct _stat s;
@@ -164,5 +171,6 @@ int gf_util_file_size(FILE* f){
 	struct stat s;
 	fstat(fd, &s);
 	return s.st_size;
+#endif
 #endif
 }
