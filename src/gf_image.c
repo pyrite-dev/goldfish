@@ -51,27 +51,6 @@ unsigned char* gf_image_load_memory(gf_engine_t* engine, unsigned char* data, si
 #endif
 	free(b);
 
-	/* TODO: should we have state to control this behavior? */
-	if(r == NULL) {
-		int x;
-		int y;
-		*width	= 64;
-		*height = 64;
-		r	= malloc((*width) * (*height) * 4);
-		memset(r, 0, (*width) * (*height) * 4);
-		for(y = 0; y < (*height); y++) {
-			for(x = 0; x < (*width); x++) {
-				int n	= ((x > ((*width) / 2) ? 1 : 0) + (y > ((*height) / 2) ? 1 : 0)) % 2;
-				int ind = (y * (*width) + x) * 4;
-				if(n == 1) {
-					r[ind + 0] = 255;
-					r[ind + 2] = 255;
-				}
-				r[ind + 3] = 255;
-			}
-		}
-	}
-
 	return r;
 }
 
