@@ -248,14 +248,17 @@ void gf_draw_frame(gf_draw_t* draw) {
 			gf_assert(draw->engine, d != NULL);
 			draw->intro.powered = gf_texture_create(draw, w, h, d);
 		}
+		if(gf_input_key_pressed(draw->input, GF_INPUT_KEY_ESCAPE)) {
+			draw->intro.finished = 1;
+		}
 #endif
 	} else {
 		gf_lua_step(draw->engine->lua);
 		gf_gui_render(draw->gui);
 		gf_draw_cursor(draw);
-		if(arrlen(draw->input->key_queue) > 0) {
-			arrdel(draw->input->key_queue, 0);
-		}
+	}
+	if(arrlen(draw->input->key_queue) > 0) {
+		arrdel(draw->input->key_queue, 0);
 	}
 }
 
