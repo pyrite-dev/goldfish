@@ -57,6 +57,8 @@ char gf_input_key_name(gf_input_t* input, int key) {
 		return 'a' + (key - GF_INPUT_KEY_A);
 	} else if(GF_INPUT_KEY_0 <= key && key <= GF_INPUT_KEY_9) {
 		return '0' + (key - GF_INPUT_KEY_0);
+	}else if(key == GF_INPUT_KEY_SPACE){
+		return ' ';
 	}
 
 	return 0;
