@@ -10,4 +10,4 @@
 
 /* Standard */
 
-void gf_action_process(gf_engine_t* engine) {}
+void gf_action_process(gf_engine_t* engine, gf_input_t* input) {}

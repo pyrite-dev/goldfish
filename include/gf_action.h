@@ -15,6 +15,7 @@
 
 /* Engine */
 #include <gf_type/core.h>
+#include <gf_type/input.h>
 
 /* Standard */
 
@@ -26,8 +27,9 @@ extern "C" {
  * @~english
  * @brief Process key/mouse inputs
  * @param engine Engine instance
+ * @param input Input interface
  */
-GF_EXPORT void gf_action_process(gf_engine_t* engine);
+GF_EXPORT void gf_action_process(gf_engine_t* engine, gf_input_t* input);
 
 #ifdef __cplusplus
 }
