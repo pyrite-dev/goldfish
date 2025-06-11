@@ -55,6 +55,8 @@ int gf_input_key_pressed(gf_input_t* input, int key) {
 char gf_input_key_name(gf_input_t* input, int key) {
 	if(GF_INPUT_KEY_A <= key && key <= GF_INPUT_KEY_Z) {
 		return 'a' + (key - GF_INPUT_KEY_A);
+	} else if(GF_INPUT_KEY_0 <= key && key <= GF_INPUT_KEY_9) {
+		return '0' + (key - GF_INPUT_KEY_0);
 	}
 
 	return 0;
