@@ -14,6 +14,7 @@
 #include <gf_log.h>
 #include <gf_prop.h>
 #include <gf_file.h>
+#include <gf_input.h>
 
 /* Standard */
 #include <string.h>
@@ -134,6 +135,17 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 				if(engine != NULL && engine->client != NULL && engine->client->draw != NULL) {
 					engine->client->draw->intro.finished = 0;
 					engine->client->draw->intro.frame    = 0;
+				}
+			} else if(strcmp(arg[0], "bind") == 0) {
+				if (engine != NULL && engine->client != NULL && engine->client->input != NULL) {
+					int key = gf_input_key_from_name(arg[1]);
+					if (key != -1) {
+						gf_input_bind_key(engine->client->input, key, arg[2]); /* TODO: Make remainder of args into one */
+					} else {
+						gf_log_function(engine, "cannot bind unknown key \"%s\"", arg[1]);
+					}
+				} else {
+					gf_log_function(engine, "bind cannot be called from the server", 0);
 				}
 			} else {
 				gf_log_function(engine, "%s: Unknown command", arg[0]);

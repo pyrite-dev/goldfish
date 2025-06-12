@@ -153,6 +153,8 @@ enum GF_INPUT_KEYS {
 	GF_INPUT_KEY_NUMPAD_9,
 };
 
+#define GF_INPUT_KEY_LAST GF_INPUT_KEY_NUMPAD_9
+
 #ifdef GF_EXPOSE_INPUT
 #define gf_input_t struct gf_input
 
@@ -200,6 +202,7 @@ GF_DECLARE_TYPE(input, {
 	int* key_queue;
 	int* key_rqueue;
 	int* key_state;
+	char* keymap[GF_INPUT_KEY_LAST+1];
 });
 #else
 typedef void gf_input_t;
