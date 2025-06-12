@@ -67,6 +67,25 @@ void gf_command_file(gf_engine_t* engine, const char* path) {
 	}
 }
 
+const char* gf_command_join_args(const char** args, int start, int end) {
+	int len = 0;
+	// First "1 + " for '\0', remaining for ' '
+	for (int i = start; i <= end; i++) len += 1 + strlen(args[i]);
+
+	char* new = malloc(len * sizeof(char));
+	for (int i = start, x = 0; i <= end; i++) {
+		if (i > start) {
+			new[x] = ' ';
+			x++;
+		}
+
+		strcpy(&new[x], args[i]);
+		x += strlen(args[i]);
+	}
+
+	return new;
+}
+
 void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 	int i;
 	for(i = 0; i < listc; i++) {
@@ -137,15 +156,22 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 					engine->client->draw->intro.frame    = 0;
 				}
 			} else if(strcmp(arg[0], "bind") == 0) {
-				if (engine != NULL && engine->client != NULL && engine->client->input != NULL) {
+				if(arrlen(arg) < 2) {
+					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+				} else if (engine != NULL && engine->client != NULL && engine->client->input != NULL) {
 					int key = gf_input_key_from_name(arg[1]);
 					if (key != -1) {
-						gf_input_bind_key(engine->client->input, key, arg[2]); /* TODO: Make remainder of args into one */
+						if (arrlen(arg) == 1) {
+							gf_input_bind_key(engine->client->input, key, NULL);
+						} else {
+							const char* remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
+							gf_input_bind_key(engine->client->input, key, remargs);
+						}
 					} else {
 						gf_log_function(engine, "cannot bind unknown key \"%s\"", arg[1]);
 					}
 				} else {
-					gf_log_function(engine, "bind cannot be called from the server", 0);
+					gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
 				}
 			} else {
 				gf_log_function(engine, "%s: Unknown command", arg[0]);
