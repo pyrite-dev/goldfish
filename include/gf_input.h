@@ -118,7 +118,7 @@ GF_EXPORT int gf_input_key_from_name(const char* name);
  * @brief Binds a key to a command, or clears it
  * @param input Input interface
  * @param key Key
- * @param command Command to bind
+ * @param command Command to bind, if command is NULL, then the key is unbound
 
  */
 GF_EXPORT void gf_input_bind_key(gf_input_t* input, int key, const char* command);
