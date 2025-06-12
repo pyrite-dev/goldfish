@@ -173,6 +173,20 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 				} else {
 					gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
 				}
+			} else if (strcmp(arg[0], "key_listboundkeys") == 0) {
+				if (engine != NULL && engine->client != NULL && engine->client->input != NULL) {
+					int key = -1;
+					while ((key = gf_input_next_bound_key(engine->client->input, key)) != -1) {
+						const char* key_name = gf_input_key_name(key);
+						const char* key_cmd = gf_input_key_binding(engine->client->input, key);
+
+						/* I don't think there's a print function yet. */
+						/* TODO: replace this */
+						gf_log_function(engine, "[%s]: %s", key_name, key_cmd);
+					}
+				} else {
+					gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
+				}
 			} else {
 				gf_log_function(engine, "%s: Unknown command", arg[0]);
 			}
