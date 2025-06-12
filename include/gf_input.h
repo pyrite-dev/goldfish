@@ -95,7 +95,33 @@ GF_EXPORT char gf_input_key_char(gf_input_t* input);
  * @param key Key
  * @return Non-`0` if key can be converted to ASCII, `0` otherwise
  */
-GF_EXPORT char gf_input_key_name(gf_input_t* input, int key);
+GF_EXPORT char gf_input_key_char_of(gf_input_t* input, int key);
+
+/**
+ * @~english
+ * @brief Get name of key
+ * @param key Key
+ * @return String representation of key, if the key is valid, otherwise NULL
+ */
+GF_EXPORT const char* gf_input_key_name(int key);
+
+/**
+ * @~english
+ * @brief Get key from name
+ * @param name Key name
+ * @return -1 if the key could not be found, otherwise GF_INPUT_KEY_*
+ */
+GF_EXPORT int gf_input_key_from_name(const char* name);
+
+/**
+ * @~english
+ * @brief Binds a key to a command, or clears it
+ * @param input Input interface
+ * @param key Key
+ * @param command Command to bind
+
+ */
+GF_EXPORT void gf_input_bind_key(gf_input_t* input, int key, const char* command);
 
 #ifdef __cplusplus
 }
