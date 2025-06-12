@@ -119,9 +119,26 @@ GF_EXPORT int gf_input_key_from_name(const char* name);
  * @param input Input interface
  * @param key Key
  * @param command Command to bind, if command is NULL, then the key is unbound
-
  */
 GF_EXPORT void gf_input_bind_key(gf_input_t* input, int key, const char* command);
+
+/**
+ * @~english
+ * @brief Returns the key id of the next bound key that has been mapped 
+ * @param input Input interface
+ * @param last_key Pass last result of function to continue from that point, or -1 to search from start
+ * @return -1 if there are no remaining bound keys, or non-`-1` for the next bound key
+ */
+GF_EXPORT int gf_input_next_bound_key(gf_input_t* input, int last_key);
+
+/**
+ * @~english
+ * @brief Returns the command bound to the target key 
+ * @param input Input interface
+ * @param key Key
+ * @return Command that was bound to the key, or NULL if the key is invalid
+ */
+GF_EXPORT const char* gf_input_key_binding(gf_input_t* input, int key);
 
 #ifdef __cplusplus
 }

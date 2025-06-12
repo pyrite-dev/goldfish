@@ -242,8 +242,25 @@ void gf_input_bind_key(gf_input_t* input, int key, const char* command) {
 	if (input->keymap[key] != NULL) {
 		free(input->keymap[key]);
 	}
+	if (command == NULL) {
+		input->keymap[key] = NULL;
+		return;
+	}
 	size_t n = strlen(command);
 	char* c = malloc(n * sizeof(char));
 	strcpy(c, command);
 	input->keymap[key] = c;
+}
+
+int gf_input_next_bound_key(gf_input_t* input, int last_key) {
+	for (int i = last_key+1; i <= GF_INPUT_KEY_LAST; i++) {
+		if (input->keymap[i] != NULL) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+const char* gf_input_key_binding(gf_input_t* input, int key) {
+	return input->keymap[key];
 }
