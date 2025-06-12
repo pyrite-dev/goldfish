@@ -1,5 +1,11 @@
 # GoldFish Engine
 
+## Community
+
+ - [Discord](https://discord.gg/yHWZVwu2Ta)
+ - IRC: #goldfish at irc.nishi.boats
+ - XMPP: goldfish at conference.nishi.boats
+
 ## Stack
  - OpenGL 1.1 (minimal requirement)
  - [Open Dynamics Engine](https://ode.org)
