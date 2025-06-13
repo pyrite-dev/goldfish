@@ -260,6 +260,9 @@ void gf_draw_frame(gf_draw_t* draw) {
 	if(arrlen(draw->input->key_queue) > 0) {
 		arrdel(draw->input->key_queue, 0);
 	}
+	if(arrlen(draw->input->key_rqueue) > 0) {
+		arrdel(draw->input->key_rqueue, 0);
+	}
 }
 
 void gf_draw_time(gf_draw_time_t* dtime) {

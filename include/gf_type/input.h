@@ -186,6 +186,9 @@ gf_input_t;
  * @var gf_input::key_queue
  * @brief Key queue
  *
+ * @var gf_input::key_rqueue
+ * @brief Released key queue
+ *
  * @var gf_input::key_state
  * @brief Key state
  */
@@ -195,6 +198,7 @@ GF_DECLARE_TYPE(input, {
 	int	     mouse_y;
 	int	     mouse_flag;
 	int* key_queue;
+	int* key_rqueue;
 	int* key_state;
 });
 #else

@@ -73,6 +73,15 @@ GF_EXPORT int gf_input_key_pressed(gf_input_t* input, int key);
 
 /**
  * @~english
+ * @brief Check if key got released
+ * @param input Input interface
+ * @param key Key
+ * @return `1` if key got released, `0` otherwise
+ */
+GF_EXPORT int gf_input_key_released(gf_input_t* input, int key);
+
+/**
+ * @~english
  * @brief Convert key to char
  * @param input Input interface
  * @return Non-`0` if key can be converted to ASCII and got pressed, `0` otherwise

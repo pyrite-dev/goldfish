@@ -24,8 +24,9 @@ gf_input_t* gf_input_create(gf_engine_t* engine) {
 	input->mouse_y	  = -1;
 	input->mouse_flag = 0;
 
-	input->key_state = NULL;
-	input->key_queue = NULL;
+	input->key_state  = NULL;
+	input->key_queue  = NULL;
+	input->key_rqueue = NULL;
 
 	return input;
 }
@@ -52,12 +53,18 @@ int gf_input_key_pressed(gf_input_t* input, int key) {
 	return input->key_queue[0] == key ? 1 : 0;
 }
 
+int gf_input_key_released(gf_input_t* input, int key) {
+	if(arrlen(input->key_rqueue) < 1) return 0;
+
+	return input->key_rqueue[0] == key ? 1 : 0;
+}
+
 char gf_input_key_name(gf_input_t* input, int key) {
 	if(GF_INPUT_KEY_A <= key && key <= GF_INPUT_KEY_Z) {
 		return 'a' + (key - GF_INPUT_KEY_A);
 	} else if(GF_INPUT_KEY_0 <= key && key <= GF_INPUT_KEY_9) {
 		return '0' + (key - GF_INPUT_KEY_0);
-	}else if(key == GF_INPUT_KEY_SPACE){
+	} else if(key == GF_INPUT_KEY_SPACE) {
 		return ' ';
 	}
 
@@ -93,4 +100,5 @@ void gf_input_key_release(gf_input_t* input, int key) {
 			break;
 		}
 	}
+	arrput(input->key_rqueue, key);
 }

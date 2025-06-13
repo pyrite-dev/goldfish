@@ -369,9 +369,19 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 			int    key = hmget(keymaps, ks);
 			gf_input_key_press(draw->input, key);
 		} else if(event.type == KeyRelease) {
-			KeySym ks  = XLookupKeysym(&event.xkey, 0);
-			int    key = hmget(keymaps, ks);
-			gf_input_key_release(draw->input, key);
+			KeySym ks     = XLookupKeysym(&event.xkey, 0);
+			int    key    = hmget(keymaps, ks);
+			int    retrig = 0;
+			if(XEventsQueued(draw->platform->display, QueuedAfterReading)) {
+				XEvent nev;
+				XPeekEvent(draw->platform->display, &nev);
+				if(nev.type == KeyPress && nev.xkey.time == event.xkey.time && nev.xkey.keycode == event.xkey.keycode) {
+					retrig = 1;
+				}
+			}
+			if(!retrig) {
+				gf_input_key_release(draw->input, key);
+			}
 		}
 	}
 	if(ret == 0) {

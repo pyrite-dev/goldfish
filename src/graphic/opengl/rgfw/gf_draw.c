@@ -140,7 +140,9 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 			gf_input_key_press(draw->input, key);
 		} else if(draw->platform->window->event.type == RGFW_keyReleased) {
 			int key = hmget(keymaps, draw->platform->window->event.key);
-			gf_input_key_release(draw->input, key);
+			if(!draw->platform->window->event.repeat) {
+				gf_input_key_release(draw->input, key);
+			}
 		}
 	}
 	if(ret == 0) {
