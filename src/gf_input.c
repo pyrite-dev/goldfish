@@ -246,7 +246,7 @@ void gf_input_bind_key(gf_input_t* input, int key, const char* command) {
 		input->keymap[key] = NULL;
 		return;
 	}
-	size_t n = strlen(command);
+	size_t n = strlen(command)+1;
 	char* c = malloc(n * sizeof(char));
 	strcpy(c, command);
 	input->keymap[key] = c;
