@@ -182,7 +182,7 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 
 						/* I don't think there's a print function yet. */
 						/* TODO: replace this */
-						gf_log_function(engine, "[%s]: %s", key_name, key_cmd);
+						gf_log(engine, "[%s]: %s", key_name, key_cmd);
 					}
 				} else {
 					gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
