@@ -82,6 +82,22 @@ GF_EXPORT int gf_input_key_released(gf_input_t* input, int key);
 
 /**
  * @~english
+ * @brief Gets next pressed key
+ * @param input Input interface
+ * @return Key code of pressed key, otherwise -1
+ */
+GF_EXPORT int gf_input_get_pressed_key(gf_input_t* input);
+
+/**
+ * @~english
+ * @brief Gets next released key
+ * @param input Input interface
+ * @return Key code of released key, otherwise -1
+ */
+GF_EXPORT int gf_input_get_released_key(gf_input_t* input);
+
+/**
+ * @~english
  * @brief Convert key to char
  * @param input Input interface
  * @return Non-`0` if key can be converted to ASCII and got pressed, `0` otherwise
@@ -95,7 +111,50 @@ GF_EXPORT char gf_input_key_char(gf_input_t* input);
  * @param key Key
  * @return Non-`0` if key can be converted to ASCII, `0` otherwise
  */
-GF_EXPORT char gf_input_key_name(gf_input_t* input, int key);
+GF_EXPORT char gf_input_key_char_of(gf_input_t* input, int key);
+
+/**
+ * @~english
+ * @brief Get name of key
+ * @param key Key
+ * @return String representation of key, if the key is valid, otherwise NULL
+ */
+GF_EXPORT const char* gf_input_key_name(int key);
+
+/**
+ * @~english
+ * @brief Get key from name
+ * @param name Key name
+ * @return -1 if the key could not be found, otherwise GF_INPUT_KEY_*
+ */
+GF_EXPORT int gf_input_key_from_name(const char* name);
+
+/**
+ * @~english
+ * @brief Binds a key to a command, or clears it
+ * @param input Input interface
+ * @param key Key
+ * @param command Command to bind, if command is NULL, then the key is unbound
+ */
+GF_EXPORT void gf_input_bind_key(gf_input_t* input, int key, const char* command);
+
+/**
+ * @~english
+ * @brief Returns the key id of the next bound key that has been mapped 
+ * @param input Input interface
+ * @param last_key Pass last result of function to continue from that point, or -1 to search from start
+ * @return -1 if there are no remaining bound keys, or non-`-1` for the next bound key
+ */
+GF_EXPORT int gf_input_next_bound_key(gf_input_t* input, int last_key);
+
+/**
+ * @~english
+ * @brief Returns the command bound to the target key 
+ * @param input Input interface
+ * @param key Key
+ * @return Command that was bound to the key, or NULL if the key is unbound or invalid
+ */
+GF_EXPORT const char* gf_input_key_binding(gf_input_t* input, int key);
 
 #ifdef __cplusplus
 }
