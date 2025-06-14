@@ -155,6 +155,10 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 					engine->client->draw->intro.finished = 0;
 					engine->client->draw->intro.frame    = 0;
 				}
+			} else if (strcmp(arg[0], "echo") == 0) {
+				if (engine != NULL && arrlen(arg) >= 2) {
+					gf_log(engine, "%s\n", arg[1]);
+				}
 			} else if(strcmp(arg[0], "bind") == 0) {
 				if(arrlen(arg) < 2) {
 					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
