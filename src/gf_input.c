@@ -180,6 +180,18 @@ int gf_input_key_released(gf_input_t* input, int key) {
 	return input->key_rqueue[0] == key ? 1 : 0;
 }
 
+int gf_input_get_pressed_key(gf_input_t* input) {
+	if(arrlen(input->key_queue) < 1) return -1;
+
+	return input->key_queue[0];
+}
+
+int gf_input_get_released_key(gf_input_t* input) {
+	if(arrlen(input->key_rqueue) < 1) return -1;
+
+	return input->key_rqueue[0];
+}
+
 char gf_input_key_char_of(gf_input_t* input, int key) {
 	if(GF_INPUT_KEY_A <= key && key <= GF_INPUT_KEY_Z) {
 		return 'a' + (key - GF_INPUT_KEY_A);
