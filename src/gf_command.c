@@ -70,11 +70,11 @@ void gf_command_file(gf_engine_t* engine, const char* path) {
 const char* gf_command_join_args(const char** args, int start, int end) {
 	int len = 0;
 	// First "1 + " for '\0', remaining for ' '
-	for (int i = start; i <= end; i++) len += 1 + strlen(args[i]);
+	for(int i = start; i <= end; i++) len += 1 + strlen(args[i]);
 
 	char* new = malloc(len * sizeof(char));
-	for (int i = start, x = 0; i <= end; i++) {
-		if (i > start) {
+	for(int i = start, x = 0; i <= end; i++) {
+		if(i > start) {
 			new[x] = ' ';
 			x++;
 		}
@@ -155,17 +155,17 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 					engine->client->draw->intro.finished = 0;
 					engine->client->draw->intro.frame    = 0;
 				}
-			} else if (strcmp(arg[0], "echo") == 0) {
-				if (engine != NULL && arrlen(arg) >= 2) {
+			} else if(strcmp(arg[0], "echo") == 0) {
+				if(engine != NULL && arrlen(arg) >= 2) {
 					gf_log(engine, "%s\n", arg[1]);
 				}
 			} else if(strcmp(arg[0], "bind") == 0) {
 				if(arrlen(arg) < 2) {
 					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-				} else if (engine != NULL && engine->client != NULL && engine->client->input != NULL) {
+				} else if(engine != NULL && engine->client != NULL && engine->client->input != NULL) {
 					int key = gf_input_key_from_name(arg[1]);
-					if (key != -1) {
-						if (arrlen(arg) == 1) {
+					if(key != -1) {
+						if(arrlen(arg) == 1) {
 							gf_input_bind_key(engine->client->input, key, NULL);
 						} else {
 							const char* remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
@@ -177,12 +177,12 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 				} else {
 					gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
 				}
-			} else if (strcmp(arg[0], "key_listboundkeys") == 0) {
-				if (engine != NULL && engine->client != NULL && engine->client->input != NULL) {
+			} else if(strcmp(arg[0], "key_listboundkeys") == 0) {
+				if(engine != NULL && engine->client != NULL && engine->client->input != NULL) {
 					int key = -1;
-					while ((key = gf_input_next_bound_key(engine->client->input, key)) != -1) {
+					while((key = gf_input_next_bound_key(engine->client->input, key)) != -1) {
 						const char* key_name = gf_input_key_name(key);
-						const char* key_cmd = gf_input_key_binding(engine->client->input, key);
+						const char* key_cmd  = gf_input_key_binding(engine->client->input, key);
 
 						/* I don't think there's a print function yet. */
 						/* TODO: replace this */
