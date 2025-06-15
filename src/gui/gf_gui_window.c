@@ -51,6 +51,7 @@ gf_gui_id_t gf_gui_create_window(gf_gui_t* gui, double x, double y, double w, do
 	gf_gui_set_parent(gui, frame, c->key);
 
 	gf_gui_set_prop_id(gui, c->key, "frame", frame);
+	gf_gui_set_prop_id(gui, c->key, "close-button", close_button);
 
 	return c->key;
 }

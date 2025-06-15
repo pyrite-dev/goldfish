@@ -32,6 +32,14 @@ Context: GUI
 
 Y coord of mouse on click, relative to screen.
 
+## close-button
+Type: `id` 
+
+Context: GUI
+
+
+Close button for window.
+
 ## close-parent
 Type: `integer` 
 
