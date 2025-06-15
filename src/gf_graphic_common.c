@@ -5,6 +5,7 @@
 #include <gf_pre.h>
 
 /* External library */
+#include <stb_ds.h>
 
 /* Interface */
 #include <gf_graphic.h>
@@ -32,10 +33,14 @@ void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, d
 	if(font == NULL) font = draw->font;
 	if(font != NULL) {
 		if(!font->use_glyph) {
-			double	      width   = -1;
-			double	      height  = -1;
-			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
-			gf_graphic_draw_texture_2d(draw, x, y, width, size, texture, color);
+			double	       width   = -1;
+			double	       height  = -1;
+			double	       ih      = 0;
+			gf_texture_t** texture = gf_font_render(font, text, size, &width, &height);
+			for(i = 0; i < arrlen(texture); i++) {
+				gf_graphic_draw_texture_2d(draw, x, y + ih, width, texture[i]->height, texture[i], color);
+				ih += texture[i]->height;
+			}
 			return;
 		}
 		zoom = size / font->bbox.height;
@@ -63,10 +68,14 @@ double gf_graphic_text_wrap(gf_draw_t* draw, gf_font_t* userfont, double x, doub
 		double my  = 0;
 		double big = 0;
 		if(!font->use_glyph) {
-			double	      width   = w;
-			double	      height  = -1;
-			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
-			gf_graphic_draw_texture_2d(draw, x, y, width, height, texture, color);
+			double	       width   = w;
+			double	       height  = -1;
+			double	       ih      = 0;
+			gf_texture_t** texture = gf_font_render(font, text, size, &width, &height);
+			for(i = 0; i < arrlen(texture); i++) {
+				gf_graphic_draw_texture_2d(draw, x, y + ih, width, texture[i]->height, texture[i], color);
+				ih += texture[i]->height;
+			}
 			return height;
 		}
 		zoom = size / font->bbox.height;
@@ -100,9 +109,9 @@ double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, 
 	gf_font_t*	 font = userfont;
 	if(font != NULL) {
 		if(!font->use_glyph) {
-			double	      width   = -1;
-			double	      height  = -1;
-			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
+			double	       width   = -1;
+			double	       height  = -1;
+			gf_texture_t** texture = gf_font_render(font, text, size, &width, &height);
 			return width;
 		}
 		zoom = size / font->bbox.height;
@@ -121,9 +130,9 @@ double gf_graphic_text_height(gf_draw_t* draw, gf_font_t* userfont, double size,
 	gf_font_t* font = userfont;
 	if(font != NULL) {
 		if(!font->use_glyph) {
-			double	      width   = -1;
-			double	      height  = -1;
-			gf_texture_t* texture = gf_font_render(font, text, size, &width, &height);
+			double	       width   = -1;
+			double	       height  = -1;
+			gf_texture_t** texture = gf_font_render(font, text, size, &width, &height);
 			return height;
 		}
 

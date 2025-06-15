@@ -21,6 +21,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define MAX_TEXTURE_HEIGHT 512
+
 gf_font_glyph_t* gf_font_get(gf_font_t* font, int code) {
 	int i;
 	if(code < 0x20) return NULL;
@@ -32,8 +34,10 @@ gf_font_glyph_t* gf_font_get(gf_font_t* font, int code) {
 	return NULL;
 }
 
-gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, double* width, double* height) {
+gf_texture_t** gf_font_render(gf_font_t* font, const char* text, double size, double* width, double* height) {
 	int		i;
+	int		rh = 0;
+	int		ih = 0;
 	double		scale;
 	int		ascent;
 	int		descent;
@@ -43,6 +47,7 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 	int		ix;
 	int		iy;
 	gf_int32_t*	wc;
+	gf_texture_t*	tx;
 	int		incr  = 0;
 	const char*	texts = text;
 	int		last  = 0;
@@ -219,7 +224,18 @@ gf_texture_t* gf_font_render(gf_font_t* font, const char* text, double size, dou
 
 	cache.text = malloc(strlen(text) + 1);
 	strcpy(cache.text, text);
-	cache.texture = gf_texture_create(font->draw, cache.width, cache.height, buffer);
+	cache.texture = NULL;
+
+	rh = cache.height;
+	while(rh > 0) {
+		int h = rh > MAX_TEXTURE_HEIGHT ? MAX_TEXTURE_HEIGHT : rh;
+		tx    = gf_texture_create(font->draw, cache.width, h, buffer + 4 * (int)(cache.width * ih));
+		arrput(cache.texture, tx);
+
+		rh -= h;
+		ih += h;
+	}
+
 	arrput(font->cache, cache);
 
 	free(buffer);
@@ -415,8 +431,12 @@ void gf_font_destroy(gf_font_t* font) {
 	}
 	if(font->cache != NULL) {
 		for(i = 0; i < arrlen(font->cache); i++) {
+			int j;
 			free(font->cache[i].text);
-			gf_texture_destroy(font->cache[i].texture);
+			for(j = 0; j < arrlen(font->cache[i].texture); j++) {
+				gf_texture_destroy(font->cache[i].texture[j]);
+			}
+			arrfree(font->cache[i].texture);
 		}
 		arrfree(font->cache);
 	}

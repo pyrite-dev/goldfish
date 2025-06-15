@@ -131,13 +131,13 @@ GF_DECLARE_TYPE(font_glyph, {
  * @brief Limit height
  */
 GF_DECLARE_TYPE(font_cache, {
-	char*	      text;
-	double	      size;
-	double	      width;
-	double	      height;
-	gf_texture_t* texture;
-	double	      lw;
-	double	      lh;
+	char*	       text;
+	double	       size;
+	double	       width;
+	double	       height;
+	gf_texture_t** texture;
+	double	       lw;
+	double	       lh;
 });
 
 /**
