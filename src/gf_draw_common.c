@@ -34,6 +34,7 @@
 #include <gf_image.h>
 #include <gf_input.h>
 #include <gf_action.h>
+#include <gf_command.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -46,6 +47,25 @@
 void gf_draw_begin(void) { gf_draw_platform_begin(); }
 
 void gf_draw_end(void) { gf_draw_platform_end(); }
+
+void console_submit(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type) {
+	if(type == GF_GUI_PRESS_EVENT || type == GF_GUI_ACTIVATE_EVENT) {
+		gf_gui_id_t entry = gf_gui_get_prop_id(draw->gui, draw->console, "entry");
+		char*	    list[1];
+
+		list[0] = (char*)gf_gui_get_text(draw->gui, entry);
+		gf_command_run(draw->engine, &list[0], 1);
+
+		gf_gui_set_text(draw->gui, entry, "");
+	}
+}
+
+void console_close(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type) {
+	if(type == GF_GUI_PRESS_EVENT) {
+		gf_gui_id_t p = gf_gui_get_parent(draw->gui, id);
+		gf_prop_set_integer(gf_gui_get_prop(draw->gui, p), "hide", 1);
+	}
+}
 
 gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 	gf_draw_t* draw = malloc(sizeof(*draw));
@@ -118,6 +138,49 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 		draw = NULL;
 	}
 
+	if(draw != NULL) {
+		gf_gui_id_t fr;
+		gf_gui_id_t console;
+		gf_gui_id_t button;
+		gf_gui_id_t entry;
+		gf_gui_id_t cb;
+		double	    w;
+		double	    h;
+
+		draw->console = gf_gui_create_window(draw->gui, 0, 0, 600, 450);
+		cb	      = gf_gui_get_prop_id(draw->gui, draw->console, "close-button");
+		gf_prop_delete(gf_gui_get_prop(draw->gui, cb), "close-parent");
+		gf_gui_set_callback(draw->gui, cb, console_close);
+
+		fr = gf_gui_get_prop_id(draw->gui, draw->console, "frame");
+		gf_gui_set_text(draw->gui, draw->console, "Console");
+
+		gf_gui_get_wh(draw->gui, fr, &w, &h);
+
+		console = gf_gui_create_text(draw->gui, 0, 0, w, h - 25);
+		gf_gui_set_parent(draw->gui, console, fr);
+
+		entry = gf_gui_create_entry(draw->gui, 0, 0, w - 60 - 5, 20);
+		gf_prop_set_integer(gf_gui_get_prop(draw->gui, entry), "y-base", 1);
+		gf_gui_set_parent(draw->gui, entry, fr);
+		gf_gui_set_callback(draw->gui, entry, console_submit);
+
+		button = gf_gui_create_button(draw->gui, 0, 0, 60, 20);
+		gf_gui_set_text(draw->gui, button, "Submit");
+		gf_prop_set_integer(gf_gui_get_prop(draw->gui, button), "x-base", 1);
+		gf_prop_set_integer(gf_gui_get_prop(draw->gui, button), "y-base", 1);
+		gf_gui_set_parent(draw->gui, button, fr);
+		gf_gui_set_callback(draw->gui, button, console_submit);
+
+		gf_gui_set_prop_id(draw->gui, draw->console, "console", console);
+		gf_gui_set_prop_id(draw->gui, draw->console, "entry", entry);
+		gf_prop_set_floating(gf_gui_get_prop(draw->gui, entry), "font-size", 14);
+		gf_prop_set_floating(gf_gui_get_prop(draw->gui, console), "font-size", 12);
+
+		gf_prop_set_integer(gf_gui_get_prop(draw->gui, draw->console), "hide", 1);
+		gf_gui_sort_component(draw->gui);
+	}
+
 	return draw;
 }
 
@@ -188,6 +251,22 @@ void gf_draw_cursor(gf_draw_t* draw) {
 
 /* Runs every frame */
 void gf_draw_frame(gf_draw_t* draw) {
+	gf_gui_id_t console = gf_gui_get_prop_id(draw->gui, draw->console, "console");
+	gf_gui_id_t entry   = gf_gui_get_prop_id(draw->gui, draw->console, "entry");
+	gf_gui_id_t fr	    = gf_gui_get_prop_id(draw->gui, draw->console, "frame");
+	double	    w;
+	double	    h;
+
+	gf_gui_get_wh(draw->gui, fr, &w, &h);
+	gf_gui_set_wh(draw->gui, console, w, h - 25);
+	gf_gui_set_wh(draw->gui, entry, w - 60 - 5, 20);
+
+	gf_gui_set_text(draw->gui, console, draw->engine->log_list);
+	if(draw->monospace_font != NULL) {
+		gf_prop_set_ptr_keep(gf_gui_get_prop(draw->gui, console), "font", draw->monospace_font);
+		gf_prop_set_ptr_keep(gf_gui_get_prop(draw->gui, entry), "font", draw->monospace_font);
+	}
+
 	if(draw->intro.finished == 0) {
 		if(draw->intro.powered != NULL) {
 			const char*	   lines[] = {"(C) 2025 Pyrite Development Team. All rights reserved.", "This product includes software developed by the Pyrite Development Team."};

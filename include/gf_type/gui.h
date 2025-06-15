@@ -128,7 +128,7 @@ GF_DECLARE_TYPE(gui_component, {
 	char*		   text;
 	gf_graphic_color_t font;
 	gf_graphic_color_t hover_font;
-	gf_texture_t* texture;
+	gf_texture_t*	   texture;
 });
 
 /**
@@ -161,14 +161,14 @@ GF_DECLARE_TYPE(gui_component, {
  * @brief Button sound
  */
 GF_DECLARE_TYPE(gui, {
-	gf_engine_t*	    engine;
-	gf_draw_t*	    draw;
-	gf_gui_id_t	    pressed;
+	gf_engine_t*	     engine;
+	gf_draw_t*	     draw;
+	gf_gui_id_t	     pressed;
 	gf_gui_component_t** area;
-	gf_graphic_color_t  base;
-	gf_graphic_color_t  font;
-	gf_gui_id_t	    hover;
-	char* button_sound;
+	gf_graphic_color_t   base;
+	gf_graphic_color_t   font;
+	gf_gui_id_t	     hover;
+	char*		     button_sound;
 });
 #else
 typedef void* gf_gui_callback_t;

@@ -29,46 +29,42 @@ gf_sound_t;
 #if defined(GF_SND_WINDOWS)
 GF_DECLARE_TYPE(sound_context, {
 	HANDLE dsound_dll;
-	HRESULT(*dsound_create)(void*, LPDIRECTSOUND*, void*);
+	HRESULT (*dsound_create)(void*, LPDIRECTSOUND*, void*);
 	LPDIRECTSOUND dsound;
 
-	HWAVEOUT waveout;
+	HWAVEOUT     waveout;
 	WAVEFORMATEX wavefmt;
 	gf_thread_t* thread;
-	int quit;
+	int	     quit;
 });
 #elif defined(GF_SND_WINMM)
 GF_DECLARE_TYPE(sound_context, {
-	HWAVEOUT waveout;
+	HWAVEOUT     waveout;
 	WAVEFORMATEX wavefmt;
 	gf_thread_t* thread;
-	int quit;
+	int	     quit;
 });
 #elif defined(GF_SND_MINIAUDIO)
-GF_DECLARE_TYPE(sound_context, {
-	ma_device device;
-});
+GF_DECLARE_TYPE(sound_context, { ma_device device; });
 #elif defined(GF_SND_ALSA)
 GF_DECLARE_TYPE(sound_context, {
-	snd_pcm_t* device;
+	snd_pcm_t*	     device;
 	snd_pcm_hw_params_t* params;
-	gf_thread_t* thread;
-	int quit;
+	gf_thread_t*	     thread;
+	int		     quit;
 });
 #elif defined(GF_SND_SDL2)
-GF_DECLARE_TYPE(sound_context, {
-	SDL_AudioDeviceID device;
-});
+GF_DECLARE_TYPE(sound_context, { SDL_AudioDeviceID device; });
 #elif defined(GF_SND_OSS) || defined(GF_SND_SUN)
 GF_DECLARE_TYPE(sound_context, {
-	int fd;
+	int	     fd;
 	gf_thread_t* thread;
-	int quit;
+	int	     quit;
 });
 #elif defined(GF_SND_NULL)
 GF_DECLARE_TYPE(sound_context, {
 	gf_thread_t* thread;
-	int quit;
+	int	     quit;
 });
 #else
 /**
@@ -77,8 +73,7 @@ GF_DECLARE_TYPE(sound_context, {
  * @brief Platform-dependent sound driver context
  * @note Definition depends on the platform, read the header file for definition
  */
-GF_DECLARE_TYPE(sound_context, {
-});
+GF_DECLARE_TYPE(sound_context, {});
 #endif
 
 /**
@@ -96,8 +91,8 @@ GF_DECLARE_TYPE(sound_context, {
  * @brief Platform-dependent sound driver context
  */
 GF_DECLARE_TYPE(sound, {
-	gf_audio_t* audio;
-	int sample_rate;
+	gf_audio_t*	   audio;
+	int		   sample_rate;
 	gf_sound_context_t context;
 });
 

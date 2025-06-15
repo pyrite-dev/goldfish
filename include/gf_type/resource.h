@@ -70,7 +70,7 @@ GF_DECLARE_TYPE(resource_entry, {
 GF_DECLARE_TYPE(resource, {
 	gf_engine_t*	     engine;
 	gf_resource_entry_t* entries;
-	char* path;
+	char*		     path;
 });
 #else
 typedef void gf_resource_entry_t;

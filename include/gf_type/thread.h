@@ -54,12 +54,10 @@ GF_DECLARE_TYPE(thread, {
 	pthread_t	    thread;
 });
 
-GF_DECLARE_TYPE(thread_mutex, {
-	pthread_mutex_t mutex;
-});
+GF_DECLARE_TYPE(thread_mutex, { pthread_mutex_t mutex; });
 
 GF_DECLARE_TYPE(thread_event, {
-	pthread_cond_t event;
+	pthread_cond_t	event;
 	pthread_mutex_t mutex;
 });
 #elif defined(GF_THREAD_WIN32)
@@ -69,18 +67,12 @@ GF_DECLARE_TYPE(thread, {
 });
 
 #ifdef WIN32_CRITICAL_SECTION
-GF_DECLARE_TYPE(thread_mutex, {
-	CRITICAL_SECTION mutex;
-});
+GF_DECLARE_TYPE(thread_mutex, { CRITICAL_SECTION mutex; });
 #else
-GF_DECLARE_TYPE(thread_mutex, {
-	HANDLE mutex;
-});
+GF_DECLARE_TYPE(thread_mutex, { HANDLE mutex; });
 #endif
 
-GF_DECLARE_TYPE(thread_event, {
-	HANDLE event;
-});
+GF_DECLARE_TYPE(thread_event, { HANDLE event; });
 #else
 /**
  * @struct gf_thread

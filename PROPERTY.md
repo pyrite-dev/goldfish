@@ -6,7 +6,7 @@ Type: `integer`
 Context: GUI
 
 
-Non-zero if component is focused.
+Non-zero if component is active.
 
 ## cancel-drag
 Type: `integer` 
@@ -48,6 +48,12 @@ Context: GUI
 
 Set non-zero to close parent component.
 
+## console
+Type: `id` 
+
+
+Console.
+
 ## cursor
 Type: `integer` 
 
@@ -72,6 +78,12 @@ Context: GUI
 
 Y coord of mouse on click, relative to component.
 
+## entry
+Type: `id` 
+
+
+Entry.
+
 ## focus
 Type: `integer` 
 
@@ -79,6 +91,14 @@ Context: GUI
 
 
 Non-zero if component is focused.
+
+## font-size
+Type: `floating` 
+
+Context: GUI
+
+
+Font size.
 
 ## frame
 Type: `id` 
@@ -100,7 +120,7 @@ Set non-zero to force outset border.
 Type: `integer` 
 
 
-
+Height.
 
 ## hide
 Type: `integer` 
@@ -210,7 +230,7 @@ Value.
 Type: `integer` 
 
 
-
+Width.
 
 ## x-base
 Type: `integer` 

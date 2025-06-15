@@ -28,7 +28,10 @@ gf_draw_driver_texture_t;
 /* Standard */
 
 #if defined(GF_DRV_OPENGL)
-GF_DECLARE_TYPE(draw_driver, { gf_engine_t* engine; int npot; });
+GF_DECLARE_TYPE(draw_driver, {
+	gf_engine_t* engine;
+	int	     npot;
+});
 GF_DECLARE_TYPE(draw_driver_texture, {
 	gf_engine_t* engine;
 	GLuint	     id;

@@ -49,10 +49,9 @@ gf_draw_intro_t;
 /* Standard */
 #include <time.h>
 
-
 GF_DECLARE_TYPE(draw_intro, {
-	int finished;
-	int frame;
+	int	      finished;
+	int	      frame;
 	gf_texture_t* powered;
 });
 
@@ -75,6 +74,9 @@ GF_DECLARE_TYPE(draw_intro, {
  *
  * @var gf_draw::gui
  * @brief GUI
+ *
+ * @var gf_draw::console
+ * @brief Console
  *
  * @var gf_draw::close
  * @brief `1` if it was requested to be closed, otherwise `0`
@@ -119,6 +121,9 @@ GF_DECLARE_TYPE(draw_intro, {
  * @var gf_draw::font
  * @brief Default font
  *
+ * @var gf_draw::monospace_font
+ * @brief Default monospace font
+ *
  * @var gf_draw::last_draw
  * @brief Last time when frame was drawn
  *
@@ -146,6 +151,7 @@ GF_DECLARE_TYPE(draw, {
 	gf_draw_platform_t* platform;
 	gf_draw_driver_t*   driver;
 	gf_gui_t*	    gui;
+	gf_gui_id_t	    console;
 	int		    close;
 	int		    x;
 	int		    y;
@@ -159,14 +165,15 @@ GF_DECLARE_TYPE(draw, {
 	gf_math_vector_t    camera;
 	double*		    clip;
 	gf_font_t*	    font;
+	gf_font_t*	    monospace_font;
 	gf_draw_time_t	    last_draw;
 	double		    fps;
-	gf_font_t** loaded_fonts;
-	gf_texture_t* skybox;
-	gf_graphic_color_t background;
-	int cursor;
-	gf_texture_t* cursor_texture;
-	gf_draw_intro_t intro;
+	gf_font_t**	    loaded_fonts;
+	gf_texture_t*	    skybox;
+	gf_graphic_color_t  background;
+	int		    cursor;
+	gf_texture_t*	    cursor_texture;
+	gf_draw_intro_t	    intro;
 });
 #else
 typedef void gf_draw_t;

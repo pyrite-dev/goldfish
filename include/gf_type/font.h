@@ -131,13 +131,13 @@ GF_DECLARE_TYPE(font_glyph, {
  * @brief Limit height
  */
 GF_DECLARE_TYPE(font_cache, {
-	char* text;
-	double size;
-	double width;
-	double height;
+	char*	      text;
+	double	      size;
+	double	      width;
+	double	      height;
 	gf_texture_t* texture;
-	double lw;
-	double lh;
+	double	      lw;
+	double	      lh;
 });
 
 /**
@@ -162,19 +162,19 @@ GF_DECLARE_TYPE(font_cache, {
  *
  * @var gf_font::use_glyph
  * @brief `1` if you should use texture inside gf_font::glyph, `0` otherwise
- * 
+ *
  * @var gf_font::cache
  * @brief Cache
  */
 GF_DECLARE_TYPE(font, {
-	gf_draw_t* draw;
+	gf_draw_t*	  draw;
 	gf_font_glyph_t** glyph;
 	int		  count;
 	gf_font_bbox_t	  bbox;
-	unsigned char* buffer;
-	stbtt_fontinfo ttf;
-	int use_glyph;
-	gf_font_cache_t* cache;
+	unsigned char*	  buffer;
+	stbtt_fontinfo	  ttf;
+	int		  use_glyph;
+	gf_font_cache_t*  cache;
 });
 #else
 typedef void gf_font_glyph_t;

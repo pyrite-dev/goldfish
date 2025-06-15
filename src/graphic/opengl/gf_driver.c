@@ -68,10 +68,10 @@ gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int w
 	glBindTexture(GL_TEXTURE_2D, r->id);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, d);
 
-	if(strcmp(gf_prop_get_text(&draw->engine->config, "texture"), "linear") == 0) {
+	if(strcmp(gf_prop_get_text(&draw->engine->config, "texture-filter"), "linear") == 0) {
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	} else if(strcmp(gf_prop_get_text(&draw->engine->config, "texture"), "nearest") == 0) {
+	} else if(strcmp(gf_prop_get_text(&draw->engine->config, "texture-filter"), "nearest") == 0) {
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	}

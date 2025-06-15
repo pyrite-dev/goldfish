@@ -162,6 +162,19 @@ int gf_lua_call_font_default(lua_State* s) {
 	return 1;
 }
 
+int gf_lua_call_font_default_monospace(lua_State* s) {
+	gf_font_t** font = luaL_checkudata(s, 1, "GoldFishFont");
+	gf_lua_t*   lua;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	lua->engine->client->draw->monospace_font = *font;
+
+	return 1;
+}
+
 int gf_lua_call_require(lua_State* s) {
 	const char* path = luaL_checkstring(s, 1);
 	gf_lua_t*   lua;
@@ -620,6 +633,10 @@ gf_lua_t* gf_lua_create(gf_engine_t* engine) {
 
 	lua_pushstring(lua->lua, "default");
 	lua_pushcfunction(lua->lua, gf_lua_call_font_default);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "default_monospace");
+	lua_pushcfunction(lua->lua, gf_lua_call_font_default_monospace);
 	lua_settable(lua->lua, -3);
 
 	lua_pushstring(lua->lua, "load");

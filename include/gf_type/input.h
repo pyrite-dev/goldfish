@@ -199,10 +199,10 @@ GF_DECLARE_TYPE(input, {
 	int	     mouse_x;
 	int	     mouse_y;
 	int	     mouse_flag;
-	int* key_queue;
-	int* key_rqueue;
-	int* key_state;
-	char* keymap[GF_INPUT_KEY_LAST+1];
+	int*	     key_queue;
+	int*	     key_rqueue;
+	int*	     key_state;
+	char*	     keymap[GF_INPUT_KEY_LAST + 1];
 });
 #else
 typedef void gf_input_t;

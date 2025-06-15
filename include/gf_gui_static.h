@@ -31,7 +31,7 @@ extern "C" {
  * @~english
  * @brief Initialize GUI component calls
  */
-static void gf_gui_init_calls(void){
+static void gf_gui_init_calls(void) {
 	extern gf_gui_call_t gf_gui_calls[9];
 	/*** Begin button ***/
 	gf_gui_calls[0].name = malloc(512);
@@ -85,16 +85,16 @@ static void gf_gui_init_calls(void){
  * @param gui GUI
  * @param c Component
  */
-static void gf_gui_all_render(gf_gui_t* gui, gf_gui_component_t* c){
-	extern void gf_gui_button_render(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_entry_render(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_frame_render(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_progress_render(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_range_render(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_scrollbar_render(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_tab_render(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_text_render(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_window_render(gf_gui_t* gui, gf_gui_component_t* c);
+static void gf_gui_all_render(gf_gui_t* gui, gf_gui_component_t* c) {
+	extern void gf_gui_button_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_entry_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_frame_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_progress_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_range_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_scrollbar_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_tab_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_text_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_window_render(gf_gui_t * gui, gf_gui_component_t * c);
 	gf_gui_button_render(gui, c);
 	gf_gui_entry_render(gui, c);
 	gf_gui_frame_render(gui, c);
@@ -112,16 +112,16 @@ static void gf_gui_all_render(gf_gui_t* gui, gf_gui_component_t* c){
  * @param gui GUI
  * @param c Component
  */
-static void gf_gui_all_drag(gf_gui_t* gui, gf_gui_component_t* c){
-	extern void gf_gui_button_drag(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_entry_drag(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_frame_drag(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_progress_drag(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_range_drag(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_scrollbar_drag(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_tab_drag(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_text_drag(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_window_drag(gf_gui_t* gui, gf_gui_component_t* c);
+static void gf_gui_all_drag(gf_gui_t* gui, gf_gui_component_t* c) {
+	extern void gf_gui_button_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_entry_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_frame_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_progress_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_range_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_scrollbar_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_tab_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_text_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_window_drag(gf_gui_t * gui, gf_gui_component_t * c);
 	gf_gui_button_drag(gui, c);
 	gf_gui_entry_drag(gui, c);
 	gf_gui_frame_drag(gui, c);
@@ -139,16 +139,16 @@ static void gf_gui_all_drag(gf_gui_t* gui, gf_gui_component_t* c){
  * @param gui GUI
  * @param c Component
  */
-static void gf_gui_all_click(gf_gui_t* gui, gf_gui_component_t* c){
-	extern void gf_gui_button_click(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_entry_click(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_frame_click(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_progress_click(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_range_click(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_scrollbar_click(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_tab_click(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_text_click(gf_gui_t* gui, gf_gui_component_t* c);
-	extern void gf_gui_window_click(gf_gui_t* gui, gf_gui_component_t* c);
+static void gf_gui_all_click(gf_gui_t* gui, gf_gui_component_t* c) {
+	extern void gf_gui_button_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_entry_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_frame_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_progress_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_range_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_scrollbar_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_tab_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_text_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_window_click(gf_gui_t * gui, gf_gui_component_t * c);
 	gf_gui_button_click(gui, c);
 	gf_gui_entry_click(gui, c);
 	gf_gui_frame_click(gui, c);

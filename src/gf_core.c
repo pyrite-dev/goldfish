@@ -26,6 +26,7 @@
 #include <gf_file.h>
 #include <gf_image.h>
 #include <gf_util.h>
+#include <gf_gui.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -80,13 +81,20 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 	int	     i;
 	int	     titlei = 0;
 	char*	     search;
+	gf_version_t ver;
 	gf_engine_t* engine = malloc(sizeof(*engine));
 	memset(engine, 0, sizeof(*engine));
-	engine->log	   = stderr;
-	engine->error	   = 0;
-	engine->lua	   = NULL;
-	engine->name	   = gf_util_strdup(param.game != NULL ? param.game : title);
-	engine->force_down = 0;
+	engine->log	    = stderr;
+	engine->error	    = 0;
+	engine->lua	    = NULL;
+	engine->name	    = gf_util_strdup(param.game != NULL ? param.game : title);
+	engine->force_down  = 0;
+	engine->log_list    = malloc(1);
+	engine->log_list[0] = 0;
+
+	gf_version_get(&ver);
+
+	gf_log_function(engine, "Welcome to GoldFish Engine %s", ver.full);
 
 	gf_prop_set_integer(&engine->config, "width", 800);
 	gf_prop_set_integer(&engine->config, "height", 600);
@@ -94,7 +102,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 	if(param.prefix != NULL) gf_prop_set_text(&engine->config, "prefix", param.prefix);
 
 	search = gf_util_get_search(engine);
-	gf_log_function(NULL, "Search path: %s", search);
+	gf_log_function(engine, "Search path: %s", search);
 	free(search);
 
 	engine->base = gf_resource_create(engine, param.base != NULL ? param.base : "base.pak");
@@ -106,7 +114,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 		engine->icon = gf_image_load(engine, "base:/icon.png", &engine->icon_width, &engine->icon_height);
 	}
 
-	gf_command_file(engine, "base:/autoexec.cfg");
+	gf_command_file(engine, "base:/config/autoexec.cfg");
 
 	if(argv != NULL) {
 		char* buf = NULL;
@@ -144,6 +152,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 	if(nogui) {
 		gf_log_function(engine, "No GUI mode", "");
 		engine->client = NULL;
+		gf_command_file(engine, "base:/config/server.cfg");
 	} else {
 		gf_log_function(engine, "GUI mode", "");
 		engine->client = gf_client_create(engine, title + titlei);
@@ -152,7 +161,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 			gf_engine_destroy(engine);
 			return NULL;
 		}
-		gf_log_function(engine, "Switching to graphical console", "");
+		gf_command_file(engine, "base:/config/client.cfg");
 	}
 #ifndef GF_NO_SERVER
 	engine->server = gf_server_create(engine);
@@ -164,6 +173,10 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 		gf_engine_destroy(engine);
 		engine = NULL;
 		return engine;
+	}
+
+	if(!nogui) {
+		gf_gui_move_topmost(engine->client->draw->gui, engine->client->draw->console);
 	}
 	return engine;
 }
@@ -202,6 +215,7 @@ void gf_engine_destroy(gf_engine_t* engine) {
 	if(engine->icon != NULL) {
 		free(engine->icon);
 	}
+	free(engine->log_list);
 	free(engine);
 	gf_log_function(NULL, "Destroyed engine", "");
 }

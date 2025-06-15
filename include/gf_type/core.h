@@ -42,10 +42,12 @@ gf_engine_t;
  * @var gf_engine::client
  * @brief Client interface
  *
+ * @var gf_engine::log_list
+ * @brief Log output in string
+ *
  * @var gf_engine::log
  * @brief Log output
  * @note Default is `stderr`
- * @warning This is `NULL` when logger is using graphical console
  * @warning Destroying engine instance **does not** `fclose` this
  *
  * @var gf_engine::base
@@ -78,16 +80,17 @@ gf_engine_t;
 GF_DECLARE_TYPE(engine, {
 	gf_server_t*   server;
 	gf_client_t*   client;
+	char*	       log_list;
 	FILE*	       log;
 	gf_resource_t* base;
 	gf_lua_t*      lua;
 	int	       error;
 	unsigned char* icon;
-	int icon_width;
-	int icon_height;
-	gf_prop_t* config;
-	int force_down;
-	char* name;
+	int	       icon_width;
+	int	       icon_height;
+	gf_prop_t*     config;
+	int	       force_down;
+	char*	       name;
 });
 #else
 typedef void gf_engine_t;

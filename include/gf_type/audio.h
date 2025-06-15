@@ -79,14 +79,14 @@ GF_DECLARE_TYPE(audio_decoder, {
 	gf_audio_t*	   audio;
 	jar_xm_context_t*  xm;
 	jar_mod_context_t* mod;
-	drmp3* mp3;
-	drflac* flac;
-	drwav* wav;
+	drmp3*		   mp3;
+	drflac*		   flac;
+	drwav*		   wav;
 	int		   internal;
 	int		   used;
 	unsigned char*	   data;
 	size_t		   size;
-	int auto_destroy;
+	int		   auto_destroy;
 });
 
 /**
@@ -116,8 +116,8 @@ GF_DECLARE_TYPE(audio, {
 	gf_engine_t*	    engine;
 	gf_sound_t*	    device;
 	gf_audio_decoder_t* decoder;
-	gf_thread_mutex_t*	    mutex;
-	double volume;
+	gf_thread_mutex_t*  mutex;
+	double		    volume;
 });
 #else
 typedef void gf_audio_decoder_t;
