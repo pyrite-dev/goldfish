@@ -69,21 +69,22 @@ void gf_command_file(gf_engine_t* engine, const char* path) {
 
 const char* gf_command_join_args(const char** args, int start, int end) {
 	int len = 0;
-	// First "1 + " for '\0', remaining for ' '
-	for(int i = start; i <= end; i++) len += 1 + strlen(args[i]);
+	int i;
+	/* First "1 + " for '\0', remaining for ' ' */
+	for(i = start; i <= end; i++) len += 1 + strlen(args[i]);
 
 	char* new = malloc(len * sizeof(char));
-	for(int i = start, x = 0; i <= end; i++) {
+	for(i = start, x = 0; i <= end; i++) {
 		if(i > start) {
 			new[x] = ' ';
 			x++;
 		}
 
-		strcpy(&new[x], args[i]);
+		strcpy(&new[x], (char*)args[i]);
 		x += strlen(args[i]);
 	}
 
-	return new;
+	return (const char*)new;
 }
 
 void gf_command_run(gf_engine_t* engine, char** list, int listc) {

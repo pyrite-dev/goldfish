@@ -216,7 +216,8 @@ const char* gf_input_key_name(int key) {
 }
 
 int gf_input_key_from_name(const char* name) {
-	for(int i = 0; i <= GF_INPUT_KEY_LAST; i++) {
+	int i;
+	for(i = 0; i <= GF_INPUT_KEY_LAST; i++) {
 		if(strcmp(name, gf_input_key_names[i]) == 0) return i;
 	}
 	return -1;
