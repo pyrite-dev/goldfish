@@ -1,6 +1,7 @@
 #define GF_EXPOSE_CORE
 #define GF_EXPOSE_DRAW
 #define GF_EXPOSE_CLIENT
+#define GF_EXPOSE_COMMAND
 
 #include <gf_pre.h>
 
@@ -12,6 +13,7 @@
 
 /* Engine */
 #include <gf_type/compat.h>
+#include <gf_type/command.h>
 #include <gf_log.h>
 #include <gf_prop.h>
 #include <gf_file.h>
@@ -69,7 +71,7 @@ void gf_command_file(gf_engine_t* engine, const char* path) {
 	}
 }
 
-const char* gf_command_join_args(const char** args, int start, int end) {
+char* gf_command_join_args(const char** args, int start, int end) {
 	int len = 0;
 	int i;
 	int x;
@@ -88,7 +90,7 @@ const char* gf_command_join_args(const char** args, int start, int end) {
 		x += strlen(args[i]);
 	}
 
-	return (const char*)new;
+	return new;
 }
 
 gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
@@ -164,9 +166,33 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 		if(arrlen(arg) == 2) {
 			gf_input_bind_key(engine->client->input, key, NULL);
 		} else {
-			const char* remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
+			char* remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
 			gf_input_bind_key(engine->client->input, key, remargs);
+			free(remargs);
 		}
+	} else if(strcmp(arg[0], "alias") == 0) {
+		if(arrlen(arg) < 3) {
+			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+			return gf_true;
+		}
+
+		if(engine == NULL) {
+			return gf_true;
+		}
+
+		char* alias = malloc(strlen(arg[1]) + 1);
+		strcpy(alias, arg[1]);
+
+		// Free previous key/command combo
+		gf_command_alias_t prevcmd;
+		if((prevcmd = shgets(engine->command_aliases, arg[1])).key != NULL) {
+			free(prevcmd.key);
+			free(prevcmd.value);
+		}
+		shdel(engine->command_aliases, arg[1]);
+
+		char* remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
+		shput(engine->command_aliases, alias, remargs);
 	} else if(strcmp(arg[0], "key_listboundkeys") == 0) {
 		int key;
 		if(engine == NULL || engine->client == NULL || engine->client->input == NULL) {
@@ -226,13 +252,32 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 			}
 		}
 
-		if(arg != NULL) {
-			int found = gf_command_exec_builtin(engine, arg);
-			if(!found) {
-				gf_log_function(engine, "%s: Unknown command", arg[0]);
-			}
-			arrfree(arg);
+		if(arg == NULL) {
+			free(str);
+			return;
 		}
+
+		// Handle aliases
+		const char* alias_cmd = shget(engine->command_aliases, arg[0]);
+		if(alias_cmd != NULL) {
+			free(str);
+
+			char*  cmd   = malloc(strlen(alias_cmd) + 1);
+			char** list2 = NULL;
+			strcpy(cmd, alias_cmd);
+
+			arrpush(list2, (char*)cmd);
+			gf_command_run(engine, list2, 1);
+			arrfree(list2);
+
+			return;
+		}
+
+		int found = gf_command_exec_builtin(engine, arg);
+		if(!found) {
+			gf_log_function(engine, "%s: Unknown command", arg[0]);
+		}
+		arrfree(arg);
 
 		free(str);
 	}
