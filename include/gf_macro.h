@@ -171,6 +171,14 @@
 #define GF_EXPOSE_NETWORK
 #endif
 
+#ifndef GF_EXPOSE_COMMAND
+/**
+ * @~english
+ * @brief Expose command properties
+ */
+#define GF_EXPOSE_COMMAND
+#endif
+
 #ifndef GF_EXPOSE_FILE
 /**
  * @~english
