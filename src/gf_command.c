@@ -171,9 +171,9 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 			free(remargs);
 		}
 	} else if(strcmp(arg[0], "alias") == 0) {
-		char* alias;
+		char*		   alias;
 		gf_command_alias_t prevcmd;
-		char* remargs;
+		char*		   remargs;
 		if(arrlen(arg) < 3) {
 			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
 			return gf_true;
@@ -220,13 +220,13 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 	int i;
 	for(i = 0; i < listc; i++) {
-		int    j;
-		char*  str  = malloc(strlen(list[i]) + 1);
-		char** arg  = NULL;
-		int    incr = 0;
-		int    dq   = 0;
+		int	    j;
+		char*	    str	 = malloc(strlen(list[i]) + 1);
+		char**	    arg	 = NULL;
+		int	    incr = 0;
+		int	    dq	 = 0;
 		const char* alias_cmd;
-		int found;
+		int	    found;
 		if(list[i][0] == '#') continue;
 
 		strcpy(str, list[i]);
@@ -264,7 +264,7 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 		/* Handle aliases */
 		alias_cmd = shget(engine->command_aliases, arg[0]);
 		if(alias_cmd != NULL) {
-			char* cmd;
+			char*  cmd;
 			char** list2;
 			free(str);
 

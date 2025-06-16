@@ -226,6 +226,7 @@ int gf_input_key_from_name(const char* name) {
 void gf_input_key_press(gf_input_t* input, int key) {
 	int i;
 	int has = 0;
+	if(key == -1) return;
 	for(i = 0; i < arrlen(input->key_state); i++) {
 		if(input->key_state[i] == key) {
 			has = 1;
@@ -240,6 +241,7 @@ void gf_input_key_press(gf_input_t* input, int key) {
 
 void gf_input_key_release(gf_input_t* input, int key) {
 	int i;
+	if(key == -1) return;
 	for(i = 0; i < arrlen(input->key_state); i++) {
 		if(input->key_state[i] == key) {
 			arrdel(input->key_state, i);

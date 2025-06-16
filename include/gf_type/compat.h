@@ -36,12 +36,12 @@ typedef int64_t gf_int64_t;
 typedef unsigned char gf_bool_t;
 
 #ifdef _MSC_VER
-typedef unsigned __int8  gf_uint8_t;
+typedef unsigned __int8	 gf_uint8_t;
 typedef unsigned __int16 gf_uint16_t;
 typedef unsigned __int32 gf_uint32_t;
 typedef unsigned __int64 gf_uint64_t;
 
-typedef __int8  gf_int8_t;
+typedef __int8	gf_int8_t;
 typedef __int16 gf_int16_t;
 typedef __int32 gf_int32_t;
 typedef __int64 gf_int64_t;
