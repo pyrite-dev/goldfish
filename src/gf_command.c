@@ -11,6 +11,7 @@
 #include <gf_command.h>
 
 /* Engine */
+#include <gf_type/compat.h>
 #include <gf_log.h>
 #include <gf_prop.h>
 #include <gf_file.h>
@@ -90,18 +91,18 @@ const char* gf_command_join_args(const char** args, int start, int end) {
 	return (const char*)new;
 }
 
-bool gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
+gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 	if(strcmp(arg[0], "width") == 0) {
 		if(arrlen(arg) < 2) {
 			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-			return true;
+			return gf_true;
 		}
 
 		gf_prop_set_integer(&engine->config, "width", atoi(arg[1]));
 	} else if(strcmp(arg[0], "height") == 0) {
 		if(arrlen(arg) < 2) {
 			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-			return true;
+			return gf_true;
 		}
 
 		gf_prop_set_integer(&engine->config, "height", atoi(arg[1]));
@@ -116,26 +117,26 @@ bool gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 	} else if(strcmp(arg[0], "exec") == 0) {
 		if(arrlen(arg) < 2) {
 			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-			return true;
+			return gf_true;
 		}
 
 		gf_command_file(engine, arg[1]);
 	} else if(strcmp(arg[0], "intro") == 0) {
 		if(engine == NULL || engine->client == NULL || engine->client->draw == NULL) {
-			return true;
+			return gf_true;
 		}
 
 		engine->client->draw->intro.finished = 0;
 		engine->client->draw->intro.frame    = 0;
 	} else if(strcmp(arg[0], "echo") == 0) {
 		if(engine == NULL || arrlen(arg) < 2) {
-			return true;
+			return gf_true;
 		}
 
 		gf_log(engine, "%s\n", arg[1]);
 	} else if(strcmp(arg[0], "console") == 0) {
 		if(engine == NULL || engine->client == NULL || engine->client->draw == NULL || engine->client->draw->gui == NULL) {
-			return true;
+			return gf_true;
 		}
 
 		int h = gf_prop_get_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide");
@@ -144,18 +145,18 @@ bool gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 	} else if(strcmp(arg[0], "bind") == 0) {
 		if(arrlen(arg) < 2) {
 			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-			return true;
+			return gf_true;
 		}
 		
 		if(engine == NULL || engine->client == NULL || engine->client->input == NULL) {
 			gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
-			return true;
+			return gf_true;
 		}
 
 		int key = gf_input_key_from_name(arg[1]);
 		if(key == -1) {
 			gf_log_function(engine, "cannot bind unknown key \"%s\"", arg[1]);
-			return true;
+			return gf_true;
 		}
 		
 		if(arrlen(arg) == 2) {
@@ -167,7 +168,7 @@ bool gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 	} else if(strcmp(arg[0], "key_listboundkeys") == 0) {
 		if(engine == NULL || engine->client == NULL || engine->client->input == NULL) {
 			gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
-			return true;
+			return gf_true;
 		}
 
 		int key = -1;
@@ -180,9 +181,9 @@ bool gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 			gf_log(engine, "[%s]: %s", key_name, key_cmd);
 		}
 	} else {
-		return false;
+		return gf_false;
 	}
-	return true;
+	return gf_true;
 }
 
 void gf_command_run(gf_engine_t* engine, char** list, int listc) {
