@@ -68,7 +68,7 @@ gf_texture_t** gf_font_render(gf_font_t* font, const char* text, double size, do
 		}
 	}
 
-	wc    = malloc(strlen(text) * sizeof(*wc) * 5 + 1);
+	wc    = malloc((strlen(text) + 1) * sizeof(*wc) * 5);
 	wc[0] = 0;
 	incr  = 0;
 	while(texts[0] != 0) {
