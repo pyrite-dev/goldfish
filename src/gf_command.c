@@ -165,7 +165,9 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 				}
 			} else if(strcmp(arg[0], "console") == 0) {
 				if(engine != NULL && engine->client != NULL && engine->client->draw != NULL && engine->client->draw->gui != NULL) {
-					gf_prop_set_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide", 0);
+					int h = gf_prop_get_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide");
+					h     = h == 0 ? 1 : 0;
+					gf_prop_set_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide", h);
 				}
 			} else if(strcmp(arg[0], "bind") == 0) {
 				if(arrlen(arg) < 2) {
