@@ -171,6 +171,9 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 			free(remargs);
 		}
 	} else if(strcmp(arg[0], "alias") == 0) {
+		char* alias;
+		gf_command_alias_t prevcmd;
+		char* remargs;
 		if(arrlen(arg) < 3) {
 			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
 			return gf_true;
@@ -180,18 +183,17 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 			return gf_true;
 		}
 
-		char* alias = malloc(strlen(arg[1]) + 1);
+		alias = malloc(strlen(arg[1]) + 1);
 		strcpy(alias, arg[1]);
 
-		// Free previous key/command combo
-		gf_command_alias_t prevcmd;
+		/* Free previous key/command combo */
 		if((prevcmd = shgets(engine->command_aliases, arg[1])).key != NULL) {
 			free(prevcmd.key);
 			free(prevcmd.value);
 		}
 		shdel(engine->command_aliases, arg[1]);
 
-		char* remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
+		remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
 		shput(engine->command_aliases, alias, remargs);
 	} else if(strcmp(arg[0], "key_listboundkeys") == 0) {
 		int key;
@@ -223,6 +225,8 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 		char** arg  = NULL;
 		int    incr = 0;
 		int    dq   = 0;
+		const char* alias_cmd;
+		int found;
 		if(list[i][0] == '#') continue;
 
 		strcpy(str, list[i]);
@@ -257,13 +261,15 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 			return;
 		}
 
-		// Handle aliases
-		const char* alias_cmd = shget(engine->command_aliases, arg[0]);
+		/* Handle aliases */
+		alias_cmd = shget(engine->command_aliases, arg[0]);
 		if(alias_cmd != NULL) {
+			char* cmd;
+			char** list2;
 			free(str);
 
-			char*  cmd   = malloc(strlen(alias_cmd) + 1);
-			char** list2 = NULL;
+			cmd   = malloc(strlen(alias_cmd) + 1);
+			list2 = NULL;
 			strcpy(cmd, alias_cmd);
 
 			arrpush(list2, (char*)cmd);
@@ -273,7 +279,7 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 			return;
 		}
 
-		int found = gf_command_exec_builtin(engine, arg);
+		found = gf_command_exec_builtin(engine, arg);
 		if(!found) {
 			gf_log_function(engine, "%s: Unknown command", arg[0]);
 		}
