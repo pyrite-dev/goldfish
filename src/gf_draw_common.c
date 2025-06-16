@@ -18,6 +18,7 @@
 #include <gf_draw.h>
 
 /* Engine */
+#include <gf_type/compat.h>
 #include <gf_assert.h>
 #include <gf_prop.h>
 #include <gf_core.h>
@@ -252,6 +253,7 @@ void gf_draw_cursor(gf_draw_t* draw) {
 /* Runs every frame */
 void gf_draw_frame(gf_draw_t* draw) {
 	gf_gui_id_t console = gf_gui_get_prop_id(draw->gui, draw->console, "console");
+	gf_gui_id_t scrollbar = gf_gui_get_prop_id(draw->gui, console, "scrollbar");
 	gf_gui_id_t entry   = gf_gui_get_prop_id(draw->gui, draw->console, "entry");
 	gf_gui_id_t fr	    = gf_gui_get_prop_id(draw->gui, draw->console, "frame");
 	double	    w;
@@ -260,6 +262,11 @@ void gf_draw_frame(gf_draw_t* draw) {
 	gf_gui_get_wh(draw->gui, fr, &w, &h);
 	gf_gui_set_wh(draw->gui, console, w, h - 25);
 	gf_gui_set_wh(draw->gui, entry, w - 60 - 5, 20);
+
+	// Keep the console scrolled down
+	float scroll_value = gf_prop_get_floating(gf_gui_get_prop(draw->gui, scrollbar), "value");
+	float max = gf_prop_get_floating(gf_gui_get_prop(draw->gui, scrollbar), "max-value") - gf_prop_get_floating(gf_gui_get_prop(draw->gui, scrollbar), "step");
+	gf_bool_t keep_scrolled = scroll_value >= max - 20.f;
 
 	gf_gui_set_text(draw->gui, console, draw->engine->log_list);
 	if(draw->monospace_font != NULL) {
@@ -341,6 +348,11 @@ void gf_draw_frame(gf_draw_t* draw) {
 	}
 	if(arrlen(draw->input->key_rqueue) > 0) {
 		arrdel(draw->input->key_rqueue, 0);
+	}
+
+	// Scroll the console down
+	if (keep_scrolled) {
+		gf_prop_set_floating(gf_gui_get_prop(draw->gui, scrollbar), "value", gf_prop_get_floating(gf_gui_get_prop(draw->gui, scrollbar), "max-value") - gf_prop_get_floating(gf_gui_get_prop(draw->gui, scrollbar), "step"));
 	}
 }
 
