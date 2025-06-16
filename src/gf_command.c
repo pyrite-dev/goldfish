@@ -90,6 +90,101 @@ const char* gf_command_join_args(const char** args, int start, int end) {
 	return (const char*)new;
 }
 
+bool gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
+	if(strcmp(arg[0], "width") == 0) {
+		if(arrlen(arg) < 2) {
+			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+			return true;
+		}
+
+		gf_prop_set_integer(&engine->config, "width", atoi(arg[1]));
+	} else if(strcmp(arg[0], "height") == 0) {
+		if(arrlen(arg) < 2) {
+			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+			return true;
+		}
+
+		gf_prop_set_integer(&engine->config, "height", atoi(arg[1]));
+	} else if(strcmp(arg[0], "texture") == 0) {
+		if(arrlen(arg) < 2) {
+			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+		} else if(strcmp(arg[1], "nearest") != 0 && strcmp(arg[1], "linear") != 0) {
+			gf_log_function(engine, "%s: %s: Bad argument", arg[0], arg[1]);
+		} else {
+			gf_prop_set_text(&engine->config, "texture-filter", arg[1]);
+		}
+	} else if(strcmp(arg[0], "exec") == 0) {
+		if(arrlen(arg) < 2) {
+			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+			return true;
+		}
+
+		gf_command_file(engine, arg[1]);
+	} else if(strcmp(arg[0], "intro") == 0) {
+		if(engine == NULL || engine->client == NULL || engine->client->draw == NULL) {
+			return true;
+		}
+
+		engine->client->draw->intro.finished = 0;
+		engine->client->draw->intro.frame    = 0;
+	} else if(strcmp(arg[0], "echo") == 0) {
+		if(engine == NULL || arrlen(arg) < 2) {
+			return true;
+		}
+
+		gf_log(engine, "%s\n", arg[1]);
+	} else if(strcmp(arg[0], "console") == 0) {
+		if(engine == NULL || engine->client == NULL || engine->client->draw == NULL || engine->client->draw->gui == NULL) {
+			return true;
+		}
+
+		int h = gf_prop_get_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide");
+		h     = h == 0 ? 1 : 0;
+		gf_prop_set_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide", h);
+	} else if(strcmp(arg[0], "bind") == 0) {
+		if(arrlen(arg) < 2) {
+			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+			return true;
+		}
+		
+		if(engine == NULL || engine->client == NULL || engine->client->input == NULL) {
+			gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
+			return true;
+		}
+
+		int key = gf_input_key_from_name(arg[1]);
+		if(key == -1) {
+			gf_log_function(engine, "cannot bind unknown key \"%s\"", arg[1]);
+			return true;
+		}
+		
+		if(arrlen(arg) == 2) {
+			gf_input_bind_key(engine->client->input, key, NULL);
+		} else {
+			const char* remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
+			gf_input_bind_key(engine->client->input, key, remargs);
+		}
+	} else if(strcmp(arg[0], "key_listboundkeys") == 0) {
+		if(engine == NULL || engine->client == NULL || engine->client->input == NULL) {
+			gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
+			return true;
+		}
+
+		int key = -1;
+		while((key = gf_input_next_bound_key(engine->client->input, key)) != -1) {
+			const char* key_name = gf_input_key_name(key);
+			const char* key_cmd  = gf_input_key_binding(engine->client->input, key);
+
+			/* I don't think there's a print function yet. */
+			/* TODO: replace this */
+			gf_log(engine, "[%s]: %s", key_name, key_cmd);
+		}
+	} else {
+		return false;
+	}
+	return true;
+}
+
 void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 	int i;
 	for(i = 0; i < listc; i++) {
@@ -128,80 +223,8 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 		}
 
 		if(arg != NULL) {
-			if(strcmp(arg[0], "width") == 0) {
-				if(arrlen(arg) < 2) {
-					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-				} else {
-					gf_prop_set_integer(&engine->config, "width", atoi(arg[1]));
-				}
-			} else if(strcmp(arg[0], "height") == 0) {
-				if(arrlen(arg) < 2) {
-					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-				} else {
-					gf_prop_set_integer(&engine->config, "height", atoi(arg[1]));
-				}
-			} else if(strcmp(arg[0], "texture") == 0) {
-				if(arrlen(arg) < 2) {
-					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-				} else if(strcmp(arg[1], "nearest") != 0 && strcmp(arg[1], "linear") != 0) {
-					gf_log_function(engine, "%s: %s: Bad argument", arg[0], arg[1]);
-				} else {
-					gf_prop_set_text(&engine->config, "texture-filter", arg[1]);
-				}
-			} else if(strcmp(arg[0], "exec") == 0) {
-				if(arrlen(arg) < 2) {
-					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-				} else {
-					gf_command_file(engine, arg[1]);
-				}
-			} else if(strcmp(arg[0], "intro") == 0) {
-				if(engine != NULL && engine->client != NULL && engine->client->draw != NULL) {
-					engine->client->draw->intro.finished = 0;
-					engine->client->draw->intro.frame    = 0;
-				}
-			} else if(strcmp(arg[0], "echo") == 0) {
-				if(engine != NULL && arrlen(arg) >= 2) {
-					gf_log(engine, "%s\n", arg[1]);
-				}
-			} else if(strcmp(arg[0], "console") == 0) {
-				if(engine != NULL && engine->client != NULL && engine->client->draw != NULL && engine->client->draw->gui != NULL) {
-					int h = gf_prop_get_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide");
-					h     = h == 0 ? 1 : 0;
-					gf_prop_set_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide", h);
-				}
-			} else if(strcmp(arg[0], "bind") == 0) {
-				if(arrlen(arg) < 2) {
-					gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
-				} else if(engine != NULL && engine->client != NULL && engine->client->input != NULL) {
-					int key = gf_input_key_from_name(arg[1]);
-					if(key != -1) {
-						if(arrlen(arg) == 1) {
-							gf_input_bind_key(engine->client->input, key, NULL);
-						} else {
-							const char* remargs = gf_command_join_args((const char**)arg, 2, arrlen(arg));
-							gf_input_bind_key(engine->client->input, key, remargs);
-						}
-					} else {
-						gf_log_function(engine, "cannot bind unknown key \"%s\"", arg[1]);
-					}
-				} else {
-					gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
-				}
-			} else if(strcmp(arg[0], "key_listboundkeys") == 0) {
-				if(engine != NULL && engine->client != NULL && engine->client->input != NULL) {
-					int key = -1;
-					while((key = gf_input_next_bound_key(engine->client->input, key)) != -1) {
-						const char* key_name = gf_input_key_name(key);
-						const char* key_cmd  = gf_input_key_binding(engine->client->input, key);
-
-						/* I don't think there's a print function yet. */
-						/* TODO: replace this */
-						gf_log(engine, "[%s]: %s", key_name, key_cmd);
-					}
-				} else {
-					gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
-				}
-			} else {
+			int found = gf_command_exec_builtin(engine, arg);
+			if (!found) {
 				gf_log_function(engine, "%s: Unknown command", arg[0]);
 			}
 			arrfree(arg);
