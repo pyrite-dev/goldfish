@@ -135,30 +135,32 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 
 		gf_log(engine, "%s\n", arg[1]);
 	} else if(strcmp(arg[0], "console") == 0) {
+		int h;
 		if(engine == NULL || engine->client == NULL || engine->client->draw == NULL || engine->client->draw->gui == NULL) {
 			return gf_true;
 		}
 
-		int h = gf_prop_get_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide");
-		h     = h == 0 ? 1 : 0;
+		h = gf_prop_get_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide");
+		h = h == 0 ? 1 : 0;
 		gf_prop_set_integer(gf_gui_get_prop(engine->client->draw->gui, engine->client->draw->console), "hide", h);
 	} else if(strcmp(arg[0], "bind") == 0) {
+		int key;
 		if(arrlen(arg) < 2) {
 			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
 			return gf_true;
 		}
-		
+
 		if(engine == NULL || engine->client == NULL || engine->client->input == NULL) {
 			gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
 			return gf_true;
 		}
 
-		int key = gf_input_key_from_name(arg[1]);
+		key = gf_input_key_from_name(arg[1]);
 		if(key == -1) {
 			gf_log_function(engine, "cannot bind unknown key \"%s\"", arg[1]);
 			return gf_true;
 		}
-		
+
 		if(arrlen(arg) == 2) {
 			gf_input_bind_key(engine->client->input, key, NULL);
 		} else {
@@ -166,12 +168,13 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 			gf_input_bind_key(engine->client->input, key, remargs);
 		}
 	} else if(strcmp(arg[0], "key_listboundkeys") == 0) {
+		int key;
 		if(engine == NULL || engine->client == NULL || engine->client->input == NULL) {
 			gf_log_function(engine, "%s: bind cannot be called from the server", arg[0]);
 			return gf_true;
 		}
 
-		int key = -1;
+		key = -1;
 		while((key = gf_input_next_bound_key(engine->client->input, key)) != -1) {
 			const char* key_name = gf_input_key_name(key);
 			const char* key_cmd  = gf_input_key_binding(engine->client->input, key);
@@ -225,7 +228,7 @@ void gf_command_run(gf_engine_t* engine, char** list, int listc) {
 
 		if(arg != NULL) {
 			int found = gf_command_exec_builtin(engine, arg);
-			if (!found) {
+			if(!found) {
 				gf_log_function(engine, "%s: Unknown command", arg[0]);
 			}
 			arrfree(arg);
