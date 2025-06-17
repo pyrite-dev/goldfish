@@ -84,11 +84,6 @@ end
 		})
 		defines("PCRE_STATIC")
 	end
-	includedirs("../external/sqlite")
-	files({
-		"../external/sqlite/*.h",
-		"../external/sqlite/*.c"
-	})
 	includedirs("../external/ed25519/include")
 	files({
 		"../external/ed25519/include/*.h",
