@@ -23,9 +23,6 @@
 [submodule "external/pcre"]
 	path = external/pcre
 	url = ../pcre
-[submodule "external/ed25519"]
-	path = external/ed25519
-	url = ../ed25519
 [submodule "external/minisocket"]
 	path = external/minisocket
 	url = ../minisocket
