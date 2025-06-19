@@ -46,15 +46,15 @@ typedef __int16 gf_int16_t;
 typedef __int32 gf_int32_t;
 typedef __int64 gf_int64_t;
 #else
-typedef unsigned char  gf_uint8_t;
-typedef unsigned short gf_uint16_t;
-typedef unsigned int   gf_uint32_t;
-typedef gf_uint32_t    gf_uint64_t;
+typedef unsigned char	   gf_uint8_t;
+typedef unsigned short	   gf_uint16_t;
+typedef unsigned int	   gf_uint32_t;
+typedef unsigned long long gf_uint64_t;
 
-typedef signed char  gf_int8_t;
-typedef signed short gf_int16_t;
-typedef signed int   gf_int32_t;
-typedef gf_int32_t   gf_int64_t;
+typedef signed char	 gf_int8_t;
+typedef signed short	 gf_int16_t;
+typedef signed int	 gf_int32_t;
+typedef signed long long gf_int64_t;
 #endif
 #endif
 
