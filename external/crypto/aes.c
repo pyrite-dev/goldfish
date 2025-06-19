@@ -36,7 +36,7 @@ NOTE:   String length must be evenly divisible by 16byte (str_len % 16 == 0)
 /* Includes:                                                                 */
 /*****************************************************************************/
 #include <string.h> /* CBC mode, for memset */
-#include "gf_aes.h"
+#include "aes.h"
 
 /*****************************************************************************/
 /* Defines:                                                                  */

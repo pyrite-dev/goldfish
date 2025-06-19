@@ -6,6 +6,9 @@
 
 /* External library */
 #include <stb_ds.h>
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 /* Interface */
 #include <gf_core.h>
@@ -32,6 +35,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <time.h>
 
 #ifdef _WIN32
 LARGE_INTEGER hpc_freq;
@@ -75,6 +79,30 @@ gf_engine_t* gf_engine_create(const char* title, int nogui) {
 	return gf_engine_create_ex(title, nogui, param, NULL, 0);
 }
 
+static void gf_engine_init_seed(gf_engine_t* engine) {
+	int	    i;
+	gf_uint64_t tmp = 0;
+#ifdef _WIN32
+	engine->seed = GetTickCount();
+	tmp ^= gf_util_random(engine);
+	engine->seed = GetCurrentProcessId();
+	tmp ^= gf_util_random(engine);
+	engine->seed = GetCurrentThreadId();
+	tmp ^= gf_util_random(engine);
+
+	engine->seed = tmp;
+#else
+	FILE* f = fopen("/dev/urandom", "rb");
+	if(f == NULL) f = fopen("/dev/random", "rb"); /* what unix-like could be missing urandom!?!? */
+	if(f != NULL) {
+		fread(&engine->seed, 1, sizeof(engine->seed), f);
+		fclose(f);
+	}
+#endif
+	/* this is to shuffle */
+	for(i = 0; i < 32; i++) tmp = gf_util_random(engine);
+}
+
 gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t param, char** argv, int argc) {
 	int	     st;
 	char**	     list = NULL;
@@ -91,6 +119,9 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 	engine->force_down  = 0;
 	engine->log_list    = malloc(1);
 	engine->log_list[0] = 0;
+
+	engine->seed = time(NULL);
+	gf_engine_init_seed(engine);
 
 	gf_version_get(&ver);
 

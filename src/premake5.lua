@@ -59,6 +59,7 @@ end
 		"../external/jar",
 		"../external/nanosvg",
 		"../external/minisocket",
+		"../external/crypto",
 		"bindgen"
 	})
 	files({
@@ -87,6 +88,9 @@ end
 	files({
 		"audio/*.c",
 		"../external/jar/jar_*.h"
+	})
+	files({
+		"../external/crypto/*.c"
 	})
 	files({
 		"gui/*.c"

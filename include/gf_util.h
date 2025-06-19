@@ -14,6 +14,7 @@
 
 /* Engine */
 #include <gf_type/core.h>
+#include <gf_type/compat.h>
 
 /* Standard */
 #include <stdio.h>
@@ -51,6 +52,14 @@ GF_EXPORT char** gf_util_get_search_list(gf_engine_t* engine);
  * @return Size
  */
 GF_EXPORT int gf_util_file_size(FILE* f);
+
+/**
+ * @~english
+ * @brief Generate random number
+ * @param engine Engine instance
+ * @return Random number
+ */
+GF_EXPORT gf_uint64_t gf_util_random(gf_engine_t* engine);
 
 #ifdef __cplusplus
 }

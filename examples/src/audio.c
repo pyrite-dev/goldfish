@@ -16,6 +16,7 @@ void handler(int sig) { run = 0; }
 #endif
 
 int main(int argc, char** argv) {
+	gf_engine_param_t param;
 	if(argc != 2) {
 		fprintf(stderr, "Usage: %s path\n", argv[0]);
 		return 1;
@@ -23,8 +24,13 @@ int main(int argc, char** argv) {
 #ifndef _WIN32
 	signal(SIGINT, handler);
 #endif
+
+	param.prefix = "idk";
+	param.game   = "unused";
+	param.base   = "data";
+
 	gf_engine_begin();
-	engine = gf_engine_create_ex("unused", 1, "data", argv, argc);
+	engine = gf_engine_create_ex("unused", 1, param, argv, argc);
 	if(engine != NULL) {
 		gf_audio_t* audio = gf_audio_create(engine);
 		if(audio != NULL) {

@@ -4,6 +4,9 @@
 
 /* External library */
 #include <stb_ds.h>
+#ifdef _WIN32
+#include <shlobj.h>
+#endif
 
 /* Interface */
 #include <gf_util.h>
@@ -15,9 +18,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <sys/stat.h>
-#ifdef _WIN32
-#include <shlobj.h>
-#else
+#ifndef _WIN32
 #include <pwd.h>
 #include <unistd.h>
 #endif
@@ -173,4 +174,11 @@ int gf_util_file_size(FILE* f) {
 	return s.st_size;
 #endif
 #endif
+}
+
+gf_uint64_t gf_util_random(gf_engine_t* engine) {
+	gf_uint64_t n = engine->seed;
+	n ^= n << 7;
+	n ^= n >> 9;
+	return engine->seed = n;
 }

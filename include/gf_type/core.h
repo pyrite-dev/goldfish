@@ -28,6 +28,7 @@ gf_engine_t;
 #include <gf_type/lua.h>
 #include <gf_type/prop.h>
 #include <gf_type/command.h>
+#include <gf_type/compat.h>
 
 /* Standard */
 #include <stdio.h>
@@ -80,6 +81,9 @@ gf_engine_t;
  *
  * @var gf_engine::name
  * @brief Game name
+ *
+ * @var gf_engine::seed
+ * @brief Seed
  */
 GF_DECLARE_TYPE(engine, {
 	gf_server_t*	    server;
@@ -96,6 +100,7 @@ GF_DECLARE_TYPE(engine, {
 	gf_prop_t*	    config;
 	int		    force_down;
 	char*		    name;
+	gf_uint64_t	    seed;
 });
 #else
 typedef void gf_engine_t;

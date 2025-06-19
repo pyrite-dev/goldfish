@@ -4,7 +4,7 @@
 /* Based on Daniel Beer's Public Domain c25519 implementation */
 /* https://www.dlbeer.co.nz/oss/c25519.html version: 2017-10-05 */
 
-#include "gf_25519.h"
+#include "compact25519.h"
 
 /* ******* BEGIN: c25519/f25519.h ******** */
 /* Arithmetic mod p = 2^255-19
