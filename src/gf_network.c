@@ -31,12 +31,23 @@ static void gf_network_key(gf_network_t* net) {
 	for(i = 0; i < sizeof(net->random_seed); i++) {
 		if(count == 0) {
 			count = sizeof(r);
+			r     = gf_util_random(net->engine);
 		}
 
 		net->random_seed[i] = r & 0xff;
 
 		count--;
 		r = r >> 8;
+	}
+	compact_x25519_keygen(net->private_key, net->public_key, net->random_seed);
+}
+
+static void gf_network_key_hex(char* out, gf_uint8_t key[X25519_KEY_SIZE]) {
+	int	    i;
+	const char* hex = "0123456789ABCDEF";
+	for(i = 0; i < X25519_KEY_SIZE; i++) {
+		out[2 * i + 0] = hex[(key[i + 0] >> 4) & 0xf];
+		out[2 * i + 1] = hex[(key[i + 1] >> 0) & 0xf];
 	}
 }
 
@@ -59,7 +70,9 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net)
 	gf_log_function(engine, "GFSL handshaking", "");
 
 	gf_log_function(engine, "ClientHello", "");
-	memcpy(buf->data, "ClientHello 1 abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd\r\n", len);
+	memcpy(buf->data, "ClientHello 1 ", len - 64 - 2);
+	gf_network_key_hex(((char*)buf->data) + (len - 64 - 2), r->public_key);
+	memcpy(((char*)buf->data) + (len - 2), "\r\n", 2);
 	while(1) {
 		int st = ms_step(net);
 		if(st != 0 || net->state >= MS_STATE_FAILED) {
