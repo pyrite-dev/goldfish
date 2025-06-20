@@ -63,6 +63,42 @@ static int gf_network_hex(char c) {
 	return 0;
 }
 
+static void gf_network_close(int fd) {
+#ifdef _WIN32
+	closesocket(fd);
+#else
+	close(fd);
+#endif
+}
+
+static int gf_network_socket(gf_engine_t* engine, const char* type, const char* host, int port) {
+	int		   fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	struct sockaddr_in addr;
+#ifdef _WIN32
+	if(fd == INVALID_SOCKET) net->fd = -1;
+#endif
+	if(fd == -1) {
+		gf_log_function(engine, "Failed to create socket", "");
+		return -1;
+	}
+
+	memset(&addr, 0, sizeof(addr));
+	addr.sin_family	     = AF_INET;
+	addr.sin_port	     = htons(port);
+	addr.sin_addr.s_addr = inet_addr(host);
+	if(bind(fd, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
+		gf_log_function(engine, "Failed to bind", "");
+		gf_network_close(fd);
+		return -1;
+	}
+	if(listen(fd, 64) == -1) {
+		gf_log_function(engine, "Failed to listen", "");
+		gf_network_close(fd);
+		return -1;
+	}
+	return fd;
+}
+
 static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net, int server) {
 	int	      len    = strlen("ClientHello") + 1 + 1 + 1 + 64 + 2;
 	int	      first  = 1;
@@ -70,11 +106,12 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 	char*	      buffer = malloc(1);
 	int	      brk    = 0;
 	ms_buffer_t*  buf;
+	time_t	      began_at;
 	gf_network_t* r = malloc(sizeof(*r));
 	memset(r, 0, sizeof(*r));
-	time_t began_at;
 	r->engine = engine;
 	r->net	  = net;
+	r->fd	  = -1;
 
 	gf_network_key(r);
 
@@ -202,4 +239,27 @@ gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int p
 	gf_log_function(engine, "Connected", "");
 
 	return gf_network_secure(engine, net, 0);
+}
+
+gf_network_t* gf_network_secure_tcp_server(gf_engine_t* engine, const char* host, int port) {
+	gf_network_t* net = malloc(sizeof(*net));
+	memset(net, 0, sizeof(*net));
+	net->fd = -1;
+
+	gf_log_function(engine, "Binding to %s:%d", host, port);
+
+	net->fd = gf_network_socket(engine, "tcp", host, port);
+	if(net->fd == -1) {
+		free(net);
+		return NULL;
+	}
+
+	return net;
+}
+
+void gf_network_destroy(gf_network_t* net) {
+	if(net->net != NULL) ms_destroy(net->net);
+	if(net->fd != -1) gf_network_close(net->fd);
+	gf_log_function(net->engine, "Destroyed network interface", "");
+	free(net);
 }

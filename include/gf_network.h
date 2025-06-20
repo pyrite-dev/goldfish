@@ -41,6 +41,23 @@ GF_EXPORT gf_uint32_t gf_network_id(const char* str);
  */
 GF_EXPORT gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int port);
 
+/**
+ * @~english
+ * @brief Start secure TCP server
+ * @param engine Engine instance
+ * @param host Host
+ * @param port Port
+ * @return Network interface
+ */
+GF_EXPORT gf_network_t* gf_network_secure_tcp_server(gf_engine_t* engine, const char* host, int port);
+
+/**
+ * @~english
+ * @brief Destroy network interface
+ * @param net Network interface
+ */
+GF_EXPORT void gf_network_destroy(gf_network_t* net);
+
 #ifdef __cplusplus
 }
 #endif

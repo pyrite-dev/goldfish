@@ -17,6 +17,7 @@
 #include <netinet/tcp.h>
 #include <netinet/udp.h>
 #include <netdb.h>
+#include <unistd.h>
 #endif
 
 #endif

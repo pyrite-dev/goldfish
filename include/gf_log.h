@@ -34,7 +34,7 @@ GF_EXPORT FILE* gf_log_default;
  * @param engine Engine instance
  * @param fmt Format string
  */
-#define gf_log_function(engine, fmt, ...) gf_log(engine, "%24s: " fmt "\n", __FUNCTION_NAME__, __VA_ARGS__)
+#define gf_log_function(engine, fmt, ...) gf_log(engine, "%30s: " fmt "\n", __FUNCTION_NAME__, __VA_ARGS__)
 
 /**
  * @~english

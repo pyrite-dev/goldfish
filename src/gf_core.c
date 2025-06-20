@@ -7,6 +7,7 @@
 /* External library */
 #include <stb_ds.h>
 #ifdef _WIN32
+#include <winsock.h>
 #include <windows.h>
 #endif
 
@@ -42,6 +43,10 @@ LARGE_INTEGER hpc_freq;
 #endif
 void gf_engine_begin(void) {
 	gf_version_t ver;
+#ifdef _WIN32
+	WSADATA wsa;
+	WSAStartup(MAKEWORD(1, 1), &wsa);
+#endif
 	if(gf_log_default == NULL) gf_log_default = stderr;
 
 	gf_gui_init_calls();

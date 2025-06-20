@@ -8,6 +8,7 @@ ext_*
 *~
 *.make
 *.pak
+*.swp
 compile_flags.txt
 Makefile
 obj
