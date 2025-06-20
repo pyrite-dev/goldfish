@@ -18,6 +18,7 @@
 /* Standard */
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 gf_uint32_t gf_network_id(const char* str) {
 	gf_uint32_t id = *(gf_uint32_t*)&str[0];
@@ -71,6 +72,7 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 	ms_buffer_t*  buf;
 	gf_network_t* r = malloc(sizeof(*r));
 	memset(r, 0, sizeof(*r));
+	time_t began_at;
 	r->engine = engine;
 	r->net	  = net;
 
@@ -80,6 +82,7 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 
 	gf_log_function(engine, "GFSL handshaking", "");
 
+	began_at = time(NULL);
 	if(!server) {
 		gf_log_function(engine, "Sent ClientHello", "");
 		buf = ms_wbuffer(net, len);
@@ -92,6 +95,10 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 	}
 	while(1) {
 		int st = ms_step(net);
+		if((time(NULL) - began_at) >= 3) {
+			gf_log_function(engine, "Timeout", "");
+			brk = 1;
+		}
 		if(st != 0 || net->state >= MS_STATE_FAILED) {
 			brk = 1;
 		} else if((net->state == MS_STATE_AFTER_WRITE && first) || net->state == MS_STATE_AFTER_READ) {
