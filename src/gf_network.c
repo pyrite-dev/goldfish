@@ -51,14 +51,25 @@ static void gf_network_key_hex(char* out, gf_uint8_t key[X25519_KEY_SIZE]) {
 	}
 }
 
-static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net) {
+static int gf_network_hex(char c) {
+	if('0' <= c && c <= '9') {
+		return c - '0';
+	} else if('A' <= c && c <= 'F') {
+		return c - 'A' + 10;
+	} else if('a' <= c && c <= 'f') {
+		return c - 'a' + 10;
+	}
+	return 0;
+}
+
+static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net, int server) {
 	int	      len    = strlen("ClientHello") + 1 + 1 + 1 + 64 + 2;
 	int	      first  = 1;
 	char**	      list   = NULL;
 	char*	      buffer = malloc(1);
 	int	      brk    = 0;
-	ms_buffer_t*  buf    = ms_wbuffer(net, len);
-	gf_network_t* r	     = malloc(sizeof(*r));
+	ms_buffer_t*  buf;
+	gf_network_t* r = malloc(sizeof(*r));
 	memset(r, 0, sizeof(*r));
 	r->engine = engine;
 	r->net	  = net;
@@ -69,10 +80,16 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net)
 
 	gf_log_function(engine, "GFSL handshaking", "");
 
-	gf_log_function(engine, "ClientHello", "");
-	memcpy(buf->data, "ClientHello 1 ", len - 64 - 2);
-	gf_network_key_hex(((char*)buf->data) + (len - 64 - 2), r->public_key);
-	memcpy(((char*)buf->data) + (len - 2), "\r\n", 2);
+	if(!server) {
+		gf_log_function(engine, "Sent ClientHello", "");
+		buf = ms_wbuffer(net, len);
+		memcpy(buf->data, "ClientHello 1 ", len - 64 - 2);
+		gf_network_key_hex(((char*)buf->data) + (len - 64 - 2), r->public_key);
+		memcpy(((char*)buf->data) + (len - 2), "\r\n", 2);
+	} else {
+		first = 0;
+		buf   = ms_rbuffer(net, 1);
+	}
 	while(1) {
 		int st = ms_step(net);
 		if(st != 0 || net->state >= MS_STATE_FAILED) {
@@ -97,7 +114,28 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net)
 				}
 
 				if(list != NULL && arrlen(list) > 0) {
-					if(strcmp(list[0], "ServerHello") == 0 && arrlen(list) == 3 && strcmp(list[1], "1") == 0 && strlen(list[2]) == 64) {
+					if(strcmp(list[0], server ? "ClientHello" : "ServerHello") == 0 && arrlen(list) == 3 && strcmp(list[1], "1") == 0 && strlen(list[2]) == 64) {
+						gf_uint8_t their_public[X25519_KEY_SIZE];
+						gf_log_function(engine, "Got %s", list[0]);
+						for(i = 0; i < X25519_KEY_SIZE; i++) {
+							their_public[i] = (gf_network_hex(list[2][i * 2 + 0]) << 4) | gf_network_hex(list[2][i * 2 + 1]);
+						}
+						if(server) {
+							int	     len2 = strlen("ServerHello") + 1 + 1 + 1 + 64 + 2;
+							ms_buffer_t* wbuf = ms_wbuffer(net, len2);
+							memcpy(wbuf->data, "ServerHello 1 ", len2 - 64 - 2);
+							gf_network_key_hex(((char*)wbuf->data) + (len2 - 64 - 2), r->public_key);
+							memcpy(((char*)wbuf->data) + (len2 - 2), "\r\n", 2);
+						} else {
+							int	     len2 = strlen("ClientAccept") + 2;
+							ms_buffer_t* wbuf = ms_wbuffer(net, len2);
+							memcpy(wbuf->data, "ClientAccept\r\n", len2);
+							break;
+						}
+						compact_x25519_shared(r->shared_secret, r->private_key, their_public);
+					} else if(server && strcmp(list[0], "ClientAccept") == 0 && arrlen(list) == 1) {
+						gf_log_function(engine, "Got %s", list[0]);
+						break;
 					} else {
 						brk = 1;
 					}
@@ -127,6 +165,8 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net)
 		ms_destroy(net);
 		free(r);
 		r = NULL;
+	} else {
+		gf_log_function(engine, "Handshake success", "");
 	}
 
 	return r;
@@ -154,5 +194,5 @@ gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int p
 
 	gf_log_function(engine, "Connected", "");
 
-	return gf_network_secure(engine, net);
+	return gf_network_secure(engine, net, 0);
 }
