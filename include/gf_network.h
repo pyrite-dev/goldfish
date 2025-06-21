@@ -53,6 +53,14 @@ GF_EXPORT gf_network_t* gf_network_secure_tcp_server(gf_engine_t* engine, const 
 
 /**
  * @~english
+ * @brief Do network interface single step
+ * @param net Network interface
+ * @return `0` if successful
+ */
+GF_EXPORT int gf_network_secure_server_step(gf_network_t* net);
+
+/**
+ * @~english
  * @brief Destroy network interface
  * @param net Network interface
  */

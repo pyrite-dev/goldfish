@@ -24,6 +24,7 @@ gf_network_t;
 #include <gf_type/compat.h>
 
 /* Standard */
+#include <setjmp.h>
 
 /**
  * @struct gf_network
@@ -38,6 +39,9 @@ gf_network_t;
  *
  * @var gf_network::fd
  * @brief Socket FD
+ *
+ * @var gf_network::state
+ * @brief Internal state
  *
  * @var gf_network::shared_secret
  * @brief Shared secret
@@ -55,6 +59,7 @@ GF_DECLARE_TYPE(network, {
 	gf_engine_t*	engine;
 	ms_interface_t* net;
 	int		fd;
+	void*		state;
 	gf_uint8_t	shared_secret[X25519_SHARED_SIZE];
 	gf_uint8_t	private_key[X25519_KEY_SIZE];
 	gf_uint8_t	public_key[X25519_KEY_SIZE];

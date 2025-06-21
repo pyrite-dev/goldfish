@@ -74,6 +74,9 @@ static void gf_network_close(int fd) {
 static int gf_network_socket(gf_engine_t* engine, const char* type, const char* host, int port) {
 	int		   fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	struct sockaddr_in addr;
+
+	gf_log_function(engine, "Binding to %s:%d", host, port);
+
 #ifdef _WIN32
 	if(fd == INVALID_SOCKET) net->fd = -1;
 #endif
@@ -107,7 +110,8 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 	int	      brk    = 0;
 	ms_buffer_t*  buf;
 	time_t	      began_at;
-	gf_network_t* r = malloc(sizeof(*r));
+	int	      good = 0;
+	gf_network_t* r	   = malloc(sizeof(*r));
 	memset(r, 0, sizeof(*r));
 	r->engine = engine;
 	r->net	  = net;
@@ -138,7 +142,9 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 		}
 		if(st != 0 || net->state >= MS_STATE_FAILED) {
 			brk = 1;
-		} else if((net->state == MS_STATE_AFTER_WRITE && first) || net->state == MS_STATE_AFTER_READ) {
+		} else if(net->state == MS_STATE_AFTER_WRITE && good) {
+			break;
+		} else if((net->state == MS_STATE_AFTER_WRITE && first) || (net->state == MS_STATE_AFTER_READ && !good)) {
 			first = 0;
 			buf   = ms_rbuffer(net, 1);
 		} else if(net->state == MS_STATE_READ_COMPLETE) {
@@ -174,7 +180,8 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 							int	     len2 = strlen("ClientAccept") + 2;
 							ms_buffer_t* wbuf = ms_wbuffer(net, len2);
 							memcpy(wbuf->data, "ClientAccept\r\n", len2);
-							break;
+							good = 1;
+							continue;
 						}
 						compact_x25519_shared(r->shared_secret, r->private_key, their_public);
 					} else if(server && strcmp(list[0], "ClientAccept") == 0 && arrlen(list) == 1) {
@@ -206,9 +213,6 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 	if(list != NULL) arrfree(list);
 	if(brk) {
 		gf_log_function(engine, "Handshake failed", "");
-		ms_destroy(net);
-		free(r);
-		r = NULL;
 	} else {
 		gf_log_function(engine, "Handshake success", "");
 	}
@@ -218,6 +222,7 @@ static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net,
 
 gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int port) {
 	ms_interface_t* net;
+	gf_network_t*	r;
 	gf_log_function(engine, "Connecting to %s:%d", host, port);
 
 	net = ms_tcp(host, port);
@@ -238,15 +243,15 @@ gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int p
 
 	gf_log_function(engine, "Connected", "");
 
-	return gf_network_secure(engine, net, 0);
+	r = gf_network_secure(engine, net, 0);
+	return r;
 }
 
 gf_network_t* gf_network_secure_tcp_server(gf_engine_t* engine, const char* host, int port) {
 	gf_network_t* net = malloc(sizeof(*net));
 	memset(net, 0, sizeof(*net));
-	net->fd = -1;
-
-	gf_log_function(engine, "Binding to %s:%d", host, port);
+	net->engine = engine;
+	net->fd	    = -1;
 
 	net->fd = gf_network_socket(engine, "tcp", host, port);
 	if(net->fd == -1) {
@@ -255,6 +260,36 @@ gf_network_t* gf_network_secure_tcp_server(gf_engine_t* engine, const char* host
 	}
 
 	return net;
+}
+
+int gf_network_secure_server_step(gf_network_t* net) {
+	fd_set	       fds;
+	int	       s;
+	struct timeval tv;
+	FD_ZERO(&fds);
+	FD_SET(net->fd, &fds);
+
+	tv.tv_sec  = 0;
+	tv.tv_usec = 0;
+
+	s = select(FD_SETSIZE, &fds, NULL, NULL, &tv);
+	if(s == -1) {
+		return -1;
+	}
+	if(s > 0) {
+		struct sockaddr_in addr;
+		int		   len = sizeof(addr);
+		int		   fd  = accept(net->fd, (struct sockaddr*)&addr, &len);
+		gf_network_t*	   cn;
+		ms_interface_t*	   nint;
+
+		gf_log_function(net->engine, "Connection accepted", "");
+
+		ms_non_block(fd);
+		nint = ms_user(fd);
+		cn   = gf_network_secure(net->engine, nint, 1);
+	}
+	return 0;
 }
 
 void gf_network_destroy(gf_network_t* net) {
