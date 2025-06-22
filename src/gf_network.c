@@ -6,6 +6,8 @@
 #include <gf_netdrv.h>
 #include <minisocket.h>
 #include <stb_ds.h>
+#include <compact25519.h>
+#include <aes.h>
 
 /* Interface */
 #include <gf_network.h>
@@ -47,8 +49,8 @@ static void gf_network_key_hex(char* out, gf_uint8_t key[X25519_KEY_SIZE]) {
 	int	    i;
 	const char* hex = "0123456789ABCDEF";
 	for(i = 0; i < X25519_KEY_SIZE; i++) {
-		out[2 * i + 0] = hex[(key[i + 0] >> 4) & 0xf];
-		out[2 * i + 1] = hex[(key[i + 1] >> 0) & 0xf];
+		out[2 * i + 0] = hex[(key[i] >> 4) & 0xf];
+		out[2 * i + 1] = hex[(key[i] >> 0) & 0xf];
 	}
 }
 
@@ -194,6 +196,7 @@ static int gf_network_secure_step(gf_network_t* n) {
 					if(strcmp(state->list[0], state->server ? "ClientHello" : "ServerHello") == 0 && arrlen(state->list) == 3 && strcmp(state->list[1], "1") == 0 && strlen(state->list[2]) == 64) {
 						gf_uint8_t their_public[X25519_KEY_SIZE];
 						gf_log_function(n->engine, "Got %s", state->list[0]);
+
 						for(i = 0; i < X25519_KEY_SIZE; i++) {
 							their_public[i] = (gf_network_hex(state->list[2][i * 2 + 0]) << 4) | gf_network_hex(state->list[2][i * 2 + 1]);
 						}
@@ -203,15 +206,25 @@ static int gf_network_secure_step(gf_network_t* n) {
 							memcpy(wbuf->data, "ServerHello 1 ", len2 - 64 - 2);
 							gf_network_key_hex(((char*)wbuf->data) + (len2 - 64 - 2), n->public_key);
 							memcpy(((char*)wbuf->data) + (len2 - 2), "\r\n", 2);
+
 						} else {
 							int	     len2 = strlen("ClientAccept") + 2;
 							ms_buffer_t* wbuf = ms_wbuffer(net, len2);
 							memcpy(wbuf->data, "ClientAccept\r\n", len2);
 							state->good = 1;
 							gf_log_function(n->engine, "Sent ClientAccept", "");
-							break;
 						}
 						compact_x25519_shared(n->shared_secret, n->private_key, their_public);
+						AES_init_ctx(&n->aes, n->shared_secret);
+						/* DO NOT enable this unless you know what you are doing!!! */
+#if 0
+						{
+							char b[64 + 1];
+							b[64] = 0;
+							gf_network_key_hex(b, n->shared_secret);
+							gf_log_function(n->engine, "Round key: %s", b);
+						}
+#endif
 					} else if(state->server && strcmp(state->list[0], "ClientAccept") == 0 && arrlen(state->list) == 1) {
 						gf_log_function(n->engine, "Got %s", state->list[0]);
 						ret = 1;
@@ -336,6 +349,13 @@ int gf_network_secure_server_step(gf_network_t* net) {
 		int i;
 		for(i = 0; i < arrlen(net->clients); i++) {
 			if(net->clients[i]->connected) {
+				int s = ms_step(net->clients[i]->net);
+				if(s != 0) {
+					ms_destroy(net->clients[i]->net);
+					arrdel(net->clients, i);
+					i--;
+					continue;
+				}
 			} else {
 				int s = gf_network_secure_step(net->clients[i]);
 				if(s == -1) {

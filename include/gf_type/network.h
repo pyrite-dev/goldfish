@@ -18,13 +18,13 @@ gf_network_t;
 /* External library */
 #include <minisocket.h>
 #include <compact25519.h>
+#include <aes.h>
 
 /* Engine */
 #include <gf_type/core.h>
 #include <gf_type/compat.h>
 
 /* Standard */
-#include <setjmp.h>
 
 /**
  * @struct gf_network
@@ -42,6 +42,9 @@ gf_network_t;
  *
  * @var gf_network::state
  * @brief Internal state
+ *
+ * @var gf_network::aes
+ * @brief AES context
  *
  * @var gf_network::shared_secret
  * @brief Shared secret
@@ -66,6 +69,7 @@ GF_DECLARE_TYPE(network, {
 	ms_interface_t* net;
 	int		fd;
 	void*		state;
+	struct AES_ctx	aes;
 	gf_uint8_t	shared_secret[X25519_SHARED_SIZE];
 	gf_uint8_t	private_key[X25519_KEY_SIZE];
 	gf_uint8_t	public_key[X25519_KEY_SIZE];
