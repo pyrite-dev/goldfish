@@ -19,6 +19,8 @@ gf_model_t;
 
 /* Engine */
 #include <gf_type/texture.h>
+#include <gf_type/core.h>
+#include <gf_type/draw.h>
 
 /* Standard */
 
@@ -27,10 +29,15 @@ gf_model_t;
  * @~english
  * @brief Model
  *
+ * @var gf_model::engine
+ * @brief Engine instance
+ *
  * @var gf_model::texture
  * @brief Texture
  */
 GF_DECLARE_TYPE(model, {
+	gf_engine_t*  engine;
+	gf_draw_t*    draw;
 	gf_texture_t* texture;
 });
 #else
