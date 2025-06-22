@@ -18,7 +18,6 @@ gf_model_t;
 /* External library */
 
 /* Engine */
-#include <gf_type/mesh.h>
 #include <gf_type/texture.h>
 
 /* Standard */
@@ -28,14 +27,10 @@ gf_model_t;
  * @~english
  * @brief Model
  *
- * @var gf_model::mesh
- * @brief Mesh
- *
  * @var gf_model::texture
  * @brief Texture
  */
 GF_DECLARE_TYPE(model, {
-	gf_mesh_t*    mesh;
 	gf_texture_t* texture;
 });
 #else
