@@ -1,3 +1,4 @@
+#include <stdarg.h>
 #define GF_EXPOSE_FILE
 #define GF_EXPOSE_CORE
 
@@ -168,4 +169,41 @@ void gf_file_close(gf_file_t* fp) {
 	if(fp->fp != NULL) fclose(fp->fp);
 	if(fp->buffer != NULL) free(fp->buffer);
 	free(fp);
+}
+
+#ifdef WIN32
+#define PATH_SEPERATOR "\\"
+#else
+#ifdef __APPLE__
+#ifdef __RETRO68__
+#define PATH_SEPERATOR ":"
+#else
+#define PATH_SEPERATOR "/"
+#endif
+#else
+#define PATH_SEPERATOR "/"
+#endif
+#endif
+
+char* gf_path_join(size_t length, ...) {
+	// (we prioritize safety over performance here as this function ideally isn't called that often anyways)
+
+	// go through the args once to get the proper length
+	long	size = 0;
+	va_list va;
+	va_start(va, length);
+	for(int i = 0; i < length; i++) {
+		size += strnlen(va_arg(va, char*), 255) + 1; // +1 for thepath seperator
+	}
+	va_end(va);
+
+	char* st = malloc(size);
+	va_start(va, length);
+	for(int i = 0; i < length; i++) {
+		strcat(st, va_arg(va, char*));
+		strcat(st, PATH_SEPERATOR);
+	}
+	va_end(va);
+
+	return st;
 }
