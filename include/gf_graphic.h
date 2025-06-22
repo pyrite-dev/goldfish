@@ -218,7 +218,7 @@ GF_EXPORT void gf_graphic_points(gf_draw_t* draw, gf_graphic_color_t color, int 
 
 /**
  * @~english
- * @brief Draw points
+ * @brief Draw lines
  */
 GF_EXPORT void gf_graphic_lines(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
 
