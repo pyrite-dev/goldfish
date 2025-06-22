@@ -29,11 +29,45 @@
 #define CHUNK 32767
 #define NUM_THREADS 8
 
+static void gf_resource_fread(void* out, size_t size, void* ud) { fread(out, size, 1, (FILE*)ud); }
+
+static void gf_resource_rread(void* out, size_t size, void* ud) { gf_file_read((gf_file_t*)ud, out, size); }
+
+static void gf_resource_read(gf_resource_t* resource, void* ud, void (*func)(void*, size_t, void*)) {
+	while(1) {
+		char		    filename[128];
+		unsigned char	    n;
+		size_t		    sz = 0;
+		int		    i;
+		gf_resource_entry_t e;
+		func(&filename, 128, ud);
+		if(filename[0] == 0) break;
+
+		for(i = 0; i < 4; i++) {
+			func(&n, 1, ud);
+			sz = sz << 8;
+			sz = sz | n;
+		}
+
+		e.key	 = (char*)&filename[0];
+		e.size	 = sz;
+		e.ogsize = 0;
+
+		e.cache	     = NULL;
+		e.compressed = malloc(sz);
+		func(e.compressed, sz, ud);
+		shputs(resource->entries, e);
+
+		gf_log_function(resource->engine, "%s: Compressed to %lu bytes", filename, (unsigned long)sz);
+	}
+}
+
 gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 	FILE*	       f;
 	gf_resource_t* resource = malloc(sizeof(*resource));
 	int	       is_dir	= 0;
 	char*	       p	= path == NULL ? NULL : gf_file_pick(engine, path);
+	gf_file_t*     file;
 #ifdef _WIN32
 	DWORD dw;
 #else
@@ -53,26 +87,22 @@ gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 	is_dir = 0;
 #ifdef _WIN32
 	dw = GetFileAttributes(p);
-	if(dw == INVALID_FILE_ATTRIBUTES) {
-		free(p);
-		gf_log_function(engine, "Failed to create resource", "");
-		gf_resource_destroy(resource);
-		return NULL;
-	}
-	is_dir = (dw & FILE_ATTRIBUTE_DIRECTORY) ? 1 : 0;
+	if(dw != INVALID_FILE_ATTRIBUTES) is_dir = (dw & FILE_ATTRIBUTE_DIRECTORY) ? 1 : 0;
 #else
-	if(stat(p, &s) != 0) {
-		free(p);
-		gf_log_function(engine, "Failed to create resource", "");
-		gf_resource_destroy(resource);
-		return NULL;
-	}
-	is_dir = S_ISDIR(s.st_mode) ? 1 : 0;
+	if(stat(p, &s) == 0) is_dir = S_ISDIR(s.st_mode) ? 1 : 0;
 #endif
 	if(is_dir) {
 		gf_log_function(engine, "Created resource", "");
 		resource->path = malloc(strlen(p) + 1);
 		strcpy(resource->path, p);
+		free(p);
+		return resource;
+	}
+
+	file = gf_file_open(engine, path, "r");
+	if(file != NULL) {
+		gf_resource_read(resource, file, gf_resource_rread);
+		gf_file_close(file);
 		free(p);
 		return resource;
 	}
@@ -87,32 +117,7 @@ gf_resource_t* gf_resource_create(gf_engine_t* engine, const char* path) {
 
 	gf_log_function(engine, "Created resource", "");
 
-	while(1) {
-		char		    filename[128];
-		unsigned char	    n;
-		size_t		    sz = 0;
-		int		    i;
-		gf_resource_entry_t e;
-		fread(&filename, 128, 1, f);
-		if(filename[0] == 0) break;
-
-		for(i = 0; i < 4; i++) {
-			fread(&n, 1, 1, f);
-			sz = sz << 8;
-			sz = sz | n;
-		}
-
-		e.key	 = (char*)&filename[0];
-		e.size	 = sz;
-		e.ogsize = 0;
-
-		e.cache	     = NULL;
-		e.compressed = malloc(sz);
-		fread(e.compressed, sz, 1, f);
-		shputs(resource->entries, e);
-
-		gf_log_function(engine, "%s: Compressed to %lu bytes", filename, (unsigned long)sz);
-	}
+	gf_resource_read(resource, f, gf_resource_fread);
 	fclose(f);
 	free(p);
 
