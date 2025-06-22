@@ -84,6 +84,15 @@ GF_EXPORT size_t gf_file_write(gf_file_t* fp, void* buffer, size_t size);
  */
 GF_EXPORT void gf_file_close(gf_file_t* fp);
 
+/**
+ * @~english
+ * @brief Combine strings based on the given seperator (explicit length version)
+ * @param length number of strings to join
+ * @param ... Strings to join
+ * @return Path
+ */
+GF_EXPORT char* gf_path_join(size_t length, ...);
+
 #ifdef __cplusplus
 }
 #endif
