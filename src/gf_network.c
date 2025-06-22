@@ -80,7 +80,7 @@ static int gf_network_socket(gf_engine_t* engine, const char* type, const char* 
 	gf_log_function(engine, "Binding to %s:%d", host, port);
 
 #ifdef _WIN32
-	if(fd == INVALID_SOCKET) net->fd = -1;
+	if(fd == INVALID_SOCKET) fd = -1;
 #endif
 	if(fd == -1) {
 		gf_log_function(engine, "Failed to create socket", "");
