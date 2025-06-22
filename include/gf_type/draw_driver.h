@@ -31,6 +31,7 @@ gf_draw_driver_texture_t;
 GF_DECLARE_TYPE(draw_driver, {
 	gf_engine_t* engine;
 	int	     npot;
+	int	     max_texture_size;
 });
 GF_DECLARE_TYPE(draw_driver_texture, {
 	gf_engine_t* engine;

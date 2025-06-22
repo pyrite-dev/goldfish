@@ -40,6 +40,8 @@ gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int w
 		w = width;
 		h = height;
 	}
+	if(w > draw->driver->max_texture_size) w = draw->driver->max_texture_size;
+	if(h > draw->driver->max_texture_size) h = draw->driver->max_texture_size;
 
 	d = malloc(w * h * 4);
 
@@ -93,6 +95,7 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	gf_draw_driver_t* draw_driver = malloc(sizeof(*draw_driver));
 	int		  i;
 	const char*	  str;
+	GLint		  maxsz;
 	char*		  renderer = (char*)glGetString(GL_RENDERER);
 	memset(draw_driver, 0, sizeof(*draw_driver));
 	draw_driver->engine = engine;
@@ -149,6 +152,9 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	} else {
 		gf_log_function(engine, "NPOT extension not available", "");
 	}
+	glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxsz);
+	draw_driver->max_texture_size = maxsz;
+	gf_log_function(engine, "Max texture size: %dx%d", draw_driver->max_texture_size, draw_driver->max_texture_size);
 
 	return draw_driver;
 }
