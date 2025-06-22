@@ -54,6 +54,12 @@ gf_network_t;
  *
  * @var gf_network::random_seed
  * @brief Random seed
+ *
+ * @var gf_network::clients
+ * @brief Connected clients
+ *
+ * @var gf_network::connected
+ * @brief Connected or not
  */
 GF_DECLARE_TYPE(network, {
 	gf_engine_t*	engine;
@@ -64,6 +70,8 @@ GF_DECLARE_TYPE(network, {
 	gf_uint8_t	private_key[X25519_KEY_SIZE];
 	gf_uint8_t	public_key[X25519_KEY_SIZE];
 	gf_uint8_t	random_seed[X25519_KEY_SIZE];
+	gf_network_t**	clients;
+	int		connected;
 });
 #else
 typedef void gf_network_t;

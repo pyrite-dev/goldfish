@@ -102,122 +102,161 @@ static int gf_network_socket(gf_engine_t* engine, const char* type, const char* 
 	return fd;
 }
 
+typedef struct state {
+	int	     len;
+	int	     first;
+	char**	     list;
+	char*	     buffer;
+	int	     brk;
+	ms_buffer_t* buf;
+	time_t	     began_at;
+	int	     good;
+	int	     server;
+} state_t;
+
 static gf_network_t* gf_network_secure(gf_engine_t* engine, ms_interface_t* net, int server) {
-	int	      len    = strlen("ClientHello") + 1 + 1 + 1 + 64 + 2;
-	int	      first  = 1;
-	char**	      list   = NULL;
-	char*	      buffer = malloc(1);
-	int	      brk    = 0;
-	ms_buffer_t*  buf;
-	time_t	      began_at;
-	int	      good = 0;
-	gf_network_t* r	   = malloc(sizeof(*r));
+	state_t*      state = malloc(sizeof(*state));
+	gf_network_t* r	    = malloc(sizeof(*r));
 	memset(r, 0, sizeof(*r));
-	r->engine = engine;
-	r->net	  = net;
-	r->fd	  = -1;
+	r->engine    = engine;
+	r->net	     = net;
+	r->fd	     = -1;
+	r->connected = 0;
+
+	state->len    = strlen("ClientHello") + 1 + 1 + 1 + 64 + 2;
+	state->first  = 1;
+	state->list   = NULL;
+	state->buffer = malloc(1);
+	state->brk    = 0;
+	state->good   = 0;
+	state->server = server;
+
+	r->state = state;
 
 	gf_network_key(r);
 
-	buffer[0] = 0;
+	state->buffer[0] = 0;
 
 	gf_log_function(engine, "GFSL handshaking", "");
 
-	began_at = time(NULL);
+	state->began_at = time(NULL);
 	if(!server) {
 		gf_log_function(engine, "Sent ClientHello", "");
-		buf = ms_wbuffer(net, len);
-		memcpy(buf->data, "ClientHello 1 ", len - 64 - 2);
-		gf_network_key_hex(((char*)buf->data) + (len - 64 - 2), r->public_key);
-		memcpy(((char*)buf->data) + (len - 2), "\r\n", 2);
+		state->buf = ms_wbuffer(net, state->len);
+		memcpy(state->buf->data, "ClientHello 1 ", state->len - 64 - 2);
+		gf_network_key_hex(((char*)state->buf->data) + (state->len - 64 - 2), r->public_key);
+		memcpy(((char*)state->buf->data) + (state->len - 2), "\r\n", 2);
 	} else {
-		first = 0;
-		buf   = ms_rbuffer(net, 1);
+		state->first = 0;
+		state->buf   = ms_rbuffer(net, 1);
 	}
-	while(1) {
+
+	return r;
+}
+
+static int gf_network_secure_step(gf_network_t* n) {
+	ms_interface_t* net   = n->net;
+	state_t*	state = n->state;
+	int		ret   = 0;
+	do {
 		int st = ms_step(net);
-		if((time(NULL) - began_at) >= 3) {
-			gf_log_function(engine, "Timeout", "");
-			brk = 1;
+		if((time(NULL) - state->began_at) >= 3) {
+			gf_log_function(n->engine, "Timeout", "");
+			state->brk = 1;
 		}
 		if(st != 0 || net->state >= MS_STATE_FAILED) {
-			brk = 1;
-		} else if(net->state == MS_STATE_AFTER_WRITE && good) {
+			state->brk = 1;
+		} else if(net->state == MS_STATE_AFTER_WRITE && state->good) {
+			ret = 1;
 			break;
-		} else if((net->state == MS_STATE_AFTER_WRITE && first) || (net->state == MS_STATE_AFTER_READ && !good)) {
-			first = 0;
-			buf   = ms_rbuffer(net, 1);
+		} else if((net->state == MS_STATE_AFTER_WRITE && state->first) || (net->state == MS_STATE_AFTER_READ && !state->good)) {
+			state->first = 0;
+			state->buf   = ms_rbuffer(net, 1);
 		} else if(net->state == MS_STATE_READ_COMPLETE) {
-			unsigned char c = *(unsigned char*)buf->data;
+			unsigned char c = *(unsigned char*)state->buf->data;
 			if(c == '\n') {
 				int i;
 				int incr = 0;
-				int len	 = strlen(buffer);
+				int len	 = strlen(state->buffer);
 				for(i = 0; i <= len; i++) {
-					if(buffer[i] == ' ' || i == len) {
-						char* arg = buffer + incr;
-						buffer[i] = 0;
-						arrput(list, arg);
+					if(state->buffer[i] == ' ' || i == len) {
+						char* arg	 = state->buffer + incr;
+						state->buffer[i] = 0;
+						if(strlen(arg) > 0) {
+							arrput(state->list, arg);
+						}
 						incr = i + 1;
 						if(i == len) break;
 					}
 				}
 
-				if(list != NULL && arrlen(list) > 0) {
-					if(strcmp(list[0], server ? "ClientHello" : "ServerHello") == 0 && arrlen(list) == 3 && strcmp(list[1], "1") == 0 && strlen(list[2]) == 64) {
+				if(state->list != NULL && arrlen(state->list) > 0) {
+					if(strcmp(state->list[0], state->server ? "ClientHello" : "ServerHello") == 0 && arrlen(state->list) == 3 && strcmp(state->list[1], "1") == 0 && strlen(state->list[2]) == 64) {
 						gf_uint8_t their_public[X25519_KEY_SIZE];
-						gf_log_function(engine, "Got %s", list[0]);
+						gf_log_function(n->engine, "Got %s", state->list[0]);
 						for(i = 0; i < X25519_KEY_SIZE; i++) {
-							their_public[i] = (gf_network_hex(list[2][i * 2 + 0]) << 4) | gf_network_hex(list[2][i * 2 + 1]);
+							their_public[i] = (gf_network_hex(state->list[2][i * 2 + 0]) << 4) | gf_network_hex(state->list[2][i * 2 + 1]);
 						}
-						if(server) {
+						if(state->server) {
 							int	     len2 = strlen("ServerHello") + 1 + 1 + 1 + 64 + 2;
 							ms_buffer_t* wbuf = ms_wbuffer(net, len2);
 							memcpy(wbuf->data, "ServerHello 1 ", len2 - 64 - 2);
-							gf_network_key_hex(((char*)wbuf->data) + (len2 - 64 - 2), r->public_key);
+							gf_network_key_hex(((char*)wbuf->data) + (len2 - 64 - 2), n->public_key);
 							memcpy(((char*)wbuf->data) + (len2 - 2), "\r\n", 2);
 						} else {
 							int	     len2 = strlen("ClientAccept") + 2;
 							ms_buffer_t* wbuf = ms_wbuffer(net, len2);
 							memcpy(wbuf->data, "ClientAccept\r\n", len2);
-							good = 1;
-							continue;
+							state->good = 1;
+							gf_log_function(n->engine, "Sent ClientAccept", "");
+							break;
 						}
-						compact_x25519_shared(r->shared_secret, r->private_key, their_public);
-					} else if(server && strcmp(list[0], "ClientAccept") == 0 && arrlen(list) == 1) {
-						gf_log_function(engine, "Got %s", list[0]);
+						compact_x25519_shared(n->shared_secret, n->private_key, their_public);
+					} else if(state->server && strcmp(state->list[0], "ClientAccept") == 0 && arrlen(state->list) == 1) {
+						gf_log_function(n->engine, "Got %s", state->list[0]);
+						ret = 1;
 						break;
 					} else {
-						brk = 1;
+						printf("%d\n", arrlen(state->list));
+						state->brk = 1;
 					}
-					arrfree(list);
-					list = NULL;
+					arrfree(state->list);
+					state->list = NULL;
 				} else {
-					brk = 1;
+					state->brk = 1;
 				}
-				free(buffer);
-				buffer	  = malloc(1);
-				buffer[0] = 0;
+				free(state->buffer);
+				state->buffer	 = malloc(1);
+				state->buffer[0] = 0;
 			} else if(c != '\r') {
-				char* old = buffer;
-				buffer	  = malloc(strlen(old) + 2);
-				strcpy(buffer, old);
-				buffer[strlen(old)]	= c;
-				buffer[strlen(old) + 1] = 0;
+				char* old     = state->buffer;
+				state->buffer = malloc(strlen(old) + 2);
+				strcpy(state->buffer, old);
+				state->buffer[strlen(old)]     = c;
+				state->buffer[strlen(old) + 1] = 0;
 				free(old);
 			}
 		}
-		if(brk) break;
-	}
-	free(buffer);
-	if(list != NULL) arrfree(list);
-	if(brk) {
-		gf_log_function(engine, "Handshake failed", "");
-	} else {
-		gf_log_function(engine, "Handshake success", "");
+		if(state->brk) {
+			ret = -1;
+			break;
+		}
+	} while(0);
+
+	if(ret != 0) {
+		free(state->buffer);
+		if(state->list != NULL) arrfree(state->list);
+		if(state->brk) {
+			gf_log_function(n->engine, "Handshake failed", "");
+		} else {
+			gf_log_function(n->engine, "Handshake success", "");
+			n->connected = 1;
+		}
+		free(state);
+		n->state = NULL;
 	}
 
-	return r;
+	return ret;
 }
 
 gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int port) {
@@ -244,6 +283,10 @@ gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int p
 	gf_log_function(engine, "Connected", "");
 
 	r = gf_network_secure(engine, net, 0);
+	if(r != NULL) {
+		int s;
+		while((s = gf_network_secure_step(r)) == 0);
+	}
 	return r;
 }
 
@@ -288,6 +331,20 @@ int gf_network_secure_server_step(gf_network_t* net) {
 		ms_non_block(fd);
 		nint = ms_user(fd);
 		cn   = gf_network_secure(net->engine, nint, 1);
+		arrput(net->clients, cn);
+	} else {
+		int i;
+		for(i = 0; i < arrlen(net->clients); i++) {
+			if(net->clients[i]->connected) {
+			} else {
+				int s = gf_network_secure_step(net->clients[i]);
+				if(s == -1) {
+					arrdel(net->clients, i);
+					i--;
+					continue;
+				}
+			}
+		}
 	}
 	return 0;
 }
@@ -295,6 +352,19 @@ int gf_network_secure_server_step(gf_network_t* net) {
 void gf_network_destroy(gf_network_t* net) {
 	if(net->net != NULL) ms_destroy(net->net);
 	if(net->fd != -1) gf_network_close(net->fd);
+	if(net->state != NULL) {
+		state_t* state = net->state;
+		free(state->buffer);
+		if(state->list != NULL) arrfree(state->list);
+		free(state);
+	}
+	if(net->clients != NULL) {
+		int i;
+		for(i = 0; i < arrlen(net->clients); i++) {
+			gf_network_destroy(net->clients[i]);
+		}
+		arrfree(net->clients);
+	}
 	gf_log_function(net->engine, "Destroyed network interface", "");
 	free(net);
 }
