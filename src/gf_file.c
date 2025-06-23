@@ -185,18 +185,6 @@ void gf_file_close(gf_file_t* fp) {
 #endif
 #endif
 
-// custom strlen that only counts up to 256 bytes before giving up.
-size_t _strlen(const char* str) {
-	size_t size;
-	int    idx = 0;
-
-	while(str[idx++] != '\0' && size < 256) {
-		size++;
-	}
-
-	return size;
-}
-
 char* gf_path_join(size_t length, ...) {
 	long	size = 0;
 	int	idx  = 0;
@@ -206,7 +194,7 @@ char* gf_path_join(size_t length, ...) {
 	// go through the args once to get the proper length
 	va_start(va, length);
 	for(idx = 0; idx < length; idx++) {
-		size += _strlen(va_arg(va, char*)) + 1; // +1 for thepath seperator
+		size += strlen(va_arg(va, char*)) + 1; // +1 for thepath seperator
 	}
 	va_end(va);
 
