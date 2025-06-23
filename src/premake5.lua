@@ -50,6 +50,10 @@ end
 	targetdir("../lib/%{cfg.buildcfg}/%{cfg.platform}")
 	objdir("../obj")
 	targetname("goldfish")
+	filter("platforms:ClassicMacOS")
+		defines({
+			"LUA_32BITS=1"
+		})
 	includedirs({
 		"../include",
 		"../external/lua",

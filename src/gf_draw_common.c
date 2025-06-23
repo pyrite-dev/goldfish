@@ -375,6 +375,9 @@ void gf_draw_time(gf_draw_time_t* dtime) {
 		/* system has no hpc hw support */
 		*dtime = timeGetTime();
 	}
+#elif defined(CLASSIC_MAC_OS)
+	PrimeTime(dtime);
+	InsTime(dtime);
 #else
 	gettimeofday(dtime, NULL);
 #endif
@@ -388,6 +391,8 @@ double gf_draw_time_number(gf_draw_time_t* dtime) {
 #else
 #ifdef _WIN32
 	r += (double)(*dtime);
+#elif defined(CLASSIC_MAC_OS)
+	// todo: ????
 #else
 	r += (double)dtime->tv_sec * 1000.0;
 	r += (double)dtime->tv_usec / 1000.0;

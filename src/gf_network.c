@@ -1,3 +1,5 @@
+#ifndef CLASSIC_MAC_OS
+
 #define GF_EXPOSE_NETWORK
 
 #include <gf_pre.h>
@@ -388,3 +390,5 @@ void gf_network_destroy(gf_network_t* net) {
 	gf_log_function(net->engine, "Destroyed network interface", "");
 	free(net);
 }
+
+#endif

@@ -54,6 +54,8 @@ void gf_version_get(gf_version_t* version) {
 	strcpy(version->backend, "GDI");
 #elif defined(GF_USE_RGFW)
 	strcpy(version->backend, "RGFW");
+#elif defined(GF_USE_AGL)
+	strcpy(version->backend, "AGL");
 #endif
 #endif
 

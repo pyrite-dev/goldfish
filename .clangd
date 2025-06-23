@@ -6,6 +6,7 @@ CompileFlags: # Tweak the parse settings, example directory given to show format
     - "-I./external/osmesa/include" 
     - "-I./external/ode/include" 
     - "-I./external/miniaudio" 
-    - "-I./external/OpernGLOnMacOS9" 
+    - "-I./external/OpenGLOnMacOS9/include" 
+    - "-I./external/InterfacesAndLibraries/CIncludes" 
     - "-I./external/lua" 
     - "-I./external/jar" 

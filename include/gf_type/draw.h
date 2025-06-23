@@ -19,6 +19,8 @@ typedef clock_t gf_draw_time_t;
 #include <windows.h>
 
 typedef DWORD gf_draw_time_t;
+#elif defined(CLASSIC_MAC_OS)
+typedef QElem gf_draw_time_t;
 #else
 #include <sys/time.h>
 

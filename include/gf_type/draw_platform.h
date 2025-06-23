@@ -79,6 +79,13 @@ GF_DECLARE_TYPE(draw_platform, {
 	gf_engine_t* engine;
 	RGFW_window* window;
 });
+#elif defined(GF_USE_AGL)
+GF_DECLARE_TYPE(draw_platform, {
+	gf_engine_t*   engine;
+	Rect	       win_rect;
+	WindowPtr      window;
+	AGLPixelFormat agl_pixel_format;
+});
 #endif
 #else
 /**

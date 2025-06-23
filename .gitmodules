@@ -29,3 +29,6 @@
 [submodule "external/crypto"]
 	path = external/crypto
 	url = ../crypto
+[submodule "external/InterfacesAndLibraries"]
+	path = external/InterfacesAndLibraries
+	url = https://github.com/PowerMacTools/InterfacesAndLibraries

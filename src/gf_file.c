@@ -175,7 +175,7 @@ void gf_file_close(gf_file_t* fp) {
 #define PATH_SEPERATOR "\\"
 #else
 #ifdef __APPLE__
-#ifdef __RETRO68__
+#ifdef CLASSIC_MAC_OS
 #define PATH_SEPERATOR ":"
 #else
 #define PATH_SEPERATOR "/"

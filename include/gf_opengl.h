@@ -26,7 +26,13 @@
 #include <windows.h>
 #endif
 
-#if defined(GF_USE_GLOAD) && defined(GF_TYPE_NATIVE)
+#if defined(GF_USE_AGL)
+#include <agl.h>
+#include <gl.h>
+// agl was designed by hitler and forces us to have this global with this exact name and it has to be defined before we include this :)
+extern AGLContext agl_ctx;
+#include <aglMacro.h>
+#elif defined(GF_USE_GLOAD) && defined(GF_TYPE_NATIVE)
 #ifdef _WIN32
 #undef APIENTRY
 #endif
@@ -50,6 +56,8 @@
 #elif defined(GF_USE_GDI)
 /* Should require nothing... for now? */
 #endif
+
+
 #endif
 
 #endif

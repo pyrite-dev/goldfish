@@ -1,5 +1,5 @@
 require("gmake")
-if premake.modules.gmake.cpp.pchRules and not(premake.modules.gmake.patched_resource) then
+if premake.modules.gmake.cpp.pchRules and not (premake.modules.gmake.patched_resource) then
 	premake.modules.gmake.patched_resource = true
 	premake.override(premake.modules.gmake.cpp, "pchRules", function(base, cfg, toolset)
 		base(cfg, toolset)
@@ -13,11 +13,11 @@ gf_sound_backends = {
 	},
 	alsa = {
 		name = "ALSA",
-		links = {"asound"}
+		links = { "asound" }
 	},
 	oss = {
 		name = "OSS",
-		links = {"ossaudio"}
+		links = { "ossaudio" }
 		-- I don't know how this works on non-NetBSD systems, I am sorry
 	},
 	sun = {
@@ -46,8 +46,8 @@ gf_backends = {
 		types = {
 			native = {
 				name = "Native",
-				windows = {"opengl32"},
-				unix = {"GL"}
+				windows = { "opengl32" },
+				unix = { "GL" }
 			},
 			osmesa = {
 				name = "OSMesa",
@@ -89,6 +89,7 @@ gf_backends = {
 				name = "agl",
 				includedirs = {
 					"external/OpenGLOnMacOS9/include",
+					"external/InterfacesAndLibraries/CIncludes",
 					"misc/classic_mac_os_hacks"
 				},
 				links = {
@@ -128,10 +129,10 @@ gf_audio_backends = {
 }
 
 gf_l = {}
-for k,v in pairs(gf_backends) do
+for k, v in pairs(gf_backends) do
 	allowed = {}
-	for k2,v2 in pairs(v["backends"]) do
-		table.insert(allowed, {k2, v2["name"]})
+	for k2, v2 in pairs(v["backends"]) do
+		table.insert(allowed, { k2, v2["name"] })
 	end
 	newoption({
 		trigger = k,
@@ -143,8 +144,8 @@ for k,v in pairs(gf_backends) do
 	})
 
 	allowed = {}
-	for k2,v2 in pairs(v["types"]) do
-		table.insert(allowed, {k2, v2["name"]})
+	for k2, v2 in pairs(v["types"]) do
+		table.insert(allowed, { k2, v2["name"] })
 	end
 	newoption({
 		trigger = k .. "-type",
@@ -155,13 +156,13 @@ for k,v in pairs(gf_backends) do
 		default = v["default_type"]
 	})
 
-	table.insert(gf_l, {k, v["name"]})
+	table.insert(gf_l, { k, v["name"] })
 end
 
 
 gf_aud = {}
-for k,v in pairs(gf_audio_backends) do
-	table.insert(gf_aud, {k, v})
+for k, v in pairs(gf_audio_backends) do
+	table.insert(gf_aud, { k, v })
 end
 
 newoption({
@@ -174,8 +175,8 @@ newoption({
 })
 
 gf_l = {}
-for k,v in pairs(gf_sound_backends) do
-	table.insert(gf_l, {k, v["name"]})
+for k, v in pairs(gf_sound_backends) do
+	table.insert(gf_l, { k, v["name"] })
 end
 newoption({
 	trigger = "sound",
@@ -191,8 +192,8 @@ newoption({
 	value = "type",
 	description = "Choose an engine type",
 	allowed = {
-		{"static", "Static library"},
-		{"dynamic", "Dynamic library"}
+		{ "static",  "Static library" },
+		{ "dynamic", "Dynamic library" }
 	},
 	category = "Engine",
 	default = "static"
@@ -203,8 +204,8 @@ newoption({
 	value = "type",
 	description = "Choose ODE to be used",
 	allowed = {
-		{"compile", "Compiled and integrated"},
-		{"system", "System"}
+		{ "compile", "Compiled and integrated" },
+		{ "system",  "System" }
 	},
 	category = "Engine",
 	default = "compile"
@@ -215,8 +216,8 @@ newoption({
 	value = "type",
 	description = "Choose zlib to be used",
 	allowed = {
-		{"compile", "Compiled and integrated"},
-		{"system", "System"}
+		{ "compile", "Compiled and integrated" },
+		{ "system",  "System" }
 	},
 	category = "Engine",
 	default = "compile"
@@ -227,8 +228,8 @@ newoption({
 	value = "type",
 	description = "Choose PCRE to be used",
 	allowed = {
-		{"compile", "Compiled and integrated"},
-		{"system", "System"}
+		{ "compile", "Compiled and integrated" },
+		{ "system",  "System" }
 	},
 	category = "Engine",
 	default = "compile"
@@ -239,8 +240,8 @@ newoption({
 	value = "toggle",
 	description = "Compile server",
 	allowed = {
-		{"yes", "Enable"},
-		{"no", "Disable"}
+		{ "yes", "Enable" },
+		{ "no",  "Disable" }
 	},
 	category = "Engine",
 	default = "yes"
@@ -249,34 +250,34 @@ newoption({
 
 gf_defs = {}
 function gf_adddef(x)
-	for _,v in ipairs(x) do
+	for _, v in ipairs(x) do
 		table.insert(gf_defs, v)
 	end
 end
-	
+
 function gf_default_stuffs()
 	local brk = false
 	filter({})
-if not(_OPTIONS["ode"] == "system") then
-	defines({
-		"HAVE_STDARG_H=1",
-		"dIDEDOUBLE",
-		"CCD_IDEDOUBLE"
-	})
-else
-	defines({
-		"HAVE_STDARG_H=1"
-	})
-end
+	if not (_OPTIONS["ode"] == "system") then
+		defines({
+			"HAVE_STDARG_H=1",
+			"dIDEDOUBLE",
+			"CCD_IDEDOUBLE"
+		})
+	else
+		defines({
+			"HAVE_STDARG_H=1"
+		})
+	end
 	filter("system:not windows")
-		defines({
-			"HAVE_UNISTD_H=1"
-		})
+	defines({
+		"HAVE_UNISTD_H=1"
+	})
 	filter("system:windows")
-		defines({
-			"WIN32"
-		})
-	for k,v in pairs(gf_sound_backends) do
+	defines({
+		"WIN32"
+	})
+	for k, v in pairs(gf_sound_backends) do
 		if _OPTIONS["sound"] == k then
 			gf_adddef({
 				"GF_SND_" .. string.upper(k)
@@ -286,9 +287,9 @@ end
 	end
 
 	brk = false
-	for k,v in pairs(gf_backends) do
-		for k2,v2 in pairs(v["backends"]) do
-			for k3,v3 in pairs(v["types"]) do
+	for k, v in pairs(gf_backends) do
+		for k2, v2 in pairs(v["backends"]) do
+			for k3, v3 in pairs(v["types"]) do
 				if (_OPTIONS["backend"] == k) and (_OPTIONS[k] == k2) and (_OPTIONS[k .. "-type"] == k3) then
 					gf_adddef({
 						"GF_DRV_" .. string.upper(k),
@@ -317,7 +318,7 @@ function gf_generateheader(headerfile, placeholder, precstr)
 	end
 	local outfile = io.open(headerfile, "w")
 	for i in io.lines(headerfile .. ".in") do
-		local j,_ = string.gsub(i, placeholder, precstr)
+		local j, _ = string.gsub(i, placeholder, precstr)
 		outfile:write(j .. "\n")
 	end
 	outfile:close()
@@ -329,90 +330,90 @@ function gf_link_stuffs(cond)
 		"platforms:Native",
 		"system:not windows"
 	})
-		includedirs({
-			"/usr/local/include",
-			"/usr/X11R6/include",
-			"/usr/X11R7/include",
-			"/usr/X11/include"
-		})
-		libdirs({
-			"/usr/local/lib",
-			"/usr/X11R6/lib",
-			"/usr/X11R7/lib",
-			"/usr/X11/lib"
-		})
+	includedirs({
+		"/usr/local/include",
+		"/usr/X11R6/include",
+		"/usr/X11R7/include",
+		"/usr/X11/include"
+	})
+	libdirs({
+		"/usr/local/lib",
+		"/usr/X11R6/lib",
+		"/usr/X11R7/lib",
+		"/usr/X11/lib"
+	})
 	filter({
 		"platforms:Native",
 		"system:not windows",
 		"toolset:gcc or toolset:clang"
 	})
-		linkoptions({
-			"-Wl,-R/usr/local/lib",
-			"-Wl,-R/usr/X11R6/lib",
-			"-Wl,-R/usr/X11R7/lib",
-			"-Wl,-R/usr/X11/lib"
-		})
+	linkoptions({
+		"-Wl,-R/usr/local/lib",
+		"-Wl,-R/usr/X11R6/lib",
+		"-Wl,-R/usr/X11R7/lib",
+		"-Wl,-R/usr/X11/lib"
+	})
 
 	filter({
 		"platforms:Native",
 		"system:bsd"
 	})
-		includedirs({
-			"/usr/pkg/include"
-		})
-		libdirs({
-			"/usr/pkg/lib"
-		})
+	includedirs({
+		"/usr/pkg/include"
+	})
+	libdirs({
+		"/usr/pkg/lib"
+	})
 	filter({
 		"platforms:Native",
 		"system:bsd",
 		"toolset:gcc or toolset:clang"
 	})
-		linkoptions({
-			"-Wl,-R/usr/pkg/lib"
-		})
+	linkoptions({
+		"-Wl,-R/usr/pkg/lib"
+	})
 
 	filter({
 		"toolset:gcc or toolset:clang",
 		"system:windows",
 		cond
 	})
-		linkoptions({
-			"-static-libgcc",
-			"-static-libstdc++"
-		})
-		links({
-			"stdc++:static"
-		})
+	linkoptions({
+		"-static-libgcc",
+		"-static-libstdc++"
+	})
+	links({
+		"stdc++:static"
+	})
 	filter({
 		"toolset:gcc or toolset:clang",
 		"system:not windows",
 		cond
 	})
-		links({
-			"stdc++"
-		})
-	for k,v in pairs(gf_sound_backends) do
+	links({
+		"stdc++"
+	})
+	for k, v in pairs(gf_sound_backends) do
 		filter({
 			"options:sound=" .. k
 		})
-			if v.links then
-				links(v.links)
-			end
+		if v.links then
+			links(v.links)
+		end
 	end
-	for k,v in pairs(gf_sound_backends) do
+	for k, v in pairs(gf_sound_backends) do
 		filter({
 			"options:sound=" .. k,
 			"platforms:Native"
 		})
-			if v.config then
-				buildoptions("`" .. v.config .. "-config --cflags`")
-				linkoptions("`" .. v.config .. "-config --libs`")
-			end
+		if v.config then
+			buildoptions("`" .. v.config .. "-config --cflags`")
+			linkoptions("`" .. v.config .. "-config --libs`")
+		end
 	end
-	for k,v in pairs(gf_backends) do
-		for k2,v2 in pairs(v["backends"]) do
-			for k3,v3 in pairs(v["types"]) do
+	for k, v in pairs(gf_backends) do
+		for k2, v2 in pairs(v["backends"]) do
+			for k3, v3 in pairs(v["types"]) do
 				filter({
 					"options:backend=" .. k,
 					"options:" .. k .. "=" .. k2,
@@ -420,18 +421,18 @@ function gf_link_stuffs(cond)
 					"system:windows",
 					cond
 				})
-					if v2.links then
-						links(v2.links)
-					end
-					if v2.windows then
-						links(v2.windows)
-					end
-					if v3.links then
-						links(v3.links)
-					end
-					if v3.windows then
-						links(v3.windows)
-					end
+				if v2.links then
+					links(v2.links)
+				end
+				if v2.windows then
+					links(v2.windows)
+				end
+				if v3.links then
+					links(v3.links)
+				end
+				if v3.windows then
+					links(v3.windows)
+				end
 				filter({
 					"options:backend=" .. k,
 					"options:" .. k .. "=" .. k2,
@@ -439,18 +440,18 @@ function gf_link_stuffs(cond)
 					"system:not windows",
 					cond
 				})
-					if v2.links then
-						links(v2.links)
-					end
-					if v2.unix then
-						links(v2.unix)
-					end
-					if v3.links then
-						links(v3.links)
-					end
-					if v3.unix then
-						links(v3.unix)
-					end
+				if v2.links then
+					links(v2.links)
+				end
+				if v2.unix then
+					links(v2.unix)
+				end
+				if v3.links then
+					links(v3.links)
+				end
+				if v3.unix then
+					links(v3.unix)
+				end
 			end
 		end
 	end
@@ -458,44 +459,44 @@ function gf_link_stuffs(cond)
 		"system:windows",
 		cond
 	})
-		links({
-			"user32",
-			"wsock32",
-			"ole32",
-			"winmm",
-			"userenv"
-		})
-	if (_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
+	links({
+		"user32",
+		"wsock32",
+		"ole32",
+		"winmm",
+		"userenv"
+	})
+	if (_OPTIONS["ode"] == "system") and not (_OPTIONS["server"] == "no") then
 		filter({
 			cond
 		})
-			links({
-				"ode"
-			})
+		links({
+			"ode"
+		})
 	end
 	if _OPTIONS["zlib"] == "system" then
 		filter({
 			cond
 		})
-			links({
-				"z"
-			})
+		links({
+			"z"
+		})
 	end
 	if _OPTIONS["pcre"] == "system" then
 		filter({
 			cond
 		})
-			links({
-				"pcre"
-			})
+		links({
+			"pcre"
+		})
 	end
 	filter({
 		"system:not windows",
 		cond
 	})
-		links({
-			"m",
-		})
+	links({
+		"m",
+	})
 	if _OPTIONS["opengl"] ~= "agl" then
 		links({
 			"pthread"
@@ -514,8 +515,8 @@ function gf_msvc_filters()
 	end)
 	filter({})
 	characterset("MBCS")
-	for k,rt in ipairs({"Debug", "Release"}) do
-	filter({
+	for k, rt in ipairs({ "Debug", "Release" }) do
+		filter({
 			"options:cc=msc",
 			"options:engine=dynamic",
 			"configurations:" .. rt
@@ -532,7 +533,7 @@ function gf_msvc_filters()
 			"/wd4293",
 			"/wd4552"
 		})
-	filter({
+		filter({
 			"options:cc=msc",
 			"options:engine=static",
 			"configurations:" .. rt
@@ -558,7 +559,8 @@ if _OPTIONS["opengl"] ~= "agl" then
 end
 include("src")
 
-if _ACTION and (_ACTION ~= "clean") and not(_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then
+
+if _ACTION and (_ACTION ~= "clean") and not (_OPTIONS["ode"] == "system") and not (_OPTIONS["server"] == "no") then
 	local text = ""
 	text = text .. "#ifndef _ODE_CONFIG_H_\n"
 	text = text .. "#define _ODE_CONFIG_H_\n"
@@ -566,7 +568,7 @@ if _ACTION and (_ACTION ~= "clean") and not(_OPTIONS["ode"] == "system") and not
 	text = text .. "#define dTRIMESH_GIMPACT 1\n"
 	if _OPTIONS["opengl"] ~= "agl" then
 		text = text .. "#define dOU_ENABLED 1\n"
-		text = text .. "#define dATOMICS_ENABLED 1\n"
+		text = text .. "#define dATOMICS_ENABLED 0\n"
 		text = text .. "#define dTLS_ENABLED 1\n"
 		text = text .. "#define dBUILTIN_THREADING_IMPL_ENABLED 1\n"
 	else
@@ -579,7 +581,7 @@ if _ACTION and (_ACTION ~= "clean") and not(_OPTIONS["ode"] == "system") and not
 	text = text .. "#include \"typedefs.h\"\n"
 	text = text .. "#endif\n"
 
-	if not(os.isfile("external/ode/ode/src/config.h")) then
+	if not (os.isfile("external/ode/ode/src/config.h")) then
 		local outfile = io.open("external/ode/ode/src/config.h", "w")
 		outfile:write(text)
 		outfile:close()
@@ -604,17 +606,23 @@ outfile:write("#define GF_THREAD_WIN32 1\n")
 outfile:write("#else\n")
 outfile:write("#define GF_THREAD_POSIX 1\n")
 outfile:write("#endif\n")
-for _,v in ipairs(gf_defs) do
+for _, v in ipairs(gf_defs) do
 	outfile:write("#define " .. v .. " 1\n")
 end
 outfile:write("#endif\n")
 outfile:close()
 
 if (_OPTIONS and _OPTIONS["opengl"] == "rgfw-wayland") and (_ACTION and _ACTION ~= "clean") then
-        os.execute("wayland-scanner client-header /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml external/rgfw/xdg-shell.h")
-        os.execute("wayland-scanner public-code /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml external/rgfw/xdg-shell.c")
-        os.execute("wayland-scanner client-header /usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml external/rgfw/xdg-decoration-unstable-v1.h")
-        os.execute("wayland-scanner public-code /usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml external/rgfw/xdg-decoration-unstable-v1.c")
-        os.execute("wayland-scanner client-header /usr/share/wayland-protocols/unstable/relative-pointer/relative-pointer-unstable-v1.xml external/rgfw/relative-pointer-unstable-v1-client-protocol.h")
-        os.execute("wayland-scanner client-header /usr/share/wayland-protocols/unstable/relative-pointer/relative-pointer-unstable-v1.xml external/rgfw/relative-pointer-unstable-v1-client-protocol.c")
+	os.execute(
+		"wayland-scanner client-header /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml external/rgfw/xdg-shell.h")
+	os.execute(
+		"wayland-scanner public-code /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml external/rgfw/xdg-shell.c")
+	os.execute(
+		"wayland-scanner client-header /usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml external/rgfw/xdg-decoration-unstable-v1.h")
+	os.execute(
+		"wayland-scanner public-code /usr/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml external/rgfw/xdg-decoration-unstable-v1.c")
+	os.execute(
+		"wayland-scanner client-header /usr/share/wayland-protocols/unstable/relative-pointer/relative-pointer-unstable-v1.xml external/rgfw/relative-pointer-unstable-v1-client-protocol.h")
+	os.execute(
+		"wayland-scanner client-header /usr/share/wayland-protocols/unstable/relative-pointer/relative-pointer-unstable-v1.xml external/rgfw/relative-pointer-unstable-v1-client-protocol.c")
 end

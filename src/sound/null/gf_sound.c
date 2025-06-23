@@ -40,7 +40,9 @@ void gf_sound_null_thread(void* ptr) {
 	int	       interval = 60;
 	int	       len	= sound->sample_rate * 2 * 2 * interval / 1000;
 #ifndef _WIN32
+#ifndef CLASSIC_MAC_OS
 	struct timespec ts;
+#endif
 #endif
 
 	data = malloc(len);
@@ -48,6 +50,8 @@ void gf_sound_null_thread(void* ptr) {
 		gf_audio_callback(sound->audio, data, len / 2 / 2);
 #ifdef _WIN32
 		Sleep(interval);
+#elif defined(CLASSIC_MAC_OS)
+		// todo
 #else
 		ts.tv_sec  = 0;
 		ts.tv_nsec = 1000000 * interval;
