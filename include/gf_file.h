@@ -91,7 +91,7 @@ GF_EXPORT void gf_file_close(gf_file_t* fp);
  * @param ... Strings to join
  * @return Path
  */
-GF_EXPORT char* gf_path_join(size_t length, ...);
+GF_EXPORT char* gf_file_path_join(size_t length, ...);
 
 #ifdef __cplusplus
 }

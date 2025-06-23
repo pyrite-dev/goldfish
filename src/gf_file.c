@@ -185,7 +185,7 @@ void gf_file_close(gf_file_t* fp) {
 #endif
 #endif
 
-char* gf_path_join(size_t length, ...) {
+char* gf_file_path_join(size_t length, ...) {
 	long	size = 0;
 	int	idx  = 0;
 	char*	st   = NULL;
