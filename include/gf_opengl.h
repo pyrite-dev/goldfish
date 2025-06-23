@@ -8,20 +8,6 @@
 #ifndef __GF_OPENGL_H__
 #define __GF_OPENGL_H__
 
-#if defined(GF_USE_RGFW)
-#if defined(GF_TYPE_OSMESA)
-#define RGFW_OSMESA
-#endif
-
-#define RGFW_USE_XDL
-#define RGFWDEF extern
-#ifdef GF_USE_GLOAD
-#define RGFW_NO_GL_HEADER
-#include <gf_gload.h>
-#endif
-
-#include <RGFW.h>
-#else
 #ifdef _WIN32
 #include <windows.h>
 #endif
@@ -49,7 +35,9 @@
 #endif
 #elif defined(GF_USE_GDI)
 /* Should require nothing... for now? */
-#endif
+#elif defined(GF_USE_SDL2)
+#include <SDL.h>
+#include <SDL_opengl.h>
 #endif
 
 #endif

@@ -52,8 +52,8 @@ void gf_version_get(gf_version_t* version) {
 	strcpy(version->backend, "X11");
 #elif defined(GF_USE_GDI)
 	strcpy(version->backend, "GDI");
-#elif defined(GF_USE_RGFW)
-	strcpy(version->backend, "RGFW");
+#elif defined(GF_USE_SDL2)
+	strcpy(version->backend, "SDL2");
 #endif
 #endif
 

@@ -74,10 +74,11 @@ GF_DECLARE_TYPE(draw_platform, {
 	HCURSOR	       cursor;
 });
 #endif
-#elif defined(GF_USE_RGFW)
+#elif defined(GF_USE_SDL2)
 GF_DECLARE_TYPE(draw_platform, {
-	gf_engine_t* engine;
-	RGFW_window* window;
+	gf_engine_t*  engine;
+	SDL_Window*   window;
+	SDL_GLContext context;
 });
 #endif
 #else

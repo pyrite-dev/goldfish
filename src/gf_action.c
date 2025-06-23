@@ -40,7 +40,7 @@ void gf_action_process(gf_engine_t* engine, gf_input_t* input) {
 
 	/* Handle release command */
 	if(rkey != -1) {
-		const char* cmd = gf_input_key_binding(input, pkey);
+		const char* cmd = gf_input_key_binding(input, rkey);
 		if(cmd != NULL && cmd[0] == '+') {
 			char*  cmd2 = malloc(strlen(cmd) + 1);
 			char** list;

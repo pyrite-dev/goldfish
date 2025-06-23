@@ -41,7 +41,7 @@ gf_sound_backends = {
 gf_backends = {
 	opengl = {
 		name = "OpenGL",
-		default_backend = "rgfw",
+		default_backend = "sdl2",
 		default_type = "native",
 		types = {
 			native = {
@@ -79,11 +79,9 @@ gf_backends = {
 					"gdi32"
 				}
 			},
-			rgfw = {
-				name = "RGFW",
-				includedirs = {
-					"external/rgfw"
-				}
+			sdl2 = {
+				name = "SDL2",
+				config = "sdl2"
 			},
 			agl = {
 				name = "agl",
@@ -413,6 +411,21 @@ function gf_link_stuffs(cond)
 	for k,v in pairs(gf_backends) do
 		for k2,v2 in pairs(v["backends"]) do
 			for k3,v3 in pairs(v["types"]) do
+				filter({
+					"options:backend=" .. k,
+					"options:" .. k .. "=" .. k2,
+					"options:" .. k .. "-type=" .. k3,
+					"platforms:Native",
+					cond
+				})
+					if v2.config then
+						buildoptions("`" .. v2.config .. "-config --cflags`")
+						linkoptions("`" .. v2.config .. "-config --libs`")
+					end
+					if v3.config then
+						buildoptions("`" .. v3.config .. "-config --cflags`")
+						linkoptions("`" .. v3.config .. "-config --libs`")
+					end
 				filter({
 					"options:backend=" .. k,
 					"options:" .. k .. "=" .. k2,
