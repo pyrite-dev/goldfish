@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #define GF_EXPOSE_FILE
 #define GF_EXPOSE_CORE
 
@@ -21,6 +20,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdarg.h>
 #ifndef _WIN32
 #include <unistd.h>
 #endif
@@ -191,10 +191,9 @@ char* gf_path_join(size_t length, ...) {
 	char*	st   = NULL;
 	va_list va;
 
-	// go through the args once to get the proper length
 	va_start(va, length);
 	for(idx = 0; idx < length; idx++) {
-		size += strlen(va_arg(va, char*)) + 1; // +1 for thepath seperator
+		size += strlen(va_arg(va, char*)) + 1; /* +1 for the path seperator */
 	}
 	va_end(va);
 
