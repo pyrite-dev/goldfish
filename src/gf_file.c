@@ -186,20 +186,21 @@ void gf_file_close(gf_file_t* fp) {
 #endif
 
 char* gf_path_join(size_t length, ...) {
-	// (we prioritize safety over performance here as this function ideally isn't called that often anyways)
+	long	size = 0;
+	int	idx  = 0;
+	char*	st   = NULL;
+	va_list va;
 
 	// go through the args once to get the proper length
-	long	size = 0;
-	va_list va;
 	va_start(va, length);
-	for(int i = 0; i < length; i++) {
+	for(idx = 0; idx < length; idx++) {
 		size += strnlen(va_arg(va, char*), 255) + 1; // +1 for thepath seperator
 	}
 	va_end(va);
 
-	char* st = malloc(size);
+	st = malloc(size);
 	va_start(va, length);
-	for(int i = 0; i < length; i++) {
+	for(idx = 0; idx < length; idx++) {
 		strcat(st, va_arg(va, char*));
 		strcat(st, PATH_SEPERATOR);
 	}
