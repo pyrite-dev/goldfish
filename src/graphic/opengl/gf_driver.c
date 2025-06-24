@@ -19,6 +19,7 @@
 #include <gf_math.h>
 #include <gf_graphic.h>
 #include <gf_prop.h>
+#include <gf_model.h>
 
 /* Standard */
 #include <stdlib.h>

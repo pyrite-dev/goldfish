@@ -33,6 +33,17 @@ GF_EXPORT gf_model_t* gf_model_load(gf_draw_t* draw, const char* path);
 
 /**
  * @~english
+ * @brief Draw model
+ * @param draw Drawing interface
+ * @param model Model
+ * @param x X
+ * @param y Y
+ * @param z Z
+ */
+GF_EXPORT void gf_model_draw(gf_draw_t* draw, gf_model_t* model, double x, double y, double z);
+
+/**
+ * @~english
  * @brief Destroy model
  * @param model Model
  */

@@ -34,11 +34,19 @@ gf_model_t;
  *
  * @var gf_model::texture
  * @brief Texture
+ *
+ * @var gf_model::coords
+ * @brief Coords
+ *
+ * @var gf_model::tcoords
+ * @brief Texture coords
  */
 GF_DECLARE_TYPE(model, {
 	gf_engine_t*  engine;
 	gf_draw_t*    draw;
 	gf_texture_t* texture;
+	double*	      coords;
+	double*	      tcoords;
 });
 #else
 typedef void gf_model_t;

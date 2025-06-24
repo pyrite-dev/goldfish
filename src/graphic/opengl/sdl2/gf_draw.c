@@ -174,6 +174,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		gf_draw_platform_destroy(platform);
 		return NULL;
 	}
+	SDL_ShowCursor(0);
 	if(engine->icon != NULL) {
 		SDL_Surface* s;
 		gf_uint32_t  rmask;

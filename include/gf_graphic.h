@@ -157,6 +157,19 @@ GF_EXPORT double gf_graphic_get_point_size(gf_draw_t* draw);
  */
 GF_EXPORT double gf_graphic_get_line_width(gf_draw_t* draw);
 
+/**
+ * @~english
+ * @brief Do "Fast" render
+ * @param draw Drawing interface
+ * @param npair Pair count
+ * @param coords Coords
+ * @param tcoords Texture coords
+ * @param x X
+ * @param y Y
+ * @param z Z
+ */
+GF_EXPORT void gf_graphic_fast(gf_draw_t* draw, int npair, double* coords, double* tcoords, double x, double y, double z);
+
 /* Common */
 
 /**

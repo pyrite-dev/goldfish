@@ -284,3 +284,19 @@ double gf_graphic_get_line_width(gf_draw_t* draw) {
 	glGetFloatv(GL_LINE_WIDTH, &n);
 	return n;
 }
+
+void gf_graphic_fast(gf_draw_t* draw, int npair, double* coords, double* tcoords, double x, double y, double z) {
+	glPushMatrix();
+	glColor3f(1, 1, 1);
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
+	glVertexPointer(3, GL_DOUBLE, 0, coords);
+	glTexCoordPointer(2, GL_DOUBLE, 0, tcoords);
+	glTranslatef(x, y, z);
+	glDrawArrays(GL_TRIANGLES, 0, npair);
+
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+	glDisableClientState(GL_VERTEX_ARRAY);
+	glPopMatrix();
+}

@@ -123,6 +123,9 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 		draw->lookat[1] = 0;
 		draw->lookat[2] = 1;
 
+		draw->lookat[2] = 0;
+		draw->camera[2] = -10;
+
 		draw->gui = gf_gui_create(engine, draw);
 
 #ifndef OLD_CURSOR
@@ -345,6 +348,7 @@ void gf_draw_frame(gf_draw_t* draw) {
 		gf_gui_render(draw->gui);
 		gf_draw_cursor(draw);
 	}
+
 	gf_action_process(draw->engine, draw->input);
 	if(arrlen(draw->input->key_queue) > 0) {
 		arrdel(draw->input->key_queue, 0);
