@@ -141,11 +141,9 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 			if(event.button.button == SDL_BUTTON_RIGHT) draw->input->mouse_flag ^= GF_INPUT_MOUSE_RIGHT_MASK;
 		} else if(event.type == SDL_KEYDOWN) {
 			int key = hmget(keymaps, event.key.keysym.scancode);
-			printf("down %d\n", event.key.keysym.scancode);
 			gf_input_key_press(draw->input, key);
 		} else if(event.type == SDL_KEYUP) {
 			int key = hmget(keymaps, event.key.keysym.scancode);
-			printf("up %d\n", event.key.keysym.scancode);
 			if(!event.key.repeat) {
 				gf_input_key_release(draw->input, key);
 			}
