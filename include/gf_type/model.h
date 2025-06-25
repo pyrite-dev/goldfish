@@ -40,6 +40,9 @@ gf_model_t;
  *
  * @var gf_model::tcoords
  * @brief Texture coords
+ *
+ * @var gf_model::id
+ * @brief "Fast" ID
  */
 GF_DECLARE_TYPE(model, {
 	gf_engine_t*  engine;
@@ -47,6 +50,7 @@ GF_DECLARE_TYPE(model, {
 	gf_texture_t* texture;
 	double*	      coords;
 	double*	      tcoords;
+	unsigned long id;
 });
 #else
 typedef void gf_model_t;

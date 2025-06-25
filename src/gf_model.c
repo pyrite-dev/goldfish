@@ -33,11 +33,18 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 	char*	       srd; /* string resource data */
 	size_t	       sz;
 	int	       i;
-	int	       incr = 0;
-	double*	       v    = NULL;
-	double*	       vt   = NULL;
-	double	       sc   = 1;
-	gf_resource_t* r    = gf_resource_create(draw->engine, path);
+	int	       incr	 = 0;
+	double*	       v	 = NULL;
+	double*	       vt	 = NULL;
+	double	       sc	 = 1;
+	double	       minx	 = 0;
+	double	       maxx	 = 0;
+	double	       miny	 = 0;
+	double	       maxy	 = 0;
+	double	       minz	 = 0;
+	double	       maxz	 = 0;
+	int	       calc_size = 0;
+	gf_resource_t* r	 = gf_resource_create(draw->engine, path);
 	if(r == NULL) {
 		return NULL;
 	}
@@ -51,6 +58,8 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 
 		free(s);
 		free(srd);
+	} else {
+		calc_size = 1;
 	}
 
 	if(gf_resource_get(r, "model.png", (void**)&rd, &sz) != 0) {
@@ -83,6 +92,7 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 	m->engine  = draw->engine;
 	m->draw	   = draw;
 	m->texture = t;
+	m->id	   = 0;
 
 	for(i = 0; i <= sz; i++) {
 		if(srd[i] == '\n' || i == sz) {
@@ -118,6 +128,13 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 					x /= sc;
 					y /= sc;
 					z /= sc;
+
+					if(calc_size && x < minx) minx = x;
+					if(calc_size && x > maxx) maxx = x;
+					if(calc_size && y < miny) miny = y;
+					if(calc_size && y > maxy) maxy = y;
+					if(calc_size && z < minz) minz = z;
+					if(calc_size && z > maxz) maxz = z;
 
 					arrput(v, x);
 					arrput(v, y);
@@ -166,18 +183,33 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 	arrfree(vt);
 	free(srd);
 
+	if(calc_size) {
+		double diffx = maxx - minx;
+		double diffy = maxy - miny;
+		double diffz = maxz - minz;
+		double diff  = diffx > diffz ? diffx : diffz;
+		diff	     = diffy > diff ? diffy : diff;
+		gf_log_function(draw->engine, "Autocalculated size, scaling by %.2f", 1 / diff);
+		for(i = 0; i < arrlen(m->coords); i++) {
+			m->coords[i] /= diff;
+		}
+	}
+
 	gf_resource_destroy(r);
 
 	return m;
 }
 
-void gf_model_draw(gf_draw_t* draw, gf_model_t* model, double x, double y, double z) {
-	gf_draw_driver_begin_texture_2d(draw, model->texture);
-	gf_graphic_fast(draw, arrlen(model->coords) / 3, model->coords, model->tcoords, x, y, z);
-	gf_draw_driver_end_texture_2d(draw);
+void gf_model_draw(gf_model_t* model, double x, double y, double z, double sx, double sy, double sz, double dx, double dy, double dz) {
+	gf_draw_driver_begin_texture_2d(model->draw, model->texture);
+	model->id = gf_graphic_fast(model->draw, model->id, arrlen(model->coords) / 3, model->coords, model->tcoords, x, y, z, sx, sy, sz, dx, dy, dz);
+	gf_draw_driver_end_texture_2d(model->draw);
 }
 
 void gf_model_destroy(gf_model_t* model) {
+	if(model->id != 0) gf_graphic_destroy_fast(model->draw, model->id);
+	if(model->tcoords != NULL) arrfree(model->tcoords);
+	if(model->coords != NULL) arrfree(model->coords);
 	gf_texture_destroy(model->texture);
 	gf_log_function(model->engine, "Destroyed model", "");
 	free(model);

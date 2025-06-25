@@ -285,18 +285,41 @@ double gf_graphic_get_line_width(gf_draw_t* draw) {
 	return n;
 }
 
-void gf_graphic_fast(gf_draw_t* draw, int npair, double* coords, double* tcoords, double x, double y, double z) {
-	glPushMatrix();
-	glColor3f(1, 1, 1);
-	glEnableClientState(GL_VERTEX_ARRAY);
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double x, double y, double z, double sx, double sy, double sz, double dx, double dy, double dz) {
+	if(id == 0) {
+		GLuint* indexes = NULL;
+		int	i;
+		for(i = 0; i < npair; i++) arrput(indexes, i);
 
-	glVertexPointer(3, GL_DOUBLE, 0, coords);
-	glTexCoordPointer(2, GL_DOUBLE, 0, tcoords);
-	glTranslatef(x, y, z);
-	glDrawArrays(GL_TRIANGLES, 0, npair);
+		id = glGenLists(1);
+		glNewList(id, GL_COMPILE);
+		glPushMatrix();
+		glColor3f(1, 1, 1);
+		glEnableClientState(GL_VERTEX_ARRAY);
+		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
-	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	glDisableClientState(GL_VERTEX_ARRAY);
-	glPopMatrix();
+		glVertexPointer(3, GL_DOUBLE, 0, coords);
+		glTexCoordPointer(2, GL_DOUBLE, 0, tcoords);
+		glDrawElements(GL_TRIANGLES, arrlen(indexes), GL_UNSIGNED_INT, indexes);
+
+		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+		glDisableClientState(GL_VERTEX_ARRAY);
+		glPopMatrix();
+		glEndList();
+
+		arrfree(indexes);
+	} else {
+		glPushMatrix();
+		glTranslatef(x, y, z);
+		glScalef(sx, sy, sz);
+		glRotatef(dx, 1, 0, 0);
+		glRotatef(dy, 0, 1, 0);
+		glRotatef(dz, 0, 0, 1);
+		glCallList(id);
+		glPushMatrix();
+	}
+
+	return id;
 }
+
+void gf_graphic_destroy_fast(gf_draw_t* draw, unsigned long id) { glDeleteLists(id, 1); }
