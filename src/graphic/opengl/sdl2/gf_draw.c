@@ -124,12 +124,16 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 			draw->input->mouse_x = event.motion.x;
 			draw->input->mouse_y = event.motion.y;
 		} else if(event.type == SDL_WINDOWEVENT) {
-			if(event.window.type == SDL_WINDOWEVENT_MOVED) {
+			if(event.window.event == SDL_WINDOWEVENT_MOVED) {
 				draw->x = event.window.data1;
 				draw->y = event.window.data2;
-			} else if(event.window.type == SDL_WINDOWEVENT_SIZE_CHANGED) {
-				draw->width  = event.window.data1;
-				draw->height = event.window.data1;
+			} else if(event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED || event.window.event == SDL_WINDOWEVENT_RESIZED) {
+				int w;
+				int h;
+				SDL_GetWindowSize(draw->platform->window, &w, &h);
+				draw->width  = w;
+				draw->height = h;
+				gf_draw_reshape(draw);
 			}
 		} else if(event.type == SDL_MOUSEBUTTONDOWN) {
 			if(event.button.button == SDL_BUTTON_LEFT) draw->input->mouse_flag |= GF_INPUT_MOUSE_LEFT_MASK;
