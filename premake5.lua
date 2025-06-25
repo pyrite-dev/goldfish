@@ -415,8 +415,7 @@ function gf_link_stuffs(cond)
 					"options:backend=" .. k,
 					"options:" .. k .. "=" .. k2,
 					"options:" .. k .. "-type=" .. k3,
-					"platforms:Native",
-					cond
+					"platforms:Native"
 				})
 					if v2.config then
 						buildoptions("`" .. v2.config .. "-config --cflags`")
