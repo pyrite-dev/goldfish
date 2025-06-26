@@ -309,6 +309,8 @@ unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, doub
 
 		arrfree(indexes);
 	} else {
+		glDisable(GL_CULL_FACE);
+
 		glPushMatrix();
 		glTranslatef(x, y, z);
 		glScalef(sx, sy, sz);
@@ -317,6 +319,8 @@ unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, doub
 		glRotatef(dz, 0, 0, 1);
 		glCallList(id);
 		glPopMatrix();
+
+		glEnable(GL_CULL_FACE);
 	}
 
 	return id;

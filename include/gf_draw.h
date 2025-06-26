@@ -89,6 +89,14 @@ GF_EXPORT void gf_draw_reshape(gf_draw_t* draw);
  */
 GF_EXPORT double gf_draw_get_fps(gf_draw_t* draw);
 
+/**
+ * @~english
+ * @brief Set callback
+ * @param draw Drawing interface
+ * @param callback Callback
+ */
+GF_EXPORT void gf_draw_set_callback(gf_draw_t* draw, gf_draw_callback_t callback);
+
 #ifdef __cplusplus
 }
 #endif
