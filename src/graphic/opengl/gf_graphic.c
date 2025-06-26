@@ -316,7 +316,7 @@ unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, doub
 		glRotatef(dy, 0, 1, 0);
 		glRotatef(dz, 0, 0, 1);
 		glCallList(id);
-		glPushMatrix();
+		glPopMatrix();
 	}
 
 	return id;

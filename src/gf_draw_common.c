@@ -36,6 +36,7 @@
 #include <gf_input.h>
 #include <gf_action.h>
 #include <gf_command.h>
+#include <gf_model.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -122,6 +123,8 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 		draw->lookat[0] = 0;
 		draw->lookat[1] = 0;
 		draw->lookat[2] = 1;
+
+		draw->camera[2] = -10;
 
 		draw->gui = gf_gui_create(engine, draw);
 
