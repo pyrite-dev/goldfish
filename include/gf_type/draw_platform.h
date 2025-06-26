@@ -36,19 +36,6 @@ GF_DECLARE_TYPE(draw_platform, {
 	Atom	     wm_delete_window;
 	Pixmap	     cursor;
 });
-#elif defined(GF_TYPE_OSMESA)
-GF_DECLARE_TYPE(draw_platform, {
-	gf_engine_t*   engine;
-	Display*       display;
-	Window	       window;
-	OSMesaContext  context;
-	Atom	       wm_delete_window;
-	unsigned char* buffer;
-	XImage*	       image;
-	XVisualInfo    visual;
-	GC	       gc;
-	Pixmap	       cursor;
-});
 #endif
 #elif defined(GF_USE_GDI)
 #if defined(GF_TYPE_NATIVE)
@@ -59,19 +46,6 @@ GF_DECLARE_TYPE(draw_platform, {
 	HDC	     dc;
 	HGLRC	     glrc;
 	HCURSOR	     cursor;
-});
-#elif defined(GF_TYPE_OSMESA)
-GF_DECLARE_TYPE(draw_platform, {
-	gf_engine_t*   engine;
-	HINSTANCE      instance;
-	HWND	       window;
-	HDC	       dc;
-	OSMesaContext  context;
-	unsigned char* buffer;
-	HBITMAP	       bitmap;
-	BITMAPV5HEADER header;
-	HDC	       bitmapdc;
-	HCURSOR	       cursor;
 });
 #endif
 #elif defined(GF_USE_SDL2)

@@ -48,22 +48,6 @@ gf_backends = {
 				name = "Native",
 				windows = {"opengl32"},
 				unix = {"GL"}
-			},
-			osmesa = {
-				name = "OSMesa",
-				includedirs = {
-					"external/osmesa/include",
-					"external/osmesa/src",
-					"external/osmesa/src/main",
-					"external/osmesa/src/glapi",
-					"external/osmesa/src/shader",
-					"external/osmesa/src/shader/grammar",
-					"external/osmesa/src/shader/slang"
-				},
-				files = {
-					"external/osmesa/src/**.c",
-					"-external/osmesa/src/shader/grammar/grammar.c"
-				}
 			}
 		},
 		backends = {

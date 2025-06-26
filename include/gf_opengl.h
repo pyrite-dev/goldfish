@@ -21,10 +21,6 @@
 #include <GL/gl.h>
 #endif
 
-#if defined(GF_TYPE_OSMESA)
-#include <GL/osmesa.h>
-#endif
-
 #if defined(GF_USE_X11)
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>

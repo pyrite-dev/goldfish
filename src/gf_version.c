@@ -93,9 +93,7 @@ void gf_version_get(gf_version_t* version) {
 
 #if defined(GF_DRV_OPENGL)
 	strcpy(version->driver, "OpenGL");
-#if defined(GF_TYPE_OSMESA)
-	strcat(version->driver, " (OSMesa)");
-#elif defined(GF_TYPE_NATIVE)
+#if defined(GF_TYPE_NATIVE)
 	strcat(version->driver, " (Native)");
 #else
 	strcat(version->driver, " (Unknown)");
