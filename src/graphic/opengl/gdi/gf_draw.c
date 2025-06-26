@@ -28,6 +28,10 @@
 #define MAPVK_VK_TO_VSC 0x00
 #endif
 
+#if WINVER >= 0x0500
+#define HAS_BITMAPV5
+#endif
+
 typedef const char*(APIENTRY* PFNWGLGETEXTENSIONSSTRINGARB)(HDC);
 #ifdef GF_DO_SWAP_INTERVAL
 typedef BOOL(APIENTRY* PFNWGLSWAPINTERVALPROC)(int);
@@ -371,9 +375,9 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		return NULL;
 	}
 
-#if WINVER >= 0x0400
+#ifdef HAS_BITMAPV5
 	{
-		BITMAPV4HEADER bi;
+		BITMAPV5HEADER bi;
 		HBITMAP	       color;
 		HBITMAP	       mask;
 		unsigned char* target = NULL;
@@ -382,16 +386,16 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		HDC	       dc = GetDC(NULL);
 
 		memset(&bi, 0, sizeof(bi));
-		bi.bV4Size	    = sizeof(bi);
-		bi.bV4Width	    = 1;
-		bi.bV4Height	    = -((LONG)1);
-		bi.bV4Planes	    = 1;
-		bi.bV4BitCount	    = 32;
-		bi.bV4V4Compression = BI_RGB;
-		bi.bV4RedMask	    = 0xff << 16;
-		bi.bV4GreenMask	    = 0xff << 8;
-		bi.bV4BlueMask	    = 0xff << 0;
-		bi.bV4AlphaMask	    = 0xff << 24;
+		bi.bV5Size	  = sizeof(bi);
+		bi.bV5Width	  = 1;
+		bi.bV5Height	  = -((LONG)1);
+		bi.bV5Planes	  = 1;
+		bi.bV5BitCount	  = 32;
+		bi.bV5Compression = BI_RGB;
+		bi.bV5RedMask	  = 0xff << 16;
+		bi.bV5GreenMask	  = 0xff << 8;
+		bi.bV5BlueMask	  = 0xff << 0;
+		bi.bV5AlphaMask	  = 0xff << 24;
 
 		color = CreateDIBSection(dc, (BITMAPINFO*)&bi, DIB_RGB_COLORS, (void**)&target, NULL, (DWORD)0);
 		ReleaseDC(NULL, dc);
@@ -418,7 +422,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	}
 
 	if(engine->icon != NULL) {
-		BITMAPV4HEADER bi;
+		BITMAPV5HEADER bi;
 		HBITMAP	       color;
 		HBITMAP	       mask;
 		unsigned char* target = NULL;
@@ -428,16 +432,16 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		HDC	       dc = GetDC(NULL);
 
 		memset(&bi, 0, sizeof(bi));
-		bi.bV4Size	    = sizeof(bi);
-		bi.bV4Width	    = engine->icon_width;
-		bi.bV4Height	    = -((LONG)engine->icon_height);
-		bi.bV4Planes	    = 1;
-		bi.bV4BitCount	    = 32;
-		bi.bV4V4Compression = BI_RGB;
-		bi.bV4RedMask	    = 0xff << 16;
-		bi.bV4GreenMask	    = 0xff << 8;
-		bi.bV4BlueMask	    = 0xff << 0;
-		bi.bV4AlphaMask	    = 0xff << 24;
+		bi.bV5Size	  = sizeof(bi);
+		bi.bV5Width	  = engine->icon_width;
+		bi.bV5Height	  = -((LONG)engine->icon_height);
+		bi.bV5Planes	  = 1;
+		bi.bV5BitCount	  = 32;
+		bi.bV5Compression = BI_RGB;
+		bi.bV5RedMask	  = 0xff << 16;
+		bi.bV5GreenMask	  = 0xff << 8;
+		bi.bV5BlueMask	  = 0xff << 0;
+		bi.bV5AlphaMask	  = 0xff << 24;
 
 		color = CreateDIBSection(dc, (BITMAPINFO*)&bi, DIB_RGB_COLORS, (void**)&target, NULL, (DWORD)0);
 		ReleaseDC(NULL, dc);
@@ -505,12 +509,12 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	OSMesaPixelStore(OSMESA_Y_UP, 0);
 
 	memset(&platform->header, 0, sizeof(platform->header));
-	platform->header.bV4Size	  = sizeof(platform->header);
-	platform->header.bV4Width	  = draw->width;
-	platform->header.bV4Height	  = -((LONG)draw->height);
-	platform->header.bV4Planes	  = 1;
-	platform->header.bV4BitCount	  = 32;
-	platform->header.bV4V4Compression = BI_RGB;
+	platform->header.bV5Size	= sizeof(platform->header);
+	platform->header.bV5Width	= draw->width;
+	platform->header.bV5Height	= -((LONG)draw->height);
+	platform->header.bV5Planes	= 1;
+	platform->header.bV5BitCount	= 32;
+	platform->header.bV5Compression = BI_RGB;
 
 	platform->bitmap   = CreateDIBSection(platform->dc, (BITMAPINFO*)&platform->header, DIB_RGB_COLORS, (void**)&platform->buffer, NULL, (DWORD)0);
 	platform->bitmapdc = CreateCompatibleDC(platform->dc);
