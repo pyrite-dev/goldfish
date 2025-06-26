@@ -25,7 +25,6 @@
 These things are not default; optional:
  - GDI
  - X11
- - [My OSMesa patch](https://github.com/nishiowo/osmesa) for software rendering
 
 ## Sound stack
  - [miniaudio](https://github.com/mackron/miniaudio) (default)
