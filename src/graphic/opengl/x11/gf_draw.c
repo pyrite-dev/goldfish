@@ -128,16 +128,12 @@ int gf_draw_platform_has_extension(gf_draw_t* draw, const char* query) {
 
 #if defined(GF_TYPE_NATIVE)
 	glXMakeCurrent(draw->platform->display, draw->platform->window, draw->platform->context);
-#elif defined(GF_TYPE_OSMESA)
-	OSMesaMakeCurrent(draw->platform->context, draw->platform->buffer, GL_UNSIGNED_BYTE, draw->width, draw->height);
 #endif
 
 #if defined(GF_TYPE_NATIVE)
 	ext = glXQueryExtensionsString(draw->platform->display, DefaultScreen(draw->platform->display));
 	ptr = strstr(ext, query);
 	return ((ptr != NULL) && ((ptr[len] == ' ') || (ptr[len] == '\0')));
-#elif defined(GF_TYPE_OSMESA)
-	return 0;
 #endif
 }
 
@@ -160,11 +156,6 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	platform->engine = engine;
 
 	draw->platform = platform;
-
-#if defined(GF_TYPE_OSMESA)
-	platform->buffer = NULL;
-	platform->image	 = NULL;
-#endif
 
 	platform->display = XOpenDisplay(NULL);
 	if(platform->display == NULL) {
@@ -197,18 +188,12 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		gf_draw_platform_destroy(platform);
 		return NULL;
 	}
-#elif defined(GF_TYPE_OSMESA)
-	platform->visual.visual = DefaultVisual(platform->display, screen);
-	platform->visual.depth	= DefaultDepth(platform->display, screen);
 #endif
 
 	attr.event_mask = StructureNotifyMask | ExposureMask | PointerMotionMask | ButtonPressMask | ButtonReleaseMask | KeyPressMask | KeyReleaseMask;
 #if defined(GF_TYPE_NATIVE)
 	attr.colormap	 = XCreateColormap(platform->display, root, visual->visual, AllocNone);
 	platform->window = XCreateWindow(platform->display, root, draw->width, draw->height, draw->width, draw->height, 0, visual->depth, InputOutput, visual->visual, CWColormap | CWEventMask, &attr);
-#elif defined(GF_TYPE_OSMESA)
-	attr.colormap	 = XCreateColormap(platform->display, root, platform->visual.visual, AllocNone);
-	platform->window = XCreateWindow(platform->display, root, draw->width, draw->height, draw->width, draw->height, 0, platform->visual.depth, InputOutput, platform->visual.visual, CWColormap | CWEventMask, &attr);
 #endif
 
 	b		 = 0;
@@ -267,24 +252,11 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	}
 
 	XFree(visual);
-#elif defined(GF_TYPE_OSMESA)
-	platform->context = OSMesaCreateContext(OSMESA_BGRA, NULL);
-	if(platform->context == NULL) {
-		gf_log_function(engine, "Failed to get OpenGL context", "");
-		gf_draw_platform_destroy(platform);
-		return NULL;
-	}
 #endif
 
 	XMapWindow(platform->display, platform->window);
 #if defined(GF_TYPE_NATIVE)
 	glXMakeCurrent(platform->display, platform->window, platform->context);
-#elif defined(GF_TYPE_OSMESA)
-	platform->buffer = malloc(draw->width * draw->height * 4);
-	platform->gc	 = XCreateGC(platform->display, platform->window, 0, NULL);
-	platform->image	 = XCreateImage(platform->display, platform->visual.visual, platform->visual.depth, ZPixmap, 0, NULL, draw->width, draw->height, 32, 0);
-	OSMesaMakeCurrent(platform->context, platform->buffer, GL_UNSIGNED_BYTE, draw->width, draw->height);
-	OSMesaPixelStore(OSMESA_Y_UP, 0);
 #endif
 
 #if defined(GF_DO_SWAP_INTERVAL) && defined(GF_TYPE_NATIVE)
@@ -319,8 +291,6 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 	int ret = 0;
 #if defined(GF_TYPE_NATIVE)
 	glXMakeCurrent(draw->platform->display, draw->platform->window, draw->platform->context);
-#elif defined(GF_TYPE_OSMESA)
-	OSMesaMakeCurrent(draw->platform->context, draw->platform->buffer, GL_UNSIGNED_BYTE, draw->width, draw->height);
 #endif
 	while(XPending(draw->platform->display) > 0) {
 		XEvent event;
@@ -339,12 +309,6 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 			draw->height = event.xconfigure.height;
 #if defined(GF_TYPE_NATIVE)
 			glXMakeCurrent(draw->platform->display, draw->platform->window, draw->platform->context);
-#elif defined(GF_TYPE_OSMESA)
-			free(draw->platform->buffer);
-			XDestroyImage(draw->platform->image);
-			draw->platform->buffer = malloc(draw->width * draw->height * 4);
-			draw->platform->image  = XCreateImage(draw->platform->display, draw->platform->visual.visual, draw->platform->visual.depth, ZPixmap, 0, NULL, draw->width, draw->height, 32, 0);
-			OSMesaMakeCurrent(draw->platform->context, draw->platform->buffer, GL_UNSIGNED_BYTE, draw->width, draw->height);
 #endif
 			gf_draw_reshape(draw);
 		} else if(event.type == ButtonPress) {
@@ -391,10 +355,6 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 
 #if defined(GF_TYPE_NATIVE)
 		glXSwapBuffers(draw->platform->display, draw->platform->window);
-#elif defined(GF_TYPE_OSMESA)
-		draw->platform->image->data = (char*)draw->platform->buffer;
-		XPutImage(draw->platform->display, draw->platform->window, draw->platform->gc, draw->platform->image, 0, 0, 0, 0, draw->width, draw->height);
-		draw->platform->image->data = NULL;
 #endif
 	}
 	return ret;
@@ -405,25 +365,12 @@ void gf_draw_platform_destroy(gf_draw_platform_t* platform) {
 #if defined(GF_TYPE_NATIVE)
 		glXMakeCurrent(platform->display, None, NULL);
 		glXDestroyContext(platform->display, platform->context);
-#elif defined(GF_TYPE_OSMESA)
-		OSMesaDestroyContext(platform->context);
 #endif
 	}
-#if defined(GF_TYPE_OSMESA)
-	if(platform->image != NULL) {
-		XDestroyImage(platform->image);
-		XFreeGC(platform->display, platform->gc);
-	}
-#endif
 	if(platform->display != NULL) {
 		XDestroyWindow(platform->display, platform->window);
 		XCloseDisplay(platform->display);
 	}
-#if defined(GF_TYPE_OSMESA)
-	if(platform->buffer != NULL) {
-		free(platform->buffer);
-	}
-#endif
 	/* TODO: How do I even free cursor? Do I even have to? */
 	gf_log_function(platform->engine, "Destroyed platform-dependent part of drawing driver", "");
 	free(platform);

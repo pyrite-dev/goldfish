@@ -20,12 +20,11 @@
  - [X25519](https://github.com/DavyLandman/compact25519)/[AES256](https://github.com/kokke/tiny-AES-c)
 
 ## OpenGL stack
- - [RGFW](https://github.com/ColleagueRiley/RGFW) (default)
+ - [SDL2](https://wiki.libsdl.org/SDL2/FrontPage) (default)
 
 These things are not default; optional:
  - GDI
  - X11
- - [My OSMesa patch](https://github.com/nishiowo/osmesa) for software rendering
 
 ## Sound stack
  - [miniaudio](https://github.com/mackron/miniaudio) (default)

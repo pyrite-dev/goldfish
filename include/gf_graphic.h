@@ -157,6 +157,35 @@ GF_EXPORT double gf_graphic_get_point_size(gf_draw_t* draw);
  */
 GF_EXPORT double gf_graphic_get_line_width(gf_draw_t* draw);
 
+/**
+ * @~english
+ * @brief Do "Fast" render
+ * @param draw Drawing interface
+ * @param id "Fast" ID
+ * @param npair Pair count
+ * @param coords Coords
+ * @param tcoords Texture coords
+ * @param x X
+ * @param y Y
+ * @param z Z
+ * @param sx X scaling
+ * @param sy Y scaling
+ * @param sz Z scaling
+ * @param dx X rotation
+ * @param dy Y rotation
+ * @param dz Z rotation
+ * @return Return "fast" ID
+ */
+GF_EXPORT unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double x, double y, double z, double sx, double sy, double sz, double dx, double dy, double dz);
+
+/**
+ * @~english
+ * @brief Destroy "fast" ID
+ * @param draw Drawing interface
+ * @param id "Fast" ID
+ */
+GF_EXPORT void gf_graphic_destroy_fast(gf_draw_t* draw, unsigned long id);
+
 /* Common */
 
 /**

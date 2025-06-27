@@ -51,6 +51,13 @@ gf_draw_intro_t;
 /* Standard */
 #include <time.h>
 
+/**
+ * @~english
+ * @brief Drawing callback
+ * @param draw Drawing interface
+ */
+typedef void (*gf_draw_callback_t)(gf_draw_t* draw);
+
 GF_DECLARE_TYPE(draw_intro, {
 	int	      finished;
 	int	      frame;
@@ -146,6 +153,9 @@ GF_DECLARE_TYPE(draw_intro, {
  *
  * @var gf_draw::background
  * @brief Background color
+ *
+ * @var gf_draw::callback
+ * @brief Callback
  */
 GF_DECLARE_TYPE(draw, {
 	gf_engine_t*	    engine;
@@ -176,9 +186,11 @@ GF_DECLARE_TYPE(draw, {
 	int		    cursor;
 	gf_texture_t*	    cursor_texture;
 	gf_draw_intro_t	    intro;
+	gf_draw_callback_t  callback;
 });
 #else
-typedef void gf_draw_t;
+typedef void  gf_draw_t;
+typedef void* gf_draw_callback_t;
 #endif
 
 #endif

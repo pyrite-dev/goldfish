@@ -17,9 +17,6 @@
 [submodule "external/jar"]
 	path = external/jar
 	url = ../jar
-[submodule "external/osmesa"]
-	path = external/osmesa
-	url = ../osmesa
 [submodule "external/pcre"]
 	path = external/pcre
 	url = ../pcre
