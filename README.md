@@ -25,6 +25,7 @@
 These things are not default; optional:
  - GDI
  - X11
+ - [GLFW](https://www.glfw.org/)
 
 ## Sound stack
  - [miniaudio](https://github.com/mackron/miniaudio) (default)
