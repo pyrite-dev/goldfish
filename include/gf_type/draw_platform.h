@@ -54,6 +54,11 @@ GF_DECLARE_TYPE(draw_platform, {
 	SDL_Window*   window;
 	SDL_GLContext context;
 });
+#elif defined(GF_USE_GLFW)
+GF_DECLARE_TYPE(draw_platform, {
+	gf_engine_t* engine;
+	GLFWwindow*  window;
+});
 #endif
 #else
 /**

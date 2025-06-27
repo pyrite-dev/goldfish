@@ -8,6 +8,8 @@
 #ifndef __GF_OPENGL_H__
 #define __GF_OPENGL_H__
 
+#define GF_DO_SWAP_INTERVAL
+
 #ifdef _WIN32
 #include <windows.h>
 #endif
@@ -34,6 +36,8 @@
 #elif defined(GF_USE_SDL2)
 #include <SDL.h>
 #include <SDL_opengl.h>
+#elif defined(GF_USE_GLFW)
+#include <GLFW/glfw3.h>
 #endif
 
 #endif
