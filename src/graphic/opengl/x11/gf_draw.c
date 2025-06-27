@@ -41,79 +41,151 @@ typedef void (*PFNGLXSWAPINTERVALSGIPROC)(int);
 #endif
 
 typedef struct keymap {
-	KeySym key;
-	int    value;
+	int key;
+	int value;
 } keymap_t;
 
 static keymap_t* keymaps = NULL;
 
-static void whmput(KeySym key, int value) { hmput(keymaps, key, value); }
+static void whmput(int key, int value) { hmput(keymaps, key, value); }
+
+static void gf_draw_platform_init_keymap(gf_draw_platform_t* platform) {
+	XkbComponentNamesRec rec;
+	XkbDescPtr	     desc = XkbGetMap(platform->display, 0, XkbUseCoreKbd);
+	XkbDescPtr	     evdesc;
+
+	XkbGetNames(platform->display, XkbKeyNamesMask, desc);
+
+	memset(&rec, 0, sizeof(rec));
+	rec.keycodes = (char*)"evdev";
+	evdesc	     = XkbGetKeyboardByName(platform->display, XkbUseCoreKbd, &rec, XkbGBN_KeyNamesMask, XkbGBN_KeyNamesMask, False);
+	if(evdesc != NULL && desc != NULL) {
+		int i;
+		int j;
+		for(i = evdesc->min_key_code; i <= evdesc->max_key_code; i++) {
+			for(j = desc->min_key_code; j <= desc->max_key_code; j++) {
+				if(strncmp(evdesc->names->keys[i].name, desc->names->keys[j].name, XkbKeyNameLength) == 0) {
+					int k = hmget(keymaps, i);
+					hmput(platform->keymap, j, k);
+					break;
+				}
+			}
+		}
+		XkbFreeKeyboard(desc, 0, True);
+		XkbFreeKeyboard(evdesc, 0, True);
+	} else {
+		int i;
+		for(i = 0; i < hmlen(keymaps); i++) {
+			hmput(platform->keymap, keymaps[i].key, keymaps[i].value);
+		}
+	}
+}
 
 void gf_draw_platform_begin(void) {
 	int i;
 
 	hmdefault(keymaps, -1);
-	whmput(XK_Escape, GF_INPUT_KEY_ESCAPE);
+	whmput(9, GF_INPUT_KEY_ESCAPE);
 
-	whmput(XK_Return, GF_INPUT_KEY_ENTER);
+	whmput(36, GF_INPUT_KEY_ENTER);
 
-	whmput(XK_BackSpace, GF_INPUT_KEY_BACKSPACE);
-	whmput(XK_space, GF_INPUT_KEY_SPACE);
+	whmput(22, GF_INPUT_KEY_BACKSPACE);
+	whmput(65, GF_INPUT_KEY_SPACE);
 
-	for(i = 0; i < 10; i++) whmput(XK_0 + i, GF_INPUT_KEY_0 + i);
+	whmput(10, GF_INPUT_KEY_1);
+	whmput(11, GF_INPUT_KEY_2);
+	whmput(12, GF_INPUT_KEY_3);
+	whmput(13, GF_INPUT_KEY_4);
+	whmput(14, GF_INPUT_KEY_5);
+	whmput(15, GF_INPUT_KEY_6);
+	whmput(16, GF_INPUT_KEY_7);
+	whmput(17, GF_INPUT_KEY_8);
+	whmput(18, GF_INPUT_KEY_9);
+	whmput(19, GF_INPUT_KEY_0);
 
-	for(i = 0; i < 26; i++) {
-		whmput(XK_A + i, GF_INPUT_KEY_A + i);
-		whmput(XK_a + i, GF_INPUT_KEY_A + i);
-	}
+	whmput(38, GF_INPUT_KEY_A);
+	whmput(56, GF_INPUT_KEY_B);
+	whmput(54, GF_INPUT_KEY_C);
+	whmput(40, GF_INPUT_KEY_D);
+	whmput(26, GF_INPUT_KEY_E);
+	whmput(41, GF_INPUT_KEY_F);
+	whmput(42, GF_INPUT_KEY_G);
+	whmput(43, GF_INPUT_KEY_H);
+	whmput(31, GF_INPUT_KEY_I);
+	whmput(44, GF_INPUT_KEY_J);
+	whmput(45, GF_INPUT_KEY_K);
+	whmput(46, GF_INPUT_KEY_L);
+	whmput(58, GF_INPUT_KEY_M);
+	whmput(57, GF_INPUT_KEY_N);
+	whmput(32, GF_INPUT_KEY_O);
+	whmput(33, GF_INPUT_KEY_P);
+	whmput(24, GF_INPUT_KEY_Q);
+	whmput(27, GF_INPUT_KEY_R);
+	whmput(39, GF_INPUT_KEY_S);
+	whmput(28, GF_INPUT_KEY_T);
+	whmput(30, GF_INPUT_KEY_U);
+	whmput(55, GF_INPUT_KEY_V);
+	whmput(25, GF_INPUT_KEY_W);
+	whmput(53, GF_INPUT_KEY_X);
+	whmput(29, GF_INPUT_KEY_Y);
+	whmput(52, GF_INPUT_KEY_Z);
 
-	for(i = 0; i < 12; i++) {
-		whmput(XK_F1 + i, GF_INPUT_KEY_F1 + i);
-	}
+	whmput(67, GF_INPUT_KEY_F1);
+	whmput(68, GF_INPUT_KEY_F2);
+	whmput(69, GF_INPUT_KEY_F3);
+	whmput(70, GF_INPUT_KEY_F4);
+	whmput(71, GF_INPUT_KEY_F5);
+	whmput(72, GF_INPUT_KEY_F6);
+	whmput(73, GF_INPUT_KEY_F7);
+	whmput(74, GF_INPUT_KEY_F8);
+	whmput(75, GF_INPUT_KEY_F9);
+	whmput(76, GF_INPUT_KEY_F10);
+	whmput(95, GF_INPUT_KEY_F11);
+	whmput(96, GF_INPUT_KEY_F12);
 
-	whmput(XK_Up, GF_INPUT_KEY_UP);
-	whmput(XK_Down, GF_INPUT_KEY_DOWN);
-	whmput(XK_Left, GF_INPUT_KEY_LEFT);
-	whmput(XK_Right, GF_INPUT_KEY_RIGHT);
+	whmput(111, GF_INPUT_KEY_UP);
+	whmput(116, GF_INPUT_KEY_DOWN);
+	whmput(113, GF_INPUT_KEY_LEFT);
+	whmput(114, GF_INPUT_KEY_RIGHT);
 
-	whmput(XK_Shift_L, GF_INPUT_KEY_LEFT_SHIFT);
-	whmput(XK_Shift_R, GF_INPUT_KEY_RIGHT_SHIFT);
+	whmput(50, GF_INPUT_KEY_LEFT_SHIFT);
+	whmput(62, GF_INPUT_KEY_RIGHT_SHIFT);
 
-	whmput(XK_Alt_L, GF_INPUT_KEY_LEFT_ALT);
-	whmput(XK_Alt_R, GF_INPUT_KEY_RIGHT_ALT);
+	whmput(64, GF_INPUT_KEY_LEFT_ALT);
+	whmput(108, GF_INPUT_KEY_RIGHT_ALT);
 
-	whmput(XK_Control_L, GF_INPUT_KEY_LEFT_CONTROL);
-	whmput(XK_Control_R, GF_INPUT_KEY_RIGHT_CONTROL);
+	whmput(37, GF_INPUT_KEY_LEFT_CONTROL);
+	whmput(105, GF_INPUT_KEY_RIGHT_CONTROL);
 
-	whmput(XK_Super_L, GF_INPUT_KEY_LEFT_SUPER);
-	whmput(XK_Super_R, GF_INPUT_KEY_RIGHT_SUPER);
+	whmput(133, GF_INPUT_KEY_LEFT_SUPER);
+	whmput(134, GF_INPUT_KEY_RIGHT_SUPER);
 
-	whmput(XK_Tab, GF_INPUT_KEY_TAB);
-	whmput(XK_Caps_Lock, GF_INPUT_KEY_CAPSLOCK);
+	whmput(23, GF_INPUT_KEY_TAB);
+	whmput(66, GF_INPUT_KEY_CAPSLOCK);
 
-	whmput(XK_grave, GF_INPUT_KEY_GRAVE);
-	whmput(XK_minus, GF_INPUT_KEY_MINUS);
-	whmput(XK_equal, GF_INPUT_KEY_EQUALS);
-	whmput(XK_bracketleft, GF_INPUT_KEY_LEFT_BRACKET);
-	whmput(XK_bracketright, GF_INPUT_KEY_RIGHT_BRACKET);
-	whmput(XK_backslash, GF_INPUT_KEY_BACKSLASH);
-	whmput(XK_semicolon, GF_INPUT_KEY_SEMICOLON);
-	whmput(XK_apostrophe, GF_INPUT_KEY_QUOTE);
-	whmput(XK_comma, GF_INPUT_KEY_COMMA);
-	whmput(XK_period, GF_INPUT_KEY_PERIOD);
-	whmput(XK_slash, GF_INPUT_KEY_SLASH);
+	whmput(49, GF_INPUT_KEY_GRAVE);
+	whmput(20, GF_INPUT_KEY_MINUS);
+	whmput(21, GF_INPUT_KEY_EQUALS);
+	whmput(34, GF_INPUT_KEY_LEFT_BRACKET);
+	whmput(35, GF_INPUT_KEY_RIGHT_BRACKET);
+	whmput(51, GF_INPUT_KEY_BACKSLASH);
+	whmput(47, GF_INPUT_KEY_SEMICOLON);
+	whmput(48, GF_INPUT_KEY_QUOTE);
+	whmput(59, GF_INPUT_KEY_COMMA);
+	whmput(60, GF_INPUT_KEY_PERIOD);
+	whmput(61, GF_INPUT_KEY_SLASH);
 
-	whmput(XK_Insert, GF_INPUT_KEY_INSERT);
-	whmput(XK_Delete, GF_INPUT_KEY_DELETE);
-	whmput(XK_Home, GF_INPUT_KEY_HOME);
-	whmput(XK_End, GF_INPUT_KEY_END);
-	whmput(XK_Page_Up, GF_INPUT_KEY_PAGE_UP);
-	whmput(XK_Page_Down, GF_INPUT_KEY_PAGE_DOWN);
+	whmput(118, GF_INPUT_KEY_INSERT);
+	whmput(119, GF_INPUT_KEY_DELETE);
+	whmput(110, GF_INPUT_KEY_HOME);
+	whmput(115, GF_INPUT_KEY_END);
+	whmput(112, GF_INPUT_KEY_PAGE_UP);
+	whmput(117, GF_INPUT_KEY_PAGE_DOWN);
 
-	whmput(XK_Print, GF_INPUT_KEY_PRINT_SCREEN);
-	whmput(XK_Scroll_Lock, GF_INPUT_KEY_SCROLL_LOCK);
-	whmput(XK_Pause, GF_INPUT_KEY_PAUSE_BREAK);
-	whmput(XK_Num_Lock, GF_INPUT_KEY_NUM_LOCK);
+	whmput(107, GF_INPUT_KEY_PRINT_SCREEN);
+	whmput(78, GF_INPUT_KEY_SCROLL_LOCK);
+	whmput(128, GF_INPUT_KEY_PAUSE_BREAK);
+	whmput(77, GF_INPUT_KEY_NUM_LOCK);
 }
 
 void gf_draw_platform_end(void) {
@@ -259,6 +331,8 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	glXMakeCurrent(platform->display, platform->window, platform->context);
 #endif
 
+	gf_draw_platform_init_keymap(platform);
+
 #if defined(GF_DO_SWAP_INTERVAL) && defined(GF_TYPE_NATIVE)
 	if(gf_draw_platform_has_extension(draw, "GLX_EXT_swap_control")) {
 		unsigned int		  tmp  = -1;
@@ -329,13 +403,11 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 				break;
 			}
 		} else if(event.type == KeyPress) {
-			KeySym ks  = XLookupKeysym(&event.xkey, 0);
-			int    key = hmget(keymaps, ks);
+			int key = hmget(draw->platform->keymap, event.xkey.keycode);
 			gf_input_key_press(draw->input, key);
 		} else if(event.type == KeyRelease) {
-			KeySym ks     = XLookupKeysym(&event.xkey, 0);
-			int    key    = hmget(keymaps, ks);
-			int    retrig = 0;
+			int key	   = hmget(draw->platform->keymap, event.xkey.keycode);
+			int retrig = 0;
 			if(XEventsQueued(draw->platform->display, QueuedAfterReading)) {
 				XEvent nev;
 				XPeekEvent(draw->platform->display, &nev);
@@ -370,6 +442,7 @@ void gf_draw_platform_destroy(gf_draw_platform_t* platform) {
 	if(platform->display != NULL) {
 		XDestroyWindow(platform->display, platform->window);
 		XCloseDisplay(platform->display);
+		hmfree(platform->keymap);
 	}
 	/* TODO: How do I even free cursor? Do I even have to? */
 	gf_log_function(platform->engine, "Destroyed platform-dependent part of drawing driver", "");

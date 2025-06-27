@@ -28,13 +28,23 @@ gf_draw_platform_t;
 #if defined(GF_DRV_OPENGL)
 #if defined(GF_USE_X11)
 #if defined(GF_TYPE_NATIVE)
+#define gf_draw_platform_keymap_t struct gf_draw_platform_keymap
+
+gf_draw_platform_keymap_t;
+
+GF_DECLARE_TYPE(draw_platform_keymap, {
+	int key;
+	int value;
+});
+
 GF_DECLARE_TYPE(draw_platform, {
-	gf_engine_t* engine;
-	Display*     display;
-	Window	     window;
-	GLXContext   context;
-	Atom	     wm_delete_window;
-	Pixmap	     cursor;
+	gf_engine_t*		   engine;
+	Display*		   display;
+	Window			   window;
+	GLXContext		   context;
+	Atom			   wm_delete_window;
+	Pixmap			   cursor;
+	gf_draw_platform_keymap_t* keymap;
 });
 #endif
 #elif defined(GF_USE_GDI)
