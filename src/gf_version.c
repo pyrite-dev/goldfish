@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * Code for version stuff
+ * Code for version stuff.
  *
  **********************************************************************************
  * @endif
