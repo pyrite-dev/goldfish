@@ -30,11 +30,10 @@
 #include <string.h>
 
 gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int width, int height, int* iwidth, int* iheight, unsigned char* data) {
-	gf_draw_driver_texture_t* r = malloc(sizeof(*r));
+	gf_draw_driver_texture_t* r = (gf_draw_driver_texture_t*)malloc(sizeof(*r));
 	int w = width;
 	int h = height;
 
-	// For DX11, we don't need power-of-2 textures
 	if(w > draw->driver->max_texture_size) w = draw->driver->max_texture_size;
 	if(h > draw->driver->max_texture_size) h = draw->driver->max_texture_size;
 
@@ -62,26 +61,26 @@ gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int w
 	initData.pSysMem = data;
 	initData.SysMemPitch = w * 4;
 
-	HRESULT hr = draw->driver->device->lpVtbl->CreateTexture2D(
-		draw->driver->device, &desc, &initData, &r->texture);
+	HRESULT hr = draw->driver->device->CreateTexture2D(
+		&desc, &initData, &r->texture);
 
 	if(FAILED(hr)) {
-		gf_log(GF_LOG_ERROR, "Failed to create DX11 texture");
+		gf_log(draw->engine, "Failed to create DX11 texture");
 		free(r);
 		return NULL;
 	}
 
 	// Create shader resource view
-	D3D11_SHADER_RESOURCE_VIEW_DESC srvDesc = { 0 };
+	D3D11_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
 	srvDesc.Format = desc.Format;
 	srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
 	srvDesc.Texture2D.MipLevels = 1;
 
-	hr = draw->driver->device->lpVtbl->CreateShaderResourceView(
-		draw->driver->device, (ID3D11Resource*)r->texture, &srvDesc, &r->resourceView);
+	hr = draw->driver->device->CreateShaderResourceView(
+		(ID3D11Resource*)r->texture, &srvDesc, &r->resourceView);
 
 	if(FAILED(hr)) {
-		r->texture->lpVtbl->Release(r->texture);
+		r->texture->Release();
 		free(r);
 		return NULL;
 	}
@@ -92,10 +91,10 @@ gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int w
 void gf_draw_driver_free_texture(gf_draw_driver_texture_t* driver_tex) {
 	if(driver_tex) {
 		if(driver_tex->resourceView) {
-			driver_tex->resourceView->lpVtbl->Release(driver_tex->resourceView);
+			driver_tex->resourceView->Release();
 		}
 		if(driver_tex->texture) {
-			driver_tex->texture->lpVtbl->Release(driver_tex->texture);
+			driver_tex->texture->Release();
 		}
 		free(driver_tex);
 	}
@@ -110,56 +109,53 @@ void gf_draw_driver_viewport(gf_draw_t* draw, int x, int y, int width, int heigh
 	vp.MinDepth = 0.0f;
 	vp.MaxDepth = 1.0f;
 
-	draw->driver->deviceContext->lpVtbl->RSSetViewports(
-		draw->driver->deviceContext, 1, &vp);
+	draw->driver->deviceContext->RSSetViewports(1, &vp);
 }
 
 void gf_draw_driver_clear(gf_draw_t* draw, gf_graphic_color_t color) {
 	float clearColor[4] = {
-		color.r / 255.0f,
-		color.g / 255.0f,
-		color.b / 255.0f,
-		color.a / 255.0f
+		(float)color.r / 255.0f,
+		(float)color.g / 255.0f,
+		(float)color.b / 255.0f,
+		(float)color.a / 255.0f
 	};
 
-	draw->driver->deviceContext->lpVtbl->ClearRenderTargetView(
-		draw->driver->deviceContext, draw->driver->renderTargetView, clearColor);
+	draw->driver->deviceContext->ClearRenderTargetView(
+		draw->driver->renderTargetView, clearColor);
 
-	draw->driver->deviceContext->lpVtbl->ClearDepthStencilView(
-		draw->driver->deviceContext, draw->driver->depthStencilView,
+	draw->driver->deviceContext->ClearDepthStencilView(
+		draw->driver->depthStencilView,
 		D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 }
 
 void gf_draw_driver_swap_buffers(gf_draw_t* draw) {
-	draw->driver->swapChain->lpVtbl->Present(draw->driver->swapChain, 1, 0);
+	draw->driver->swapChain->Present(1, 0);
 }
 
 void gf_draw_driver_enable_depth(gf_draw_t* draw) {
 	// Set depth stencil state
-	draw->driver->deviceContext->lpVtbl->OMSetDepthStencilState(
-		draw->driver->deviceContext, draw->driver->depthStencilState, 1);
+	draw->driver->deviceContext->OMSetDepthStencilState(
+		draw->driver->depthStencilState, 1);
 }
 
 void gf_draw_driver_disable_depth(gf_draw_t* draw) {
 	// Set depth stencil state to disable depth testing
-	draw->driver->deviceContext->lpVtbl->OMSetDepthStencilState(
-		draw->driver->deviceContext, NULL, 1);
+	draw->driver->deviceContext->OMSetDepthStencilState(NULL, 1);
 }
 
 void gf_draw_driver_enable_blend(gf_draw_t* draw) {
 	float blendFactor[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
 	UINT sampleMask = 0xffffffff;
 
-	draw->driver->deviceContext->lpVtbl->OMSetBlendState(
-		draw->driver->deviceContext, draw->driver->blendState, blendFactor, sampleMask);
+	draw->driver->deviceContext->OMSetBlendState(
+		draw->driver->blendState, blendFactor, sampleMask);
 }
 
 void gf_draw_driver_disable_blend(gf_draw_t* draw) {
 	float blendFactor[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
 	UINT sampleMask = 0xffffffff;
 
-	draw->driver->deviceContext->lpVtbl->OMSetBlendState(
-		draw->driver->deviceContext, NULL, blendFactor, sampleMask);
+	draw->driver->deviceContext->OMSetBlendState(NULL, blendFactor, sampleMask);
 }
 
 int gf_draw_driver_has_extension(gf_draw_t* draw, const char* query) {
@@ -172,7 +168,7 @@ int gf_draw_driver_has_extension(gf_draw_t* draw, const char* query) {
 }
 
 gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
-	gf_draw_driver_t* driver = malloc(sizeof(*driver));
+	gf_draw_driver_t* driver = (gf_draw_driver_t*)malloc(sizeof(*driver));
 	memset(driver, 0, sizeof(*driver));
 
 	driver->engine = engine;
@@ -182,7 +178,7 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	// Initialize DX11 context
 	HWND hWnd = (HWND)gf_draw_platform_get_window_handle(draw);
 	if(!hWnd) {
-		gf_log(GF_LOG_ERROR, "Failed to get window handle for DX11 initialization");
+		gf_log(engine, "Failed to get window handle for DX11 initialization");
 		free(driver);
 		return NULL;
 	}
@@ -194,7 +190,7 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 
 	HRESULT hr = InitD3D(hWnd, &params);
 	if(FAILED(hr)) {
-		gf_log(GF_LOG_ERROR, "Failed to initialize DX11");
+		gf_log(engine, "Failed to initialize DX11");
 		free(driver);
 		return NULL;
 	}
@@ -215,8 +211,7 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	dsDesc.StencilReadMask = 0xFF;
 	dsDesc.StencilWriteMask = 0xFF;
 
-	hr = driver->device->lpVtbl->CreateDepthStencilState(
-		driver->device, &dsDesc, &driver->depthStencilState);
+	hr = driver->device->CreateDepthStencilState(&dsDesc, &driver->depthStencilState);
 
 	// Create blend state
 	D3D11_BLEND_DESC blendDesc = { 0 };
@@ -231,11 +226,10 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	blendDesc.RenderTarget[0].BlendOpAlpha = D3D11_BLEND_OP_ADD;
 	blendDesc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
 
-	hr = driver->device->lpVtbl->CreateBlendState(
-		driver->device, &blendDesc, &driver->blendState);
+	hr = driver->device->CreateBlendState(&blendDesc, &driver->blendState);
 
 	// Create sampler state
-	D3D11_SAMPLER_DESC sampDesc = { 0 };
+	D3D11_SAMPLER_DESC sampDesc = {};
 	sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
 	sampDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
 	sampDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
@@ -244,8 +238,7 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	sampDesc.MinLOD = 0;
 	sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
-	hr = driver->device->lpVtbl->CreateSamplerState(
-		driver->device, &sampDesc, &driver->samplerState);
+	hr = driver->device->CreateSamplerState(&sampDesc, &driver->samplerState);
 
 	// Set initial viewport
 	driver->viewport.TopLeftX = 0;
@@ -255,22 +248,22 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	driver->viewport.MinDepth = 0.0f;
 	driver->viewport.MaxDepth = 1.0f;
 
-	driver->deviceContext->lpVtbl->RSSetViewports(driver->deviceContext, 1, &driver->viewport);
+	driver->deviceContext->RSSetViewports(1, &driver->viewport);
 
-	gf_log(GF_LOG_INFO, "DX11 driver initialized successfully");
+	gf_log(engine, "DX11 driver initialized successfully");
 	return driver;
 }
 
 void gf_draw_driver_destroy(gf_draw_driver_t* driver) {
 	if(driver) {
 		if(driver->samplerState) {
-			driver->samplerState->lpVtbl->Release(driver->samplerState);
+			driver->samplerState->Release();
 		}
 		if(driver->blendState) {
-			driver->blendState->lpVtbl->Release(driver->blendState);
+			driver->blendState->Release();
 		}
 		if(driver->depthStencilState) {
-			driver->depthStencilState->lpVtbl->Release(driver->depthStencilState);
+			driver->depthStencilState->Release();
 		}
 		
 		// Global DX11 objects are cleaned up elsewhere
@@ -285,13 +278,11 @@ void gf_draw_driver_reshape(gf_draw_t* draw) {
 	draw->driver->viewport.Width = (float)draw->width;
 	draw->driver->viewport.Height = (float)draw->height;
 
-	draw->driver->deviceContext->lpVtbl->RSSetViewports(
-		draw->driver->deviceContext, 1, &draw->driver->viewport);
+	draw->driver->deviceContext->RSSetViewports(1, &draw->driver->viewport);
 
 	// Resize swap chain buffers
 	if(draw->driver->swapChain) {
-		draw->driver->swapChain->lpVtbl->ResizeBuffers(
-			draw->driver->swapChain, 0, draw->width, draw->height,
-			DXGI_FORMAT_UNKNOWN, 0);
+		draw->driver->swapChain->ResizeBuffers(
+			0, draw->width, draw->height, DXGI_FORMAT_UNKNOWN, 0);
 	}
 }

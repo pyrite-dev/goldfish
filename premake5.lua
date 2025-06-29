@@ -1,3 +1,22 @@
+-- Workspace configuration
+workspace("GoldFish")
+	configurations({ "Debug", "Release" })
+	platforms({ "Native", "Win32", "Win64", "ClassicMacOS" })
+	language("C")
+	flags({ "MultiProcessorCompile" })
+	systemversion("latest")
+	
+	-- Output directories
+	location(".")
+	targetdir("bin/%{cfg.buildcfg}/%{cfg.platform}")
+	objdir("obj/%{cfg.buildcfg}/%{cfg.platform}")
+	
+	-- Global compiler options for Windows
+	filter("system:windows")
+		defines({ "WIN32", "_CRT_SECURE_NO_WARNINGS" })
+		toolset("gcc")
+	filter({})
+
 require("gmake")
 if premake.modules.gmake.cpp.pchRules and not(premake.modules.gmake.patched_resource) then
 	premake.modules.gmake.patched_resource = true
@@ -91,7 +110,7 @@ gf_backends = {
 		types = {
 			native = {
 				name = "Native",
-				windows = {"d3d11", "dxgi", "d3dcompiler"},
+				windows = {"d3d11", "dxgi", "d3dcompiler", "dxguid"},
 				defines = {"GF_DRV_DX11"}
 			}
 		},

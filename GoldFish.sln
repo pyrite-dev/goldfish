@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineInfo", "EngineInfo.vcxproj", "{87260403-73DE-4550-DCE5-1EACC8BCE040}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GoldFish", "GoldFish.vcxproj", "{D5929C65-C15F-F770-EA78-E518D6A42CFF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pack", "Pack.vcxproj", "{A4978A7C-90CE-8B0D-39BB-711025D1070F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ClassicMacOS = Debug|ClassicMacOS
+		Debug|Native = Debug|Native
+		Debug|Win32 = Debug|Win32
+		Debug|Win64 = Debug|Win64
+		Release|ClassicMacOS = Release|ClassicMacOS
+		Release|Native = Release|Native
+		Release|Win32 = Release|Win32
+		Release|Win64 = Release|Win64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Debug|ClassicMacOS.ActiveCfg = Debug ClassicMacOS|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Debug|ClassicMacOS.Build.0 = Debug ClassicMacOS|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Debug|Native.ActiveCfg = Debug Native|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Debug|Native.Build.0 = Debug Native|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Debug|Win32.ActiveCfg = Debug|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Debug|Win32.Build.0 = Debug|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Debug|Win64.ActiveCfg = Debug Win64|x64
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Debug|Win64.Build.0 = Debug Win64|x64
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Release|ClassicMacOS.ActiveCfg = Release ClassicMacOS|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Release|ClassicMacOS.Build.0 = Release ClassicMacOS|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Release|Native.ActiveCfg = Release Native|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Release|Native.Build.0 = Release Native|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Release|Win32.ActiveCfg = Release|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Release|Win32.Build.0 = Release|Win32
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Release|Win64.ActiveCfg = Release Win64|x64
+		{87260403-73DE-4550-DCE5-1EACC8BCE040}.Release|Win64.Build.0 = Release Win64|x64
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Debug|ClassicMacOS.ActiveCfg = Debug ClassicMacOS|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Debug|ClassicMacOS.Build.0 = Debug ClassicMacOS|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Debug|Native.ActiveCfg = Debug Native|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Debug|Native.Build.0 = Debug Native|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Debug|Win32.Build.0 = Debug|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Debug|Win64.ActiveCfg = Debug Win64|x64
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Debug|Win64.Build.0 = Debug Win64|x64
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Release|ClassicMacOS.ActiveCfg = Release ClassicMacOS|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Release|ClassicMacOS.Build.0 = Release ClassicMacOS|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Release|Native.ActiveCfg = Release Native|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Release|Native.Build.0 = Release Native|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Release|Win32.ActiveCfg = Release|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Release|Win32.Build.0 = Release|Win32
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Release|Win64.ActiveCfg = Release Win64|x64
+		{D5929C65-C15F-F770-EA78-E518D6A42CFF}.Release|Win64.Build.0 = Release Win64|x64
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Debug|ClassicMacOS.ActiveCfg = Debug ClassicMacOS|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Debug|ClassicMacOS.Build.0 = Debug ClassicMacOS|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Debug|Native.ActiveCfg = Debug Native|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Debug|Native.Build.0 = Debug Native|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Debug|Win32.Build.0 = Debug|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Debug|Win64.ActiveCfg = Debug Win64|x64
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Debug|Win64.Build.0 = Debug Win64|x64
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Release|ClassicMacOS.ActiveCfg = Release ClassicMacOS|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Release|ClassicMacOS.Build.0 = Release ClassicMacOS|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Release|Native.ActiveCfg = Release Native|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Release|Native.Build.0 = Release Native|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Release|Win32.ActiveCfg = Release|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Release|Win32.Build.0 = Release|Win32
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Release|Win64.ActiveCfg = Release Win64|x64
+		{A4978A7C-90CE-8B0D-39BB-711025D1070F}.Release|Win64.Build.0 = Release Win64|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

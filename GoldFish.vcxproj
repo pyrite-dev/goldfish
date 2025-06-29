@@ -1,0 +1,891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Native|Win32">
+      <Configuration>Debug Native</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Native|x64">
+      <Configuration>Debug Native</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64|Win32">
+      <Configuration>Debug Win64</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64|x64">
+      <Configuration>Debug Win64</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug ClassicMacOS|Win32">
+      <Configuration>Debug ClassicMacOS</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug ClassicMacOS|x64">
+      <Configuration>Debug ClassicMacOS</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Native|Win32">
+      <Configuration>Release Native</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Native|x64">
+      <Configuration>Release Native</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64|Win32">
+      <Configuration>Release Win64</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64|x64">
+      <Configuration>Release Win64</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release ClassicMacOS|Win32">
+      <Configuration>Release ClassicMacOS</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release ClassicMacOS|x64">
+      <Configuration>Release ClassicMacOS</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D5929C65-C15F-F770-EA78-E518D6A42CFF}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GoldFish</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Native|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug ClassicMacOS|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Native|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release ClassicMacOS|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Native|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win64|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug ClassicMacOS|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Native|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win64|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release ClassicMacOS|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Native|Win32'">
+    <OutDir>lib\Debug\Native\</OutDir>
+    <IntDir>obj\Debug\Native\</IntDir>
+    <TargetName>goldfish</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>lib\Debug\Win32\</OutDir>
+    <IntDir>obj\Debug\Win32\</IntDir>
+    <TargetName>goldfish</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64|x64'">
+    <OutDir>lib\Debug\Win64\</OutDir>
+    <IntDir>obj\Debug\Win64\</IntDir>
+    <TargetName>goldfish</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug ClassicMacOS|Win32'">
+    <OutDir>lib\Debug\ClassicMacOS\</OutDir>
+    <IntDir>obj\Debug\ClassicMacOS\</IntDir>
+    <TargetName>goldfish</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Native|Win32'">
+    <OutDir>lib\Release\Native\</OutDir>
+    <IntDir>obj\Release\Native\</IntDir>
+    <TargetName>goldfish</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>lib\Release\Win32\</OutDir>
+    <IntDir>obj\Release\Win32\</IntDir>
+    <TargetName>goldfish</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64|x64'">
+    <OutDir>lib\Release\Win64\</OutDir>
+    <IntDir>obj\Release\Win64\</IntDir>
+    <TargetName>goldfish</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release ClassicMacOS|Win32'">
+    <OutDir>lib\Release\ClassicMacOS\</OutDir>
+    <IntDir>obj\Release\ClassicMacOS\</IntDir>
+    <TargetName>goldfish</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Native|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ODE_LIB;GF_LIB;DEBUG;_DEBUG;HAVE_CONFIG_H;PCRE_STATIC;_OU_FEATURE_SET=_OU_FEATURE_SET_TLS;_OU_NAMESPACE=odeou;dLIBCCD_ENABLED;dLIBCCD_INTERNAL;dLIBCCD_BOX_CYL;dLIBCCD_CYL_CYL;dLIBCCD_CAP_CYL;dLIBCCD_CONVEX_BOX;dLIBCCD_CONVEX_CAP;dLIBCCD_CONVEX_CYL;dLIBCCD_CONVEX_SPHERE;dLIBCCD_CONVEX_CONVEX;GF_DRV_DX11;HAVE_STDARG_H=1;dIDEDOUBLE;CCD_IDEDOUBLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\lua;external\dr_libs;external\miniaudio;external\stb;external\jar;external\nanosvg;external\minisocket;external\crypto;src\bindgen;external\zlib;external\pcre\include;external\ode\include;external\ode\ode\src;external\ode\ode\src\joints;external\ode\OPCODE;external\ode\GIMPACT\include;external\ode\libccd\src\custom;external\ode\libccd\src;external\ode\ou\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ODE_LIB;GF_LIB;DEBUG;_DEBUG;HAVE_CONFIG_H;PCRE_STATIC;_OU_FEATURE_SET=_OU_FEATURE_SET_TLS;_OU_NAMESPACE=odeou;dLIBCCD_ENABLED;dLIBCCD_INTERNAL;dLIBCCD_BOX_CYL;dLIBCCD_CYL_CYL;dLIBCCD_CAP_CYL;dLIBCCD_CONVEX_BOX;dLIBCCD_CONVEX_CAP;dLIBCCD_CONVEX_CYL;dLIBCCD_CONVEX_SPHERE;dLIBCCD_CONVEX_CONVEX;GF_DRV_DX11;HAVE_STDARG_H=1;dIDEDOUBLE;CCD_IDEDOUBLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\lua;external\dr_libs;external\miniaudio;external\stb;external\jar;external\nanosvg;external\minisocket;external\crypto;src\bindgen;external\zlib;external\pcre\include;external\ode\include;external\ode\ode\src;external\ode\ode\src\joints;external\ode\OPCODE;external\ode\GIMPACT\include;external\ode\libccd\src\custom;external\ode\libccd\src;external\ode\ou\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ODE_LIB;GF_LIB;DEBUG;_DEBUG;HAVE_CONFIG_H;PCRE_STATIC;_OU_FEATURE_SET=_OU_FEATURE_SET_TLS;_OU_NAMESPACE=odeou;dLIBCCD_ENABLED;dLIBCCD_INTERNAL;dLIBCCD_BOX_CYL;dLIBCCD_CYL_CYL;dLIBCCD_CAP_CYL;dLIBCCD_CONVEX_BOX;dLIBCCD_CONVEX_CAP;dLIBCCD_CONVEX_CYL;dLIBCCD_CONVEX_SPHERE;dLIBCCD_CONVEX_CONVEX;GF_DRV_DX11;HAVE_STDARG_H=1;dIDEDOUBLE;CCD_IDEDOUBLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\lua;external\dr_libs;external\miniaudio;external\stb;external\jar;external\nanosvg;external\minisocket;external\crypto;src\bindgen;external\zlib;external\pcre\include;external\ode\include;external\ode\ode\src;external\ode\ode\src\joints;external\ode\OPCODE;external\ode\GIMPACT\include;external\ode\libccd\src\custom;external\ode\libccd\src;external\ode\ou\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug ClassicMacOS|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ODE_LIB;GF_LIB;DEBUG;_DEBUG;HAVE_CONFIG_H;PCRE_STATIC;_OU_FEATURE_SET=_OU_FEATURE_SET_BASICS;__unix__=1;_OU_NAMESPACE=odeou;dLIBCCD_ENABLED;dLIBCCD_INTERNAL;dLIBCCD_BOX_CYL;dLIBCCD_CYL_CYL;dLIBCCD_CAP_CYL;dLIBCCD_CONVEX_BOX;dLIBCCD_CONVEX_CAP;dLIBCCD_CONVEX_CYL;dLIBCCD_CONVEX_SPHERE;dLIBCCD_CONVEX_CONVEX;GF_DRV_DX11;HAVE_STDARG_H=1;dIDEDOUBLE;CCD_IDEDOUBLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\lua;external\dr_libs;external\miniaudio;external\stb;external\jar;external\nanosvg;external\minisocket;external\crypto;src\bindgen;external\zlib;external\pcre\include;external\ode\include;external\ode\ode\src;external\ode\ode\src\joints;external\ode\OPCODE;external\ode\GIMPACT\include;external\ode\libccd\src\custom;external\ode\libccd\src;external\ode\ou\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Native|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ODE_LIB;GF_LIB;NDEBUG;dNODEBUG;HAVE_CONFIG_H;PCRE_STATIC;_OU_FEATURE_SET=_OU_FEATURE_SET_TLS;_OU_NAMESPACE=odeou;dLIBCCD_ENABLED;dLIBCCD_INTERNAL;dLIBCCD_BOX_CYL;dLIBCCD_CYL_CYL;dLIBCCD_CAP_CYL;dLIBCCD_CONVEX_BOX;dLIBCCD_CONVEX_CAP;dLIBCCD_CONVEX_CYL;dLIBCCD_CONVEX_SPHERE;dLIBCCD_CONVEX_CONVEX;GF_DRV_DX11;HAVE_STDARG_H=1;dIDEDOUBLE;CCD_IDEDOUBLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\lua;external\dr_libs;external\miniaudio;external\stb;external\jar;external\nanosvg;external\minisocket;external\crypto;src\bindgen;external\zlib;external\pcre\include;external\ode\include;external\ode\ode\src;external\ode\ode\src\joints;external\ode\OPCODE;external\ode\GIMPACT\include;external\ode\libccd\src\custom;external\ode\libccd\src;external\ode\ou\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ODE_LIB;GF_LIB;NDEBUG;dNODEBUG;HAVE_CONFIG_H;PCRE_STATIC;_OU_FEATURE_SET=_OU_FEATURE_SET_TLS;_OU_NAMESPACE=odeou;dLIBCCD_ENABLED;dLIBCCD_INTERNAL;dLIBCCD_BOX_CYL;dLIBCCD_CYL_CYL;dLIBCCD_CAP_CYL;dLIBCCD_CONVEX_BOX;dLIBCCD_CONVEX_CAP;dLIBCCD_CONVEX_CYL;dLIBCCD_CONVEX_SPHERE;dLIBCCD_CONVEX_CONVEX;GF_DRV_DX11;HAVE_STDARG_H=1;dIDEDOUBLE;CCD_IDEDOUBLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\lua;external\dr_libs;external\miniaudio;external\stb;external\jar;external\nanosvg;external\minisocket;external\crypto;src\bindgen;external\zlib;external\pcre\include;external\ode\include;external\ode\ode\src;external\ode\ode\src\joints;external\ode\OPCODE;external\ode\GIMPACT\include;external\ode\libccd\src\custom;external\ode\libccd\src;external\ode\ou\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ODE_LIB;GF_LIB;NDEBUG;dNODEBUG;HAVE_CONFIG_H;PCRE_STATIC;_OU_FEATURE_SET=_OU_FEATURE_SET_TLS;_OU_NAMESPACE=odeou;dLIBCCD_ENABLED;dLIBCCD_INTERNAL;dLIBCCD_BOX_CYL;dLIBCCD_CYL_CYL;dLIBCCD_CAP_CYL;dLIBCCD_CONVEX_BOX;dLIBCCD_CONVEX_CAP;dLIBCCD_CONVEX_CYL;dLIBCCD_CONVEX_SPHERE;dLIBCCD_CONVEX_CONVEX;GF_DRV_DX11;HAVE_STDARG_H=1;dIDEDOUBLE;CCD_IDEDOUBLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\lua;external\dr_libs;external\miniaudio;external\stb;external\jar;external\nanosvg;external\minisocket;external\crypto;src\bindgen;external\zlib;external\pcre\include;external\ode\include;external\ode\ode\src;external\ode\ode\src\joints;external\ode\OPCODE;external\ode\GIMPACT\include;external\ode\libccd\src\custom;external\ode\libccd\src;external\ode\ou\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release ClassicMacOS|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ODE_LIB;GF_LIB;NDEBUG;dNODEBUG;HAVE_CONFIG_H;PCRE_STATIC;_OU_FEATURE_SET=_OU_FEATURE_SET_BASICS;__unix__=1;_OU_NAMESPACE=odeou;dLIBCCD_ENABLED;dLIBCCD_INTERNAL;dLIBCCD_BOX_CYL;dLIBCCD_CYL_CYL;dLIBCCD_CAP_CYL;dLIBCCD_CONVEX_BOX;dLIBCCD_CONVEX_CAP;dLIBCCD_CONVEX_CYL;dLIBCCD_CONVEX_SPHERE;dLIBCCD_CONVEX_CONVEX;GF_DRV_DX11;HAVE_STDARG_H=1;dIDEDOUBLE;CCD_IDEDOUBLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;external\lua;external\dr_libs;external\miniaudio;external\stb;external\jar;external\nanosvg;external\minisocket;external\crypto;src\bindgen;external\zlib;external\pcre\include;external\ode\include;external\ode\ode\src;external\ode\ode\src\joints;external\ode\OPCODE;external\ode\GIMPACT\include;external\ode\libccd\src\custom;external\ode\libccd\src;external\ode\ou\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="external\jar\jar_mod.h" />
+    <ClInclude Include="external\jar\jar_xm.h" />
+    <ClInclude Include="external\lua\lapi.h" />
+    <ClInclude Include="external\lua\lauxlib.h" />
+    <ClInclude Include="external\lua\lcode.h" />
+    <ClInclude Include="external\lua\lctype.h" />
+    <ClInclude Include="external\lua\ldebug.h" />
+    <ClInclude Include="external\lua\ldo.h" />
+    <ClInclude Include="external\lua\lfunc.h" />
+    <ClInclude Include="external\lua\lgc.h" />
+    <ClInclude Include="external\lua\ljumptab.h" />
+    <ClInclude Include="external\lua\llex.h" />
+    <ClInclude Include="external\lua\llimits.h" />
+    <ClInclude Include="external\lua\lmem.h" />
+    <ClInclude Include="external\lua\lobject.h" />
+    <ClInclude Include="external\lua\lopcodes.h" />
+    <ClInclude Include="external\lua\lopnames.h" />
+    <ClInclude Include="external\lua\lparser.h" />
+    <ClInclude Include="external\lua\lprefix.h" />
+    <ClInclude Include="external\lua\lstate.h" />
+    <ClInclude Include="external\lua\lstring.h" />
+    <ClInclude Include="external\lua\ltable.h" />
+    <ClInclude Include="external\lua\ltm.h" />
+    <ClInclude Include="external\lua\lua.h" />
+    <ClInclude Include="external\lua\luaconf.h" />
+    <ClInclude Include="external\lua\lualib.h" />
+    <ClInclude Include="external\lua\lundump.h" />
+    <ClInclude Include="external\lua\lvm.h" />
+    <ClInclude Include="external\lua\lzio.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_boxpruning.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_contact.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_geometry.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_math.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_memory.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_radixsort.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_tri_capsule_collision.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_tri_collision.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_tri_sphere_collision.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_trimesh.h" />
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gimpact.h" />
+    <ClInclude Include="external\ode\include\ode\collision.h" />
+    <ClInclude Include="external\ode\include\ode\collision_space.h" />
+    <ClInclude Include="external\ode\include\ode\collision_trimesh.h" />
+    <ClInclude Include="external\ode\include\ode\common.h" />
+    <ClInclude Include="external\ode\include\ode\compatibility.h" />
+    <ClInclude Include="external\ode\include\ode\contact.h" />
+    <ClInclude Include="external\ode\include\ode\cooperative.h" />
+    <ClInclude Include="external\ode\include\ode\error.h" />
+    <ClInclude Include="external\ode\include\ode\export-dif.h" />
+    <ClInclude Include="external\ode\include\ode\mass.h" />
+    <ClInclude Include="external\ode\include\ode\matrix.h" />
+    <ClInclude Include="external\ode\include\ode\matrix_coop.h" />
+    <ClInclude Include="external\ode\include\ode\memory.h" />
+    <ClInclude Include="external\ode\include\ode\misc.h" />
+    <ClInclude Include="external\ode\include\ode\objects.h" />
+    <ClInclude Include="external\ode\include\ode\ode.h" />
+    <ClInclude Include="external\ode\include\ode\odeconfig.h" />
+    <ClInclude Include="external\ode\include\ode\odecpp.h" />
+    <ClInclude Include="external\ode\include\ode\odecpp_collision.h" />
+    <ClInclude Include="external\ode\include\ode\odeinit.h" />
+    <ClInclude Include="external\ode\include\ode\odemath.h" />
+    <ClInclude Include="external\ode\include\ode\odemath_legacy.h" />
+    <ClInclude Include="external\ode\include\ode\precision.h" />
+    <ClInclude Include="external\ode\include\ode\rotation.h" />
+    <ClInclude Include="external\ode\include\ode\threading.h" />
+    <ClInclude Include="external\ode\include\ode\threading_impl.h" />
+    <ClInclude Include="external\ode\include\ode\timer.h" />
+    <ClInclude Include="external\ode\include\ode\version.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\alloc.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\ccd.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\compiler.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\dbg.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\list.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\polytope.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\precision.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\quat.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\simplex.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\support.h" />
+    <ClInclude Include="external\ode\libccd\src\ccd\vec3.h" />
+    <ClInclude Include="external\ode\libccd\src\custom\ccdcustom\quat.h" />
+    <ClInclude Include="external\ode\libccd\src\custom\ccdcustom\vec3.h" />
+    <ClInclude Include="external\ode\ode\src\array.h" />
+    <ClInclude Include="external\ode\ode\src\collision_kernel.h" />
+    <ClInclude Include="external\ode\ode\src\collision_libccd.h" />
+    <ClInclude Include="external\ode\ode\src\collision_space_internal.h" />
+    <ClInclude Include="external\ode\ode\src\collision_std.h" />
+    <ClInclude Include="external\ode\ode\src\collision_transform.h" />
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_colliders.h" />
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_gimpact.h" />
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_internal.h" />
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_internal_impl.h" />
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_opcode.h" />
+    <ClInclude Include="external\ode\ode\src\collision_util.h" />
+    <ClInclude Include="external\ode\ode\src\common.h" />
+    <ClInclude Include="external\ode\ode\src\config.h" />
+    <ClInclude Include="external\ode\ode\src\coop_matrix_types.h" />
+    <ClInclude Include="external\ode\ode\src\default_threading.h" />
+    <ClInclude Include="external\ode\ode\src\error.h" />
+    <ClInclude Include="external\ode\ode\src\fastdot_impl.h" />
+    <ClInclude Include="external\ode\ode\src\fastldltfactor_impl.h" />
+    <ClInclude Include="external\ode\ode\src\fastldltsolve_impl.h" />
+    <ClInclude Include="external\ode\ode\src\fastlsolve_impl.h" />
+    <ClInclude Include="external\ode\ode\src\fastltsolve_impl.h" />
+    <ClInclude Include="external\ode\ode\src\fastvecscale_impl.h" />
+    <ClInclude Include="external\ode\ode\src\gimpact_contact_export_helper.h" />
+    <ClInclude Include="external\ode\ode\src\gimpact_gim_contact_accessor.h" />
+    <ClInclude Include="external\ode\ode\src\gimpact_plane_contact_accessor.h" />
+    <ClInclude Include="external\ode\ode\src\heightfield.h" />
+    <ClInclude Include="external\ode\ode\src\joints\amotor.h" />
+    <ClInclude Include="external\ode\ode\src\joints\ball.h" />
+    <ClInclude Include="external\ode\ode\src\joints\contact.h" />
+    <ClInclude Include="external\ode\ode\src\joints\dball.h" />
+    <ClInclude Include="external\ode\ode\src\joints\dhinge.h" />
+    <ClInclude Include="external\ode\ode\src\joints\fixed.h" />
+    <ClInclude Include="external\ode\ode\src\joints\hinge.h" />
+    <ClInclude Include="external\ode\ode\src\joints\hinge2.h" />
+    <ClInclude Include="external\ode\ode\src\joints\joint.h" />
+    <ClInclude Include="external\ode\ode\src\joints\joint_internal.h" />
+    <ClInclude Include="external\ode\ode\src\joints\joints.h" />
+    <ClInclude Include="external\ode\ode\src\joints\lmotor.h" />
+    <ClInclude Include="external\ode\ode\src\joints\null.h" />
+    <ClInclude Include="external\ode\ode\src\joints\piston.h" />
+    <ClInclude Include="external\ode\ode\src\joints\plane2d.h" />
+    <ClInclude Include="external\ode\ode\src\joints\pr.h" />
+    <ClInclude Include="external\ode\ode\src\joints\pu.h" />
+    <ClInclude Include="external\ode\ode\src\joints\slider.h" />
+    <ClInclude Include="external\ode\ode\src\joints\transmission.h" />
+    <ClInclude Include="external\ode\ode\src\joints\universal.h" />
+    <ClInclude Include="external\ode\ode\src\lcp.h" />
+    <ClInclude Include="external\ode\ode\src\mat.h" />
+    <ClInclude Include="external\ode\ode\src\matrix.h" />
+    <ClInclude Include="external\ode\ode\src\objects.h" />
+    <ClInclude Include="external\ode\ode\src\obstack.h" />
+    <ClInclude Include="external\ode\ode\src\odemath.h" />
+    <ClInclude Include="external\ode\ode\src\odeou.h" />
+    <ClInclude Include="external\ode\ode\src\odetls.h" />
+    <ClInclude Include="external\ode\ode\src\quickstep.h" />
+    <ClInclude Include="external\ode\ode\src\resource_control.h" />
+    <ClInclude Include="external\ode\ode\src\simple_cooperative.h" />
+    <ClInclude Include="external\ode\ode\src\step.h" />
+    <ClInclude Include="external\ode\ode\src\threaded_solver_ldlt.h" />
+    <ClInclude Include="external\ode\ode\src\threading_atomics_provs.h" />
+    <ClInclude Include="external\ode\ode\src\threading_base.h" />
+    <ClInclude Include="external\ode\ode\src\threading_fake_sync.h" />
+    <ClInclude Include="external\ode\ode\src\threading_impl.h" />
+    <ClInclude Include="external\ode\ode\src\threading_impl_posix.h" />
+    <ClInclude Include="external\ode\ode\src\threading_impl_templates.h" />
+    <ClInclude Include="external\ode\ode\src\threading_impl_win.h" />
+    <ClInclude Include="external\ode\ode\src\threadingutils.h" />
+    <ClInclude Include="external\ode\ode\src\typedefs.h" />
+    <ClInclude Include="external\ode\ode\src\util.h" />
+    <ClInclude Include="external\ode\ou\include\ou\assert.h" />
+    <ClInclude Include="external\ode\ou\include\ou\atomic.h" />
+    <ClInclude Include="external\ode\ou\include\ou\atomicflags.h" />
+    <ClInclude Include="external\ode\ou\include\ou\customization.h" />
+    <ClInclude Include="external\ode\ou\include\ou\enumarrays.h" />
+    <ClInclude Include="external\ode\ou\include\ou\features.h" />
+    <ClInclude Include="external\ode\ou\include\ou\flags.h" />
+    <ClInclude Include="external\ode\ou\include\ou\flagsdefines.h" />
+    <ClInclude Include="external\ode\ou\include\ou\inttypes.h" />
+    <ClInclude Include="external\ode\ou\include\ou\macros.h" />
+    <ClInclude Include="external\ode\ou\include\ou\malloc.h" />
+    <ClInclude Include="external\ode\ou\include\ou\namespace.h" />
+    <ClInclude Include="external\ode\ou\include\ou\platform.h" />
+    <ClInclude Include="external\ode\ou\include\ou\simpleflags.h" />
+    <ClInclude Include="external\ode\ou\include\ou\templates.h" />
+    <ClInclude Include="external\ode\ou\include\ou\threadlocalstorage.h" />
+    <ClInclude Include="external\ode\ou\include\ou\typewrapper.h" />
+    <ClInclude Include="external\pcre\include\pcre.h" />
+    <ClInclude Include="external\zlib\crc32.h" />
+    <ClInclude Include="external\zlib\deflate.h" />
+    <ClInclude Include="external\zlib\gzguts.h" />
+    <ClInclude Include="external\zlib\inffast.h" />
+    <ClInclude Include="external\zlib\inffixed.h" />
+    <ClInclude Include="external\zlib\inflate.h" />
+    <ClInclude Include="external\zlib\inftrees.h" />
+    <ClInclude Include="external\zlib\trees.h" />
+    <ClInclude Include="external\zlib\zconf.h" />
+    <ClInclude Include="external\zlib\zlib.h" />
+    <ClInclude Include="external\zlib\zutil.h" />
+    <ClInclude Include="include\gf_action.h" />
+    <ClInclude Include="include\gf_all.h" />
+    <ClInclude Include="include\gf_assert.h" />
+    <ClInclude Include="include\gf_audio.h" />
+    <ClInclude Include="include\gf_checksum.h" />
+    <ClInclude Include="include\gf_client.h" />
+    <ClInclude Include="include\gf_command.h" />
+    <ClInclude Include="include\gf_config.h" />
+    <ClInclude Include="include\gf_core.h" />
+    <ClInclude Include="include\gf_draw.h" />
+    <ClInclude Include="include\gf_draw_driver.h" />
+    <ClInclude Include="include\gf_draw_platform.h" />
+    <ClInclude Include="include\gf_dx11.h" />
+    <ClInclude Include="include\gf_file.h" />
+    <ClInclude Include="include\gf_font.h" />
+    <ClInclude Include="include\gf_gload.h" />
+    <ClInclude Include="include\gf_graphic.h" />
+    <ClInclude Include="include\gf_gui.h" />
+    <ClInclude Include="include\gf_gui_component.h" />
+    <ClInclude Include="include\gf_gui_static.h" />
+    <ClInclude Include="include\gf_image.h" />
+    <ClInclude Include="include\gf_input.h" />
+    <ClInclude Include="include\gf_log.h" />
+    <ClInclude Include="include\gf_lua.h" />
+    <ClInclude Include="include\gf_macro.h" />
+    <ClInclude Include="include\gf_math.h" />
+    <ClInclude Include="include\gf_model.h" />
+    <ClInclude Include="include\gf_netdrv.h" />
+    <ClInclude Include="include\gf_network.h" />
+    <ClInclude Include="include\gf_opengl.h" />
+    <ClInclude Include="include\gf_physics.h" />
+    <ClInclude Include="include\gf_pre.h" />
+    <ClInclude Include="include\gf_prop.h" />
+    <ClInclude Include="include\gf_resource.h" />
+    <ClInclude Include="include\gf_server.h" />
+    <ClInclude Include="include\gf_snddrv.h" />
+    <ClInclude Include="include\gf_sound.h" />
+    <ClInclude Include="include\gf_texture.h" />
+    <ClInclude Include="include\gf_thread.h" />
+    <ClInclude Include="include\gf_type\action.h" />
+    <ClInclude Include="include\gf_type\audio.h" />
+    <ClInclude Include="include\gf_type\client.h" />
+    <ClInclude Include="include\gf_type\command.h" />
+    <ClInclude Include="include\gf_type\compat.h" />
+    <ClInclude Include="include\gf_type\core.h" />
+    <ClInclude Include="include\gf_type\draw.h" />
+    <ClInclude Include="include\gf_type\draw_driver.h" />
+    <ClInclude Include="include\gf_type\draw_platform.h" />
+    <ClInclude Include="include\gf_type\file.h" />
+    <ClInclude Include="include\gf_type\font.h" />
+    <ClInclude Include="include\gf_type\graphic.h" />
+    <ClInclude Include="include\gf_type\gui.h" />
+    <ClInclude Include="include\gf_type\input.h" />
+    <ClInclude Include="include\gf_type\lua.h" />
+    <ClInclude Include="include\gf_type\math.h" />
+    <ClInclude Include="include\gf_type\model.h" />
+    <ClInclude Include="include\gf_type\network.h" />
+    <ClInclude Include="include\gf_type\physics.h" />
+    <ClInclude Include="include\gf_type\prop.h" />
+    <ClInclude Include="include\gf_type\resource.h" />
+    <ClInclude Include="include\gf_type\server.h" />
+    <ClInclude Include="include\gf_type\sound.h" />
+    <ClInclude Include="include\gf_type\texture.h" />
+    <ClInclude Include="include\gf_type\thread.h" />
+    <ClInclude Include="include\gf_type\version.h" />
+    <ClInclude Include="include\gf_unicode.h" />
+    <ClInclude Include="include\gf_util.h" />
+    <ClInclude Include="include\gf_version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="external\crypto\aes.c" />
+    <ClCompile Include="external\crypto\compact25519.c" />
+    <ClCompile Include="external\lua\lapi.c" />
+    <ClCompile Include="external\lua\lauxlib.c" />
+    <ClCompile Include="external\lua\lbaselib.c" />
+    <ClCompile Include="external\lua\lcode.c" />
+    <ClCompile Include="external\lua\lcorolib.c" />
+    <ClCompile Include="external\lua\lctype.c" />
+    <ClCompile Include="external\lua\ldblib.c" />
+    <ClCompile Include="external\lua\ldebug.c" />
+    <ClCompile Include="external\lua\ldo.c" />
+    <ClCompile Include="external\lua\ldump.c" />
+    <ClCompile Include="external\lua\lfunc.c" />
+    <ClCompile Include="external\lua\lgc.c" />
+    <ClCompile Include="external\lua\linit.c" />
+    <ClCompile Include="external\lua\liolib.c" />
+    <ClCompile Include="external\lua\llex.c" />
+    <ClCompile Include="external\lua\lmathlib.c" />
+    <ClCompile Include="external\lua\lmem.c" />
+    <ClCompile Include="external\lua\loadlib.c" />
+    <ClCompile Include="external\lua\lobject.c" />
+    <ClCompile Include="external\lua\lopcodes.c" />
+    <ClCompile Include="external\lua\loslib.c" />
+    <ClCompile Include="external\lua\lparser.c" />
+    <ClCompile Include="external\lua\lstate.c" />
+    <ClCompile Include="external\lua\lstring.c" />
+    <ClCompile Include="external\lua\lstrlib.c" />
+    <ClCompile Include="external\lua\ltable.c" />
+    <ClCompile Include="external\lua\ltablib.c" />
+    <ClCompile Include="external\lua\ltm.c" />
+    <ClCompile Include="external\lua\lundump.c" />
+    <ClCompile Include="external\lua\lutf8lib.c" />
+    <ClCompile Include="external\lua\lvm.c" />
+    <ClCompile Include="external\lua\lzio.c" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_boxpruning.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_contact.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_math.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_memory.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_tri_tri_overlap.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh_capsule_collision.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh_ray_collision.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh_sphere_collision.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh_trimesh_collision.cpp" />
+    <ClCompile Include="external\ode\GIMPACT\src\gimpact.cpp" />
+    <ClCompile Include="external\ode\libccd\src\alloc.c" />
+    <ClCompile Include="external\ode\libccd\src\ccd.c" />
+    <ClCompile Include="external\ode\libccd\src\mpr.c" />
+    <ClCompile Include="external\ode\libccd\src\polytope.c" />
+    <ClCompile Include="external\ode\libccd\src\support.c" />
+    <ClCompile Include="external\ode\libccd\src\vec3.c" />
+    <ClCompile Include="external\ode\ode\src\array.cpp" />
+    <ClCompile Include="external\ode\ode\src\box.cpp" />
+    <ClCompile Include="external\ode\ode\src\capsule.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_convex_trimesh.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_cylinder_box.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_cylinder_plane.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_cylinder_sphere.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_cylinder_trimesh.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_kernel.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_libccd.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_quadtreespace.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_sapspace.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_space.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_transform.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_box.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_ccylinder.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_gimpact.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_internal.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_plane.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_ray.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_sphere.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_trimesh.cpp" />
+    <ClCompile Include="external\ode\ode\src\collision_util.cpp" />
+    <ClCompile Include="external\ode\ode\src\convex.cpp" />
+    <ClCompile Include="external\ode\ode\src\cylinder.cpp" />
+    <ClCompile Include="external\ode\ode\src\default_threading.cpp" />
+    <ClCompile Include="external\ode\ode\src\error.cpp" />
+    <ClCompile Include="external\ode\ode\src\export-dif.cpp" />
+    <ClCompile Include="external\ode\ode\src\fastdot.cpp" />
+    <ClCompile Include="external\ode\ode\src\fastldltfactor.cpp" />
+    <ClCompile Include="external\ode\ode\src\fastldltsolve.cpp" />
+    <ClCompile Include="external\ode\ode\src\fastlsolve.cpp" />
+    <ClCompile Include="external\ode\ode\src\fastltsolve.cpp" />
+    <ClCompile Include="external\ode\ode\src\fastvecscale.cpp" />
+    <ClCompile Include="external\ode\ode\src\gimpact_contact_export_helper.cpp" />
+    <ClCompile Include="external\ode\ode\src\heightfield.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\amotor.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\ball.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\contact.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\dball.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\dhinge.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\fixed.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\hinge.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\hinge2.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\joint.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\lmotor.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\null.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\piston.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\plane2d.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\pr.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\pu.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\slider.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\transmission.cpp" />
+    <ClCompile Include="external\ode\ode\src\joints\universal.cpp" />
+    <ClCompile Include="external\ode\ode\src\lcp.cpp" />
+    <ClCompile Include="external\ode\ode\src\mass.cpp" />
+    <ClCompile Include="external\ode\ode\src\mat.cpp" />
+    <ClCompile Include="external\ode\ode\src\matrix.cpp" />
+    <ClCompile Include="external\ode\ode\src\memory.cpp" />
+    <ClCompile Include="external\ode\ode\src\misc.cpp" />
+    <ClCompile Include="external\ode\ode\src\nextafterf.c" />
+    <ClCompile Include="external\ode\ode\src\objects.cpp" />
+    <ClCompile Include="external\ode\ode\src\obstack.cpp" />
+    <ClCompile Include="external\ode\ode\src\ode.cpp" />
+    <ClCompile Include="external\ode\ode\src\odeinit.cpp" />
+    <ClCompile Include="external\ode\ode\src\odemath.cpp" />
+    <ClCompile Include="external\ode\ode\src\odeou.cpp" />
+    <ClCompile Include="external\ode\ode\src\odetls.cpp" />
+    <ClCompile Include="external\ode\ode\src\plane.cpp" />
+    <ClCompile Include="external\ode\ode\src\quickstep.cpp" />
+    <ClCompile Include="external\ode\ode\src\ray.cpp" />
+    <ClCompile Include="external\ode\ode\src\resource_control.cpp" />
+    <ClCompile Include="external\ode\ode\src\rotation.cpp" />
+    <ClCompile Include="external\ode\ode\src\simple_cooperative.cpp" />
+    <ClCompile Include="external\ode\ode\src\sphere.cpp" />
+    <ClCompile Include="external\ode\ode\src\step.cpp" />
+    <ClCompile Include="external\ode\ode\src\threading_base.cpp" />
+    <ClCompile Include="external\ode\ode\src\threading_impl.cpp" />
+    <ClCompile Include="external\ode\ode\src\threading_pool_posix.cpp" />
+    <ClCompile Include="external\ode\ode\src\threading_pool_win.cpp" />
+    <ClCompile Include="external\ode\ode\src\timer.cpp" />
+    <ClCompile Include="external\ode\ode\src\util.cpp" />
+    <ClCompile Include="external\ode\ou\src\ou\atomic.cpp" />
+    <ClCompile Include="external\ode\ou\src\ou\customization.cpp" />
+    <ClCompile Include="external\ode\ou\src\ou\malloc.cpp" />
+    <ClCompile Include="external\ode\ou\src\ou\threadlocalstorage.cpp" />
+    <ClCompile Include="external\pcre\src\pcre_byte_order.c" />
+    <ClCompile Include="external\pcre\src\pcre_chartables.c" />
+    <ClCompile Include="external\pcre\src\pcre_compile.c" />
+    <ClCompile Include="external\pcre\src\pcre_config.c" />
+    <ClCompile Include="external\pcre\src\pcre_dfa_exec.c" />
+    <ClCompile Include="external\pcre\src\pcre_exec.c" />
+    <ClCompile Include="external\pcre\src\pcre_fullinfo.c" />
+    <ClCompile Include="external\pcre\src\pcre_get.c" />
+    <ClCompile Include="external\pcre\src\pcre_globals.c" />
+    <ClCompile Include="external\pcre\src\pcre_maketables.c" />
+    <ClCompile Include="external\pcre\src\pcre_newline.c" />
+    <ClCompile Include="external\pcre\src\pcre_ord2utf8.c" />
+    <ClCompile Include="external\pcre\src\pcre_refcount.c" />
+    <ClCompile Include="external\pcre\src\pcre_string_utils.c" />
+    <ClCompile Include="external\pcre\src\pcre_study.c" />
+    <ClCompile Include="external\pcre\src\pcre_tables.c" />
+    <ClCompile Include="external\pcre\src\pcre_ucd.c" />
+    <ClCompile Include="external\pcre\src\pcre_valid_utf8.c" />
+    <ClCompile Include="external\pcre\src\pcre_version.c" />
+    <ClCompile Include="external\pcre\src\pcre_xclass.c" />
+    <ClCompile Include="external\zlib\adler32.c" />
+    <ClCompile Include="external\zlib\compress.c" />
+    <ClCompile Include="external\zlib\crc32.c" />
+    <ClCompile Include="external\zlib\deflate.c" />
+    <ClCompile Include="external\zlib\gzclose.c" />
+    <ClCompile Include="external\zlib\gzlib.c" />
+    <ClCompile Include="external\zlib\gzread.c" />
+    <ClCompile Include="external\zlib\gzwrite.c" />
+    <ClCompile Include="external\zlib\infback.c" />
+    <ClCompile Include="external\zlib\inffast.c" />
+    <ClCompile Include="external\zlib\inflate.c" />
+    <ClCompile Include="external\zlib\inftrees.c" />
+    <ClCompile Include="external\zlib\trees.c" />
+    <ClCompile Include="external\zlib\uncompr.c" />
+    <ClCompile Include="external\zlib\zutil.c" />
+    <ClCompile Include="src\audio\gf_audio_flac.c" />
+    <ClCompile Include="src\audio\gf_audio_mod.c" />
+    <ClCompile Include="src\audio\gf_audio_mp3.c" />
+    <ClCompile Include="src\audio\gf_audio_wav.c" />
+    <ClCompile Include="src\audio\gf_audio_xm.c" />
+    <ClCompile Include="src\bindgen\bindgen.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen.h">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_GoldFishAudio.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_GoldFishFont.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_GoldFishGUIComponent.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_GoldFishTexture.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_audio.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_font.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_graphic.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_gui.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\gf_action.c" />
+    <ClCompile Include="src\gf_assert.c" />
+    <ClCompile Include="src\gf_audio.c" />
+    <ClCompile Include="src\gf_checksum.c" />
+    <ClCompile Include="src\gf_client.c" />
+    <ClCompile Include="src\gf_command.c" />
+    <ClCompile Include="src\gf_core.c" />
+    <ClCompile Include="src\gf_draw_common.c" />
+    <ClCompile Include="src\gf_file.c" />
+    <ClCompile Include="src\gf_font.c" />
+    <ClCompile Include="src\gf_graphic_common.c" />
+    <ClCompile Include="src\gf_gui.c" />
+    <ClCompile Include="src\gf_image.c" />
+    <ClCompile Include="src\gf_input.c" />
+    <ClCompile Include="src\gf_log.c" />
+    <ClCompile Include="src\gf_lua.c" />
+    <ClCompile Include="src\gf_math.c" />
+    <ClCompile Include="src\gf_minisocket.c" />
+    <ClCompile Include="src\gf_model.c" />
+    <ClCompile Include="src\gf_network.c" />
+    <ClCompile Include="src\gf_physics.c" />
+    <ClCompile Include="src\gf_powered.c" />
+    <ClCompile Include="src\gf_prop.c" />
+    <ClCompile Include="src\gf_resource.c" />
+    <ClCompile Include="src\gf_server.c" />
+    <ClCompile Include="src\gf_stb_ds.c" />
+    <ClCompile Include="src\gf_stb_image_write.c" />
+    <ClCompile Include="src\gf_stb_truetype.c" />
+    <ClCompile Include="src\gf_texture.c" />
+    <ClCompile Include="src\gf_unicode.c" />
+    <ClCompile Include="src\gf_util.c" />
+    <ClCompile Include="src\gf_version.c" />
+    <ClCompile Include="src\graphic\dx11\dx11_init.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\dx11_resource.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\dx11_tool.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\gf_driver_dx11.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\main.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\window_mng.c">
+      <AdditionalOptions>-fpermissive %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_button.c" />
+    <ClCompile Include="src\gui\gf_gui_entry.c" />
+    <ClCompile Include="src\gui\gf_gui_frame.c" />
+    <ClCompile Include="src\gui\gf_gui_progress.c" />
+    <ClCompile Include="src\gui\gf_gui_range.c" />
+    <ClCompile Include="src\gui\gf_gui_scrollbar.c" />
+    <ClCompile Include="src\gui\gf_gui_tab.c" />
+    <ClCompile Include="src\gui\gf_gui_text.c" />
+    <ClCompile Include="src\gui\gf_gui_window.c" />
+    <ClCompile Include="src\image\gf_image_stb.c" />
+    <ClCompile Include="src\image\gf_image_svg.c" />
+    <ClCompile Include="src\sound\miniaudio\gf_miniaudio.c" />
+    <ClCompile Include="src\sound\miniaudio\gf_sound.c" />
+    <ClCompile Include="src\thread\win32\gf_thread.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

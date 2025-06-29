@@ -48,11 +48,11 @@ HRESULT CreateVertexShader(ID3D11VertexShader** ppVertexShader, ID3D11InputLayou
         return hr;
     }
 
-    hr = g_pd3dDevice->lpVtbl->CreateVertexShader(
-        g_pd3dDevice, pVSBlob->lpVtbl->GetBufferPointer(pVSBlob), 
-        pVSBlob->lpVtbl->GetBufferSize(pVSBlob), NULL, ppVertexShader);
+    hr = g_pd3dDevice->CreateVertexShader(
+        pVSBlob->GetBufferPointer(), 
+        pVSBlob->GetBufferSize(), NULL, ppVertexShader);
     if (FAILED(hr)) {
-        pVSBlob->lpVtbl->Release(pVSBlob);
+        pVSBlob->Release();
         MessageBoxA(NULL, "Could not create vertex shader", "Error", MB_OK);
         return hr;
     }
@@ -63,10 +63,10 @@ HRESULT CreateVertexShader(ID3D11VertexShader** ppVertexShader, ID3D11InputLayou
     };
     UINT numElements = ARRAYSIZE(layout);
 
-    hr = g_pd3dDevice->lpVtbl->CreateInputLayout(
-        g_pd3dDevice, layout, numElements, pVSBlob->lpVtbl->GetBufferPointer(pVSBlob),
-        pVSBlob->lpVtbl->GetBufferSize(pVSBlob), ppInputLayout);
-    pVSBlob->lpVtbl->Release(pVSBlob);
+    hr = g_pd3dDevice->CreateInputLayout(
+        layout, numElements, pVSBlob->GetBufferPointer(),
+        pVSBlob->GetBufferSize(), ppInputLayout);
+    pVSBlob->Release();
     
     if (FAILED(hr)) {
         MessageBoxA(NULL, "Could not create input layout", "Error", MB_OK);
@@ -84,10 +84,10 @@ HRESULT CreatePixelShader(ID3D11PixelShader** ppPixelShader) {
         return hr;
     }
 
-    hr = g_pd3dDevice->lpVtbl->CreatePixelShader(
-        g_pd3dDevice, pPSBlob->lpVtbl->GetBufferPointer(pPSBlob),
-        pPSBlob->lpVtbl->GetBufferSize(pPSBlob), NULL, ppPixelShader);
-    pPSBlob->lpVtbl->Release(pPSBlob);
+    hr = g_pd3dDevice->CreatePixelShader(
+        pPSBlob->GetBufferPointer(),
+        pPSBlob->GetBufferSize(), NULL, ppPixelShader);
+    pPSBlob->Release();
     
     if (FAILED(hr)) {
         MessageBoxA(NULL, "Could not create pixel shader", "Error", MB_OK);
@@ -104,7 +104,7 @@ HRESULT CreateVertexBuffer(ID3D11Buffer** ppVertexBuffer, const struct Vertex* v
     D3D11_SUBRESOURCE_DATA initData = { 0 };
     initData.pSysMem = vertices;
     
-    HRESULT hr = g_pd3dDevice->lpVtbl->CreateBuffer(g_pd3dDevice, &bd, &initData, ppVertexBuffer);
+    HRESULT hr = g_pd3dDevice->CreateBuffer(&bd, &initData, ppVertexBuffer);
     if (FAILED(hr)) {
         MessageBoxA(NULL, "Could not create vertex buffer", "Error", MB_OK);
     }
@@ -120,7 +120,7 @@ HRESULT CreateIndexBuffer(ID3D11Buffer** ppIndexBuffer, const unsigned int* indi
     D3D11_SUBRESOURCE_DATA initData = { 0 };
     initData.pSysMem = indices;
     
-    HRESULT hr = g_pd3dDevice->lpVtbl->CreateBuffer(g_pd3dDevice, &bd, &initData, ppIndexBuffer);
+    HRESULT hr = g_pd3dDevice->CreateBuffer(&bd, &initData, ppIndexBuffer);
     if (FAILED(hr)) {
         MessageBoxA(NULL, "Could not create index buffer", "Error", MB_OK);
     }
@@ -134,7 +134,7 @@ HRESULT CreateConstantBuffer(ID3D11Buffer** ppConstantBuffer) {
     bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
     bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
     
-    HRESULT hr = g_pd3dDevice->lpVtbl->CreateBuffer(g_pd3dDevice, &bd, NULL, ppConstantBuffer);
+    HRESULT hr = g_pd3dDevice->CreateBuffer(&bd, NULL, ppConstantBuffer);
     if (FAILED(hr)) {
         MessageBoxA(NULL, "Could not create constant buffer", "Error", MB_OK);
     }
@@ -144,7 +144,7 @@ HRESULT CreateConstantBuffer(ID3D11Buffer** ppConstantBuffer) {
 HRESULT SetupRenderStates() {
     HRESULT hr;
     
-    D3D11_RASTERIZER_DESC rasterizerDesc = { 0 };
+    D3D11_RASTERIZER_DESC rasterizerDesc = {};
     rasterizerDesc.FillMode = D3D11_FILL_SOLID;
     rasterizerDesc.CullMode = D3D11_CULL_NONE;
     rasterizerDesc.FrontCounterClockwise = FALSE;
@@ -157,10 +157,10 @@ HRESULT SetupRenderStates() {
     rasterizerDesc.AntialiasedLineEnable = FALSE;
     
     ID3D11RasterizerState* pRasterizerState = NULL;
-    hr = g_pd3dDevice->lpVtbl->CreateRasterizerState(g_pd3dDevice, &rasterizerDesc, &pRasterizerState);
+    hr = g_pd3dDevice->CreateRasterizerState(&rasterizerDesc, &pRasterizerState);
     if (SUCCEEDED(hr)) {
-        g_pImmediateContext->lpVtbl->RSSetState(g_pImmediateContext, pRasterizerState);
-        pRasterizerState->lpVtbl->Release(pRasterizerState);
+        g_pImmediateContext->RSSetState(pRasterizerState);
+        pRasterizerState->Release();
     } else {
         MessageBoxA(NULL, "Could not create rasterizer state", "Error", MB_OK);
         return hr;
@@ -173,10 +173,10 @@ HRESULT SetupRenderStates() {
     depthStencilDesc.StencilEnable = FALSE;
     
     ID3D11DepthStencilState* pDepthStencilState = NULL;
-    hr = g_pd3dDevice->lpVtbl->CreateDepthStencilState(g_pd3dDevice, &depthStencilDesc, &pDepthStencilState);
+    hr = g_pd3dDevice->CreateDepthStencilState(&depthStencilDesc, &pDepthStencilState);
     if (SUCCEEDED(hr)) {
-        g_pImmediateContext->lpVtbl->OMSetDepthStencilState(g_pImmediateContext, pDepthStencilState, 1);
-        pDepthStencilState->lpVtbl->Release(pDepthStencilState);
+        g_pImmediateContext->OMSetDepthStencilState(pDepthStencilState, 1);
+        pDepthStencilState->Release();
     } else {
         MessageBoxA(NULL, "Could not create depth stencil state", "Error", MB_OK);
         return hr;
@@ -189,13 +189,13 @@ void SetupPipeline(ID3D11Buffer* pVertexBuffer, ID3D11Buffer* pIndexBuffer, ID3D
                   ID3D11VertexShader* pVertexShader, ID3D11PixelShader* pPixelShader, ID3D11Buffer* pConstantBuffer) {
     UINT stride = sizeof(struct Vertex);
     UINT offset = 0;
-    g_pImmediateContext->lpVtbl->IASetVertexBuffers(g_pImmediateContext, 0, 1, &pVertexBuffer, &stride, &offset);
-    g_pImmediateContext->lpVtbl->IASetIndexBuffer(g_pImmediateContext, pIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
-    g_pImmediateContext->lpVtbl->IASetInputLayout(g_pImmediateContext, pInputLayout);
-    g_pImmediateContext->lpVtbl->IASetPrimitiveTopology(g_pImmediateContext, D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    g_pImmediateContext->lpVtbl->VSSetShader(g_pImmediateContext, pVertexShader, NULL, 0);
-    g_pImmediateContext->lpVtbl->VSSetConstantBuffers(g_pImmediateContext, 0, 1, &pConstantBuffer);
-    g_pImmediateContext->lpVtbl->PSSetShader(g_pImmediateContext, pPixelShader, NULL, 0);
+    g_pImmediateContext->IASetVertexBuffers(0, 1, &pVertexBuffer, &stride, &offset);
+    g_pImmediateContext->IASetIndexBuffer(pIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
+    g_pImmediateContext->IASetInputLayout(pInputLayout);
+    g_pImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    g_pImmediateContext->VSSetShader(pVertexShader, NULL, 0);
+    g_pImmediateContext->VSSetConstantBuffers(0, 1, &pConstantBuffer);
+    g_pImmediateContext->PSSetShader(pPixelShader, NULL, 0);
 }
 
 void MultiplyMatrix(float result[16], const float a[16], const float b[16]) {
@@ -305,8 +305,8 @@ void RenderScene(float fovDegrees, float aspect) {
     UpdateRotationFromInput();
     
     float clearColor[4] = { 0.0f, 0.1f, 0.3f, 1.0f };
-    g_pImmediateContext->lpVtbl->ClearRenderTargetView(g_pImmediateContext, g_pRenderTargetView, clearColor);
-    g_pImmediateContext->lpVtbl->ClearDepthStencilView(g_pImmediateContext, g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
+    g_pImmediateContext->ClearRenderTargetView(g_pRenderTargetView, clearColor);
+    g_pImmediateContext->ClearDepthStencilView(g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
     
     struct MatrixBuffer matrices;
     float tempMatrix[16];
@@ -331,10 +331,10 @@ void RenderScene(float fovDegrees, float aspect) {
     TransposeMatrix(matrices.projection, projectionMatrix);
     
     D3D11_MAPPED_SUBRESOURCE mappedResource;
-    HRESULT hr = g_pImmediateContext->lpVtbl->Map(g_pImmediateContext, (ID3D11Resource*)g_pConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
+    HRESULT hr = g_pImmediateContext->Map((ID3D11Resource*)g_pConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
     if (SUCCEEDED(hr)) {
         memcpy(mappedResource.pData, &matrices, sizeof(struct MatrixBuffer));
-        g_pImmediateContext->lpVtbl->Unmap(g_pImmediateContext, (ID3D11Resource*)g_pConstantBuffer, 0);
+        g_pImmediateContext->Unmap((ID3D11Resource*)g_pConstantBuffer, 0);
     }
     
     unsigned int indexCount = 36; //cube
@@ -342,24 +342,24 @@ void RenderScene(float fovDegrees, float aspect) {
         indexCount = g_appState->meshes[g_appState->currentMeshIndex].indexCount;
     }
     
-    g_pImmediateContext->lpVtbl->DrawIndexed(g_pImmediateContext, indexCount, 0, 0);
+    g_pImmediateContext->DrawIndexed(indexCount, 0, 0);
     
-    g_pSwapChain->lpVtbl->Present(g_pSwapChain, 0, 0);
+    g_pSwapChain->Present(0, 0);
 }
 
 void CleanupGraphicsResources() {
-    if (g_pVertexBuffer) g_pVertexBuffer->lpVtbl->Release(g_pVertexBuffer);
-    if (g_pIndexBuffer) g_pIndexBuffer->lpVtbl->Release(g_pIndexBuffer);
-    if (g_pConstantBuffer) g_pConstantBuffer->lpVtbl->Release(g_pConstantBuffer);
-    if (g_pInputLayout) g_pInputLayout->lpVtbl->Release(g_pInputLayout);
-    if (g_pVertexShader) g_pVertexShader->lpVtbl->Release(g_pVertexShader);
-    if (g_pPixelShader) g_pPixelShader->lpVtbl->Release(g_pPixelShader);
-    if (g_pDepthStencilView) g_pDepthStencilView->lpVtbl->Release(g_pDepthStencilView);
-    if (g_pDepthStencil) g_pDepthStencil->lpVtbl->Release(g_pDepthStencil);
-    if (g_pImmediateContext) g_pImmediateContext->lpVtbl->Release(g_pImmediateContext);
-    if (g_pd3dDevice) g_pd3dDevice->lpVtbl->Release(g_pd3dDevice);
-    if (g_pSwapChain) g_pSwapChain->lpVtbl->Release(g_pSwapChain);
-    if (g_pRenderTargetView) g_pRenderTargetView->lpVtbl->Release(g_pRenderTargetView);
+    if (g_pVertexBuffer) g_pVertexBuffer->Release();
+    if (g_pIndexBuffer) g_pIndexBuffer->Release();
+    if (g_pConstantBuffer) g_pConstantBuffer->Release();
+    if (g_pInputLayout) g_pInputLayout->Release();
+    if (g_pVertexShader) g_pVertexShader->Release();
+    if (g_pPixelShader) g_pPixelShader->Release();
+    if (g_pDepthStencilView) g_pDepthStencilView->Release();
+    if (g_pDepthStencil) g_pDepthStencil->Release();
+    if (g_pImmediateContext) g_pImmediateContext->Release();
+    if (g_pd3dDevice) g_pd3dDevice->Release();
+    if (g_pSwapChain) g_pSwapChain->Release();
+    if (g_pRenderTargetView) g_pRenderTargetView->Release();
 }
 
 HRESULT InitializeAllResources(AppState* appState) {
@@ -458,11 +458,11 @@ void SetCurrentMesh(AppState* appState, unsigned int meshIndex) {
     appState->currentMeshIndex = meshIndex;
     
     if (g_pVertexBuffer) {
-        g_pVertexBuffer->lpVtbl->Release(g_pVertexBuffer);
+        g_pVertexBuffer->Release();
         g_pVertexBuffer = NULL;
     }
     if (g_pIndexBuffer) {
-        g_pIndexBuffer->lpVtbl->Release(g_pIndexBuffer);
+        g_pIndexBuffer->Release();
         g_pIndexBuffer = NULL;
     }
     

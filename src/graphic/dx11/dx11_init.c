@@ -64,11 +64,11 @@ HRESULT InitD3D(HWND hWnd, D3DInitParams* params)
     if (FAILED(hr)) return hr;
 
     ID3D11Texture2D* pBackBuffer = NULL;
-    hr = g_pSwapChain->lpVtbl->GetBuffer(g_pSwapChain, 0, &IID_ID3D11Texture2D, (LPVOID*)&pBackBuffer);
+    hr = g_pSwapChain->GetBuffer(0, IID_ID3D11Texture2D, (LPVOID*)&pBackBuffer);
     if (FAILED(hr)) return hr;
 
-    hr = g_pd3dDevice->lpVtbl->CreateRenderTargetView(g_pd3dDevice, (ID3D11Resource*)pBackBuffer, NULL, &g_pRenderTargetView);
-    pBackBuffer->lpVtbl->Release(pBackBuffer);
+    hr = g_pd3dDevice->CreateRenderTargetView((ID3D11Resource*)pBackBuffer, NULL, &g_pRenderTargetView);
+    pBackBuffer->Release();
     if (FAILED(hr)) return hr;
 
     D3D11_TEXTURE2D_DESC descDepth = { 0 };
@@ -83,17 +83,17 @@ HRESULT InitD3D(HWND hWnd, D3DInitParams* params)
     descDepth.BindFlags = D3D11_BIND_DEPTH_STENCIL;
     descDepth.CPUAccessFlags = 0;
     descDepth.MiscFlags = 0;
-    hr = g_pd3dDevice->lpVtbl->CreateTexture2D(g_pd3dDevice, &descDepth, NULL, &g_pDepthStencil);
+    hr = g_pd3dDevice->CreateTexture2D(&descDepth, NULL, &g_pDepthStencil);
     if (FAILED(hr)) return hr;
 
-    D3D11_DEPTH_STENCIL_VIEW_DESC descDSV = { 0 };
+    D3D11_DEPTH_STENCIL_VIEW_DESC descDSV = {};
     descDSV.Format = descDepth.Format;
     descDSV.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
     descDSV.Texture2D.MipSlice = 0;
-    hr = g_pd3dDevice->lpVtbl->CreateDepthStencilView(g_pd3dDevice, (ID3D11Resource*)g_pDepthStencil, &descDSV, &g_pDepthStencilView);
+    hr = g_pd3dDevice->CreateDepthStencilView((ID3D11Resource*)g_pDepthStencil, &descDSV, &g_pDepthStencilView);
     if (FAILED(hr)) return hr;
 
-    g_pImmediateContext->lpVtbl->OMSetRenderTargets(g_pImmediateContext, 1, &g_pRenderTargetView, g_pDepthStencilView);
+    g_pImmediateContext->OMSetRenderTargets(1, &g_pRenderTargetView, g_pDepthStencilView);
 
     D3D11_VIEWPORT vp;
     vp.Width = (float)width;
@@ -102,7 +102,7 @@ HRESULT InitD3D(HWND hWnd, D3DInitParams* params)
     vp.MaxDepth = 1.0f;
     vp.TopLeftX = 0;
     vp.TopLeftY = 0;
-    g_pImmediateContext->lpVtbl->RSSetViewports(g_pImmediateContext, 1, &vp);
+    g_pImmediateContext->RSSetViewports(1, &vp);
 
     return S_OK;
 }

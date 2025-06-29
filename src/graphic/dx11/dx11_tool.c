@@ -49,14 +49,14 @@ HRESULT CompileShaderFromFile(const char* fileName, const char* entryPoint, cons
     
     if (FAILED(hr)) {
         if (pErrorBlob) {
-            OutputDebugStringA((char*)pErrorBlob->lpVtbl->GetBufferPointer(pErrorBlob));
-            pErrorBlob->lpVtbl->Release(pErrorBlob);
+            OutputDebugStringA((char*)pErrorBlob->GetBufferPointer());
+            pErrorBlob->Release();
         }
         free(shaderSource);
         return hr;
     }
     
-    if (pErrorBlob) pErrorBlob->lpVtbl->Release(pErrorBlob);
+    if (pErrorBlob) pErrorBlob->Release();
     free(shaderSource);
     
     return S_OK;

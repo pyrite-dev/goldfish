@@ -1,0 +1,1593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="external">
+      <UniqueIdentifier>{2839F3DC-1406-4EE8-3D1F-3C90294B8376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\crypto">
+      <UniqueIdentifier>{F8687511-64F4-E2D5-6D05-66CAD90F3FD6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\jar">
+      <UniqueIdentifier>{D422D728-C085-66CD-690B-9F83554D3250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\lua">
+      <UniqueIdentifier>{D92DD728-C590-66CD-6E16-9F835A583250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode">
+      <UniqueIdentifier>{6F38D728-5B9B-66CD-0421-9F83F0623250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\GIMPACT">
+      <UniqueIdentifier>{C316E833-AFA5-71FD-58C4-85F8443282A3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\GIMPACT\include">
+      <UniqueIdentifier>{3651F502-220C-E5AE-CBC3-5DF9B75D2F3F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\GIMPACT\include\GIMPACT">
+      <UniqueIdentifier>{8A065A83-76ED-1B7B-1F3E-82980B0495E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\GIMPACT\src">
+      <UniqueIdentifier>{5A7EE783-46A3-3604-6FEE-1B945B723522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\include">
+      <UniqueIdentifier>{E25E11C5-CEED-9A8E-770C-AF89637AAB34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\include\ode">
+      <UniqueIdentifier>{29ABA59A-15D0-F41A-3E1B-DAAA2A9FF338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\libccd">
+      <UniqueIdentifier>{3F4D95ED-ABAE-72FB-341C-B9ADA07CA9BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\libccd\src">
+      <UniqueIdentifier>{D6920326-42CA-4BBD-4BD4-AFE0B78A72B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\libccd\src\ccd">
+      <UniqueIdentifier>{EF85B8D0-5B93-E6B6-E479-E2A15086B26D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\libccd\src\custom">
+      <UniqueIdentifier>{80627900-6C88-4367-55CE-C83241936833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\libccd\src\custom\ccdcustom">
+      <UniqueIdentifier>{54DE3000-405B-2443-69D8-245755B4C0D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\ode">
+      <UniqueIdentifier>{3683A7B9-227C-C60B-4BAE-AB903706A617}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\ode\src">
+      <UniqueIdentifier>{4DEC9D7B-397B-2745-E299-3B40CE0738EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\ode\src\joints">
+      <UniqueIdentifier>{D384518A-3F92-7F70-C878-7B5B34854B27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\ou">
+      <UniqueIdentifier>{C2EC692C-2E78-D7F0-3789-5AE5A39333F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\ou\include">
+      <UniqueIdentifier>{35B6707E-A1ED-B815-AAF7-1C3916AEDF0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\ou\include\ou">
+      <UniqueIdentifier>{C8DC5A8C-B4EC-065D-1DA6-6B7B09D5F5F5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\ou\src">
+      <UniqueIdentifier>{D93B52F5-459D-2F03-CE0A-76B53A6B66C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\ode\ou\src\ou">
+      <UniqueIdentifier>{EC2FE4EC-D829-0D3F-C196-A34FAD2F73AB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\pcre">
+      <UniqueIdentifier>{81D0BE43-ED90-3A7A-B6CB-83F7224B7F56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\pcre\include">
+      <UniqueIdentifier>{F4E8D0EA-6055-8CE5-2949-24439574AE4D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\pcre\src">
+      <UniqueIdentifier>{18E7E0AF-84FD-DE45-CD74-6A6739CAAFCD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="external\zlib">
+      <UniqueIdentifier>{6871C443-D431-407A-9D6C-89F709EC8456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gf_type">
+      <UniqueIdentifier>{06A5B929-7230-27EE-7B41-AAE2E74B83EE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\audio">
+      <UniqueIdentifier>{0E37D9B4-7AA1-8D2B-C3DF-3ED12F896B80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\bindgen">
+      <UniqueIdentifier>{53AAB181-BF5F-2A77-4854-244EB408217B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\graphic">
+      <UniqueIdentifier>{7AA2AE16-E657-270C-6F4C-21E3DB001E10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\graphic\dx11">
+      <UniqueIdentifier>{47994477-3392-63C9-5CC4-484E481C43D5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gui">
+      <UniqueIdentifier>{210530A9-8DE4-AE44-96FC-391B025B15A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\image">
+      <UniqueIdentifier>{FF8A65B5-6BF5-192C-B433-CBD120DDF780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sound">
+      <UniqueIdentifier>{C5EE1BB6-3159-D02C-7A97-81D2E640AE81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sound\miniaudio">
+      <UniqueIdentifier>{53E93272-BF4A-1080-48B8-5632B418473F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\thread">
+      <UniqueIdentifier>{14796E7B-0031-B0C8-6938-8924550F4BB9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\thread\win32">
+      <UniqueIdentifier>{16407996-0239-98E8-2B6B-7D6D17C377F4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="external\jar\jar_mod.h">
+      <Filter>external\jar</Filter>
+    </ClInclude>
+    <ClInclude Include="external\jar\jar_xm.h">
+      <Filter>external\jar</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lapi.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lauxlib.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lcode.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lctype.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\ldebug.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\ldo.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lfunc.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lgc.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\ljumptab.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\llex.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\llimits.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lmem.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lobject.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lopcodes.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lopnames.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lparser.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lprefix.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lstate.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lstring.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\ltable.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\ltm.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lua.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\luaconf.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lualib.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lundump.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lvm.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\lua\lzio.h">
+      <Filter>external\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_boxpruning.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_contact.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_geometry.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_math.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_memory.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_radixsort.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_tri_capsule_collision.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_tri_collision.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_tri_sphere_collision.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gim_trimesh.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\GIMPACT\include\GIMPACT\gimpact.h">
+      <Filter>external\ode\GIMPACT\include\GIMPACT</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\collision.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\collision_space.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\collision_trimesh.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\common.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\compatibility.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\contact.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\cooperative.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\error.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\export-dif.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\mass.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\matrix.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\matrix_coop.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\memory.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\misc.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\objects.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\ode.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\odeconfig.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\odecpp.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\odecpp_collision.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\odeinit.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\odemath.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\odemath_legacy.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\precision.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\rotation.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\threading.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\threading_impl.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\timer.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\include\ode\version.h">
+      <Filter>external\ode\include\ode</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\alloc.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\ccd.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\compiler.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\dbg.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\list.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\polytope.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\precision.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\quat.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\simplex.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\support.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\ccd\vec3.h">
+      <Filter>external\ode\libccd\src\ccd</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\custom\ccdcustom\quat.h">
+      <Filter>external\ode\libccd\src\custom\ccdcustom</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\libccd\src\custom\ccdcustom\vec3.h">
+      <Filter>external\ode\libccd\src\custom\ccdcustom</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\array.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_kernel.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_libccd.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_space_internal.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_std.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_transform.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_colliders.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_gimpact.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_internal.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_internal_impl.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_trimesh_opcode.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\collision_util.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\common.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\config.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\coop_matrix_types.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\default_threading.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\error.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\fastdot_impl.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\fastldltfactor_impl.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\fastldltsolve_impl.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\fastlsolve_impl.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\fastltsolve_impl.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\fastvecscale_impl.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\gimpact_contact_export_helper.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\gimpact_gim_contact_accessor.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\gimpact_plane_contact_accessor.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\heightfield.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\amotor.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\ball.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\contact.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\dball.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\dhinge.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\fixed.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\hinge.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\hinge2.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\joint.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\joint_internal.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\joints.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\lmotor.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\null.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\piston.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\plane2d.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\pr.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\pu.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\slider.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\transmission.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\joints\universal.h">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\lcp.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\mat.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\matrix.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\objects.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\obstack.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\odemath.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\odeou.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\odetls.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\quickstep.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\resource_control.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\simple_cooperative.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\step.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threaded_solver_ldlt.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threading_atomics_provs.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threading_base.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threading_fake_sync.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threading_impl.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threading_impl_posix.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threading_impl_templates.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threading_impl_win.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\threadingutils.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\typedefs.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ode\src\util.h">
+      <Filter>external\ode\ode\src</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\assert.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\atomic.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\atomicflags.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\customization.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\enumarrays.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\features.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\flags.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\flagsdefines.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\inttypes.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\macros.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\malloc.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\namespace.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\platform.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\simpleflags.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\templates.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\threadlocalstorage.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ode\ou\include\ou\typewrapper.h">
+      <Filter>external\ode\ou\include\ou</Filter>
+    </ClInclude>
+    <ClInclude Include="external\pcre\include\pcre.h">
+      <Filter>external\pcre\include</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\crc32.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\deflate.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\gzguts.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\inffast.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\inffixed.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\inflate.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\inftrees.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\trees.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\zconf.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\zlib.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="external\zlib\zutil.h">
+      <Filter>external\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_action.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_all.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_assert.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_audio.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_checksum.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_client.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_command.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_config.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_core.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_draw.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_draw_driver.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_draw_platform.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_dx11.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_file.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_font.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_gload.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_graphic.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_gui.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_gui_component.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_gui_static.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_image.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_input.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_log.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_lua.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_macro.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_math.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_model.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_netdrv.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_network.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_opengl.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_physics.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_pre.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_prop.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_resource.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_server.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_snddrv.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_sound.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_texture.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_thread.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\action.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\audio.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\client.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\command.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\compat.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\core.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\draw.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\draw_driver.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\draw_platform.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\file.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\font.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\graphic.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\gui.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\input.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\lua.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\math.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\model.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\network.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\physics.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\prop.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\resource.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\server.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\sound.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\texture.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\thread.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_type\version.h">
+      <Filter>include\gf_type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_unicode.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gf_version.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="external\crypto\aes.c">
+      <Filter>external\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="external\crypto\compact25519.c">
+      <Filter>external\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lapi.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lauxlib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lbaselib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lcode.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lcorolib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lctype.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\ldblib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\ldebug.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\ldo.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\ldump.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lfunc.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lgc.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\linit.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\liolib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\llex.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lmathlib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lmem.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\loadlib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lobject.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lopcodes.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\loslib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lparser.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lstate.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lstring.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lstrlib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\ltable.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\ltablib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\ltm.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lundump.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lutf8lib.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lvm.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\lua\lzio.c">
+      <Filter>external\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_boxpruning.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_contact.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_math.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_memory.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_tri_tri_overlap.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh_capsule_collision.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh_ray_collision.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh_sphere_collision.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gim_trimesh_trimesh_collision.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\GIMPACT\src\gimpact.cpp">
+      <Filter>external\ode\GIMPACT\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\libccd\src\alloc.c">
+      <Filter>external\ode\libccd\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\libccd\src\ccd.c">
+      <Filter>external\ode\libccd\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\libccd\src\mpr.c">
+      <Filter>external\ode\libccd\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\libccd\src\polytope.c">
+      <Filter>external\ode\libccd\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\libccd\src\support.c">
+      <Filter>external\ode\libccd\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\libccd\src\vec3.c">
+      <Filter>external\ode\libccd\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\array.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\box.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\capsule.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_convex_trimesh.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_cylinder_box.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_cylinder_plane.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_cylinder_sphere.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_cylinder_trimesh.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_kernel.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_libccd.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_quadtreespace.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_sapspace.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_space.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_transform.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_box.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_ccylinder.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_gimpact.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_internal.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_plane.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_ray.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_sphere.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_trimesh_trimesh.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\collision_util.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\convex.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\cylinder.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\default_threading.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\error.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\export-dif.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\fastdot.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\fastldltfactor.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\fastldltsolve.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\fastlsolve.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\fastltsolve.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\fastvecscale.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\gimpact_contact_export_helper.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\heightfield.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\amotor.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\ball.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\contact.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\dball.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\dhinge.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\fixed.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\hinge.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\hinge2.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\joint.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\lmotor.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\null.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\piston.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\plane2d.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\pr.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\pu.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\slider.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\transmission.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\joints\universal.cpp">
+      <Filter>external\ode\ode\src\joints</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\lcp.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\mass.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\mat.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\matrix.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\memory.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\misc.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\nextafterf.c">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\objects.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\obstack.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\ode.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\odeinit.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\odemath.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\odeou.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\odetls.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\plane.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\quickstep.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\ray.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\resource_control.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\rotation.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\simple_cooperative.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\sphere.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\step.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\threading_base.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\threading_impl.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\threading_pool_posix.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\threading_pool_win.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\timer.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ode\src\util.cpp">
+      <Filter>external\ode\ode\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ou\src\ou\atomic.cpp">
+      <Filter>external\ode\ou\src\ou</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ou\src\ou\customization.cpp">
+      <Filter>external\ode\ou\src\ou</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ou\src\ou\malloc.cpp">
+      <Filter>external\ode\ou\src\ou</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ode\ou\src\ou\threadlocalstorage.cpp">
+      <Filter>external\ode\ou\src\ou</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_byte_order.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_chartables.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_compile.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_config.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_dfa_exec.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_exec.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_fullinfo.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_get.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_globals.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_maketables.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_newline.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_ord2utf8.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_refcount.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_string_utils.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_study.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_tables.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_ucd.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_valid_utf8.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_version.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\pcre\src\pcre_xclass.c">
+      <Filter>external\pcre\src</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\adler32.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\compress.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\crc32.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\deflate.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\gzclose.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\gzlib.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\gzread.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\gzwrite.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\infback.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\inffast.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\inflate.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\inftrees.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\trees.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\uncompr.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="external\zlib\zutil.c">
+      <Filter>external\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio\gf_audio_flac.c">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio\gf_audio_mod.c">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio\gf_audio_mp3.c">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio\gf_audio_wav.c">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio\gf_audio_xm.c">
+      <Filter>src\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen.h">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_GoldFishAudio.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_GoldFishFont.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_GoldFishGUIComponent.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_GoldFishTexture.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_audio.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_font.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_graphic.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bindgen\bindgen_gui.c">
+      <Filter>src\bindgen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_action.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_assert.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_audio.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_checksum.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_client.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_command.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_core.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_draw_common.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_file.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_font.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_graphic_common.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_gui.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_image.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_input.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_log.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_lua.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_math.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_minisocket.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_model.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_network.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_physics.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_powered.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_prop.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_resource.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_server.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_stb_ds.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_stb_image_write.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_stb_truetype.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_texture.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_unicode.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_util.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gf_version.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\dx11_init.c">
+      <Filter>src\graphic\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\dx11_resource.c">
+      <Filter>src\graphic\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\dx11_tool.c">
+      <Filter>src\graphic\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\gf_driver_dx11.c">
+      <Filter>src\graphic\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\main.c">
+      <Filter>src\graphic\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphic\dx11\window_mng.c">
+      <Filter>src\graphic\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_button.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_entry.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_frame.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_progress.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_range.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_scrollbar.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_tab.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_text.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\gf_gui_window.c">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\image\gf_image_stb.c">
+      <Filter>src\image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\image\gf_image_svg.c">
+      <Filter>src\image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\miniaudio\gf_miniaudio.c">
+      <Filter>src\sound\miniaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\miniaudio\gf_sound.c">
+      <Filter>src\sound\miniaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thread\win32\gf_thread.c">
+      <Filter>src\thread\win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
