@@ -19,7 +19,8 @@
  *    This product includes software developed by the Pyrite Development Team. 
  * 
  * 4. Neither the name of Pyrite Development Team nor the names of its
- *    contributors may be used to endorse or promote products derived from this
+ *    contributors may be used to
+ * endorse or promote products derived from this
  *    software without specific prior written permission.
  * 
  * THIS SOFTWARE IS PROVIDED BY COPYRIGHT HOLDER "AS IS" AND ANY EXPRESS OR
