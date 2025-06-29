@@ -36,6 +36,7 @@
 #include <gf_input.h>
 #include <gf_action.h>
 #include <gf_command.h>
+#include <gf_model.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -342,9 +343,11 @@ void gf_draw_frame(gf_draw_t* draw) {
 		}
 	} else {
 		gf_lua_step(draw->engine->lua);
+		if(draw->callback != NULL) draw->callback(draw);
 		gf_gui_render(draw->gui);
 		gf_draw_cursor(draw);
 	}
+
 	gf_action_process(draw->engine, draw->input);
 	if(arrlen(draw->input->key_queue) > 0) {
 		arrdel(draw->input->key_queue, 0);
@@ -456,3 +459,5 @@ void gf_draw_destroy(gf_draw_t* draw) {
 void gf_draw_set_input(gf_draw_t* draw, gf_input_t* input) { draw->input = input; }
 
 double gf_draw_get_fps(gf_draw_t* draw) { return draw->fps; }
+
+void gf_draw_set_callback(gf_draw_t* draw, gf_draw_callback_t callback) { draw->callback = callback; }

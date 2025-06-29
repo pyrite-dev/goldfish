@@ -28,6 +28,10 @@
 #define MAPVK_VK_TO_VSC 0x00
 #endif
 
+#if WINVER >= 0x0500
+#define HAS_BITMAPV5
+#endif
+
 typedef const char*(APIENTRY* PFNWGLGETEXTENSIONSSTRINGARB)(HDC);
 #ifdef GF_DO_SWAP_INTERVAL
 typedef BOOL(APIENTRY* PFNWGLSWAPINTERVALPROC)(int);
@@ -170,20 +174,6 @@ LRESULT CALLBACK gf_draw_platform_proc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp
 			draw->height = rect.bottom - rect.top;
 #if defined(GF_TYPE_NATIVE)
 			wglMakeCurrent(draw->platform->dc, draw->platform->glrc);
-#elif defined(GF_TYPE_OSMESA)
-			DeleteObject(draw->platform->bitmap);
-			DeleteDC(draw->platform->bitmapdc);
-			/**
-			 * Do NOT:
-			 * free(draw->platform->buffer);
-			 */
-			draw->platform->buffer		 = malloc(draw->width * draw->height * 4);
-			draw->platform->header.bV5Width	 = draw->width;
-			draw->platform->header.bV5Height = -((LONG)draw->height);
-			draw->platform->bitmap		 = CreateDIBSection(draw->platform->dc, (BITMAPINFO*)&draw->platform->header, DIB_RGB_COLORS, (void**)&draw->platform->buffer, NULL, (DWORD)0);
-			draw->platform->bitmapdc	 = CreateCompatibleDC(draw->platform->dc);
-			SelectObject(draw->platform->bitmapdc, draw->platform->bitmap);
-			OSMesaMakeCurrent(draw->platform->context, draw->platform->buffer, GL_UNSIGNED_BYTE, draw->width, draw->height);
 #endif
 			gf_draw_reshape(draw);
 		}
@@ -286,7 +276,6 @@ int gf_draw_platform_has_extension(gf_draw_t* draw, const char* query) {
 		ptr = strstr(ext, query);
 		return ((ptr != NULL) && ((ptr[len] == ' ') || (ptr[len] == '\0')));
 	}
-#elif defined(GF_TYPE_OSMESA)
 #endif
 	return 0;
 }
@@ -296,8 +285,6 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 	int ret = 0;
 #if defined(GF_TYPE_NATIVE)
 	wglMakeCurrent(draw->platform->dc, draw->platform->glrc);
-#elif defined(GF_TYPE_OSMESA)
-	OSMesaMakeCurrent(draw->platform->context, draw->platform->buffer, GL_UNSIGNED_BYTE, draw->width, draw->height);
 #endif
 	while(PeekMessage(&msg, draw->platform->window, 0, 0, PM_NOREMOVE)) {
 		if(GetMessage(&msg, draw->platform->window, 0, 0)) {
@@ -315,8 +302,6 @@ int gf_draw_platform_step(gf_draw_t* draw) {
 
 #if defined(GF_TYPE_NATIVE)
 		SwapBuffers(draw->platform->dc);
-#elif defined(GF_TYPE_OSMESA)
-		BitBlt(draw->platform->dc, 0, 0, draw->width, draw->height, draw->platform->bitmapdc, 0, 0, SRCCOPY);
 #endif
 	}
 	return ret;
@@ -371,9 +356,9 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		return NULL;
 	}
 
-#if WINVER >= 0x0400
+#ifdef HAS_BITMAPV5
 	{
-		BITMAPV4HEADER bi;
+		BITMAPV5HEADER bi;
 		HBITMAP	       color;
 		HBITMAP	       mask;
 		unsigned char* target = NULL;
@@ -382,16 +367,16 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		HDC	       dc = GetDC(NULL);
 
 		memset(&bi, 0, sizeof(bi));
-		bi.bV4Size	    = sizeof(bi);
-		bi.bV4Width	    = 1;
-		bi.bV4Height	    = -((LONG)1);
-		bi.bV4Planes	    = 1;
-		bi.bV4BitCount	    = 32;
-		bi.bV4V4Compression = BI_RGB;
-		bi.bV4RedMask	    = 0xff << 16;
-		bi.bV4GreenMask	    = 0xff << 8;
-		bi.bV4BlueMask	    = 0xff << 0;
-		bi.bV4AlphaMask	    = 0xff << 24;
+		bi.bV5Size	  = sizeof(bi);
+		bi.bV5Width	  = 1;
+		bi.bV5Height	  = -((LONG)1);
+		bi.bV5Planes	  = 1;
+		bi.bV5BitCount	  = 32;
+		bi.bV5Compression = BI_RGB;
+		bi.bV5RedMask	  = 0xff << 16;
+		bi.bV5GreenMask	  = 0xff << 8;
+		bi.bV5BlueMask	  = 0xff << 0;
+		bi.bV5AlphaMask	  = 0xff << 24;
 
 		color = CreateDIBSection(dc, (BITMAPINFO*)&bi, DIB_RGB_COLORS, (void**)&target, NULL, (DWORD)0);
 		ReleaseDC(NULL, dc);
@@ -418,7 +403,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	}
 
 	if(engine->icon != NULL) {
-		BITMAPV4HEADER bi;
+		BITMAPV5HEADER bi;
 		HBITMAP	       color;
 		HBITMAP	       mask;
 		unsigned char* target = NULL;
@@ -428,16 +413,16 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		HDC	       dc = GetDC(NULL);
 
 		memset(&bi, 0, sizeof(bi));
-		bi.bV4Size	    = sizeof(bi);
-		bi.bV4Width	    = engine->icon_width;
-		bi.bV4Height	    = -((LONG)engine->icon_height);
-		bi.bV4Planes	    = 1;
-		bi.bV4BitCount	    = 32;
-		bi.bV4V4Compression = BI_RGB;
-		bi.bV4RedMask	    = 0xff << 16;
-		bi.bV4GreenMask	    = 0xff << 8;
-		bi.bV4BlueMask	    = 0xff << 0;
-		bi.bV4AlphaMask	    = 0xff << 24;
+		bi.bV5Size	  = sizeof(bi);
+		bi.bV5Width	  = engine->icon_width;
+		bi.bV5Height	  = -((LONG)engine->icon_height);
+		bi.bV5Planes	  = 1;
+		bi.bV5BitCount	  = 32;
+		bi.bV5Compression = BI_RGB;
+		bi.bV5RedMask	  = 0xff << 16;
+		bi.bV5GreenMask	  = 0xff << 8;
+		bi.bV5BlueMask	  = 0xff << 0;
+		bi.bV5AlphaMask	  = 0xff << 24;
 
 		color = CreateDIBSection(dc, (BITMAPINFO*)&bi, DIB_RGB_COLORS, (void**)&target, NULL, (DWORD)0);
 		ReleaseDC(NULL, dc);
@@ -493,28 +478,6 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		return NULL;
 	}
 	wglMakeCurrent(platform->dc, platform->glrc);
-#elif defined(GF_TYPE_OSMESA)
-	platform->context = OSMesaCreateContext(OSMESA_BGRA, NULL);
-	if(platform->context == NULL) {
-		gf_log_function(engine, "Failed to get OpenGL context", "");
-		gf_draw_platform_destroy(platform);
-		return NULL;
-	}
-	platform->buffer = malloc(draw->width * draw->height * 4);
-	OSMesaMakeCurrent(platform->context, platform->buffer, GL_UNSIGNED_BYTE, draw->width, draw->height);
-	OSMesaPixelStore(OSMESA_Y_UP, 0);
-
-	memset(&platform->header, 0, sizeof(platform->header));
-	platform->header.bV4Size	  = sizeof(platform->header);
-	platform->header.bV4Width	  = draw->width;
-	platform->header.bV4Height	  = -((LONG)draw->height);
-	platform->header.bV4Planes	  = 1;
-	platform->header.bV4BitCount	  = 32;
-	platform->header.bV4V4Compression = BI_RGB;
-
-	platform->bitmap   = CreateDIBSection(platform->dc, (BITMAPINFO*)&platform->header, DIB_RGB_COLORS, (void**)&platform->buffer, NULL, (DWORD)0);
-	platform->bitmapdc = CreateCompatibleDC(platform->dc);
-	SelectObject(platform->bitmapdc, platform->bitmap);
 #endif
 
 #if defined(GF_DO_SWAP_INTERVAL) && defined(GF_TYPE_NATIVE)
@@ -549,21 +512,11 @@ void gf_draw_platform_destroy(gf_draw_platform_t* platform) {
 	if(platform->glrc != NULL) {
 		wglDeleteContext(platform->glrc);
 	}
-#elif defined(GF_TYPE_OSMESA)
-	if(platform->context != NULL) {
-		OSMesaDestroyContext(platform->context);
-	}
-	if(platform->bitmapdc != NULL) {
-		DeleteDC(platform->bitmapdc);
-	}
-	if(platform->bitmap != NULL) {
-		DeleteObject(platform->bitmap);
-	}
 #endif
 	if(platform->window != NULL) {
 		DestroyWindow(platform->window);
 	}
-#if WINVER >= 0x0400
+#ifdef HAS_BITMAPV5
 	if(platform->cursor != NULL) {
 		DestroyCursor((HCURSOR)platform->cursor);
 	}

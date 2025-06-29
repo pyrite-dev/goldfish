@@ -28,26 +28,23 @@ gf_draw_platform_t;
 #if defined(GF_DRV_OPENGL)
 #if defined(GF_USE_X11)
 #if defined(GF_TYPE_NATIVE)
-GF_DECLARE_TYPE(draw_platform, {
-	gf_engine_t* engine;
-	Display*     display;
-	Window	     window;
-	GLXContext   context;
-	Atom	     wm_delete_window;
-	Pixmap	     cursor;
+#define gf_draw_platform_keymap_t struct gf_draw_platform_keymap
+
+gf_draw_platform_keymap_t;
+
+GF_DECLARE_TYPE(draw_platform_keymap, {
+	int key;
+	int value;
 });
-#elif defined(GF_TYPE_OSMESA)
+
 GF_DECLARE_TYPE(draw_platform, {
-	gf_engine_t*   engine;
-	Display*       display;
-	Window	       window;
-	OSMesaContext  context;
-	Atom	       wm_delete_window;
-	unsigned char* buffer;
-	XImage*	       image;
-	XVisualInfo    visual;
-	GC	       gc;
-	Pixmap	       cursor;
+	gf_engine_t*		   engine;
+	Display*		   display;
+	Window			   window;
+	GLXContext		   context;
+	Atom			   wm_delete_window;
+	Pixmap			   cursor;
+	gf_draw_platform_keymap_t* keymap;
 });
 #endif
 #elif defined(GF_USE_GDI)
@@ -60,24 +57,17 @@ GF_DECLARE_TYPE(draw_platform, {
 	HGLRC	     glrc;
 	HCURSOR	     cursor;
 });
-#elif defined(GF_TYPE_OSMESA)
-GF_DECLARE_TYPE(draw_platform, {
-	gf_engine_t*   engine;
-	HINSTANCE      instance;
-	HWND	       window;
-	HDC	       dc;
-	OSMesaContext  context;
-	unsigned char* buffer;
-	HBITMAP	       bitmap;
-	BITMAPV4HEADER header;
-	HDC	       bitmapdc;
-	HCURSOR	       cursor;
-});
 #endif
-#elif defined(GF_USE_RGFW)
+#elif defined(GF_USE_SDL2)
+GF_DECLARE_TYPE(draw_platform, {
+	gf_engine_t*  engine;
+	SDL_Window*   window;
+	SDL_GLContext context;
+});
+#elif defined(GF_USE_GLFW)
 GF_DECLARE_TYPE(draw_platform, {
 	gf_engine_t* engine;
-	RGFW_window* window;
+	GLFWwindow*  window;
 });
 #endif
 #else

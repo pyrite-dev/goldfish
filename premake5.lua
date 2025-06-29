@@ -25,7 +25,8 @@ gf_sound_backends = {
 	},
 	sdl2 = {
 		name = "SDL2",
-		config = "sdl2"
+		links = {"SDL2"}
+
 	},
 	null = {
 		name = "Null"
@@ -41,7 +42,7 @@ gf_sound_backends = {
 gf_backends = {
 	opengl = {
 		name = "OpenGL",
-		default_backend = "rgfw",
+		default_backend = "sdl2",
 		default_type = "native",
 		types = {
 			native = {
@@ -63,8 +64,14 @@ gf_backends = {
 					"gdi32"
 				}
 			},
-			rgfw = {
-				name = "RGFW",
+			sdl2 = {
+				name = "SDL2",
+				links = {
+					"SDL2"
+				}
+			},
+			glfw = {
+				name = "GLFW",
 				includedirs = {
 					"external/rgfw/include"
 				},
@@ -116,8 +123,8 @@ gf_backends = {
 		}
 	},
 	rgfw = {
-				includedirs = {
-					"external/rgfw"
+				links = {
+					"glfw"
 				}
 			},
 			agl = {
@@ -128,29 +135,6 @@ gf_backends = {
 				},
 				links = {
 					-- "external/OpenGLOnMacOS9/lib/libgl.a"
-				}
-			},
-			["rgfw-wayland"] = {
-				alias = "rgfw",
-				name = "RGFW (Wayland)",
-				includedirs = {
-					"external/rgfw"
-				},
-				defines = {
-					"RGFW_WAYLAND=1"
-				},
-				links = {
-					"wayland-cursor",
-					"wayland-client",
-					"xkbcommon",
-					"wayland-egl",
-					"EGL",
-					"GL"
-				},
-				files = {
-					"external/rgfw/relative-pointer-unstable-v1-client-protocol.c",
-					"external/rgfw/xdg-decoration-unstable-v1.c",
-					"external/rgfw/xdg-shell.c"
 				}
 			}
 		}
@@ -448,6 +432,20 @@ function gf_link_stuffs(cond)
 	for k,v in pairs(gf_backends) do
 		for k2,v2 in pairs(v["backends"]) do
 			for k3,v3 in pairs(v["types"]) do
+				filter({
+					"options:backend=" .. k,
+					"options:" .. k .. "=" .. k2,
+					"options:" .. k .. "-type=" .. k3,
+					"platforms:Native"
+				})
+					if v2.config then
+						buildoptions("`" .. v2.config .. "-config --cflags`")
+						linkoptions("`" .. v2.config .. "-config --libs`")
+					end
+					if v3.config then
+						buildoptions("`" .. v3.config .. "-config --cflags`")
+						linkoptions("`" .. v3.config .. "-config --libs`")
+					end
 				filter({
 					"options:backend=" .. k,
 					"options:" .. k .. "=" .. k2,

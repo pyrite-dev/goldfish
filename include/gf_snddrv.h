@@ -18,8 +18,8 @@
 #elif defined(GF_SND_ALSA)
 #include <alsa/asoundlib.h>
 #elif defined(GF_SND_SDL2)
-#include <SDL.h>
-#include <SDL_audio.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_audio.h>
 #elif defined(GF_SND_OSS)
 #include <soundcard.h>
 #elif defined(GF_SND_SUN)
