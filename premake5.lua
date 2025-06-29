@@ -25,7 +25,8 @@ gf_sound_backends = {
 	},
 	sdl2 = {
 		name = "SDL2",
-		config = "sdl2"
+		links = {"SDL2"}
+
 	},
 	null = {
 		name = "Null"
@@ -65,7 +66,9 @@ gf_backends = {
 			},
 			sdl2 = {
 				name = "SDL2",
-				config = "sdl2"
+				links = {
+					"SDL2"
+				}
 			},
 			glfw = {
 				name = "GLFW",
