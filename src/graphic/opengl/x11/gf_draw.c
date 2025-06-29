@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Platform-dependent code for X11.
  *
  **********************************************************************************
  * @endif

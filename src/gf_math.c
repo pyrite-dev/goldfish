@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Code for math stuffs that don't exist in C89.
  *
  **********************************************************************************
  * @endif

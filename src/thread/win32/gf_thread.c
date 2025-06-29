@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Wrap Win32 thread.
  *
  **********************************************************************************
  * @endif

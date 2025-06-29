@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * jar_mod implementation.
  *
  **********************************************************************************
  * @endif

@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Wrap driver-dependent texture code.
  *
  **********************************************************************************
  * @endif

@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Code for miniaudio audio playback.
  *
  **********************************************************************************
  * @endif

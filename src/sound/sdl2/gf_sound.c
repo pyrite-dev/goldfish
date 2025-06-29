@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Code for SDL2 audio playback.
  *
  **********************************************************************************
  * @endif

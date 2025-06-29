@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * "Powered by GoldFish" PNG image data.
  *
  **********************************************************************************
  * @endif

@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * nanosvg implementation, not compiled under GCC3 or older.
  *
  **********************************************************************************
  * @endif

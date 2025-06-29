@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Core of engine.
  *
  **********************************************************************************
  * @endif

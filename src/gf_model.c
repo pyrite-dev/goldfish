@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Parse obj and render model.
  *
  **********************************************************************************
  * @endif

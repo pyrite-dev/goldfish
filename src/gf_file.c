@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Wrap file I/O.
  *
  **********************************************************************************
  * @endif

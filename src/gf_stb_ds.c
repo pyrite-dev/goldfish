@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * stb_ds implementation.
  *
  **********************************************************************************
  * @endif

@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Handle server-related stuff.
  *
  **********************************************************************************
  * @endif

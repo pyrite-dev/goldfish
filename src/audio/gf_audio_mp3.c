@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * dr_mp3 implementation.
  *
  **********************************************************************************
  * @endif

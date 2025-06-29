@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * stb_image_write implementation.
  *
  **********************************************************************************
  * @endif

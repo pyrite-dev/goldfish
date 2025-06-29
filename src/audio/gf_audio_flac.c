@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * dr_flac implementation.
  *
  **********************************************************************************
  * @endif

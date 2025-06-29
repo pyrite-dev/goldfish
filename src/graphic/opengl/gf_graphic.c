@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Driver-dependent graphic code for OpenGL.
  *
  **********************************************************************************
  * @endif

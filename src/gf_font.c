@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Parse BDF and render fonts.
  *
  **********************************************************************************
  * @endif
@@ -51,6 +51,7 @@
 
 /* External library */
 #include <stb_ds.h>
+#include <stb_truetype.h>
 
 /* Interface */
 #include <gf_font.h>

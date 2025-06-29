@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * GUI range code.
  *
  **********************************************************************************
  * @endif

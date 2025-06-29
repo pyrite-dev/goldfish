@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Common code for graphic.
  *
  **********************************************************************************
  * @endif

@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Calculate and validate CRC32 checksum.
  *
  **********************************************************************************
  * @endif

@@ -38,7 +38,7 @@
  * Author:       Nishi
  *
  * Functionality:
- * TODO: Write here
+ * Code for DSound/WinMM audio playback.
  *
  **********************************************************************************
  * @endif
