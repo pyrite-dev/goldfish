@@ -1,6 +1,5 @@
-flags("MultiProcessorCompile")
-
 workspace("EntireGoldFish")
+        flags("MultiProcessorCompile")
         configurations({
                 "Debug",
                 "Release"
@@ -25,3 +24,4 @@ filter("platforms:Win64")
 filter({})
 
 include(".")
+include("tests")

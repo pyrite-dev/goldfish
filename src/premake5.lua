@@ -268,17 +268,28 @@ end
 	filter({})
 
 	gf_default_stuffs()
-	gf_link_stuffs("options:engine=dynamic")
-	for k,v in pairs(gf_backends) do
+	gf_link_stuffs("options:engine=dynamic")	for k,v in pairs(gf_backends) do
 		for k2,v2 in pairs(v["backends"]) do
 			filter({
 				"options:backend=" .. k,
 				"options:" .. k .. "=" .. k2
 			})
-				files({
-					"graphic/" .. k .. "/*.c",
-					"graphic/" .. k .. "/" .. (v2.alias or k2) .. "/*.c"
-				})
+				if k == "opengl" then
+					files({
+						"graphic/" .. k .. "/*.c",
+						"graphic/" .. k .. "/" .. (v2.alias or k2) .. "/*.c"
+					})
+				elseif k == "dx11" then
+					files({
+						"graphic/" .. k .. "/*.cpp",
+						"graphic/" .. k .. "/" .. (v2.alias or k2) .. "/*.cpp"
+					})
+				else
+					files({
+						"graphic/" .. k .. "/*.c",
+						"graphic/" .. k .. "/" .. (v2.alias or k2) .. "/*.c"
+					})
+				end
 		end
 	end
 	for k,v in pairs(gf_sound_backends) do

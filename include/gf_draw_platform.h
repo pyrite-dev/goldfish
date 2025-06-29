@@ -69,6 +69,14 @@ GF_EXPORT void gf_draw_platform_begin(void);
  */
 GF_EXPORT void gf_draw_platform_end(void);
 
+/**
+ * @~english
+ * @brief Get window handle for platform-specific operations
+ * @param draw Drawing interface
+ * @return Platform-specific window handle
+ */
+GF_EXPORT void* gf_draw_platform_get_window_handle(gf_draw_t* draw);
+
 #ifdef __cplusplus
 }
 #endif

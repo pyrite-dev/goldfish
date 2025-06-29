@@ -48,22 +48,6 @@ gf_backends = {
 				name = "Native",
 				windows = {"opengl32"},
 				unix = {"GL"}
-			},
-			osmesa = {
-				name = "OSMesa",
-				includedirs = {
-					"external/osmesa/include",
-					"external/osmesa/src",
-					"external/osmesa/src/main",
-					"external/osmesa/src/glapi",
-					"external/osmesa/src/shader",
-					"external/osmesa/src/shader/grammar",
-					"external/osmesa/src/shader/slang"
-				},
-				files = {
-					"external/osmesa/src/**.c",
-					"-external/osmesa/src/shader/grammar/grammar.c"
-				}
 			}
 		},
 		backends = {
@@ -81,6 +65,57 @@ gf_backends = {
 			},
 			rgfw = {
 				name = "RGFW",
+				includedirs = {
+					"external/rgfw/include"
+				},
+				files = {
+					"external/rgfw/src/rgfw_stub.c"
+				}
+			},
+			agl = {
+				name = "AGL"
+			}
+		}
+	},
+	dx11 = {
+		name = "DirectX 11",
+		default_backend = "win",
+		default_type = "native",
+		types = {
+			native = {
+				name = "Native",
+				windows = {"d3d11", "dxgi", "d3dcompiler"},
+				defines = {"GF_DRV_DX11"}
+			}
+		},
+		backends = {
+			win = {
+				name = "Win32",
+				links = {
+					"user32",
+					"gdi32"
+				}
+			}
+		}	},
+			osmesa = {
+				name = "OSMesa",
+				includedirs = {
+					"external/osmesa/include",
+					"external/osmesa/src",
+					"external/osmesa/src/main",
+					"external/osmesa/src/glapi",
+					"external/osmesa/src/shader",
+					"external/osmesa/src/shader/grammar",
+					"external/osmesa/src/shader/slang"
+				},
+				files = {
+					"external/osmesa/src/**.c",
+					"-external/osmesa/src/shader/grammar/grammar.c"
+				}
+			}
+		}
+	},
+	rgfw = {
 				includedirs = {
 					"external/rgfw"
 				}
