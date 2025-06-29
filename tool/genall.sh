@@ -31,6 +31,9 @@ for i in *.h; do
 		gf_macro.h)
 			:
 			;;
+		gf_gload.h)
+			:
+			;;
 		*)
 			echo "#include <$i>" >> gf_all.h
 			;;

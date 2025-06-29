@@ -16,7 +16,6 @@
 #include <gf_draw_platform.h>
 #include <gf_file.h>
 #include <gf_font.h>
-#include <gf_gload.h>
 #include <gf_graphic.h>
 #include <gf_gui.h>
 #include <gf_gui_component.h>
@@ -25,7 +24,6 @@
 #include <gf_log.h>
 #include <gf_lua.h>
 #include <gf_math.h>
-#include <gf_mesh.h>
 #include <gf_model.h>
 #include <gf_network.h>
 #include <gf_physics.h>
