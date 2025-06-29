@@ -11,6 +11,10 @@ workspace("EntireGoldFish")
         })
         defaultplatform("Native")
 
+        objdir("obj/%{cfg.platform}/%{cfg.buildcfg}")
+        targetdir("lib/%{cfg.buildcfg}/%{cfg.platform}")
+        debugdir("bin/%{cfg.buildcfg}/%{cfg.platform}")
+
 filter("platforms:Win32")
         system("windows")
         architecture("x86")
@@ -24,4 +28,3 @@ filter("platforms:Win64")
 filter({})
 
 include(".")
-include("tests")

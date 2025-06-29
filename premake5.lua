@@ -103,40 +103,6 @@ gf_backends = {
 					"gdi32"
 				}
 			}
-		}	},
-			osmesa = {
-				name = "OSMesa",
-				includedirs = {
-					"external/osmesa/include",
-					"external/osmesa/src",
-					"external/osmesa/src/main",
-					"external/osmesa/src/glapi",
-					"external/osmesa/src/shader",
-					"external/osmesa/src/shader/grammar",
-					"external/osmesa/src/shader/slang"
-				},
-				files = {
-					"external/osmesa/src/**.c",
-					"-external/osmesa/src/shader/grammar/grammar.c"
-				}
-			}
-		}
-	},
-	rgfw = {
-				links = {
-					"glfw"
-				}
-			},
-			agl = {
-				name = "agl",
-				includedirs = {
-					"external/OpenGLOnMacOS9/include",
-					"misc/classic_mac_os_hacks"
-				},
-				links = {
-					-- "external/OpenGLOnMacOS9/lib/libgl.a"
-				}
-			}
 		}
 	}
 }

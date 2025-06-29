@@ -45,10 +45,11 @@ end
 		includedirs({
 			"../external/miniaudio"
 		})
+	filter({})
 	gf_msvc_filters()
 	defines("HAVE_CONFIG_H")
+	objdir("../obj/%{cfg.buildcfg}/%{cfg.platform}")
 	targetdir("../lib/%{cfg.buildcfg}/%{cfg.platform}")
-	objdir("../obj")
 	targetname("goldfish")
 	includedirs({
 		"../include",
@@ -70,6 +71,15 @@ end
 		"bindgen/*.c",
 		"bindgen/*.h"
 	})
+
+	filter({
+		"files:bindgen/**"
+	})
+		compileas("C++")
+		buildoptions({
+			"-fpermissive"
+		})
+	filter({})
 	if not(_OPTIONS["zlib"] == "system") then
 		includedirs("../external/zlib")
 		files({
@@ -281,9 +291,16 @@ end
 					})
 				elseif k == "dx11" then
 					files({
-						"graphic/" .. k .. "/*.cpp",
-						"graphic/" .. k .. "/" .. (v2.alias or k2) .. "/*.cpp"
+						"graphic/" .. k .. "/*.c",
+						"graphic/" .. k .. "/" .. (v2.alias or k2) .. "/*.c"
 					})
+					filter({
+						"files:graphic/" .. k .. "/**"
+					})
+						compileas("C++")
+						buildoptions({
+							"-fpermissive"
+						})
 				else
 					files({
 						"graphic/" .. k .. "/*.c",

@@ -1,8 +1,6 @@
 #ifndef __BINDGEN_H__
 #define __BINDGEN_H__
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 /**
  * Auto-generated using bindgen (https://github.com/pyrite-dev/bindgen)
  * Do not modify this directly! Might get overwritten.
@@ -24,6 +22,10 @@ extern "C" {
 #include <gf_type/lua.h>
 
 /*** </Pre> ***/
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 void bindgen_GoldFishGUIComponent_init(gf_lua_t* lua);
 void bindgen_GoldFishAudio_init(gf_lua_t* lua);
