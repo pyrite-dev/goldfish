@@ -74,6 +74,9 @@ static unsigned long date_to_num(void) {
 		if(s[i] == ' ' || i == len) {
 			char* str = s + incr;
 			s[i]	  = 0;
+			i++;
+			for(; i <= len && s[i] == ' '; i++);
+			i--;
 			if(c == 0) {
 				if(strcmp(str, "Jan") == 0) {
 					n += 1 * 100;
@@ -109,7 +112,6 @@ static unsigned long date_to_num(void) {
 			incr = i + 1;
 		}
 	}
-	free(s);
 
 	return n;
 }
