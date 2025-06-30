@@ -16,6 +16,14 @@ Context: GUI
 
 Set non-zero to ignore dragging. (internal property)
 
+## checked
+Type: `integer` 
+
+Context: GUI
+
+
+Non-zero if checkbox is checked.
+
 ## clicked-x
 Type: `integer` 
 

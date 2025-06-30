@@ -241,6 +241,8 @@ static int gf_network_secure_step(gf_network_t* n) {
 				if(state->list != NULL && arrlen(state->list) > 0) {
 					if(strcmp(state->list[0], state->server ? "ClientHello" : "ServerHello") == 0 && arrlen(state->list) == 3 && strcmp(state->list[1], "1") == 0 && strlen(state->list[2]) == 64) {
 						gf_uint8_t their_public[X25519_KEY_SIZE];
+						gf_uint8_t iv[AES_BLOCKLEN];
+						memset(iv, 0, sizeof(iv));
 						gf_log_function(n->engine, "Got %s", state->list[0]);
 
 						for(i = 0; i < X25519_KEY_SIZE; i++) {
@@ -261,7 +263,7 @@ static int gf_network_secure_step(gf_network_t* n) {
 							gf_log_function(n->engine, "Sent ClientAccept", "");
 						}
 						compact_x25519_shared(n->shared_secret, n->private_key, their_public);
-						AES_init_ctx(&n->aes, n->shared_secret);
+						AES_init_ctx_iv(&n->aes, n->shared_secret, &iv[0]);
 						/* DO NOT enable this unless you know what you are doing!!! */
 #if 0
 						{
@@ -405,6 +407,7 @@ int gf_network_secure_server_step(gf_network_t* net) {
 			} else {
 				int s = gf_network_secure_step(net->clients[i]);
 				if(s == -1) {
+					gf_network_destroy(net->clients[i]);
 					arrdel(net->clients, i);
 					i--;
 					continue;

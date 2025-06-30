@@ -6,6 +6,7 @@ my %doc = {};
 
 $doc{"active"} = "Non-zero if component is active.";
 $doc{"cancel-drag"} = "Set non-zero to ignore dragging. (internal property)";
+$doc{"checked"} = "Non-zero if checkbox is checked.";
 $doc{"clicked-x"} = "X coord of mouse on click, relative to screen.";
 $doc{"clicked-y"} = "Y coord of mouse on click, relative to screen.";
 $doc{"close-button"} = "Close button for window.";
