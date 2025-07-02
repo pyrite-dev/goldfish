@@ -170,6 +170,10 @@ gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title) {
 		draw->lookat[1] = 0;
 		draw->lookat[2] = 1;
 
+		draw->rot[0] = 0;
+		draw->rot[1] = 0;
+		draw->rot[2] = 0;
+
 		draw->gui = gf_gui_create(engine, draw);
 
 #ifndef OLD_CURSOR
@@ -507,3 +511,9 @@ void gf_draw_set_input(gf_draw_t* draw, gf_input_t* input) { draw->input = input
 double gf_draw_get_fps(gf_draw_t* draw) { return draw->fps; }
 
 void gf_draw_set_callback(gf_draw_t* draw, gf_draw_callback_t callback) { draw->callback = callback; }
+
+void gf_draw_set_rotation(gf_draw_t* draw, double x, double y, double z){
+	draw->rot[0] = x;
+	draw->rot[1] = y;
+	draw->rot[2] = z;
+}

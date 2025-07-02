@@ -246,9 +246,9 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 	return m;
 }
 
-void gf_model_draw(gf_model_t* model, double x, double y, double z, double sx, double sy, double sz, double dx, double dy, double dz) {
+void gf_model_draw(gf_model_t* model, double x, double y, double z, double sx, double sy, double sz) {
 	gf_draw_driver_begin_texture_2d(model->draw, model->texture);
-	model->id = gf_graphic_fast(model->draw, model->id, arrlen(model->coords) / 3, model->coords, model->tcoords, x, y, z, sx, sy, sz, dx, dy, dz);
+	model->id = gf_graphic_fast(model->draw, model->id, arrlen(model->coords) / 3, model->coords, model->tcoords, x, y, z, sx, sy, sz);
 	gf_draw_driver_end_texture_2d(model->draw);
 }
 

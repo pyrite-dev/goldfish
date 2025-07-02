@@ -193,6 +193,9 @@ GF_DECLARE_TYPE(draw_intro, {
  *
  * @var gf_draw::callback
  * @brief Callback
+ *
+ * @var gf_draw::rot
+ * @brief Rotation
  */
 GF_DECLARE_TYPE(draw, {
 	gf_engine_t*	    engine;
@@ -224,6 +227,7 @@ GF_DECLARE_TYPE(draw, {
 	gf_texture_t*	    cursor_texture;
 	gf_draw_intro_t	    intro;
 	gf_draw_callback_t  callback;
+	gf_math_vector_t rot;
 });
 #else
 typedef void  gf_draw_t;

@@ -136,6 +136,16 @@ GF_EXPORT double gf_draw_get_fps(gf_draw_t* draw);
  */
 GF_EXPORT void gf_draw_set_callback(gf_draw_t* draw, gf_draw_callback_t callback);
 
+/**
+ * @~english
+ * @brief Set rotation
+ * @param draw Drawing interface
+ * @param x X
+ * @param y Y
+ * @param z Z
+ */
+GF_EXPORT void gf_draw_set_rotation(gf_draw_t* draw, double x, double y, double z);
+
 #ifdef __cplusplus
 }
 #endif

@@ -331,7 +331,7 @@ double gf_graphic_get_line_width(gf_draw_t* draw) {
 	return n;
 }
 
-unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double x, double y, double z, double sx, double sy, double sz, double dx, double dy, double dz) {
+unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double x, double y, double z, double sx, double sy, double sz) {
 	if(id == 0) {
 		GLuint* indexes = NULL;
 		int	i;
@@ -360,9 +360,9 @@ unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, doub
 		glPushMatrix();
 		glTranslatef(x, y, z);
 		glScalef(sx, sy, sz);
-		glRotatef(dx, 1, 0, 0);
-		glRotatef(dy, 0, 1, 0);
-		glRotatef(dz, 0, 0, 1);
+		glRotatef(draw->rot[0], 1, 0, 0);
+		glRotatef(draw->rot[1], 0, 1, 0);
+		glRotatef(draw->rot[2], 0, 0, 1);
 		glCallList(id);
 		glPopMatrix();
 

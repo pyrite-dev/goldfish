@@ -210,12 +210,9 @@ GF_EXPORT double gf_graphic_get_line_width(gf_draw_t* draw);
  * @param sx X scaling
  * @param sy Y scaling
  * @param sz Z scaling
- * @param dx X rotation
- * @param dy Y rotation
- * @param dz Z rotation
  * @return Return "fast" ID
  */
-GF_EXPORT unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double x, double y, double z, double sx, double sy, double sz, double dx, double dy, double dz);
+GF_EXPORT unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double x, double y, double z, double sx, double sy, double sz);
 
 /**
  * @~english

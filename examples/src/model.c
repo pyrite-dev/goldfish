@@ -28,7 +28,8 @@ void handler(int sig) { gf_engine_shutdown(engine); }
 gf_model_t* model = NULL;
 
 void callback(gf_draw_t* draw) {
-	gf_model_draw(model, 0, 0, 0, 1, 1, 1, r, r, r);
+	gf_draw_set_rotation(draw, r, r, r);
+	gf_model_draw(model, 0, 0, 0, 1, 1, 1);
 	r += 60.0 / draw->fps;
 }
 
