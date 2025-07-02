@@ -82,6 +82,7 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 	int	       incr	 = 0;
 	double*	       v	 = NULL;
 	double*	       vt	 = NULL;
+	double*	       vn	 = NULL;
 	double	       sc	 = 1;
 	double	       minx	 = 0;
 	double	       maxx	 = 0;
@@ -191,16 +192,28 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 
 					arrput(vt, x);
 					arrput(vt, y);
+				} else if(strcmp(args[0], "vn") == 0 && arrlen(args) >= 4) {
+					double x = atof(args[1]);
+					double z = -atof(args[2]);
+					double y = atof(args[3]);
+
+					arrput(vn, x);
+					arrput(vn, y);
+					arrput(vn, z);
 				} else if(strcmp(args[0], "f") == 0 && arrlen(args) == 4) {
 					for(j = 1; j < arrlen(args); j++) {
 						char*  tmp;
 						int    ind  = (atoi(args[j]) - 1) * 3;
 						int    ind2 = -1;
+						int    ind3 = -1;
 						double x;
 						double y;
 						double z;
 						if((tmp = strchr(args[j], '/')) != NULL) {
 							ind2 = (atoi(tmp + 1) - 1) * 2;
+							if((tmp = strchr(tmp + 1, '/')) != NULL) {
+								ind3 = (atoi(tmp + 1) - 1) * 3;
+							}
 						}
 
 						x = v[ind + 0];
@@ -216,6 +229,15 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 							arrput(m->tcoords, x);
 							arrput(m->tcoords, y);
 						}
+
+						if(ind3 != -1) {
+							x = vn[ind3 + 0];
+							y = vn[ind3 + 1];
+							z = vn[ind3 + 2];
+							arrput(m->ncoords, x);
+							arrput(m->ncoords, y);
+							arrput(m->ncoords, z);
+						}
 					}
 				}
 			}
@@ -227,6 +249,7 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 	}
 	arrfree(v);
 	arrfree(vt);
+	arrfree(vn);
 	free(srd);
 
 	if(calc_size) {
@@ -248,7 +271,7 @@ gf_model_t* gf_model_load(gf_draw_t* draw, const char* path) {
 
 void gf_model_draw(gf_model_t* model, double x, double y, double z, double sx, double sy, double sz) {
 	gf_draw_driver_begin_texture_2d(model->draw, model->texture);
-	model->id = gf_graphic_fast(model->draw, model->id, arrlen(model->coords) / 3, model->coords, model->tcoords, x, y, z, sx, sy, sz);
+	model->id = gf_graphic_fast(model->draw, model->id, arrlen(model->coords) / 3, model->coords, model->tcoords, model->ncoords, x, y, z, sx, sy, sz);
 	gf_draw_driver_end_texture_2d(model->draw);
 }
 

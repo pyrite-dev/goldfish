@@ -331,7 +331,9 @@ double gf_graphic_get_line_width(gf_draw_t* draw) {
 	return n;
 }
 
-unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double x, double y, double z, double sx, double sy, double sz) {
+void gf_opengl_set_light(gf_draw_t* draw);
+
+unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double* ncoords, double x, double y, double z, double sx, double sy, double sz) {
 	if(id == 0) {
 		GLuint* indexes = NULL;
 		int	i;
@@ -343,11 +345,18 @@ unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, doub
 		glColor3f(1, 1, 1);
 		glEnableClientState(GL_VERTEX_ARRAY);
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+		if(ncoords != NULL) {
+			glEnableClientState(GL_NORMAL_ARRAY);
+		}
 
 		glVertexPointer(3, GL_DOUBLE, 0, coords);
 		glTexCoordPointer(2, GL_DOUBLE, 0, tcoords);
+		if(ncoords != NULL) glNormalPointer(GL_DOUBLE, 0, ncoords);
 		glDrawElements(GL_TRIANGLES, arrlen(indexes), GL_UNSIGNED_INT, indexes);
 
+		if(ncoords != NULL) {
+			glDisableClientState(GL_NORMAL_ARRAY);
+		}
 		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		glDisableClientState(GL_VERTEX_ARRAY);
 		glPopMatrix();

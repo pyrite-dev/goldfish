@@ -157,6 +157,7 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LINE_SMOOTH);
+	glEnable(GL_RESCALE_NORMAL);
 
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 
@@ -170,6 +171,7 @@ gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw) {
 	glLightfv(GL_LIGHT0, GL_AMBIENT, lightgry);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, lightwht);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, lightwht);
+	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
 
 	glClearColor(0, 0, 0, 1);
 
@@ -244,16 +246,20 @@ void gf_draw_driver_destroy(gf_draw_driver_t* driver) {
 	free(driver);
 }
 
-void gf_draw_driver_before(gf_draw_t* draw) {
+void gf_opengl_set_light(gf_draw_t* draw) {
 	GLfloat lightpos[4];
 	GF_MATH_VECTOR_COPY(draw->light, lightpos);
 	lightpos[3] = draw->light[3];
+	glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
+}
 
+void gf_draw_driver_before(gf_draw_t* draw) {
 	gf_draw_driver_reshape(draw);
 
 	gf_graphic_set_camera(draw);
 
-	glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
+	gf_opengl_set_light(draw);
+
 	gf_graphic_clear(draw);
 	gf_graphic_fill_rect(draw, 0, 0, draw->width, draw->height, draw->background);
 

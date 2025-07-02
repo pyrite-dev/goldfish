@@ -204,6 +204,7 @@ GF_EXPORT double gf_graphic_get_line_width(gf_draw_t* draw);
  * @param npair Pair count
  * @param coords Coords
  * @param tcoords Texture coords
+ * @param ncoords Normal coords
  * @param x X
  * @param y Y
  * @param z Z
@@ -212,7 +213,7 @@ GF_EXPORT double gf_graphic_get_line_width(gf_draw_t* draw);
  * @param sz Z scaling
  * @return Return "fast" ID
  */
-GF_EXPORT unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double x, double y, double z, double sx, double sy, double sz);
+GF_EXPORT unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double* ncoords, double x, double y, double z, double sx, double sy, double sz);
 
 /**
  * @~english

@@ -80,6 +80,9 @@ gf_model_t;
  * @var gf_model::tcoords
  * @brief Texture coords
  *
+ * @var gf_model::ncoords
+ * @brief Normal coords
+ *
  * @var gf_model::id
  * @brief "Fast" ID
  */
@@ -89,6 +92,7 @@ GF_DECLARE_TYPE(model, {
 	gf_texture_t* texture;
 	double*	      coords;
 	double*	      tcoords;
+	double*	      ncoords;
 	unsigned long id;
 });
 #else
