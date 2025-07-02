@@ -361,6 +361,10 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 #if defined(GF_TYPE_NATIVE)
 	PIXELFORMATDESCRIPTOR desc;
 	int		      fmt;
+#ifndef HARDCODE_24
+	int fmts;
+	int fi;
+#endif
 #endif
 	RECT		    rect;
 	DWORD		    style;
@@ -505,6 +509,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	platform->dc = GetDC(platform->window);
 
 #if defined(GF_TYPE_NATIVE)
+#ifdef HARDCODE_24
 	memset(&desc, 0, sizeof(desc));
 	desc.nSize	= sizeof(desc);
 	desc.nVersion	= 1;
@@ -515,6 +520,25 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	desc.cDepthBits = 32;
 
 	fmt = ChoosePixelFormat(platform->dc, &desc);
+#else
+	/* XXX: I do not know if this is a good way */
+	fmt  = -1;
+	fmts = DescribePixelFormat(platform->dc, 0, 0, NULL);
+	for(fi = 1; fi <= fmts; fi++) {
+		DescribePixelFormat(platform->dc, fi, sizeof(desc), &desc);
+		if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && desc.cAlphaBits > 0) {
+			fmt = fi;
+			break;
+		}
+	}
+	if(fmt == -1) {
+		gf_log_function(engine, "Failed to get pixel format", "");
+		gf_draw_platform_destroy(platform);
+		return NULL;
+	}
+	gf_log_function(engine, "%d bits color R%dG%dB%dA%d", desc.cColorBits, desc.cRedBits, desc.cGreenBits, desc.cBlueBits, desc.cAlphaBits);
+#endif
+
 	SetPixelFormat(platform->dc, fmt, &desc);
 
 	platform->glrc = wglCreateContext(platform->dc);
