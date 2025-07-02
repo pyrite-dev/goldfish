@@ -31,6 +31,7 @@
  *   gf_gui_sort_component
  *   gf_gui_create_common
  *   gf_gui_create_button
+ *   gf_gui_create_checkbox
  *   gf_gui_create_entry
  *   gf_gui_create_frame
  *   gf_gui_create_progress
@@ -128,6 +129,35 @@ int bindgen_gui_gf_gui_create_button(lua_State* s) {
 	param0 = wrap->engine->client->draw->gui;
 
 	ret = gf_gui_create_button(param0, param1, param2, param3, param4);
+	if(!(ret >= 0)) return 0;
+	lret = lua_newuserdata(s, sizeof(*lret));
+	luaL_getmetatable(s, "GoldFishGUIComponent");
+	lua_setmetatable(s, -2);
+	*lret = ret;
+
+	return 1;
+}
+
+/**
+ * C: gf_gui_id_t gf_gui_create_checkbox(gf_gui_t*, double, double, double, double)
+ */
+int bindgen_gui_gf_gui_create_checkbox(lua_State* s) {
+	gf_gui_t*    param0;
+	double	     param1 = (double)luaL_checknumber(s, 1);
+	double	     param2 = (double)luaL_checknumber(s, 2);
+	double	     param3 = (double)luaL_checknumber(s, 3);
+	double	     param4 = (double)luaL_checknumber(s, 4);
+	gf_lua_t*    wrap;
+	gf_gui_id_t  ret;
+	gf_gui_id_t* lret;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	wrap = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	param0 = wrap->engine->client->draw->gui;
+
+	ret = gf_gui_create_checkbox(param0, param1, param2, param3, param4);
 	if(!(ret >= 0)) return 0;
 	lret = lua_newuserdata(s, sizeof(*lret));
 	luaL_getmetatable(s, "GoldFishGUIComponent");
@@ -389,6 +419,10 @@ void bindgen_gui_init(gf_lua_t* lua) {
 	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_create_button);
 	lua_settable(LUA(lua), -3);
 
+	lua_pushstring(LUA(lua), "create_checkbox");
+	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_create_checkbox);
+	lua_settable(LUA(lua), -3);
+
 	lua_pushstring(LUA(lua), "create_entry");
 	lua_pushcfunction(LUA(lua), bindgen_gui_gf_gui_create_entry);
 	lua_settable(LUA(lua), -3);
@@ -424,4 +458,4 @@ void bindgen_gui_init(gf_lua_t* lua) {
 	lua_settable(LUA(lua), -3);
 }
 
-/*** Generated at Sun Jun 29 2025 ***/
+/*** Generated at Wed Jul 2 2025 ***/

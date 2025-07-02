@@ -512,7 +512,7 @@ double gf_draw_get_fps(gf_draw_t* draw) { return draw->fps; }
 
 void gf_draw_set_callback(gf_draw_t* draw, gf_draw_callback_t callback) { draw->callback = callback; }
 
-void gf_draw_set_rotation(gf_draw_t* draw, double x, double y, double z){
+void gf_draw_set_rotation(gf_draw_t* draw, double x, double y, double z) {
 	draw->rot[0] = x;
 	draw->rot[1] = y;
 	draw->rot[2] = z;

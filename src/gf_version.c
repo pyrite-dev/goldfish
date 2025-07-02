@@ -61,7 +61,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define GF_VERSION "1.0.0"
+#define GF_VERSION "0.0.0"
 
 static unsigned long date_to_num(void) {
 	char*	      s	  = gf_util_strdup(__DATE__);

@@ -157,4 +157,4 @@ void bindgen_GoldFishAudio_init(gf_lua_t* lua) {
 	lua_setfield(LUA(lua), -2, "__index");
 }
 
-/*** Generated at Sun Jun 29 2025 ***/
+/*** Generated at Wed Jul 2 2025 ***/
