@@ -527,7 +527,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	fmts = DescribePixelFormat(platform->dc, 0, 0, NULL);
 	for(fi = 1; fi <= fmts; fi++) {
 		DescribePixelFormat(platform->dc, fi, sizeof(desc), &desc);
-		if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && (desc.dwFlags & PFD_GENERIC_FORMAT) && desc.cAlphaBits > 0) {
+		if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && !(desc.dwFlags & PFD_GENERIC_FORMAT) && desc.cAlphaBits > 0) {
 			hw  = 1;
 			fmt = fi;
 			break;
