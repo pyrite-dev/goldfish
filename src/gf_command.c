@@ -162,6 +162,12 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 		} else {
 			gf_prop_set_text(&engine->config, "texture-filter", arg[1]);
 		}
+	} else if(strcmp(arg[0], "hardcode_depth") == 0) {
+		if(arrlen(arg) < 2) {
+			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);
+		} else {
+			gf_prop_set_integer(&engine->config, "hardcode_depth", atoi(arg[1]));
+		}
 	} else if(strcmp(arg[0], "exec") == 0) {
 		if(arrlen(arg) < 2) {
 			gf_log_function(engine, "%s: Insufficient arguments", arg[0]);

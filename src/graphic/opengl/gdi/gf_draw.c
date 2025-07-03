@@ -63,6 +63,7 @@
 #include <gf_log.h>
 #include <gf_draw.h>
 #include <gf_input.h>
+#include <gf_prop.h>
 
 /* Standard */
 #include <string.h>
@@ -361,11 +362,11 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 #if defined(GF_TYPE_NATIVE)
 	PIXELFORMATDESCRIPTOR desc;
 	int		      fmt;
-#ifndef HARDCODE_24
+	int		      propv;
+
 	int fmts;
 	int fi;
 	int hw = 0; /* is hardware accel available? */
-#endif
 #endif
 	RECT		    rect;
 	DWORD		    style;
@@ -510,48 +511,49 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	platform->dc = GetDC(platform->window);
 
 #if defined(GF_TYPE_NATIVE)
-#ifdef HARDCODE_24
-	memset(&desc, 0, sizeof(desc));
-	desc.nSize	= sizeof(desc);
-	desc.nVersion	= 1;
-	desc.dwFlags	= PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;
-	desc.iPixelType = PFD_TYPE_RGBA;
-	desc.cColorBits = 24;
-	desc.cAlphaBits = 8;
-	desc.cDepthBits = 32;
+	if((propv = gf_prop_get_integer(&engine->config, "hardcode_depth")) != GF_PROP_NO_SUCH && propv) {
+		memset(&desc, 0, sizeof(desc));
+		desc.nSize	= sizeof(desc);
+		desc.nVersion	= 1;
+		desc.dwFlags	= PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;
+		desc.iPixelType = PFD_TYPE_RGBA;
+		desc.cColorBits = 32;
+		desc.cAlphaBits = 8;
+		desc.cDepthBits = 24;
 
-	fmt = ChoosePixelFormat(platform->dc, &desc);
-#else
-	/* XXX: I do not know if this is a good way */
-	fmt  = -1;
-	fmts = DescribePixelFormat(platform->dc, 0, 0, NULL);
-	for(fi = 1; fi <= fmts; fi++) {
-		DescribePixelFormat(platform->dc, fi, sizeof(desc), &desc);
-		if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && !(desc.dwFlags & PFD_GENERIC_FORMAT) && desc.cAlphaBits > 0) {
-			hw  = 1;
-			fmt = fi;
-			break;
-		}
-	}
-
-	/* could not find hardware accelerated pixel format */
-	if(!hw) {
-		gf_log_function(engine, "Couldn't find hardware accelerated pixel format - you will get horrible performance", "");
+		fmt = ChoosePixelFormat(platform->dc, &desc);
+		gf_log_function(engine, "hardcode_depth enabled", "");
+	} else {
+		/* XXX: I do not know if this is a good way */
+		fmt  = -1;
+		fmts = DescribePixelFormat(platform->dc, 0, 0, NULL);
 		for(fi = 1; fi <= fmts; fi++) {
 			DescribePixelFormat(platform->dc, fi, sizeof(desc), &desc);
-			if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && desc.cAlphaBits > 0) {
+			if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && !(desc.dwFlags & PFD_GENERIC_FORMAT) && desc.cAlphaBits > 0) {
+				hw  = 1;
 				fmt = fi;
 				break;
 			}
 		}
+
+		/* could not find hardware accelerated pixel format */
+		if(!hw) {
+			gf_log_function(engine, "Couldn't find hardware accelerated pixel format - you will get horrible performance", "");
+			for(fi = 1; fi <= fmts; fi++) {
+				DescribePixelFormat(platform->dc, fi, sizeof(desc), &desc);
+				if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && desc.cAlphaBits > 0) {
+					fmt = fi;
+					break;
+				}
+			}
+		}
+		if(fmt == -1) {
+			gf_log_function(engine, "Failed to get pixel format", "");
+			gf_draw_platform_destroy(platform);
+			return NULL;
+		}
+		gf_log_function(engine, "%d bits color R%dG%dB%dA%d", desc.cColorBits, desc.cRedBits, desc.cGreenBits, desc.cBlueBits, desc.cAlphaBits);
 	}
-	if(fmt == -1) {
-		gf_log_function(engine, "Failed to get pixel format", "");
-		gf_draw_platform_destroy(platform);
-		return NULL;
-	}
-	gf_log_function(engine, "%d bits color R%dG%dB%dA%d", desc.cColorBits, desc.cRedBits, desc.cGreenBits, desc.cBlueBits, desc.cAlphaBits);
-#endif
 
 	SetPixelFormat(platform->dc, fmt, &desc);
 
