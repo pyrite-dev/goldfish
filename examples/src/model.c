@@ -7,6 +7,7 @@
 #include <gf_model.h>
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 gf_engine_t* engine;
@@ -29,6 +30,9 @@ gf_model_t* model = NULL;
 
 void callback(gf_draw_t* draw) {
 	gf_draw_set_rotation(draw, r, r, r);
+	draw->camera[0] = 2 * cos(r * 3 / 180 * M_PI);
+	draw->camera[1] = 2;
+	draw->camera[2] = 2 * sin(r * 3 / 180 * M_PI);
 	gf_model_draw(model, 0, 0, 0, 1, 1, 1);
 	r += 60.0 / draw->fps;
 }
