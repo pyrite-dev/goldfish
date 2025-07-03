@@ -163,7 +163,7 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 	gf_version_t ver;
 	gf_engine_t* engine = malloc(sizeof(*engine));
 	memset(engine, 0, sizeof(*engine));
-	engine->log	    = stderr;
+	engine->log	    = NULL;
 	engine->error	    = 0;
 	engine->lua	    = NULL;
 	engine->name	    = gf_util_strdup(param.game != NULL ? param.game : title);
