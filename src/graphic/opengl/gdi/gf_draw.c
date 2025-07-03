@@ -518,8 +518,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		desc.dwFlags	= PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;
 		desc.iPixelType = PFD_TYPE_RGBA;
 		desc.cColorBits = 32;
-		desc.cAlphaBits = 8;
-		desc.cDepthBits = 24;
+		desc.cDepthBits = 32;
 
 		fmt = ChoosePixelFormat(platform->dc, &desc);
 		gf_log_function(engine, "hardcode_depth enabled", "");
