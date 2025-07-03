@@ -223,6 +223,13 @@ LRESULT CALLBACK gf_draw_platform_proc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp
 			wglMakeCurrent(draw->platform->dc, draw->platform->glrc);
 #endif
 			gf_draw_reshape(draw);
+			gf_draw_driver_before(draw);
+			gf_draw_frame(draw);
+			gf_draw_driver_after(draw);
+
+#if defined(GF_TYPE_NATIVE)
+			SwapBuffers(draw->platform->dc);
+#endif
 		}
 		break;
 	case WM_KEYDOWN:
