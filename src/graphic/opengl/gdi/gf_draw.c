@@ -364,6 +364,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 #ifndef HARDCODE_24
 	int fmts;
 	int fi;
+	int hw = 0; /* is hardware accel available? */
 #endif
 #endif
 	RECT		    rect;
@@ -526,9 +527,22 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	fmts = DescribePixelFormat(platform->dc, 0, 0, NULL);
 	for(fi = 1; fi <= fmts; fi++) {
 		DescribePixelFormat(platform->dc, fi, sizeof(desc), &desc);
-		if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && desc.cAlphaBits > 0) {
+		if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && (desc.dwFlags & PFD_GENERIC_FORMAT) && desc.cAlphaBits > 0) {
+			hw  = 1;
 			fmt = fi;
 			break;
+		}
+	}
+
+	/* could not find hardware accelerated pixel format */
+	if(!hw) {
+		gf_log_function(engine, "Couldn't find hardware accelerated pixel format - you will get horrible performance", "");
+		for(fi = 1; fi <= fmts; fi++) {
+			DescribePixelFormat(platform->dc, fi, sizeof(desc), &desc);
+			if(desc.iPixelType == PFD_TYPE_RGBA && (desc.dwFlags & PFD_DRAW_TO_WINDOW) && (desc.dwFlags & PFD_SUPPORT_OPENGL) && (desc.dwFlags & PFD_DOUBLEBUFFER) && desc.cAlphaBits > 0) {
+				fmt = fi;
+				break;
+			}
 		}
 	}
 	if(fmt == -1) {

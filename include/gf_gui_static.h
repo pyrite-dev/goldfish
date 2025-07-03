@@ -42,7 +42,7 @@
  * @~english
  * @brief GUI static stuff
  * @note User should not include this, this header is used internally
- * @warning This file is auto-generated using ./tool/gengui.sh at `Mon Jun 30 23:24:11 JST 2025`
+ * @warning This file is auto-generated using ./tool/gengui.sh at `Thu Jul  3 22:45:51 JST 2025`
  */
 
 #ifndef __GF_GUI_STATIC_H__
@@ -65,13 +65,13 @@
 extern "C" {
 #endif
 
-#define GF_GUI_COMPONENTS 10
+#define GF_GUI_COMPONENTS 11
 /**
  * @~english
  * @brief Initialize GUI component calls
  */
 static void gf_gui_init_calls(void) {
-	extern gf_gui_call_t gf_gui_calls[10];
+	extern gf_gui_call_t gf_gui_calls[11];
 	/*** Begin button ***/
 	gf_gui_calls[0].name = malloc(512);
 	strcpy(gf_gui_calls[0].name, "button");
@@ -92,35 +92,40 @@ static void gf_gui_init_calls(void) {
 	strcpy(gf_gui_calls[3].name, "frame");
 	gf_gui_calls[3].call = gf_gui_create_frame;
 	/***  End  frame ***/
-	/*** Begin progress ***/
+	/*** Begin image ***/
 	gf_gui_calls[4].name = malloc(512);
-	strcpy(gf_gui_calls[4].name, "progress");
-	gf_gui_calls[4].call = gf_gui_create_progress;
+	strcpy(gf_gui_calls[4].name, "image");
+	gf_gui_calls[4].call = gf_gui_create_image;
+	/***  End  image ***/
+	/*** Begin progress ***/
+	gf_gui_calls[5].name = malloc(512);
+	strcpy(gf_gui_calls[5].name, "progress");
+	gf_gui_calls[5].call = gf_gui_create_progress;
 	/***  End  progress ***/
 	/*** Begin range ***/
-	gf_gui_calls[5].name = malloc(512);
-	strcpy(gf_gui_calls[5].name, "range");
-	gf_gui_calls[5].call = gf_gui_create_range;
+	gf_gui_calls[6].name = malloc(512);
+	strcpy(gf_gui_calls[6].name, "range");
+	gf_gui_calls[6].call = gf_gui_create_range;
 	/***  End  range ***/
 	/*** Begin scrollbar ***/
-	gf_gui_calls[6].name = malloc(512);
-	strcpy(gf_gui_calls[6].name, "scrollbar");
-	gf_gui_calls[6].call = gf_gui_create_scrollbar;
+	gf_gui_calls[7].name = malloc(512);
+	strcpy(gf_gui_calls[7].name, "scrollbar");
+	gf_gui_calls[7].call = gf_gui_create_scrollbar;
 	/***  End  scrollbar ***/
 	/*** Begin tab ***/
-	gf_gui_calls[7].name = malloc(512);
-	strcpy(gf_gui_calls[7].name, "tab");
-	gf_gui_calls[7].call = gf_gui_create_tab;
+	gf_gui_calls[8].name = malloc(512);
+	strcpy(gf_gui_calls[8].name, "tab");
+	gf_gui_calls[8].call = gf_gui_create_tab;
 	/***  End  tab ***/
 	/*** Begin text ***/
-	gf_gui_calls[8].name = malloc(512);
-	strcpy(gf_gui_calls[8].name, "text");
-	gf_gui_calls[8].call = gf_gui_create_text;
+	gf_gui_calls[9].name = malloc(512);
+	strcpy(gf_gui_calls[9].name, "text");
+	gf_gui_calls[9].call = gf_gui_create_text;
 	/***  End  text ***/
 	/*** Begin window ***/
-	gf_gui_calls[9].name = malloc(512);
-	strcpy(gf_gui_calls[9].name, "window");
-	gf_gui_calls[9].call = gf_gui_create_window;
+	gf_gui_calls[10].name = malloc(512);
+	strcpy(gf_gui_calls[10].name, "window");
+	gf_gui_calls[10].call = gf_gui_create_window;
 	/***  End  window ***/
 }
 /**
@@ -134,6 +139,7 @@ static void gf_gui_all_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	extern void gf_gui_checkbox_render(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_entry_render(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_frame_render(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_image_render(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_progress_render(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_range_render(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_scrollbar_render(gf_gui_t * gui, gf_gui_component_t * c);
@@ -144,6 +150,7 @@ static void gf_gui_all_render(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_gui_checkbox_render(gui, c);
 	gf_gui_entry_render(gui, c);
 	gf_gui_frame_render(gui, c);
+	gf_gui_image_render(gui, c);
 	gf_gui_progress_render(gui, c);
 	gf_gui_range_render(gui, c);
 	gf_gui_scrollbar_render(gui, c);
@@ -163,6 +170,7 @@ static void gf_gui_all_drag(gf_gui_t* gui, gf_gui_component_t* c) {
 	extern void gf_gui_checkbox_drag(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_entry_drag(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_frame_drag(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_image_drag(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_progress_drag(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_range_drag(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_scrollbar_drag(gf_gui_t * gui, gf_gui_component_t * c);
@@ -173,6 +181,7 @@ static void gf_gui_all_drag(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_gui_checkbox_drag(gui, c);
 	gf_gui_entry_drag(gui, c);
 	gf_gui_frame_drag(gui, c);
+	gf_gui_image_drag(gui, c);
 	gf_gui_progress_drag(gui, c);
 	gf_gui_range_drag(gui, c);
 	gf_gui_scrollbar_drag(gui, c);
@@ -192,6 +201,7 @@ static void gf_gui_all_click(gf_gui_t* gui, gf_gui_component_t* c) {
 	extern void gf_gui_checkbox_click(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_entry_click(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_frame_click(gf_gui_t * gui, gf_gui_component_t * c);
+	extern void gf_gui_image_click(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_progress_click(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_range_click(gf_gui_t * gui, gf_gui_component_t * c);
 	extern void gf_gui_scrollbar_click(gf_gui_t * gui, gf_gui_component_t * c);
@@ -202,6 +212,7 @@ static void gf_gui_all_click(gf_gui_t* gui, gf_gui_component_t* c) {
 	gf_gui_checkbox_click(gui, c);
 	gf_gui_entry_click(gui, c);
 	gf_gui_frame_click(gui, c);
+	gf_gui_image_click(gui, c);
 	gf_gui_progress_click(gui, c);
 	gf_gui_range_click(gui, c);
 	gf_gui_scrollbar_click(gui, c);
