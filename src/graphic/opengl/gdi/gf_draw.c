@@ -511,7 +511,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	platform->dc = GetDC(platform->window);
 
 #if defined(GF_TYPE_NATIVE)
-	if((propv = gf_prop_get_integer(&engine->config, "hardcode_depth")) != GF_PROP_NO_SUCH && propv) {
+	if((propv = gf_prop_get_integer(&engine->config, "bad3d")) != GF_PROP_NO_SUCH && propv) {
 		memset(&desc, 0, sizeof(desc));
 		desc.nSize	= sizeof(desc);
 		desc.nVersion	= 1;
@@ -521,7 +521,7 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		desc.cDepthBits = 32;
 
 		fmt = ChoosePixelFormat(platform->dc, &desc);
-		gf_log_function(engine, "hardcode_depth enabled", "");
+		gf_log_function(engine, "bad3d enabled", "");
 	} else {
 		/* XXX: I do not know if this is a good way */
 		fmt  = -1;
