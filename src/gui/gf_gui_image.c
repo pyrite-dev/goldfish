@@ -111,6 +111,14 @@ void gf_gui_image_render(gf_gui_t* gui, gf_gui_component_t* c) {
 		col.a = 255;
 
 		gf_graphic_draw_texture_2d(gui->draw, cx + gf_gui_border_width, cy + gf_gui_border_width, cw - gf_gui_border_width * 2, ch - gf_gui_border_width * 2, c->texture, col);
+	} else if(gui->draw->font != NULL) {
+		double fsz = 20;
+		double w   = gf_graphic_text_width(gui->draw, gui->draw->font, fsz, "No Image");
+		double h   = gf_graphic_text_height(gui->draw, gui->draw->font, fsz, "No Image");
+
+		gf_graphic_clip_push(gui->draw, cx + gf_gui_border_width, cy + gf_gui_border_width, cw - gf_gui_border_width * 2, ch - gf_gui_border_width * 2);
+		gf_graphic_text(gui->draw, gui->draw->font, cx + (cw - w) / 2, cy + (ch - h) / 2, fsz, "No Image", gui->font);
+		gf_graphic_clip_pop(gui->draw);
 	}
 }
 
