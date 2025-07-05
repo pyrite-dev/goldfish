@@ -72,6 +72,7 @@
 #include <gf_graphic.h>
 #include <gf_draw.h>
 #include <gf_audio.h>
+#include <gf_resource.h>
 
 #include <bindgen.h>
 
@@ -181,6 +182,28 @@ int gf_lua_call_read(lua_State* s) {
 	}
 
 	return 0;
+}
+
+int gf_lua_call_load(lua_State* s) {
+	const char*    path = luaL_checkstring(s, 1);
+	const char*    name = luaL_checkstring(s, 2);
+	gf_lua_t*      lua;
+	gf_resource_t* res;
+
+	lua_getglobal(s, "_LUA_WRAP");
+	lua = lua_touserdata(s, -1);
+	lua_pop(s, 1);
+
+	res = gf_resource_create(lua->engine, path);
+	if(res != NULL) {
+		gf_file_register(lua->engine, name, res);
+
+		lua_pushboolean(s, 1);
+		return 1;
+	}
+
+	lua_pushboolean(s, 0);
+	return 1;
 }
 
 int gf_lua_call_fps(lua_State* s) {
@@ -606,6 +629,10 @@ void gf_lua_create_goldfish(gf_lua_t* lua) {
 
 	lua_pushstring(lua->lua, "read");
 	lua_pushcfunction(lua->lua, gf_lua_call_read);
+	lua_settable(lua->lua, -3);
+
+	lua_pushstring(lua->lua, "load");
+	lua_pushcfunction(lua->lua, gf_lua_call_load);
 	lua_settable(lua->lua, -3);
 
 	lua_pushstring(lua->lua, "version");
