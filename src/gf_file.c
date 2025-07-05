@@ -61,6 +61,7 @@
 /* Engine */
 #include <gf_resource.h>
 #include <gf_util.h>
+#include <gf_log.h>
 
 /* Standard */
 #include <stdlib.h>
@@ -140,20 +141,39 @@ int gf_file_exists(gf_engine_t* engine, const char* path) {
 }
 
 gf_file_t* gf_file_open(gf_engine_t* engine, const char* path, const char* mode) {
-	gf_file_t* fp = malloc(sizeof(*fp));
+	gf_resource_t* r = NULL;
+	char*	       tmp;
+	gf_file_t*     fp = malloc(sizeof(*fp));
 	memset(fp, 0, sizeof(*fp));
+
+	/**
+	 * path check
+	 * FIXME: if resource got registered with name C or something
+	 * it might cause problem with Windows
+	 *
+	 * 1. does path have :?
+	 * 2. is string with : and later longer than 2?
+	 * 3. is it :/?
+	 */
+	if((tmp = strchr(path, ':')) != NULL && strlen(tmp) > 2 && memcmp(tmp, ":/", 2) == 0) {
+		char* p = gf_util_strdup(path);
+		tmp	= strchr(p, ':');
+		tmp[0]	= 0;
+		r	= shget(engine->resources, p);
+		free(p);
+	}
 
 	fp->size   = 0;
 	fp->pos	   = 0;
 	fp->buffer = NULL;
 	fp->fp	   = NULL;
-	if(strlen(path) > 6 && memcmp(path, "base:/", 6) == 0) {
-		if(engine == NULL || engine->base == NULL) {
+	if(r != NULL) {
+		if(engine == NULL || r == NULL) {
 			free(fp);
 			return NULL;
 		}
 		if(strcmp(mode, "r") == 0) {
-			if(gf_resource_get(engine->base, path + 6, &fp->buffer, &fp->size) != 0) {
+			if(gf_resource_get(r, path + 6, &fp->buffer, &fp->size) != 0) {
 				free(fp);
 				return NULL;
 			}
@@ -252,4 +272,9 @@ char* gf_file_path_join(size_t length, ...) {
 	va_end(va);
 
 	return st;
+}
+
+void gf_file_register(gf_engine_t* engine, const char* name, gf_resource_t* resource) {
+	gf_log_function(engine, "Registered resource \"%s\"", name);
+	shput(engine->resources, name, resource);
 }

@@ -54,9 +54,11 @@
 gf_engine_param_t;
 
 #ifdef GF_EXPOSE_CORE
+#define gf_engine_resource_t struct gf_engine_resource
 #define gf_engine_t struct gf_engine
 
 gf_engine_t;
+gf_engine_resource_t;
 
 /* External library */
 
@@ -71,6 +73,22 @@ gf_engine_t;
 
 /* Standard */
 #include <stdio.h>
+
+/**
+ * @struct gf_engine_resource
+ * @~english
+ * @brief Engine resource key value
+ *
+ * @var gf_engine_resource::key
+ * @brief Key
+ *
+ * @var gf_engine_resource::value
+ * @brief Value
+ */
+GF_DECLARE_TYPE(engine_resource, {
+	char*	       key;
+	gf_resource_t* value;
+});
 
 /**
  * @struct gf_engine
@@ -96,6 +114,9 @@ gf_engine_t;
  *
  * @var gf_engine::base
  * @brief Base resource
+ *
+ * @var gf_engine::resources
+ * @brief Resources
  *
  * @var gf_engine::lua
  * @brief Lua interface
@@ -125,21 +146,22 @@ gf_engine_t;
  * @brief Seed
  */
 GF_DECLARE_TYPE(engine, {
-	gf_server_t*	    server;
-	gf_client_t*	    client;
-	gf_command_alias_t* command_aliases;
-	char*		    log_list;
-	FILE*		    log;
-	gf_resource_t*	    base;
-	gf_lua_t*	    lua;
-	int		    error;
-	unsigned char*	    icon;
-	int		    icon_width;
-	int		    icon_height;
-	gf_prop_t*	    config;
-	int		    force_down;
-	char*		    name;
-	gf_uint64_t	    seed;
+	gf_server_t*	      server;
+	gf_client_t*	      client;
+	gf_command_alias_t*   command_aliases;
+	char*		      log_list;
+	FILE*		      log;
+	gf_lua_t*	      lua;
+	int		      error;
+	gf_resource_t*	      base;
+	gf_engine_resource_t* resources;
+	unsigned char*	      icon;
+	int		      icon_width;
+	int		      icon_height;
+	gf_prop_t*	      config;
+	int		      force_down;
+	char*		      name;
+	gf_uint64_t	      seed;
 });
 #else
 typedef void gf_engine_t;

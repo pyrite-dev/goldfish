@@ -54,6 +54,7 @@
 
 /* Engine */
 #include <gf_type/core.h>
+#include <gf_type/resource.h>
 
 /* Standard */
 #include <stddef.h>
@@ -131,6 +132,15 @@ GF_EXPORT void gf_file_close(gf_file_t* fp);
  * @return Path
  */
 GF_EXPORT char* gf_file_path_join(size_t length, ...);
+
+/**
+ * @~english
+ * @brief Register resource
+ * @param engine Engine instance
+ * @param name Resource name
+ * @param resource Resource
+ */
+GF_EXPORT void gf_file_register(gf_engine_t* engine, const char* name, gf_resource_t* resource);
 
 #ifdef __cplusplus
 }

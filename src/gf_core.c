@@ -171,6 +171,8 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 	engine->log_list    = malloc(1);
 	engine->log_list[0] = 0;
 
+	sh_new_strdup(engine->resources);
+
 	engine->seed = time(NULL);
 	gf_engine_init_seed(engine);
 
@@ -193,6 +195,8 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 		engine = NULL;
 		return engine;
 	} else {
+		gf_file_register(engine, "base", engine->base);
+
 		engine->icon = gf_image_load(engine, "base:/icon.png", &engine->icon_width, &engine->icon_height);
 	}
 
@@ -286,6 +290,7 @@ void gf_engine_loop(gf_engine_t* engine) {
 }
 
 void gf_engine_destroy(gf_engine_t* engine) {
+	int i;
 	if(engine->lua != NULL) {
 		gf_lua_destroy(engine->lua);
 	}
@@ -293,7 +298,10 @@ void gf_engine_destroy(gf_engine_t* engine) {
 	if(engine->server != NULL) gf_server_destroy(engine->server);
 #endif
 	if(engine->client != NULL) gf_client_destroy(engine->client);
-	if(engine->base != NULL) gf_resource_destroy(engine->base);
+	for(i = 0; i < shlen(engine->resources); i++) {
+		gf_resource_destroy(engine->resources[i].value);
+	}
+	shfree(engine->resources);
 	if(engine->icon != NULL) {
 		free(engine->icon);
 	}
