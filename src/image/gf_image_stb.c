@@ -44,6 +44,9 @@
  * @endif
  */
 
+#include <gf_pre.h>
+
+#ifndef GF_NO_STBI
 #define STB_IMAGE_IMPLEMENTATION
 
 #ifdef __GNUC__
@@ -53,3 +56,4 @@
 #endif
 
 #include <stb_image.h>
+#endif

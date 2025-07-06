@@ -55,6 +55,7 @@
 #include <gf_type/core.h>
 
 /* Standard */
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {

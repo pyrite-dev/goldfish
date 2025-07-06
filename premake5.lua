@@ -214,6 +214,17 @@ newoption({
 	default = "yes"
 })
 
+newoption({
+	trigger = "use-stbi",
+	value = "toggle",
+	description = "Use stb_iamge",
+	allowed = {
+		{"yes", "Enable"},
+		{"no", "Disable"}
+	},
+	category = "Engine",
+	default = "yes"
+})
 
 gf_defs = {}
 function gf_adddef(x)
@@ -309,6 +320,16 @@ function gf_link_stuffs(cond)
 			"/usr/X11R7/lib",
 			"/usr/X11/lib"
 		})
+	if _OPTIONS["use-stbi"] == "no" then
+		filter({
+			"platforms:Native",
+			"system:not windows"
+		})
+		for _,v in ipairs({"libpng", "libjpeg"}) do
+			buildoptions("`pkg-config --cflags " .. v .. "`")
+			linkoptions("`pkg-config --libs " .. v .. "`")
+		end
+	end
 	filter({
 		"platforms:Native",
 		"system:not windows",
@@ -580,6 +601,9 @@ if _OPTIONS["engine"] == "dynamic" then
 end
 if _OPTIONS["server"] == "no" then
 	outfile:write("#define GF_NO_SERVER 1\n")
+end
+if _OPTIONS["use-stbi"] == "no" then
+	outfile:write("#define GF_NO_STBI 1\n")
 end
 outfile:write("#ifdef _WIN32\n")
 outfile:write("#define GF_THREAD_WIN32 1\n")
