@@ -217,7 +217,7 @@ newoption({
 newoption({
 	trigger = "use-stbi",
 	value = "toggle",
-	description = "Use stb_iamge",
+	description = "Use stb_image",
 	allowed = {
 		{"yes", "Enable"},
 		{"no", "Disable"}
