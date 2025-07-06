@@ -59,6 +59,7 @@
 
 /* Engine */
 #include <gf_prop.h>
+#include <gf_file.h>
 
 /* Standard */
 #include <string.h>
@@ -91,18 +92,13 @@ static void add_user_search(char*** l, char* n) {
 		char* p;
 		SHGetPathFromIDList(pidl, shp);
 		CoTaskMemFree(pidl);
-		p = malloc(strlen(shp) + 1 + strlen(n) + 1);
-		strcpy(p, shp);
-		strcat(p, "\\");
-		strcat(p, n);
+		p = gf_file_path_join(2, shp, n);
 		add_search(l, p);
 		free(p);
 	}
 	if(u != NULL) {
 		char* p = malloc(strlen(u) + 1 + strlen(n) + 1);
-		strcpy(p, u);
-		strcat(p, "\\");
-		strcat(p, n);
+		p	= gf_file_path_join(2, u, n);
 		add_search(l, p);
 		free(p);
 	}
@@ -111,10 +107,7 @@ static void add_user_search(char*** l, char* n) {
 		char* p;
 		SHGetPathFromIDList(pidl, shp);
 		CoTaskMemFree(pidl);
-		p = malloc(strlen(shp) + 1 + strlen(n) + 1);
-		strcpy(p, shp);
-		strcat(p, "\\");
-		strcat(p, n);
+		p = gf_file_path_join(2, shp, n);
 		add_search(l, p);
 		free(p);
 	}
@@ -123,9 +116,7 @@ static void add_user_search(char*** l, char* n) {
 	struct passwd* pwd = getpwuid(getuid());
 	if(pwd != NULL) {
 		char* p = malloc(strlen(pwd->pw_dir) + 1 + 7 + 1 + strlen(n) + 1);
-		strcpy(p, pwd->pw_dir);
-		strcat(p, "/.config/");
-		strcat(p, n);
+		p	= gf_file_path_join(3, pwd->pw_dir, "/.config/", n);
 		add_search(l, p);
 		free(p);
 	}

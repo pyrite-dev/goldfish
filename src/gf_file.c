@@ -271,6 +271,19 @@ char* gf_file_path_join(size_t length, ...) {
 	}
 	va_end(va);
 
+	/* optimize path */
+	for(idx = 0; st[idx] != 0; idx++) {
+		/* FIXME: using memcmp for this is horrible idea */
+		if(memcmp(&st[idx], PATH_SEPERATOR, 1) == 0) {
+			while(memcmp(&st[idx + 1], PATH_SEPERATOR, 1) == 0) {
+				int i;
+				for(i = idx + 1; st[i] != 0; i++) {
+					st[i] = st[i + 1];
+				}
+			}
+		}
+	}
+
 	return st;
 }
 

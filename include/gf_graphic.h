@@ -223,6 +223,17 @@ GF_EXPORT unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int n
  */
 GF_EXPORT void gf_graphic_destroy_fast(gf_draw_t* draw, unsigned long id);
 
+/**
+ * @~english
+ * @brief Get screen framebuffer
+ * @param x X
+ * @param y Y
+ * @param width Width
+ * @param height Height
+ * @return Framebuffer
+ */
+GF_EXPORT unsigned char* gf_graphic_get_screen(gf_draw_t* draw, int x, int y, int width, int height);
+
 /* Common */
 
 /**

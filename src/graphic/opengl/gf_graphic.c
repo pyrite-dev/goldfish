@@ -382,3 +382,22 @@ unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, doub
 }
 
 void gf_graphic_destroy_fast(gf_draw_t* draw, unsigned long id) { glDeleteLists(id, 1); }
+
+unsigned char* gf_graphic_get_screen(gf_draw_t* draw, int x, int y, int width, int height) {
+	unsigned char* r = malloc(width * height * 4);
+	int	       fy;
+	glReadPixels(x, draw->height - y - height, width, height, GL_RGBA, GL_UNSIGNED_BYTE, r);
+
+	/* image is flipped, so fix it */
+	for(fy = 0; fy < height / 2; fy++) {
+		int iy = height - fy - 1;
+		int fx;
+		for(fx = 0; fx < width * 4; fx++) {
+			unsigned char old	 = r[(iy * width * 4) + fx];
+			r[(iy * width * 4) + fx] = r[(fy * width * 4) + fx];
+			r[(fy * width * 4) + fx] = old;
+		}
+	}
+
+	return r;
+}

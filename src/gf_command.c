@@ -53,6 +53,7 @@
 
 /* External library */
 #include <stb_ds.h>
+#include <stb_image_write.h>
 
 /* Interface */
 #include <gf_command.h>
@@ -65,6 +66,7 @@
 #include <gf_file.h>
 #include <gf_input.h>
 #include <gf_gui.h>
+#include <gf_graphic.h>
 
 /* Standard */
 #include <string.h>
@@ -182,6 +184,16 @@ gf_bool_t gf_command_exec_builtin(gf_engine_t* engine, char** arg) {
 
 		engine->client->draw->intro.finished = 0;
 		engine->client->draw->intro.frame    = 0;
+	} else if(strcmp(arg[0], "screenshot") == 0) {
+		unsigned char* fb;
+		if(engine == NULL || engine->client == NULL || engine->client->draw == NULL) {
+			return gf_true;
+		}
+
+		fb = gf_graphic_get_screen(engine->client->draw, 0, 0, engine->client->draw->width, engine->client->draw->height);
+		/* TODO: fix this when i add a function to get game base directory */
+		stbi_write_png("output.png", engine->client->draw->width, engine->client->draw->height, 4, fb, 0);
+		free(fb);
 	} else if(strcmp(arg[0], "echo") == 0) {
 		if(engine == NULL || arrlen(arg) < 2) {
 			return gf_true;
