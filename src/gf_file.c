@@ -263,7 +263,8 @@ char* gf_file_path_join(size_t length, ...) {
 	}
 	va_end(va);
 
-	st = malloc(size);
+	st    = malloc(size);
+	st[0] = 0;
 	va_start(va, length);
 	for(idx = 0; idx < length; idx++) {
 		strcat(st, va_arg(va, char*));
@@ -284,7 +285,57 @@ char* gf_file_path_join(size_t length, ...) {
 		}
 	}
 
+	for(idx = strlen(st) - 1; idx >= 0; idx--) {
+		if(memcmp(&st[idx], PATH_SEPERATOR, 1) == 0) {
+			st[idx] = 0;
+		} else {
+			break;
+		}
+	}
+
 	return st;
+}
+
+char** gf_file_separate_path(const char* path, int only) {
+	char** r = NULL;
+	char*  s = gf_util_strdup(path);
+	int    i;
+	int    incr = 0;
+	char*  old  = NULL;
+
+	for(i = 0;; i++) {
+		if(memcmp(&s[i], PATH_SEPERATOR, 1) == 0 || s[i] == 0) {
+			char oldc = s[i];
+			s[i]	  = 0;
+
+			if(only) {
+				char* p;
+				p = gf_util_strdup(s + incr);
+				arrput(r, p);
+			} else {
+				char* p;
+				if(old == NULL) {
+					old = gf_file_path_join(1, s + incr);
+				} else {
+					char* oold = old;
+					old	   = gf_file_path_join(2, oold, s + incr);
+					free(oold);
+				}
+
+				p = gf_util_strdup(old);
+				arrput(r, p);
+			}
+
+			incr = i + 1;
+
+			if(oldc == 0) break;
+		}
+	}
+	free(s);
+
+	if(old != NULL) free(old);
+
+	return r;
 }
 
 void gf_file_register(gf_engine_t* engine, const char* name, gf_resource_t* resource) {

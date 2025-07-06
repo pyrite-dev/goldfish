@@ -135,6 +135,15 @@ GF_EXPORT char* gf_file_path_join(size_t length, ...);
 
 /**
  * @~english
+ * @brief Separate path
+ * @param path Path
+ * @param only `0` if you want concatenated path, otherwise only path name
+ * @return Array
+ */
+GF_EXPORT char** gf_file_separate_path(const char* path, int only);
+
+/**
+ * @~english
  * @brief Register resource
  * @param engine Engine instance
  * @param name Resource name

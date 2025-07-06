@@ -100,6 +100,14 @@ GF_EXPORT int gf_util_file_size(FILE* f);
  */
 GF_EXPORT gf_uint64_t gf_util_random(gf_engine_t* engine);
 
+/**
+ * @~english
+ * @brief Get user path
+ * @param engine Engine instance
+ * @return User path
+ */
+GF_EXPORT char* gf_util_get_user_path(gf_engine_t* engine);
+
 #ifdef __cplusplus
 }
 #endif

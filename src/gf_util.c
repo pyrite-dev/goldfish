@@ -60,12 +60,15 @@
 /* Engine */
 #include <gf_prop.h>
 #include <gf_file.h>
+#include <gf_log.h>
 
 /* Standard */
 #include <string.h>
 #include <stdlib.h>
 #include <sys/stat.h>
-#ifndef _WIN32
+#ifdef _WIN32
+#include <io.h>
+#else
 #include <pwd.h>
 #include <unistd.h>
 #endif
@@ -133,18 +136,13 @@ char* gf_util_get_search(gf_engine_t* engine) {
 	const char* pref;
 
 	if(engine != NULL && (pref = gf_prop_get_text(&engine->config, "prefix")) != NULL) {
-		n = malloc(strlen(pref) + 1 + strlen(nam) + 1);
-
-		strcpy(n, pref);
-		strcat(n, "/");
-		strcat(n, nam);
+		n = gf_file_path_join(2, pref, nam);
 
 		add_search(&arr, n);
 
 		free(n);
 	}
 
-	add_search(&arr, ".");
 	add_user_search(&arr, nam);
 
 	for(i = 0; i < arrlen(arr); i++) {
@@ -189,6 +187,53 @@ char** gf_util_get_search_list(gf_engine_t* engine) {
 	free(r);
 
 	return l;
+}
+
+char* gf_util_get_user_path(gf_engine_t* engine) {
+	char** list = gf_util_get_search_list(engine);
+	int    i;
+	int    picked = -1;
+	char*  r      = NULL;
+	for(i = arrlen(list) - 1; i >= 0; i--) {
+		char** l = gf_file_separate_path(list[i], 0);
+		int    j;
+		char*  p;
+		FILE*  f;
+
+		for(j = 0; j < arrlen(l); j++) {
+#ifdef _WIN32
+			_mkdir(l[j]);
+#else
+			mkdir(l[j], 0755);
+#endif
+			free(l[j]);
+		}
+		arrfree(l);
+
+		p = gf_file_path_join(2, list[i], "gftest");
+		f = fopen(p, "w");
+		if(f != NULL) {
+			gf_log_function(engine, "%s seems usable for user path", list[i]);
+			picked = i;
+			r      = list[i];
+			fclose(f);
+			remove(p);
+			free(p);
+			break;
+		} else {
+			free(p);
+		}
+	}
+
+	/* cleanup */
+	for(i = 0; i < arrlen(list); i++) {
+		if(i != picked) {
+			free(list[i]);
+		}
+	}
+	arrfree(list);
+
+	return r;
 }
 
 int gf_util_file_size(FILE* f) {
