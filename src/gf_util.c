@@ -201,11 +201,7 @@ char* gf_util_get_user_path(gf_engine_t* engine) {
 		FILE*  f;
 
 		for(j = 0; j < arrlen(l); j++) {
-#ifdef _WIN32
-			_mkdir(l[j]);
-#else
-			mkdir(l[j], 0755);
-#endif
+			gf_file_create_directory(engine, l[j]);
 			free(l[j]);
 		}
 		arrfree(l);

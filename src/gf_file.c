@@ -68,8 +68,11 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdarg.h>
-#ifndef _WIN32
+#ifdef _WIN32
+#include <io.h>
+#else
 #include <unistd.h>
+#include <sys/stat.h>
 #endif
 
 static char* file_pick(gf_engine_t* engine, const char* path, int reverse) {
@@ -235,6 +238,14 @@ void gf_file_close(gf_file_t* fp) {
 	if(fp->fp != NULL) fclose(fp->fp);
 	if(fp->buffer != NULL) free(fp->buffer);
 	free(fp);
+}
+
+void gf_file_create_directory(gf_engine_t* engine, const char* path) {
+#ifdef _WIN32
+	_mkdir(path);
+#else
+	mkdir(path, 0755);
+#endif
 }
 
 #ifdef WIN32
