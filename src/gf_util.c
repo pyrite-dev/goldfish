@@ -116,7 +116,7 @@ static void add_user_search(char*** l, char* n) {
 	struct passwd* pwd = getpwuid(getuid());
 	if(pwd != NULL) {
 		char* p = malloc(strlen(pwd->pw_dir) + 1 + 7 + 1 + strlen(n) + 1);
-		p	= gf_file_path_join(3, pwd->pw_dir, "/.config/", n);
+		p	= gf_file_path_join(3, pwd->pw_dir, ".config", n);
 		add_search(l, p);
 		free(p);
 	}
