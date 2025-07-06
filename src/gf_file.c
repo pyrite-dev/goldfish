@@ -121,13 +121,15 @@ char* gf_file_pick(gf_engine_t* engine, const char* path) { return file_pick(eng
 char* gf_file_pick_reverse(gf_engine_t* engine, const char* path) { return file_pick(engine, path, 1); }
 
 int gf_file_exists(gf_engine_t* engine, const char* path) {
-	if(strlen(path) > 6 && memcmp(path, "base:/", 6) == 0) {
+	char*	       n;
+	gf_resource_t* r = gf_file_get_resource_from_path(engine, path, &n);
+	if(r != NULL) {
 		void*  buf;
 		size_t len;
-		if(engine == NULL || engine->base == NULL) {
+		if(engine == NULL) {
 			return 0;
 		}
-		if(gf_resource_get(engine->base, path + 6, &buf, &len) != 0) {
+		if(gf_resource_get(r, path + strlen(n) + 2, &buf, &len) != 0) {
 			return 0;
 		}
 		free(buf);
@@ -143,11 +145,9 @@ int gf_file_exists(gf_engine_t* engine, const char* path) {
 	return 0;
 }
 
-gf_file_t* gf_file_open(gf_engine_t* engine, const char* path, const char* mode) {
-	gf_resource_t* r = NULL;
+gf_resource_t* gf_file_get_resource_from_path(gf_engine_t* engine, const char* path, char** name) {
 	char*	       tmp;
-	gf_file_t*     fp = malloc(sizeof(*fp));
-	memset(fp, 0, sizeof(*fp));
+	gf_resource_t* r = NULL;
 
 	/**
 	 * path check
@@ -163,20 +163,34 @@ gf_file_t* gf_file_open(gf_engine_t* engine, const char* path, const char* mode)
 		tmp	= strchr(p, ':');
 		tmp[0]	= 0;
 		r	= shget(engine->resources, p);
+		if(name != NULL) {
+			*name = gf_util_strdup(p);
+		}
 		free(p);
 	}
+
+	return r;
+}
+
+gf_file_t* gf_file_open(gf_engine_t* engine, const char* path, const char* mode) {
+	gf_resource_t* r = NULL;
+	char*	       n;
+	gf_file_t*     fp = malloc(sizeof(*fp));
+	memset(fp, 0, sizeof(*fp));
+
+	r = gf_file_get_resource_from_path(engine, path, &n);
 
 	fp->size   = 0;
 	fp->pos	   = 0;
 	fp->buffer = NULL;
 	fp->fp	   = NULL;
 	if(r != NULL) {
-		if(engine == NULL || r == NULL) {
+		if(engine == NULL) {
 			free(fp);
 			return NULL;
 		}
 		if(strcmp(mode, "r") == 0) {
-			if(gf_resource_get(r, path + 6, &fp->buffer, &fp->size) != 0) {
+			if(gf_resource_get(r, path + strlen(n) + 2, &fp->buffer, &fp->size) != 0) {
 				free(fp);
 				return NULL;
 			}

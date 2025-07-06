@@ -159,6 +159,16 @@ GF_EXPORT void gf_file_register(gf_engine_t* engine, const char* name, gf_resour
  */
 GF_EXPORT void gf_file_create_directory(gf_engine_t* engine, const char* path);
 
+/**
+ * @~english
+ * @brief Get resource from the path
+ * @param engine Engine instance
+ * @param path Path
+ * @param name Name
+ * @return Resource
+ */
+GF_EXPORT gf_resource_t* gf_file_get_resource_from_path(gf_engine_t* engine, const char* path, char** name);
+
 #ifdef __cplusplus
 }
 #endif
