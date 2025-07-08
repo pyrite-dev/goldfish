@@ -303,7 +303,7 @@
  * @~english
  * @brief Macro for calling convention
  */
-#if defined(_WIN32) && defined(GF_DLL)
+#if defined(_WIN32)
 #define GFAPI __cdecl
 #else
 #define GFAPI
