@@ -162,7 +162,7 @@ GF_DECLARE_TYPE(gui_component, {
 	double		   y;
 	double		   width;
 	double		   height;
-	int		   pressed;
+	gf_gui_id_t	   pressed;
 	gf_gui_id_t	   parent;
 	gf_prop_t*	   prop;
 	gf_gui_callback_t  callback;

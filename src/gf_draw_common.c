@@ -320,7 +320,7 @@ void gf_draw_frame(gf_draw_t* draw) {
 	/* Keep the console scrolled down */
 	scroll_value  = gf_prop_get_floating(gf_gui_get_prop(draw->gui, scrollbar), "value");
 	max	      = gf_prop_get_floating(gf_gui_get_prop(draw->gui, scrollbar), "max-value") - gf_prop_get_floating(gf_gui_get_prop(draw->gui, scrollbar), "step");
-	keep_scrolled = scroll_value >= max - 20.f;
+	keep_scrolled = (draw->gui->pressed != gf_gui_get_prop_id(draw->gui, scrollbar, "grab")) && (scroll_value >= max - 20.f);
 
 	gf_gui_set_text(draw->gui, console, draw->engine->log_list);
 	if(draw->monospace_font != NULL) {
