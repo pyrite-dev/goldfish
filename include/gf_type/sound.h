@@ -68,7 +68,7 @@ gf_sound_t;
 #if defined(GF_SND_WINDOWS)
 GF_DECLARE_TYPE(sound_context, {
 	HANDLE dsound_dll;
-	HRESULT (*dsound_create)(void*, LPDIRECTSOUND*, void*);
+	HRESULT(WINAPI * dsound_create)(void*, LPDIRECTSOUND*, void*);
 	LPDIRECTSOUND dsound;
 
 	HWAVEOUT     waveout;
