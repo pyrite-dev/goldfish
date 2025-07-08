@@ -60,3 +60,4 @@ end
 
 call_me("audio")
 call_me("model")
+call_me("gui")
