@@ -68,21 +68,21 @@ extern "C" {
  * @param str String
  * @return String
  */
-GF_EXPORT char* gf_util_strdup(const char* str);
+GF_EXPORT char* GFAPI gf_util_strdup(const char* str);
 
 /**
  * @~english
  * @brief Get search path
  * @return Path
  */
-GF_EXPORT char* gf_util_get_search(gf_engine_t* engine);
+GF_EXPORT char* GFAPI gf_util_get_search(gf_engine_t* engine);
 
 /**
  * @~english
  * @brief Get search path
  * @return Path
  */
-GF_EXPORT char** gf_util_get_search_list(gf_engine_t* engine);
+GF_EXPORT char** GFAPI gf_util_get_search_list(gf_engine_t* engine);
 
 /**
  * @~english
@@ -90,7 +90,7 @@ GF_EXPORT char** gf_util_get_search_list(gf_engine_t* engine);
  * @param f File pointer
  * @return Size
  */
-GF_EXPORT int gf_util_file_size(FILE* f);
+GF_EXPORT int GFAPI gf_util_file_size(FILE* f);
 
 /**
  * @~english
@@ -98,7 +98,7 @@ GF_EXPORT int gf_util_file_size(FILE* f);
  * @param engine Engine instance
  * @return Random number
  */
-GF_EXPORT gf_uint64_t gf_util_random(gf_engine_t* engine);
+GF_EXPORT gf_uint64_t GFAPI gf_util_random(gf_engine_t* engine);
 
 /**
  * @~english
@@ -106,7 +106,7 @@ GF_EXPORT gf_uint64_t gf_util_random(gf_engine_t* engine);
  * @param engine Engine instance
  * @return User path
  */
-GF_EXPORT char* gf_util_get_user_path(gf_engine_t* engine);
+GF_EXPORT char* GFAPI gf_util_get_user_path(gf_engine_t* engine);
 
 #ifdef __cplusplus
 }

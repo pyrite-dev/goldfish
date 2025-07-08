@@ -67,77 +67,77 @@ extern "C" {
  * @param userdata Data to be passed to thread
  * @return Thread
  */
-GF_EXPORT gf_thread_t* gf_thread_create(void (*func)(void*), void* userdata);
+GF_EXPORT gf_thread_t* GFAPI gf_thread_create(void (*func)(void*), void* userdata);
 
 /**
  * @~english
  * @brief Join thread
  * @param thread Thread
  */
-GF_EXPORT void gf_thread_join(gf_thread_t* thread);
+GF_EXPORT void GFAPI gf_thread_join(gf_thread_t* thread);
 
 /**
  * @~english
  * @brief Destroy thread
  * @param thread Thread
  */
-GF_EXPORT void gf_thread_destroy(gf_thread_t* thread);
+GF_EXPORT void GFAPI gf_thread_destroy(gf_thread_t* thread);
 
 /**
  * @~english
  * @brief Create mutex
  * @return Mutex
  */
-GF_EXPORT gf_thread_mutex_t* gf_thread_mutex_create(void);
+GF_EXPORT gf_thread_mutex_t* GFAPI gf_thread_mutex_create(void);
 
 /**
  * @~english
  * @brief Destroy mutex
  * @param mutex Mutex
  */
-GF_EXPORT void gf_thread_mutex_destroy(gf_thread_mutex_t* mutex);
+GF_EXPORT void GFAPI gf_thread_mutex_destroy(gf_thread_mutex_t* mutex);
 
 /**
  * @~english
  * @brief Lock mutex
  * @param mutex Mutex
  */
-GF_EXPORT void gf_thread_mutex_lock(gf_thread_mutex_t* mutex);
+GF_EXPORT void GFAPI gf_thread_mutex_lock(gf_thread_mutex_t* mutex);
 
 /**
  * @~english
  * @brief Unlock mutex
  * @param mutex Mutex
  */
-GF_EXPORT void gf_thread_mutex_unlock(gf_thread_mutex_t* mutex);
+GF_EXPORT void GFAPI gf_thread_mutex_unlock(gf_thread_mutex_t* mutex);
 
 /**
  * @~english
  * @brief Create event
  * @return Event
  */
-GF_EXPORT gf_thread_event_t* gf_thread_event_create(void);
+GF_EXPORT gf_thread_event_t* GFAPI gf_thread_event_create(void);
 
 /**
  * @~english
  * @brief Destroy event
  * @param event Event
  */
-GF_EXPORT void gf_thread_event_destroy(gf_thread_event_t* event);
+GF_EXPORT void GFAPI gf_thread_event_destroy(gf_thread_event_t* event);
 
 /**
  * @~english
  * @brief Wait for event
  * @param event Event
  */
-GF_EXPORT void gf_thread_event_wait(gf_thread_event_t* event);
+GF_EXPORT void GFAPI gf_thread_event_wait(gf_thread_event_t* event);
 
 /**
  * @~english
  * @brief Signal event
  * @param event Event
  */
-GF_EXPORT void gf_thread_event_signal(gf_thread_event_t* event);
+GF_EXPORT void GFAPI gf_thread_event_signal(gf_thread_event_t* event);
 
 #ifdef __cplusplus
 }

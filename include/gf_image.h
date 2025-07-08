@@ -71,7 +71,7 @@ extern "C" {
  * @param height Height
  * @return Data
  */
-GF_EXPORT unsigned char* gf_image_load_memory(gf_engine_t* engine, unsigned char* data, size_t size, int* width, int* height);
+GF_EXPORT unsigned char* GFAPI gf_image_load_memory(gf_engine_t* engine, unsigned char* data, size_t size, int* width, int* height);
 
 /**
  * @~english
@@ -82,7 +82,7 @@ GF_EXPORT unsigned char* gf_image_load_memory(gf_engine_t* engine, unsigned char
  * @param height Height
  * @return Data
  */
-unsigned char* gf_image_load(gf_engine_t* engine, const char* path, int* width, int* height);
+GF_EXPORT unsigned char* GFAPI gf_image_load(gf_engine_t* engine, const char* path, int* width, int* height);
 
 #ifdef __cplusplus
 }

@@ -109,7 +109,7 @@ cat >> include/gf_gui_component.h << EOF
  * @return Component ID
  */
 EOF
-	echo "GF_EXPORT gf_gui_id_t gf_gui_create_$1(gf_gui_t* gui, double x, double y, double w, double h);" >> include/gf_gui_component.h
+	echo "GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_$1(gf_gui_t* gui, double x, double y, double w, double h);" >> include/gf_gui_component.h
 	echo >> include/gf_gui_component.h
 }
 

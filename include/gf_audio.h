@@ -69,7 +69,7 @@ extern "C" {
  * @param output Output buffer
  * @param frame Frame sound driver wants
  */
-GF_EXPORT void gf_audio_callback(gf_audio_t* audio, void* output, int frame);
+GF_EXPORT void GFAPI gf_audio_callback(gf_audio_t* audio, void* output, int frame);
 
 /**
  * @~english
@@ -77,21 +77,21 @@ GF_EXPORT void gf_audio_callback(gf_audio_t* audio, void* output, int frame);
  * @param engine Engine instance
  * @return Audio interface
  */
-GF_EXPORT gf_audio_t* gf_audio_create(gf_engine_t* engine);
+GF_EXPORT gf_audio_t* GFAPI gf_audio_create(gf_engine_t* engine);
 
 /**
  * @~english
  * @brief Destroy audio interface
  * @param audio Audio interface
  */
-GF_EXPORT void gf_audio_destroy(gf_audio_t* audio);
+GF_EXPORT void GFAPI gf_audio_destroy(gf_audio_t* audio);
 
 /**
  * @~english
  * @brief Destroy audio decoder
  * @param decoder Audio decoder
  */
-GF_EXPORT void gf_audio_decoder_destroy(gf_audio_decoder_t* decoder);
+GF_EXPORT void GFAPI gf_audio_decoder_destroy(gf_audio_decoder_t* decoder);
 
 /**
  * @~english
@@ -99,7 +99,7 @@ GF_EXPORT void gf_audio_decoder_destroy(gf_audio_decoder_t* decoder);
  * @param audio Audio interface
  * @param id Audio ID
  */
-GF_EXPORT void gf_audio_auto_destroy(gf_audio_t* audio, gf_audio_id_t id);
+GF_EXPORT void GFAPI gf_audio_auto_destroy(gf_audio_t* audio, gf_audio_id_t id);
 
 /**
  * @~english
@@ -108,7 +108,7 @@ GF_EXPORT void gf_audio_auto_destroy(gf_audio_t* audio, gf_audio_id_t id);
  * @param path Path
  * @return ID if successful, otherwise `-1`
  */
-GF_EXPORT gf_audio_id_t gf_audio_load_file(gf_audio_t* audio, const char* path);
+GF_EXPORT gf_audio_id_t GFAPI gf_audio_load_file(gf_audio_t* audio, const char* path);
 
 /**
  * @~english
@@ -118,7 +118,7 @@ GF_EXPORT gf_audio_id_t gf_audio_load_file(gf_audio_t* audio, const char* path);
  * @param size Data size
  * @return ID if successful, otherwise `-1`
  */
-GF_EXPORT gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_t size);
+GF_EXPORT gf_audio_id_t GFAPI gf_audio_load(gf_audio_t* audio, const void* data, size_t size);
 
 /**
  * @~english
@@ -126,7 +126,7 @@ GF_EXPORT gf_audio_id_t gf_audio_load(gf_audio_t* audio, const void* data, size_
  * @param audio Audio interface
  * @param id Audio ID
  */
-GF_EXPORT void gf_audio_pause(gf_audio_t* audio, gf_audio_id_t id);
+GF_EXPORT void GFAPI gf_audio_pause(gf_audio_t* audio, gf_audio_id_t id);
 
 /**
  * @~english
@@ -134,7 +134,7 @@ GF_EXPORT void gf_audio_pause(gf_audio_t* audio, gf_audio_id_t id);
  * @param audio Audio interface
  * @param id Audio ID
  */
-GF_EXPORT void gf_audio_resume(gf_audio_t* audio, gf_audio_id_t id);
+GF_EXPORT void GFAPI gf_audio_resume(gf_audio_t* audio, gf_audio_id_t id);
 
 /**
  * @~english
@@ -143,7 +143,7 @@ GF_EXPORT void gf_audio_resume(gf_audio_t* audio, gf_audio_id_t id);
  * @param id Audio ID
  * @note This frees the decoder
  */
-GF_EXPORT void gf_audio_stop(gf_audio_t* audio, gf_audio_id_t id);
+GF_EXPORT void GFAPI gf_audio_stop(gf_audio_t* audio, gf_audio_id_t id);
 
 /**
  * @~english
@@ -151,7 +151,7 @@ GF_EXPORT void gf_audio_stop(gf_audio_t* audio, gf_audio_id_t id);
  * @param audio Audio interface
  * @param volume Volume
  */
-GF_EXPORT void gf_audio_set_volume(gf_audio_t* audio, double volume);
+GF_EXPORT void GFAPI gf_audio_set_volume(gf_audio_t* audio, double volume);
 
 /**
  * @~english
@@ -159,7 +159,7 @@ GF_EXPORT void gf_audio_set_volume(gf_audio_t* audio, double volume);
  * @param audio Audio interface
  * @return Volume
  */
-GF_EXPORT double gf_audio_get_volume(gf_audio_t* audio);
+GF_EXPORT double GFAPI gf_audio_get_volume(gf_audio_t* audio);
 
 /**
  * @~english
@@ -168,7 +168,7 @@ GF_EXPORT double gf_audio_get_volume(gf_audio_t* audio);
  * @param id Audio ID
  * @return `1` if it is over, otherwise `0`
  */
-GF_EXPORT int gf_audio_is_over(gf_audio_t* audio, gf_audio_id_t id);
+GF_EXPORT int GFAPI gf_audio_is_over(gf_audio_t* audio, gf_audio_id_t id);
 
 #ifdef __cplusplus
 }

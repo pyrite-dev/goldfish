@@ -66,7 +66,7 @@ extern "C" {
  * @param engine Engine instance
  * @param path Path
  */
-GF_EXPORT void gf_command_file(gf_engine_t* engine, const char* path);
+GF_EXPORT void GFAPI gf_command_file(gf_engine_t* engine, const char* path);
 
 /**
  * @~english
@@ -75,7 +75,7 @@ GF_EXPORT void gf_command_file(gf_engine_t* engine, const char* path);
  * @param list Command list
  * @param listc Command list length
  */
-GF_EXPORT void gf_command_run(gf_engine_t* engine, char** list, int listc);
+GF_EXPORT void GFAPI gf_command_run(gf_engine_t* engine, char** list, int listc);
 
 #ifdef __cplusplus
 }

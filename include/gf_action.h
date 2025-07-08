@@ -68,7 +68,7 @@ extern "C" {
  * @param engine Engine instance
  * @param input Input interface
  */
-GF_EXPORT void gf_action_process(gf_engine_t* engine, gf_input_t* input);
+GF_EXPORT void GFAPI gf_action_process(gf_engine_t* engine, gf_input_t* input);
 
 #ifdef __cplusplus
 }

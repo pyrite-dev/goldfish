@@ -65,13 +65,13 @@ extern "C" {
  * @~english
  * @brief Initialize server interface
  */
-GF_EXPORT void gf_server_begin(void);
+GF_EXPORT void GFAPI gf_server_begin(void);
 
 /**
  * @~english
  * @brief Cleanup server interface
  */
-GF_EXPORT void gf_server_end(void);
+GF_EXPORT void GFAPI gf_server_end(void);
 
 /**
  * @~english
@@ -79,21 +79,21 @@ GF_EXPORT void gf_server_end(void);
  * @param engine Engine instance
  * @return Server interface
  */
-GF_EXPORT gf_server_t* gf_server_create(gf_engine_t* engine);
+GF_EXPORT gf_server_t* GFAPI gf_server_create(gf_engine_t* engine);
 
 /**
  * @~english
  * @brief Destroy server interface
  * @param server Server interface
  */
-GF_EXPORT void gf_server_destroy(gf_server_t* server);
+GF_EXPORT void GFAPI gf_server_destroy(gf_server_t* server);
 
 /**
  * @~english
  * @brief Start server shutdown
  * @param server Server interface
  */
-GF_EXPORT void gf_server_shutdown(gf_server_t* server);
+GF_EXPORT void GFAPI gf_server_shutdown(gf_server_t* server);
 
 #ifdef __cplusplus
 }

@@ -91,43 +91,43 @@ extern "C" {
  * @~english
  * @brief Clear the screen
  */
-GF_EXPORT void gf_graphic_clear(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_graphic_clear(gf_draw_t* draw);
 
 /**
  * @~english
  * @brief Start 2D mode
  */
-GF_EXPORT void gf_graphic_begin_2d(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_graphic_begin_2d(gf_draw_t* draw);
 
 /**
  * @~english
  * @brief End 2D mode
  */
-GF_EXPORT void gf_graphic_end_2d(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_graphic_end_2d(gf_draw_t* draw);
 
 /**
  * @~english
  * @brief Draw polygon with texture
  */
-GF_EXPORT void gf_graphic_draw_texture_polygon_arr(gf_draw_t* draw, gf_texture_t* texture, gf_graphic_color_t color, int dim, int npair, double* arr);
+GF_EXPORT void GFAPI gf_graphic_draw_texture_polygon_arr(gf_draw_t* draw, gf_texture_t* texture, gf_graphic_color_t color, int dim, int npair, double* arr);
 
 /**
  * @~english
  * @brief Draw polygon
  */
-GF_EXPORT void gf_graphic_fill_polygon_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr);
+GF_EXPORT void GFAPI gf_graphic_fill_polygon_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr);
 
 /**
  * @~english
  * @brief Draw points
  */
-GF_EXPORT void gf_graphic_points_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr);
+GF_EXPORT void GFAPI gf_graphic_points_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr);
 
 /**
  * @~english
  * @brief Draw lines
  */
-GF_EXPORT void gf_graphic_lines_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr);
+GF_EXPORT void GFAPI gf_graphic_lines_arr(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, double* arr);
 
 /**
  * @~english
@@ -137,14 +137,14 @@ GF_EXPORT void gf_graphic_lines_arr(gf_draw_t* draw, gf_graphic_color_t color, i
  * @param znear Distance from viewer to the near clipping plane
  * @param zfar Distance from viewer to the far clipping plane
  */
-GF_EXPORT void gf_graphic_perspective(gf_draw_t* draw, double fovy, double znear, double zfar);
+GF_EXPORT void GFAPI gf_graphic_perspective(gf_draw_t* draw, double fovy, double znear, double zfar);
 
 /**
  * @~english
  * @brief Set camera
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_graphic_set_camera(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_graphic_set_camera(gf_draw_t* draw);
 
 /**
  * @~english
@@ -155,14 +155,14 @@ GF_EXPORT void gf_graphic_set_camera(gf_draw_t* draw);
  * @param w Width
  * @param h Height
  */
-GF_EXPORT void gf_graphic_clip_push(gf_draw_t* draw, double x, double y, double w, double h);
+GF_EXPORT void GFAPI gf_graphic_clip_push(gf_draw_t* draw, double x, double y, double w, double h);
 
 /**
  * @~english
  * @brief Pop clipping region
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_graphic_clip_pop(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_graphic_clip_pop(gf_draw_t* draw);
 
 /**
  * @~english
@@ -170,7 +170,7 @@ GF_EXPORT void gf_graphic_clip_pop(gf_draw_t* draw);
  * @param draw Drawing interface
  * @param size Point size
  */
-GF_EXPORT void gf_graphic_set_point_size(gf_draw_t* draw, double size);
+GF_EXPORT void GFAPI gf_graphic_set_point_size(gf_draw_t* draw, double size);
 
 /**
  * @~english
@@ -178,7 +178,7 @@ GF_EXPORT void gf_graphic_set_point_size(gf_draw_t* draw, double size);
  * @param draw Drawing interface
  * @param width Line width
  */
-GF_EXPORT void gf_graphic_set_line_width(gf_draw_t* draw, double width);
+GF_EXPORT void GFAPI gf_graphic_set_line_width(gf_draw_t* draw, double width);
 
 /**
  * @~english
@@ -186,7 +186,7 @@ GF_EXPORT void gf_graphic_set_line_width(gf_draw_t* draw, double width);
  * @param draw Drawing interface
  * @return Point size
  */
-GF_EXPORT double gf_graphic_get_point_size(gf_draw_t* draw);
+GF_EXPORT double GFAPI gf_graphic_get_point_size(gf_draw_t* draw);
 
 /**
  * @~english
@@ -194,7 +194,7 @@ GF_EXPORT double gf_graphic_get_point_size(gf_draw_t* draw);
  * @param draw Drawing interface
  * @return Line width
  */
-GF_EXPORT double gf_graphic_get_line_width(gf_draw_t* draw);
+GF_EXPORT double GFAPI gf_graphic_get_line_width(gf_draw_t* draw);
 
 /**
  * @~english
@@ -213,7 +213,7 @@ GF_EXPORT double gf_graphic_get_line_width(gf_draw_t* draw);
  * @param sz Z scaling
  * @return Return "fast" ID
  */
-GF_EXPORT unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double* ncoords, double x, double y, double z, double sx, double sy, double sz);
+GF_EXPORT unsigned long GFAPI gf_graphic_fast(gf_draw_t* draw, unsigned long id, int npair, double* coords, double* tcoords, double* ncoords, double x, double y, double z, double sx, double sy, double sz);
 
 /**
  * @~english
@@ -221,7 +221,7 @@ GF_EXPORT unsigned long gf_graphic_fast(gf_draw_t* draw, unsigned long id, int n
  * @param draw Drawing interface
  * @param id "Fast" ID
  */
-GF_EXPORT void gf_graphic_destroy_fast(gf_draw_t* draw, unsigned long id);
+GF_EXPORT void GFAPI gf_graphic_destroy_fast(gf_draw_t* draw, unsigned long id);
 
 /**
  * @~english
@@ -232,7 +232,7 @@ GF_EXPORT void gf_graphic_destroy_fast(gf_draw_t* draw, unsigned long id);
  * @param height Height
  * @return Framebuffer
  */
-GF_EXPORT unsigned char* gf_graphic_get_screen(gf_draw_t* draw, int x, int y, int width, int height);
+GF_EXPORT unsigned char* GFAPI gf_graphic_get_screen(gf_draw_t* draw, int x, int y, int width, int height);
 
 /* Common */
 
@@ -241,63 +241,63 @@ GF_EXPORT unsigned char* gf_graphic_get_screen(gf_draw_t* draw, int x, int y, in
  * @brief Calculate text width
  * @return Text width
  */
-GF_EXPORT double gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, const char* text);
+GF_EXPORT double GFAPI gf_graphic_text_width(gf_draw_t* draw, gf_font_t* userfont, double size, const char* text);
 
 /**
  * @~english
  * @brief Calculate text height
  * @return Text height
  */
-GF_EXPORT double gf_graphic_text_height(gf_draw_t* draw, gf_font_t* userfont, double size, const char* text);
+GF_EXPORT double GFAPI gf_graphic_text_height(gf_draw_t* draw, gf_font_t* userfont, double size, const char* text);
 
 /**
  * @~english
  * @brief Draw text
  */
-GF_EXPORT void gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, double size, const char* text, gf_graphic_color_t color);
+GF_EXPORT void GFAPI gf_graphic_text(gf_draw_t* draw, gf_font_t* userfont, double x, double y, double size, const char* text, gf_graphic_color_t color);
 
 /**
  * @~english
  * @brief Draw text with wrapping
  * @return Height
  */
-GF_EXPORT double gf_graphic_text_wrap(gf_draw_t* draw, gf_font_t* userfont, double x, double y, double w, double size, const char* text, gf_graphic_color_t color);
+GF_EXPORT double GFAPI gf_graphic_text_wrap(gf_draw_t* draw, gf_font_t* userfont, double x, double y, double w, double size, const char* text, gf_graphic_color_t color);
 
 /**
  * @~english
  * @brief Draw filled rectangle
  */
-GF_EXPORT void gf_graphic_fill_rect(gf_draw_t* draw, double x, double y, double w, double h, gf_graphic_color_t color);
+GF_EXPORT void GFAPI gf_graphic_fill_rect(gf_draw_t* draw, double x, double y, double w, double h, gf_graphic_color_t color);
 
 /**
  * @~english
  * @brief Draw rectangle with texture
  */
-GF_EXPORT void gf_graphic_draw_texture_2d(gf_draw_t* draw, double x, double y, double w, double h, gf_texture_t* texture, gf_graphic_color_t color);
+GF_EXPORT void GFAPI gf_graphic_draw_texture_2d(gf_draw_t* draw, double x, double y, double w, double h, gf_texture_t* texture, gf_graphic_color_t color);
 
 /**
  * @~english
  * @brief Draw polygon with texture
  */
-GF_EXPORT void gf_graphic_draw_texture_polygon(gf_draw_t* draw, gf_texture_t* texture, gf_graphic_color_t color, int dim, int npair, ...);
+GF_EXPORT void GFAPI gf_graphic_draw_texture_polygon(gf_draw_t* draw, gf_texture_t* texture, gf_graphic_color_t color, int dim, int npair, ...);
 
 /**
  * @~english
  * @brief Draw polygon
  */
-GF_EXPORT void gf_graphic_fill_polygon(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
+GF_EXPORT void GFAPI gf_graphic_fill_polygon(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
 
 /**
  * @~english
  * @brief Draw points
  */
-GF_EXPORT void gf_graphic_points(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
+GF_EXPORT void GFAPI gf_graphic_points(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
 
 /**
  * @~english
  * @brief Draw lines
  */
-GF_EXPORT void gf_graphic_lines(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
+GF_EXPORT void GFAPI gf_graphic_lines(gf_draw_t* draw, gf_graphic_color_t color, int dim, int npair, ...);
 
 #ifdef __cplusplus
 }

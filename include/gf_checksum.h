@@ -80,7 +80,7 @@ extern "C" {
  * @param size Size of data
  * @return Checksum
  */
-GF_EXPORT void* gf_checksum_calculate(void* data, size_t size);
+GF_EXPORT void* GFAPI gf_checksum_calculate(void* data, size_t size);
 
 /**
  * @~english
@@ -90,7 +90,7 @@ GF_EXPORT void* gf_checksum_calculate(void* data, size_t size);
  * @param checksum Checksum
  * @return `1` if checksum is valid, `0` otherwise
  */
-GF_EXPORT int gf_checksum_valid(void* data, size_t size, void* checksum);
+GF_EXPORT int GFAPI gf_checksum_valid(void* data, size_t size, void* checksum);
 
 #ifdef __cplusplus
 }

@@ -68,7 +68,7 @@ extern "C" {
  * @param str Packet ID
  * @return Packet ID in integer
  */
-GF_EXPORT gf_uint32_t gf_network_id(const char* str);
+GF_EXPORT gf_uint32_t GFAPI gf_network_id(const char* str);
 
 /**
  * @~english
@@ -78,7 +78,7 @@ GF_EXPORT gf_uint32_t gf_network_id(const char* str);
  * @param port Port
  * @return Network interface
  */
-GF_EXPORT gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int port);
+GF_EXPORT gf_network_t* GFAPI gf_network_secure_tcp(gf_engine_t* engine, const char* host, int port);
 
 /**
  * @~english
@@ -88,7 +88,7 @@ GF_EXPORT gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* h
  * @param port Port
  * @return Network interface
  */
-GF_EXPORT gf_network_t* gf_network_secure_tcp_server(gf_engine_t* engine, const char* host, int port);
+GF_EXPORT gf_network_t* GFAPI gf_network_secure_tcp_server(gf_engine_t* engine, const char* host, int port);
 
 /**
  * @~english
@@ -96,14 +96,14 @@ GF_EXPORT gf_network_t* gf_network_secure_tcp_server(gf_engine_t* engine, const 
  * @param net Network interface
  * @return `0` if successful
  */
-GF_EXPORT int gf_network_secure_server_step(gf_network_t* net);
+GF_EXPORT int GFAPI gf_network_secure_server_step(gf_network_t* net);
 
 /**
  * @~english
  * @brief Destroy network interface
  * @param net Network interface
  */
-GF_EXPORT void gf_network_destroy(gf_network_t* net);
+GF_EXPORT void GFAPI gf_network_destroy(gf_network_t* net);
 
 #ifdef __cplusplus
 }

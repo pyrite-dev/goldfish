@@ -77,13 +77,13 @@ GF_EXPORT unsigned int gf_powered_len;
  * @~english
  * @brief Initialize engine
  */
-GF_EXPORT void gf_engine_begin(void);
+GF_EXPORT void GFAPI gf_engine_begin(void);
 
 /**
  * @~english
  * @brief Cleanup engine
  */
-GF_EXPORT void gf_engine_end(void);
+GF_EXPORT void GFAPI gf_engine_end(void);
 
 /**
  * @~english
@@ -93,7 +93,7 @@ GF_EXPORT void gf_engine_end(void);
  * @deprecated Use gf_engine_create_ex instead
  * @return Engine instance
  */
-GF_EXPORT gf_engine_t* gf_engine_create(const char* title, int nogui);
+GF_EXPORT gf_engine_t* GFAPI gf_engine_create(const char* title, int nogui);
 
 /**
  * @~english
@@ -105,7 +105,7 @@ GF_EXPORT gf_engine_t* gf_engine_create(const char* title, int nogui);
  * @param argc Command line argument count
  * @return Engine instance
  */
-GF_EXPORT gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t param, char** argv, int argc);
+GF_EXPORT gf_engine_t* GFAPI gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t param, char** argv, int argc);
 
 /**
  * @~english
@@ -113,21 +113,21 @@ GF_EXPORT gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engi
  * @param engine Engine instance
  * @note How engine draws a frame internally is explained in gf_core.c
  */
-GF_EXPORT void gf_engine_loop(gf_engine_t* engine);
+GF_EXPORT void GFAPI gf_engine_loop(gf_engine_t* engine);
 
 /**
  * @~english
  * @brief Destroy engine instance
  * @param engine Engine instance
  */
-GF_EXPORT void gf_engine_destroy(gf_engine_t* engine);
+GF_EXPORT void GFAPI gf_engine_destroy(gf_engine_t* engine);
 
 /**
  * @~english
  * @brief Start engine shutdown
  * @param engine Engine instance
  */
-GF_EXPORT void gf_engine_shutdown(gf_engine_t* engine);
+GF_EXPORT void GFAPI gf_engine_shutdown(gf_engine_t* engine);
 
 /**
  * @~english
@@ -135,7 +135,7 @@ GF_EXPORT void gf_engine_shutdown(gf_engine_t* engine);
  * @param engine Engine instance
  * @param name Name
  */
-GF_EXPORT void gf_engine_name(gf_engine_t* engine, const char* name);
+GF_EXPORT void GFAPI gf_engine_name(gf_engine_t* engine, const char* name);
 
 /**
  * @~english
@@ -143,7 +143,7 @@ GF_EXPORT void gf_engine_name(gf_engine_t* engine, const char* name);
  * @param engine Engine instance
  * @param prefix Prefix
  */
-GF_EXPORT void gf_engine_prefix(gf_engine_t* engine, const char* prefix);
+GF_EXPORT void GFAPI gf_engine_prefix(gf_engine_t* engine, const char* prefix);
 
 #ifdef __cplusplus
 }

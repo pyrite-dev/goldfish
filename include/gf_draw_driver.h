@@ -73,14 +73,14 @@ extern "C" {
  * @param draw Drawing interface
  * @return Drawing driver
  */
-GF_EXPORT gf_draw_driver_t* gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw);
+GF_EXPORT gf_draw_driver_t* GFAPI gf_draw_driver_create(gf_engine_t* engine, gf_draw_t* draw);
 
 /**
  * @~english
  * @brief Destroy drawing driver
  * @param driver Drawing driver
  */
-GF_EXPORT void gf_draw_driver_destroy(gf_draw_driver_t* driver);
+GF_EXPORT void GFAPI gf_draw_driver_destroy(gf_draw_driver_t* driver);
 
 /**
  * @~english
@@ -89,14 +89,14 @@ GF_EXPORT void gf_draw_driver_destroy(gf_draw_driver_t* driver);
  * @param query Extension to be checked
  * @return `1` if extension is present, otherwise if it isn't
  */
-GF_EXPORT int gf_draw_driver_has_extension(gf_draw_t* draw, const char* query);
+GF_EXPORT int GFAPI gf_draw_driver_has_extension(gf_draw_t* draw, const char* query);
 
 /**
  * @~english
  * @brief Do stuffs required on resizing window
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_draw_driver_reshape(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_draw_driver_reshape(gf_draw_t* draw);
 
 /**
  * @~english
@@ -109,14 +109,14 @@ GF_EXPORT void gf_draw_driver_reshape(gf_draw_t* draw);
  * @param data Texture data
  * @return Driver-dependent texture
  */
-GF_EXPORT gf_draw_driver_texture_t* gf_draw_driver_register_texture(gf_draw_t* draw, int width, int height, int* iwidth, int* iheight, unsigned char* data);
+GF_EXPORT gf_draw_driver_texture_t* GFAPI gf_draw_driver_register_texture(gf_draw_t* draw, int width, int height, int* iwidth, int* iheight, unsigned char* data);
 
 /**
  * @~english
  * @brief Destroy driver-dependent texture
  * @param texture Driver-dependent texture
  */
-GF_EXPORT void gf_draw_driver_destroy_texture(gf_draw_driver_texture_t* texture);
+GF_EXPORT void GFAPI gf_draw_driver_destroy_texture(gf_draw_driver_texture_t* texture);
 
 /**
  * @~english
@@ -124,14 +124,14 @@ GF_EXPORT void gf_draw_driver_destroy_texture(gf_draw_driver_texture_t* texture)
  * @param draw Drawing interface
  * @param texture Texture
  */
-GF_EXPORT void gf_draw_driver_begin_texture_2d(gf_draw_t* draw, gf_texture_t* texture);
+GF_EXPORT void GFAPI gf_draw_driver_begin_texture_2d(gf_draw_t* draw, gf_texture_t* texture);
 
 /**
  * @~english
  * @brief End 2D texture mode
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_draw_driver_end_texture_2d(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_draw_driver_end_texture_2d(gf_draw_t* draw);
 
 /**
  * @~english
@@ -139,21 +139,21 @@ GF_EXPORT void gf_draw_driver_end_texture_2d(gf_draw_t* draw);
  * @param draw Drawing interface
  * @param color Color
  */
-GF_EXPORT void gf_draw_driver_set_color(gf_draw_t* draw, gf_graphic_color_t color);
+GF_EXPORT void GFAPI gf_draw_driver_set_color(gf_draw_t* draw, gf_graphic_color_t color);
 
 /**
  * @~english
  * @brief Called before gf_draw_frame
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_draw_driver_before(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_draw_driver_before(gf_draw_t* draw);
 
 /**
  * @~english
  * @brief Called after gf_draw_frame
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_draw_driver_after(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_draw_driver_after(gf_draw_t* draw);
 
 #ifdef __cplusplus
 }

@@ -65,13 +65,13 @@ extern "C" {
  * @~english
  * @brief Initialize physics interface
  */
-GF_EXPORT void gf_physics_begin(void);
+GF_EXPORT void GFAPI gf_physics_begin(void);
 
 /**
  * @~english
  * @brief Cleanup physics interface
  */
-GF_EXPORT void gf_physics_end(void);
+GF_EXPORT void GFAPI gf_physics_end(void);
 
 /**
  * @~english
@@ -79,14 +79,14 @@ GF_EXPORT void gf_physics_end(void);
  * @param engine Engine instance
  * @return Physics interface
  */
-GF_EXPORT gf_physics_t* gf_physics_create(gf_engine_t* engine);
+GF_EXPORT gf_physics_t* GFAPI gf_physics_create(gf_engine_t* engine);
 
 /**
  * @~english
  * @brief Destroy physics interface
  * @param physics Physics interface
  */
-GF_EXPORT void gf_physics_destroy(gf_physics_t* physics);
+GF_EXPORT void GFAPI gf_physics_destroy(gf_physics_t* physics);
 
 #ifdef __cplusplus
 }

@@ -67,7 +67,7 @@ extern "C" {
  * @param output Output
  * @return Bytes of input that had to be consumed, `0` on failure
  */
-GF_EXPORT int gf_unicode_8_to_32(const char* input, gf_int32_t* output);
+GF_EXPORT int GFAPI gf_unicode_8_to_32(const char* input, gf_int32_t* output);
 
 #ifdef __cplusplus
 }

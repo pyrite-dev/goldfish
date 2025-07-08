@@ -69,7 +69,7 @@ extern "C" {
  * @param path Path
  * @return Path
  */
-GF_EXPORT char* gf_file_pick(gf_engine_t* engine, const char* path);
+GF_EXPORT char* GFAPI gf_file_pick(gf_engine_t* engine, const char* path);
 
 /**
  * @~english
@@ -77,7 +77,7 @@ GF_EXPORT char* gf_file_pick(gf_engine_t* engine, const char* path);
  * @param path Path
  * @return Path
  */
-GF_EXPORT char* gf_file_pick_reverse(gf_engine_t* engine, const char* path);
+GF_EXPORT char* GFAPI gf_file_pick_reverse(gf_engine_t* engine, const char* path);
 
 /**
  * @~english
@@ -85,7 +85,7 @@ GF_EXPORT char* gf_file_pick_reverse(gf_engine_t* engine, const char* path);
  * @param path Path
  * @return `0` if file/directory does not exist, `1` if it exists
  */
-GF_EXPORT int gf_file_exists(gf_engine_t* engine, const char* path);
+GF_EXPORT int GFAPI gf_file_exists(gf_engine_t* engine, const char* path);
 
 /**
  * @~english
@@ -95,7 +95,7 @@ GF_EXPORT int gf_file_exists(gf_engine_t* engine, const char* path);
  * @param mode Mode
  * @return File
  */
-GF_EXPORT gf_file_t* gf_file_open(gf_engine_t* engine, const char* path, const char* mode);
+GF_EXPORT gf_file_t* GFAPI gf_file_open(gf_engine_t* engine, const char* path, const char* mode);
 
 /**
  * @~english
@@ -105,7 +105,7 @@ GF_EXPORT gf_file_t* gf_file_open(gf_engine_t* engine, const char* path, const c
  * @param size Size
  * @return Read size
  */
-GF_EXPORT size_t gf_file_read(gf_file_t* fp, void* buffer, size_t size);
+GF_EXPORT size_t GFAPI gf_file_read(gf_file_t* fp, void* buffer, size_t size);
 
 /**
  * @~english
@@ -115,14 +115,14 @@ GF_EXPORT size_t gf_file_read(gf_file_t* fp, void* buffer, size_t size);
  * @param size Size
  * @return Written size
  */
-GF_EXPORT size_t gf_file_write(gf_file_t* fp, void* buffer, size_t size);
+GF_EXPORT size_t GFAPI gf_file_write(gf_file_t* fp, void* buffer, size_t size);
 
 /**
  * @~english
  * @brief Close file
  * @param fp File
  */
-GF_EXPORT void gf_file_close(gf_file_t* fp);
+GF_EXPORT void GFAPI gf_file_close(gf_file_t* fp);
 
 /**
  * @~english
@@ -131,7 +131,7 @@ GF_EXPORT void gf_file_close(gf_file_t* fp);
  * @param ... Strings to join
  * @return Path
  */
-GF_EXPORT char* gf_file_path_join(size_t length, ...);
+GF_EXPORT char* GFAPI gf_file_path_join(size_t length, ...);
 
 /**
  * @~english
@@ -140,7 +140,7 @@ GF_EXPORT char* gf_file_path_join(size_t length, ...);
  * @param only `0` if you want concatenated path, otherwise only path name
  * @return Array
  */
-GF_EXPORT char** gf_file_separate_path(const char* path, int only);
+GF_EXPORT char** GFAPI gf_file_separate_path(const char* path, int only);
 
 /**
  * @~english
@@ -149,7 +149,7 @@ GF_EXPORT char** gf_file_separate_path(const char* path, int only);
  * @param name Resource name
  * @param resource Resource
  */
-GF_EXPORT void gf_file_register(gf_engine_t* engine, const char* name, gf_resource_t* resource);
+GF_EXPORT void GFAPI gf_file_register(gf_engine_t* engine, const char* name, gf_resource_t* resource);
 
 /**
  * @~english
@@ -157,7 +157,7 @@ GF_EXPORT void gf_file_register(gf_engine_t* engine, const char* name, gf_resour
  * @param engine Engine instance
  * @param path Path
  */
-GF_EXPORT void gf_file_create_directory(gf_engine_t* engine, const char* path);
+GF_EXPORT void GFAPI gf_file_create_directory(gf_engine_t* engine, const char* path);
 
 /**
  * @~english
@@ -167,7 +167,7 @@ GF_EXPORT void gf_file_create_directory(gf_engine_t* engine, const char* path);
  * @param name Name
  * @return Resource
  */
-GF_EXPORT gf_resource_t* gf_file_get_resource_from_path(gf_engine_t* engine, const char* path, char** name);
+GF_EXPORT gf_resource_t* GFAPI gf_file_get_resource_from_path(gf_engine_t* engine, const char* path, char** name);
 
 #ifdef __cplusplus
 }

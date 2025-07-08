@@ -41,7 +41,7 @@
  * @file gf_gui_component.h
  * @~english
  * @brief GUI component stuff
- * @warning This file is auto-generated using ./tool/gengui.sh at `Thu Jul  3 22:45:51 JST 2025`
+ * @warning This file is auto-generated using ./tool/gengui.sh at `Tue Jul  8 10:03:15 JST 2025`
  */
 
 #ifndef __GF_GUI_COMPONENT_H__
@@ -71,7 +71,7 @@ extern "C" {
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_button(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_button(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -83,7 +83,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_button(gf_gui_t* gui, double x, double y, do
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_checkbox(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_checkbox(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -95,7 +95,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_checkbox(gf_gui_t* gui, double x, double y, 
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_entry(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_entry(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -107,7 +107,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_entry(gf_gui_t* gui, double x, double y, dou
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_frame(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_frame(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -119,7 +119,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_frame(gf_gui_t* gui, double x, double y, dou
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_image(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_image(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -131,7 +131,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_image(gf_gui_t* gui, double x, double y, dou
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_progress(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_progress(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -143,7 +143,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_progress(gf_gui_t* gui, double x, double y, 
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_range(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_range(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -155,7 +155,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_range(gf_gui_t* gui, double x, double y, dou
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_scrollbar(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_scrollbar(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -167,7 +167,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_scrollbar(gf_gui_t* gui, double x, double y,
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_tab(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_tab(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -179,7 +179,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_tab(gf_gui_t* gui, double x, double y, doubl
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_text(gf_gui_t* gui, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -191,7 +191,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_text(gf_gui_t* gui, double x, double y, doub
  * @param h Height
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_window(gf_gui_t* gui, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_window(gf_gui_t* gui, double x, double y, double w, double h);
 
 GF_EXPORT gf_gui_call_t gf_gui_calls[11];
 

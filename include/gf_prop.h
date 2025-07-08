@@ -73,7 +73,7 @@ extern "C" {
  * @param key Key
  * @param value Value
  */
-GF_EXPORT void gf_prop_set_text(gf_prop_t** prop, const char* key, const char* value);
+GF_EXPORT void GFAPI gf_prop_set_text(gf_prop_t** prop, const char* key, const char* value);
 
 /**
  * @~english
@@ -82,7 +82,7 @@ GF_EXPORT void gf_prop_set_text(gf_prop_t** prop, const char* key, const char* v
  * @param key Key
  * @return Value
  */
-GF_EXPORT const char* gf_prop_get_text(gf_prop_t** prop, const char* key);
+GF_EXPORT const char* GFAPI gf_prop_get_text(gf_prop_t** prop, const char* key);
 
 /**
  * @~english
@@ -91,7 +91,7 @@ GF_EXPORT const char* gf_prop_get_text(gf_prop_t** prop, const char* key);
  * @param key Key
  * @param value Value
  */
-GF_EXPORT void gf_prop_set_integer(gf_prop_t** prop, const char* key, gf_prop_integer_t value);
+GF_EXPORT void GFAPI gf_prop_set_integer(gf_prop_t** prop, const char* key, gf_prop_integer_t value);
 
 /**
  * @~english
@@ -100,7 +100,7 @@ GF_EXPORT void gf_prop_set_integer(gf_prop_t** prop, const char* key, gf_prop_in
  * @param key Key
  * @return Value
  */
-GF_EXPORT gf_prop_integer_t gf_prop_get_integer(gf_prop_t** prop, const char* key);
+GF_EXPORT gf_prop_integer_t GFAPI gf_prop_get_integer(gf_prop_t** prop, const char* key);
 
 /**
  * @~english
@@ -109,7 +109,7 @@ GF_EXPORT gf_prop_integer_t gf_prop_get_integer(gf_prop_t** prop, const char* ke
  * @param key Key
  * @param value Value
  */
-GF_EXPORT void gf_prop_set_floating(gf_prop_t** prop, const char* key, gf_prop_floating_t value);
+GF_EXPORT void GFAPI gf_prop_set_floating(gf_prop_t** prop, const char* key, gf_prop_floating_t value);
 
 /**
  * @~english
@@ -118,7 +118,7 @@ GF_EXPORT void gf_prop_set_floating(gf_prop_t** prop, const char* key, gf_prop_f
  * @param key Key
  * @return Value
  */
-GF_EXPORT gf_prop_floating_t gf_prop_get_floating(gf_prop_t** prop, const char* key);
+GF_EXPORT gf_prop_floating_t GFAPI gf_prop_get_floating(gf_prop_t** prop, const char* key);
 
 /**
  * @~english
@@ -127,7 +127,7 @@ GF_EXPORT gf_prop_floating_t gf_prop_get_floating(gf_prop_t** prop, const char* 
  * @param key Key
  * @param value Value
  */
-GF_EXPORT void gf_prop_set_ptr(gf_prop_t** prop, const char* key, void* value);
+GF_EXPORT void GFAPI gf_prop_set_ptr(gf_prop_t** prop, const char* key, void* value);
 
 /**
  * @~english
@@ -136,7 +136,7 @@ GF_EXPORT void gf_prop_set_ptr(gf_prop_t** prop, const char* key, void* value);
  * @param key Key
  * @return Value
  */
-GF_EXPORT void* gf_prop_get_ptr(gf_prop_t** prop, const char* key);
+GF_EXPORT void* GFAPI gf_prop_get_ptr(gf_prop_t** prop, const char* key);
 
 /**
  * @~english
@@ -145,7 +145,7 @@ GF_EXPORT void* gf_prop_get_ptr(gf_prop_t** prop, const char* key);
  * @param key Key
  * @param value Value
  */
-GF_EXPORT void gf_prop_set_ptr_keep(gf_prop_t** prop, const char* key, void* value);
+GF_EXPORT void GFAPI gf_prop_set_ptr_keep(gf_prop_t** prop, const char* key, void* value);
 
 /**
  * @~english
@@ -154,7 +154,7 @@ GF_EXPORT void gf_prop_set_ptr_keep(gf_prop_t** prop, const char* key, void* val
  * @param key Key
  * @return Value
  */
-GF_EXPORT void* gf_prop_get_ptr_keep(gf_prop_t** prop, const char* key);
+GF_EXPORT void* GFAPI gf_prop_get_ptr_keep(gf_prop_t** prop, const char* key);
 
 /**
  * @~english
@@ -162,21 +162,21 @@ GF_EXPORT void* gf_prop_get_ptr_keep(gf_prop_t** prop, const char* key);
  * @param prop Property
  * @param key Key
  */
-GF_EXPORT void gf_prop_delete(gf_prop_t** prop, const char* key);
+GF_EXPORT void GFAPI gf_prop_delete(gf_prop_t** prop, const char* key);
 
 /**
  * @~english
  * @brief Destroy property container
  * @param prop Property container
  */
-GF_EXPORT void gf_prop_destroy(gf_prop_t** prop);
+GF_EXPORT void GFAPI gf_prop_destroy(gf_prop_t** prop);
 
 /**
  * @~english
  * @brief Create property container
  * @param prop Property container
  */
-GF_EXPORT void gf_prop_create(gf_prop_t** prop);
+GF_EXPORT void GFAPI gf_prop_create(gf_prop_t** prop);
 
 #ifdef __cplusplus
 }

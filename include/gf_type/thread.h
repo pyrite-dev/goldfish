@@ -83,7 +83,7 @@ gf_thread_event_t;
  * @brief Data to be passed to thread
  */
 GF_DECLARE_TYPE(thread_context, {
-	void (*func)(void*);
+	void(GFAPI * func)(void*);
 	void* data;
 });
 

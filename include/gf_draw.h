@@ -70,14 +70,14 @@ extern "C" {
  * @param title Window title
  * @return Drawing interface
  */
-GF_EXPORT gf_draw_t* gf_draw_create(gf_engine_t* engine, const char* title);
+GF_EXPORT gf_draw_t* GFAPI gf_draw_create(gf_engine_t* engine, const char* title);
 
 /**
  * @~english
  * @brief Destroy drawing interface
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_draw_destroy(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_draw_destroy(gf_draw_t* draw);
 
 /**
  * @~english
@@ -85,14 +85,14 @@ GF_EXPORT void gf_draw_destroy(gf_draw_t* draw);
  * @param draw Drawing interface
  * @param input Input interface
  */
-GF_EXPORT void gf_draw_set_input(gf_draw_t* draw, gf_input_t* input);
+GF_EXPORT void GFAPI gf_draw_set_input(gf_draw_t* draw, gf_input_t* input);
 
 /**
  * @~english
  * @brief Draw frame (common part)
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_draw_frame(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_draw_frame(gf_draw_t* draw);
 
 /**
  * @~english
@@ -100,33 +100,33 @@ GF_EXPORT void gf_draw_frame(gf_draw_t* draw);
  * @param draw Drawing interface
  * @return `0` if successful, otherwise if failed
  */
-GF_EXPORT int gf_draw_step(gf_draw_t* draw);
+GF_EXPORT int GFAPI gf_draw_step(gf_draw_t* draw);
 
 /**
  * @~english
  * @brief Initialize drawing stuffs
  */
-GF_EXPORT void gf_draw_begin(void);
+GF_EXPORT void GFAPI gf_draw_begin(void);
 
 /**
  * @~english
  * @brief Cleanup drawing stuffs
  */
-GF_EXPORT void gf_draw_end(void);
+GF_EXPORT void GFAPI gf_draw_end(void);
 
 /**
  * @~english
  * @brief Do stuffs required on resizing window
  * @param draw Drawing interface
  */
-GF_EXPORT void gf_draw_reshape(gf_draw_t* draw);
+GF_EXPORT void GFAPI gf_draw_reshape(gf_draw_t* draw);
 
 /**
  * @~english
  * @brief Get FPS
  * @param draw Drawing interface
  */
-GF_EXPORT double gf_draw_get_fps(gf_draw_t* draw);
+GF_EXPORT double GFAPI gf_draw_get_fps(gf_draw_t* draw);
 
 /**
  * @~english
@@ -134,7 +134,7 @@ GF_EXPORT double gf_draw_get_fps(gf_draw_t* draw);
  * @param draw Drawing interface
  * @param callback Callback
  */
-GF_EXPORT void gf_draw_set_callback(gf_draw_t* draw, gf_draw_callback_t callback);
+GF_EXPORT void GFAPI gf_draw_set_callback(gf_draw_t* draw, gf_draw_callback_t callback);
 
 /**
  * @~english
@@ -144,7 +144,7 @@ GF_EXPORT void gf_draw_set_callback(gf_draw_t* draw, gf_draw_callback_t callback
  * @param y Y
  * @param z Z
  */
-GF_EXPORT void gf_draw_set_rotation(gf_draw_t* draw, double x, double y, double z);
+GF_EXPORT void GFAPI gf_draw_set_rotation(gf_draw_t* draw, double x, double y, double z);
 
 #ifdef __cplusplus
 }

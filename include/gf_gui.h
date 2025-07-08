@@ -95,14 +95,14 @@ extern "C" {
  * @param draw Drawing interface
  * @return GUI
  */
-GF_EXPORT gf_gui_t* gf_gui_create(gf_engine_t* engine, gf_draw_t* draw);
+GF_EXPORT gf_gui_t* GFAPI gf_gui_create(gf_engine_t* engine, gf_draw_t* draw);
 
 /**
  * @~english
  * @brief Destroy GUI
  * @param gui GUI
  */
-GF_EXPORT void gf_gui_destroy(gf_gui_t* gui);
+GF_EXPORT void GFAPI gf_gui_destroy(gf_gui_t* gui);
 
 /**
  * @~english
@@ -110,7 +110,7 @@ GF_EXPORT void gf_gui_destroy(gf_gui_t* gui);
  * @param gui GUI
  * @param id Component ID
  */
-GF_EXPORT void gf_gui_destroy_id(gf_gui_t* gui, gf_gui_id_t id);
+GF_EXPORT void GFAPI gf_gui_destroy_id(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
@@ -118,7 +118,7 @@ GF_EXPORT void gf_gui_destroy_id(gf_gui_t* gui, gf_gui_id_t id);
  * @param gui GUI
  * @param path Path to sound
  */
-GF_EXPORT void gf_gui_set_button_sound(gf_gui_t* gui, const char* path);
+GF_EXPORT void GFAPI gf_gui_set_button_sound(gf_gui_t* gui, const char* path);
 
 /**
  * @~english
@@ -127,14 +127,14 @@ GF_EXPORT void gf_gui_set_button_sound(gf_gui_t* gui, const char* path);
  * @param id Component ID
  * @return Index
  */
-GF_EXPORT int gf_gui_get_index(gf_gui_t* gui, gf_gui_id_t id);
+GF_EXPORT int GFAPI gf_gui_get_index(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
  * @brief Render GUI
  * @param gui GUI
  */
-GF_EXPORT void gf_gui_render(gf_gui_t* gui);
+GF_EXPORT void GFAPI gf_gui_render(gf_gui_t* gui);
 
 /**
  * @~english
@@ -146,7 +146,7 @@ GF_EXPORT void gf_gui_render(gf_gui_t* gui);
  * @param w Width of box
  * @param h Height of box
  */
-GF_EXPORT void gf_gui_draw_box(gf_gui_t* gui, int mul, double x, double y, double w, double h);
+GF_EXPORT void GFAPI gf_gui_draw_box(gf_gui_t* gui, int mul, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -155,7 +155,7 @@ GF_EXPORT void gf_gui_draw_box(gf_gui_t* gui, int mul, double x, double y, doubl
  * @param id Component ID
  * @param callback Callback
  */
-GF_EXPORT void gf_gui_set_callback(gf_gui_t* gui, gf_gui_id_t id, gf_gui_callback_t callback);
+GF_EXPORT void GFAPI gf_gui_set_callback(gf_gui_t* gui, gf_gui_id_t id, gf_gui_callback_t callback);
 
 /**
  * @~english
@@ -164,7 +164,7 @@ GF_EXPORT void gf_gui_set_callback(gf_gui_t* gui, gf_gui_id_t id, gf_gui_callbac
  * @param id Component ID
  * @param parent Parent component ID
  */
-GF_EXPORT void gf_gui_set_parent(gf_gui_t* gui, gf_gui_id_t id, gf_gui_id_t parent);
+GF_EXPORT void GFAPI gf_gui_set_parent(gf_gui_t* gui, gf_gui_id_t id, gf_gui_id_t parent);
 
 /**
  * @~english
@@ -173,7 +173,7 @@ GF_EXPORT void gf_gui_set_parent(gf_gui_t* gui, gf_gui_id_t id, gf_gui_id_t pare
  * @param id Component ID
  * @return Parent component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_get_parent(gf_gui_t* gui, gf_gui_id_t id);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_get_parent(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
@@ -182,7 +182,7 @@ GF_EXPORT gf_gui_id_t gf_gui_get_parent(gf_gui_t* gui, gf_gui_id_t id);
  * @param id Component ID
  * @param text Text
  */
-GF_EXPORT void gf_gui_set_text(gf_gui_t* gui, gf_gui_id_t id, const char* text);
+GF_EXPORT void GFAPI gf_gui_set_text(gf_gui_t* gui, gf_gui_id_t id, const char* text);
 
 /**
  * @~english
@@ -191,7 +191,7 @@ GF_EXPORT void gf_gui_set_text(gf_gui_t* gui, gf_gui_id_t id, const char* text);
  * @param id Component ID
  * @return Text
  */
-GF_EXPORT const char* gf_gui_get_text(gf_gui_t* gui, gf_gui_id_t id);
+GF_EXPORT const char* GFAPI gf_gui_get_text(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
@@ -200,7 +200,7 @@ GF_EXPORT const char* gf_gui_get_text(gf_gui_t* gui, gf_gui_id_t id);
  * @param id Component ID
  * @param color Font color
  */
-GF_EXPORT void gf_gui_set_font_color(gf_gui_t* gui, gf_gui_id_t id, gf_graphic_color_t color);
+GF_EXPORT void GFAPI gf_gui_set_font_color(gf_gui_t* gui, gf_gui_id_t id, gf_graphic_color_t color);
 
 /**
  * @~english
@@ -209,7 +209,7 @@ GF_EXPORT void gf_gui_set_font_color(gf_gui_t* gui, gf_gui_id_t id, gf_graphic_c
  * @param id Component ID
  * @return Font color
  */
-GF_EXPORT gf_graphic_color_t gf_gui_get_font_color(gf_gui_t* gui, gf_gui_id_t id);
+GF_EXPORT gf_graphic_color_t GFAPI gf_gui_get_font_color(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
@@ -218,7 +218,7 @@ GF_EXPORT gf_graphic_color_t gf_gui_get_font_color(gf_gui_t* gui, gf_gui_id_t id
  * @param id Component ID
  * @param color Hover font color
  */
-GF_EXPORT void gf_gui_set_hover_font_color(gf_gui_t* gui, gf_gui_id_t id, gf_graphic_color_t color);
+GF_EXPORT void GFAPI gf_gui_set_hover_font_color(gf_gui_t* gui, gf_gui_id_t id, gf_graphic_color_t color);
 
 /**
  * @~english
@@ -227,14 +227,14 @@ GF_EXPORT void gf_gui_set_hover_font_color(gf_gui_t* gui, gf_gui_id_t id, gf_gra
  * @param id Component ID
  * @return Hover font color
  */
-GF_EXPORT gf_graphic_color_t gf_gui_get_hover_font_color(gf_gui_t* gui, gf_gui_id_t id);
+GF_EXPORT gf_graphic_color_t GFAPI gf_gui_get_hover_font_color(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
  * @brief Sort components
  * @param gui GUI
  */
-GF_EXPORT void gf_gui_sort_component(gf_gui_t* gui);
+GF_EXPORT void GFAPI gf_gui_sort_component(gf_gui_t* gui);
 
 /**
  * @~english
@@ -242,7 +242,7 @@ GF_EXPORT void gf_gui_sort_component(gf_gui_t* gui);
  * @param gui GUI
  * @param id Component ID
  */
-GF_EXPORT void gf_gui_move_topmost(gf_gui_t* gui, gf_gui_id_t id);
+GF_EXPORT void GFAPI gf_gui_move_topmost(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
@@ -254,7 +254,7 @@ GF_EXPORT void gf_gui_move_topmost(gf_gui_t* gui, gf_gui_id_t id);
  * @param w Width
  * @param h Height
  */
-GF_EXPORT void gf_gui_create_component(gf_gui_t* gui, gf_gui_component_t* c, double x, double y, double w, double h);
+GF_EXPORT void GFAPI gf_gui_create_component(gf_gui_t* gui, gf_gui_component_t* c, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -266,7 +266,7 @@ GF_EXPORT void gf_gui_create_component(gf_gui_t* gui, gf_gui_component_t* c, dou
  * @param w Width
  * @param h Height
  */
-GF_EXPORT gf_gui_id_t gf_gui_create_common(gf_gui_t* gui, const char* name, double x, double y, double w, double h);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_create_common(gf_gui_t* gui, const char* name, double x, double y, double w, double h);
 
 /**
  * @~english
@@ -278,7 +278,7 @@ GF_EXPORT gf_gui_id_t gf_gui_create_common(gf_gui_t* gui, const char* name, doub
  * @param w Width
  * @param h Height
  */
-GF_EXPORT void gf_gui_calc_xywh(gf_gui_t* gui, gf_gui_component_t* c, double* x, double* y, double* w, double* h);
+GF_EXPORT void GFAPI gf_gui_calc_xywh(gf_gui_t* gui, gf_gui_component_t* c, double* x, double* y, double* w, double* h);
 
 /**
  * @~english
@@ -288,7 +288,7 @@ GF_EXPORT void gf_gui_calc_xywh(gf_gui_t* gui, gf_gui_component_t* c, double* x,
  * @param key Key
  * @param id2 Component ID
  */
-GF_EXPORT void gf_gui_set_prop_id(gf_gui_t* gui, gf_gui_id_t id, const char* key, gf_gui_id_t id2);
+GF_EXPORT void GFAPI gf_gui_set_prop_id(gf_gui_t* gui, gf_gui_id_t id, const char* key, gf_gui_id_t id2);
 
 /**
  * @~english
@@ -298,7 +298,7 @@ GF_EXPORT void gf_gui_set_prop_id(gf_gui_t* gui, gf_gui_id_t id, const char* key
  * @param key Key
  * @return Component ID
  */
-GF_EXPORT gf_gui_id_t gf_gui_get_prop_id(gf_gui_t* gui, gf_gui_id_t id, const char* key);
+GF_EXPORT gf_gui_id_t GFAPI gf_gui_get_prop_id(gf_gui_t* gui, gf_gui_id_t id, const char* key);
 
 /**
  * @~english
@@ -307,7 +307,7 @@ GF_EXPORT gf_gui_id_t gf_gui_get_prop_id(gf_gui_t* gui, gf_gui_id_t id, const ch
  * @param id Component ID
  * @return Property
  */
-GF_EXPORT gf_prop_t** gf_gui_get_prop(gf_gui_t* gui, gf_gui_id_t id);
+GF_EXPORT gf_prop_t** GFAPI gf_gui_get_prop(gf_gui_t* gui, gf_gui_id_t id);
 
 /**
  * @~english
@@ -317,7 +317,7 @@ GF_EXPORT gf_prop_t** gf_gui_get_prop(gf_gui_t* gui, gf_gui_id_t id);
  * @param w Width
  * @param h Height
  */
-GF_EXPORT void gf_gui_set_wh(gf_gui_t* gui, gf_gui_id_t id, double w, double h);
+GF_EXPORT void GFAPI gf_gui_set_wh(gf_gui_t* gui, gf_gui_id_t id, double w, double h);
 
 /**
  * @~english
@@ -327,7 +327,7 @@ GF_EXPORT void gf_gui_set_wh(gf_gui_t* gui, gf_gui_id_t id, double w, double h);
  * @param w Width
  * @param h Height
  */
-GF_EXPORT void gf_gui_get_wh(gf_gui_t* gui, gf_gui_id_t id, double* w, double* h);
+GF_EXPORT void GFAPI gf_gui_get_wh(gf_gui_t* gui, gf_gui_id_t id, double* w, double* h);
 
 /**
  * @~english
@@ -337,7 +337,7 @@ GF_EXPORT void gf_gui_get_wh(gf_gui_t* gui, gf_gui_id_t id, double* w, double* h
  * @param x X coord
  * @param y Y coord
  */
-GF_EXPORT void gf_gui_set_xy(gf_gui_t* gui, gf_gui_id_t id, double x, double y);
+GF_EXPORT void GFAPI gf_gui_set_xy(gf_gui_t* gui, gf_gui_id_t id, double x, double y);
 
 /**
  * @~english
@@ -347,7 +347,7 @@ GF_EXPORT void gf_gui_set_xy(gf_gui_t* gui, gf_gui_id_t id, double x, double y);
  * @param x X coord
  * @param y Y coord
  */
-GF_EXPORT void gf_gui_get_xy(gf_gui_t* gui, gf_gui_id_t id, double* x, double* y);
+GF_EXPORT void GFAPI gf_gui_get_xy(gf_gui_t* gui, gf_gui_id_t id, double* x, double* y);
 
 #ifdef __cplusplus
 }

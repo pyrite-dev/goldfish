@@ -65,7 +65,7 @@ extern "C" {
  * @param path Path
  * @return Handle
  */
-GF_EXPORT void* gf_dll_open(const char* path);
+GF_EXPORT void* GFAPI gf_dll_open(const char* path);
 
 /**
  * @~english
@@ -74,14 +74,14 @@ GF_EXPORT void* gf_dll_open(const char* path);
  * @param name Name
  * @return Symbol
  */
-GF_EXPORT void* gf_dll_symbol(void* handle, const char* name);
+GF_EXPORT void* GFAPI gf_dll_symbol(void* handle, const char* name);
 
 /**
  * @~english
  * @brief Close handle
  * @param handle Handle
  */
-GF_EXPORT void gf_dll_close(void* handle);
+GF_EXPORT void GFAPI gf_dll_close(void* handle);
 
 #ifdef __cplusplus
 }

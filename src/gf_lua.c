@@ -335,7 +335,7 @@ int gf_lua_meta_call_gui_component_prop(lua_State* s) {
 	return 1;
 }
 
-void gf_lua_gui_callback(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type) {
+void GFAPI gf_lua_gui_callback(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type) {
 	int*	     call = gf_prop_get_ptr(gf_gui_get_prop(draw->gui, id), "luacall");
 	gf_lua_t*    lua;
 	gf_gui_id_t* pid;

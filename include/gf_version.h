@@ -64,7 +64,7 @@ extern "C" {
  * @~english
  * @brief Get version of engine
  */
-GF_EXPORT void gf_version_get(gf_version_t* version);
+GF_EXPORT void GFAPI gf_version_get(gf_version_t* version);
 
 #ifdef __cplusplus
 }

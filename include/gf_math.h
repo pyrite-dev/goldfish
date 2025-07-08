@@ -83,7 +83,7 @@ extern "C" {
  * @param x Input
  * @return log2(x)
  */
-GF_EXPORT double gf_math_log2(double x);
+GF_EXPORT double GFAPI gf_math_log2(double x);
 
 /**
  * @~english
@@ -91,7 +91,7 @@ GF_EXPORT double gf_math_log2(double x);
  * @param x Input
  * @return abs(x)
  */
-GF_EXPORT double gf_math_abs(double x);
+GF_EXPORT double GFAPI gf_math_abs(double x);
 
 /**
  * @~english
@@ -99,7 +99,7 @@ GF_EXPORT double gf_math_abs(double x);
  * @param x Input
  * @return round(x)
  */
-GF_EXPORT double gf_math_round(double x);
+GF_EXPORT double GFAPI gf_math_round(double x);
 
 /**
  * @~english
@@ -107,7 +107,7 @@ GF_EXPORT double gf_math_round(double x);
  * @param x Input
  * @return floor(x)
  */
-GF_EXPORT double gf_math_floor(double x);
+GF_EXPORT double GFAPI gf_math_floor(double x);
 
 /**
  * @~english
@@ -115,7 +115,7 @@ GF_EXPORT double gf_math_floor(double x);
  * @param x Input
  * @return ceil(x)
  */
-GF_EXPORT double gf_math_ceil(double x);
+GF_EXPORT double GFAPI gf_math_ceil(double x);
 
 /**
  * @~english
@@ -125,7 +125,7 @@ GF_EXPORT double gf_math_ceil(double x);
  * @param v1 Input
  * @param v2 Input
  */
-GF_EXPORT void gf_math_normal(gf_math_vector_t r, gf_math_vector_t v0, gf_math_vector_t v1, gf_math_vector_t v2);
+GF_EXPORT void GFAPI gf_math_normal(gf_math_vector_t r, gf_math_vector_t v0, gf_math_vector_t v1, gf_math_vector_t v2);
 
 /**
  * @~english
@@ -133,7 +133,7 @@ GF_EXPORT void gf_math_normal(gf_math_vector_t r, gf_math_vector_t v0, gf_math_v
  * @param x Input
  * @return cot(x)
  */
-GF_EXPORT double gf_math_cot(double x);
+GF_EXPORT double GFAPI gf_math_cot(double x);
 
 /**
  * @~english
@@ -141,14 +141,14 @@ GF_EXPORT double gf_math_cot(double x);
  * @param x Input
  * @return Nearest 2^n
  */
-GF_EXPORT double gf_math_nearest_2pow(double x);
+GF_EXPORT double GFAPI gf_math_nearest_2pow(double x);
 
 /**
  * @~english
  * @brief Normalize vector
  * @param v Input/Output
  */
-GF_EXPORT void gf_math_normalize(gf_math_vector_t v);
+GF_EXPORT void GFAPI gf_math_normalize(gf_math_vector_t v);
 
 /**
  * @~english
@@ -157,7 +157,7 @@ GF_EXPORT void gf_math_normalize(gf_math_vector_t v);
  * @param v0 Input
  * @param v1 Input
  */
-GF_EXPORT void gf_math_multiply(gf_math_vector_t r, gf_math_vector_t v0, gf_math_vector_t v1);
+GF_EXPORT void GFAPI gf_math_multiply(gf_math_vector_t r, gf_math_vector_t v0, gf_math_vector_t v1);
 
 /**
  * @~english
@@ -166,7 +166,7 @@ GF_EXPORT void gf_math_multiply(gf_math_vector_t r, gf_math_vector_t v0, gf_math
  * @param v0 Input
  * @param v1 Input
  */
-GF_EXPORT void gf_math_subtract(gf_math_vector_t r, gf_math_vector_t v0, gf_math_vector_t v1);
+GF_EXPORT void GFAPI gf_math_subtract(gf_math_vector_t r, gf_math_vector_t v0, gf_math_vector_t v1);
 
 #ifdef __cplusplus
 }

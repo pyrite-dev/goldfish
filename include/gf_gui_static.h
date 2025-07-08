@@ -42,7 +42,7 @@
  * @~english
  * @brief GUI static stuff
  * @note User should not include this, this header is used internally
- * @warning This file is auto-generated using ./tool/gengui.sh at `Thu Jul  3 22:45:51 JST 2025`
+ * @warning This file is auto-generated using ./tool/gengui.sh at `Tue Jul  8 10:03:15 JST 2025`
  */
 
 #ifndef __GF_GUI_STATIC_H__

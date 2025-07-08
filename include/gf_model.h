@@ -68,7 +68,7 @@ extern "C" {
  * @param path Path
  * @return Model
  */
-GF_EXPORT gf_model_t* gf_model_load(gf_draw_t* draw, const char* path);
+GF_EXPORT gf_model_t* GFAPI gf_model_load(gf_draw_t* draw, const char* path);
 
 /**
  * @~english
@@ -81,14 +81,14 @@ GF_EXPORT gf_model_t* gf_model_load(gf_draw_t* draw, const char* path);
  * @param sy Y scaling
  * @param sz Z scaling
  */
-GF_EXPORT void gf_model_draw(gf_model_t* model, double x, double y, double z, double sx, double sy, double sz);
+GF_EXPORT void GFAPI gf_model_draw(gf_model_t* model, double x, double y, double z, double sx, double sy, double sz);
 
 /**
  * @~english
  * @brief Destroy model
  * @param model Model
  */
-GF_EXPORT void gf_model_destroy(gf_model_t* model);
+GF_EXPORT void GFAPI gf_model_destroy(gf_model_t* model);
 
 #ifdef __cplusplus
 }

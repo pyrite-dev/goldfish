@@ -298,6 +298,17 @@
 #define GF_EXPORT extern
 #endif
 
+/**
+ * @def GFAPI
+ * @~english
+ * @brief Macro for calling convention
+ */
+#if defined(_WIN32) && defined(GF_DLL)
+#define GFAPI __cdecl
+#else
+#define GFAPI
+#endif
+
 /* Expose them by default */
 #ifndef GF_EXPOSE_GRAPHIC
 #define GF_EXPOSE_GRAPHIC

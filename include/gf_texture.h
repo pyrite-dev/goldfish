@@ -70,14 +70,14 @@ extern "C" {
  * @param data Texture data
  * @return Texture
  */
-GF_EXPORT gf_texture_t* gf_texture_create(gf_draw_t* draw, int width, int height, unsigned char* data);
+GF_EXPORT gf_texture_t* GFAPI gf_texture_create(gf_draw_t* draw, int width, int height, unsigned char* data);
 
 /**
  * @~english
  * @brief Destroy texture
  * @param texture Texture
  */
-GF_EXPORT void gf_texture_destroy(gf_texture_t* texture);
+GF_EXPORT void GFAPI gf_texture_destroy(gf_texture_t* texture);
 
 /**
  * @~english
@@ -85,7 +85,7 @@ GF_EXPORT void gf_texture_destroy(gf_texture_t* texture);
  * @param texture Texture
  * @param keep `0` to not keep, otherwise keep
  */
-GF_EXPORT void gf_texture_keep_aspect(gf_texture_t* texture, int keep);
+GF_EXPORT void GFAPI gf_texture_keep_aspect(gf_texture_t* texture, int keep);
 
 #ifdef __cplusplus
 }

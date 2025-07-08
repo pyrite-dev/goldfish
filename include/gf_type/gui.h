@@ -105,7 +105,7 @@ gf_gui_t;
 
 /* Standard */
 
-typedef void (*gf_gui_callback_t)(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type);
+typedef void(GFAPI* gf_gui_callback_t)(gf_engine_t* engine, gf_draw_t* draw, gf_gui_id_t id, int type);
 
 /**
  * @struct gf_gui_component

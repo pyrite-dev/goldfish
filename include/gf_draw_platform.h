@@ -70,14 +70,14 @@ extern "C" {
  * @param draw Drawing interface
  * @return Platform-dependent part of drawing driver
  */
-GF_EXPORT gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw);
+GF_EXPORT gf_draw_platform_t* GFAPI gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw);
 
 /**
  * @~english
  * @brief Destroy platform-dependent part of drawing driver
  * @param platform Platform-dependent part of drawing driver
  */
-GF_EXPORT void gf_draw_platform_destroy(gf_draw_platform_t* platform);
+GF_EXPORT void GFAPI gf_draw_platform_destroy(gf_draw_platform_t* platform);
 
 /**
  * @~english
@@ -85,7 +85,7 @@ GF_EXPORT void gf_draw_platform_destroy(gf_draw_platform_t* platform);
  * @param draw Drawing interface
  * @return `0` if successful, otherwise if failed
  */
-GF_EXPORT int gf_draw_platform_step(gf_draw_t* draw);
+GF_EXPORT int GFAPI gf_draw_platform_step(gf_draw_t* draw);
 
 /**
  * @~english
@@ -94,19 +94,19 @@ GF_EXPORT int gf_draw_platform_step(gf_draw_t* draw);
  * @param query Extension to be checked
  * @return `1` if extension is present, otherwise if it isn't
  */
-GF_EXPORT int gf_draw_platform_has_extension(gf_draw_t* draw, const char* query);
+GF_EXPORT int GFAPI gf_draw_platform_has_extension(gf_draw_t* draw, const char* query);
 
 /**
  * @~english
  * @brief Initialize platform-dependent part of drawing driver
  */
-GF_EXPORT void gf_draw_platform_begin(void);
+GF_EXPORT void GFAPI gf_draw_platform_begin(void);
 
 /**
  * @~english
  * @brief Cleanup platform-dependent part of drawing driver
  */
-GF_EXPORT void gf_draw_platform_end(void);
+GF_EXPORT void GFAPI gf_draw_platform_end(void);
 
 #ifdef __cplusplus
 }

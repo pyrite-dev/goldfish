@@ -65,13 +65,13 @@ extern "C" {
  * @~english
  * @brief Initialize client interface
  */
-GF_EXPORT void gf_client_begin(void);
+GF_EXPORT void GFAPI gf_client_begin(void);
 
 /**
  * @~english
  * @brief Cleanup client interface
  */
-GF_EXPORT void gf_client_end(void);
+GF_EXPORT void GFAPI gf_client_end(void);
 
 /**
  * @~english
@@ -80,14 +80,14 @@ GF_EXPORT void gf_client_end(void);
  * @param title Window title
  * @return Client interface
  */
-GF_EXPORT gf_client_t* gf_client_create(gf_engine_t* engine, const char* title);
+GF_EXPORT gf_client_t* GFAPI gf_client_create(gf_engine_t* engine, const char* title);
 
 /**
  * @~english
  * @brief Destroy client interface
  * @param client Client interface
  */
-GF_EXPORT void gf_client_destroy(gf_client_t* client);
+GF_EXPORT void GFAPI gf_client_destroy(gf_client_t* client);
 
 /**
  * @~english
@@ -95,14 +95,14 @@ GF_EXPORT void gf_client_destroy(gf_client_t* client);
  * @param client Client interface
  * @return `0` if successful, otherwise if failed
  */
-GF_EXPORT int gf_client_step(gf_client_t* client);
+GF_EXPORT int GFAPI gf_client_step(gf_client_t* client);
 
 /**
  * @~english
  * @brief Start client shutdown
  * @param client Client interface
  */
-GF_EXPORT void gf_client_shutdown(gf_client_t* client);
+GF_EXPORT void GFAPI gf_client_shutdown(gf_client_t* client);
 
 #ifdef __cplusplus
 }

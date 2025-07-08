@@ -28,7 +28,7 @@ void handler(int sig) { gf_engine_shutdown(engine); }
 
 gf_model_t* model = NULL;
 
-void callback(gf_draw_t* draw) {
+void GFAPI callback(gf_draw_t* draw) {
 	gf_draw_set_rotation(draw, r, r, r);
 	draw->camera[0] = 2 * cos(r * 3 / 180 * M_PI);
 	draw->camera[1] = 2;

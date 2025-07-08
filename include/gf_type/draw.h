@@ -93,7 +93,7 @@ gf_draw_intro_t;
  * @brief Drawing callback
  * @param draw Drawing interface
  */
-typedef void (*gf_draw_callback_t)(gf_draw_t* draw);
+typedef void(GFAPI* gf_draw_callback_t)(gf_draw_t* draw);
 
 GF_DECLARE_TYPE(draw_intro, {
 	int	      finished;
