@@ -40,9 +40,9 @@ int main(int argc, char** argv) {
 	engine = gf_engine_create_ex("GUI viewer", 0, param, argv, argc);
 	if(engine != NULL) {
 		gf_gui_id_t id, id2, id3, id4;
-		gf_gui_t* gui = engine->client->draw->gui;
+		gf_gui_t*   gui = engine->client->draw->gui;
 
-		id = gf_gui_create_window(gui, 0, 0, 400, 100);
+		id  = gf_gui_create_window(gui, 0, 0, 400, 100);
 		id2 = gf_gui_create_button(gui, 0, 0, 100, 25);
 		id3 = gf_gui_create_entry(gui, 100, 0, 250, 25);
 		id4 = gf_gui_create_progress(gui, 0, 25, 100, 25);
