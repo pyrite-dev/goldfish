@@ -116,11 +116,13 @@ end
 
 	filter("system:windows")
 		files({
-			"thread/win32/gf_thread.c"
+			"thread/win32/gf_thread.c",
+			"dll/win32/gf_dll.c"
 		})
 	filter("system:not windows")
 		files({
-			"thread/posix/gf_thread.c"
+			"thread/posix/gf_thread.c",
+			"dll/posix/gf_dll.c"
 		})
 	-- Begin ODE
 	if not(_OPTIONS["ode"] == "system") and not(_OPTIONS["server"] == "no") then

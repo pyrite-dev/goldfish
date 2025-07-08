@@ -493,11 +493,18 @@ function gf_link_stuffs(cond)
 			})
 	end
 	filter({
+		"system:linux",
+		cond
+	})
+		links({
+			"dl"
+		})
+	filter({
 		"system:not windows",
 		cond
 	})
 		links({
-			"m",
+			"m"
 		})
 	if _OPTIONS["opengl"] ~= "agl" then
 		links({
