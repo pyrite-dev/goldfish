@@ -283,6 +283,8 @@ char* gf_file_path_join(size_t length, ...) {
 	char*	st   = NULL;
 	va_list va;
 
+	if(length <= 0) return NULL;
+
 	va_start(va, length);
 	for(idx = 0; idx < length; idx++) {
 		size += strlen(va_arg(va, char*)) + 1; /* +1 for the path seperator */
