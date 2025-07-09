@@ -202,6 +202,8 @@ gf_engine_t* gf_engine_create_ex(const char* title, int nogui, gf_engine_param_t
 
 	gf_command_file(engine, "base:/config/autoexec.cfg");
 
+	engine->home = gf_util_get_user_path(engine);
+
 	if(argv != NULL) {
 		char* buf = NULL;
 		for(i = 1; i < argc; i++) {
@@ -291,6 +293,7 @@ void gf_engine_loop(gf_engine_t* engine) {
 
 void gf_engine_destroy(gf_engine_t* engine) {
 	int i;
+	free(engine->home);
 	if(engine->lua != NULL) {
 		gf_lua_destroy(engine->lua);
 	}

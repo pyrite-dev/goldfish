@@ -79,48 +79,44 @@ char* gf_util_strdup(const char* str) {
 	return s;
 }
 
-static void add_search(char*** l, char* p) {
-	char* r = gf_util_strdup(p);
+static void add_search(gf_engine_t* engine, char*** l, const char* p, int need_game_name) {
+	char* nam = (engine == NULL || engine->name == NULL) ? "game_name_here" : engine->name;
+	char* r;
+	if(need_game_name) {
+		r = gf_file_path_join(2, p, nam);
+	} else {
+		r = gf_util_strdup(p);
+	}
 
 	arrput(*l, r);
 }
 
-static void add_user_search(char*** l, char* n) {
+static void add_user_search(gf_engine_t* engine, char*** l) {
 #ifdef _WIN32
 	/* not good way */
 	char	     shp[MAX_PATH];
 	LPITEMIDLIST pidl;
 	char*	     u = getenv("USERPROFILE");
 	if(SHGetSpecialFolderLocation(NULL, CSIDL_APPDATA, &pidl) == S_OK) {
-		char* p;
 		SHGetPathFromIDList(pidl, shp);
 		CoTaskMemFree(pidl);
-		p = gf_file_path_join(2, shp, n);
-		add_search(l, p);
-		free(p);
+		add_search(engine, l, shp, 1);
 	}
 	if(u != NULL) {
-		char* p = malloc(strlen(u) + 1 + strlen(n) + 1);
-		p	= gf_file_path_join(2, u, n);
-		add_search(l, p);
-		free(p);
+		add_search(engine, l, u, 1);
 	}
 #if WINVER >= 0x0500
 	if(SHGetSpecialFolderLocation(NULL, CSIDL_PROFILE, &pidl) == S_OK) {
-		char* p;
 		SHGetPathFromIDList(pidl, shp);
 		CoTaskMemFree(pidl);
-		p = gf_file_path_join(2, shp, n);
-		add_search(l, p);
-		free(p);
+		add_search(engine, l, shp, 1);
 	}
 #endif
 #else
 	struct passwd* pwd = getpwuid(getuid());
 	if(pwd != NULL) {
-		char* p = malloc(strlen(pwd->pw_dir) + 1 + 7 + 1 + strlen(n) + 1);
-		p	= gf_file_path_join(3, pwd->pw_dir, ".config", n);
-		add_search(l, p);
+		char* p = gf_file_path_join(3, pwd->pw_dir, ".local", "share");
+		add_search(engine, l, p, 1);
 		free(p);
 	}
 #endif
@@ -130,20 +126,20 @@ char* gf_util_get_search(gf_engine_t* engine) {
 	char**	    arr = NULL;
 	char*	    r;
 	int	    i;
-	int	    sz	= 0;
-	char*	    nam = (engine == NULL || engine->name == NULL) ? "game_name_here" : engine->name;
+	int	    sz = 0;
 	char*	    n;
 	const char* pref;
 
 	if(engine != NULL && (pref = gf_prop_get_text(&engine->config, "prefix")) != NULL) {
-		n = gf_file_path_join(2, pref, nam);
-
-		add_search(&arr, n);
-
-		free(n);
+		/* windows users probably prefer this, i do not know */
+#ifdef _WIN32
+		add_search(engine, &arr, pref, 0);
+#else
+		add_search(engine, &arr, pref, 1);
+#endif
 	}
 
-	add_user_search(&arr, nam);
+	add_user_search(engine, &arr);
 
 	for(i = 0; i < arrlen(arr); i++) {
 		if(i > 0) sz += 1;
@@ -195,7 +191,8 @@ char* gf_util_get_user_path(gf_engine_t* engine) {
 	int    picked = -1;
 	char*  r      = NULL;
 	for(i = arrlen(list) - 1; i >= 0; i--) {
-		char** l = gf_file_separate_path(list[i], 0);
+		char*  pth = gf_util_strdup(list[i]);
+		char** l   = gf_file_separate_path(pth, 0);
 		int    j;
 		char*  p;
 		FILE*  f;
@@ -206,12 +203,12 @@ char* gf_util_get_user_path(gf_engine_t* engine) {
 		}
 		arrfree(l);
 
-		p = gf_file_path_join(2, list[i], "gftest");
+		p = gf_file_path_join(2, pth, "gftest");
 		f = fopen(p, "w");
 		if(f != NULL) {
-			gf_log_function(engine, "%s seems usable for user path", list[i]);
+			gf_log_function(engine, "%s seems usable for user path", pth);
 			picked = i;
-			r      = list[i];
+			r      = pth;
 			fclose(f);
 			remove(p);
 			free(p);
@@ -223,9 +220,7 @@ char* gf_util_get_user_path(gf_engine_t* engine) {
 
 	/* cleanup */
 	for(i = 0; i < arrlen(list); i++) {
-		if(i != picked) {
-			free(list[i]);
-		}
+		free(list[i]);
 	}
 	arrfree(list);
 

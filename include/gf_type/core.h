@@ -144,6 +144,9 @@ GF_DECLARE_TYPE(engine_resource, {
  *
  * @var gf_engine::seed
  * @brief Seed
+ *
+ * @var gf_engine::home
+ * @brief Home path for the game
  */
 GF_DECLARE_TYPE(engine, {
 	gf_server_t*	      server;
@@ -162,6 +165,7 @@ GF_DECLARE_TYPE(engine, {
 	int		      force_down;
 	char*		      name;
 	gf_uint64_t	      seed;
+	char*		      home;
 });
 #else
 typedef void gf_engine_t;
