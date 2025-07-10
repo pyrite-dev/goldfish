@@ -254,7 +254,6 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 	glfwSetCursorPosCallback(platform->window, gf_glfw_cursor);
 	glfwSetWindowSizeCallback(platform->window, gf_glfw_size);
 	glfwSetMouseButtonCallback(platform->window, gf_glfw_button);
-	glfwSetIMEStatusCallback(platform->window, gf_glfw_ime);
 	glfwSetKeyCallback(platform->window, gf_glfw_key);
 
 	glfwMakeContextCurrent(platform->window);
