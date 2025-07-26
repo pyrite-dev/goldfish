@@ -190,7 +190,7 @@ char* gf_util_get_user_path(gf_engine_t* engine) {
 	int    i;
 	int    picked = -1;
 	char*  r      = NULL;
-	for(i = arrlen(list) - 1; i >= 0; i--) {
+	for(i = 1; i < arrlen(list); i++) {
 		char*  pth = gf_util_strdup(list[i]);
 		char** l   = gf_file_separate_path(pth, 0);
 		int    j;
@@ -204,6 +204,7 @@ char* gf_util_get_user_path(gf_engine_t* engine) {
 		arrfree(l);
 
 		p = gf_file_path_join(2, pth, "gftest");
+		gf_log_function(engine, "Creating test file: %s", p);
 		f = fopen(p, "w");
 		if(f != NULL) {
 			gf_log_function(engine, "%s seems usable for user path", pth);
@@ -215,6 +216,7 @@ char* gf_util_get_user_path(gf_engine_t* engine) {
 			break;
 		} else {
 			free(p);
+			free(pth);
 		}
 	}
 
