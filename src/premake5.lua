@@ -59,8 +59,6 @@ end
 		"../external/jar",
 		"../external/nanosvg",
 		"../external/minisocket",
-		"../external/bearssl/src",
-		"../external/bearssl/inc",
 		"bindgen"
 	})
 	files({
@@ -89,9 +87,6 @@ end
 	files({
 		"audio/*.c",
 		"../external/jar/jar_*.h"
-	})
-	files({
-		"../external/bearssl/src/**.c",
 	})
 	files({
 		"gui/*.c"
@@ -269,6 +264,14 @@ end
 		end
 	end
 	filter({})
+
+	includedirs({
+		"../external/bearssl/src",
+		"../external/bearssl/inc"
+	})
+	files({
+		"../external/bearssl/src/**.c",
+	})
 
 	gf_default_stuffs()
 	gf_link_stuffs("options:engine=dynamic")

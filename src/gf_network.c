@@ -66,7 +66,7 @@
 #include <time.h>
 
 gf_network_t* gf_network_secure_tcp(gf_engine_t* engine, const char* host, int port) {
-	gf_network_t*	net = malloc(sizeof(*net));
+	gf_network_t* net = malloc(sizeof(*net));
 	memset(net, 0, sizeof(*net));
 	net->engine = engine;
 	gf_log_function(engine, "Connecting to %s:%d", host, port);

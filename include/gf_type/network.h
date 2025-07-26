@@ -70,9 +70,7 @@ gf_network_t;
  * @var gf_network::engine
  * @brief Engine instance
  */
-GF_DECLARE_TYPE(network, {
-	gf_engine_t*	engine;
-});
+GF_DECLARE_TYPE(network, { gf_engine_t* engine; });
 #else
 typedef void gf_network_t;
 #endif
