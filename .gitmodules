@@ -23,9 +23,6 @@
 [submodule "external/minisocket"]
 	path = external/minisocket
 	url = ../minisocket
-[submodule "external/crypto"]
-	path = external/crypto
-	url = ../crypto
 [submodule "external/bearssl"]
 	path = external/bearssl
 	url = ../bearssl
