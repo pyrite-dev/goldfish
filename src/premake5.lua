@@ -59,7 +59,6 @@ end
 		"../external/jar",
 		"../external/nanosvg",
 		"../external/minisocket",
-		"../external/crypto",
 		"../external/bearssl/src",
 		"../external/bearssl/inc",
 		"bindgen"
@@ -92,10 +91,7 @@ end
 		"../external/jar/jar_*.h"
 	})
 	files({
-		"../external/crypto/*.c"
-	})
-	files({
-		"../external/bearssl/src/**.c"
+		"../external/bearssl/src/**.c",
 	})
 	files({
 		"gui/*.c"

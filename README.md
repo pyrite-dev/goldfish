@@ -16,8 +16,7 @@
  - [jar](https://github.com/kd7tck/jar)
  - [Premake5](https://premake.github.io)
  - [PCRE](https://pcre.org)
- - [minisocket](https://github.com/pyrite-dev/minisocket)
- - [X25519](https://github.com/DavyLandman/compact25519)/[AES256](https://github.com/kokke/tiny-AES-c)
+ - [BearSSL](https://bearssl.org/)
 
 ## OpenGL stack
  - [SDL2](https://wiki.libsdl.org/SDL2/FrontPage) (default)
