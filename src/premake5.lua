@@ -60,6 +60,8 @@ end
 		"../external/nanosvg",
 		"../external/minisocket",
 		"../external/crypto",
+		"../external/bearssl/src",
+		"../external/bearssl/inc",
 		"bindgen"
 	})
 	files({
@@ -91,6 +93,9 @@ end
 	})
 	files({
 		"../external/crypto/*.c"
+	})
+	files({
+		"../external/bearssl/src/**.c"
 	})
 	files({
 		"gui/*.c"
