@@ -401,6 +401,9 @@ gf_draw_platform_t* gf_draw_platform_create(gf_engine_t* engine, gf_draw_t* draw
 		return NULL;
 	}
 
+	draw->x = CW_USEDEFAULT;
+	draw->y = CW_USEDEFAULT;
+
 	platform->window = CreateWindow("goldfish", draw->title, (WS_OVERLAPPEDWINDOW), draw->x, draw->y, draw->width, draw->height, NULL, 0, platform->instance, NULL);
 	if(platform->window == NULL) {
 		gf_log_function(engine, "Failed to create window", "");
